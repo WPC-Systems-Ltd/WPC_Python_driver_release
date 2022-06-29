@@ -1,13 +1,7 @@
-asyncqt==0.8.0
-cPython==0.0.6
-Cython==0.29.30
 matplotlib==3.5.2
 numpy==1.23.0
-numpydoc==1.4.0
 PyQt5==5.15.7
 PyQt5-Qt5==5.15.2
 PyQt5-sip==12.11.0
-PyQtWebEngine==5.15.6
-PyQtWebEngine-Qt5==5.15.2
 pyusb==1.2.1
 qasync==0.23.0
