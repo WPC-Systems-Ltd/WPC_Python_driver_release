@@ -1,4 +1,4 @@
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtGui
 from PyQt5.QtWidgets import QTableWidget
 from Ui_example_GUI_Broadcasts import Ui_MainWindow 
 from qasync import QEventLoop, asyncSlot
@@ -6,7 +6,7 @@ import sys
 import asyncio
 sys.path.insert(0, 'pywpc/')
 import pywpc 
- 
+import os
 
 COLUMN_WIDTH = 115  
 
@@ -18,6 +18,10 @@ class MainWindow(QtWidgets.QMainWindow):
         ## UI initialize
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
+        ## trademark path
+        trademark_path = os.getcwd() + "\Material\WPC_trademark.jpg" 
+        self.ui.lb_trademark.setPixmap(QtGui.QPixmap(trademark_path))
 
         ## initialize table 
         self.initiBroadcastTable()

@@ -1,4 +1,4 @@
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtGui
 from PyQt5.QtWidgets import QWidget, QMessageBox
 from Ui_example_GUI_AIStreaming import Ui_MainWindow 
 from qasync import QEventLoop, asyncSlot
@@ -8,6 +8,7 @@ sys.path.insert(0, 'pywpc/')
 import pywpc  
 import matplotlib.animation as animation
 import numpy as np
+import os
 
 class MatplotlibWidget(QWidget):
     def __init__(self, parent=None):
@@ -19,7 +20,11 @@ class MainWindow(QtWidgets.QMainWindow):
         super(MainWindow, self).__init__()
         ## UI initialize
         self.ui = Ui_MainWindow()
-        self.ui.setupUi(self)
+        self.ui.setupUi(self) 
+
+        ## trademark path
+        trademark_path = os.getcwd() + "\Material\WPC_trademark.jpg" 
+        self.ui.lb_trademark.setPixmap(QtGui.QPixmap(trademark_path))
 
         # - Connection flag
         self.connect_flag = 0
