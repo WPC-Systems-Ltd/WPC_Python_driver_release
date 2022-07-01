@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\Chunglee_WPC\Python_Driver_GUI_Example\UIexample_Broadcasts\example_GUI_Broadcasts.ui'
+# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Driver_Example_GUI\UIexample_Broadcasts\example_GUI_Broadcasts.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -83,7 +83,7 @@ class Ui_MainWindow(object):
         self.lb_trademark = QtWidgets.QLabel(self.centralwidget)
         self.lb_trademark.setGeometry(QtCore.QRect(10, 10, 81, 81))
         self.lb_trademark.setText("")
-        self.lb_trademark.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\Python_Driver_GUI_Example\\UIexample_Broadcasts\\../Material/WPC_trademark.jpg"))
+        self.lb_trademark.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\WPC_Driver_Example_GUI\\UIexample_Broadcasts\\../Material/WPC_trademark.jpg"))
         self.lb_trademark.setScaledContents(True)
         self.lb_trademark.setObjectName("lb_trademark")
         self.lb_rights = QtWidgets.QLabel(self.centralwidget)
