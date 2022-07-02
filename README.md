@@ -10,22 +10,12 @@ WPC driver only support python 3.10
 
 ## Package requirement 
 
-Install packages required for running GUI:
+#### Install packages required for running GUI:
+
+- Use requirement.txt to install all required packages
+
 
 ```
-$ pip install numpy
+$ pip install -r /path/to/requirements.txt
 ```
-```
-$ pip install PyQt5
-```
-```
-$ pip install pyqt5-tools
-```
-```
-$ pip install pyusb
-```
-```
-$ pip install matplotlib
-```
-```
-$ pip install asyncqt
+
