@@ -5,10 +5,16 @@ WPC_Device_Driver_Example_GUI Version Changelog
 v0.0.2 Date: 2022/07/01, Developer: Chunglee_people
 ---------------------------------------------------
 ### Changed
-- Change WPC Python Version from ` pywpc-0.1.10` to  `pywpc-0.1.12`
+- Change WPC Python Version from `pywpc-0.1.10` to  `pywpc-0.1.12`
 
 ### Added
 - Add trademark file path.
+- Driver example
+- examples folder : examples  ---- Driver  ----  AI
+                            |            |
+                            |            |
+                            |              ---- basic
+                              ---- UI
 
 v0.0.1 Date: 2022/06/29, Developer: Chunglee_people
 ---------------------------------------------------
