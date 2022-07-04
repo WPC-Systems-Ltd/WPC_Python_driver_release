@@ -19,8 +19,7 @@ v0.0.2 Date: 2022/07/01, Developer: Chunglee_people
                                            |
                                            |
                                             ----  General
-### Fixed
-- broadcastEvent dev.getDeviceInfo()
+                                            
 v0.0.1 Date: 2022/06/29, Developer: Chunglee_people
 ---------------------------------------------------
 ### Added
