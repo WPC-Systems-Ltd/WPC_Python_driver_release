@@ -10,12 +10,17 @@ v0.0.2 Date: 2022/07/01, Developer: Chunglee_people
 ### Added
 - Add trademark file path.
 - Driver example
-- examples folder : examples  ---- Driver  ----  AI
-                            |            |
-                            |            |
-                            |              ---- basic
-                              ---- UI
-
+- Folder hierarchy: Examples  ---- Console  ----  AI
+                            |              |
+                            |              |
+                            |               ----  General
+                            |
+                              ---- GUI      ----  AI
+                                           |
+                                           |
+                                            ----  General
+### Fixed
+- broadcastEvent dev.getDeviceInfo()
 v0.0.1 Date: 2022/06/29, Developer: Chunglee_people
 ---------------------------------------------------
 ### Added
