@@ -1,6 +1,7 @@
 import sys
 import asyncio
 sys.path.insert(0, 'pywpc/')
+sys.path.insert(0, '../../../pywpc/')
 import pywpc
 
 async def loop_fct(handle, delay):

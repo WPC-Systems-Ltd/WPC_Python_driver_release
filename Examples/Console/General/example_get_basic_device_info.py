@@ -1,8 +1,11 @@
 from lib2to3.pgen2 import driver
 import sys
 import asyncio
+import os
 sys.path.insert(0, 'pywpc/')
+sys.path.insert(0, '../../../pywpc/')
 import pywpc
+
 
 async def main():  
 
