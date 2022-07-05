@@ -5,6 +5,7 @@ import os
 import sys
 import asyncio
 sys.path.insert(0, 'pywpc/')
+sys.path.insert(0, '../../../pywpc/')
 import pywpc  
 
 class MainWindow(QtWidgets.QMainWindow):

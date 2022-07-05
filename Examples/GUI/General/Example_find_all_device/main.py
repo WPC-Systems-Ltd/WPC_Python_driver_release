@@ -5,6 +5,7 @@ from qasync import QEventLoop, asyncSlot
 import sys
 import asyncio
 sys.path.insert(0, 'pywpc/')
+sys.path.insert(0, '../../../pywpc/')
 import pywpc 
 import os
 
