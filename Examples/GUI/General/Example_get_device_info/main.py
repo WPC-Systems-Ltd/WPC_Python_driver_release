@@ -1,5 +1,5 @@
 from PyQt5 import QtWidgets, QtGui
-from UI.Ui_example_GUI_Get_Device_Information import Ui_MainWindow 
+from UI_design.Ui_example_GUI_Get_Device_Information import Ui_MainWindow 
 from qasync import QEventLoop, asyncSlot
 import os
 import sys
