@@ -10,13 +10,13 @@ v0.0.2 Date: 2022/07/01, Developer: Chunglee_people
 ### Added
 - Add trademark file path.
 - Add pyd path.
-- Driver example
-- Folder hierarchy: Examples  ---- Console  ----  AI
+- Driver example.
+- Folder hierarchy: Examples  ---- Console  ----  AIO
                             |              |
                             |              |
                             |               ----  General
                             |
-                              ---- GUI      ----  AI
+                              ---- GUI      ----  AIO
                                            |
                                            |
                                             ----  General
