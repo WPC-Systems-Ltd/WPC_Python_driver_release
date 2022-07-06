@@ -1,6 +1,6 @@
 from PyQt5 import QtWidgets, QtGui
 from PyQt5.QtWidgets import QWidget, QMessageBox
-from UI.Ui_example_GUI_AIStreaming import Ui_MainWindow 
+from UI_design.Ui_example_GUI_AIStreaming import Ui_MainWindow 
 from qasync import QEventLoop, asyncSlot
 import sys
 import asyncio
