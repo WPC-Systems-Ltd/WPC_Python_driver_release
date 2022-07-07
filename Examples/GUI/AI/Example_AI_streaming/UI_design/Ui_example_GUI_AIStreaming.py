@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\Chunglee_WPC\Python_Driver_GUI_Example\UIexample_AIStreaming\example_GUI_AIStreaming.ui'
+# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\AI\Example_AI_streaming\UI_design\example_GUI_AIStreaming.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -9,12 +9,12 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from UI_design.mplwidget import MplWidget
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1092, 882)
+        MainWindow.resize(1096, 891)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.groupBox_connection = QtWidgets.QGroupBox(self.centralwidget)
@@ -373,12 +373,6 @@ class Ui_MainWindow(object):
         self.btn_connect.setCheckable(False)
         self.btn_connect.setAutoRepeat(False)
         self.btn_connect.setObjectName("btn_connect")
-        self.lb_led = QtWidgets.QLabel(self.groupBox_connection)
-        self.lb_led.setGeometry(QtCore.QRect(360, 20, 51, 51))
-        self.lb_led.setText("")
-        self.lb_led.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\Python_Driver_GUI_Example\\UIexample_AIStreaming\\../../WPC_DAQ_PYQT/Wifi_DAQ_TestPanel_PYQT/Material/green-led-on.png"))
-        self.lb_led.setScaledContents(True)
-        self.lb_led.setObjectName("lb_led")
         self.btn_disconnect = QtWidgets.QPushButton(self.groupBox_connection)
         self.btn_disconnect.setGeometry(QtCore.QRect(250, 30, 101, 31))
         palette = QtGui.QPalette()
@@ -547,11 +541,17 @@ class Ui_MainWindow(object):
         self.btn_disconnect.setCheckable(False)
         self.btn_disconnect.setAutoRepeat(False)
         self.btn_disconnect.setObjectName("btn_disconnect")
+        self.lb_led = QtWidgets.QLabel(self.groupBox_connection)
+        self.lb_led.setGeometry(QtCore.QRect(370, 20, 51, 51))
+        self.lb_led.setText("")
+        self.lb_led.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\WPC_Python_driver_release\\Examples\\GUI\\AI\\Example_AI_streaming\\UI_design\\../../../../../Material/WPC_Led_green.png"))
+        self.lb_led.setScaledContents(True)
+        self.lb_led.setObjectName("lb_led")
         self.lb_ip.raise_()
         self.btn_connect.raise_()
         self.lineEdit_ip.raise_()
-        self.lb_led.raise_()
         self.btn_disconnect.raise_()
+        self.lb_led.raise_()
         self.groupBox_operation = QtWidgets.QGroupBox(self.centralwidget)
         self.groupBox_operation.setGeometry(QtCore.QRect(580, 140, 231, 81))
         palette = QtGui.QPalette()
@@ -1478,7 +1478,7 @@ class Ui_MainWindow(object):
         self.lb_rights.setFont(font)
         self.lb_rights.setObjectName("lb_rights")
         self.lb_declare = QtWidgets.QLabel(self.centralwidget)
-        self.lb_declare.setGeometry(QtCore.QRect(300, 90, 421, 31))
+        self.lb_declare.setGeometry(QtCore.QRect(250, 90, 551, 31))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(16)
@@ -1487,7 +1487,7 @@ class Ui_MainWindow(object):
         self.lb_trademark = QtWidgets.QLabel(self.centralwidget)
         self.lb_trademark.setGeometry(QtCore.QRect(10, 10, 81, 81))
         self.lb_trademark.setText("")
-        self.lb_trademark.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\Python_Driver_GUI_Example\\UIexample_AIStreaming\\../Material/WPC_trademark.jpg"))
+        self.lb_trademark.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\WPC_Python_driver_release\\Examples\\GUI\\AI\\Example_AI_streaming\\UI_design\\../Material/WPC_trademark.jpg"))
         self.lb_trademark.setScaledContents(True)
         self.lb_trademark.setObjectName("lb_trademark")
         self.MplWidget = MplWidget(self.centralwidget)
@@ -1495,7 +1495,7 @@ class Ui_MainWindow(object):
         self.MplWidget.setObjectName("MplWidget")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1092, 25))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1096, 25))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -1540,4 +1540,4 @@ class Ui_MainWindow(object):
         self.lb_yscaleMin.setText(_translate("MainWindow", "Y scale min  (V)"))
         self.lb_rights.setText(_translate("MainWindow", " Ⓒ2022 WPC Systems Ltd. All right reserved"))
         self.lb_declare.setText(_translate("MainWindow", "This is example for AI streaming WPC Wifi DAQ."))
-from UI.mplwidget import MplWidget
+

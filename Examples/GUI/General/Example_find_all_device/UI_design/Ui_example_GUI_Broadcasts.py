@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Driver_Example_GUI\UIexample_Broadcasts\example_GUI_Broadcasts.ui'
+# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\General\Example_find_all_device\UI_design\example_GUI_Broadcasts.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -14,18 +14,18 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(634, 582)
+        MainWindow.resize(900, 600)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.lb_declare = QtWidgets.QLabel(self.centralwidget)
-        self.lb_declare.setGeometry(QtCore.QRect(20, 110, 601, 31))
+        self.lb_declare.setGeometry(QtCore.QRect(60, 110, 781, 31))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(16)
         self.lb_declare.setFont(font)
         self.lb_declare.setObjectName("lb_declare")
         self.btn_broadcast = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_broadcast.setGeometry(QtCore.QRect(480, 170, 131, 41))
+        self.btn_broadcast.setGeometry(QtCore.QRect(670, 170, 171, 41))
         font = QtGui.QFont()
         font.setFamily("微軟正黑體")
         font.setPointSize(12)
@@ -42,7 +42,7 @@ class Ui_MainWindow(object):
 "}")
         self.btn_broadcast.setObjectName("btn_broadcast")
         self.tableWidget_brst = QtWidgets.QTableWidget(self.centralwidget)
-        self.tableWidget_brst.setGeometry(QtCore.QRect(20, 250, 590, 221))
+        self.tableWidget_brst.setGeometry(QtCore.QRect(50, 250, 801, 221))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.tableWidget_brst.setFont(font)
@@ -83,11 +83,11 @@ class Ui_MainWindow(object):
         self.lb_trademark = QtWidgets.QLabel(self.centralwidget)
         self.lb_trademark.setGeometry(QtCore.QRect(10, 10, 81, 81))
         self.lb_trademark.setText("")
-        self.lb_trademark.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\WPC_Driver_Example_GUI\\UIexample_Broadcasts\\../Material/WPC_trademark.jpg"))
+        self.lb_trademark.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\WPC_Python_driver_release\\Examples\\GUI\\General\\Example_find_all_device\\UI_design\\../Material/WPC_trademark.jpg"))
         self.lb_trademark.setScaledContents(True)
         self.lb_trademark.setObjectName("lb_trademark")
         self.lb_rights = QtWidgets.QLabel(self.centralwidget)
-        self.lb_rights.setGeometry(QtCore.QRect(90, 10, 291, 31))
+        self.lb_rights.setGeometry(QtCore.QRect(90, 10, 451, 31))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(12)
@@ -95,7 +95,7 @@ class Ui_MainWindow(object):
         self.lb_rights.setObjectName("lb_rights")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 634, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 900, 25))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
