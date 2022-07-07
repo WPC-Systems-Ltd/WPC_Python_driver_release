@@ -1,4 +1,6 @@
+from calendar import c
 from PyQt5 import QtWidgets, QtGui
+from PyQt5.QtWidgets import QMessageBox
 from UI_design.Ui_example_GUI_Get_Device_Information import Ui_MainWindow 
 from qasync import QEventLoop, asyncSlot
 import os
@@ -11,15 +13,21 @@ import pywpc
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
+
         ## UI initialize
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-         ## trademark path
-        trademark_path = os.getcwd() + "\Material\WPC_trademark.jpg" 
-        self.ui.lb_trademark.setPixmap(QtGui.QPixmap(trademark_path))
+        ## Material path
+        self.trademark_path = os.getcwd() + "\Material\WPC_trademark.jpg" 
+        self.blue_led_path = os.getcwd() + "\Material\WPC_Led_blue.png"
+        self.red_led_path = os.getcwd() + "\Material\WPC_Led_red.png"
+        self.green_led_path = os.getcwd() + "\Material\WPC_Led_green.png"
 
-        ## initialize param
+        ## Set tademark path
+        self.ui.lb_trademark.setPixmap(QtGui.QPixmap(self.trademark_path))
+        
+        ## Initialize param
         self.connect_flag = 0
         
         ## Define button callback events
@@ -29,29 +37,45 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Get WPC Driver version
         str_ = f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}'
-        print(str_)
-    
- 
+
     @asyncSlot()      
     async def connectEvent(self):
         self.clearErrorStatus()
         # Get ip from MainUI window
         self.ip = self.ui.lineEdit_ipConnect.text()
         try: 
+            ## Connect to network device
             dev.connect(self.ip)
+            ## Change LED status
+            self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
+            ## Change connection flag
+            self.connect_flag = 1
         except pywpc.Error as err:
             self.ui.lb_err.setText(str(err)) 
             print("err: " + str(err))
 
     @asyncSlot()      
     async def disconnectEvent(self):
-        dev.disconnect()
+         ## Disconnect network device
+        dev.disconnect() 
+        ## Change LED status
+        self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
+        ## Change connection flag
+        self.connect_flag = 0
 
+    def closeEvent(self, event):
+        ## Disconnect network device
+        dev.disconnect()
+        ## Release device handle
+        dev.close()
 
     @asyncSlot()      
     async def getdeviceinfoEvent(self):
-        self.clearErrorStatus()
+        # Check connection status
+        if self.checkConnectionStatus() == False:
+            return
 
+        self.clearErrorStatus()
         ## Get firmware model & version
         driver_info = await dev.getDriverInfo()
         model = driver_info[0]
@@ -68,11 +92,15 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.lineEdit_model.setText(model)
         self.ui.lineEdit_version.setText(version)
         self.ui.lineEdit_rtc.setText(rtc)
-  
-    def closeEvent(self, event):
-        dev.disconnect()
-        dev.close()
-         
+
+    # Check TCP connection with QMessageBox
+    def checkConnectionStatus(self):
+        if self.connect_flag == 0:
+            QMessageBox.information(self, "Error Messages", "Please connect server first.", QMessageBox.Ok)
+            return False
+        else:
+            return True
+
     def clearErrorStatus(self):
         self.ui.lb_err.clear()
 
@@ -86,6 +114,6 @@ def main():
         loop.run_forever()
 
 if __name__ == "__main__":
-    ## Create handle 
+    ## Create device handle
     dev = pywpc.WifiDAQE3A()
     main()

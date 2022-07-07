@@ -23,22 +23,30 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self) 
 
-        ## trademark path
-        trademark_path = os.getcwd() + "\Material\WPC_trademark.jpg" 
-        self.ui.lb_trademark.setPixmap(QtGui.QPixmap(trademark_path))
+        ## Get Python driver version
+        print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}') 
 
-        # - Connection flag
+        ## Material path
+        self.trademark_path = os.getcwd() + "\Material\WPC_trademark.jpg" 
+        self.blue_led_path = os.getcwd() + "\Material\WPC_Led_blue.png"
+        self.red_led_path = os.getcwd() + "\Material\WPC_Led_red.png"
+        self.green_led_path = os.getcwd() + "\Material\WPC_Led_green.png"
+
+        ## Set tademark path
+        self.ui.lb_trademark.setPixmap(QtGui.QPixmap(self.trademark_path))
+
+        ## Connection flag
         self.connect_flag = 0
 
-        # - plot parameter
+        ## Plot parameter
         self.plot_y_min = -10
         self.plot_y_max = 10
 
-        # - ai parameter
+        ## AI parameter
         self.ai_sampling_rate = 1000
         self.ai_n_samples = 200
  
-        # - list parameter
+        ## List parameter
         self.channel_list = []
         for j in range(8):
             self.channel_list.append([])
@@ -48,33 +56,106 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.btn_connect.clicked.connect(self.connectEvent)
         self.ui.btn_disconnect.clicked.connect(self.disconnectEvent) 
         self.ui.btn_AIStart.clicked.connect(self.startAIEvent)
-        self.ui.btn_AIStop.clicked.connect(self.stopAIEvent)
-
-        # - Line edit
+        self.ui.btn_AIStop.clicked.connect(self.stopAIEvent) 
         self.ui.lineEdit_samplingRate.returnPressed.connect(self.setSamplingRateEvent)
-        self.ui.lineEdit_numSamples.returnPressed.connect(self.setNumofSampleEvent)
-        
-        # - ComboBox
+        self.ui.lineEdit_numSamples.returnPressed.connect(self.setNumofSampleEvent) 
         self.ui.comboBox_aiMode.currentIndexChanged.connect(self.chooseAIModeEvent) 
         self.ui.lineEdit_yscaleMax.returnPressed.connect(self.setYscaleMaxEvent)
         self.ui.lineEdit_yscaleMin.returnPressed.connect(self.setYscaleMinEvent)
-
-
-        # - Get WPC Driver version
-        str_ = f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}'
-        print(str_)
-
-        # - Plotting
+ 
+        ## Plotting
         self.plotInitial()
         self.plotAnimation()
 
-        # - Function loop
-        self.loop_fct(0.05)   ## 0.05s = 50 ms
+        ## Function loop
+        self.loop_fct(num_of_sample = 500, delay = 0.05) ## delay [sec]
+
+    @asyncSlot()      
+    async def connectEvent(self): 
+        # Get ip from MainUI window
+        self.ip = self.ui.lineEdit_ip.text()
+        try: 
+            ## Connect to network device
+            dev.connect(self.ip)
+            ## Change LED status
+            self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
+            ## Change connection flag
+            self.connect_flag = 1
+        except pywpc.Error as err: 
+            print("err: " + str(err))
+
+    @asyncSlot()      
+    async def disconnectEvent(self):
+        ## Disconnect network device
+        dev.disconnect() 
+        ## Change LED status
+        self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
+        ## Change connection flag
+        self.connect_flag = 0
+
+    def closeEvent(self, event):
+        ## Disconnect network device
+        dev.disconnect()
+        ## Release device handle
+        dev.close()
+
+    @asyncSlot() 
+    async def loop_fct(self, num_of_sample, delay): 
+        while True:
+            data = await dev.readAIStreaming(num_of_sample, delay)
+            if data is not None:
+                self.setDisplayPlotNums(data, self.ai_n_samples)
+            else: 
+                await asyncio.sleep(delay) 
+
+    @asyncSlot()      
+    async def startAIEvent(self): 
+        if self.checkConnectionStatus() == False:
+            return
+        get_mode = self.ui.comboBox_aiMode.currentIndex()
+        if get_mode == 0: ## On Demand
+            ondemanddata = await dev.readAIOnDemand()
+            self.setDisplayPlotNums([ondemanddata], self.ai_n_samples)
+        else: ## N-Samples/ Continuous 
+            await dev.startAI()
+
+    @asyncSlot()      
+    async def stopAIEvent(self): 
+        if self.checkConnectionStatus() == False:
+            return
+        await dev.stopAI()
+
+    @asyncSlot()
+    async def chooseAIModeEvent(self, *args):
+        if self.checkConnectionStatus() == False:
+            return
+        # Get AI mode from MainUI window
+        get_mode = int(self.ui.comboBox_aiMode.currentIndex())
+        await dev.setAIMode(get_mode)
+
+    @asyncSlot()
+    async def setSamplingRateEvent(self):
+        if self.checkConnectionStatus() == False:
+            return
+        # Get Sampling rate from MainUI window
+        sampling_rate = float(self.ui.lineEdit_samplingRate.text())
+        self.ai_sampling_rate = sampling_rate
+        await dev.setAISamplingRate(sampling_rate)
+
+
+    @asyncSlot()
+    async def setNumofSampleEvent(self):
+        if self.checkConnectionStatus() == False:
+            return
+        # Get NumSamples from MainUI window
+        n_samples = int(self.ui.lineEdit_numSamples.text())
+        self.ai_n_samples = n_samples
+        await dev.setAINumSamples(n_samples)
+      
 
     def plotInitial(self):
         self.checkboxstatus = [1 for x in range(8)]
         self.matplotlibwidget = MatplotlibWidget()
-   
         for i in range(8):
             self.ui.MplWidget.canvas.axes.plot([0], [0], alpha=self.checkboxstatus[i])
 
@@ -103,7 +184,6 @@ class MainWindow(QtWidgets.QMainWindow):
             ticks = np.arange(x_min, x_max, dx)
         else:
             ticks = np.arange(x_min, x_max)
-
         yield x_list, ticks, x_min, x_max, self.checkboxstatus
 
     # Plotting AI streaming
@@ -148,7 +228,6 @@ class MainWindow(QtWidgets.QMainWindow):
     def plotConvtXtick(self, xtick):
         return ["{:.2f}".format(x / self.ai_sampling_rate) for i, x in enumerate(xtick)]
 
- 
     def setDisplayPlotNums(self, data, nums):
         data = np.array(data)
         self.plot_total_times += len(data)
@@ -157,108 +236,26 @@ class MainWindow(QtWidgets.QMainWindow):
         for k in range(8):
             self.channel_list[k].extend(data[:, k])
             self.channel_list[k] = self.channel_list[k][-(nums):]
-    @asyncSlot() 
-    async def loop_fct(self, delay): 
-        while True: 
-            data = await dev.readAIStreaming(500, delay)
-            if data is not None:
-                self.setDisplayPlotNums(data, self.ai_n_samples)
-            else: 
-                await asyncio.sleep(delay) 
 
-    @asyncSlot()      
-    async def startAIEvent(self):
-        get_mode = self.ui.comboBox_aiMode.currentIndex()
-        if get_mode == 0: ## On Demand
-            ondemanddata = await dev.readAIOnDemand()
-            self.setDisplayPlotNums([ondemanddata], self.ai_n_samples)
-        else: ## N-Samples/ Continuous 
-            await dev.startAI()
-
-    @asyncSlot()      
-    async def stopAIEvent(self):
-        await dev.stopAI()
-
-
-    @asyncSlot()
-    # AI mode for MCU parameter
-    async def chooseAIModeEvent(self, *args):
-        # Check connection status
-        if self.checkConnectionStatus() == False:
-            return
-        # Get AI mode from MainUI window
-        get_mode = int(self.ui.comboBox_aiMode.currentIndex())
-        # Send command to MCU
-        await dev.setAIMode(get_mode) ## 2 is continuous mode 
-
-    @asyncSlot()
-    # Sampling rate for MCU parameter
-    async def setSamplingRateEvent(self):
-        # Check connection status
-        if self.checkConnectionStatus() == False:
-            return
-        # Get Sampling rate from MainUI window
-        sampling_rate = float(self.ui.lineEdit_samplingRate.text())
-        ai_sampling_rate = sampling_rate
-        # Send command to MCU
-        await dev.setAISamplingRate(sampling_rate)
-
-
-    @asyncSlot()
-    # NumofSample for MCU parameter
-    async def setNumofSampleEvent(self):
-        # Check connection status
-        if self.checkConnectionStatus() == False:
-            return
-        # Get NumSamples from MainUI window
-        n_samples = int(self.ui.lineEdit_numSamples.text())
-        self.ai_n_samples = n_samples
-        # Send command to MCU
-        await dev.setAINumSamples(n_samples)
- 
     
     # y_max for plotting parameter
     def setYscaleMaxEvent(self):
-        # Check connection status
-        if self.checkConnectionStatus() == False:
-            return
         # Get yscaleMax from MainUI window
         self.plot_y_max = self.ui.lineEdit_yscaleMax.text()
 
     # y_min for plotting parameter
     def setYscaleMinEvent(self):
-        # Check connection status
-        if self.checkConnectionStatus() == False:
-            return
         # Get yscaleMin from MainUI window
         self.plot_y_min = self.ui.lineEdit_yscaleMin.text()
 
     # Check TCP connection with QMessageBox
     def checkConnectionStatus(self):
-        if self.connect_flag == 1:
+        if self.connect_flag == 0:
             QMessageBox.information(self, "Error Messages", "Please connect server first.", QMessageBox.Ok)
             return False
         else:
             return True
  
-    @asyncSlot()      
-    async def connectEvent(self): 
-        # Get ip from MainUI window
-        self.ip = self.ui.lineEdit_ip.text()
-        try: 
-            dev.connect(self.ip) 
-        except pywpc.Error as err: 
-            print("err: " + str(err))
-
-    @asyncSlot()      
-    async def disconnectEvent(self): 
-        dev.disconnect() 
-
-    def closeEvent(self, event):  
-        dev.disconnect() ## Don't forget to close connection
-        dev.close()  ## Don't forget to free in order to kill the threads
-         
-  
 def main(): 
     app = QtWidgets.QApplication([])
     loop = QEventLoop(app)
@@ -269,6 +266,6 @@ def main():
         loop.run_forever()
 
 if __name__ == "__main__":
-    ## Create handle 
+    ## Create device handle
     dev = pywpc.WifiDAQE3A()
     main()
