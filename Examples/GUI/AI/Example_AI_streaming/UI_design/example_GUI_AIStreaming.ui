@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1092</width>
-    <height>882</height>
+    <width>1096</width>
+    <height>891</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1049,25 +1049,6 @@ QPushButton:pressed{
       <bool>false</bool>
      </property>
     </widget>
-    <widget class="QLabel" name="lb_led">
-     <property name="geometry">
-      <rect>
-       <x>360</x>
-       <y>20</y>
-       <width>51</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>../../WPC_DAQ_PYQT/Wifi_DAQ_TestPanel_PYQT/Material/green-led-on.png</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
     <widget class="QPushButton" name="btn_disconnect">
      <property name="geometry">
       <rect>
@@ -1550,11 +1531,30 @@ QPushButton:pressed{
       <bool>false</bool>
      </property>
     </widget>
+    <widget class="QLabel" name="lb_led">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>20</y>
+       <width>51</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../../../../../Material/WPC_Led_green.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
     <zorder>lb_ip</zorder>
     <zorder>btn_connect</zorder>
     <zorder>lineEdit_ip</zorder>
-    <zorder>lb_led</zorder>
     <zorder>btn_disconnect</zorder>
+    <zorder>lb_led</zorder>
    </widget>
    <widget class="QGroupBox" name="groupBox_operation">
     <property name="geometry">
@@ -4139,9 +4139,9 @@ color:  rgb(255, 255, 255); </string>
    <widget class="QLabel" name="lb_declare">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>250</x>
       <y>90</y>
-      <width>421</width>
+      <width>551</width>
       <height>31</height>
      </rect>
     </property>
@@ -4190,7 +4190,7 @@ color:  rgb(255, 255, 255); </string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1092</width>
+     <width>1096</width>
      <height>25</height>
     </rect>
    </property>

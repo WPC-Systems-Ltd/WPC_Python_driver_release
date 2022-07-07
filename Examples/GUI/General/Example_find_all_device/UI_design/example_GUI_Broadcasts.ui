@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>634</width>
-    <height>582</height>
+    <width>900</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,9 +17,9 @@
    <widget class="QLabel" name="lb_declare">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>60</x>
       <y>110</y>
-      <width>601</width>
+      <width>781</width>
       <height>31</height>
      </rect>
     </property>
@@ -36,9 +36,9 @@
    <widget class="QPushButton" name="btn_broadcast">
     <property name="geometry">
      <rect>
-      <x>480</x>
+      <x>670</x>
       <y>170</y>
-      <width>131</width>
+      <width>171</width>
       <height>41</height>
      </rect>
     </property>
@@ -67,9 +67,9 @@ QPushButton:pressed{
    <widget class="QTableWidget" name="tableWidget_brst">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>50</x>
       <y>250</y>
-      <width>590</width>
+      <width>801</width>
       <height>221</height>
      </rect>
     </property>
@@ -165,7 +165,7 @@ QPushButton:pressed{
      <rect>
       <x>90</x>
       <y>10</y>
-      <width>291</width>
+      <width>451</width>
       <height>31</height>
      </rect>
     </property>
@@ -185,8 +185,8 @@ QPushButton:pressed{
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>634</width>
-     <height>21</height>
+     <width>900</width>
+     <height>25</height>
     </rect>
    </property>
   </widget>
