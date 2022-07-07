@@ -1,5 +1,6 @@
 from PyQt5 import QtWidgets, QtGui
-from PyQt5.QtWidgets import QTableWidget
+from PyQt5.QtWidgets import QTableWidget,QApplication
+from PyQt5.QtCore import Qt
 from UI_design.Ui_example_GUI_Broadcasts import Ui_MainWindow 
 from qasync import QEventLoop, asyncSlot
 import sys
@@ -9,7 +10,7 @@ sys.path.insert(0, '../../../pywpc/')
 import pywpc 
 import os
 
-COLUMN_WIDTH = 115  
+COLUMN_WIDTH = 160  
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
@@ -20,24 +21,24 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        ## trademark path
+        ## Trademark path
         trademark_path = os.getcwd() + "\Material\WPC_trademark.jpg" 
         self.ui.lb_trademark.setPixmap(QtGui.QPixmap(trademark_path))
 
-        ## initialize table 
+        ## Initialize table 
         self.initiBroadcastTable()
 
         ## Define button callback events
         self.ui.btn_broadcast.clicked.connect(self.broadcastEvent)
         
-        ## Open WPC Device
+        ## Connect to network device
         dev.connect() 
 
-        ## Get WPC Driver version
+        ## Get Python driver version
         str_ = f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}'
         print(str_)
   
-        ## initialize list
+        ## Initialize list
         self.broadcast_list=[]
 
     def initiBroadcastTable(self): ## 5 for columns
@@ -55,10 +56,11 @@ class MainWindow(QtWidgets.QMainWindow):
             self.ui.tableWidget_brst.setItem(row, 3, QtWidgets.QTableWidgetItem(i["model"]))
             self.ui.tableWidget_brst.setItem(row, 4, QtWidgets.QTableWidgetItem(i["firmware_ver"]))
             row=row+1
-            
- 
+        QApplication.restoreOverrideCursor()
+        
     @asyncSlot()      
     async def broadcastEvent(self):
+        QApplication.setOverrideCursor(Qt.WaitCursor)
         self.broadcast_list.clear()
         self.ui.tableWidget_brst.setRowCount(0) 
         broadcast_info = await dev.getDeviceInfo()
@@ -75,9 +77,10 @@ class MainWindow(QtWidgets.QMainWindow):
         self.loaddata()
 
     def closeEvent(self, event):
+        ## Disconnect network device
         dev.disconnect()
+        ## Release device handle
         dev.close()
- 
 
 def main(): 
     app = QtWidgets.QApplication([])
@@ -89,7 +92,7 @@ def main():
         loop.run_forever()
 
 if __name__ == "__main__":
-    ## Create handle
+    ## Create device handle
     dev = pywpc.Broadcaster()
     main()
    
