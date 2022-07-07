@@ -16,46 +16,51 @@ async def getBattery(handle, delay):
     print("Battery: "+ str(data) + " mV")
     await asyncio.sleep(delay)  # delay(second)
 
-def Battery_thread(handle):
+def Battery_thread(handle, delay): 
     while True: 
-        asyncio.run(getBattery(handle, 0.5))
+        asyncio.run(getBattery(handle, delay))
         time.sleep(1) 
 
-def RSSI_thread(handle):
+def RSSI_thread(handle, delay):
     while True: 
-        asyncio.run(getRSSI(handle, 0.5))
+        asyncio.run(getRSSI(handle, delay))
         time.sleep(1)
 
 async def main():   
-    
     print("Start example code...")
-    ## Get python driver version
+
+    ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}') 
 
-    ## Create handle
+    ## Create device handle
     dev = pywpc.WifiDAQ()
 
-    ## Connect
+    ## Connect to network device
     try:
-        dev.connect("192.168.5.79") ## Put web device's IP here
+        dev.connect("192.168.5.79")
     except Exception as err:
-        pywpc.printGenericError(err) 
+        pywpc.printGenericError(err)
     
-    ## Execute
+    ## Perform two sync thread to query data
     try:
-        _threadRSSI = threading.Thread(target = RSSI_thread, args=[dev])
+        _threadRSSI = threading.Thread(target = RSSI_thread, args=[dev, 0.5])
         _threadRSSI.start()
 
-        _threadBattery = threading.Thread(target = Battery_thread, args=[dev])
+        _threadBattery = threading.Thread(target = Battery_thread, args=[dev, 0.5])
         _threadBattery.start()
     except Exception as err:
         pywpc.printGenericError(err) 
 
     ## This part will execute immediately because the sync thread is running in parallel.
-    # dev.disconnect()
-    # dev.close()
-    # print("End example code...")
+    '''
+    # Disconnect network device
+    dev.disconnect()
+    
+    # Release device handle
+    dev.close()
+    '''
 
+    print("End example code...")
     return
 
 if __name__ == '__main__': 

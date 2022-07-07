@@ -8,21 +8,21 @@ import pywpc
 
 
 async def main():  
-
     print("Start example code...")
-    ## Get python driver version
-    print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
 
-    ## Create handle
+    ## Get Python driver version
+    print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}') 
+
+    ## Create device handle
     dev = pywpc.WifiDAQ()
 
-    ## Connect
+    ## Connect to network device
     try:
-        dev.connect("192.168.5.79") ## Put web device's IP here
+        dev.connect("192.168.5.79")
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Execute
+    ## Perform DAQ basic information 
     try:
         ## Get firmware model & version
         driver_info = await dev.getDriverInfo()
@@ -41,11 +41,15 @@ async def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
+    ## Disconnect network device
     dev.disconnect()
+    
+    ## Release device handle
     dev.close()
-    print("End example code...")
 
+    print("End example code...")
     return
+
 
 if __name__ == '__main__':
     asyncio.run(main())
