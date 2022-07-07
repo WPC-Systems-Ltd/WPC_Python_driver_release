@@ -23,7 +23,7 @@ async def main():
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}') 
 
     ## Create device handle
-    dev = pywpc.WifiDAQ()
+    dev = pywpc.WifiDAQE3A()
 
     ## Connect to network device
     try:

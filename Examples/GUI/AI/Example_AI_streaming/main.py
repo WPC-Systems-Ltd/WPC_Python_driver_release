@@ -270,5 +270,5 @@ def main():
 
 if __name__ == "__main__":
     ## Create handle 
-    dev = pywpc.WifiDAQ()
+    dev = pywpc.WifiDAQE3A()
     main()

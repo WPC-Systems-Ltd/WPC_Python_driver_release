@@ -2,6 +2,13 @@ WPC_Device_Driver_Example_GUI Version Changelog
 ===================================
 
 
+
+v0.0.3 Date: 2022/07/07, Developer: Chunglee_people
+---------------------------------------------------
+### Changed
+- Change WPC Python Version from `pywpc-0.1.12` to  `pywpc-0.1.13` (templete, Need to verify)
+
+
 v0.0.2 Date: 2022/07/01, Developer: Chunglee_people
 ---------------------------------------------------
 ### Changed
