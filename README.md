@@ -7,7 +7,7 @@ WPC driver only support python 3.10
 - Python 3.10 
 
 
-## Create environment and install required packages
+## Recommend for new python user to create environment and install required packages
 - Please refer : https://github.com/WPC-systems/WPC_Python_driver_release/wiki/Install-miniconda-and-build-environment
 
 ## Run example code
