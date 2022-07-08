@@ -38,7 +38,7 @@
      <rect>
       <x>90</x>
       <y>0</y>
-      <width>291</width>
+      <width>521</width>
       <height>31</height>
      </rect>
     </property>
@@ -55,9 +55,9 @@
    <widget class="QLabel" name="lb_declare">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>90</x>
       <y>80</y>
-      <width>601</width>
+      <width>791</width>
       <height>31</height>
      </rect>
     </property>
@@ -102,9 +102,9 @@
     <widget class="QPushButton" name="btn_connect">
      <property name="geometry">
       <rect>
-       <x>180</x>
+       <x>170</x>
        <y>30</y>
-       <width>81</width>
+       <width>91</width>
        <height>31</height>
       </rect>
      </property>
@@ -137,7 +137,7 @@ QPushButton:pressed{
       <rect>
        <x>270</x>
        <y>30</y>
-       <width>101</width>
+       <width>121</width>
        <height>31</height>
       </rect>
      </property>
@@ -210,7 +210,7 @@ QPushButton:pressed{
     <widget class="QLabel" name="lb_led">
      <property name="geometry">
       <rect>
-       <x>390</x>
+       <x>410</x>
        <y>20</y>
        <width>51</width>
        <height>51</height>
@@ -495,7 +495,7 @@ QPushButton:pressed{
      <rect>
       <x>630</x>
       <y>230</y>
-      <width>141</width>
+      <width>161</width>
       <height>31</height>
      </rect>
     </property>
