@@ -44,11 +44,11 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.btn_disconnect.clicked.connect(self.disconnectEvent)
         self.ui.comboBox_port.currentIndexChanged.connect(self.portEvent)
 
-        for segment in range(0, 8):
-            obj_chbox_enb = getattr(self.ui, 'cb_eb%d' % segment) 
+        for i in range(0, 8):
+            obj_chbox_enb = getattr(self.ui, 'cb_eb%d' %i) 
             obj_chbox_enb.stateChanged.connect(self.enableDOEvent)
 
-            obj_chbox_state = getattr(self.ui, 'cb_state%d' % segment) 
+            obj_chbox_state = getattr(self.ui, 'cb_state%d' %i) 
             obj_chbox_state.stateChanged.connect(self.stateDOEvent)
             obj_chbox_state.setStyleSheet("QCheckBox::indicator{ width: 60px;height: 60px;} QCheckBox::indicator:unchecked {image: url("+self.switch_gray_path+");} QCheckBox::indicator:checked {image: url("+self.switch_blue_path+");}")
 
@@ -63,7 +63,10 @@ class MainWindow(QtWidgets.QMainWindow):
 
         # Get port index from mainUI window
         port = self.ui.comboBox_port.currentIndex()
-        await dev.setDIOCurrent(port, mask = 255, enabled = self.enable_cal, direction = 255, state = self.state_cal)
+        ## Set DIO to MCU
+        print(self.enable_cal, self.state_cal)
+        await dev.openDOInPins(port, self.enable_cal, self.state_cal)
+ 
 
     @asyncSlot() 
     async def enableDOEvent(self):
@@ -83,7 +86,8 @@ class MainWindow(QtWidgets.QMainWindow):
             self.enable_cal += int(state) << i
 
         ## Set DIO to MCU
-        await dev.setDIOCurrent(port, mask = 255, enabled = self.enable_cal, direction = 255, state = self.state_cal)
+        await dev.openDOInPins(port, self.enable_cal, self.state_cal)
+ 
 
     @asyncSlot() 
     async def stateDOEvent(self):
@@ -103,7 +107,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.state_cal += int(state) << i
 
         ## Set DIO to MCU
-        await dev.setDIOCurrent(port, mask = 255, enabled = self.enable_cal, direction = 255, state = self.state_cal)    
+        await dev.openDOInPins(port, self.enable_cal, self.state_cal)
  
 
     @asyncSlot() 
@@ -137,7 +141,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def closeEvent(self, event):
         ## Disconnect network device
         dev.disconnect()
-        
+
         ## Release device handle
         dev.close()
  
