@@ -25,13 +25,14 @@ async def main():
         print("Firmware model: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## Open pin0, pin1, pin2, pin3, pin4 to digital output
-        await dev.openDOInPins(0,[0,1,2,3,4],[0,3,4])
+        ## Open pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output
+        ## Set pin0, pin3 and pin4 to digital high, others to digital low
+        await dev.openDOInPins(0, [0,1,2,3,4], [0,3,4])
 
-        ## Set pin0, pin3, pin4 to digital high, others to digital low
-        await dev.openDIInPins(1,[4,5,6,7])
+        ## Open pin4, pin5, pin6 and pin7 in port 1 with digital input 
+        await dev.openDIInPins(1, [4,5,6,7])
 
-        ## Read DI state in slot 1 with pin4, pin5, pin6 and pin7
+        ## Read pin4, pin5, pin6 and pin7 state in port 1 
         state_list = await dev.readDIInPins(1, [4,5,6,7])
         print(state_list)
 
@@ -41,11 +42,11 @@ async def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Close pin0, pin1, pin2, pin3 in slot 0 with digital output 
+    ## Close pin0, pin1, pin2 and pin3 in port 0 with digital output 
     await dev.closeDOInPins(0, [0,1,2,3,4])
 
-    ## Close pin4, pin5, pin6, pin7 in slot 1 with digital input
-    await dev.closeDIInPins(1,[4,5,6,7])
+    ## Close pin4, pin5, pin6 and pin7 in port 1 with digital input
+    await dev.closeDIInPins(1, [4,5,6,7])
     
     ## Disconnect network device
     dev.disconnect()
