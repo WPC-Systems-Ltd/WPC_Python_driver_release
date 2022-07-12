@@ -14,6 +14,14 @@ v0.0.3 Date: 2022/07/07, Developer: Chunglee_people
 - Add `WPC_Led_blue.png` & `WPC_Led_red.png` & `WPC_Led_green.png` files
 - Add `checkConnectionStatus` function to protect UI from error
 - Add led png file path
+- Add DIO example code
+  - `DIO/example_DI_read_in_pins.py`
+  - `DIO/example_DI_read_in_slot.py`
+  - `DIO/example_DO_write_in_pins.py`
+  - `DIO/example_DO_write_in_slot.py` 
+  - `DIO/example_DO_toggle_in_pins.py` 
+  - `DIO/example_DO_toggle_in_slot.py`
+  - `General/example_get_pinmode.py`
 
 v0.0.2 Date: 2022/07/01, Developer: Chunglee_people
 ---------------------------------------------------
