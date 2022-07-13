@@ -102,7 +102,7 @@ class MainWindow(QtWidgets.QMainWindow):
     @asyncSlot() 
     async def loop_fct(self, num_of_sample, delay): 
         while True:
-            data = await dev.readAIStreaming(num_of_sample, delay)
+            data = await dev.AI_readStreaming(num_of_sample, delay)
             if data is not None:
                 self.setDisplayPlotNums(data, self.ai_n_samples)
             else: 
@@ -114,7 +114,7 @@ class MainWindow(QtWidgets.QMainWindow):
             return
         get_mode = self.ui.comboBox_aiMode.currentIndex()
         if get_mode == 0: ## On Demand
-            ondemanddata = await dev.readAIOnDemand()
+            ondemanddata = await dev.AI_readOnDemand()
             self.setDisplayPlotNums([ondemanddata], self.ai_n_samples)
         else: ## N-Samples/ Continuous 
             await dev.startAI()
@@ -123,7 +123,7 @@ class MainWindow(QtWidgets.QMainWindow):
     async def stopAIEvent(self): 
         if self.checkConnectionStatus() == False:
             return
-        await dev.stopAI()
+        await dev.AI_stopAI()
 
     @asyncSlot()
     async def chooseAIModeEvent(self, *args):
@@ -131,7 +131,7 @@ class MainWindow(QtWidgets.QMainWindow):
             return
         # Get AI mode from MainUI window
         get_mode = int(self.ui.comboBox_aiMode.currentIndex())
-        await dev.setAIMode(get_mode)
+        await dev.AI_setMode(get_mode)
 
     @asyncSlot()
     async def setSamplingRateEvent(self):
@@ -140,7 +140,7 @@ class MainWindow(QtWidgets.QMainWindow):
         # Get Sampling rate from MainUI window
         sampling_rate = float(self.ui.lineEdit_samplingRate.text())
         self.ai_sampling_rate = sampling_rate
-        await dev.setAISamplingRate(sampling_rate)
+        await dev.AI_setSamplingRate(sampling_rate)
 
 
     @asyncSlot()
@@ -150,7 +150,7 @@ class MainWindow(QtWidgets.QMainWindow):
         # Get NumSamples from MainUI window
         n_samples = int(self.ui.lineEdit_numSamples.text())
         self.ai_n_samples = n_samples
-        await dev.setAINumSamples(n_samples)
+        await dev.AI_setNumSamples(n_samples)
       
 
     def plotInitial(self):

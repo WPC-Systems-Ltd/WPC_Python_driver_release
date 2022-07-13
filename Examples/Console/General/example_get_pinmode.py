@@ -1,6 +1,5 @@
 import asyncio
 import sys
-
 sys.path.insert(0, 'src/')
 # sys.path.insert(0, 'pywpc/')
 # sys.path.insert(0, '../../../pywpc/')
@@ -23,13 +22,13 @@ async def main():
 
     try: 
         ## Get firmware model & version
-        driver_info = await dev.getDriverInfo()
+        driver_info = await dev.sys_getDriverInfo()
         print("Firmware model: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
         
         ## Get pinmode from port 0 to port 3
         for i in range(4):
-            pin_mode_status = await dev.getPinModeInPort(i)
+            pin_mode_status = await dev.sys_getPinModeInPort(i)
             print(f'pins: {pin_mode_status[0]}, slot{i}, mode {pin_mode_status[1]}') 
 
             ## Wait for 0.5 seconds
@@ -39,14 +38,14 @@ async def main():
 
         ## Open pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output
         ## Set pin0, pin3 and pin4 to digital high, others to digital low
-        await dev.openDOInPins(0, [0,1,2,3,4], [0,3,4])
+        await dev.DO_openPins(0, [0,1,2,3,4], [0,3,4])
 
         ## Open pin4, pin5, pin6 and pin7 in port 1 with digital input 
-        await dev.openDIInPins(1, [4,5,6,7])
+        await dev.DI_openPins(1, [4,5,6,7])
 
         ## Get pinmode from port 0 to port 3
         for i in range(4):
-            pin_mode_status = await dev.getPinModeInPort(i)
+            pin_mode_status = await dev.sys_getPinModeInPort(i)
             print(f'pins: {pin_mode_status[0]}, slot{i}, mode {pin_mode_status[1]}') 
             ## Wait for 0.5 seconds
             await asyncio.sleep(0.5)  ## delay(second)
@@ -55,13 +54,13 @@ async def main():
         await asyncio.sleep(1)  ## delay(second)
 
         ## Set port 0 to idle
-        await dev.setPortIdle(0)
+        await dev.sys_setPortIdle(0)
         print()
         print("====================")
                 
         ## Get pinmode from port 0 to port 3
         for i in range(4):
-            pin_mode_status = await dev.getPinModeInPort(i)
+            pin_mode_status = await dev.sys_getPinModeInPort(i)
             print(f'pins: {pin_mode_status[0]}, slot{i}, mode {pin_mode_status[1]}') 
             ## Wait for 0.5 seconds
             await asyncio.sleep(0.5)  ## delay(second)
@@ -70,10 +69,10 @@ async def main():
         pywpc.printGenericError(err)
  
     ## Close pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output 
-    await dev.closeDOInPins(0, [0,1,2,3,4])
+    await dev.DO_closePins(0, [0,1,2,3,4])
 
     ## Close pin4, pin5, pin6 and pin7 in port 1 with digital input
-    await dev.closeDIInPins(1, [4,5,6,7])
+    await dev.DI_closePins(1, [4,5,6,7])
     
     ## Disconnect network device
     dev.disconnect()

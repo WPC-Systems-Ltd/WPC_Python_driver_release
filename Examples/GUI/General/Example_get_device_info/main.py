@@ -77,13 +77,13 @@ class MainWindow(QtWidgets.QMainWindow):
 
         self.clearErrorStatus()
         ## Get firmware model & version
-        driver_info = await dev.getDriverInfo()
+        driver_info = await dev.sys_getDriverInfo()
         model = driver_info[0]
         version = driver_info[-1]
-        ip, submask = await dev.getIPAddrAndSubmask()
-        serial_number = await dev.getSerialNumber()
-        mac = await dev.getMACAddr()
-        rtc = await dev.getRTCDateTime()
+        ip, submask = await dev.sys_getIPAddrAndSubmask()
+        serial_number = await dev.sys_getSerialNumber()
+        mac = await dev.sys_getMACAddr()
+        rtc = await dev.sys_getRTC()
 
         self.ui.lineEdit_ip.setText(ip)
         self.ui.lineEdit_sbk.setText(submask)

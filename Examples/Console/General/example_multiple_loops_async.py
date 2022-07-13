@@ -6,13 +6,13 @@ import pywpc
 
 async def readRSSI_loop(handle, delay):
     while True:
-        data = await handle.readRSSI()
+        data = await handle.Wifi_readRSSI()
         print("RSSI: " + str(data) + " dBm")
         await asyncio.sleep(delay)  ## delay(second)
 
 async def readBattery_loop(handle, delay):
     while True:
-        data = await handle.readBattery()
+        data = await handle.Wifi_readBattery()
         print("Battery: "+ str(data) + " mV")
         await asyncio.sleep(delay)  ## delay(second)
 

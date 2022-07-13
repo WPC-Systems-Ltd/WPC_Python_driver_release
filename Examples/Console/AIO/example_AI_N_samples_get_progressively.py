@@ -7,7 +7,7 @@ import pywpc
 async def loop_fct(handle, timeout, num_of_samples, delay):
     t = 0
     while t < timeout:
-        data = await handle.readAIStreaming(num_of_samples, delay)
+        data = await handle.AI_readStreaming(num_of_samples, delay)
         if data is not None:
             print(data)
             print("Get data points: " + str(len(data)))
@@ -30,10 +30,10 @@ async def main():
 
     ## Perform data acquisition
     try:
-        await dev.setAIMode(1) ## Set acquisition mode to N-samples mode (1)
-        await dev.setAISamplingRate(5000) ## Set sampling rate to 5k (Hz)
-        await dev.setAINumSamples(3000) ## Set # of samples to 3000 (pts)
-        await dev.startAI()## Start acquisition
+        await dev.AI_setMode(1) ## Set acquisition mode to N-samples mode (1)
+        await dev.AI_setSamplingRate(5000) ## Set sampling rate to 5k (Hz)
+        await dev.AI_setNumSamples(3000) ## Set # of samples to 3000 (pts)
+        await dev.AI_start()## Start acquisition
         await loop_fct(dev, timeout = 1, num_of_samples = 600, delay = 0.005) ## Read acquisition data from async thread  # delay (sec)
     except Exception as err:
         pywpc.printGenericError(err) 

@@ -8,13 +8,13 @@ import pywpc
 import time
 
 async def getRSSI(handle, delay):
-    data = await handle.readRSSI()
+    data = await handle.Wifi_readRSSI()
     print("RSSI: " + str(data) + " dBm")
     await asyncio.sleep(delay)  ## delay(second)
 
 def RSSI_thread(handle, delay):
     while True:
-        asyncio.run(getRSSI(handle), delay)
+        asyncio.run(getRSSI(handle, delay))
         time.sleep(delay)
 
 async def main():
@@ -34,7 +34,7 @@ async def main():
         
     ## Perform two sync thread to query data
     try:
-        _threadRSSI = threading.Thread(target = RSSI_thread, args=[dev])
+        _threadRSSI = threading.Thread(target = RSSI_thread, args=[dev, 0.5])
         _threadRSSI.start()
     except Exception as err:
         pywpc.printGenericError(err)

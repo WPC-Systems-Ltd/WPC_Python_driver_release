@@ -63,7 +63,7 @@ class MainWindow(QtWidgets.QMainWindow):
         QApplication.setOverrideCursor(Qt.WaitCursor)
         self.broadcast_list.clear()
         self.ui.tableWidget_brst.setRowCount(0) 
-        broadcast_info = await dev.getDeviceInfo()
+        broadcast_info = await dev.brst_getDeviceInfo()
         device_amount = len(broadcast_info) 
         for i in range (device_amount):
             ip      = broadcast_info[i][0]

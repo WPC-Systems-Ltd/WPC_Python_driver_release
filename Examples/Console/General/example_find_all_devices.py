@@ -21,7 +21,7 @@ async def main():
 
     ## Perform device information
     try:
-        print(f'Broadcast -' + str(await dev.getDeviceInfo()))
+        print(f'Broadcast -' + str(await dev.brst_getDeviceInfo()))
     except Exception as err:
         pywpc.printGenericError(err)
 

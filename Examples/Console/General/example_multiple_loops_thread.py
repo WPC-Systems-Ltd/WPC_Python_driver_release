@@ -7,12 +7,12 @@ import pywpc
 import time
 
 async def getRSSI(handle, delay):
-    data = await handle.readRSSI()
+    data = await handle.Wifi_readRSSI()
     print("RSSI: " + str(data) + " dBm")
     await asyncio.sleep(delay)  # delay(second)
 
 async def getBattery(handle, delay):
-    data = await handle.readBattery()
+    data = await handle.Wifi_readBattery()
     print("Battery: "+ str(data) + " mV")
     await asyncio.sleep(delay)  # delay(second)
 

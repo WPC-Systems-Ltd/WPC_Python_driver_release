@@ -6,9 +6,9 @@ import pywpc
 
 async def loop_fct(handle, delay):
     while True:
-        data1 = await handle.readRSSI()
-        data2 = await handle.readBattery()
-        data3 = await handle.readThermo()
+        data1 = await handle.Wifi_readRSSI()
+        data2 = await handle.Wifi_readBattery()
+        data3 = await handle.Wifi_readThermo()
 
         print("RSSI: " + str(data1) + " dBm")
         print("Battery: "+ str(data2) + " mV")

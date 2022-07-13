@@ -6,7 +6,7 @@ import pywpc
 
 async def loop_fct(handle, delay):
     while True:
-        data =  await handle.readAIOnDemand()
+        data =  await handle.AI_readOnDemand()
         print("data :" + str(data))
         await asyncio.sleep(delay)
 

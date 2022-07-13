@@ -7,7 +7,7 @@ import pywpc
 async def loop_fct(handle, timeout, delay): 
     t = 0
     while t < timeout: ## timeout(second)
-        data = await handle.readRSSI()
+        data = await handle.Wifi_readRSSI()
         print("RSSI: " + str(data) + " dBm")
         await asyncio.sleep(delay)  ## delay(second)
         t += delay
@@ -42,7 +42,6 @@ async def main():
 
     print("End example code...")
     return
-
 
 if __name__ == '__main__': 
     asyncio.run(main())
