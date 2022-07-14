@@ -1,20 +1,10 @@
-import sys 
+import sys
 import asyncio
 sys.path.insert(0, 'pywpc/')
 sys.path.insert(0, '../../../pywpc/')
 import pywpc
 
-async def loop_func(handle, timeout = 1, num_of_samples = 600, delay = 0.005):
-    t = 0
-    while t < timeout:
-        ## data acquisition
-        data = await handle.AI_readStreaming(num_of_samples, delay)
-        if data is not None:
-            print(data)
-            print("Get data points: " + str(len(data)))
-        t += delay
-
-async def main(): 
+async def main():
     print("Start example code...")
 
     ## Get Python driver version
@@ -27,15 +17,18 @@ async def main():
     try:
         dev.connect("192.168.5.79")
     except Exception as err:
-        pywpc.printGenericError(err)
-
+        pywpc.printGenericError(err) 
+    
     ## Perform data acquisition
-    try:
+    try:  
         await dev.AI_setMode(1) ## Set acquisition mode to N-samples mode (1)
-        await dev.AI_setSamplingRate(5000) ## Set sampling rate to 5k (Hz)
-        await dev.AI_setNumSamples(3000) ## Set # of samples to 3000 (pts)
+        await dev.AI_setSamplingRate(1000) ## Set sampling rate to 1k (Hz)
+        await dev.AI_setNumSamples(50) ## Set # of samples to 50 (pts)
         await dev.AI_start() ## Start acquisition
-        await loop_func(dev, 1, 600, 0.005) ## Start async thread
+        await asyncio.sleep(1) ## Wait amount of time (sec)
+        data = await dev.AI_readStreaming(50) ## Get 50 points 
+        print("Get data points: " + str(len(data))) ## Read acquisition data 50 points 
+        print("Get data: " + str(data))
     except Exception as err:
         pywpc.printGenericError(err) 
 
@@ -48,5 +41,5 @@ async def main():
     print("End example code...")
     return
 
-if __name__ == '__main__': 
+if __name__ == '__main__':
     asyncio.run(main())

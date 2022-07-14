@@ -22,18 +22,25 @@ async def main():
     try: 
         ## Get firmware model & version
         driver_info = await dev.sys_getDriverInfo()
-        print("Firmware model: " + driver_info[0])
+        print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
  
-        ## Open pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output
-        ## Set pin0, pin3 and pin4 to digital high, others to digital low
-        await dev.DO_openPins(0, [0,1,2,3,4], [0,3,4])
+        ## Open pin0 and pin7 in port 0 with digital output
+        port = 0
+        pinindex =[0,7]
 
-        ## Toggle digital state for 10 times. Each times delay for 0.5 second
-        ## Toggle pin0, pin1, pin2 and pin3 digital state
+        await dev.DO_openPins(port, pinindex)
+
         for i in range(10):
-            state = await dev.DO_togglePins(0, [0,1,2,3])
-            print(f'Port 0, digital state = {state}') 
+            if i%2 == 0:
+                value = [0,1]
+            else:
+                value = [1,0]
+
+            await dev.DO_writeValuePins(port, pinindex, value) 
+            
+            print(f'Port: {port}, pinindex = {pinindex}, digital state = {value}') 
+            
             await asyncio.sleep(0.5)  ## delay(second)
 
         ## Wait for 3 seconds
@@ -43,7 +50,7 @@ async def main():
         pywpc.printGenericError(err)
 
     ## Close pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output 
-    await dev.DO_closePins(0, [0,1,2,3,4])
+    await dev.DO_closePins(port, pinindex)
  
     ## Disconnect network device
     dev.disconnect()

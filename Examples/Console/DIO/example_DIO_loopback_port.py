@@ -1,5 +1,6 @@
 import asyncio
 import sys
+# sys.path.insert(0, 'src/')
 sys.path.insert(0, 'pywpc/')
 sys.path.insert(0, '../../../pywpc/')
 import pywpc
@@ -22,18 +23,22 @@ async def main():
     try: 
         ## Get firmware model & version
         driver_info = await dev.sys_getDriverInfo()
-        print("Firmware model: " + driver_info[0])
+        print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-
+        
+        port_DO = 0
+        port_DI = 1 
         ## Open all pins in port 0 with digital output 
-        ## Set pin1 to digital high
-        await dev.DO_openPort(0, [1])
+        await dev.DO_openPort(port_DO)
 
+        ## Set pin0, pin1 and pin2 to high, others to low
+        await dev.DO_writeValuePort(port_DO, [0,0,0,0,0,1,1,1])
+       
         ## Open all pins in port 1 with digital input
-        await dev.DI_openPort(1)
+        await dev.DI_openPort(port_DI)
  
         ## Read all pins state in port 1
-        state_list = await dev.DI_readPort(1)
+        state_list = await dev.DI_readPort(port_DI)
         print(state_list)
 
         ## Wait for 3 seconds
@@ -43,10 +48,10 @@ async def main():
         pywpc.printGenericError(err)
 
     ## Close all pins in port 0 with digital output
-    await dev.DO_closePort(0)
+    await dev.DO_closePort(port_DO)
 
     ## Close all pins in port 1 with digital input
-    await dev.DI_closePort(1)
+    await dev.DI_closePort(port_DI)
 
     ## Disconnect network device
     dev.disconnect()

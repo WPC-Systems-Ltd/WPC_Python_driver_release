@@ -4,7 +4,7 @@ sys.path.insert(0, 'pywpc/')
 sys.path.insert(0, '../../../pywpc/')
 import pywpc
 
-async def loop_fct(handle, delay):
+async def loop_func(handle, delay = 1):
     while True:
         data1 = await handle.Wifi_readRSSI()
         data2 = await handle.Wifi_readBattery()
@@ -32,7 +32,7 @@ async def main():
 
     ## Perform async thread to get RSSI, Battery and Thermo in once loop
     try:
-        await loop_fct(dev, delay = 1)  ## delay (second)
+        await loop_func(dev, 1)  ## delay (second)
     except Exception as err:
         pywpc.printGenericError(err)
 
