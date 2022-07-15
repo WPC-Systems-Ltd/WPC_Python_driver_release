@@ -1,0 +1,7 @@
+USB-DAQ-F1-AOD
+==============
+
+.. autoclass:: pywpc.USBDAQF1AOD
+   :members:
+   :undoc-members:
+   :inherited-members:

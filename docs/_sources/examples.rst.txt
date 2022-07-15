@@ -1,0 +1,49 @@
+Example codes
+=============
+
+General
+-------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/General/get_device_info
+   examples/General/find_all_devices
+   examples/General/get_Wifi_DAQ_status
+   examples/General/get_pin_mode
+
+Tutorial
+--------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Tutorial/single_loop_thread
+   examples/Tutorial/single_loop_async
+   examples/Tutorial/multiple_loops_thread
+   examples/Tutorial/multiple_loops_async
+
+AIO
+---
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/AIO/AI_continuous
+   examples/AIO/AI_on_demand_in_loop
+   examples/AIO/AI_N_samples_once
+   examples/AIO/AI_N_samples_get_progressively
+   examples/AIO/AI_on_demand_once
+
+DIO
+---
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/DIO/DIO_loopback_pins
+   examples/DIO/DIO_loopback_port
+   examples/DIO/DO_write_pins
+   examples/DIO/DO_write_port
+   examples/DIO/DO_blinky_pins
+   examples/DIO/DO_blinky_port

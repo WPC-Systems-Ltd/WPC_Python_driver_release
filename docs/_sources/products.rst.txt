@@ -1,0 +1,37 @@
+API reference by product
+========================
+
+Device finder
+-------------
+
+.. toctree::
+   :maxdepth: 4
+
+   products/Broadcaster
+
+Wireless devices
+----------------
+
+.. toctree::
+   :maxdepth: 4
+
+   products/WifiDAQE3A
+
+Ethernet devices
+----------------
+
+.. toctree::
+   :maxdepth: 4
+
+   products/EthanD
+   products/EthanA
+
+USB devices
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   products/USBDAQF1D
+   products/USBDAQF1DSNK
+   products/USBDAQF1AOD

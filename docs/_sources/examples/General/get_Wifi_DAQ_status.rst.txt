@@ -1,0 +1,6 @@
+example get Wifi DAQ status
+===========================
+
+.. literalinclude:: ../../../../examples/General/example_get_Wifi_DAQ_status.py
+   :language: python
+   :linenos:

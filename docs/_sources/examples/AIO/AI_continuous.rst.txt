@@ -1,0 +1,6 @@
+example AI continuous
+=====================
+
+.. literalinclude:: ../../../../examples/AIO/example_AI_continuous.py
+   :language: python
+   :linenos:

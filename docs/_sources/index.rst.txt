@@ -1,0 +1,12 @@
+pywpc - WPC Python Device Driver
+================================
+
+.. automodule:: pywpc
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+   :caption: User resources
+
+   products
+   examples

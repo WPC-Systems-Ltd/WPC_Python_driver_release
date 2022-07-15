@@ -1,0 +1,7 @@
+Broadcaster
+===========
+
+.. autoclass:: pywpc.Broadcaster
+   :members:
+   :undoc-members:
+   :inherited-members:

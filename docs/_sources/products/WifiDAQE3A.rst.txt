@@ -1,0 +1,7 @@
+Wifi-DAQ-E3-A
+=============
+
+.. autoclass:: pywpc.WifiDAQE3A
+   :members:
+   :undoc-members:
+   :inherited-members:
