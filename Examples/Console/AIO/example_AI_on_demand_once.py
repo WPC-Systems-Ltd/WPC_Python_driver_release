@@ -19,8 +19,8 @@ async def main():
     except Exception as err:
         pywpc.printGenericError(err)
         
-    ## data acquisition
-    data =  await dev.AI_readOnDemand()
+    ## Set AI port to 1 and data acquisition
+    data =  await dev.AI_readOnDemand(1)
     print("data :" + str(data))
  
     ## Disconnect network device

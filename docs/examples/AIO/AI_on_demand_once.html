@@ -108,8 +108,8 @@
 <span class="linenos">19</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos">20</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="linenos">21</span>        
-<span class="linenos">22</span>    <span class="c1">## data acquisition</span>
-<span class="linenos">23</span>    <span class="n">data</span> <span class="o">=</span>  <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_readOnDemand</span><span class="p">()</span>
+<span class="linenos">22</span>    <span class="c1">## Set AI port to 1 and data acquisition</span>
+<span class="linenos">23</span>    <span class="n">data</span> <span class="o">=</span>  <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_readOnDemand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="linenos">24</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;data :&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 <span class="linenos">25</span> 
 <span class="linenos">26</span>    <span class="c1">## Disconnect network device</span>

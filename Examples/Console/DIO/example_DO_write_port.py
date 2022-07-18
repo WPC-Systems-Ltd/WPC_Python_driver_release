@@ -26,7 +26,7 @@ async def main():
         print("Firmware version: " + driver_info[-1])
 
         port = 0
-
+        
         ## Open all pins in port 0 and set it to digital output
         await dev.DO_openPort(port)
         
