@@ -154,18 +154,21 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.sys_reboot" title="pywpc.EthanA.sys_reboot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_reboot</span></code></a>()</p></td>
 <td><p>Reboot from the connected WPC device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.sys_setIPAddrAndSubmask" title="pywpc.EthanA.sys_setIPAddrAndSubmask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_setIPAddrAndSubmask</span></code></a>(ip_addr[, subnet_mask])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.sys_rebootOnBootloader" title="pywpc.EthanA.sys_rebootOnBootloader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_rebootOnBootloader</span></code></a>()</p></td>
+<td><p>Reboot On bootloader from the connected WPC device.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.sys_setIPAddrAndSubmask" title="pywpc.EthanA.sys_setIPAddrAndSubmask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_setIPAddrAndSubmask</span></code></a>(ip_addr[, subnet_mask])</p></td>
 <td><p>Set IP address and subnet mask to the connected web device.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.sys_setRTC" title="pywpc.EthanA.sys_setRTC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_setRTC</span></code></a>(year, month, day, hour, minute, ...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.sys_setRTC" title="pywpc.EthanA.sys_setRTC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_setRTC</span></code></a>(year, month, day, hour, minute, ...)</p></td>
 <td><p>Set date and time to connected WPC device.</p></td>
 </tr>
 </tbody>
 </table>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 72%" />
-<col style="width: 28%" />
+<col style="width: 58%" />
+<col style="width: 42%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>close</strong></p></td>
@@ -175,9 +178,6 @@
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><strong>disconnect</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>sys_rebootOnBootloader</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -587,7 +587,19 @@ A sample is a list of values measured from different channels.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EthanA.sys_rebootOnBootloader">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sys_rebootOnBootloader</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanA.sys_rebootOnBootloader" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Reboot On bootloader from the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 : Success</p></li>
+<li><p>Others: Error</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EthanA.sys_setIPAddrAndSubmask">
@@ -621,22 +633,34 @@ A sample is a list of values measured from different channels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>year</strong><span class="classifier">int</span></dt><dd></dd>
-<dt><strong>month</strong><span class="classifier">int</span></dt><dd></dd>
-<dt><strong>day</strong><span class="classifier">int</span></dt><dd></dd>
-<dt><strong>hour</strong><span class="classifier">int</span></dt><dd></dd>
-<dt><strong>minute</strong><span class="classifier">int</span></dt><dd></dd>
-<dt><strong>second</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<dt><strong>year</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>year (CE)</p></li>
+</ul>
+</dd>
+<dt><strong>month</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>month (1~12)</p></li>
+</ul>
+</dd>
+<dt><strong>day</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>day (1~31)</p></li>
+</ul>
+</dd>
+<dt><strong>hour</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>hour (24-hour clock)(0~23)</p></li>
+</ul>
+</dd>
+<dt><strong>minute</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>minute (0~59)</p></li>
+</ul>
+</dd>
+<dt><strong>second</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>second (0~59)</p></li>
 </ul>
 </dd>
-<dt><strong>Returns</strong></dt><dd></dd>
-<dt><strong>——-</strong></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 : Success</p></li>
 <li><p>Others: Error</p></li>

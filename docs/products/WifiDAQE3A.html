@@ -129,25 +129,25 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.AI_stop" title="pywpc.WifiDAQE3A.AI_stop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_stop</span></code></a>(port)</p></td>
 <td><p>Stop N samples or continuous AI acquisition.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_getWifiBandwidth" title="pywpc.WifiDAQE3A.Wifi_getWifiBandwidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_getWifiBandwidth</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_getWifiBandwidth" title="pywpc.WifiDAQE3A.Wifi_getWifiBandwidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_getWifiBandwidth</span></code></a>([port])</p></td>
 <td><p>Get bandwidth from Wifi device.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_getWifiConfiguration" title="pywpc.WifiDAQE3A.Wifi_getWifiConfiguration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_getWifiConfiguration</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_getWifiConfiguration" title="pywpc.WifiDAQE3A.Wifi_getWifiConfiguration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_getWifiConfiguration</span></code></a>([port])</p></td>
 <td><p>Get Wifi reconnection times and AP stay time.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readAccleration" title="pywpc.WifiDAQE3A.Wifi_readAccleration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readAccleration</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readAccleration" title="pywpc.WifiDAQE3A.Wifi_readAccleration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readAccleration</span></code></a>([port])</p></td>
 <td><p>Get acceleration from sensor if the Wifi device has one.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readBattery" title="pywpc.WifiDAQE3A.Wifi_readBattery"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readBattery</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readBattery" title="pywpc.WifiDAQE3A.Wifi_readBattery"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readBattery</span></code></a>([port])</p></td>
 <td><p>Get volatge status of battery if the Wifi device has one.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readRSSI" title="pywpc.WifiDAQE3A.Wifi_readRSSI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readRSSI</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readRSSI" title="pywpc.WifiDAQE3A.Wifi_readRSSI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readRSSI</span></code></a>([port])</p></td>
 <td><p>Get Wifi RSSI signal of the connected Wifi device.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readThermo" title="pywpc.WifiDAQE3A.Wifi_readThermo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readThermo</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readThermo" title="pywpc.WifiDAQE3A.Wifi_readThermo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readThermo</span></code></a>([port])</p></td>
 <td><p>Get temperature from thermal sensor if the Wifi device has one.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_setAP" title="pywpc.WifiDAQE3A.Wifi_setAP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_setAP</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_setAP" title="pywpc.WifiDAQE3A.Wifi_setAP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_setAP</span></code></a>([port])</p></td>
 <td><p>Change from station mode to AP mode for Wifi device.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.sys_getDriverInfo" title="pywpc.WifiDAQE3A.sys_getDriverInfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_getDriverInfo</span></code></a>()</p></td>
@@ -174,18 +174,21 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.sys_reboot" title="pywpc.WifiDAQE3A.sys_reboot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_reboot</span></code></a>()</p></td>
 <td><p>Reboot from the connected WPC device.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.sys_setIPAddrAndSubmask" title="pywpc.WifiDAQE3A.sys_setIPAddrAndSubmask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_setIPAddrAndSubmask</span></code></a>(ip_addr[, subnet_mask])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.sys_rebootOnBootloader" title="pywpc.WifiDAQE3A.sys_rebootOnBootloader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_rebootOnBootloader</span></code></a>()</p></td>
+<td><p>Reboot On bootloader from the connected WPC device.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.sys_setIPAddrAndSubmask" title="pywpc.WifiDAQE3A.sys_setIPAddrAndSubmask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_setIPAddrAndSubmask</span></code></a>(ip_addr[, subnet_mask])</p></td>
 <td><p>Set IP address and subnet mask to the connected web device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.sys_setRTC" title="pywpc.WifiDAQE3A.sys_setRTC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_setRTC</span></code></a>(year, month, day, hour, minute, ...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.sys_setRTC" title="pywpc.WifiDAQE3A.sys_setRTC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_setRTC</span></code></a>(year, month, day, hour, minute, ...)</p></td>
 <td><p>Set date and time to connected WPC device.</p></td>
 </tr>
 </tbody>
 </table>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 72%" />
-<col style="width: 28%" />
+<col style="width: 58%" />
+<col style="width: 42%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>close</strong></p></td>
@@ -195,9 +198,6 @@
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><strong>disconnect</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>sys_rebootOnBootloader</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -458,7 +458,7 @@ A sample is a list of values measured from different channels.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_getWifiBandwidth">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_getWifiBandwidth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_getWifiBandwidth" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_getWifiBandwidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_getWifiBandwidth" title="Permalink to this definition"></a></dt>
 <dd><p>Get bandwidth from Wifi device.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -475,7 +475,7 @@ A sample is a list of values measured from different channels.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_getWifiConfiguration">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_getWifiConfiguration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_getWifiConfiguration" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_getWifiConfiguration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_getWifiConfiguration" title="Permalink to this definition"></a></dt>
 <dd><p>Get Wifi reconnection times and AP stay time.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -492,7 +492,7 @@ A sample is a list of values measured from different channels.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_readAccleration">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_readAccleration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_readAccleration" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_readAccleration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_readAccleration" title="Permalink to this definition"></a></dt>
 <dd><p>Get acceleration from sensor if the Wifi device has one.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -506,7 +506,7 @@ A sample is a list of values measured from different channels.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_readBattery">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_readBattery</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_readBattery" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_readBattery</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_readBattery" title="Permalink to this definition"></a></dt>
 <dd><p>Get volatge status of battery if the Wifi device has one.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -520,7 +520,7 @@ A sample is a list of values measured from different channels.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_readRSSI">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_readRSSI</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_readRSSI" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_readRSSI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_readRSSI" title="Permalink to this definition"></a></dt>
 <dd><p>Get Wifi RSSI signal of the connected Wifi device.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -534,7 +534,7 @@ A sample is a list of values measured from different channels.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_readThermo">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_readThermo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_readThermo" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_readThermo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_readThermo" title="Permalink to this definition"></a></dt>
 <dd><p>Get temperature from thermal sensor if the Wifi device has one.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -548,7 +548,7 @@ A sample is a list of values measured from different channels.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_setAP">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_setAP</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_setAP" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_setAP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_setAP" title="Permalink to this definition"></a></dt>
 <dd><p>Change from station mode to AP mode for Wifi device.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -714,7 +714,19 @@ A sample is a list of values measured from different channels.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.sys_rebootOnBootloader">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sys_rebootOnBootloader</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.sys_rebootOnBootloader" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Reboot On bootloader from the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 : Success</p></li>
+<li><p>Others: Error</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.sys_setIPAddrAndSubmask">
@@ -748,22 +760,34 @@ A sample is a list of values measured from different channels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>year</strong><span class="classifier">int</span></dt><dd></dd>
-<dt><strong>month</strong><span class="classifier">int</span></dt><dd></dd>
-<dt><strong>day</strong><span class="classifier">int</span></dt><dd></dd>
-<dt><strong>hour</strong><span class="classifier">int</span></dt><dd></dd>
-<dt><strong>minute</strong><span class="classifier">int</span></dt><dd></dd>
-<dt><strong>second</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<dt><strong>year</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>year (CE)</p></li>
+</ul>
+</dd>
+<dt><strong>month</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>month (1~12)</p></li>
+</ul>
+</dd>
+<dt><strong>day</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>day (1~31)</p></li>
+</ul>
+</dd>
+<dt><strong>hour</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>hour (24-hour clock)(0~23)</p></li>
+</ul>
+</dd>
+<dt><strong>minute</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>minute (0~59)</p></li>
+</ul>
+</dd>
+<dt><strong>second</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>second (0~59)</p></li>
 </ul>
 </dd>
-<dt><strong>Returns</strong></dt><dd></dd>
-<dt><strong>——-</strong></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 : Success</p></li>
 <li><p>Others: Error</p></li>
