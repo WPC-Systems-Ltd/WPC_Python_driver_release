@@ -55,7 +55,9 @@ async def main():
     dev.disconnect()
     
     ## Release device handle
-    dev.close() 
+    dev.close()
+
+    print("End example code...")
     return
 
 if __name__ == '__main__':

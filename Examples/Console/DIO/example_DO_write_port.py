@@ -53,6 +53,8 @@ async def main():
     
     ## Release device handle
     dev.close()
+
+    print("End example code...")
     return
 
 if __name__ == '__main__':

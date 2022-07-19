@@ -4,7 +4,7 @@ sys.path.insert(0, 'pywpc/')
 sys.path.insert(0, '../../../pywpc/')
 import pywpc
 
-async def loop_func(handle, port, delay = 1):
+async def loop_func(handle, port = 1, delay = 1):
     while True:
         ## data acquisition
         data =  await handle.AI_readOnDemand(port)
@@ -25,9 +25,9 @@ async def main():
         dev.connect("192.168.5.79")
     except Exception as err:
         pywpc.printGenericError(err)
-  
+        
+    ## Set AI port to 1 and start async thread
     try: 
-        ## Set AI port to 1 and start async thread
         await loop_func(dev, 1, 1)
     except Exception as err:
         pywpc.printGenericError(err)

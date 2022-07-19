@@ -4,10 +4,10 @@ sys.path.insert(0, 'pywpc/')
 sys.path.insert(0, '../../../pywpc/')
 import pywpc
 
-async def loop_func(handle, port, num_of_samples = 600, delay = 0.05):
+async def loop_func(handle, port = 1, num_of_samples = 600, delay = 0.05):
     while True:
         ## data acquisition
-        data = await handle.AI_readStreaming(port, num_of_samples, delay) # Get 600 points at a time 
+        data = await handle.AI_readStreaming(port, num_of_samples, delay) ## Get 600 points at a time 
         print("data :" + str(data))
         await asyncio.sleep(delay)
 
