@@ -2,7 +2,16 @@ WPC_Device_Driver_Example_GUI Version Changelog
 ===================================
 
 
+v0.0.4 Date: 2022/07/20, Developer: Chunglee_people
+---------------------------------------------------
+### Changed
+- Change WPC Python Version from `pywpc-0.1.13` to  `pywpc-0.1.14`  
 
+### Added
+- Add Thermo example code
+  - `Thermo/example_Thermo_read_channel_data.py`
+  - `Thermo/example_Thermo_read_channel_status.py`
+ 
 v0.0.3 Date: 2022/07/07, Developer: Chunglee_people
 ---------------------------------------------------
 ### Changed
