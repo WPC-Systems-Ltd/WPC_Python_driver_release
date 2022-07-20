@@ -47,3 +47,12 @@ DIO
    examples/DIO/DO_write_port
    examples/DIO/DO_blinky_pins
    examples/DIO/DO_blinky_port
+
+Thermo
+------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Thermo/Thermo_read_channel_data
+   examples/Thermo/Thermo_read_channel_status

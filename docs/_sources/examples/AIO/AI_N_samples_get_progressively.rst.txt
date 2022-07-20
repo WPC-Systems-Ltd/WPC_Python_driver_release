@@ -1,6 +1,6 @@
 example AI N_samples get progressively
 ======================================
 
-.. literalinclude:: ../../../../examples/AIO/example_AI_N_samples_get_progressively.py
+.. literalinclude:: ../../../../../../WPC_Python_driver_release/Examples/Console/AIO/example_AI_N_samples_get_progressively.py
    :language: python
    :linenos:
