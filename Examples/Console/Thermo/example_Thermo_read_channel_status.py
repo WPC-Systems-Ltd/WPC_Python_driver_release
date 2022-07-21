@@ -35,14 +35,14 @@ async def main():
 
         ## Get status in channel 0 
         status = await dev.Thermal_getStatus(port, 0)
-        if status == 0: print("setOverSampling: OK")
+        if status == 0: print("Thermal_getStatus in port 0: OK")
 
         ## Sleep
         await asyncio.sleep(0.1) ## delay(second)
 
         ## Get status in channel 1
         status = await dev.Thermal_getStatus(port, 1)
-        if status == 0: print("setOverSampling: OK")
+        if status == 0: print("Thermal_getStatus in port 1: OK")
 
     except Exception as err:
         pywpc.printGenericError(err)
