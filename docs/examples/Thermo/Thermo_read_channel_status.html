@@ -119,19 +119,19 @@
 <span class="linenos">30</span>        <span class="c1">## Open thermo port</span>
 <span class="linenos">31</span>        <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_open</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
 <span class="linenos">32</span>
-<span class="linenos">33</span>        <span class="c1">## Get status in channel 0 </span>
-<span class="linenos">34</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_getStatus</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="linenos">35</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="linenos">36</span>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;OK&quot;</span><span class="p">)</span>
-<span class="linenos">37</span>        <span class="k">else</span><span class="p">:</span> 
-<span class="linenos">38</span>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error&quot;</span><span class="p">)</span>
-<span class="linenos">39</span> 
-<span class="linenos">40</span>        <span class="c1">## Get status in channel 1</span>
-<span class="linenos">41</span>        <span class="n">status_1</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_getStatus</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="linenos">42</span>        <span class="k">if</span> <span class="n">status_1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="linenos">43</span>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;OK&quot;</span><span class="p">)</span>
-<span class="linenos">44</span>        <span class="k">else</span><span class="p">:</span> 
-<span class="linenos">45</span>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error&quot;</span><span class="p">)</span>
+<span class="linenos">33</span>        <span class="c1">## Sleep</span>
+<span class="linenos">34</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span> <span class="c1">## delay(second)</span>
+<span class="linenos">35</span>
+<span class="linenos">36</span>        <span class="c1">## Get status in channel 0 </span>
+<span class="linenos">37</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_getStatus</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos">38</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;setOverSampling: OK&quot;</span><span class="p">)</span>
+<span class="linenos">39</span>
+<span class="linenos">40</span>        <span class="c1">## Sleep</span>
+<span class="linenos">41</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span> <span class="c1">## delay(second)</span>
+<span class="linenos">42</span>
+<span class="linenos">43</span>        <span class="c1">## Get status in channel 1</span>
+<span class="linenos">44</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_getStatus</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos">45</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;setOverSampling: OK&quot;</span><span class="p">)</span>
 <span class="linenos">46</span>
 <span class="linenos">47</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos">48</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
