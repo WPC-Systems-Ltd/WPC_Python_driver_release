@@ -25,30 +25,28 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
       
-        port = 1
-
-        ## Open thermo port
-        await dev.Thermal_open(port)
+        ## Open thermo
+        await dev.Thermal_open()
 
         ## Sleep
         await asyncio.sleep(0.1) ## delay(second)
 
         ## Get status in channel 0 
-        status = await dev.Thermal_getStatus(port, 0)
-        if status == 0: print("Thermal_getStatus in port 0: OK")
+        status = await dev.Thermal_getStatus(0)
+        if status == 0: print("Thermal_getStatus in chaannel 0: OK")
 
         ## Sleep
         await asyncio.sleep(0.1) ## delay(second)
 
         ## Get status in channel 1
-        status = await dev.Thermal_getStatus(port, 1)
-        if status == 0: print("Thermal_getStatus in port 1: OK")
+        status = await dev.Thermal_getStatus(1)
+        if status == 0: print("Thermal_getStatus in chaannel 1: OK")
 
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Close thermo port
-    await dev.Thermal_close(port)
+    ## Close thermo
+    await dev.Thermal_close()
     
     ## Disconnect network device
     dev.disconnect()

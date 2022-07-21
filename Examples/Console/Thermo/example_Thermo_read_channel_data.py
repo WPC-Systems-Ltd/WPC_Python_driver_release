@@ -25,36 +25,36 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
       
-        port = 1
         channel = 1 
-        ## Open thermo port
-        await dev.Thermal_open(port)
+
+        ## Open thermo
+        await dev.Thermal_open()
 
         ## Sleep
         await asyncio.sleep(0.1) ## delay(second)
         
         ## Set over-sampling mode to no over-sampling in channel 1 
-        status = await dev.Thermal_setOverSampling(port, channel, 0)
+        status = await dev.Thermal_setOverSampling(channel, 0)
         if status == 0: print("setOverSampling: OK")   
 
         ## Sleep
         await asyncio.sleep(0.1) ## delay(second)
         
         ## Set K type in channel 1 
-        status = await dev.Thermal_setType(port, channel, 3)
+        status = await dev.Thermal_setType(channel, 3)
         if status == 0: print("setType: OK")   
  
         ## Sleep
         await asyncio.sleep(0.1) ## delay(second)
 
         ## Read thermo in channel 0 
-        data = await dev.Thermal_readSensor(port, channel)
+        data = await dev.Thermal_readSensor(channel)
         print("Read channel 0 data:", data, "°C")
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Close thermo port
-    await dev.Thermal_close(port)
+    ## Close thermo
+    await dev.Thermal_close()
     
     ## Disconnect network device
     dev.disconnect()
