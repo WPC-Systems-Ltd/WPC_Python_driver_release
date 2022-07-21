@@ -1,0 +1,6 @@
+example Thermo set type
+=======================
+
+.. literalinclude:: ../../../../../../WPC_Python_driver_release/Examples/Console/Thermo/example_Thermo_set_type.py
+   :language: python
+   :linenos:
