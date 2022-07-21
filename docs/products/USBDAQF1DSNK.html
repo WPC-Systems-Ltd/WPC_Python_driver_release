@@ -133,7 +133,7 @@
 <td><p>Write all pins state in specific port with digital output.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.sys_getDriverInfo" title="pywpc.USBDAQF1DSNK.sys_getDriverInfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_getDriverInfo</span></code></a>()</p></td>
-<td><p>Get firmware information.</p></td>
+<td><p>Get device firmware information.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.sys_getPinModeInPort" title="pywpc.USBDAQF1DSNK.sys_getPinModeInPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_getPinModeInPort</span></code></a>(port)</p></td>
 <td><p>Get pin mode in specific port.</p></td>
@@ -151,10 +151,10 @@
 <td><p>Reboot On bootloader from the connected WPC device.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.sys_setPortDI" title="pywpc.USBDAQF1DSNK.sys_setPortDI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_setPortDI</span></code></a>(port)</p></td>
-<td><p>Open port as DI</p></td>
+<td><p>Open port as DI.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.sys_setPortDO" title="pywpc.USBDAQF1DSNK.sys_setPortDO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_setPortDO</span></code></a>(port)</p></td>
-<td><p>Open port as DO</p></td>
+<td><p>Open port as DO.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.sys_setPortIdle" title="pywpc.USBDAQF1DSNK.sys_setPortIdle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_setPortIdle</span></code></a>(port)</p></td>
 <td><p>Set all pins in specific port to IDLE state.</p></td>
@@ -189,7 +189,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Port index from WPC Device.</p></li>
+<li><p>According to WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -201,8 +201,7 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -218,7 +217,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Port index from WPC Device.</p></li>
+<li><p>According to WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -226,8 +225,7 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -243,7 +241,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Port index from WPC Device.</p></li>
+<li><p>According to WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -255,8 +253,7 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -271,15 +268,16 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port index from WPC Device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>According to WPC device.</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -295,11 +293,11 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Port index from WPC Device.</p></li>
+<li><p>According to WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
-<li><p>Pin number you want to read</p></li>
+<li><p>Pin number you want to read.</p></li>
 </ul>
 </dd>
 </dl>
@@ -323,7 +321,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Port index from WPC Device.</p></li>
+<li><p>According to WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -347,12 +345,12 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Port index from WPC Device.</p></li>
+<li><p>According to WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">list</span></dt><dd><ul class="simple">
 <li><p>Pin number you want to close.</p></li>
-<li><p>for example, you want to close pin 0, pin 1 and pin 5.</p></li>
+<li><p>For example, you want to close pin 0, pin 1 and pin 5.</p></li>
 <li><p>pin [0,1,5].</p></li>
 </ul>
 </dd>
@@ -361,8 +359,7 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -378,7 +375,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Port index from WPC Device.</p></li>
+<li><p>According to WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -386,8 +383,7 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -403,12 +399,12 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Port index from WPC Device.</p></li>
+<li><p>According to WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
 <li><p>Pin number you want to set to digital output.</p></li>
-<li><p>for example, you want to open pin 0, pin 1 and pin 5.</p></li>
+<li><p>For example, you want to open pin 0, pin 1 and pin 5.</p></li>
 <li><p>pin [0,1,5].</p></li>
 </ul>
 </dd>
@@ -417,8 +413,7 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -434,7 +429,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Port index from WPC Device.</p></li>
+<li><p>According to WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -442,8 +437,7 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -459,7 +453,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Port index from WPC Device.</p></li>
+<li><p>According to WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -470,7 +464,7 @@
 </dd>
 <dt><strong>value</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
 <li><p>Pin number you want to set high or low.</p></li>
-<li><p>high = 1, low = 0.</p></li>
+<li><p>High = 1, Low = 0.</p></li>
 <li><p>For example, set pin 0 and pin 1 to high, and pin 5 to low.</p></li>
 <li><p>value = [1,1,0].</p></li>
 </ul>
@@ -480,8 +474,7 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -497,15 +490,14 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Port index from WPC Device.</p></li>
+<li><p>According to WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>value</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
 <li><p>Pin number you want to set digital high or low.</p></li>
-<li><p>high = 1 , low = 0</p></li>
-<li><p>for example if intput type is list</p></li>
-<li><p>[0,0,0,0,1,1,1,1] in LSB</p></li>
-<li><p>pin7            pin0</p></li>
+<li><p>High = 1, Low = 0.</p></li>
+<li><p>For example if intput type is list.</p></li>
+<li><p>[0,0,0,0,1,1,1,1] in LSB.</p></li>
 </ul>
 </dd>
 </dl>
@@ -513,8 +505,7 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -540,11 +531,15 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1DSNK.sys_getDriverInfo">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sys_getDriverInfo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1DSNK.sys_getDriverInfo" title="Permalink to this definition"></a></dt>
-<dd><p>Get firmware information.</p>
+<dd><p>Get device firmware information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>driver_info</strong><span class="classifier">list</span></dt><dd><p>Information about device name, program mode and firmware version.</p>
+<dt><strong>driver_info</strong><span class="classifier">list of 3 string</span></dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[0]</span></code>: Model name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[1]</span></code>: Mode</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[2]</span></code>: Firmware version</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
@@ -559,12 +554,12 @@
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>pins</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>how many pins in specific port</p></li>
+<li><p>how many pins in specific port.</p></li>
 </ul>
 </dd>
-<dt><strong>pin_mode</strong><span class="classifier">list</span></dt><dd><ul class="simple">
-<li><p>[pin7, pin6 ,……pin0] in LSB</p></li>
-<li><p>pinmode : disabled, idle, DI, DO, UART, I2C, SPI, CAN, PWM and ADC</p></li>
+<dt><strong>pin_mode</strong><span class="classifier">list of 8 string</span></dt><dd><ul class="simple">
+<li><p>[pin7, pin6 ,……pin0] in LSB.</p></li>
+<li><p>pinmode : disabled, idle, DI, DO, UART, I2C, SPI, CAN, PWM and ADC.</p></li>
 </ul>
 </dd>
 </dl>
@@ -579,15 +574,13 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><p>Date and time represented by “A-B-C, D:E:F”, where</p>
-<ul class="simple">
-<li><p>“A” is year</p></li>
-<li><p>“B” is month</p></li>
-<li><p>“C” is day</p></li>
-<li><p>“D” is hour</p></li>
-<li><p>“E” is minute</p></li>
-<li><p>“F” is second</p></li>
-</ul>
+<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><p>Date and time represented by “A-B-C, D:E:F”.
+- “A” is year.
+- “B” is month.
+- “C” is day.
+- “D” is hour.
+- “E” is minute.
+- “F” is second.</p>
 </dd>
 </dl>
 </dd>
@@ -601,7 +594,9 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><p>Serial number represented by string of 8 characters.</p>
+<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><ul class="simple">
+<li><p>Serial number represented by string of 8 characters.</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
@@ -616,8 +611,7 @@
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -633,8 +627,7 @@
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -645,12 +638,12 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1DSNK.sys_setPortDI">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sys_setPortDI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1DSNK.sys_setPortDI" title="Permalink to this definition"></a></dt>
-<dd><p>Open port as DI</p>
+<dd><p>Open port as DI.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Port index from WPC Device.</p></li>
+<li><p>According to WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -658,8 +651,7 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -670,12 +662,12 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1DSNK.sys_setPortDO">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sys_setPortDO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1DSNK.sys_setPortDO" title="Permalink to this definition"></a></dt>
-<dd><p>Open port as DO</p>
+<dd><p>Open port as DO.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Port index from WPC Device.</p></li>
+<li><p>According to WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -683,8 +675,7 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -700,7 +691,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Port index from WPC Device.</p></li>
+<li><p>According to WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -708,8 +699,7 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -724,38 +714,23 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>year</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>year (CE)</p></li>
-</ul>
+<dt><strong>year</strong><span class="classifier">int</span></dt><dd><p>year (CE).</p>
 </dd>
-<dt><strong>month</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>month (1~12)</p></li>
-</ul>
+<dt><strong>month</strong><span class="classifier">int</span></dt><dd><p>month (1~12).</p>
 </dd>
-<dt><strong>day</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>day (1~31)</p></li>
-</ul>
+<dt><strong>day</strong><span class="classifier">int</span></dt><dd><p>day (1~31).</p>
 </dd>
-<dt><strong>hour</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>hour (24-hour clock)(0~23)</p></li>
-</ul>
+<dt><strong>hour</strong><span class="classifier">int</span></dt><dd><p>hour (24-hour clock) (0~23).</p>
 </dd>
-<dt><strong>minute</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>minute (0~59)</p></li>
-</ul>
+<dt><strong>minute</strong><span class="classifier">int</span></dt><dd><p>minute (0~59).</p>
 </dd>
-<dt><strong>second</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>second (0~59)</p></li>
-</ul>
+<dt><strong>second</strong><span class="classifier">int</span></dt><dd><p>second (0~59).</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
-</ul>
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 : Success, Others : Error.</p>
 </dd>
 </dl>
 </dd>

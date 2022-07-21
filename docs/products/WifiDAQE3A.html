@@ -97,7 +97,7 @@
 <td><p>Clear AI buffer counter of remote device.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.AI_close" title="pywpc.WifiDAQE3A.AI_close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_close</span></code></a>(port)</p></td>
-<td><p>Open AI port.</p></td>
+<td><p>Close AI port.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.AI_free" title="pywpc.WifiDAQE3A.AI_free"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_free</span></code></a>()</p></td>
 <td><p>Free AI port.</p></td>
@@ -151,7 +151,7 @@
 <td><p>Change from station mode to AP mode for Wifi device.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.sys_getDriverInfo" title="pywpc.WifiDAQE3A.sys_getDriverInfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_getDriverInfo</span></code></a>()</p></td>
-<td><p>Get firmware information.</p></td>
+<td><p>Get device firmware information.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.sys_getGateway" title="pywpc.WifiDAQE3A.sys_getGateway"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_getGateway</span></code></a>()</p></td>
 <td><p>Get geteway from the connected web device.</p></td>
@@ -209,15 +209,16 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Connector number</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>According to WPC device.</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -228,19 +229,20 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AI_close">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AI_close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AI_close" title="Permalink to this definition"></a></dt>
-<dd><p>Open AI port.</p>
+<dd><p>Close AI port.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Connector number</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>According to WPC device.</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -261,15 +263,16 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Connector number</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>According to WPC device.</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -284,14 +287,20 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Connector number</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>According to WPC device.</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>buffer status</strong><span class="classifier">list</span></dt><dd><p>Include buffer zero times, buffer full times, buffer remain,
-and buffer max values.</p>
+<dt><strong>buffer_status</strong><span class="classifier">list of 4 positive int.</span></dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">buffer_status[0]</span></code>: Buffer zero times</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">buffer_status[1]</span></code>: Buffer full times</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">buffer_status[2]</span></code>: Buffer remain</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">buffer_status[3]</span></code>: Buffer max values</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
@@ -305,13 +314,15 @@ and buffer max values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Connector number</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>According to WPC device.</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>sample</strong><span class="classifier">list of float</span></dt><dd><p>List of values measured from different channels.</p>
+<dt><strong>sample</strong><span class="classifier">list of float.</span></dt><dd><p>List of values measured from channels.</p>
 </dd>
 </dl>
 </dd>
@@ -325,18 +336,26 @@ and buffer max values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Connector number</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>According to WPC device.</p></li>
+</ul>
 </dd>
-<dt><strong>get_data_times</strong><span class="classifier">positive int</span></dt><dd><p>Amount of data to get from the function call.</p>
+<dt><strong>get_data_times</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Amount of data to get from the function call.</p></li>
+</ul>
 </dd>
-<dt><strong>delay</strong><span class="classifier">positive float</span></dt><dd><p>Time delay before getting data.</p>
+<dt><strong>delay</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Time delay before getting data.</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>sample_list</strong><span class="classifier">list of list of float</span></dt><dd><p>AI data where each element of <code class="docutils literal notranslate"><span class="pre">sample_list</span></code> is a sample.
-A sample is a list of values measured from different channels.</p>
+<dt><strong>sample_list</strong><span class="classifier">list of list of float.</span></dt><dd><ul class="simple">
+<li><p>AI data where each element of <code class="docutils literal notranslate"><span class="pre">sample_list</span></code> is a sample.</p></li>
+<li><p>A sample is a list of values measured from different channels.</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
@@ -350,12 +369,12 @@ A sample is a list of values measured from different channels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Connector number</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>According to WPC device.</p></li>
+</ul>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : On demand</p></li>
-<li><p>1 : N-samples</p></li>
-<li><p>2 : Continuous</p></li>
+<li><p>0 : On demand, 1 : N-samples, 2 : Continuous.</p></li>
 </ul>
 </dd>
 </dl>
@@ -363,8 +382,7 @@ A sample is a list of values measured from different channels.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -379,17 +397,20 @@ A sample is a list of values measured from different channels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Connector number</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>According to WPC device.</p></li>
+</ul>
 </dd>
-<dt><strong>sample_points</strong><span class="classifier">positive float</span></dt><dd><p>Number of sample points.</p>
+<dt><strong>sample_points</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Number of sample points.</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -404,15 +425,21 @@ A sample is a list of values measured from different channels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Connector number</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>According to WPC device.</p></li>
+</ul>
 </dd>
-<dt><strong>sampling_rate</strong><span class="classifier">positive float</span></dt><dd><p>AI sampling rate.</p>
+<dt><strong>sampling_rate</strong><span class="classifier">int or float</span></dt><dd><ul class="simple">
+<li><p>AI sampling rate.</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 if success, error otherwise</p>
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
@@ -426,7 +453,9 @@ A sample is a list of values measured from different channels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Connector number</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>According to WPC device.</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
@@ -440,15 +469,16 @@ A sample is a list of values measured from different channels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Connector number</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>According to WPC device.</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -480,7 +510,7 @@ A sample is a list of values measured from different channels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>wifi_configuration</strong><span class="classifier">list of 2 positive int</span></dt><dd><ul class="simple">
+<dt><strong>wifi_configuration</strong><span class="classifier">list of 2 positive int.</span></dt><dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">wifi_configuration[0]</span></code>: Wifi connection retry times</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">wifi_configuration[1]</span></code>: Time of staying in AP mode in second</p></li>
 </ul>
@@ -554,8 +584,7 @@ A sample is a list of values measured from different channels.</p>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -581,11 +610,15 @@ A sample is a list of values measured from different channels.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.sys_getDriverInfo">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sys_getDriverInfo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.sys_getDriverInfo" title="Permalink to this definition"></a></dt>
-<dd><p>Get firmware information.</p>
+<dd><p>Get device firmware information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>driver_info</strong><span class="classifier">list</span></dt><dd><p>Information about device name, program mode and firmware version.</p>
+<dt><strong>driver_info</strong><span class="classifier">list of 3 string</span></dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[0]</span></code>: Model name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[1]</span></code>: Mode</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[2]</span></code>: Firmware version</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
@@ -599,7 +632,7 @@ A sample is a list of values measured from different channels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>gateway</strong><span class="classifier">str of 4 int separated by period</span></dt><dd><p>Network gateway.</p>
+<dt><strong>gateway</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>Network gateway.</p>
 </dd>
 </dl>
 </dd>
@@ -613,7 +646,7 @@ A sample is a list of values measured from different channels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>network_info</strong><span class="classifier">list of 2 str</span></dt><dd><ul class="simple">
+<dt><strong>network_info</strong><span class="classifier">list of 2 str.</span></dt><dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">network_info[0]</span></code>: IP address</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">network_info[1]</span></code>: subnet mask</p></li>
 </ul>
@@ -630,7 +663,7 @@ A sample is a list of values measured from different channels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>mac_addr</strong><span class="classifier">str of 6 int separated by colon</span></dt><dd><p>MAC address.</p>
+<dt><strong>mac_addr</strong><span class="classifier">str of 6 int separated by colon.</span></dt><dd><p>MAC address.</p>
 </dd>
 </dl>
 </dd>
@@ -645,12 +678,12 @@ A sample is a list of values measured from different channels.</p>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>pins</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>how many pins in specific port</p></li>
+<li><p>how many pins in specific port.</p></li>
 </ul>
 </dd>
-<dt><strong>pin_mode</strong><span class="classifier">list</span></dt><dd><ul class="simple">
-<li><p>[pin7, pin6 ,……pin0] in LSB</p></li>
-<li><p>pinmode : disabled, idle, DI, DO, UART, I2C, SPI, CAN, PWM and ADC</p></li>
+<dt><strong>pin_mode</strong><span class="classifier">list of 8 string</span></dt><dd><ul class="simple">
+<li><p>[pin7, pin6 ,……pin0] in LSB.</p></li>
+<li><p>pinmode : disabled, idle, DI, DO, UART, I2C, SPI, CAN, PWM and ADC.</p></li>
 </ul>
 </dd>
 </dl>
@@ -665,15 +698,13 @@ A sample is a list of values measured from different channels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><p>Date and time represented by “A-B-C, D:E:F”, where</p>
-<ul class="simple">
-<li><p>“A” is year</p></li>
-<li><p>“B” is month</p></li>
-<li><p>“C” is day</p></li>
-<li><p>“D” is hour</p></li>
-<li><p>“E” is minute</p></li>
-<li><p>“F” is second</p></li>
-</ul>
+<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><p>Date and time represented by “A-B-C, D:E:F”.
+- “A” is year.
+- “B” is month.
+- “C” is day.
+- “D” is hour.
+- “E” is minute.
+- “F” is second.</p>
 </dd>
 </dl>
 </dd>
@@ -687,7 +718,9 @@ A sample is a list of values measured from different channels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><p>Serial number represented by string of 8 characters.</p>
+<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><ul class="simple">
+<li><p>Serial number represented by string of 8 characters.</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
@@ -702,8 +735,7 @@ A sample is a list of values measured from different channels.</p>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -719,8 +751,7 @@ A sample is a list of values measured from different channels.</p>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -735,17 +766,16 @@ A sample is a list of values measured from different channels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>ip_addr</strong><span class="classifier">str of 4 int separated by period</span></dt><dd><p>IP network address.</p>
+<dt><strong>ip_addr</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>IP network address.</p>
 </dd>
-<dt><strong>subnet_mask</strong><span class="classifier">str of 4 int separated by period</span></dt><dd><p>Subnet mask. (default: “255.255.255.0”)</p>
+<dt><strong>subnet_mask</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>Subnet mask. (default: “255.255.255.0”)</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
+<li><p>0 if success, error otherwise.</p></li>
 </ul>
 </dd>
 </dl>
@@ -760,38 +790,23 @@ A sample is a list of values measured from different channels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>year</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>year (CE)</p></li>
-</ul>
+<dt><strong>year</strong><span class="classifier">int</span></dt><dd><p>year (CE).</p>
 </dd>
-<dt><strong>month</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>month (1~12)</p></li>
-</ul>
+<dt><strong>month</strong><span class="classifier">int</span></dt><dd><p>month (1~12).</p>
 </dd>
-<dt><strong>day</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>day (1~31)</p></li>
-</ul>
+<dt><strong>day</strong><span class="classifier">int</span></dt><dd><p>day (1~31).</p>
 </dd>
-<dt><strong>hour</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>hour (24-hour clock)(0~23)</p></li>
-</ul>
+<dt><strong>hour</strong><span class="classifier">int</span></dt><dd><p>hour (24-hour clock) (0~23).</p>
 </dd>
-<dt><strong>minute</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>minute (0~59)</p></li>
-</ul>
+<dt><strong>minute</strong><span class="classifier">int</span></dt><dd><p>minute (0~59).</p>
 </dd>
-<dt><strong>second</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>second (0~59)</p></li>
-</ul>
+<dt><strong>second</strong><span class="classifier">int</span></dt><dd><p>second (0~59).</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Success</p></li>
-<li><p>Others: Error</p></li>
-</ul>
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 : Success, Others : Error.</p>
 </dd>
 </dl>
 </dd>
