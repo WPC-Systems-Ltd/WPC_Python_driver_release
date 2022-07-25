@@ -7,7 +7,7 @@ import pywpc
 async def main():
     print("Start example code...")
 
-    ## Get python driver version
+    ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
 
     ## Create device handle
@@ -61,7 +61,9 @@ async def main():
 
     ## Release device handle
     dev.close()
-    return
 
+    print("End example code...")
+    return
+    
 if __name__ == '__main__':
     asyncio.run(main())

@@ -30,7 +30,7 @@ async def main():
         print(f'Serial number = ' + await dev.sys_getSerialNumber())
         print(f'RTC data time = ' + await dev.sys_getRTC())
 
-        ## Get IP, submask, & MAC
+        ## Get IP & submask & MAC
         ip_addr, submask = await dev.sys_getIPAddrAndSubmask()
         print(f'IP = ' + ip_addr)
         print(f'Submask = '+ submask)

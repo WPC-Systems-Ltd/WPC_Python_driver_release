@@ -7,7 +7,7 @@ import pywpc
 async def main():
     print("Start example code...")
 
-    ## Get python driver version
+    ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
 
     ## Create device handle
