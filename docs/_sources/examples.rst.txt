@@ -1,16 +1,16 @@
 Example codes
 =============
 
-General
--------
+System
+------
 
 .. toctree::
    :maxdepth: 4
 
-   examples/General/get_device_info
-   examples/General/find_all_devices
-   examples/General/get_Wifi_DAQ_status
-   examples/General/get_pin_mode
+   examples/System/get_device_info
+   examples/System/find_all_devices
+   examples/System/get_Wifi_DAQ_status
+   examples/System/get_pin_mode
 
 Tutorial
 --------
@@ -56,3 +56,12 @@ Thermo
 
    examples/Thermo/Thermo_read_channel_data
    examples/Thermo/Thermo_read_channel_status
+
+UART
+----
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/UART/UART_read
+   examples/UART/UART_write

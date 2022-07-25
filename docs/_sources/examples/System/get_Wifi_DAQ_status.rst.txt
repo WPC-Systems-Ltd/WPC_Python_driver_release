@@ -1,0 +1,6 @@
+example get Wifi DAQ status
+===========================
+
+.. literalinclude:: ../../../../../../WPC_Python_driver_release/Examples/Console/System/example_get_Wifi_DAQ_status.py
+   :language: python
+   :linenos:

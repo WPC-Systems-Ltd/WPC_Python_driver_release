@@ -168,29 +168,29 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_open" title="pywpc.USBDAQF1D.UART_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_open</span></code></a>(port)</p></td>
 <td><p>Open a UART on port.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_reset" title="pywpc.USBDAQF1D.UART_reset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_reset</span></code></a>(port)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_read" title="pywpc.USBDAQF1D.UART_read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_read</span></code></a>(port, bytes_to_read[, delay])</p></td>
+<td><p>Read data from UART port.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_reset" title="pywpc.USBDAQF1D.UART_reset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_reset</span></code></a>(port)</p></td>
 <td><p>Reset UART to default settings.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_setBaudRate" title="pywpc.USBDAQF1D.UART_setBaudRate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_setBaudRate</span></code></a>(port, baud_rate)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_setBaudRate" title="pywpc.USBDAQF1D.UART_setBaudRate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_setBaudRate</span></code></a>(port, baud_rate)</p></td>
 <td><p>Set Baud rate for UART.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_setDataBit" title="pywpc.USBDAQF1D.UART_setDataBit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_setDataBit</span></code></a>(port, data_bit_mode)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_setDataBit" title="pywpc.USBDAQF1D.UART_setDataBit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_setDataBit</span></code></a>(port, data_bit_mode)</p></td>
 <td><p>Set data size for UART.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_setNumStopBit" title="pywpc.USBDAQF1D.UART_setNumStopBit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_setNumStopBit</span></code></a>(port, stop_bit_mode)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_setNumStopBit" title="pywpc.USBDAQF1D.UART_setNumStopBit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_setNumStopBit</span></code></a>(port, stop_bit_mode)</p></td>
 <td><p>Set number of stop bits for UART.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_setParity" title="pywpc.USBDAQF1D.UART_setParity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_setParity</span></code></a>(port, parity_mode)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_setParity" title="pywpc.USBDAQF1D.UART_setParity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_setParity</span></code></a>(port, parity_mode)</p></td>
 <td><p>Set parity for UART.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_startReading" title="pywpc.USBDAQF1D.UART_startReading"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_startReading</span></code></a>(port)</p></td>
-<td><p>Start reading a stream via UART</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_stopReading" title="pywpc.USBDAQF1D.UART_stopReading"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_stopReading</span></code></a>(port)</p></td>
 <td><p>Stop reading a stream via UART</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_write" title="pywpc.USBDAQF1D.UART_write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_write</span></code></a>(port, data_length, data)</p></td>
-<td><p>Write via UART</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_write" title="pywpc.USBDAQF1D.UART_write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_write</span></code></a>(port, data_length, write_data)</p></td>
+<td><p>Write data via UART</p></td>
 </tr>
 </tbody>
 </table>
@@ -801,6 +801,38 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1D.UART_read">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytes_to_read</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.005</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.UART_read" title="Permalink to this definition"></a></dt>
+<dd><p>Read data from UART port.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>According to WPC device.</p></li>
+</ul>
+</dd>
+<dt><strong>bytes_to_read</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Amount of data to get from the function call.</p></li>
+</ul>
+</dd>
+<dt><strong>delay</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Time delay before getting data.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>uart_data_list</strong><span class="classifier">list of hex.</span></dt><dd><ul class="simple">
+<li><p>## TODO:</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1D.UART_reset">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.UART_reset" title="Permalink to this definition"></a></dt>
 <dd><p>Reset UART to default settings.</p>
@@ -941,30 +973,6 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1D.UART_startReading">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_startReading</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.UART_startReading" title="Permalink to this definition"></a></dt>
-<dd><p>Start reading a stream via UART</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
-</ul>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>value</strong><span class="classifier">list</span></dt><dd><ul class="simple">
-<li><p>TODO</p></li>
-</ul>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1D.UART_stopReading">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_stopReading</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.UART_stopReading" title="Permalink to this definition"></a></dt>
 <dd><p>Stop reading a stream via UART</p>
@@ -990,8 +998,8 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1D.UART_write">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.UART_write" title="Permalink to this definition"></a></dt>
-<dd><p>Write via UART</p>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.UART_write" title="Permalink to this definition"></a></dt>
+<dd><p>Write data via UART</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1003,7 +1011,7 @@
 <li><p>Data length</p></li>
 </ul>
 </dd>
-<dt><strong>data</strong><span class="classifier">string</span></dt><dd><ul class="simple">
+<dt><strong>write_data</strong><span class="classifier">string</span></dt><dd><ul class="simple">
 <li><p>Data</p></li>
 </ul>
 </dd>

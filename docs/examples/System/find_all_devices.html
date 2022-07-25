@@ -45,7 +45,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../products.html">API reference by product</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../examples.html">Example codes</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../examples.html#general">General</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../examples.html#system">System</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="get_device_info.html">example get device info</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">example find all devices</a></li>
 <li class="toctree-l3"><a class="reference internal" href="get_Wifi_DAQ_status.html">example get Wifi DAQ status</a></li>
@@ -78,7 +78,7 @@
           <li><a href="../../examples.html">Example codes</a> &raquo;</li>
       <li>example find all devices</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/examples/General/find_all_devices.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/examples/System/find_all_devices.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -88,6 +88,46 @@
              
   <section id="example-find-all-devices">
 <h1>example find all devices<a class="headerlink" href="#example-find-all-devices" title="Permalink to this heading"></a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="linenos"> 3</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;pywpc/&#39;</span><span class="p">)</span>
+<span class="linenos"> 4</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;../../../pywpc/&#39;</span><span class="p">)</span>
+<span class="linenos"> 5</span><span class="kn">import</span> <span class="nn">pywpc</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos"> 8</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Start example code...&quot;</span><span class="p">)</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span>    <span class="c1">## Get Python driver version</span>
+<span class="linenos">11</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_FULL_NAME</span><span class="si">}</span><span class="s1"> - Version </span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span>    <span class="c1">## Create device handle</span>
+<span class="linenos">14</span>    <span class="n">dev</span> <span class="o">=</span> <span class="n">pywpc</span><span class="o">.</span><span class="n">Broadcaster</span><span class="p">()</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span>    <span class="c1">## Connect to network device</span>
+<span class="linenos">17</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos">18</span>        <span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="linenos">19</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos">20</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span>    <span class="c1">## Perform device information</span>
+<span class="linenos">23</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos">24</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Broadcast -&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">brst_getDeviceInfo</span><span class="p">()))</span>
+<span class="linenos">25</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos">26</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">27</span>
+<span class="linenos">28</span>    <span class="c1">## Disconnect network device</span>
+<span class="linenos">29</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+<span class="linenos">30</span>    
+<span class="linenos">31</span>    <span class="c1">## Release device handle</span>
+<span class="linenos">32</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos">33</span>
+<span class="linenos">34</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;End example code...&quot;</span><span class="p">)</span>
+<span class="linenos">35</span>    <span class="k">return</span>
+<span class="linenos">36</span>
+<span class="linenos">37</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">38</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</pre></div>
+</div>
 </section>
 
 
