@@ -45,7 +45,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../products.html">API reference by product</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../products.html#device-finder">Device finder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../products.html#wireless-devices">Wireless devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../products.html#wifi">WIFI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../products.html#ethernet-devices">Ethernet devices</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../products.html#usb-devices">USB devices</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="USBDAQF1D.html">USB-DAQ-F1-D</a></li>
@@ -114,7 +114,7 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AI_readOnDemand" title="pywpc.USBDAQF1AOD.AI_readOnDemand"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_readOnDemand</span></code></a>(port)</p></td>
 <td><p>Read one sample from AI port.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AI_readStreaming" title="pywpc.USBDAQF1AOD.AI_readStreaming"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_readStreaming</span></code></a>(port, get_data_times[, delay])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AI_readStreaming" title="pywpc.USBDAQF1AOD.AI_readStreaming"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_readStreaming</span></code></a>(port, num_of_samples[, delay])</p></td>
 <td><p>Read multiple samples from AI port.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AI_setMode" title="pywpc.USBDAQF1AOD.AI_setMode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_setMode</span></code></a>(port, mode)</p></td>
@@ -168,6 +168,36 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.DO_writeValuePort" title="pywpc.USBDAQF1AOD.DO_writeValuePort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_writeValuePort</span></code></a>(port, value)</p></td>
 <td><p>Write all pins state in specific port with digital output.</p></td>
 </tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.Sys_getDriverInfo" title="pywpc.USBDAQF1AOD.Sys_getDriverInfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getDriverInfo</span></code></a>()</p></td>
+<td><p>Get device firmware information.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.Sys_getPinModeInPort" title="pywpc.USBDAQF1AOD.Sys_getPinModeInPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getPinModeInPort</span></code></a>(port)</p></td>
+<td><p>Get pin mode in specific port.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.Sys_getRTC" title="pywpc.USBDAQF1AOD.Sys_getRTC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getRTC</span></code></a>()</p></td>
+<td><p>Get date and time to connected WPC device.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.Sys_getSerialNumber" title="pywpc.USBDAQF1AOD.Sys_getSerialNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getSerialNumber</span></code></a>()</p></td>
+<td><p>Get serial number from the connected WPC device.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.Sys_reboot" title="pywpc.USBDAQF1AOD.Sys_reboot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_reboot</span></code></a>()</p></td>
+<td><p>Reboot from the connected WPC device.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.Sys_rebootOnBootloader" title="pywpc.USBDAQF1AOD.Sys_rebootOnBootloader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_rebootOnBootloader</span></code></a>()</p></td>
+<td><p>Reboot On bootloader from the connected WPC device.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.Sys_setPortDI" title="pywpc.USBDAQF1AOD.Sys_setPortDI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setPortDI</span></code></a>(port)</p></td>
+<td><p>Open port as DI.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.Sys_setPortDO" title="pywpc.USBDAQF1AOD.Sys_setPortDO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setPortDO</span></code></a>(port)</p></td>
+<td><p>Open port as DO.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.Sys_setPortIdle" title="pywpc.USBDAQF1AOD.Sys_setPortIdle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setPortIdle</span></code></a>(port)</p></td>
+<td><p>Set all pins in specific port to IDLE state.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.Sys_setRTC" title="pywpc.USBDAQF1AOD.Sys_setRTC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setRTC</span></code></a>(year, month, day, hour, minute, ...)</p></td>
+<td><p>Set date and time to connected WPC device.</p></td>
+</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.UART_close" title="pywpc.USBDAQF1AOD.UART_close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_close</span></code></a>(port)</p></td>
 <td><p>Close a UART on port.</p></td>
 </tr>
@@ -197,36 +227,6 @@
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.UART_write" title="pywpc.USBDAQF1AOD.UART_write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_write</span></code></a>(port, data_length, data)</p></td>
 <td><p>Write via UART</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.sys_getDriverInfo" title="pywpc.USBDAQF1AOD.sys_getDriverInfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_getDriverInfo</span></code></a>()</p></td>
-<td><p>Get device firmware information.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.sys_getPinModeInPort" title="pywpc.USBDAQF1AOD.sys_getPinModeInPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_getPinModeInPort</span></code></a>(port)</p></td>
-<td><p>Get pin mode in specific port.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.sys_getRTC" title="pywpc.USBDAQF1AOD.sys_getRTC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_getRTC</span></code></a>()</p></td>
-<td><p>Get date and time to connected WPC device.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.sys_getSerialNumber" title="pywpc.USBDAQF1AOD.sys_getSerialNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_getSerialNumber</span></code></a>()</p></td>
-<td><p>Get serial number from the connected WPC device.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.sys_reboot" title="pywpc.USBDAQF1AOD.sys_reboot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_reboot</span></code></a>()</p></td>
-<td><p>Reboot from the connected WPC device.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.sys_rebootOnBootloader" title="pywpc.USBDAQF1AOD.sys_rebootOnBootloader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_rebootOnBootloader</span></code></a>()</p></td>
-<td><p>Reboot On bootloader from the connected WPC device.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.sys_setPortDI" title="pywpc.USBDAQF1AOD.sys_setPortDI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_setPortDI</span></code></a>(port)</p></td>
-<td><p>Open port as DI.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.sys_setPortDO" title="pywpc.USBDAQF1AOD.sys_setPortDO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_setPortDO</span></code></a>(port)</p></td>
-<td><p>Open port as DO.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.sys_setPortIdle" title="pywpc.USBDAQF1AOD.sys_setPortIdle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_setPortIdle</span></code></a>(port)</p></td>
-<td><p>Set all pins in specific port to IDLE state.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.sys_setRTC" title="pywpc.USBDAQF1AOD.sys_setRTC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys_setRTC</span></code></a>(year, month, day, hour, minute, ...)</p></td>
-<td><p>Set date and time to connected WPC device.</p></td>
 </tr>
 </tbody>
 </table>
@@ -376,7 +376,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.AI_readStreaming">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AI_readStreaming</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">get_data_times</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.005</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AI_readStreaming" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AI_readStreaming</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_of_samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.005</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AI_readStreaming" title="Permalink to this definition"></a></dt>
 <dd><p>Read multiple samples from AI port.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -864,6 +864,215 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.Sys_getDriverInfo">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getDriverInfo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.Sys_getDriverInfo" title="Permalink to this definition"></a></dt>
+<dd><p>Get device firmware information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>driver_info</strong><span class="classifier">list of 3 string</span></dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[0]</span></code>: Model name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[1]</span></code>: Mode</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[2]</span></code>: Firmware version</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.Sys_getPinModeInPort">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getPinModeInPort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.Sys_getPinModeInPort" title="Permalink to this definition"></a></dt>
+<dd><p>Get pin mode in specific port.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pins</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>how many pins in specific port.</p></li>
+</ul>
+</dd>
+<dt><strong>pin_mode</strong><span class="classifier">list of 8 string</span></dt><dd><ul class="simple">
+<li><p>[pin7, pin6 ,……pin0] in LSB.</p></li>
+<li><p>pinmode : disabled, idle, DI, DO, UART, I2C, SPI, CAN, PWM and ADC.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.Sys_getRTC">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getRTC</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.Sys_getRTC" title="Permalink to this definition"></a></dt>
+<dd><p>Get date and time to connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><p>Date and time represented by “A-B-C, D:E:F”.
+- “A” is year.
+- “B” is month.
+- “C” is day.
+- “D” is hour.
+- “E” is minute.
+- “F” is second.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.Sys_getSerialNumber">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getSerialNumber</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.Sys_getSerialNumber" title="Permalink to this definition"></a></dt>
+<dd><p>Get serial number from the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><ul class="simple">
+<li><p>Serial number represented by string of 8 characters.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.Sys_reboot">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_reboot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.Sys_reboot" title="Permalink to this definition"></a></dt>
+<dd><p>Reboot from the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.Sys_rebootOnBootloader">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_rebootOnBootloader</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.Sys_rebootOnBootloader" title="Permalink to this definition"></a></dt>
+<dd><p>Reboot On bootloader from the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.Sys_setPortDI">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setPortDI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.Sys_setPortDI" title="Permalink to this definition"></a></dt>
+<dd><p>Open port as DI.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>According to WPC device.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.Sys_setPortDO">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setPortDO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.Sys_setPortDO" title="Permalink to this definition"></a></dt>
+<dd><p>Open port as DO.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>According to WPC device.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.Sys_setPortIdle">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setPortIdle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.Sys_setPortIdle" title="Permalink to this definition"></a></dt>
+<dd><p>Set all pins in specific port to IDLE state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>According to WPC device.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.Sys_setRTC">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setRTC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hour</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minute</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.Sys_setRTC" title="Permalink to this definition"></a></dt>
+<dd><p>Set date and time to connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>year</strong><span class="classifier">int</span></dt><dd><p>year (CE).</p>
+</dd>
+<dt><strong>month</strong><span class="classifier">int</span></dt><dd><p>month (1~12).</p>
+</dd>
+<dt><strong>day</strong><span class="classifier">int</span></dt><dd><p>day (1~31).</p>
+</dd>
+<dt><strong>hour</strong><span class="classifier">int</span></dt><dd><p>hour (24-hour clock) (0~23).</p>
+</dd>
+<dt><strong>minute</strong><span class="classifier">int</span></dt><dd><p>minute (0~59).</p>
+</dd>
+<dt><strong>second</strong><span class="classifier">int</span></dt><dd><p>second (0~59).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 : Success, Others : Error.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.UART_close">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.UART_close" title="Permalink to this definition"></a></dt>
 <dd><p>Close a UART on port.</p>
@@ -1145,215 +1354,6 @@
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.disconnect">
 <span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.disconnect" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.sys_getDriverInfo">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sys_getDriverInfo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.sys_getDriverInfo" title="Permalink to this definition"></a></dt>
-<dd><p>Get device firmware information.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>driver_info</strong><span class="classifier">list of 3 string</span></dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[0]</span></code>: Model name</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[1]</span></code>: Mode</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[2]</span></code>: Firmware version</p></li>
-</ul>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.sys_getPinModeInPort">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sys_getPinModeInPort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.sys_getPinModeInPort" title="Permalink to this definition"></a></dt>
-<dd><p>Get pin mode in specific port.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>pins</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>how many pins in specific port.</p></li>
-</ul>
-</dd>
-<dt><strong>pin_mode</strong><span class="classifier">list of 8 string</span></dt><dd><ul class="simple">
-<li><p>[pin7, pin6 ,……pin0] in LSB.</p></li>
-<li><p>pinmode : disabled, idle, DI, DO, UART, I2C, SPI, CAN, PWM and ADC.</p></li>
-</ul>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.sys_getRTC">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sys_getRTC</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.sys_getRTC" title="Permalink to this definition"></a></dt>
-<dd><p>Get date and time to connected WPC device.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><p>Date and time represented by “A-B-C, D:E:F”.
-- “A” is year.
-- “B” is month.
-- “C” is day.
-- “D” is hour.
-- “E” is minute.
-- “F” is second.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.sys_getSerialNumber">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sys_getSerialNumber</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.sys_getSerialNumber" title="Permalink to this definition"></a></dt>
-<dd><p>Get serial number from the connected WPC device.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><ul class="simple">
-<li><p>Serial number represented by string of 8 characters.</p></li>
-</ul>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.sys_reboot">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sys_reboot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.sys_reboot" title="Permalink to this definition"></a></dt>
-<dd><p>Reboot from the connected WPC device.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 if success, error otherwise.</p></li>
-</ul>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.sys_rebootOnBootloader">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sys_rebootOnBootloader</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.sys_rebootOnBootloader" title="Permalink to this definition"></a></dt>
-<dd><p>Reboot On bootloader from the connected WPC device.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 if success, error otherwise.</p></li>
-</ul>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.sys_setPortDI">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sys_setPortDI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.sys_setPortDI" title="Permalink to this definition"></a></dt>
-<dd><p>Open port as DI.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
-</ul>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 if success, error otherwise.</p></li>
-</ul>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.sys_setPortDO">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sys_setPortDO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.sys_setPortDO" title="Permalink to this definition"></a></dt>
-<dd><p>Open port as DO.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
-</ul>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 if success, error otherwise.</p></li>
-</ul>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.sys_setPortIdle">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sys_setPortIdle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.sys_setPortIdle" title="Permalink to this definition"></a></dt>
-<dd><p>Set all pins in specific port to IDLE state.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
-</ul>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 if success, error otherwise.</p></li>
-</ul>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.sys_setRTC">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sys_setRTC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hour</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minute</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.sys_setRTC" title="Permalink to this definition"></a></dt>
-<dd><p>Set date and time to connected WPC device.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>year</strong><span class="classifier">int</span></dt><dd><p>year (CE).</p>
-</dd>
-<dt><strong>month</strong><span class="classifier">int</span></dt><dd><p>month (1~12).</p>
-</dd>
-<dt><strong>day</strong><span class="classifier">int</span></dt><dd><p>day (1~31).</p>
-</dd>
-<dt><strong>hour</strong><span class="classifier">int</span></dt><dd><p>hour (24-hour clock) (0~23).</p>
-</dd>
-<dt><strong>minute</strong><span class="classifier">int</span></dt><dd><p>minute (0~59).</p>
-</dd>
-<dt><strong>second</strong><span class="classifier">int</span></dt><dd><p>second (0~59).</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 : Success, Others : Error.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
 
 </dd></dl>
 

@@ -9,8 +9,8 @@ Device finder
 
    products/Broadcaster
 
-Wireless devices
-----------------
+WIFI
+----
 
 .. toctree::
    :maxdepth: 4
