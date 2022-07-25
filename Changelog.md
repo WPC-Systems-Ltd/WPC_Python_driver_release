@@ -6,11 +6,17 @@ v0.0.4 Date: 2022/07/20, Developer: Chunglee_people
 ---------------------------------------------------
 ### Changed
 - Change WPC Python Version from `pywpc-0.1.13` to  `pywpc-0.1.14`  
+- Change folder name `General` to `System` in console and gui folder
+- Change `wireless device` to `WIFI` in document
 
 ### Added
 - Add Thermo example code
   - `Thermo/example_Thermo_read_channel_data.py`
   - `Thermo/example_Thermo_read_channel_status.py`
+- Add UART example code
+  - `UART/example_UART_read.py`
+  - `UART/example_UART_write.py`
+
  
 v0.0.3 Date: 2022/07/07, Developer: Chunglee_people
 ---------------------------------------------------
