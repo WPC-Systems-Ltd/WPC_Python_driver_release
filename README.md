@@ -49,7 +49,7 @@ Port configurations
 
 
 ## Reference
-- [User manual](https://wpc-systems.github.io/WPC_Python_driver_release/)
+- [User manual](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)
 - [Recommend for new python user to create environment](https://github.com/WPC-systems/WPC_Python_driver_release/wiki/Install-miniconda-and-build-environment) 
 - [Run example code in console](https://github.com/WPC-systems/WPC_Python_driver_release/wiki/How-to-run-WPC-Python-driver-example-code-in-console)
 
