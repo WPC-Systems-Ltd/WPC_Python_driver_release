@@ -36,3 +36,4 @@ USB devices
    products/USBDAQF1DSNK
    products/USBDAQF1AOD
    products/USBDAQF1TD
+   products/USBDAQF1CD
