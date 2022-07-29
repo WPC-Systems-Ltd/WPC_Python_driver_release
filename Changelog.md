@@ -2,6 +2,16 @@ WPC_Device_Driver_Example_GUI Version Changelog
 ===================================
 
 
+v0.0.5 Date: 2022/07/29, Developer: Chunglee_people
+---------------------------------------------------
+### Changed
+- Change WPC Python Version from `pywpc-0.1.14` to  `pywpc-0.1.15`  
+
+### Added
+- Add CAN example code
+  - `CAN/example_CAN_read.py`
+  - `CAN/example_CAN_write.py`
+
 v0.0.4 Date: 2022/07/20, Developer: Chunglee_people
 ---------------------------------------------------
 ### Changed
