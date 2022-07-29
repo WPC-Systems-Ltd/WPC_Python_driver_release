@@ -19,25 +19,32 @@ async def main():
     except Exception as err:
         pywpc.printGenericError(err) 
     
+    ## Parameters setting
+    port = 1  ## Set AI port to 1 in WifiDAQE3A
+    mode = 1  ## 0 : On demand, 1 : N-samples, 2 : Continuous.
+    sampling_rate = 1000
+    samples = 50    
+    read_poins = 50 
+
     ## Perform data acquisition
     try:  
         ## Set AI port to 1 and acquisition mode to N-samples mode (1)
-        await dev.AI_setMode(1, 1)
+        await dev.AI_setMode(port, mode)
         
         ## Set AI port to 1 and sampling rate to 1k (Hz)
-        await dev.AI_setSamplingRate(1, 1000) 
+        await dev.AI_setSamplingRate(port, sampling_rate) 
        
         ## Set AI port to 1 and # of samples to 50 (pts)
-        await dev.AI_setNumSamples(1, 150)
+        await dev.AI_setNumSamples(port, samples)
         
         ## Set AI port to 1 and start acquisition
-        await dev.AI_start(1)
+        await dev.AI_start(port)
         
         ## Wait amount of time (sec)
         await asyncio.sleep(1)
         
         ## Set AI port to 1 and get 50 points 
-        data = await dev.AI_readStreaming(1, 50)
+        data = await dev.AI_readStreaming(port, read_poins)
         
         ## Read acquisition data 50 points 
         print("Get data points: " + str(len(data))) 

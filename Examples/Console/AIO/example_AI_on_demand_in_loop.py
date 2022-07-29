@@ -25,10 +25,13 @@ async def main():
         dev.connect("192.168.5.79")
     except Exception as err:
         pywpc.printGenericError(err)
-        
+
+    ## Parameters setting
+    port = 1  ## Set AI port to 1 in WifiDAQE3A
+
     ## Set AI port to 1 and start async thread
     try: 
-        await loop_func(dev, 1, 1)
+        await loop_func(dev, port, 1)
     except Exception as err:
         pywpc.printGenericError(err)
  

@@ -25,49 +25,50 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
+        port  = 1
         speed = 0 ## 0 = 125 KHz, 1 = 250 kHz, 2 = 500 kHz, 3 = 1 MHz
 
         ## CAN Open
-        status = await dev.CAN_open() 
+        status = await dev.CAN_open(port) 
         if status == 0: print("CAN_open: OK")
 
         ## Set CAN speed to 0  
-        status = await dev.CAN_setSpeed(speed) 
+        status = await dev.CAN_setSpeed(port, speed) 
         if status == 0: print("CAN_setSpeed: OK")
 
         ## CAN Start
-        status = await dev.CAN_start() 
+        status = await dev.CAN_start(port) 
         if status == 0: print("CAN_start: OK")
  
         ## CAN_length: True: Extended, False: Standard 
         ## CAN_type:   True: Remote, False: Data
 
         ## ID: 10, data with 8 bytes, Standard & Data 
-        status = await dev.CAN_write(10, [33,22,11,88,77,55,66], CAN_length = False, CAN_type = False)
+        status = await dev.CAN_write(port, 10, [33,22,11,88,77,55,66], CAN_length = False, CAN_type = False)
         if status == 0: print("CAN_write: OK")
         await asyncio.sleep(1)  ## delay(second)
 
         ## ID: 20, data with 8 bytes, Extended & Remote 
-        status = await dev.CAN_write(20, [5,20,12,58,88,22,99,77], CAN_length = True, CAN_type = True)
+        status = await dev.CAN_write(port, 20, [5,20,12,58,88,22,99,77], CAN_length = True, CAN_type = True)
         if status == 0: print("CAN_write: OK")
         await asyncio.sleep(1)  ## delay(second)
 
         ## ID: 30, data less than 8 bytes, Standard & Data
-        status = await dev.CAN_write(30, [1,2,3], CAN_length = False, CAN_type = False)
+        status = await dev.CAN_write(port, 30, [1,2,3], CAN_length = False, CAN_type = False)
         if status == 0: print("CAN_write: OK")
         await asyncio.sleep(1)  ## delay(second)
         
         ## ID: 40, data more than 8 bytes, Standard & Data
-        status = await dev.CAN_write(40, [1,2,3,4,5,6,7,8,9,10,11,12,13,15], CAN_length = False, CAN_type = False)
+        status = await dev.CAN_write(port, 40, [1,2,3,4,5,6,7,8,9,10,11,12,13,15], CAN_length = False, CAN_type = False)
         if status == 0: print("CAN_write: OK")
         await asyncio.sleep(1)  ## delay(second)
 
         ## CAN Stop
-        status = await dev.CAN_stop() 
+        status = await dev.CAN_stop(port) 
         if status == 0: print("CAN_stop: OK")
         
         ## CAN Close
-        status = await dev.CAN_close() 
+        status = await dev.CAN_close(port) 
         if status == 0: print("CAN_close: OK")
     except Exception as err:
         pywpc.printGenericError(err)

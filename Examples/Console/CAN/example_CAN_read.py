@@ -25,33 +25,35 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
+        port  = 1
         speed = 0 ## 0 = 125 KHz, 1 = 250 kHz, 2 = 500 kHz, 3 = 1 MHz
 
         ## CAN Open
-        status = await dev.CAN_open() 
+        status = await dev.CAN_open(port) 
         if status == 0: print("CAN_open: OK")
 
         ## Set CAN speed to 0  
-        status = await dev.CAN_setSpeed(speed) 
+        status = await dev.CAN_setSpeed(port, speed) 
         if status == 0: print("CAN_setSpeed: OK")
 
         ## CAN Start
-        status = await dev.CAN_start() 
+        status = await dev.CAN_start(port) 
         if status == 0: print("CAN_start: OK")
 
-        ## Sleep for 10 seconds ,meanwhile, you can write data. 
-        await asyncio.sleep(10) ## delay(second)
-
-        ## Read 5 frames
-        data = await dev.CAN_read(5)
-        print(data)
-        
+        ## Read 5 frames for 1000 times
+        for i in range(1000):
+            data = await dev.CAN_read(port, 5)
+            if data is None:
+                await asyncio.sleep(0.01)
+            else:
+                print(data)
+            
         ## CAN Stop
-        status = await dev.CAN_stop() 
+        status = await dev.CAN_stop(port) 
         if status == 0: print("CAN_stop: OK")
         
         ## CAN Close
-        status = await dev.CAN_close() 
+        status = await dev.CAN_close(port) 
         if status == 0: print("CAN_close: OK")
  
     except Exception as err:

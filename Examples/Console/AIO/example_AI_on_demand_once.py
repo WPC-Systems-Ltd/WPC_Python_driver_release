@@ -18,9 +18,12 @@ async def main():
         dev.connect("192.168.5.79")
     except Exception as err:
         pywpc.printGenericError(err)
-        
+
+    ## Parameters setting
+    port = 1  ## Set AI port to 1 in WifiDAQE3A
+
     ## Set AI port to 1 and data acquisition
-    data =  await dev.AI_readOnDemand(1)
+    data =  await dev.AI_readOnDemand(port)
     print("data :" + str(data))
  
     ## Disconnect network device
