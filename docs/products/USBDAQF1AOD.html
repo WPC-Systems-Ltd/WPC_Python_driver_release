@@ -133,22 +133,22 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AI_stop" title="pywpc.USBDAQF1AOD.AI_stop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_stop</span></code></a>(port)</p></td>
 <td><p>Stop N samples or continuous AI acquisition.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AO_close" title="pywpc.USBDAQF1AOD.AO_close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AO_close</span></code></a>([port])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AO_close" title="pywpc.USBDAQF1AOD.AO_close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AO_close</span></code></a>(port)</p></td>
 <td><p>Close AO module.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AO_getValues" title="pywpc.USBDAQF1AOD.AO_getValues"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AO_getValues</span></code></a>([port])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AO_getValues" title="pywpc.USBDAQF1AOD.AO_getValues"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AO_getValues</span></code></a>(port)</p></td>
 <td><p>Get AO current output.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AO_open" title="pywpc.USBDAQF1AOD.AO_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AO_open</span></code></a>([port])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AO_open" title="pywpc.USBDAQF1AOD.AO_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AO_open</span></code></a>(port)</p></td>
 <td><p>Open AO module.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AO_setSpan" title="pywpc.USBDAQF1AOD.AO_setSpan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AO_setSpan</span></code></a>([span, port])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AO_setSpan" title="pywpc.USBDAQF1AOD.AO_setSpan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AO_setSpan</span></code></a>(port, span)</p></td>
 <td><p>Set span for AO.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AO_writeByChannels" title="pywpc.USBDAQF1AOD.AO_writeByChannels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AO_writeByChannels</span></code></a>(channel, data[, port])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AO_writeByChannels" title="pywpc.USBDAQF1AOD.AO_writeByChannels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AO_writeByChannels</span></code></a>(port, channel, data)</p></td>
 <td><p>Write AO on a channel.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AO_writeSynchronized" title="pywpc.USBDAQF1AOD.AO_writeSynchronized"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AO_writeSynchronized</span></code></a>(value[, port])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AO_writeSynchronized" title="pywpc.USBDAQF1AOD.AO_writeSynchronized"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AO_writeSynchronized</span></code></a>(port, value)</p></td>
 <td><p>Write synchronized AO on all channels.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.DI_closePins" title="pywpc.USBDAQF1AOD.DI_closePins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_closePins</span></code></a>(port, pin)</p></td>
@@ -552,7 +552,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.AO_close">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AO_close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AO_close" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AO_close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AO_close" title="Permalink to this definition"></a></dt>
 <dd><p>Close AO module.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -576,7 +576,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.AO_getValues">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AO_getValues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AO_getValues" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AO_getValues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AO_getValues" title="Permalink to this definition"></a></dt>
 <dd><p>Get AO current output.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -607,7 +607,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.AO_open">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AO_open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AO_open" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AO_open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AO_open" title="Permalink to this definition"></a></dt>
 <dd><p>Open AO module.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -631,7 +631,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.AO_setSpan">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AO_setSpan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">span</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AO_setSpan" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AO_setSpan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">span</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AO_setSpan" title="Permalink to this definition"></a></dt>
 <dd><p>Set span for AO.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -663,7 +663,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.AO_writeByChannels">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AO_writeByChannels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AO_writeByChannels" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AO_writeByChannels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AO_writeByChannels" title="Permalink to this definition"></a></dt>
 <dd><p>Write AO on a channel.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -693,7 +693,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.AO_writeSynchronized">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AO_writeSynchronized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AO_writeSynchronized" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AO_writeSynchronized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AO_writeSynchronized" title="Permalink to this definition"></a></dt>
 <dd><p>Write synchronized AO on all channels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>

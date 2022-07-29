@@ -162,25 +162,25 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Sys_setRTC" title="pywpc.WifiDAQE3A.Sys_setRTC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setRTC</span></code></a>(year, month, day, hour, minute, ...)</p></td>
 <td><p>Set date and time to connected WPC device.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_getWifiBandwidth" title="pywpc.WifiDAQE3A.Wifi_getWifiBandwidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_getWifiBandwidth</span></code></a>([port])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_getWifiBandwidth" title="pywpc.WifiDAQE3A.Wifi_getWifiBandwidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_getWifiBandwidth</span></code></a>()</p></td>
 <td><p>Get bandwidth from Wifi device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_getWifiConfiguration" title="pywpc.WifiDAQE3A.Wifi_getWifiConfiguration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_getWifiConfiguration</span></code></a>([port])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_getWifiConfiguration" title="pywpc.WifiDAQE3A.Wifi_getWifiConfiguration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_getWifiConfiguration</span></code></a>()</p></td>
 <td><p>Get Wifi reconnection times and AP stay time.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readAccleration" title="pywpc.WifiDAQE3A.Wifi_readAccleration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readAccleration</span></code></a>([port])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readAccleration" title="pywpc.WifiDAQE3A.Wifi_readAccleration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readAccleration</span></code></a>()</p></td>
 <td><p>Get acceleration from sensor if the Wifi device has one.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readBattery" title="pywpc.WifiDAQE3A.Wifi_readBattery"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readBattery</span></code></a>([port])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readBattery" title="pywpc.WifiDAQE3A.Wifi_readBattery"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readBattery</span></code></a>()</p></td>
 <td><p>Get volatge status of battery if the Wifi device has one.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readRSSI" title="pywpc.WifiDAQE3A.Wifi_readRSSI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readRSSI</span></code></a>([port])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readRSSI" title="pywpc.WifiDAQE3A.Wifi_readRSSI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readRSSI</span></code></a>()</p></td>
 <td><p>Get Wifi RSSI signal of the connected Wifi device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readThermo" title="pywpc.WifiDAQE3A.Wifi_readThermo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readThermo</span></code></a>([port])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readThermo" title="pywpc.WifiDAQE3A.Wifi_readThermo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readThermo</span></code></a>()</p></td>
 <td><p>Get temperature from thermal sensor if the Wifi device has one.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_setAP" title="pywpc.WifiDAQE3A.Wifi_setAP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_setAP</span></code></a>([port])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_setAP" title="pywpc.WifiDAQE3A.Wifi_setAP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_setAP</span></code></a>()</p></td>
 <td><p>Change from station mode to AP mode for Wifi device.</p></td>
 </tr>
 </tbody>
@@ -694,7 +694,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_getWifiBandwidth">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_getWifiBandwidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_getWifiBandwidth" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_getWifiBandwidth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_getWifiBandwidth" title="Permalink to this definition"></a></dt>
 <dd><p>Get bandwidth from Wifi device.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -711,7 +711,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_getWifiConfiguration">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_getWifiConfiguration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_getWifiConfiguration" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_getWifiConfiguration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_getWifiConfiguration" title="Permalink to this definition"></a></dt>
 <dd><p>Get Wifi reconnection times and AP stay time.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -728,7 +728,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_readAccleration">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_readAccleration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_readAccleration" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_readAccleration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_readAccleration" title="Permalink to this definition"></a></dt>
 <dd><p>Get acceleration from sensor if the Wifi device has one.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -742,7 +742,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_readBattery">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_readBattery</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_readBattery" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_readBattery</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_readBattery" title="Permalink to this definition"></a></dt>
 <dd><p>Get volatge status of battery if the Wifi device has one.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -756,7 +756,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_readRSSI">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_readRSSI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_readRSSI" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_readRSSI</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_readRSSI" title="Permalink to this definition"></a></dt>
 <dd><p>Get Wifi RSSI signal of the connected Wifi device.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -770,7 +770,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_readThermo">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_readThermo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_readThermo" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_readThermo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_readThermo" title="Permalink to this definition"></a></dt>
 <dd><p>Get temperature from thermal sensor if the Wifi device has one.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -784,7 +784,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_setAP">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_setAP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_setAP" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_setAP</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_setAP" title="Permalink to this definition"></a></dt>
 <dd><p>Change from station mode to AP mode for Wifi device.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
