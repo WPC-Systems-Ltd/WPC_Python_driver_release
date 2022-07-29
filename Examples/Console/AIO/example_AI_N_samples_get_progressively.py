@@ -43,10 +43,10 @@ async def main():
         ## Set AI port to 1 and set sampling rate to 5k (Hz)
         await dev.AI_setSamplingRate(port, sampling_rate) 
 
-        ## Set AI port to 1  and # of samples to 3000 (pts)
+        ## Set AI port to 1 and # of samples to 3000 (pts)
         await dev.AI_setNumSamples(port, samples) 
 
-        ##  Set AI port to 1 and start acquisition
+        ## Set AI port to 1 and start acquisition
         await dev.AI_start(port)
 
         ## Start async thread
