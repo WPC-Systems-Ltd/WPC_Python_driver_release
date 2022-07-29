@@ -34,7 +34,7 @@ USB DAQ
 Port configurations
 -------------------
 
-| Board           | AI  | AO | DI         | DO         | CAN | UART | RTD | ThermoCouple |
+| Board           | AI  | AO | DI         | DO         | CAN | UART | RTD | Thermocouple |
 |:----------------|:---:|:--:|:----------:|:----------:|:---:|:----:|:---:|:------------:|
 | Wifi-DAQ-E3-A   | 1   | -  | -          | -          |-    |-     |-    |-             |
 | Ethan-D         | -   | -  | 1          | 0          |-    |-     |-    |-             |
@@ -47,6 +47,8 @@ Port configurations
 | USB-DAQ-F1-CD   | -   | -  | 0, 1, 2, 3 | 0, 1, 2, 3 |1    |1, 2  |-    |-             |
 | USB-DAQ-F1-RD   | -   | -  | 0, 1, 2, 3 | 0, 1, 2, 3 |-    |1, 2  |1    |-             |
 
+Take `USB-DAQ-F1-AOD` for example, use port0 for `AI`, port2 for `DI`, port0 & port
+1 for `DO` and port2 for `UART`.
 
 ## Reference
 - [User manual](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)
