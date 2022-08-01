@@ -33,7 +33,9 @@ USB devices
    :maxdepth: 4
 
    products/USBDAQF1D
+   products/USBDAQF1AD
    products/USBDAQF1DSNK
    products/USBDAQF1AOD
    products/USBDAQF1TD
    products/USBDAQF1CD
+   products/USBDAQF1RD
