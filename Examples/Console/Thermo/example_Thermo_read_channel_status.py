@@ -24,10 +24,12 @@ async def main():
         driver_info = await dev.sys_getDriverInfo()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-      
+
+        ## Parameters setting
         port = 1
         channel_0 = 0
         channel_1 = 1
+        
         ## Open thermo
         await dev.Thermal_open(port)
 

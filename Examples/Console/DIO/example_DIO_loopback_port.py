@@ -24,9 +24,11 @@ async def main():
         driver_info = await dev.sys_getDriverInfo()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-        
+
+        ## Parameters setting
         port_DO = 0
-        port_DI = 1 
+        port_DI = 1
+
         ## Open all pins in port 0 with digital output 
         await dev.DO_openPort(port_DO)
 

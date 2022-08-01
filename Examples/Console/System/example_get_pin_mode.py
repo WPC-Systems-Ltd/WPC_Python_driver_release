@@ -35,8 +35,10 @@ async def main():
         print()
         print("====================")
 
+        ## Parameters setting
         port_DO = 0
         port_DI = 1
+        
         ## Open pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output
         await dev.DO_openPins(port_DO, [0,1,2,3,4])
 

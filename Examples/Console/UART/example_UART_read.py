@@ -25,6 +25,7 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
+        ## Parameters setting
         port = 2
         baudrate = 9600 
         data_bit_mode = 0  ## 0 : 8-bit data, 1 : 9-bit data.

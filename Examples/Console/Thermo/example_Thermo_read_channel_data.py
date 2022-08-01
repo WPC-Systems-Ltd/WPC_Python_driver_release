@@ -25,6 +25,7 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
         
+        ## Parameters setting
         port    = 1
         channel = 1 
         over_sampling_mode = 0  ## 0:1 sample, 1:2 samples, 2:4 sample, 3:8 samples, 4:16 samples

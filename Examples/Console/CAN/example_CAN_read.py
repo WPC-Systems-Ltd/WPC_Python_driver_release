@@ -24,7 +24,8 @@ async def main():
         driver_info = await dev.Sys_getDriverInfo()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-
+        
+        ## Parameters setting
         port  = 1
         speed = 0 ## 0 = 125 KHz, 1 = 250 kHz, 2 = 500 kHz, 3 = 1 MHz
 

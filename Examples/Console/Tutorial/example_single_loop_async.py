@@ -4,7 +4,7 @@ sys.path.insert(0, 'pywpc/')
 sys.path.insert(0, '../../../pywpc/')
 import pywpc
 
-async def loop_func(handle, timeout = 3, delay = 0.5): 
+async def loop_func(handle, timeout = 3, delay = 0.5):
     t = 0
     while t < timeout: ## timeout(second)
         data = await handle.Wifi_readRSSI()
