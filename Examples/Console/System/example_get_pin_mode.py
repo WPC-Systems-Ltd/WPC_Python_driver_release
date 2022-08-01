@@ -70,15 +70,14 @@ async def main():
             ## Wait for 0.5 seconds
             await asyncio.sleep(0.5)  ## delay(second)
 
+        ## Close pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output 
+        await dev.DO_closePins(port_DO, [0,1,2,3,4])
+
+        ## Close pin4, pin5, pin6 and pin7 in port 1 with digital input
+        await dev.DI_closePins(port_DI, [4,5,6,7])
     except Exception as err:
         pywpc.printGenericError(err)
- 
-    ## Close pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output 
-    await dev.DO_closePins(port_DO, [0,1,2,3,4])
-
-    ## Close pin4, pin5, pin6 and pin7 in port 1 with digital input
-    await dev.DI_closePins(port_DI, [4,5,6,7])
-    
+        
     ## Disconnect network device
     dev.disconnect()
     
