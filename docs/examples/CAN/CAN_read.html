@@ -113,50 +113,51 @@
 <span class="linenos">24</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo</span><span class="p">()</span>
 <span class="linenos">25</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="linenos">26</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="linenos">27</span>
-<span class="linenos">28</span>        <span class="n">port</span>  <span class="o">=</span> <span class="mi">1</span>
-<span class="linenos">29</span>        <span class="n">speed</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">## 0 = 125 KHz, 1 = 250 kHz, 2 = 500 kHz, 3 = 1 MHz</span>
-<span class="linenos">30</span>
-<span class="linenos">31</span>        <span class="c1">## CAN Open</span>
-<span class="linenos">32</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">CAN_open</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> 
-<span class="linenos">33</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CAN_open: OK&quot;</span><span class="p">)</span>
-<span class="linenos">34</span>
-<span class="linenos">35</span>        <span class="c1">## Set CAN speed to 0  </span>
-<span class="linenos">36</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">CAN_setSpeed</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">speed</span><span class="p">)</span> 
-<span class="linenos">37</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CAN_setSpeed: OK&quot;</span><span class="p">)</span>
-<span class="linenos">38</span>
-<span class="linenos">39</span>        <span class="c1">## CAN Start</span>
-<span class="linenos">40</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">CAN_start</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> 
-<span class="linenos">41</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CAN_start: OK&quot;</span><span class="p">)</span>
-<span class="linenos">42</span>
-<span class="linenos">43</span>        <span class="c1">## Read 5 frames for 1000 times</span>
-<span class="linenos">44</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
-<span class="linenos">45</span>            <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">CAN_read</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="linenos">46</span>            <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="linenos">47</span>                <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
-<span class="linenos">48</span>            <span class="k">else</span><span class="p">:</span>
-<span class="linenos">49</span>                <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="linenos">50</span>            
-<span class="linenos">51</span>        <span class="c1">## CAN Stop</span>
-<span class="linenos">52</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">CAN_stop</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> 
-<span class="linenos">53</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CAN_stop: OK&quot;</span><span class="p">)</span>
-<span class="linenos">54</span>        
-<span class="linenos">55</span>        <span class="c1">## CAN Close</span>
-<span class="linenos">56</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">CAN_close</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> 
-<span class="linenos">57</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CAN_close: OK&quot;</span><span class="p">)</span>
-<span class="linenos">58</span> 
-<span class="linenos">59</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos">60</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="linenos">61</span> 
-<span class="linenos">62</span>    <span class="c1">## Disconnect network device</span>
-<span class="linenos">63</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
-<span class="linenos">64</span>
-<span class="linenos">65</span>    <span class="c1">## Release device handle</span>
-<span class="linenos">66</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="linenos">67</span>    <span class="k">return</span>
-<span class="linenos">68</span>
-<span class="linenos">69</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">70</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+<span class="linenos">27</span>        
+<span class="linenos">28</span>        <span class="c1">## Parameters setting</span>
+<span class="linenos">29</span>        <span class="n">port</span>  <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">30</span>        <span class="n">speed</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">## 0 = 125 KHz, 1 = 250 kHz, 2 = 500 kHz, 3 = 1 MHz</span>
+<span class="linenos">31</span>
+<span class="linenos">32</span>        <span class="c1">## CAN Open</span>
+<span class="linenos">33</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">CAN_open</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> 
+<span class="linenos">34</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CAN_open: OK&quot;</span><span class="p">)</span>
+<span class="linenos">35</span>
+<span class="linenos">36</span>        <span class="c1">## Set CAN speed to 0  </span>
+<span class="linenos">37</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">CAN_setSpeed</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">speed</span><span class="p">)</span> 
+<span class="linenos">38</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CAN_setSpeed: OK&quot;</span><span class="p">)</span>
+<span class="linenos">39</span>
+<span class="linenos">40</span>        <span class="c1">## CAN Start</span>
+<span class="linenos">41</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">CAN_start</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> 
+<span class="linenos">42</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CAN_start: OK&quot;</span><span class="p">)</span>
+<span class="linenos">43</span>
+<span class="linenos">44</span>        <span class="c1">## Read 5 frames for 1000 times</span>
+<span class="linenos">45</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+<span class="linenos">46</span>            <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">CAN_read</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="linenos">47</span>            <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">48</span>                <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="linenos">49</span>            <span class="k">else</span><span class="p">:</span>
+<span class="linenos">50</span>                <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="linenos">51</span>            
+<span class="linenos">52</span>        <span class="c1">## CAN Stop</span>
+<span class="linenos">53</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">CAN_stop</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> 
+<span class="linenos">54</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CAN_stop: OK&quot;</span><span class="p">)</span>
+<span class="linenos">55</span>        
+<span class="linenos">56</span>        <span class="c1">## CAN Close</span>
+<span class="linenos">57</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">CAN_close</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> 
+<span class="linenos">58</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CAN_close: OK&quot;</span><span class="p">)</span>
+<span class="linenos">59</span> 
+<span class="linenos">60</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos">61</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">62</span> 
+<span class="linenos">63</span>    <span class="c1">## Disconnect network device</span>
+<span class="linenos">64</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+<span class="linenos">65</span>
+<span class="linenos">66</span>    <span class="c1">## Release device handle</span>
+<span class="linenos">67</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos">68</span>    <span class="k">return</span>
+<span class="linenos">69</span>
+<span class="linenos">70</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">71</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </pre></div>
 </div>
 </section>
