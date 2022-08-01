@@ -52,15 +52,15 @@ async def main():
         if status == 0: print("UART_setNumStopBit: OK")
 
         ## Write "12345" to device in string format
-        status = await dev.UART_write(port, 5, "12345")
+        status = await dev.UART_write(port, "12345")
         if status == 0: print("UART_write: OK")
 
         ## Write "chunglee people" to device
-        status = await dev.UART_write(port, 15, "chunglee people")
+        status = await dev.UART_write(port, "chunglee people")
         if status == 0: print("UART_write: OK")
 
         ## Write "12345" to device in list format
-        status = await dev.UART_write(port, 5, ["1","2","3","4","5"])
+        status = await dev.UART_write(port, ["1","2","3","4","5"])
         if status == 0: print("UART_write: OK")
 
         ## Close port 2
