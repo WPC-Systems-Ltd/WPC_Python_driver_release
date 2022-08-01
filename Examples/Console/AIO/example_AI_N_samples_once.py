@@ -18,28 +18,40 @@ async def main():
         dev.connect("192.168.5.79")
     except Exception as err:
         pywpc.printGenericError(err) 
-    
-    ## Parameters setting
-    port = 1  ## Set AI port to 1 in WifiDAQE3A
-    mode = 1  ## 0 : On demand, 1 : N-samples, 2 : Continuous.
-    sampling_rate = 1000
-    samples = 50    
-    read_poins = 50 
 
-    ## Perform data acquisition
-    try:  
+    try:
+        ## Get firmware model & version
+        driver_info = await dev.Sys_getDriverInfo()
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
+
+        ## Parameters setting
+        port = 1
+        mode = 1  ## 0 : On demand, 1 : N-samples, 2 : Continuous.
+        sampling_rate = 1000
+        samples = 50    
+        read_poins = 50 
+
+        ## Open port 1
+        status = await dev.AI_open(port)
+        if status == 0: print("AI_open: OK")
+
         ## Set AI port to 1 and acquisition mode to N-samples mode (1)
-        await dev.AI_setMode(port, mode)
-        
+        status = await dev.AI_setMode(port, mode)
+        if status == 0: print("AI_setMode: OK")
+
         ## Set AI port to 1 and sampling rate to 1k (Hz)
-        await dev.AI_setSamplingRate(port, sampling_rate) 
-       
+        status = await dev.AI_setSamplingRate(port, sampling_rate) 
+        if status == 0: print("AI_setSamplingRate: OK")
+        
         ## Set AI port to 1 and # of samples to 50 (pts)
-        await dev.AI_setNumSamples(port, samples)
-        
+        status = await dev.AI_setNumSamples(port, samples)
+        if status == 0: print("AI_setNumSamples: OK")
+
         ## Set AI port to 1 and start acquisition
-        await dev.AI_start(port)
-        
+        status = await dev.AI_start(port)
+        if status == 0: print("AI_start: OK")
+
         ## Wait amount of time (sec)
         await asyncio.sleep(1)
         
@@ -49,6 +61,10 @@ async def main():
         ## Read acquisition data 50 points 
         print("Get data points: " + str(len(data))) 
         print("Get data: " + str(data))
+
+        ## Close port 1
+        status = await dev.AI_close(port) 
+        if status == 0: print("AI_close: OK")
     except Exception as err:
         pywpc.printGenericError(err) 
 
