@@ -43,6 +43,11 @@ async def main():
     
     ## Perform two sync thread to query data
     try:
+        ## Get firmware model & version
+        driver_info = await dev.Sys_getDriverInfo()
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
+        
         _threadRSSI = threading.Thread(target = RSSI_thread, args=[dev, 0.5])
         _threadRSSI.start()
 

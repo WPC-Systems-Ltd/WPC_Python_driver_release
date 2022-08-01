@@ -32,6 +32,11 @@ async def main():
 
     ## Perform async thread to get RSSI, Battery and Thermo in once loop
     try:
+        ## Get firmware model & version
+        driver_info = await dev.Sys_getDriverInfo()
+        print("Firmware model: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
+        
         await loop_func(dev, 1)  ## delay (second)
     except Exception as err:
         pywpc.printGenericError(err)

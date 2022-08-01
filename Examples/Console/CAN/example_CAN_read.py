@@ -56,7 +56,6 @@ async def main():
         ## CAN Close
         status = await dev.CAN_close(port) 
         if status == 0: print("CAN_close: OK")
- 
     except Exception as err:
         pywpc.printGenericError(err)
  

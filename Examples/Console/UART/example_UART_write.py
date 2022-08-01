@@ -66,7 +66,6 @@ async def main():
         ## Close port 2
         status = await dev.UART_close(port)
         if status == 0: print("UART_close: OK")
-
     except Exception as err:
         pywpc.printGenericError(err)
 

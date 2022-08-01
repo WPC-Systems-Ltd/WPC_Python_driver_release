@@ -21,13 +21,13 @@ async def main():
 
     try: 
         ## Get firmware model & version
-        driver_info = await dev.sys_getDriverInfo()
+        driver_info = await dev.Sys_getDriverInfo()
         print("Firmware model: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
         
         ## Get pinmode from port 0 to port 3
         for i in range(4):
-            pin_mode_status = await dev.sys_getPinModeInPort(i)
+            pin_mode_status = await dev.Sys_getPinModeInPort(i)
             print(f'pins: {pin_mode_status[0]}, slot{i}, mode {pin_mode_status[1]}') 
 
             ## Wait for 0.5 seconds
@@ -50,7 +50,7 @@ async def main():
 
         ## Get pinmode from port 0 to port 3
         for i in range(4):
-            pin_mode_status = await dev.sys_getPinModeInPort(i)
+            pin_mode_status = await dev.Sys_getPinModeInPort(i)
             print(f'pins: {pin_mode_status[0]}, slot{i}, mode {pin_mode_status[1]}') 
             ## Wait for 0.5 seconds
             await asyncio.sleep(0.5)  ## delay(second)
@@ -65,7 +65,7 @@ async def main():
                 
         ## Get pinmode from port 0 to port 3
         for i in range(4):
-            pin_mode_status = await dev.sys_getPinModeInPort(i)
+            pin_mode_status = await dev.Sys_getPinModeInPort(i)
             print(f'pins: {pin_mode_status[0]}, slot{i}, mode {pin_mode_status[1]}') 
             ## Wait for 0.5 seconds
             await asyncio.sleep(0.5)  ## delay(second)

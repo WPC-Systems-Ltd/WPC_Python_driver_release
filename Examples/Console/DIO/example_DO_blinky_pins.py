@@ -21,16 +21,17 @@ async def main():
 
     try: 
         ## Get firmware model & version
-        driver_info = await dev.sys_getDriverInfo()
+        driver_info = await dev.Sys_getDriverInfo()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Parameters setting
         port = 0
-        pinindex =[0,7]
+        pinindex = [0,7]
  
         ## Open pin0 and pin7 in port 0 with digital output
-        await dev.DO_openPins(port, pinindex)
+        status = await dev.DO_openPins(port, pinindex)
+        if status == 0: print("DO_openPins: OK")
 
         for i in range(10):
             if i%2 == 0:
@@ -39,20 +40,18 @@ async def main():
                 value = [1,0]
 
             await dev.DO_writeValuePins(port, pinindex, value) 
-            
             print(f'Port: {port}, pinindex = {pinindex}, digital state = {value}') 
-            
             await asyncio.sleep(0.5)  ## delay(second)
 
         ## Wait for 3 seconds
         await asyncio.sleep(3)  ## delay(second)
         
+        ## Close pin0 and pin7 in port 0 with digital output 
+        status = await dev.DO_closePins(port, pinindex)
+        if status == 0: print("DO_closePins: OK")
     except Exception as err:
         pywpc.printGenericError(err)
-
-    ## Close pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output 
-    await dev.DO_closePins(port, pinindex)
- 
+        
     ## Disconnect network device
     dev.disconnect()
     
