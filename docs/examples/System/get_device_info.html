@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>example get device info &mdash; WPC Device Driver 0.1.15-beta documentation</title>
+  <title>example get device info &mdash; WPC Device Driver 0.1.15 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -31,7 +31,7 @@
             <a href="../../index.html" class="icon icon-home"> WPC Device Driver
           </a>
               <div class="version">
-                0.1.15-beta
+                0.1.15
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -113,19 +113,19 @@
 <span class="linenos">22</span>    <span class="c1">## Perform DAQ basic information </span>
 <span class="linenos">23</span>    <span class="k">try</span><span class="p">:</span>
 <span class="linenos">24</span>        <span class="c1">## Get firmware model &amp; version</span>
-<span class="linenos">25</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">sys_getDriverInfo</span><span class="p">()</span>
+<span class="linenos">25</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo</span><span class="p">()</span>
 <span class="linenos">26</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="linenos">27</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 <span class="linenos">28</span> 
 <span class="linenos">29</span>        <span class="c1">## Get serial number &amp; RTC Time</span>
-<span class="linenos">30</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Serial number = &#39;</span> <span class="o">+</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">sys_getSerialNumber</span><span class="p">())</span>
-<span class="linenos">31</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;RTC data time = &#39;</span> <span class="o">+</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">sys_getRTC</span><span class="p">())</span>
+<span class="linenos">30</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Serial number = &#39;</span> <span class="o">+</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getSerialNumber</span><span class="p">())</span>
+<span class="linenos">31</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;RTC data time = &#39;</span> <span class="o">+</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getRTC</span><span class="p">())</span>
 <span class="linenos">32</span>
 <span class="linenos">33</span>        <span class="c1">## Get IP &amp; submask &amp; MAC</span>
-<span class="linenos">34</span>        <span class="n">ip_addr</span><span class="p">,</span> <span class="n">submask</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">sys_getIPAddrAndSubmask</span><span class="p">()</span>
+<span class="linenos">34</span>        <span class="n">ip_addr</span><span class="p">,</span> <span class="n">submask</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getIPAddrAndSubmask</span><span class="p">()</span>
 <span class="linenos">35</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;IP = &#39;</span> <span class="o">+</span> <span class="n">ip_addr</span><span class="p">)</span>
 <span class="linenos">36</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Submask = &#39;</span><span class="o">+</span> <span class="n">submask</span><span class="p">)</span>
-<span class="linenos">37</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;MAC = &#39;</span> <span class="o">+</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">sys_getMACAddr</span><span class="p">())</span>
+<span class="linenos">37</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;MAC = &#39;</span> <span class="o">+</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getMACAddr</span><span class="p">())</span>
 <span class="linenos">38</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos">39</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="linenos">40</span>
