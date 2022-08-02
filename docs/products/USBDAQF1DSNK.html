@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>USB-DAQ-F1-D-SNK &mdash; WPC Device Driver 0.1.14-beta documentation</title>
+  <title>USB-DAQ-F1-D-SNK &mdash; WPC Device Driver 0.1.15 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="USB-DAQ-F1-AOD" href="USBDAQF1AOD.html" />
-    <link rel="prev" title="USB-DAQ-F1-D" href="USBDAQF1D.html" /> 
+    <link rel="prev" title="USB-DAQ-F1-AD" href="USBDAQF1AD.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -31,7 +31,7 @@
             <a href="../index.html" class="icon icon-home"> WPC Device Driver
           </a>
               <div class="version">
-                0.1.14-beta
+                0.1.15
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -49,9 +49,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../products.html#ethernet-devices">Ethernet devices</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../products.html#usb-devices">USB devices</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="USBDAQF1D.html">USB-DAQ-F1-D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="USBDAQF1AD.html">USB-DAQ-F1-AD</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">USB-DAQ-F1-D-SNK</a></li>
 <li class="toctree-l3"><a class="reference internal" href="USBDAQF1AOD.html">USB-DAQ-F1-AOD</a></li>
 <li class="toctree-l3"><a class="reference internal" href="USBDAQF1TD.html">USB-DAQ-F1-TD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="USBDAQF1CD.html">USB-DAQ-F1-CD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="USBDAQF1RD.html">USB-DAQ-F1-RD</a></li>
 </ul>
 </li>
 </ul>
@@ -127,7 +130,7 @@
 <td><p>Open all pins in specific port with digital output.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.DO_writeValuePins" title="pywpc.USBDAQF1DSNK.DO_writeValuePins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_writeValuePins</span></code></a>(port, pin, value)</p></td>
-<td><p>Write digital value to specefic pin.</p></td>
+<td><p>Write digital value to specific pin.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.DO_writeValuePort" title="pywpc.USBDAQF1DSNK.DO_writeValuePort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_writeValuePort</span></code></a>(port, value)</p></td>
 <td><p>Write all pins state in specific port with digital output.</p></td>
@@ -189,7 +192,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -217,7 +220,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -241,7 +244,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -269,7 +272,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -293,7 +296,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -321,7 +324,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -345,7 +348,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">list</span></dt><dd><ul class="simple">
@@ -375,7 +378,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -399,7 +402,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -429,7 +432,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -448,12 +451,12 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1DSNK.DO_writeValuePins">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DO_writeValuePins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1DSNK.DO_writeValuePins" title="Permalink to this definition"></a></dt>
-<dd><p>Write digital value to specefic pin.</p>
+<dd><p>Write digital value to specific pin.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -490,7 +493,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>value</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -628,7 +631,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -652,7 +655,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -676,7 +679,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -745,7 +748,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="USBDAQF1D.html" class="btn btn-neutral float-left" title="USB-DAQ-F1-D" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="USBDAQF1AD.html" class="btn btn-neutral float-left" title="USB-DAQ-F1-AD" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="USBDAQF1AOD.html" class="btn btn-neutral float-right" title="USB-DAQ-F1-AOD" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

@@ -65,3 +65,12 @@ UART
 
    examples/UART/UART_read
    examples/UART/UART_write
+
+CAN bus
+-------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/CAN/CAN_read
+   examples/CAN/CAN_write

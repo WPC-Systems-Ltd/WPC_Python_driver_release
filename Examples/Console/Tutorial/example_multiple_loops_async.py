@@ -33,6 +33,11 @@ async def main():
 
     ## Perform two async thread to get data
     try:
+        ## Get firmware model & version
+        driver_info = await dev.Sys_getDriverInfo()
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
+        
         await asyncio.gather(readRSSI_loop(dev, 1), readBattery_loop(dev, 2)) ## delay (second)
     except Exception as err:
         pywpc.printGenericError(err)

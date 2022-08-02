@@ -23,7 +23,8 @@ async def main():
         driver_info = await dev.Sys_getDriverInfo()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-
+        
+        ## Parameters setting
         port = 2
         baudrate = 9600 
         data_bit_mode = 0  ## 0 : 8-bit data, 1 : 9-bit data.
@@ -51,21 +52,20 @@ async def main():
         if status == 0: print("UART_setNumStopBit: OK")
 
         ## Write "12345" to device in string format
-        status = await dev.UART_write(port, 5, "12345")
+        status = await dev.UART_write(port, "12345")
         if status == 0: print("UART_write: OK")
 
         ## Write "chunglee people" to device
-        status = await dev.UART_write(port, 15, "chunglee people")
+        status = await dev.UART_write(port, "chunglee people")
         if status == 0: print("UART_write: OK")
 
         ## Write "12345" to device in list format
-        status = await dev.UART_write(port, 5, ["1","2","3","4","5"])
+        status = await dev.UART_write(port, ["1","2","3","4","5"])
         if status == 0: print("UART_write: OK")
 
         ## Close port 2
         status = await dev.UART_close(port)
         if status == 0: print("UART_close: OK")
-
     except Exception as err:
         pywpc.printGenericError(err)
 

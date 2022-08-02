@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>USB-DAQ-F1-D &mdash; WPC Device Driver 0.1.14-beta documentation</title>
+  <title>USB-DAQ-F1-D &mdash; WPC Device Driver 0.1.15 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,7 +19,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="USB-DAQ-F1-D-SNK" href="USBDAQF1DSNK.html" />
+    <link rel="next" title="USB-DAQ-F1-AD" href="USBDAQF1AD.html" />
     <link rel="prev" title="Ethan-A" href="EthanA.html" /> 
 </head>
 
@@ -31,7 +31,7 @@
             <a href="../index.html" class="icon icon-home"> WPC Device Driver
           </a>
               <div class="version">
-                0.1.14-beta
+                0.1.15
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -49,9 +49,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../products.html#ethernet-devices">Ethernet devices</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../products.html#usb-devices">USB devices</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">USB-DAQ-F1-D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="USBDAQF1AD.html">USB-DAQ-F1-AD</a></li>
 <li class="toctree-l3"><a class="reference internal" href="USBDAQF1DSNK.html">USB-DAQ-F1-D-SNK</a></li>
 <li class="toctree-l3"><a class="reference internal" href="USBDAQF1AOD.html">USB-DAQ-F1-AOD</a></li>
 <li class="toctree-l3"><a class="reference internal" href="USBDAQF1TD.html">USB-DAQ-F1-TD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="USBDAQF1CD.html">USB-DAQ-F1-CD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="USBDAQF1RD.html">USB-DAQ-F1-RD</a></li>
 </ul>
 </li>
 </ul>
@@ -127,10 +130,64 @@
 <td><p>Open all pins in specific port with digital output.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.DO_writeValuePins" title="pywpc.USBDAQF1D.DO_writeValuePins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_writeValuePins</span></code></a>(port, pin, value)</p></td>
-<td><p>Write digital value to specefic pin.</p></td>
+<td><p>Write digital value to specific pin.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.DO_writeValuePort" title="pywpc.USBDAQF1D.DO_writeValuePort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_writeValuePort</span></code></a>(port, value)</p></td>
 <td><p>Write all pins state in specific port with digital output.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.I2C_close" title="pywpc.USBDAQF1D.I2C_close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_close</span></code></a>(port)</p></td>
+<td><p>Close I2C port.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.I2C_open" title="pywpc.USBDAQF1D.I2C_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_open</span></code></a>(port)</p></td>
+<td><p>Open I2C port on WPC DAQ.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.I2C_read" title="pywpc.USBDAQF1D.I2C_read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_read</span></code></a>(port, read_address, bytes_to_read)</p></td>
+<td><p>Read I2C datas from read address</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.I2C_reset" title="pywpc.USBDAQF1D.I2C_reset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_reset</span></code></a>(port)</p></td>
+<td><p>Reset I2C port.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.I2C_setAddressSize" title="pywpc.USBDAQF1D.I2C_setAddressSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_setAddressSize</span></code></a>(port, mode)</p></td>
+<td><p>Set I2C address size functionality.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.I2C_setFrequency" title="pywpc.USBDAQF1D.I2C_setFrequency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_setFrequency</span></code></a>(port, frequency)</p></td>
+<td><p>Set I2C clock rate functionality.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.I2C_write" title="pywpc.USBDAQF1D.I2C_write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_write</span></code></a>(port, write_address, data)</p></td>
+<td><p>Write data to I2C write address.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.SPI_close" title="pywpc.USBDAQF1D.SPI_close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_close</span></code></a>(port)</p></td>
+<td><p>Close SPI port.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.SPI_open" title="pywpc.USBDAQF1D.SPI_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_open</span></code></a>(port)</p></td>
+<td><p>Open SPI port.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.SPI_read" title="pywpc.USBDAQF1D.SPI_read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_read</span></code></a>(port, bytes_to_read)</p></td>
+<td><p>Read SPI datas from SPI port.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.SPI_readAndWrite" title="pywpc.USBDAQF1D.SPI_readAndWrite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_readAndWrite</span></code></a>(port, write_data)</p></td>
+<td><p>Write and read data simultaneously</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.SPI_reset" title="pywpc.USBDAQF1D.SPI_reset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_reset</span></code></a>(port)</p></td>
+<td><p>Reset SPI to default settings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.SPI_setCPHA" title="pywpc.USBDAQF1D.SPI_setCPHA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_setCPHA</span></code></a>(port, phase)</p></td>
+<td><p>Set SPI clock phase.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.SPI_setCPOL" title="pywpc.USBDAQF1D.SPI_setCPOL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_setCPOL</span></code></a>(port, polarity)</p></td>
+<td><p>Set SPI clock polarity.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.SPI_setDataSize" title="pywpc.USBDAQF1D.SPI_setDataSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_setDataSize</span></code></a>(port, mode)</p></td>
+<td><p>Set SPI data size.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.SPI_setFirstBit" title="pywpc.USBDAQF1D.SPI_setFirstBit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_setFirstBit</span></code></a>(port, mode)</p></td>
+<td><p>Set which first bit for SPI.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.SPI_setPrescaler" title="pywpc.USBDAQF1D.SPI_setPrescaler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_setPrescaler</span></code></a>(port, prescaler)</p></td>
+<td><p>Set SPI prescaler.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.SPI_write" title="pywpc.USBDAQF1D.SPI_write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_write</span></code></a>(port, write_data)</p></td>
+<td><p>Write SPI datas to SPI.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.Sys_getDriverInfo" title="pywpc.USBDAQF1D.Sys_getDriverInfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getDriverInfo</span></code></a>()</p></td>
 <td><p>Get device firmware information.</p></td>
@@ -163,10 +220,10 @@
 <td><p>Set date and time to connected WPC device.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_close" title="pywpc.USBDAQF1D.UART_close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_close</span></code></a>(port)</p></td>
-<td><p>Close a UART on port.</p></td>
+<td><p>Close UART port.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_open" title="pywpc.USBDAQF1D.UART_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_open</span></code></a>(port)</p></td>
-<td><p>Open a UART on port.</p></td>
+<td><p>Open specific UART port on WPC DAQ device.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_read" title="pywpc.USBDAQF1D.UART_read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_read</span></code></a>(port, bytes_to_read[, delay])</p></td>
 <td><p>Read data from UART port.</p></td>
@@ -175,22 +232,22 @@
 <td><p>Reset UART to default settings.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_setBaudRate" title="pywpc.USBDAQF1D.UART_setBaudRate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_setBaudRate</span></code></a>(port, baud_rate)</p></td>
-<td><p>Set Baud rate for UART.</p></td>
+<td><p>Set UART Baud rate.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_setDataBit" title="pywpc.USBDAQF1D.UART_setDataBit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_setDataBit</span></code></a>(port, data_bit_mode)</p></td>
-<td><p>Set data size for UART.</p></td>
+<td><p>Set UART data size.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_setNumStopBit" title="pywpc.USBDAQF1D.UART_setNumStopBit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_setNumStopBit</span></code></a>(port, stop_bit_mode)</p></td>
-<td><p>Set number of stop bits for UART.</p></td>
+<td><p>Set UART number of stop bits.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_setParity" title="pywpc.USBDAQF1D.UART_setParity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_setParity</span></code></a>(port, parity_mode)</p></td>
-<td><p>Set parity for UART.</p></td>
+<td><p>Set UART parity.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_stopReading" title="pywpc.USBDAQF1D.UART_stopReading"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_stopReading</span></code></a>(port)</p></td>
-<td><p>Stop reading a stream via UART</p></td>
+<td><p>Stop reading a stream via UART.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_write" title="pywpc.USBDAQF1D.UART_write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_write</span></code></a>(port, data_length, write_data)</p></td>
-<td><p>Write data via UART</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1D.UART_write" title="pywpc.USBDAQF1D.UART_write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_write</span></code></a>(port, write_data)</p></td>
+<td><p>Write data to UART port.</p></td>
 </tr>
 </tbody>
 </table>
@@ -219,7 +276,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -247,7 +304,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -271,7 +328,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -299,7 +356,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -323,7 +380,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -351,7 +408,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -375,7 +432,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">list</span></dt><dd><ul class="simple">
@@ -405,7 +462,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -429,7 +486,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -459,7 +516,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -478,12 +535,12 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1D.DO_writeValuePins">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DO_writeValuePins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.DO_writeValuePins" title="Permalink to this definition"></a></dt>
-<dd><p>Write digital value to specefic pin.</p>
+<dd><p>Write digital value to specific pin.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -520,7 +577,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>value</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -528,6 +585,494 @@
 <li><p>High = 1, Low = 0.</p></li>
 <li><p>For example if intput type is list.</p></li>
 <li><p>[0,0,0,0,1,1,1,1] in LSB.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1D.I2C_close">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">I2C_close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.I2C_close" title="Permalink to this definition"></a></dt>
+<dd><p>Close I2C port.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Depend on WPC device.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1D.I2C_open">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">I2C_open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.I2C_open" title="Permalink to this definition"></a></dt>
+<dd><p>Open I2C port on WPC DAQ.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Depend on WPC device.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1D.I2C_read">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">I2C_read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytes_to_read</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.I2C_read" title="Permalink to this definition"></a></dt>
+<dd><p>Read I2C datas from read address</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Depend on WPC device.</p></li>
+</ul>
+</dd>
+<dt><strong>read_address</strong><span class="classifier">int for U8</span></dt><dd><ul class="simple">
+<li><p>I2C address</p></li>
+</ul>
+</dd>
+<dt><strong>bytes_to_read</strong><span class="classifier">int for U8</span></dt><dd><ul class="simple">
+<li><p>How many bytes to read.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1D.I2C_reset">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">I2C_reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.I2C_reset" title="Permalink to this definition"></a></dt>
+<dd><p>Reset I2C port.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Depend on WPC device.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1D.I2C_setAddressSize">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">I2C_setAddressSize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.I2C_setAddressSize" title="Permalink to this definition"></a></dt>
+<dd><p>Set I2C address size functionality.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Depend on WPC device.</p></li>
+</ul>
+</dd>
+<dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Mode: 0 = 7-bit address, 1 = 10-bit address</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1D.I2C_setFrequency">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">I2C_setFrequency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frequency</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.I2C_setFrequency" title="Permalink to this definition"></a></dt>
+<dd><p>Set I2C clock rate functionality.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Depend on WPC device.</p></li>
+</ul>
+</dd>
+<dt><strong>frequency</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Frequency must be smaller than 400000</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1D.I2C_write">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">I2C_write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.I2C_write" title="Permalink to this definition"></a></dt>
+<dd><p>Write data to I2C write address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Depend on WPC device.</p></li>
+</ul>
+</dd>
+<dt><strong>write_address</strong><span class="classifier">int for U8</span></dt><dd><ul class="simple">
+<li><p>I2C address</p></li>
+</ul>
+</dd>
+<dt><strong>data</strong><span class="classifier">list</span></dt><dd><ul class="simple">
+<li><p>write dara</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1D.SPI_close">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.SPI_close" title="Permalink to this definition"></a></dt>
+<dd><p>Close SPI port.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Depend on WPC device.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1D.SPI_open">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.SPI_open" title="Permalink to this definition"></a></dt>
+<dd><p>Open SPI port.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Depend on WPC device.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1D.SPI_read">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytes_to_read</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.SPI_read" title="Permalink to this definition"></a></dt>
+<dd><p>Read SPI datas from SPI port.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Depend on WPC device.</p></li>
+</ul>
+</dd>
+<dt><strong>bytes_to_read</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>How many bytes to read.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">list</span></dt><dd><ul class="simple">
+<li><p>List of SPI data.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1D.SPI_readAndWrite">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_readAndWrite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.SPI_readAndWrite" title="Permalink to this definition"></a></dt>
+<dd><p>Write and read data simultaneously</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Depend on WPC device.</p></li>
+</ul>
+</dd>
+<dt><strong>data</strong><span class="classifier">list</span></dt><dd><ul class="simple">
+<li><p>Write data.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1D.SPI_reset">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.SPI_reset" title="Permalink to this definition"></a></dt>
+<dd><p>Reset SPI to default settings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Depend on WPC device.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1D.SPI_setCPHA">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setCPHA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.SPI_setCPHA" title="Permalink to this definition"></a></dt>
+<dd><p>Set SPI clock phase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Depend on WPC device.</p></li>
+</ul>
+</dd>
+<dt><strong>phase</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 or 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1D.SPI_setCPOL">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setCPOL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">polarity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.SPI_setCPOL" title="Permalink to this definition"></a></dt>
+<dd><p>Set SPI clock polarity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Depend on WPC device.</p></li>
+</ul>
+</dd>
+<dt><strong>polarity</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 or 1</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1D.SPI_setDataSize">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setDataSize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.SPI_setDataSize" title="Permalink to this definition"></a></dt>
+<dd><p>Set SPI data size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Depend on WPC device.</p></li>
+</ul>
+</dd>
+<dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Mode: 0 = 8-bit data, 1 = 16-bit data.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1D.SPI_setFirstBit">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setFirstBit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.SPI_setFirstBit" title="Permalink to this definition"></a></dt>
+<dd><p>Set which first bit for SPI.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Depend on WPC device.</p></li>
+</ul>
+</dd>
+<dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Mode: 0 = MSB first, 1 = LSB first.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1D.SPI_setPrescaler">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setPrescaler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prescaler</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.SPI_setPrescaler" title="Permalink to this definition"></a></dt>
+<dd><p>Set SPI prescaler.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Depend on WPC device.</p></li>
+</ul>
+</dd>
+<dt><strong>prescaler</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Prescaler : 2, 4, 8, 16, 32, 64, 128, or 256.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1D.SPI_write">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.SPI_write" title="Permalink to this definition"></a></dt>
+<dd><p>Write SPI datas to SPI.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Depend on WPC device.</p></li>
+</ul>
+</dd>
+<dt><strong>write_data</strong><span class="classifier">list</span></dt><dd><ul class="simple">
+<li><p>Write data.</p></li>
 </ul>
 </dd>
 </dl>
@@ -658,7 +1203,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -682,7 +1227,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -706,7 +1251,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -755,12 +1300,12 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1D.UART_close">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.UART_close" title="Permalink to this definition"></a></dt>
-<dd><p>Close a UART on port.</p>
+<dd><p>Close UART port.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -779,12 +1324,12 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1D.UART_open">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.UART_open" title="Permalink to this definition"></a></dt>
-<dd><p>Open a UART on port.</p>
+<dd><p>Open specific UART port on WPC DAQ device.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -808,7 +1353,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>bytes_to_read</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -840,7 +1385,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -859,12 +1404,12 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1D.UART_setBaudRate">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_setBaudRate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baud_rate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.UART_setBaudRate" title="Permalink to this definition"></a></dt>
-<dd><p>Set Baud rate for UART.</p>
+<dd><p>Set UART Baud rate.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>baud_rate: int</strong></dt><dd><ul class="simple">
@@ -887,12 +1432,12 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1D.UART_setDataBit">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_setDataBit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_bit_mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.UART_setDataBit" title="Permalink to this definition"></a></dt>
-<dd><p>Set data size for UART.</p>
+<dd><p>Set UART data size.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>data_bit_mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -916,12 +1461,12 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1D.UART_setNumStopBit">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_setNumStopBit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop_bit_mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.UART_setNumStopBit" title="Permalink to this definition"></a></dt>
-<dd><p>Set number of stop bits for UART.</p>
+<dd><p>Set UART number of stop bits.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>stop_bit_mode: int</strong></dt><dd><ul class="simple">
@@ -945,12 +1490,12 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1D.UART_setParity">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_setParity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parity_mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.UART_setParity" title="Permalink to this definition"></a></dt>
-<dd><p>Set parity for UART.</p>
+<dd><p>Set UART parity.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>parity_mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -975,12 +1520,12 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1D.UART_stopReading">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_stopReading</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.UART_stopReading" title="Permalink to this definition"></a></dt>
-<dd><p>Stop reading a stream via UART</p>
+<dd><p>Stop reading a stream via UART.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -998,17 +1543,13 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1D.UART_write">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.UART_write" title="Permalink to this definition"></a></dt>
-<dd><p>Write data via UART</p>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.UART_write" title="Permalink to this definition"></a></dt>
+<dd><p>Write data to UART port.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>According to WPC device.</p></li>
-</ul>
-</dd>
-<dt><strong>data_length</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Data length</p></li>
+<li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
 <dt><strong>write_data</strong><span class="classifier">string</span></dt><dd><ul class="simple">
@@ -1052,7 +1593,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="EthanA.html" class="btn btn-neutral float-left" title="Ethan-A" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="USBDAQF1DSNK.html" class="btn btn-neutral float-right" title="USB-DAQ-F1-D-SNK" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="USBDAQF1AD.html" class="btn btn-neutral float-right" title="USB-DAQ-F1-AD" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

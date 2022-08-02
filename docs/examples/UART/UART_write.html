@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UART_write &mdash; WPC Device Driver 0.1.14-beta documentation</title>
+  <title>UART_write &mdash; WPC Device Driver 0.1.15 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,6 +19,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="CAN_read" href="../CAN/CAN_read.html" />
     <link rel="prev" title="UART_read" href="UART_read.html" /> 
 </head>
 
@@ -30,7 +31,7 @@
             <a href="../../index.html" class="icon icon-home"> WPC Device Driver
           </a>
               <div class="version">
-                0.1.14-beta
+                0.1.15
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -54,6 +55,7 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">UART_write</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#can-bus">CAN bus</a></li>
 </ul>
 </li>
 </ul>
@@ -110,49 +112,49 @@
 <span class="linenos">23</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo</span><span class="p">()</span>
 <span class="linenos">24</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="linenos">25</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="linenos">26</span>
-<span class="linenos">27</span>        <span class="n">port</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="linenos">28</span>        <span class="n">baudrate</span> <span class="o">=</span> <span class="mi">9600</span> 
-<span class="linenos">29</span>        <span class="n">data_bit_mode</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">## 0 : 8-bit data, 1 : 9-bit data.</span>
-<span class="linenos">30</span>        <span class="n">parity_mode</span> <span class="o">=</span> <span class="mi">0</span>    <span class="c1">## 0 : None, 2 : Even parity, 3 : Odd parity.</span>
-<span class="linenos">31</span>        <span class="n">stop_bit_mode</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">## 0 : 1 bit, 1 : 0.5 bits, 2 : 2 bits, 3 : 1.5 bits  </span>
-<span class="linenos">32</span>
-<span class="linenos">33</span>        <span class="c1">## Open port 2</span>
-<span class="linenos">34</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_open</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> 
-<span class="linenos">35</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_open: OK&quot;</span><span class="p">)</span>
-<span class="linenos">36</span>
-<span class="linenos">37</span>        <span class="c1">## Set baudrate to 9600</span>
-<span class="linenos">38</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_setBaudRate</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">baudrate</span><span class="p">)</span>
-<span class="linenos">39</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_setBaudRate: OK&quot;</span><span class="p">)</span>
-<span class="linenos">40</span> 
-<span class="linenos">41</span>        <span class="c1">## Set data bit to 8-bit data</span>
-<span class="linenos">42</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_setDataBit</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">data_bit_mode</span><span class="p">)</span>
-<span class="linenos">43</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_setDataBit: OK&quot;</span><span class="p">)</span>
-<span class="linenos">44</span>        
-<span class="linenos">45</span>        <span class="c1">## Set parity to None</span>
-<span class="linenos">46</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_setParity</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">parity_mode</span><span class="p">)</span>
-<span class="linenos">47</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_setParity: OK&quot;</span><span class="p">)</span>
-<span class="linenos">48</span>
-<span class="linenos">49</span>        <span class="c1">## Set stop bit to 8-bit data</span>
-<span class="linenos">50</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_setNumStopBit</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">stop_bit_mode</span><span class="p">)</span>
-<span class="linenos">51</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_setNumStopBit: OK&quot;</span><span class="p">)</span>
-<span class="linenos">52</span>
-<span class="linenos">53</span>        <span class="c1">## Write &quot;12345&quot; to device in string format</span>
-<span class="linenos">54</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_write</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;12345&quot;</span><span class="p">)</span>
-<span class="linenos">55</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_write: OK&quot;</span><span class="p">)</span>
-<span class="linenos">56</span>
-<span class="linenos">57</span>        <span class="c1">## Write &quot;chunglee people&quot; to device</span>
-<span class="linenos">58</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_write</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;chunglee people&quot;</span><span class="p">)</span>
-<span class="linenos">59</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_write: OK&quot;</span><span class="p">)</span>
-<span class="linenos">60</span>
-<span class="linenos">61</span>        <span class="c1">## Write &quot;12345&quot; to device in list format</span>
-<span class="linenos">62</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_write</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="s2">&quot;3&quot;</span><span class="p">,</span><span class="s2">&quot;4&quot;</span><span class="p">,</span><span class="s2">&quot;5&quot;</span><span class="p">])</span>
-<span class="linenos">63</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_write: OK&quot;</span><span class="p">)</span>
-<span class="linenos">64</span>
-<span class="linenos">65</span>        <span class="c1">## Close port 2</span>
-<span class="linenos">66</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_close</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos">67</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_close: OK&quot;</span><span class="p">)</span>
-<span class="linenos">68</span>
+<span class="linenos">26</span>        
+<span class="linenos">27</span>        <span class="c1">## Parameters setting</span>
+<span class="linenos">28</span>        <span class="n">port</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos">29</span>        <span class="n">baudrate</span> <span class="o">=</span> <span class="mi">9600</span> 
+<span class="linenos">30</span>        <span class="n">data_bit_mode</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">## 0 : 8-bit data, 1 : 9-bit data.</span>
+<span class="linenos">31</span>        <span class="n">parity_mode</span> <span class="o">=</span> <span class="mi">0</span>    <span class="c1">## 0 : None, 2 : Even parity, 3 : Odd parity.</span>
+<span class="linenos">32</span>        <span class="n">stop_bit_mode</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">## 0 : 1 bit, 1 : 0.5 bits, 2 : 2 bits, 3 : 1.5 bits  </span>
+<span class="linenos">33</span>
+<span class="linenos">34</span>        <span class="c1">## Open port 2</span>
+<span class="linenos">35</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_open</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> 
+<span class="linenos">36</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_open: OK&quot;</span><span class="p">)</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span>        <span class="c1">## Set baudrate to 9600</span>
+<span class="linenos">39</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_setBaudRate</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">baudrate</span><span class="p">)</span>
+<span class="linenos">40</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_setBaudRate: OK&quot;</span><span class="p">)</span>
+<span class="linenos">41</span> 
+<span class="linenos">42</span>        <span class="c1">## Set data bit to 8-bit data</span>
+<span class="linenos">43</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_setDataBit</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">data_bit_mode</span><span class="p">)</span>
+<span class="linenos">44</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_setDataBit: OK&quot;</span><span class="p">)</span>
+<span class="linenos">45</span>        
+<span class="linenos">46</span>        <span class="c1">## Set parity to None</span>
+<span class="linenos">47</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_setParity</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">parity_mode</span><span class="p">)</span>
+<span class="linenos">48</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_setParity: OK&quot;</span><span class="p">)</span>
+<span class="linenos">49</span>
+<span class="linenos">50</span>        <span class="c1">## Set stop bit to 8-bit data</span>
+<span class="linenos">51</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_setNumStopBit</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">stop_bit_mode</span><span class="p">)</span>
+<span class="linenos">52</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_setNumStopBit: OK&quot;</span><span class="p">)</span>
+<span class="linenos">53</span>
+<span class="linenos">54</span>        <span class="c1">## Write &quot;12345&quot; to device in string format</span>
+<span class="linenos">55</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_write</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="s2">&quot;12345&quot;</span><span class="p">)</span>
+<span class="linenos">56</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_write: OK&quot;</span><span class="p">)</span>
+<span class="linenos">57</span>
+<span class="linenos">58</span>        <span class="c1">## Write &quot;chunglee people&quot; to device</span>
+<span class="linenos">59</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_write</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="s2">&quot;chunglee people&quot;</span><span class="p">)</span>
+<span class="linenos">60</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_write: OK&quot;</span><span class="p">)</span>
+<span class="linenos">61</span>
+<span class="linenos">62</span>        <span class="c1">## Write &quot;12345&quot; to device in list format</span>
+<span class="linenos">63</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_write</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="s2">&quot;3&quot;</span><span class="p">,</span><span class="s2">&quot;4&quot;</span><span class="p">,</span><span class="s2">&quot;5&quot;</span><span class="p">])</span>
+<span class="linenos">64</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_write: OK&quot;</span><span class="p">)</span>
+<span class="linenos">65</span>
+<span class="linenos">66</span>        <span class="c1">## Close port 2</span>
+<span class="linenos">67</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_close</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+<span class="linenos">68</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_close: OK&quot;</span><span class="p">)</span>
 <span class="linenos">69</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos">70</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="linenos">71</span>
@@ -176,6 +178,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="UART_read.html" class="btn btn-neutral float-left" title="UART_read" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../CAN/CAN_read.html" class="btn btn-neutral float-right" title="CAN_read" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

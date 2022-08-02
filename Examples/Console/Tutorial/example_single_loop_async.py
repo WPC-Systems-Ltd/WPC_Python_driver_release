@@ -4,7 +4,7 @@ sys.path.insert(0, 'pywpc/')
 sys.path.insert(0, '../../../pywpc/')
 import pywpc
 
-async def loop_func(handle, timeout = 3, delay = 0.5): 
+async def loop_func(handle, timeout = 3, delay = 0.5):
     t = 0
     while t < timeout: ## timeout(second)
         data = await handle.Wifi_readRSSI()
@@ -28,7 +28,12 @@ async def main():
         pywpc.printGenericError(err)
 
     ## Perform async thread to query data
-    try: 
+    try:
+        ## Get firmware model & version
+        driver_info = await dev.Sys_getDriverInfo()
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
+        
         await loop_func(dev, 3, 0.5) ## timeout, delay(second)
     except Exception as err:
         pywpc.printGenericError(err)

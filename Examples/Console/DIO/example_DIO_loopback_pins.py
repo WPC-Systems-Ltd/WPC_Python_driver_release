@@ -21,19 +21,24 @@ async def main():
 
     try: 
         ## Get firmware model & version
-        driver_info = await dev.sys_getDriverInfo()
+        driver_info = await dev.Sys_getDriverInfo()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-
-        port = 0
-        ## Open pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output
-        await dev.DO_openPins(port, [0,1,2,3,4]) 
-
-        ## Set pin0, pin1 to high, others to low.
-        await dev.DO_writeValuePins(port, [0,1,2,3,4], [1,0,0,0,0]) 
         
+        ## Parameters setting
+        port = 0
+        
+        ## Open pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output
+        status = await dev.DO_openPins(port, [0,1,2,3,4]) 
+        if status == 0: print("DO_openPins: OK")
+        
+        ## Set pin0, pin1 to high, others to low.
+        await dev.DO_writeValuePins(port, [0,1,2,3,4], [1,1,0,0,0]) 
+        if status == 0: print("DO_writeValuePins: OK")
+
         ## Open pin5, pin6 and pin7 in port 0 with digital output
-        await dev.DI_openPins(port, [5,6,7])
+        status = await dev.DI_openPins(port, [5,6,7])
+        if status == 0: print("DO_openPins: OK")
 
         ## Read pin5, pin6 and pin7 state in port 0
         state_list = await dev.DI_readPins(port, [7,5,6])
@@ -42,15 +47,16 @@ async def main():
         ## Wait for 3 seconds
         await asyncio.sleep(3) ## delay(second)
 
+        ## Close pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output 
+        status = await dev.DO_closePins(port, [0,1,2,3,4])
+        if status == 0: print("DO_closePins: OK")
+
+        ## Close pin5, pin6 and pin7 in port 0 with digital input
+        status = await dev.DI_closePins(port, [5,6,7])
+        if status == 0: print("DO_closePins: OK")
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Close pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output 
-    await dev.DO_closePins(port, [0,1,2,3,4])
-
-    ## Close pin5, pin6 and pin7 in port 0 with digital input
-    await dev.DI_closePins(port, [5,6,7])
- 
     ## Disconnect network device
     dev.disconnect()
     
