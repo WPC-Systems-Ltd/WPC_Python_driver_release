@@ -9,8 +9,10 @@ v0.0.6 Date: 2022/08/02, Developer: Chunglee_people
 
 ### Added
 - Add AO example code
-  - `AIO/example_AO_write_channel.py`
-  - `AIO/example_AO_write_synchronize.py`
+  - `AIO/example_AO_write_all_channels.py`
+  - `AIO/example_AO_write_one_channels.py`
+  - `AIO/example_AIO_one_channel_loopback.py`
+  - `AIO/example_AIO_all_channels_loopback.py`
 
 v0.0.5 Date: 2022/07/29, Developer: Chunglee_people
 ---------------------------------------------------
