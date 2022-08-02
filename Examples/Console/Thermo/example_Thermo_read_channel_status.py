@@ -30,25 +30,25 @@ async def main():
         channel_0 = 0
         channel_1 = 1
         
-        ## Open thermo
+        ## Open thermo port1
         status = await dev.Thermal_open(port)
         if status == 0: print("Thermal_open: OK")
 
         ## Sleep
         await asyncio.sleep(0.1) ## delay(second)
 
-        ## Get status in channel 0 
+        ## Set thermo port to 1 and get status in channel 0 
         status = await dev.Thermal_getStatus(port, channel_0)
         if status == 0: print("Thermal_getStatus in chaannel 0: OK")
 
         ## Sleep
         await asyncio.sleep(0.1) ## delay(second)
 
-        ## Get status in channel 1
+        ## Set thermo port to 1 and get status in channel 1
         status = await dev.Thermal_getStatus(port, channel_1)
         if status == 0: print("Thermal_getStatus in chaannel 1: OK")
 
-        ## Close thermo
+        ## Close thermo port1
         status = await dev.Thermal_close(port)
         if status == 0: print("Thermal_close: OK")   
     except Exception as err:

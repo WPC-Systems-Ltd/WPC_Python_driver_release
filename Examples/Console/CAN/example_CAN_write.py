@@ -29,15 +29,15 @@ async def main():
         port  = 1
         speed = 0 ## 0 = 125 KHz, 1 = 250 kHz, 2 = 500 kHz, 3 = 1 MHz
 
-        ## CAN Open
+        ## Open CAN port1
         status = await dev.CAN_open(port) 
         if status == 0: print("CAN_open: OK")
 
-        ## Set CAN speed to 0  
+        ## Set CAN port to 1 and set speed to 0  
         status = await dev.CAN_setSpeed(port, speed) 
         if status == 0: print("CAN_setSpeed: OK")
 
-        ## CAN Start
+        ## Set CAN port to 1 and start CAN
         status = await dev.CAN_start(port) 
         if status == 0: print("CAN_start: OK")
  
@@ -64,11 +64,11 @@ async def main():
         if status == 0: print("CAN_write: OK")
         await asyncio.sleep(1)  ## delay(second)
 
-        ## CAN Stop
+        ## Set CAN port to 1 and stop CAN  
         status = await dev.CAN_stop(port) 
         if status == 0: print("CAN_stop: OK")
         
-        ## CAN Close
+        ## Set CAN port to 1 and close CAN  
         status = await dev.CAN_close(port) 
         if status == 0: print("CAN_close: OK")
     except Exception as err:

@@ -32,7 +32,7 @@ async def main():
         status = await dev.DO_openPins(port, [0,1,2,3,4]) 
         if status == 0: print("DO_openPins: OK")
         
-        ## Set pin0, pin1 to high, others to low.
+        ## Set pin0, pin1 to high, others to low
         await dev.DO_writeValuePins(port, [0,1,2,3,4], [1,1,0,0,0]) 
         if status == 0: print("DO_writeValuePins: OK")
 

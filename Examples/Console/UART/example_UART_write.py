@@ -31,39 +31,39 @@ async def main():
         parity_mode = 0    ## 0 : None, 2 : Even parity, 3 : Odd parity.
         stop_bit_mode = 0  ## 0 : 1 bit, 1 : 0.5 bits, 2 : 2 bits, 3 : 1.5 bits  
 
-        ## Open port 2
+        ## Open UART port2
         status = await dev.UART_open(port) 
         if status == 0: print("UART_open: OK")
 
-        ## Set baudrate to 9600
+        ## Set UART port to 2 and set baudrate to 9600
         status = await dev.UART_setBaudRate(port, baudrate)
         if status == 0: print("UART_setBaudRate: OK")
  
-        ## Set data bit to 8-bit data
+        ## Set UART port to 2 and set data bit to 8-bit data
         status = await dev.UART_setDataBit(port, data_bit_mode)
         if status == 0: print("UART_setDataBit: OK")
         
-        ## Set parity to None
+        ## Set UART port to 2 and set parity to None
         status = await dev.UART_setParity(port, parity_mode)
         if status == 0: print("UART_setParity: OK")
 
-        ## Set stop bit to 8-bit data
+        ## Set UART port to 2 and set stop bit to 8-bit data
         status = await dev.UART_setNumStopBit(port, stop_bit_mode)
         if status == 0: print("UART_setNumStopBit: OK")
 
-        ## Write "12345" to device in string format
+        ## Set UART port to 2 and and write "12345" to device in string format
         status = await dev.UART_write(port, "12345")
         if status == 0: print("UART_write: OK")
 
-        ## Write "chunglee people" to device
+        ## Set UART port to 2 and and write "chunglee people" to device
         status = await dev.UART_write(port, "chunglee people")
         if status == 0: print("UART_write: OK")
 
-        ## Write "12345" to device in list format
+        ## Set UART port to 2 and and write "12345" to device in list format
         status = await dev.UART_write(port, ["1","2","3","4","5"])
         if status == 0: print("UART_write: OK")
-
-        ## Close port 2
+        
+        ## Close UART port2
         status = await dev.UART_close(port)
         if status == 0: print("UART_close: OK")
     except Exception as err:
