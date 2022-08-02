@@ -13,6 +13,9 @@ v0.0.6 Date: 2022/08/02, Developer: Chunglee_people
   - `AIO/example_AO_write_one_channels.py`
   - `AIO/example_AIO_one_channel_loopback.py`
   - `AIO/example_AIO_all_channels_loopback.py`
+- Add SPI example code
+  - `SPI/example_SPI_read_and_write.py`
+  - `SPI/example_SPI_read.py`
 
 v0.0.5 Date: 2022/07/29, Developer: Chunglee_people
 ---------------------------------------------------
