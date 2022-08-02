@@ -86,3 +86,4 @@ SPI
    :maxdepth: 4
 
    examples/SPI/SPI_read_and_write
+   examples/SPI/SPI_read
