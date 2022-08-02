@@ -41,7 +41,7 @@ async def main():
         status = await dev.CAN_start(port) 
         if status == 0: print("CAN_start: OK")
 
-        ## Read 5 frames for 1000 times in port 1
+        ## Read 5 frames for 1000 times in port1
         for i in range(1000):
             data = await dev.CAN_read(port, 5)
             if data is None:

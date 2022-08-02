@@ -73,6 +73,7 @@ async def main():
         
         ## Read 16bytes (17 = 16 + dummy)
         data = await dev.SPI_readAndWrite(SPI_port, [0x00]*17)
+        print("data :", data)
         data = ['{:02x}'.format(value) for value in data]
         print("data :", data)
 
@@ -80,10 +81,14 @@ async def main():
         status = await dev.DO_writeValuePins(DO_port, DO_index, [1])
         if status == 0: print("DO_writeValuePins: OK")
         
+        ## Close pin0 in port 2 with digital output
+        status = await dev.DO_closePins(DO_port, DO_index) 
+        if status == 0: print("DO_closePins: OK")
+        
         ## Close SPI port1
         status = await dev.SPI_close(SPI_port)
         if status == 0: print("SPI_close: OK")
-
+        
     except Exception as err:
         pywpc.printGenericError(err)
 
