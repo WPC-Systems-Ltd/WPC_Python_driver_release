@@ -1,9 +1,20 @@
 WPC_Device_Driver_Example_GUI Version Changelog
 ===================================
 
+v0.0.6 Date: 2022/08/02, Developer: Chunglee_people
+---------------------------------------------------
+
+### Changed
+- Change WPC Python Version from `pywpc-0.1.15` to  `pywpc-0.1.16`  
+
+### Added
+- Add AO example code
+  - `AIO/example_AO_write_channel.py`
+  - `AIO/example_AO_write_synchronize.py`
 
 v0.0.5 Date: 2022/07/29, Developer: Chunglee_people
 ---------------------------------------------------
+
 ### Changed
 - Change WPC Python Version from `pywpc-0.1.14` to  `pywpc-0.1.15`  
 
@@ -14,6 +25,7 @@ v0.0.5 Date: 2022/07/29, Developer: Chunglee_people
 
 v0.0.4 Date: 2022/07/20, Developer: Chunglee_people
 ---------------------------------------------------
+
 ### Changed
 - Change WPC Python Version from `pywpc-0.1.13` to  `pywpc-0.1.14`  
 - Change folder name `General` to `System` in console and gui folder
@@ -30,6 +42,7 @@ v0.0.4 Date: 2022/07/20, Developer: Chunglee_people
  
 v0.0.3 Date: 2022/07/07, Developer: Chunglee_people
 ---------------------------------------------------
+
 ### Changed
 - Change WPC Python Version from `pywpc-0.1.12` to  `pywpc-0.1.13` (templete, Need to verify)
 
@@ -50,6 +63,7 @@ v0.0.3 Date: 2022/07/07, Developer: Chunglee_people
 
 v0.0.2 Date: 2022/07/01, Developer: Chunglee_people
 ---------------------------------------------------
+
 ### Changed
 - Change WPC Python Version from `pywpc-0.1.10` to  `pywpc-0.1.12`
 
