@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>USB-DAQ-F1-AOD &mdash; WPC Device Driver 0.1.15 documentation</title>
+  <title>USB-DAQ-F1-AOD &mdash; WPC Device Driver 0.1.16-beta documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -31,7 +31,7 @@
             <a href="../index.html" class="icon icon-home"> WPC Device Driver
           </a>
               <div class="version">
-                0.1.15
+                0.1.16-beta
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -144,10 +144,10 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AO_open" title="pywpc.USBDAQF1AOD.AO_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AO_open</span></code></a>(port)</p></td>
 <td><p>Open AO port.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AO_writeByChannels" title="pywpc.USBDAQF1AOD.AO_writeByChannels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AO_writeByChannels</span></code></a>(port, channel, data)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AO_writeByChannels" title="pywpc.USBDAQF1AOD.AO_writeByChannels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AO_writeByChannels</span></code></a>(port, channel, AO_value)</p></td>
 <td><p>Write AO voltage to specific channel.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AO_writeSynchronized" title="pywpc.USBDAQF1AOD.AO_writeSynchronized"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AO_writeSynchronized</span></code></a>(port, value)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AO_writeSynchronized" title="pywpc.USBDAQF1AOD.AO_writeSynchronized"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AO_writeSynchronized</span></code></a>(port, AO_value)</p></td>
 <td><p>Write AO voltage to whole port.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.DI_closePins" title="pywpc.USBDAQF1AOD.DI_closePins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_closePins</span></code></a>(port, pin)</p></td>
@@ -651,7 +651,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.AO_writeByChannels">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AO_writeByChannels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AO_writeByChannels" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AO_writeByChannels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AO_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AO_writeByChannels" title="Permalink to this definition"></a></dt>
 <dd><p>Write AO voltage to specific channel.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -664,8 +664,8 @@
 <li><p>AO channel (0~7)</p></li>
 </ul>
 </dd>
-<dt><strong>data</strong><span class="classifier">int or float</span></dt><dd><ul class="simple">
-<li><p>Data (V)</p></li>
+<dt><strong>AO_value</strong><span class="classifier">int or float</span></dt><dd><ul class="simple">
+<li><p>Unit: (V)</p></li>
 </ul>
 </dd>
 </dl>
@@ -683,7 +683,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.AO_writeSynchronized">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AO_writeSynchronized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AO_writeSynchronized" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AO_writeSynchronized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AO_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AO_writeSynchronized" title="Permalink to this definition"></a></dt>
 <dd><p>Write AO voltage to whole port.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -692,15 +692,14 @@
 <li><p>Depend on WPC device.</p></li>
 </ul>
 </dd>
-<dt><strong>value</strong><span class="classifier">list</span></dt><dd><ul class="simple">
+<dt><strong>AO_value</strong><span class="classifier">list</span></dt><dd><ul class="simple">
 <li><p>For 8 channels</p></li>
 <li><p>[ch0, ch1,…..ch7]</p></li>
+<li><p>Unit: (V)</p></li>
 </ul>
 </dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
+<dt><strong>Returns</strong></dt><dd></dd>
+<dt><strong>——-</strong></dt><dd></dd>
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 if success, error otherwise.</p></li>
 </ul>
