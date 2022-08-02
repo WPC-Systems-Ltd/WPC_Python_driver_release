@@ -1,0 +1,6 @@
+example AIO all channels loopback 
+==================================
+
+.. literalinclude:: ../../../../../../WPC_Python_driver_release/Examples/Console/AIO/example_AIO_all_channels_loopback.py
+   :language: python
+   :linenos:

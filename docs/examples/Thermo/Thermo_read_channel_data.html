@@ -55,7 +55,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#uart">UART</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../examples.html#can-bus">CAN bus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#can">CAN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#spi">SPI</a></li>
 </ul>
 </li>
 </ul>
@@ -120,33 +121,33 @@
 <span class="linenos">31</span>        <span class="n">over_sampling_mode</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">## 0:1 sample, 1:2 samples, 2:4 sample, 3:8 samples, 4:16 samples</span>
 <span class="linenos">32</span>        <span class="n">thermo_type</span> <span class="o">=</span> <span class="mi">3</span>         <span class="c1">## 0:B type, 1:E type, 2:J type, 3:K type</span>
 <span class="linenos">33</span>                                <span class="c1">## 4:N type, 5:R type, 6:S type, 7:T type</span>
-<span class="linenos">34</span>   
-<span class="linenos">35</span>        <span class="c1">## Open thermo</span>
+<span class="linenos">34</span>        
+<span class="linenos">35</span>        <span class="c1">## Open thermo port1</span>
 <span class="linenos">36</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_open</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
 <span class="linenos">37</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thermal_open: OK&quot;</span><span class="p">)</span>
 <span class="linenos">38</span>
 <span class="linenos">39</span>        <span class="c1">## Sleep</span>
 <span class="linenos">40</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span> <span class="c1">## delay(second)</span>
 <span class="linenos">41</span>        
-<span class="linenos">42</span>        <span class="c1">## Set over-sampling mode to no over-sampling in channel 1 </span>
+<span class="linenos">42</span>        <span class="c1">## Set thermo port to 1 and set over-sampling mode to no over-sampling in channel 1 </span>
 <span class="linenos">43</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_setOverSampling</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">over_sampling_mode</span><span class="p">)</span>
 <span class="linenos">44</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;setOverSampling: OK&quot;</span><span class="p">)</span>   
 <span class="linenos">45</span>
 <span class="linenos">46</span>        <span class="c1">## Sleep</span>
 <span class="linenos">47</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span> <span class="c1">## delay(second)</span>
 <span class="linenos">48</span>        
-<span class="linenos">49</span>        <span class="c1">## Set K type in channel 1 </span>
+<span class="linenos">49</span>        <span class="c1">## Set thermo port to 1 and set K type in channel 1 </span>
 <span class="linenos">50</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_setType</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">thermo_type</span><span class="p">)</span>
 <span class="linenos">51</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;setType: OK&quot;</span><span class="p">)</span>   
 <span class="linenos">52</span> 
 <span class="linenos">53</span>        <span class="c1">## Sleep</span>
 <span class="linenos">54</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span> <span class="c1">## delay(second)</span>
 <span class="linenos">55</span>
-<span class="linenos">56</span>        <span class="c1">## Read thermo in channel 1</span>
+<span class="linenos">56</span>        <span class="c1">## Set thermo port to 1 and read thermo in channel 1</span>
 <span class="linenos">57</span>        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_readSensor</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">channel</span><span class="p">)</span>
 <span class="linenos">58</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Read channel 1 data:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="s2">&quot;°C&quot;</span><span class="p">)</span>
 <span class="linenos">59</span>
-<span class="linenos">60</span>        <span class="c1">## Close thermo</span>
+<span class="linenos">60</span>        <span class="c1">## Close thermo port1</span>
 <span class="linenos">61</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_close</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
 <span class="linenos">62</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thermal_close: OK&quot;</span><span class="p">)</span>   
 <span class="linenos">63</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>

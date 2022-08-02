@@ -1,5 +1,5 @@
-UART_read
-=========
+example UART read
+=================
 
 .. literalinclude:: ../../../../../../WPC_Python_driver_release/Examples/Console/UART/example_UART_read.py
    :language: python

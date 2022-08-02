@@ -34,8 +34,10 @@ AIO
    examples/AIO/AI_N_samples_once
    examples/AIO/AI_N_samples_get_progressively
    examples/AIO/AI_on_demand_once
-   examples/AIO/AO_write_channel
-   examples/AIO/AO_write_synchronize
+   examples/AIO/AO_write_one_channel
+   examples/AIO/AO_write_all_channels
+   examples/AIO/AIO_one_channel_loopback
+   examples/AIO/AIO_all_channels_loopback
 
 DIO
 ---
@@ -68,11 +70,19 @@ UART
    examples/UART/UART_read
    examples/UART/UART_write
 
-CAN bus
--------
+CAN
+---
 
 .. toctree::
    :maxdepth: 4
 
    examples/CAN/CAN_read
    examples/CAN/CAN_write
+
+SPI
+---
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/SPI/SPI_read_and_write

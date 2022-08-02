@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>example SPI read and write &mdash; WPC Device Driver 0.1.16-beta documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="example CAN write" href="../CAN/CAN_write.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> WPC Device Driver
+          </a>
+              <div class="version">
+                0.1.16-beta
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User resources</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../products.html">API reference by product</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../examples.html">Example codes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#system">System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#tutorial">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#aio">AIO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#dio">DIO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#thermo">Thermo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#uart">UART</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#can">CAN</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../examples.html#spi">SPI</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">example SPI read and write</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">WPC Device Driver</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../examples.html">Example codes</a> &raquo;</li>
+      <li>example SPI read and write</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/examples/SPI/SPI_read_and_write.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="example-spi-read-and-write">
+<h1>example SPI read and write<a class="headerlink" href="#example-spi-read-and-write" title="Permalink to this heading"></a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="linenos">  2</span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="linenos">  3</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;pywpc/&#39;</span><span class="p">)</span>
+<span class="linenos">  4</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;../../../pywpc/&#39;</span><span class="p">)</span>
+<span class="linenos">  5</span><span class="kn">import</span> <span class="nn">pywpc</span>
+<span class="linenos">  6</span>
+<span class="linenos">  7</span><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos">  8</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Start example code...&quot;</span><span class="p">)</span>
+<span class="linenos">  9</span>
+<span class="linenos"> 10</span>    <span class="c1">## Get Python driver version</span>
+<span class="linenos"> 11</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_FULL_NAME</span><span class="si">}</span><span class="s1"> - Version </span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="linenos"> 12</span>
+<span class="linenos"> 13</span>    <span class="c1">## Create device handle</span>
+<span class="linenos"> 14</span>    <span class="n">dev</span> <span class="o">=</span> <span class="n">pywpc</span><span class="o">.</span><span class="n">USBDAQF1D</span><span class="p">()</span>
+<span class="linenos"> 15</span>
+<span class="linenos"> 16</span>    <span class="c1">## Connect to network device</span>
+<span class="linenos"> 17</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos"> 18</span>        <span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;21JA1279&quot;</span><span class="p">)</span>
+<span class="linenos"> 19</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos"> 20</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos"> 21</span>        
+<span class="linenos"> 22</span>    <span class="k">try</span><span class="p">:</span> 
+<span class="linenos"> 23</span>        <span class="c1">## Get firmware model &amp; version</span>
+<span class="linenos"> 24</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo</span><span class="p">()</span>
+<span class="linenos"> 25</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="linenos"> 26</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos"> 27</span>        
+<span class="linenos"> 28</span>        <span class="c1">## Parameters setting</span>
+<span class="linenos"> 29</span>        <span class="n">datasize</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">## Mode: 0 = 8-bit data, 1 = 16-bit data.</span>
+<span class="linenos"> 30</span>        <span class="n">first_bit</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">## Mode: 0 = MSB first, 1 = LSB first.</span>
+<span class="linenos"> 31</span>        <span class="n">prescaler</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="linenos"> 32</span>        <span class="n">cpol</span> <span class="o">=</span> <span class="mi">0</span>      <span class="c1">## 0 or 1</span>
+<span class="linenos"> 33</span>        <span class="n">cpha</span> <span class="o">=</span> <span class="mi">1</span>      <span class="c1">## 0 or 1 </span>
+<span class="linenos"> 34</span>        <span class="n">SPI_port</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos"> 35</span>        <span class="n">DO_port</span> <span class="o">=</span> <span class="mi">2</span> 
+<span class="linenos"> 36</span>        <span class="n">DO_index</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">## CS pin</span>
+<span class="linenos"> 37</span>
+<span class="linenos"> 38</span>        <span class="c1">## Open pin0 in port 2 with digital output</span>
+<span class="linenos"> 39</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_openPins</span><span class="p">(</span><span class="n">DO_port</span><span class="p">,</span> <span class="n">DO_index</span><span class="p">)</span> 
+<span class="linenos"> 40</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_openPins: OK&quot;</span><span class="p">)</span>
+<span class="linenos"> 41</span> 
+<span class="linenos"> 42</span>        <span class="c1">## Set pin0 to high</span>
+<span class="linenos"> 43</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writeValuePins</span><span class="p">(</span><span class="n">DO_port</span><span class="p">,</span> <span class="n">DO_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos"> 44</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_writeValuePins: OK&quot;</span><span class="p">)</span>
+<span class="linenos"> 45</span>
+<span class="linenos"> 46</span>        <span class="c1">## Open SPI port1</span>
+<span class="linenos"> 47</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">SPI_open</span><span class="p">(</span><span class="n">SPI_port</span><span class="p">)</span>
+<span class="linenos"> 48</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SPI_open: OK&quot;</span><span class="p">)</span>
+<span class="linenos"> 49</span>        
+<span class="linenos"> 50</span>        <span class="c1">## Set SPI port to 1 and set datasize to 8-bit data</span>
+<span class="linenos"> 51</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">SPI_setDataSize</span><span class="p">(</span><span class="n">SPI_port</span><span class="p">,</span> <span class="n">datasize</span><span class="p">)</span>
+<span class="linenos"> 52</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SPI_setDataSize: OK&quot;</span><span class="p">)</span>
+<span class="linenos"> 53</span>        
+<span class="linenos"> 54</span>        <span class="c1">## Set SPI port to 1 and set first_bit to MSB first</span>
+<span class="linenos"> 55</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">SPI_setFirstBit</span><span class="p">(</span><span class="n">SPI_port</span><span class="p">,</span> <span class="n">first_bit</span><span class="p">)</span>
+<span class="linenos"> 56</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SPI_setFirstBit: OK&quot;</span><span class="p">)</span>
+<span class="linenos"> 57</span>        
+<span class="linenos"> 58</span>        <span class="c1">## Set SPI port to 1 and set prescaler to 32</span>
+<span class="linenos"> 59</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">SPI_setPrescaler</span><span class="p">(</span><span class="n">SPI_port</span><span class="p">,</span> <span class="n">prescaler</span><span class="p">)</span>
+<span class="linenos"> 60</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SPI_setPrescaler: OK&quot;</span><span class="p">)</span>
+<span class="linenos"> 61</span>       
+<span class="linenos"> 62</span>        <span class="c1">## Set SPI port to 1 and set CPOL to 0</span>
+<span class="linenos"> 63</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">SPI_setCPOL</span><span class="p">(</span><span class="n">SPI_port</span><span class="p">,</span> <span class="n">cpol</span><span class="p">)</span>
+<span class="linenos"> 64</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SPI_setCPOL: OK&quot;</span><span class="p">)</span>
+<span class="linenos"> 65</span>        
+<span class="linenos"> 66</span>        <span class="c1">## Set SPI port to 1 and set CPHA to 1</span>
+<span class="linenos"> 67</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">SPI_setCPHA</span><span class="p">(</span><span class="n">SPI_port</span><span class="p">,</span> <span class="n">cpha</span><span class="p">)</span>
+<span class="linenos"> 68</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SPI_setCPHA: OK&quot;</span><span class="p">)</span>
+<span class="linenos"> 69</span>        
+<span class="linenos"> 70</span>        <span class="c1">## Set pin0 to low</span>
+<span class="linenos"> 71</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writeValuePins</span><span class="p">(</span><span class="n">DO_port</span><span class="p">,</span> <span class="n">DO_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span> 
+<span class="linenos"> 72</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_writeValuePins: OK&quot;</span><span class="p">)</span>
+<span class="linenos"> 73</span>        
+<span class="linenos"> 74</span>        <span class="c1">## Read 16bytes (17 = 16 + dummy)</span>
+<span class="linenos"> 75</span>        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">SPI_readAndWrite</span><span class="p">(</span><span class="n">SPI_port</span><span class="p">,</span> <span class="p">[</span><span class="mh">0x00</span><span class="p">]</span><span class="o">*</span><span class="mi">17</span><span class="p">)</span>
+<span class="linenos"> 76</span>        <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="si">{:02x}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+<span class="linenos"> 77</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;data :&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="linenos"> 78</span>
+<span class="linenos"> 79</span>        <span class="c1">## Set pin0 to high</span>
+<span class="linenos"> 80</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writeValuePins</span><span class="p">(</span><span class="n">DO_port</span><span class="p">,</span> <span class="n">DO_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos"> 81</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_writeValuePins: OK&quot;</span><span class="p">)</span>
+<span class="linenos"> 82</span>        
+<span class="linenos"> 83</span>        <span class="c1">## Close SPI port1</span>
+<span class="linenos"> 84</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">SPI_close</span><span class="p">(</span><span class="n">SPI_port</span><span class="p">)</span>
+<span class="linenos"> 85</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SPI_close: OK&quot;</span><span class="p">)</span>
+<span class="linenos"> 86</span>
+<span class="linenos"> 87</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos"> 88</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos"> 89</span>
+<span class="linenos"> 90</span>    <span class="c1">## Disconnect network device</span>
+<span class="linenos"> 91</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+<span class="linenos"> 92</span>
+<span class="linenos"> 93</span>    <span class="c1">## Release device handle</span>
+<span class="linenos"> 94</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos"> 95</span>
+<span class="linenos"> 96</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;End example code...&quot;</span><span class="p">)</span>
+<span class="linenos"> 97</span>    <span class="k">return</span>
+<span class="linenos"> 98</span>    
+<span class="linenos"> 99</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">100</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../CAN/CAN_write.html" class="btn btn-neutral float-left" title="example CAN write" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, WPC Systems Ltd..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
