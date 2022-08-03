@@ -1,29 +1,29 @@
  
-## WPC_Device_Driver_Example_GUI
+## WPC Device Driver Example GUI
  
-WPC driver only support python 3.10
+- WPC device driver only support python 3.10
 
 ## Python version requirement
 - Python 3.10 
 
 Products
 --------
-Wifi DAQ:
+WiFi based DAQ card
 - Wifi-DAQ-E3-A
 
-Ethernet controller:
+Ethernet based remote controller
 - STEM
 - STEM-Lite
 
-Ethernet motion card
+Ethernet based motion card
 - EMotion
 
-Ethernet DAQ
+Ethernet based DAQ card
 - EPC
 - Ethan-D
 - Ethan-A
 
-USB DAQ
+USB interface DAQ card
 - USB-DAQ-F1-D
 - USB-DAQ-F1-AD
 - USB-DAQ-F1-TD
@@ -31,7 +31,7 @@ USB DAQ
 - USB-DAQ-F1-AOD
 - USB-DAQ-F1-DSNK
 
-Port configurations
+Port funtionality compatibility
 -------------------
 
 | Board           | AI  | AO | DI         | DO         | CAN | UART | SPI | I2C | RTD | Thermocouple |
@@ -47,10 +47,13 @@ Port configurations
 | USB-DAQ-F1-CD   | -   | -  | 0, 1, 2, 3 | 0, 1, 2, 3 |1    |1, 2  |2    |1, 2 | -   |-             |
 | USB-DAQ-F1-RD   | -   | -  | 0, 1, 2, 3 | 0, 1, 2, 3 |-    |1, 2  |2    |1, 2 | 1   |-             |
 
-Take `USB-DAQ-F1-AOD` for example, use port0 for `AI`, port2 for `DI`, port0 & port
-1 for `DO` and port2 for `UART`.
+Take `USB-DAQ-F1-AOD` for example
+- port0 available for `AI`
+- port2 available for `DI`
+- port0 & port1 available for `DO`
+- port2 available for `UART`
 
-## Reference
+## References
 - [User manual](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)
 - [Recommend for new python user to create environment](https://github.com/WPC-systems/WPC_Python_driver_release/wiki/Install-miniconda-and-build-environment) 
 - [Run example code in console](https://github.com/WPC-systems/WPC_Python_driver_release/wiki/How-to-run-WPC-Python-driver-example-code-in-console)
