@@ -25,6 +25,10 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
         
+        '''
+        Take AD7606 for example
+        '''
+
         ## Parameters setting
         SPI_port = 1
         datasize = 0  ## Mode: 0 = 8-bit data, 1 = 16-bit data.
