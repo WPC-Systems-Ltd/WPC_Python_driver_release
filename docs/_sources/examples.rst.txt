@@ -87,3 +87,4 @@ SPI
 
    examples/SPI/SPI_read_and_write
    examples/SPI/SPI_read
+   examples/SPI/SPI_write
