@@ -15,7 +15,7 @@ async def main():
 
     ## Connect to network device
     try:
-        dev.connect("21JA1279")
+        dev.connect("21JA1239")
     except Exception as err:
         pywpc.printGenericError(err)
         
@@ -24,6 +24,10 @@ async def main():
         driver_info = await dev.Sys_getDriverInfo()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
+            
+        '''
+        Take MAX31856 for example
+        '''
         
         ## Parameters setting
         datasize = 0  ## Mode: 0 = 8-bit data, 1 = 16-bit data.
@@ -66,12 +70,15 @@ async def main():
         ## Set SPI port to 1 and set CPHA to 1
         status = await dev.SPI_setCPHA(SPI_port, cpha)
         if status == 0: print("SPI_setCPHA: OK")
+
+        '''
+        Read default value from address 0x00 for 1 byte (address) + 16 bytes (data)
+        '''
         
         ## Set pin0 to low
         status = await dev.DO_writeValuePins(DO_port, DO_index, [0]) 
         if status == 0: print("DO_writeValuePins: OK")
-        
-        ## Read 16bytes (17 = 16 + dummy)
+ 
         data = await dev.SPI_readAndWrite(SPI_port, [0x00]*17)
         print("data :", data)
         data = ['{:02x}'.format(value) for value in data]
