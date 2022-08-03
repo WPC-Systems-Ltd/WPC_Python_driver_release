@@ -54,7 +54,7 @@ Take `USB-DAQ-F1-AOD` for example
 - port2 available for `UART`
 
 ## References
-- [User manual](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)
-- [Recommend for new python user to create environment](https://github.com/WPC-systems/WPC_Python_driver_release/wiki/Install-miniconda-and-build-environment) 
+- [User manual - WPC Python Device Driver](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)
+- [Recommendations for new python user to create environment](https://github.com/WPC-systems/WPC_Python_driver_release/wiki/Install-miniconda-and-build-environment) 
 - [Run example code in console](https://github.com/WPC-systems/WPC_Python_driver_release/wiki/How-to-run-WPC-Python-driver-example-code-in-console)
 
