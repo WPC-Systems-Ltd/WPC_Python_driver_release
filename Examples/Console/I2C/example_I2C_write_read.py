@@ -74,7 +74,11 @@ async def main():
 
         data_list = await dev.I2C_read(I2C_port, device_address, 4)
         print("read data :", data_list)
-    
+       
+        '''
+        Close I2C port
+        ''' 
+
         ## Close I2C port1
         status = await dev.I2C_close(I2C_port)
         if status == 0: print("I2C_close: OK")
