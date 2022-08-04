@@ -13,7 +13,7 @@ async def main():
     ## Create device handle
     dev = pywpc.USBDAQF1AOD()
 
-    ## Connect to network device
+    ## Connect to USB device
     try:
         dev.connect("21JA1439")
     except Exception as err:

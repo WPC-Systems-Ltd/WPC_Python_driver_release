@@ -13,7 +13,7 @@ async def main():
     ## Create device handle
     dev = pywpc.USBDAQF1D()
 
-    ## Connect to network device
+    ## Connect to USB device
     try:
         dev.connect('21JA1044')
     except Exception as err:
@@ -33,8 +33,8 @@ async def main():
         if status == 0: print("DO_openPins: OK")
         
         ## Set pin0, pin1 to high, others to low
-        await dev.DO_writeValuePins(port, [0,1,2,3,4], [1,1,0,0,0]) 
-        if status == 0: print("DO_writeValuePins: OK")
+        await dev.DO_writePins(port, [0,1,2,3,4], [1,1,0,0,0]) 
+        if status == 0: print("DO_writePins: OK")
 
         ## Open pin5, pin6 and pin7 in port 0 with digital output
         status = await dev.DI_openPins(port, [5,6,7])

@@ -14,7 +14,7 @@ async def main():
     ## Create device handle
     dev = pywpc.USBDAQF1D()
 
-    ## Connect to network device
+    ## Connect to USB device
     try:
         dev.connect("21JA1279")
     except Exception as err:
@@ -48,8 +48,8 @@ async def main():
         if status == 0: print("DO_openPins: OK")
 
         ## Set pin0 to high
-        status = await dev.DO_writeValuePins(DO_port, DO_index, [1])
-        if status == 0: print("DO_writeValuePins: OK")
+        status = await dev.DO_writePins(DO_port, DO_index, [1])
+        if status == 0: print("DO_writePins: OK")
 
         ## Open SPI port1
         status = await dev.SPI_open(SPI_port)
@@ -72,28 +72,28 @@ async def main():
         if status == 0: print("SPI_setMode: OK")
 
         ## Set pin0 to low
-        status = await dev.DO_writeValuePins(DO_port, DO_index, [0]) 
-        if status == 0: print("DO_writeValuePins: OK")
+        status = await dev.DO_writePins(DO_port, DO_index, [0]) 
+        if status == 0: print("DO_writePins: OK")
         
         ## Write WREN byte
         status = await dev.SPI_write(SPI_port, [WREN])
         if status == 0: print("SPI_write: OK")
 
         ## Set pin0 to high
-        status = await dev.DO_writeValuePins(DO_port, DO_index, [1])
-        if status == 0: print("DO_writeValuePins: OK")
+        status = await dev.DO_writePins(DO_port, DO_index, [1])
+        if status == 0: print("DO_writePins: OK")
 
         ## Set pin0 to low
-        status = await dev.DO_writeValuePins(DO_port, DO_index, [0]) 
-        if status == 0: print("DO_writeValuePins: OK") 
+        status = await dev.DO_writePins(DO_port, DO_index, [0]) 
+        if status == 0: print("DO_writePins: OK") 
         
         ## Write data byte 0x55 in to address 0x0002
         status = await dev.SPI_write(SPI_port, [WRITE, 0x00, 0x02, 0x55])
         if status == 0: print("SPI_write: OK")
         
         ## Set pin0 to high
-        status = await dev.DO_writeValuePins(DO_port, DO_index, [1])
-        if status == 0: print("DO_writeValuePins: OK")
+        status = await dev.DO_writePins(DO_port, DO_index, [1])
+        if status == 0: print("DO_writePins: OK")
  
         ## Close SPI port1
         status = await dev.SPI_close(SPI_port)
