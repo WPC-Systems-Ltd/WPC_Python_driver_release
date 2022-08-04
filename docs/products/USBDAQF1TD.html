@@ -150,7 +150,7 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1TD.I2C_setAddressSize" title="pywpc.USBDAQF1TD.I2C_setAddressSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_setAddressSize</span></code></a>(port, mode)</p></td>
 <td><p>Set I2C address size functionality.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1TD.I2C_setFrequency" title="pywpc.USBDAQF1TD.I2C_setFrequency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_setFrequency</span></code></a>(port, frequency)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1TD.I2C_setClockRate" title="pywpc.USBDAQF1TD.I2C_setClockRate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_setClockRate</span></code></a>(port, mode)</p></td>
 <td><p>Set I2C clock rate functionality.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1TD.I2C_write" title="pywpc.USBDAQF1TD.I2C_write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_write</span></code></a>(port, write_address, data)</p></td>
@@ -760,8 +760,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1TD.I2C_setFrequency">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">I2C_setFrequency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frequency</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1TD.I2C_setFrequency" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pywpc.USBDAQF1TD.I2C_setClockRate">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">I2C_setClockRate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1TD.I2C_setClockRate" title="Permalink to this definition"></a></dt>
 <dd><p>Set I2C clock rate functionality.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -771,7 +771,10 @@
 </ul>
 </dd>
 <dt><strong>frequency</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Frequency must be smaller than 400000</p></li>
+<li><p>0 : Standard</p></li>
+<li><p>1 : Fast</p></li>
+<li><p>2 : Fast Plus</p></li>
+<li><p>3 : High Speed</p></li>
 </ul>
 </dd>
 </dl>

@@ -57,6 +57,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#spi">SPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#i2c">I2C</a></li>
 </ul>
 </li>
 </ul>
@@ -158,13 +159,13 @@
 <span class="linenos">68</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">CAN_stop</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> 
 <span class="linenos">69</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CAN_stop: OK&quot;</span><span class="p">)</span>
 <span class="linenos">70</span>        
-<span class="linenos">71</span>        <span class="c1">## Set CAN port to 1 and close CAN  </span>
+<span class="linenos">71</span>        <span class="c1">## Close CAN port1</span>
 <span class="linenos">72</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">CAN_close</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> 
 <span class="linenos">73</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CAN_close: OK&quot;</span><span class="p">)</span>
 <span class="linenos">74</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos">75</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="linenos">76</span> 
-<span class="linenos">77</span>    <span class="c1">## Disconnect network device</span>
+<span class="linenos">77</span>    <span class="c1">## Disconnect USB device</span>
 <span class="linenos">78</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
 <span class="linenos">79</span>
 <span class="linenos">80</span>    <span class="c1">## Release device handle</span>

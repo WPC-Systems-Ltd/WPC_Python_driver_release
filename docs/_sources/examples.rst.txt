@@ -87,3 +87,12 @@ SPI
 
    examples/SPI/SPI_read_and_write
    examples/SPI/SPI_write
+
+I2C
+---
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/I2C/I2C_read
+   examples/I2C/I2C_write
