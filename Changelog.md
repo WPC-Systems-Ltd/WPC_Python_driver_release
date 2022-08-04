@@ -16,7 +16,9 @@ v0.0.6 Date: 2022/08/02, Developer: Chunglee_people
 - Add SPI example code
   - `SPI/example_SPI_read_and_write.py`
   - `SPI/example_SPI_read.py`
-
+- Add I2C example code
+  - `I2C/example_I2C_write_read.py`
+ 
 v0.0.5 Date: 2022/07/29, Developer: Chunglee_people
 ---------------------------------------------------
 
