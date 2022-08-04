@@ -61,15 +61,6 @@ Thermo
    examples/Thermo/Thermo_read_channel_data
    examples/Thermo/Thermo_read_channel_status
 
-UART
-----
-
-.. toctree::
-   :maxdepth: 4
-
-   examples/UART/UART_read
-   examples/UART/UART_write
-
 CAN
 ---
 
@@ -78,6 +69,15 @@ CAN
 
    examples/CAN/CAN_read
    examples/CAN/CAN_write
+
+UART
+----
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/UART/UART_read
+   examples/UART/UART_write
 
 SPI
 ---
@@ -94,5 +94,4 @@ I2C
 .. toctree::
    :maxdepth: 4
 
-   examples/I2C/I2C_read
-   examples/I2C/I2C_write
+   examples/I2C/I2C_write_read
