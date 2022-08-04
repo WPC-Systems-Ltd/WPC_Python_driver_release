@@ -57,7 +57,7 @@ async def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect network device
+    ## Disconnect USB device
     dev.disconnect()
     
     ## Release device handle

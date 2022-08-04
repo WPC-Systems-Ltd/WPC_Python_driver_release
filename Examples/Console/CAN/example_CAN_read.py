@@ -53,13 +53,13 @@ async def main():
         status = await dev.CAN_stop(port) 
         if status == 0: print("CAN_stop: OK")
         
-        ## Set CAN port to 1 and close CAN  
+        ## Close CAN port1  
         status = await dev.CAN_close(port) 
         if status == 0: print("CAN_close: OK")
     except Exception as err:
         pywpc.printGenericError(err)
  
-    ## Disconnect network device
+    ## Disconnect USB device
     dev.disconnect()
 
     ## Release device handle

@@ -43,18 +43,26 @@ async def main():
         WRITE = 0x02
         WREN = 0x06
 
-        ## Open pin0 in port 2 with digital output
+        '''
+        Open DO pins & SPI port & set CS(pin0) to high
+        '''
+
+        ## Open pin0 in port2 with digital output
         status = await dev.DO_openPins(DO_port, DO_index) 
         if status == 0: print("DO_openPins: OK")
-
-        ## Set pin0 to high
-        status = await dev.DO_writePins(DO_port, DO_index, [1])
-        if status == 0: print("DO_writePins: OK")
 
         ## Open SPI port1
         status = await dev.SPI_open(SPI_port)
         if status == 0: print("SPI_open: OK")
         
+        ## Set CS(pin0) to high
+        status = await dev.DO_writePins(DO_port, DO_index, [1])
+        if status == 0: print("DO_writePins: OK")
+
+        '''
+        Set SPI parameter
+        '''
+
         ## Set SPI port to 1 and set datasize to 8-bits data
         status = await dev.SPI_setDataSize(SPI_port, datasize)
         if status == 0: print("SPI_setDataSize: OK")
@@ -71,7 +79,11 @@ async def main():
         status = await dev.SPI_setMode(SPI_port, mode)
         if status == 0: print("SPI_setMode: OK")
 
-        ## Set pin0 to low
+        '''
+        Write data via SPI
+        '''
+
+        ## Set CS(pin0) to low
         status = await dev.DO_writePins(DO_port, DO_index, [0]) 
         if status == 0: print("DO_writePins: OK")
         
@@ -79,11 +91,15 @@ async def main():
         status = await dev.SPI_write(SPI_port, [WREN])
         if status == 0: print("SPI_write: OK")
 
-        ## Set pin0 to high
+        ## Set CS(pin0) to high
         status = await dev.DO_writePins(DO_port, DO_index, [1])
         if status == 0: print("DO_writePins: OK")
 
-        ## Set pin0 to low
+        '''
+        Write data via SPI
+        '''
+
+        ## Set CS(pin0) to low
         status = await dev.DO_writePins(DO_port, DO_index, [0]) 
         if status == 0: print("DO_writePins: OK") 
         
@@ -91,21 +107,25 @@ async def main():
         status = await dev.SPI_write(SPI_port, [WRITE, 0x00, 0x02, 0x55])
         if status == 0: print("SPI_write: OK")
         
-        ## Set pin0 to high
+        ## Set CS(pin0) to high
         status = await dev.DO_writePins(DO_port, DO_index, [1])
         if status == 0: print("DO_writePins: OK")
  
+        '''
+        Close DO pins and SPI port
+        '''
+
         ## Close SPI port1
         status = await dev.SPI_close(SPI_port)
         if status == 0: print("SPI_close: OK")
 
-        ## Close pin0 in port 2 with digital output
+        ## Close pin0 in port2 with digital output
         status = await dev.DO_closePins(DO_port, DO_index) 
         if status == 0: print("DO_closePins: OK")
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect network device
+    ## Disconnect USB device
     dev.disconnect()
 
     ## Release device handle

@@ -28,6 +28,7 @@ async def main():
         ## Parameters setting
         port = 0
  
+        ## Open AO port0
         status = await dev.AO_open(port)
         if status == 0: print("AO_open: OK")
  
@@ -38,13 +39,13 @@ async def main():
         ## Sleep
         await asyncio.sleep(1) ## delay(second)
  
-        ## Close AO port 0
+        ## Close AO port0
         status = await dev.AO_close(port) 
         if status == 0: print("AO_close: OK") 
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect network device
+    ## Disconnect USB device
     dev.disconnect()
 
     ## Release device handle
