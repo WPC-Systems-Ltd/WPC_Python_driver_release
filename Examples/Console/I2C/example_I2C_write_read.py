@@ -41,7 +41,7 @@ async def main():
 
         ## Open I2C port1
         status = await dev.I2C_open(I2C_port)
-        if status == 0: print("I2C_open: OSK")
+        if status == 0: print("I2C_open: OK")
         
         '''
         Set I2C parameter

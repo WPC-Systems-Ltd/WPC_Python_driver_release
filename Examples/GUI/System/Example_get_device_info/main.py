@@ -35,19 +35,23 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.btn_disconnect.clicked.connect(self.disconnectEvent)
         self.ui.btn_deviceInfo.clicked.connect(self.getdeviceinfoEvent)
 
-        ## Get WPC Driver version
-        str_ = f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}'
-
+        ## Get Python driver version 
+        print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
+        
     @asyncSlot()      
     async def connectEvent(self):
+        ## Clear error message
         self.clearErrorStatus()
-        # Get ip from MainUI window
+
+        # Get ip from UI
         self.ip = self.ui.lineEdit_ipConnect.text()
         try: 
             ## Connect to network device
             dev.connect(self.ip)
+
             ## Change LED status
             self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
+           
             ## Change connection flag
             self.connect_flag = 1
         except pywpc.Error as err:
@@ -56,35 +60,45 @@ class MainWindow(QtWidgets.QMainWindow):
 
     @asyncSlot()      
     async def disconnectEvent(self):
-         ## Disconnect network device
+        ## Disconnect network device
         dev.disconnect() 
+
         ## Change LED status
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
+       
         ## Change connection flag
         self.connect_flag = 0
 
     def closeEvent(self, event):
         ## Disconnect network device
         dev.disconnect()
+        
         ## Release device handle
         dev.close()
 
     @asyncSlot()      
     async def getdeviceinfoEvent(self):
-        # Check connection status
+        ## Check connection status
         if self.checkConnectionStatus() == False:
             return
 
+        ## Clear error message
         self.clearErrorStatus()
+
         ## Get firmware model & version
-        driver_info = await dev.sys_getDriverInfo()
+        driver_info = await dev.Sys_getDriverInfo()
         model = driver_info[0]
         version = driver_info[-1]
-        ip, submask = await dev.sys_getIPAddrAndSubmask()
-        serial_number = await dev.sys_getSerialNumber()
-        mac = await dev.sys_getMACAddr()
-        rtc = await dev.sys_getRTC()
+        
+        ## Get serial number & RTC Time
+        serial_number = await dev.Sys_getSerialNumber()
+        rtc = await dev.Sys_getRTC()
 
+        ## Get IP & submask & MAC
+        ip, submask = await dev.Sys_getIPAddrAndSubmask() 
+        mac = await dev.Sys_getMACAddr()
+
+        ## Update information in UI
         self.ui.lineEdit_ip.setText(ip)
         self.ui.lineEdit_sbk.setText(submask)
         self.ui.lineEdit_serialNum.setText(serial_number)
@@ -93,7 +107,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.lineEdit_version.setText(version)
         self.ui.lineEdit_rtc.setText(rtc)
 
-    # Check TCP connection with QMessageBox
+    ## Check TCP connection with QMessageBox
     def checkConnectionStatus(self):
         if self.connect_flag == 0:
             QMessageBox.information(self, "Error Messages", "Please connect server first.", QMessageBox.Ok)

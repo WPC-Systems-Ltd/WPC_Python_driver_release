@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\General\Example_find_all_device\UI_design\example_GUI_Broadcasts.ui'
+# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\System\Example_find_all_device\UI_design\example_GUI_Broadcasts.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -14,14 +14,14 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(900, 600)
+        MainWindow.resize(904, 609)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.lb_declare = QtWidgets.QLabel(self.centralwidget)
-        self.lb_declare.setGeometry(QtCore.QRect(60, 110, 781, 31))
+        self.lb_declare.setGeometry(QtCore.QRect(130, 120, 671, 31))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
-        font.setPointSize(16)
+        font.setPointSize(14)
         self.lb_declare.setFont(font)
         self.lb_declare.setObjectName("lb_declare")
         self.btn_broadcast = QtWidgets.QPushButton(self.centralwidget)
@@ -83,7 +83,7 @@ class Ui_MainWindow(object):
         self.lb_trademark = QtWidgets.QLabel(self.centralwidget)
         self.lb_trademark.setGeometry(QtCore.QRect(10, 10, 81, 81))
         self.lb_trademark.setText("")
-        self.lb_trademark.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\WPC_Python_driver_release\\Examples\\GUI\\General\\Example_find_all_device\\UI_design\\../Material/WPC_trademark.jpg"))
+        self.lb_trademark.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\WPC_Python_driver_release\\Examples\\GUI\\System\\Example_find_all_device\\UI_design\\../Material/WPC_trademark.jpg"))
         self.lb_trademark.setScaledContents(True)
         self.lb_trademark.setObjectName("lb_trademark")
         self.lb_rights = QtWidgets.QLabel(self.centralwidget)
@@ -95,7 +95,7 @@ class Ui_MainWindow(object):
         self.lb_rights.setObjectName("lb_rights")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 900, 25))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 904, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
