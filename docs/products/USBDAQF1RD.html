@@ -105,23 +105,29 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.DI_closePort" title="pywpc.USBDAQF1RD.DI_closePort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_closePort</span></code></a>(port)</p></td>
 <td><p>Close all pins in specific port with digital input.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.DI_openPins" title="pywpc.USBDAQF1RD.DI_openPins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_openPins</span></code></a>(port, pin)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.DI_getPinMap" title="pywpc.USBDAQF1RD.DI_getPinMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_getPinMap</span></code></a>()</p></td>
+<td><p>Get DI port and its pins.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.DI_openPins" title="pywpc.USBDAQF1RD.DI_openPins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_openPins</span></code></a>(port, pin)</p></td>
 <td><p>Open specific pin to digital intput.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.DI_openPort" title="pywpc.USBDAQF1RD.DI_openPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_openPort</span></code></a>(port)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.DI_openPort" title="pywpc.USBDAQF1RD.DI_openPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_openPort</span></code></a>(port)</p></td>
 <td><p>Open all pins in specific port with digital input.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.DI_readPins" title="pywpc.USBDAQF1RD.DI_readPins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_readPins</span></code></a>(port, pin)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.DI_readPins" title="pywpc.USBDAQF1RD.DI_readPins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_readPins</span></code></a>(port, pin)</p></td>
 <td><p>Read digital pin state in specific pin.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.DI_readPort" title="pywpc.USBDAQF1RD.DI_readPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_readPort</span></code></a>(port)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.DI_readPort" title="pywpc.USBDAQF1RD.DI_readPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_readPort</span></code></a>(port)</p></td>
 <td><p>Read all digital pins state in specific port.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.DO_closePins" title="pywpc.USBDAQF1RD.DO_closePins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_closePins</span></code></a>(port, pin)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.DO_closePins" title="pywpc.USBDAQF1RD.DO_closePins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_closePins</span></code></a>(port, pin)</p></td>
 <td><p>Close specific pin with digital output.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.DO_closePort" title="pywpc.USBDAQF1RD.DO_closePort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_closePort</span></code></a>(port)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.DO_closePort" title="pywpc.USBDAQF1RD.DO_closePort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_closePort</span></code></a>(port)</p></td>
 <td><p>Close all pins in specific port with digital output.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.DO_getPinMap" title="pywpc.USBDAQF1RD.DO_getPinMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_getPinMap</span></code></a>()</p></td>
+<td><p>Get DO port and its pins.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.DO_openPins" title="pywpc.USBDAQF1RD.DO_openPins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_openPins</span></code></a>(port, pin)</p></td>
 <td><p>Open specific pin to digital output.</p></td>
@@ -138,26 +144,32 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.I2C_close" title="pywpc.USBDAQF1RD.I2C_close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_close</span></code></a>(port)</p></td>
 <td><p>Close I2C port.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.I2C_open" title="pywpc.USBDAQF1RD.I2C_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_open</span></code></a>(port)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.I2C_getPort" title="pywpc.USBDAQF1RD.I2C_getPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_getPort</span></code></a>()</p></td>
+<td><p>Get I2C port.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.I2C_open" title="pywpc.USBDAQF1RD.I2C_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_open</span></code></a>(port)</p></td>
 <td><p>Open I2C port on WPC DAQ.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.I2C_read" title="pywpc.USBDAQF1RD.I2C_read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_read</span></code></a>(port, read_address, bytes_to_read)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.I2C_read" title="pywpc.USBDAQF1RD.I2C_read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_read</span></code></a>(port, read_address, bytes_to_read)</p></td>
 <td><p>Read I2C datas from read address</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.I2C_reset" title="pywpc.USBDAQF1RD.I2C_reset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_reset</span></code></a>(port)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.I2C_reset" title="pywpc.USBDAQF1RD.I2C_reset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_reset</span></code></a>(port)</p></td>
 <td><p>Reset I2C port.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.I2C_setAddressSize" title="pywpc.USBDAQF1RD.I2C_setAddressSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_setAddressSize</span></code></a>(port, mode)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.I2C_setAddressSize" title="pywpc.USBDAQF1RD.I2C_setAddressSize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_setAddressSize</span></code></a>(port, mode)</p></td>
 <td><p>Set I2C address size functionality.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.I2C_setClockRate" title="pywpc.USBDAQF1RD.I2C_setClockRate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_setClockRate</span></code></a>(port, mode)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.I2C_setClockRate" title="pywpc.USBDAQF1RD.I2C_setClockRate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_setClockRate</span></code></a>(port, mode)</p></td>
 <td><p>Set I2C clock rate functionality.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.I2C_write" title="pywpc.USBDAQF1RD.I2C_write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_write</span></code></a>(port, write_address, data)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.I2C_write" title="pywpc.USBDAQF1RD.I2C_write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_write</span></code></a>(port, write_address, data)</p></td>
 <td><p>Write data to I2C write address.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.SPI_close" title="pywpc.USBDAQF1RD.SPI_close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_close</span></code></a>(port)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.SPI_close" title="pywpc.USBDAQF1RD.SPI_close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_close</span></code></a>(port)</p></td>
 <td><p>Close SPI port.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.SPI_getPort" title="pywpc.USBDAQF1RD.SPI_getPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_getPort</span></code></a>()</p></td>
+<td><p>Get SPI port.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.SPI_open" title="pywpc.USBDAQF1RD.SPI_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_open</span></code></a>(port)</p></td>
 <td><p>Open SPI port.</p></td>
@@ -225,29 +237,29 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.Thermal_close" title="pywpc.USBDAQF1RD.Thermal_close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Thermal_close</span></code></a>(port)</p></td>
 <td><p>Close thermocouple port.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.Thermal_getStatus" title="pywpc.USBDAQF1RD.Thermal_getStatus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Thermal_getStatus</span></code></a>(port, channel)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.Thermal_getPort" title="pywpc.USBDAQF1RD.Thermal_getPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Thermal_getPort</span></code></a>()</p></td>
+<td><p>Get thermal port.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.Thermal_getStatus" title="pywpc.USBDAQF1RD.Thermal_getStatus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Thermal_getStatus</span></code></a>(port, channel)</p></td>
 <td><p>Get thermocouple status from specific thermocouple channel.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.Thermal_open" title="pywpc.USBDAQF1RD.Thermal_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Thermal_open</span></code></a>(port)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.Thermal_open" title="pywpc.USBDAQF1RD.Thermal_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Thermal_open</span></code></a>(port)</p></td>
 <td><p>Open thermocouple port on WPC DAQ device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.Thermal_readSensor" title="pywpc.USBDAQF1RD.Thermal_readSensor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Thermal_readSensor</span></code></a>(port, channel)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.Thermal_readSensor" title="pywpc.USBDAQF1RD.Thermal_readSensor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Thermal_readSensor</span></code></a>(port, channel)</p></td>
 <td><p>Read thermocouple sensor temperature from specific thermocouple channel.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.Thermal_setJunctionOn" title="pywpc.USBDAQF1RD.Thermal_setJunctionOn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Thermal_setJunctionOn</span></code></a>(port, channel, ...)</p></td>
-<td><p>Set junction on specific thermocouple channel.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.Thermal_setNoiseFilter" title="pywpc.USBDAQF1RD.Thermal_setNoiseFilter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Thermal_setNoiseFilter</span></code></a>(port, channel, mode)</p></td>
 <td><p>Set noise rejection filter to 60Hz or 50Hz om specific thermocouple channel.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.Thermal_setOverSampling" title="pywpc.USBDAQF1RD.Thermal_setOverSampling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Thermal_setOverSampling</span></code></a>(port, channel, mode)</p></td>
-<td><p>Set oversampling on specific thermocouple channel.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.Thermal_setType" title="pywpc.USBDAQF1RD.Thermal_setType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Thermal_setType</span></code></a>(port, channel, type_)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.Thermal_setType" title="pywpc.USBDAQF1RD.Thermal_setType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Thermal_setType</span></code></a>(port, channel, type_)</p></td>
 <td><p>Set thermocouple type on specific thermocouple channel.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.UART_close" title="pywpc.USBDAQF1RD.UART_close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_close</span></code></a>(port)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.UART_close" title="pywpc.USBDAQF1RD.UART_close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_close</span></code></a>(port)</p></td>
 <td><p>Close UART port.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.UART_getPort" title="pywpc.USBDAQF1RD.UART_getPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_getPort</span></code></a>()</p></td>
+<td><p>Get UART port.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.UART_open" title="pywpc.USBDAQF1RD.UART_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_open</span></code></a>(port)</p></td>
 <td><p>Open specific UART port on WPC DAQ device.</p></td>
@@ -341,6 +353,20 @@
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 if success, error otherwise.</p></li>
 </ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1RD.DI_getPinMap">
+<span class="sig-name descname"><span class="pre">DI_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.DI_getPinMap" title="Permalink to this definition"></a></dt>
+<dd><p>Get DI port and its pins.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>{port: [pins]}</p>
 </dd>
 </dl>
 </dd>
@@ -506,6 +532,20 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1RD.DO_getPinMap">
+<span class="sig-name descname"><span class="pre">DO_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.DO_getPinMap" title="Permalink to this definition"></a></dt>
+<dd><p>Get DO port and its pins.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>{port: [pins]}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.DO_openPins">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DO_openPins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.DO_openPins" title="Permalink to this definition"></a></dt>
 <dd><p>Open specific pin to digital output.</p>
@@ -645,6 +685,20 @@
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 if success, error otherwise.</p></li>
 </ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1RD.I2C_getPort">
+<span class="sig-name descname"><span class="pre">I2C_getPort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.I2C_getPort" title="Permalink to this definition"></a></dt>
+<dd><p>Get I2C port.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">list</span></dt><dd><p>I2C port.</p>
 </dd>
 </dl>
 </dd>
@@ -840,6 +894,20 @@
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 if success, error otherwise.</p></li>
 </ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1RD.SPI_getPort">
+<span class="sig-name descname"><span class="pre">SPI_getPort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.SPI_getPort" title="Permalink to this definition"></a></dt>
+<dd><p>Get SPI port.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">list</span></dt><dd><p>SPI port.</p>
 </dd>
 </dl>
 </dd>
@@ -1375,6 +1443,20 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Thermal_getPort">
+<span class="sig-name descname"><span class="pre">Thermal_getPort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Thermal_getPort" title="Permalink to this definition"></a></dt>
+<dd><p>Get thermal port.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">list</span></dt><dd><p>Thermal port.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Thermal_getStatus">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Thermal_getStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Thermal_getStatus" title="Permalink to this definition"></a></dt>
 <dd><p>Get thermocouple status from specific thermocouple channel.</p>
@@ -1442,38 +1524,6 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Thermal_setJunctionOn">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Thermal_setJunctionOn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">junction_status</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Thermal_setJunctionOn" title="Permalink to this definition"></a></dt>
-<dd><p>Set junction on specific thermocouple channel.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>channel</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>channel could set 0 or 1.</p></li>
-</ul>
-</dd>
-<dt><strong>junction_status</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
-<li><p>True: on</p></li>
-<li><p>False: off</p></li>
-</ul>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><dl class="simple">
-<dt>Status (TC):</dt><dd><p>Bit 0 = Open-circuit fault.</p>
-</dd>
-<dt>Status (RTD):</dt><dd><p>See user manual.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Thermal_setNoiseFilter">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Thermal_setNoiseFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Thermal_setNoiseFilter" title="Permalink to this definition"></a></dt>
 <dd><p>Set noise rejection filter to 60Hz or 50Hz om specific thermocouple channel.</p>
@@ -1491,39 +1541,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 if success, error otherwise.</p></li>
-</ul>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Thermal_setOverSampling">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Thermal_setOverSampling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Thermal_setOverSampling" title="Permalink to this definition"></a></dt>
-<dd><p>Set oversampling on specific thermocouple channel.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>channel</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>channel could set 0 or 1.</p></li>
-</ul>
-</dd>
-<dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Over-sampling mode.</p></li>
-<li><p>0 : 1 sample  (default)</p></li>
-<li><p>1 : 2 samples</p></li>
-<li><p>2 : 4 samples</p></li>
-<li><p>3 : 8 samples</p></li>
-<li><p>4 : 16 samples</p></li>
-</ul>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 if success, error otherwise.</p></li>
 </ul>
@@ -1588,6 +1605,20 @@
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 if success, error otherwise.</p></li>
 </ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1RD.UART_getPort">
+<span class="sig-name descname"><span class="pre">UART_getPort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.UART_getPort" title="Permalink to this definition"></a></dt>
+<dd><p>Get UART port.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">list</span></dt><dd><p>UART port.</p>
 </dd>
 </dl>
 </dd>
