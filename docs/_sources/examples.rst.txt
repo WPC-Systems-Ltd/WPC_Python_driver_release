@@ -60,6 +60,8 @@ Thermo
 
    examples/Thermo/Thermo_read_channel_data
    examples/Thermo/Thermo_read_channel_status
+   examples/Thermo/RTD_read_channel_data
+   examples/Thermo/RTD_read_channel_status
 
 CAN
 ---
