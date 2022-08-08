@@ -1,6 +1,3 @@
-example CAN write
-=================
-
 .. literalinclude:: ../../../../../../WPC_Python_driver_release/Examples/Console/CAN/example_CAN_write.py
    :language: python
    :linenos:

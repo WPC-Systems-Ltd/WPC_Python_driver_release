@@ -1,29 +1,29 @@
  
 ## WPC Device Driver Example GUI
  
-WPC device driver only support python 3.10
+- WPC device driver only support python 3.10
 
 ## Python version requirement
 - Python 3.10 
 
 Products
 --------
-Wifi DAQ card:
+WiFi based DAQ card
 - Wifi-DAQ-E3-A
 
-Ethernet remote controller:
+Ethernet based remote controller
 - STEM
 - STEM-Lite
 
-Ethernet motion controller:
+Ethernet based motion card
 - EMotion
 
-Ethernet DAQ card:
+Ethernet based DAQ card
 - EPC
 - Ethan-D
 - Ethan-A
 
-USB DAQ card:
+USB interface DAQ card
 - USB-DAQ-F1-D
 - USB-DAQ-F1-AD
 - USB-DAQ-F1-TD
@@ -32,7 +32,7 @@ USB DAQ card:
 - USB-DAQ-F1-AOD
 - USB-DAQ-F1-DSNK
 
-Port functionality mapping
+Port funtionality compatibility
 -------------------
 
 | Board           | AI  | AO | DI         | DO         | CAN | UART | SPI | I2C | RTD | Thermocouple |
@@ -49,13 +49,13 @@ Port functionality mapping
 | USB-DAQ-F1-RD   | -   | -  | 0, 1, 2, 3 | 0, 1, 2, 3 |-    |1, 2  |2    |1, 2 | 1   |-             |
 
 Take `USB-DAQ-F1-AOD` for example
-- port0 is available for `AI`
-- port2 is available for `DI`
-- port0 & port1 is available for `DO`
-- port2 is available for `UART`
+- port0 available for `AI`
+- port2 available for `DI`
+- port0 & port1 available for `DO`
+- port2 available for `UART`
 
-## Reference
-- [User manual - WPC Python device driver](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)
-- [How to install miniconda and build your own virtual environment](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-install-miniconda-and-build-your-own-virtual-environment) 
+## References
+- [User manual - WPC Python Device Driver](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)
+- [Recommendations for new python user to create environment](https://github.com/WPC-systems/WPC_Python_driver_release/wiki/Install-miniconda-and-build-environment) 
 - [Run example code in console](https://github.com/WPC-systems/WPC_Python_driver_release/wiki/How-to-run-WPC-Python-driver-example-code-in-console)
 
