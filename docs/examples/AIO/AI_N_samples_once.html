@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>example AI N-samples once &mdash; WPC Device Driver 0.1.15 documentation</title>
+  <title>example AI N samples once &mdash; WPC Device Driver 0.1.16 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -31,7 +31,7 @@
             <a href="../../index.html" class="icon icon-home"> WPC Device Driver
           </a>
               <div class="version">
-                0.1.15
+                0.1.16
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -50,15 +50,21 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../../examples.html#aio">AIO</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="AI_continuous.html">example AI continuous</a></li>
 <li class="toctree-l3"><a class="reference internal" href="AI_on_demand_in_loop.html">example AI on demand in loop</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">example AI N-samples once</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">example AI N samples once</a></li>
 <li class="toctree-l3"><a class="reference internal" href="AI_N_samples_get_progressively.html">example AI N_samples get progressively</a></li>
 <li class="toctree-l3"><a class="reference internal" href="AI_on_demand_once.html">example AI on demand once</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AO_write_one_channel.html">example AO write one channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AO_write_all_channels.html">example AO write all channels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AIO_one_channel_loopback.html">example AIO one channel loopback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AIO_all_channels_loopback.html">example AIO all channels loopback</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#dio">DIO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#thermo">Thermo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#can">CAN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#uart">UART</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../examples.html#can-bus">CAN bus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#spi">SPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#i2c">I2C</a></li>
 </ul>
 </li>
 </ul>
@@ -78,7 +84,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../examples.html">Example codes</a> &raquo;</li>
-      <li>example AI N-samples once</li>
+      <li>example AI N samples once</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/examples/AIO/AI_N_samples_once.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -89,7 +95,7 @@
            <div itemprop="articleBody">
              
   <section id="example-ai-n-samples-once">
-<h1>example AI N-samples once<a class="headerlink" href="#example-ai-n-samples-once" title="Permalink to this heading"></a></h1>
+<h1>example AI N samples once<a class="headerlink" href="#example-ai-n-samples-once" title="Permalink to this heading"></a></h1>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">asyncio</span>
 <span class="linenos"> 3</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;pywpc/&#39;</span><span class="p">)</span>

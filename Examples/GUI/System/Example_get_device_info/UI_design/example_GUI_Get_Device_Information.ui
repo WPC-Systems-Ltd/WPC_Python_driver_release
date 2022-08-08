@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>909</width>
-    <height>804</height>
+    <width>824</width>
+    <height>791</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -55,28 +55,28 @@
    <widget class="QLabel" name="lb_declare">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>140</x>
       <y>80</y>
-      <width>791</width>
+      <width>561</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Times New Roman</family>
-      <pointsize>16</pointsize>
+      <pointsize>14</pointsize>
      </font>
     </property>
     <property name="text">
-     <string>This is example for getting device information from WPC DAQ Device.</string>
+     <string>This is an example for getting device information from WPC DAQ Device.</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox_connection">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>140</x>
       <y>120</y>
-      <width>471</width>
+      <width>561</width>
       <height>81</height>
      </rect>
     </property>
@@ -102,7 +102,7 @@
     <widget class="QPushButton" name="btn_connect">
      <property name="geometry">
       <rect>
-       <x>170</x>
+       <x>190</x>
        <y>30</y>
        <width>91</width>
        <height>31</height>
@@ -135,7 +135,7 @@ QPushButton:pressed{
     <widget class="QPushButton" name="btn_disconnect">
      <property name="geometry">
       <rect>
-       <x>270</x>
+       <x>320</x>
        <y>30</y>
        <width>121</width>
        <height>31</height>
@@ -210,7 +210,7 @@ QPushButton:pressed{
     <widget class="QLabel" name="lb_led">
      <property name="geometry">
       <rect>
-       <x>410</x>
+       <x>470</x>
        <y>20</y>
        <width>51</width>
        <height>51</height>
@@ -230,9 +230,9 @@ QPushButton:pressed{
    <widget class="QGroupBox" name="groupBox_driverInfo">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>140</x>
       <y>220</y>
-      <width>381</width>
+      <width>561</width>
       <height>371</height>
      </rect>
     </property>
@@ -489,24 +489,23 @@ QPushButton:pressed{
       </item>
      </layout>
     </widget>
-   </widget>
-   <widget class="QPushButton" name="btn_deviceInfo">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>230</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>微軟正黑體</family>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
+    <widget class="QPushButton" name="btn_deviceInfo">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>180</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微軟正黑體</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
     background-color: rgb(61, 79, 99);
     border-radius : 5px;
     color:  rgb(255, 255, 255);
@@ -516,17 +515,18 @@ QPushButton:pressed{
 QPushButton:pressed{
 	background-color: rgb(52, 137, 235);
 }</string>
-    </property>
-    <property name="text">
-     <string>Get Device Info</string>
-    </property>
+     </property>
+     <property name="text">
+      <string>Get Device Info</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_errormessage">
     <property name="geometry">
      <rect>
       <x>140</x>
       <y>620</y>
-      <width>591</width>
+      <width>561</width>
       <height>101</height>
      </rect>
     </property>
@@ -569,8 +569,8 @@ QPushButton:pressed{
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>909</width>
-     <height>25</height>
+     <width>824</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>

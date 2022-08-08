@@ -13,7 +13,7 @@ async def main():
     ## Create device handle
     dev = pywpc.USBDAQF1D()
 
-    ## Connect to network device
+    ## Connect to USB device
     try:
         dev.connect('21JA1044')
     except Exception as err:
@@ -39,7 +39,7 @@ async def main():
             else:
                 value = [1,0]
 
-            await dev.DO_writeValuePins(port, pinindex, value) 
+            await dev.DO_writePins(port, pinindex, value) 
             print(f'Port: {port}, pinindex = {pinindex}, digital state = {value}') 
             await asyncio.sleep(0.5)  ## delay(second)
 
@@ -52,7 +52,7 @@ async def main():
     except Exception as err:
         pywpc.printGenericError(err)
         
-    ## Disconnect network device
+    ## Disconnect USB device
     dev.disconnect()
     
     ## Release device handle

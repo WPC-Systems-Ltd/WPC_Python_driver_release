@@ -27,6 +27,7 @@ USB interface DAQ card
 - USB-DAQ-F1-D
 - USB-DAQ-F1-AD
 - USB-DAQ-F1-TD
+- USB-DAQ-F1-RD
 - USB-DAQ-F1-CD
 - USB-DAQ-F1-AOD
 - USB-DAQ-F1-DSNK
@@ -48,10 +49,10 @@ Port funtionality compatibility
 | USB-DAQ-F1-RD   | -   | -  | 0, 1, 2, 3 | 0, 1, 2, 3 |-    |1, 2  |2    |1, 2 | 1   |-             |
 
 Take `USB-DAQ-F1-AOD` for example
-- port0 available for `AI`
-- port2 available for `DI`
-- port0 & port1 available for `DO`
-- port2 available for `UART`
+- port0 is available for `AI`
+- port2 is available for `DI`
+- port0 & port1 are available for `DO`
+- port2 is available for `UART`
 
 ## References
 - [User manual - WPC Python Device Driver](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)

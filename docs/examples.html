@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Example codes &mdash; WPC Device Driver 0.1.15 documentation</title>
+  <title>Example codes &mdash; WPC Device Driver 0.1.16 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -31,7 +31,7 @@
             <a href="index.html" class="icon icon-home"> WPC Device Driver
           </a>
               <div class="version">
-                0.1.15
+                0.1.16
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -62,9 +62,13 @@
 <li class="toctree-l2"><a class="reference internal" href="#aio">AIO</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="examples/AIO/AI_continuous.html">example AI continuous</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/AIO/AI_on_demand_in_loop.html">example AI on demand in loop</a></li>
-<li class="toctree-l3"><a class="reference internal" href="examples/AIO/AI_N_samples_once.html">example AI N-samples once</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/AIO/AI_N_samples_once.html">example AI N samples once</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/AIO/AI_N_samples_get_progressively.html">example AI N_samples get progressively</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/AIO/AI_on_demand_once.html">example AI on demand once</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/AIO/AO_write_one_channel.html">example AO write one channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/AIO/AO_write_all_channels.html">example AO write all channels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/AIO/AIO_one_channel_loopback.html">example AIO one channel loopback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/AIO/AIO_all_channels_loopback.html">example AIO all channels loopback</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#dio">DIO</a><ul>
@@ -81,14 +85,23 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Thermo/Thermo_read_channel_status.html">example Thermo read channel status</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#uart">UART</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="examples/UART/UART_read.html">UART_read</a></li>
-<li class="toctree-l3"><a class="reference internal" href="examples/UART/UART_write.html">UART_write</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#can">CAN</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/CAN/CAN_read.html">example CAN read</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/CAN/CAN_write.html">example CAN write</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#can-bus">CAN bus</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="examples/CAN/CAN_read.html">CAN_read</a></li>
-<li class="toctree-l3"><a class="reference internal" href="examples/CAN/CAN_write.html">CAN_write</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uart">UART</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/UART/UART_read.html">example UART read</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/UART/UART_write.html">example UART write</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#spi">SPI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/SPI/SPI_read_and_write.html">example SPI read and write</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/SPI/SPI_write.html">example SPI write</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#i2c">I2C</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/I2C/I2C_write_read.html">example I2C write and read</a></li>
 </ul>
 </li>
 </ul>
@@ -149,9 +162,13 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="examples/AIO/AI_continuous.html">example AI continuous</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/AIO/AI_on_demand_in_loop.html">example AI on demand in loop</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/AIO/AI_N_samples_once.html">example AI N-samples once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/AIO/AI_N_samples_once.html">example AI N samples once</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/AIO/AI_N_samples_get_progressively.html">example AI N_samples get progressively</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/AIO/AI_on_demand_once.html">example AI on demand once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/AIO/AO_write_one_channel.html">example AO write one channel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/AIO/AO_write_all_channels.html">example AO write all channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/AIO/AIO_one_channel_loopback.html">example AIO one channel loopback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/AIO/AIO_all_channels_loopback.html">example AIO all channels loopback</a></li>
 </ul>
 </div>
 </section>
@@ -177,21 +194,38 @@
 </ul>
 </div>
 </section>
+<section id="can">
+<h2>CAN<a class="headerlink" href="#can" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/CAN/CAN_read.html">example CAN read</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/CAN/CAN_write.html">example CAN write</a></li>
+</ul>
+</div>
+</section>
 <section id="uart">
 <h2>UART<a class="headerlink" href="#uart" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="examples/UART/UART_read.html">UART_read</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/UART/UART_write.html">UART_write</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/UART/UART_read.html">example UART read</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/UART/UART_write.html">example UART write</a></li>
 </ul>
 </div>
 </section>
-<section id="can-bus">
-<h2>CAN bus<a class="headerlink" href="#can-bus" title="Permalink to this heading"></a></h2>
+<section id="spi">
+<h2>SPI<a class="headerlink" href="#spi" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="examples/CAN/CAN_read.html">CAN_read</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/CAN/CAN_write.html">CAN_write</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/SPI/SPI_read_and_write.html">example SPI read and write</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/SPI/SPI_write.html">example SPI write</a></li>
+</ul>
+</div>
+</section>
+<section id="i2c">
+<h2>I2C<a class="headerlink" href="#i2c" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/I2C/I2C_write_read.html">example I2C write and read</a></li>
 </ul>
 </div>
 </section>

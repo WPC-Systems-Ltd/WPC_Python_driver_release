@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wifi-DAQ-E3-A &mdash; WPC Device Driver 0.1.15 documentation</title>
+  <title>Wifi-DAQ-E3-A &mdash; WPC Device Driver 0.1.16 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -31,7 +31,7 @@
             <a href="../index.html" class="icon icon-home"> WPC Device Driver
           </a>
               <div class="version">
-                0.1.15
+                0.1.16
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -102,85 +102,88 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.AI_free" title="pywpc.WifiDAQE3A.AI_free"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_free</span></code></a>()</p></td>
 <td><p>Free AI port.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.AI_open" title="pywpc.WifiDAQE3A.AI_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_open</span></code></a>(port)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.AI_getPort" title="pywpc.WifiDAQE3A.AI_getPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_getPort</span></code></a>()</p></td>
+<td><p>Get AI port.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.AI_open" title="pywpc.WifiDAQE3A.AI_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_open</span></code></a>(port)</p></td>
 <td><p>Open AI port.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.AI_readBufferStatus" title="pywpc.WifiDAQE3A.AI_readBufferStatus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_readBufferStatus</span></code></a>(port)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.AI_readBufferStatus" title="pywpc.WifiDAQE3A.AI_readBufferStatus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_readBufferStatus</span></code></a>(port)</p></td>
 <td><p>Get AI buffer status of remote device.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.AI_readOnDemand" title="pywpc.WifiDAQE3A.AI_readOnDemand"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_readOnDemand</span></code></a>(port)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.AI_readOnDemand" title="pywpc.WifiDAQE3A.AI_readOnDemand"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_readOnDemand</span></code></a>(port)</p></td>
 <td><p>Read one sample from AI port.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.AI_readStreaming" title="pywpc.WifiDAQE3A.AI_readStreaming"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_readStreaming</span></code></a>(port, num_of_samples[, delay])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.AI_readStreaming" title="pywpc.WifiDAQE3A.AI_readStreaming"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_readStreaming</span></code></a>(port, num_of_samples[, delay])</p></td>
 <td><p>Read multiple samples from AI port.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.AI_setMode" title="pywpc.WifiDAQE3A.AI_setMode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_setMode</span></code></a>(port, mode)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.AI_setMode" title="pywpc.WifiDAQE3A.AI_setMode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_setMode</span></code></a>(port, mode)</p></td>
 <td><p>Configure acquisition mode setting.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.AI_setNumSamples" title="pywpc.WifiDAQE3A.AI_setNumSamples"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_setNumSamples</span></code></a>(port, sample_points)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.AI_setNumSamples" title="pywpc.WifiDAQE3A.AI_setNumSamples"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_setNumSamples</span></code></a>(port, sample_points)</p></td>
 <td><p>Configure sample points to acquisition for N-samples mode.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.AI_setSamplingRate" title="pywpc.WifiDAQE3A.AI_setSamplingRate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_setSamplingRate</span></code></a>(port, sampling_rate)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.AI_setSamplingRate" title="pywpc.WifiDAQE3A.AI_setSamplingRate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_setSamplingRate</span></code></a>(port, sampling_rate)</p></td>
 <td><p>Configure sampling rate to acquisition setting for N-samples and continuous mode.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.AI_start" title="pywpc.WifiDAQE3A.AI_start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_start</span></code></a>(port)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.AI_start" title="pywpc.WifiDAQE3A.AI_start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_start</span></code></a>(port)</p></td>
 <td><p>Start N samples or continuous AI acquisition.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.AI_stop" title="pywpc.WifiDAQE3A.AI_stop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_stop</span></code></a>(port)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.AI_stop" title="pywpc.WifiDAQE3A.AI_stop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_stop</span></code></a>(port)</p></td>
 <td><p>Stop N samples or continuous AI acquisition.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Sys_getDriverInfo" title="pywpc.WifiDAQE3A.Sys_getDriverInfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getDriverInfo</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Sys_getDriverInfo" title="pywpc.WifiDAQE3A.Sys_getDriverInfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getDriverInfo</span></code></a>()</p></td>
 <td><p>Get device firmware information.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Sys_getGateway" title="pywpc.WifiDAQE3A.Sys_getGateway"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getGateway</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Sys_getGateway" title="pywpc.WifiDAQE3A.Sys_getGateway"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getGateway</span></code></a>()</p></td>
 <td><p>Get geteway from the connected web device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Sys_getIPAddrAndSubmask" title="pywpc.WifiDAQE3A.Sys_getIPAddrAndSubmask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getIPAddrAndSubmask</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Sys_getIPAddrAndSubmask" title="pywpc.WifiDAQE3A.Sys_getIPAddrAndSubmask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getIPAddrAndSubmask</span></code></a>()</p></td>
 <td><p>Get IP address and subnet mask from the connected web device.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Sys_getMACAddr" title="pywpc.WifiDAQE3A.Sys_getMACAddr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getMACAddr</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Sys_getMACAddr" title="pywpc.WifiDAQE3A.Sys_getMACAddr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getMACAddr</span></code></a>()</p></td>
 <td><p>Get MAC address from the connected web device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Sys_getPinModeInPort" title="pywpc.WifiDAQE3A.Sys_getPinModeInPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getPinModeInPort</span></code></a>(port)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Sys_getPinModeInPort" title="pywpc.WifiDAQE3A.Sys_getPinModeInPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getPinModeInPort</span></code></a>(port)</p></td>
 <td><p>Get pin mode in specific port.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Sys_getRTC" title="pywpc.WifiDAQE3A.Sys_getRTC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getRTC</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Sys_getRTC" title="pywpc.WifiDAQE3A.Sys_getRTC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getRTC</span></code></a>()</p></td>
 <td><p>Get date and time to connected WPC device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Sys_getSerialNumber" title="pywpc.WifiDAQE3A.Sys_getSerialNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getSerialNumber</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Sys_getSerialNumber" title="pywpc.WifiDAQE3A.Sys_getSerialNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getSerialNumber</span></code></a>()</p></td>
 <td><p>Get serial number from the connected WPC device.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Sys_reboot" title="pywpc.WifiDAQE3A.Sys_reboot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_reboot</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Sys_reboot" title="pywpc.WifiDAQE3A.Sys_reboot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_reboot</span></code></a>()</p></td>
 <td><p>Reboot from the connected WPC device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Sys_rebootOnBootloader" title="pywpc.WifiDAQE3A.Sys_rebootOnBootloader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_rebootOnBootloader</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Sys_rebootOnBootloader" title="pywpc.WifiDAQE3A.Sys_rebootOnBootloader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_rebootOnBootloader</span></code></a>()</p></td>
 <td><p>Reboot On bootloader from the connected WPC device.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Sys_setIPAddrAndSubmask" title="pywpc.WifiDAQE3A.Sys_setIPAddrAndSubmask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setIPAddrAndSubmask</span></code></a>(ip_addr[, subnet_mask])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Sys_setIPAddrAndSubmask" title="pywpc.WifiDAQE3A.Sys_setIPAddrAndSubmask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setIPAddrAndSubmask</span></code></a>(ip_addr[, subnet_mask])</p></td>
 <td><p>Set IP address and subnet mask to the connected web device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Sys_setRTC" title="pywpc.WifiDAQE3A.Sys_setRTC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setRTC</span></code></a>(year, month, day, hour, minute, ...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Sys_setRTC" title="pywpc.WifiDAQE3A.Sys_setRTC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setRTC</span></code></a>(year, month, day, hour, minute, ...)</p></td>
 <td><p>Set date and time to connected WPC device.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_getWifiBandwidth" title="pywpc.WifiDAQE3A.Wifi_getWifiBandwidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_getWifiBandwidth</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_getWifiBandwidth" title="pywpc.WifiDAQE3A.Wifi_getWifiBandwidth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_getWifiBandwidth</span></code></a>()</p></td>
 <td><p>Get bandwidth from Wifi device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_getWifiConfiguration" title="pywpc.WifiDAQE3A.Wifi_getWifiConfiguration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_getWifiConfiguration</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_getWifiConfiguration" title="pywpc.WifiDAQE3A.Wifi_getWifiConfiguration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_getWifiConfiguration</span></code></a>()</p></td>
 <td><p>Get Wifi reconnection times and AP stay time.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readAccleration" title="pywpc.WifiDAQE3A.Wifi_readAccleration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readAccleration</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readAccleration" title="pywpc.WifiDAQE3A.Wifi_readAccleration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readAccleration</span></code></a>()</p></td>
 <td><p>Get acceleration from sensor if the Wifi device has one.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readBattery" title="pywpc.WifiDAQE3A.Wifi_readBattery"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readBattery</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readBattery" title="pywpc.WifiDAQE3A.Wifi_readBattery"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readBattery</span></code></a>()</p></td>
 <td><p>Get volatge status of battery if the Wifi device has one.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readRSSI" title="pywpc.WifiDAQE3A.Wifi_readRSSI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readRSSI</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readRSSI" title="pywpc.WifiDAQE3A.Wifi_readRSSI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readRSSI</span></code></a>()</p></td>
 <td><p>Get Wifi RSSI signal of the connected Wifi device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readThermo" title="pywpc.WifiDAQE3A.Wifi_readThermo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readThermo</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_readThermo" title="pywpc.WifiDAQE3A.Wifi_readThermo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_readThermo</span></code></a>()</p></td>
 <td><p>Get temperature from thermal sensor if the Wifi device has one.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_setAP" title="pywpc.WifiDAQE3A.Wifi_setAP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_setAP</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.WifiDAQE3A.Wifi_setAP" title="pywpc.WifiDAQE3A.Wifi_setAP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Wifi_setAP</span></code></a>()</p></td>
 <td><p>Change from station mode to AP mode for Wifi device.</p></td>
 </tr>
 </tbody>
@@ -254,6 +257,20 @@
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AI_free">
 <span class="sig-name descname"><span class="pre">AI_free</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AI_free" title="Permalink to this definition"></a></dt>
 <dd><p>Free AI port.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AI_getPort">
+<span class="sig-name descname"><span class="pre">AI_getPort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AI_getPort" title="Permalink to this definition"></a></dt>
+<dd><p>Get AI port.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">list</span></dt><dd><p>AI port.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">

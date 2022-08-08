@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>example Thermo read channel status &mdash; WPC Device Driver 0.1.15 documentation</title>
+  <title>example Thermo read channel status &mdash; WPC Device Driver 0.1.16 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,7 +19,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="UART_read" href="../UART/UART_read.html" />
+    <link rel="next" title="example CAN read" href="../CAN/CAN_read.html" />
     <link rel="prev" title="example Thermo read channel data" href="Thermo_read_channel_data.html" /> 
 </head>
 
@@ -31,7 +31,7 @@
             <a href="../../index.html" class="icon icon-home"> WPC Device Driver
           </a>
               <div class="version">
-                0.1.15
+                0.1.16
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -54,8 +54,10 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">example Thermo read channel status</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#can">CAN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#uart">UART</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../examples.html#can-bus">CAN bus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#spi">SPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#i2c">I2C</a></li>
 </ul>
 </li>
 </ul>
@@ -102,7 +104,7 @@
 <span class="linenos">13</span>    <span class="c1">## Create device handle</span>
 <span class="linenos">14</span>    <span class="n">dev</span> <span class="o">=</span> <span class="n">pywpc</span><span class="o">.</span><span class="n">USBDAQF1TD</span><span class="p">()</span>
 <span class="linenos">15</span>
-<span class="linenos">16</span>    <span class="c1">## Connect to network device</span>
+<span class="linenos">16</span>    <span class="c1">## Connect to USB device</span>
 <span class="linenos">17</span>    <span class="k">try</span><span class="p">:</span>
 <span class="linenos">18</span>        <span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;21JA1239&#39;</span><span class="p">)</span>
 <span class="linenos">19</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
@@ -119,31 +121,31 @@
 <span class="linenos">30</span>        <span class="n">channel_0</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="linenos">31</span>        <span class="n">channel_1</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="linenos">32</span>        
-<span class="linenos">33</span>        <span class="c1">## Open thermo</span>
+<span class="linenos">33</span>        <span class="c1">## Open thermo port1</span>
 <span class="linenos">34</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_open</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
 <span class="linenos">35</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thermal_open: OK&quot;</span><span class="p">)</span>
 <span class="linenos">36</span>
 <span class="linenos">37</span>        <span class="c1">## Sleep</span>
 <span class="linenos">38</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span> <span class="c1">## delay(second)</span>
 <span class="linenos">39</span>
-<span class="linenos">40</span>        <span class="c1">## Get status in channel 0 </span>
+<span class="linenos">40</span>        <span class="c1">## Set thermo port to 1 and get status in channel 0 </span>
 <span class="linenos">41</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_getStatus</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">channel_0</span><span class="p">)</span>
 <span class="linenos">42</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thermal_getStatus in chaannel 0: OK&quot;</span><span class="p">)</span>
 <span class="linenos">43</span>
 <span class="linenos">44</span>        <span class="c1">## Sleep</span>
 <span class="linenos">45</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span> <span class="c1">## delay(second)</span>
 <span class="linenos">46</span>
-<span class="linenos">47</span>        <span class="c1">## Get status in channel 1</span>
+<span class="linenos">47</span>        <span class="c1">## Set thermo port to 1 and get status in channel 1</span>
 <span class="linenos">48</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_getStatus</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">channel_1</span><span class="p">)</span>
 <span class="linenos">49</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thermal_getStatus in chaannel 1: OK&quot;</span><span class="p">)</span>
 <span class="linenos">50</span>
-<span class="linenos">51</span>        <span class="c1">## Close thermo</span>
+<span class="linenos">51</span>        <span class="c1">## Close thermo port1</span>
 <span class="linenos">52</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_close</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
 <span class="linenos">53</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thermal_close: OK&quot;</span><span class="p">)</span>   
 <span class="linenos">54</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos">55</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="linenos">56</span>
-<span class="linenos">57</span>    <span class="c1">## Disconnect network device</span>
+<span class="linenos">57</span>    <span class="c1">## Disconnect USB device</span>
 <span class="linenos">58</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
 <span class="linenos">59</span>
 <span class="linenos">60</span>    <span class="c1">## Release device handle</span>
@@ -162,7 +164,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="Thermo_read_channel_data.html" class="btn btn-neutral float-left" title="example Thermo read channel data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../UART/UART_read.html" class="btn btn-neutral float-right" title="UART_read" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../CAN/CAN_read.html" class="btn btn-neutral float-right" title="example CAN read" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

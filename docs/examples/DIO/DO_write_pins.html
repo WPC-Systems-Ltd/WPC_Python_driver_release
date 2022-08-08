@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>example DO write pins &mdash; WPC Device Driver 0.1.15 documentation</title>
+  <title>example DO write pins &mdash; WPC Device Driver 0.1.16 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -31,7 +31,7 @@
             <a href="../../index.html" class="icon icon-home"> WPC Device Driver
           </a>
               <div class="version">
-                0.1.15
+                0.1.16
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -58,8 +58,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#thermo">Thermo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#can">CAN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#uart">UART</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../examples.html#can-bus">CAN bus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#spi">SPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#i2c">I2C</a></li>
 </ul>
 </li>
 </ul>
@@ -106,7 +108,7 @@
 <span class="linenos">13</span>    <span class="c1">## Create device handle</span>
 <span class="linenos">14</span>    <span class="n">dev</span> <span class="o">=</span> <span class="n">pywpc</span><span class="o">.</span><span class="n">USBDAQF1D</span><span class="p">()</span>
 <span class="linenos">15</span>
-<span class="linenos">16</span>    <span class="c1">## Connect to network device</span>
+<span class="linenos">16</span>    <span class="c1">## Connect to USB device</span>
 <span class="linenos">17</span>    <span class="k">try</span><span class="p">:</span>
 <span class="linenos">18</span>        <span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;21JA1044&#39;</span><span class="p">)</span>
 <span class="linenos">19</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
@@ -130,8 +132,8 @@
 <span class="linenos">37</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">## delay(second)</span>
 <span class="linenos">38</span>       
 <span class="linenos">39</span>        <span class="c1">## Set pin0, pin1 to high, others to low.</span>
-<span class="linenos">40</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writeValuePins</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">pin_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span> 
-<span class="linenos">41</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_writeValuePins: OK&quot;</span><span class="p">)</span>
+<span class="linenos">40</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">pin_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span> 
+<span class="linenos">41</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_writePins: OK&quot;</span><span class="p">)</span>
 <span class="linenos">42</span>
 <span class="linenos">43</span>        <span class="c1">## Open pin5, pin6 and pin7 in port 0 with digital output (1110 0000 in binary) (0xE0 in hex).</span>
 <span class="linenos">44</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_openPins</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="mh">0xE0</span><span class="p">)</span>
@@ -141,8 +143,8 @@
 <span class="linenos">48</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">## delay(second)</span>
 <span class="linenos">49</span>
 <span class="linenos">50</span>        <span class="c1">## Set pin7 and pin6 to high, others to low (1100 0000 in binary) (0xC0 in hex).</span>
-<span class="linenos">51</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writeValuePins</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="mh">0xE0</span><span class="p">,</span> <span class="mh">0xC0</span><span class="p">)</span> 
-<span class="linenos">52</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_writeValuePins: OK&quot;</span><span class="p">)</span>
+<span class="linenos">51</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="mh">0xE0</span><span class="p">,</span> <span class="mh">0xC0</span><span class="p">)</span> 
+<span class="linenos">52</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_writePins: OK&quot;</span><span class="p">)</span>
 <span class="linenos">53</span>
 <span class="linenos">54</span>        <span class="c1">## Wait for 5 second</span>
 <span class="linenos">55</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1">## delay(second)</span>
@@ -157,7 +159,7 @@
 <span class="linenos">64</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos">65</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="linenos">66</span>        
-<span class="linenos">67</span>    <span class="c1">## Disconnect network device</span>
+<span class="linenos">67</span>    <span class="c1">## Disconnect USB device</span>
 <span class="linenos">68</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
 <span class="linenos">69</span>
 <span class="linenos">70</span>    <span class="c1">## Release device handle</span>

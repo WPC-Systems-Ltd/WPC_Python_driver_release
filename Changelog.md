@@ -1,6 +1,34 @@
 WPC_Device_Driver_Example_GUI Version Changelog
 ===================================
 
+v0.0.6 Date: 2022/08/02, Developer: Chunglee_people
+---------------------------------------------------
+
+### Changed
+- Change WPC Python Version from `pywpc-0.1.15` to  `pywpc-0.1.16`  
+
+### Added
+- Add AO example code
+  - `AIO/example_AO_write_all_channels.py`
+  - `AIO/example_AO_write_one_channels.py`
+  - `AIO/example_AIO_one_channel_loopback.py`
+  - `AIO/example_AIO_all_channels_loopback.py`
+- Add SPI example code
+  - `SPI/example_SPI_read_and_write.py`
+  - `SPI/example_SPI_read.py`
+- Add I2C example code
+  - `I2C/example_I2C_write_read.py`
+ 
+v0.0.5 Date: 2022/07/29, Developer: Chunglee_people
+---------------------------------------------------
+
+### Changed
+- Change WPC Python Version from `pywpc-0.1.14` to  `pywpc-0.1.15`  
+
+### Added
+- Add CAN example code
+  - `CAN/example_CAN_read.py`
+  - `CAN/example_CAN_write.py`
 
 v0.0.5 Date: 2022/07/29, Developer: Chunglee_people
 ---------------------------------------------------
@@ -14,6 +42,7 @@ v0.0.5 Date: 2022/07/29, Developer: Chunglee_people
 
 v0.0.4 Date: 2022/07/20, Developer: Chunglee_people
 ---------------------------------------------------
+
 ### Changed
 - Change WPC Python Version from `pywpc-0.1.13` to  `pywpc-0.1.14`  
 - Change folder name `General` to `System` in console and gui folder
@@ -30,6 +59,7 @@ v0.0.4 Date: 2022/07/20, Developer: Chunglee_people
  
 v0.0.3 Date: 2022/07/07, Developer: Chunglee_people
 ---------------------------------------------------
+
 ### Changed
 - Change WPC Python Version from `pywpc-0.1.12` to  `pywpc-0.1.13` (templete, Need to verify)
 
@@ -50,6 +80,7 @@ v0.0.3 Date: 2022/07/07, Developer: Chunglee_people
 
 v0.0.2 Date: 2022/07/01, Developer: Chunglee_people
 ---------------------------------------------------
+
 ### Changed
 - Change WPC Python Version from `pywpc-0.1.10` to  `pywpc-0.1.12`
 

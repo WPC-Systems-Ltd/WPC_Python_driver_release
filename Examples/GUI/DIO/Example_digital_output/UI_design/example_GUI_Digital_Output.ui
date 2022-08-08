@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>936</width>
-    <height>623</height>
+    <width>932</width>
+    <height>614</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <bool>true</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="lb_7">
     <property name="geometry">
      <rect>
       <x>250</x>
@@ -37,7 +37,7 @@
      <string> 7</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="lb_6">
     <property name="geometry">
      <rect>
       <x>320</x>
@@ -57,7 +57,7 @@
      <string>6</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="lb_5">
     <property name="geometry">
      <rect>
       <x>380</x>
@@ -77,7 +77,7 @@
      <string>5</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QLabel" name="lb_4">
     <property name="geometry">
      <rect>
       <x>440</x>
@@ -97,7 +97,7 @@
      <string>4</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="lb_3">
     <property name="geometry">
      <rect>
       <x>495</x>
@@ -117,7 +117,7 @@
      <string>3</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_6">
+   <widget class="QLabel" name="lb_2">
     <property name="geometry">
      <rect>
       <x>550</x>
@@ -137,7 +137,7 @@
      <string>2</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_7">
+   <widget class="QLabel" name="lb_1">
     <property name="geometry">
      <rect>
       <x>610</x>
@@ -157,7 +157,7 @@
      <string>1</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_8">
+   <widget class="QLabel" name="lb_0">
     <property name="geometry">
      <rect>
       <x>670</x>
@@ -328,7 +328,7 @@ QPushButton:pressed{
       <string>Disconnect</string>
      </property>
     </widget>
-    <widget class="QLabel" name="lb_serial_num">
+    <widget class="QLabel" name="lb_serialnum">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -349,7 +349,7 @@ QPushButton:pressed{
       <string>Serial number</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_ipConnect">
+    <widget class="QLineEdit" name="ld_ip">
      <property name="geometry">
       <rect>
        <x>130</x>
@@ -367,7 +367,7 @@ QPushButton:pressed{
       </font>
      </property>
      <property name="text">
-      <string>21JA1044</string>
+      <string>21JA1279</string>
      </property>
     </widget>
     <widget class="QLabel" name="lb_led">
@@ -393,245 +393,7 @@ QPushButton:pressed{
      </property>
     </widget>
    </widget>
-   <widget class="QCheckBox" name="cb_eb6">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>391</y>
-      <width>36</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="baseSize">
-     <size>
-      <width>0</width>
-      <height>0</height>
-     </size>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QCheckBox::indicator{
-	width :30px;
-	height:30px;
-}</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>30</width>
-      <height>30</height>
-     </size>
-    </property>
-    <property name="checked">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="cb_eb5">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>391</y>
-      <width>36</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="baseSize">
-     <size>
-      <width>0</width>
-      <height>0</height>
-     </size>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QCheckBox::indicator{
-	width :30px;
-	height:30px;
-}</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>30</width>
-      <height>30</height>
-     </size>
-    </property>
-    <property name="checked">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="cb_eb4">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>391</y>
-      <width>36</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="baseSize">
-     <size>
-      <width>0</width>
-      <height>0</height>
-     </size>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QCheckBox::indicator{
-	width :30px;
-	height:30px;
-}</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>30</width>
-      <height>30</height>
-     </size>
-    </property>
-    <property name="checked">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="cb_eb3">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>391</y>
-      <width>36</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="baseSize">
-     <size>
-      <width>0</width>
-      <height>0</height>
-     </size>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QCheckBox::indicator{
-	width :30px;
-	height:30px;
-}</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>30</width>
-      <height>30</height>
-     </size>
-    </property>
-    <property name="checked">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="cb_eb2">
-    <property name="geometry">
-     <rect>
-      <x>550</x>
-      <y>391</y>
-      <width>36</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="baseSize">
-     <size>
-      <width>0</width>
-      <height>0</height>
-     </size>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QCheckBox::indicator{
-	width :30px;
-	height:30px;
-}</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>30</width>
-      <height>30</height>
-     </size>
-    </property>
-    <property name="checked">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="cb_eb1">
-    <property name="geometry">
-     <rect>
-      <x>610</x>
-      <y>391</y>
-      <width>36</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="baseSize">
-     <size>
-      <width>0</width>
-      <height>0</height>
-     </size>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QCheckBox::indicator{
-	width :30px;
-	height:30px;
-}</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>30</width>
-      <height>30</height>
-     </size>
-    </property>
-    <property name="checked">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="cb_eb0">
-    <property name="geometry">
-     <rect>
-      <x>670</x>
-      <y>391</y>
-      <width>36</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="baseSize">
-     <size>
-      <width>0</width>
-      <height>0</height>
-     </size>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QCheckBox::indicator{
-	width :30px;
-	height:30px;
-}</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>30</width>
-      <height>30</height>
-     </size>
-    </property>
-    <property name="checked">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBox_port">
+   <widget class="QComboBox" name="combobox_port">
     <property name="geometry">
      <rect>
       <x>450</x>
@@ -943,7 +705,7 @@ color:  rgb(255, 255, 255); </string>
      <property name="geometry">
       <rect>
        <x>60</x>
-       <y>190</y>
+       <y>150</y>
        <width>51</width>
        <height>81</height>
       </rect>
@@ -977,7 +739,7 @@ color:  rgb(255, 255, 255); </string>
      <property name="geometry">
       <rect>
        <x>120</x>
-       <y>190</y>
+       <y>150</y>
        <width>51</width>
        <height>81</height>
       </rect>
@@ -1011,7 +773,7 @@ color:  rgb(255, 255, 255); </string>
      <property name="geometry">
       <rect>
        <x>180</x>
-       <y>190</y>
+       <y>150</y>
        <width>51</width>
        <height>81</height>
       </rect>
@@ -1045,7 +807,7 @@ color:  rgb(255, 255, 255); </string>
      <property name="geometry">
       <rect>
        <x>240</x>
-       <y>190</y>
+       <y>150</y>
        <width>51</width>
        <height>81</height>
       </rect>
@@ -1079,7 +841,7 @@ color:  rgb(255, 255, 255); </string>
      <property name="geometry">
       <rect>
        <x>300</x>
-       <y>190</y>
+       <y>150</y>
        <width>51</width>
        <height>81</height>
       </rect>
@@ -1113,7 +875,7 @@ color:  rgb(255, 255, 255); </string>
      <property name="geometry">
       <rect>
        <x>360</x>
-       <y>190</y>
+       <y>150</y>
        <width>51</width>
        <height>81</height>
       </rect>
@@ -1147,7 +909,7 @@ color:  rgb(255, 255, 255); </string>
      <property name="geometry">
       <rect>
        <x>420</x>
-       <y>190</y>
+       <y>150</y>
        <width>51</width>
        <height>81</height>
       </rect>
@@ -1181,43 +943,9 @@ color:  rgb(255, 255, 255); </string>
      <property name="geometry">
       <rect>
        <x>480</x>
-       <y>190</y>
+       <y>150</y>
        <width>51</width>
        <height>81</height>
-      </rect>
-     </property>
-     <property name="baseSize">
-      <size>
-       <width>0</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QCheckBox::indicator{
-	width :30px;
-	height:30px;
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>30</width>
-       <height>30</height>
-      </size>
-     </property>
-     <property name="checked">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="cb_eb7">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>140</y>
-       <width>36</width>
-       <height>30</height>
       </rect>
      </property>
      <property name="baseSize">
@@ -1266,26 +994,19 @@ color:  rgb(255, 255, 255); </string>
     </property>
    </widget>
    <zorder>groupBox_docontrol</zorder>
-   <zorder>label</zorder>
-   <zorder>label_2</zorder>
-   <zorder>label_3</zorder>
-   <zorder>label_4</zorder>
-   <zorder>label_5</zorder>
-   <zorder>label_6</zorder>
-   <zorder>label_7</zorder>
-   <zorder>label_8</zorder>
+   <zorder>lb_7</zorder>
+   <zorder>lb_6</zorder>
+   <zorder>lb_5</zorder>
+   <zorder>lb_4</zorder>
+   <zorder>lb_3</zorder>
+   <zorder>lb_2</zorder>
+   <zorder>lb_1</zorder>
+   <zorder>lb_0</zorder>
    <zorder>lb_trademark</zorder>
    <zorder>lb_rights</zorder>
    <zorder>lb_declare</zorder>
    <zorder>groupBox_connection</zorder>
-   <zorder>cb_eb6</zorder>
-   <zorder>cb_eb5</zorder>
-   <zorder>cb_eb4</zorder>
-   <zorder>cb_eb3</zorder>
-   <zorder>cb_eb2</zorder>
-   <zorder>cb_eb1</zorder>
-   <zorder>cb_eb0</zorder>
-   <zorder>comboBox_port</zorder>
+   <zorder>combobox_port</zorder>
    <zorder>lb_port</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -1293,7 +1014,7 @@ color:  rgb(255, 255, 255); </string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>936</width>
+     <width>932</width>
      <height>25</height>
     </rect>
    </property>

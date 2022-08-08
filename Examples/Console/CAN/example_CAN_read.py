@@ -13,7 +13,7 @@ async def main():
     ## Create device handle
     dev = pywpc.USBDAQF1CD()
 
-    ## Connect to network device
+    ## Connect to USB device
     try:
         dev.connect('21JA1320')
     except Exception as err:
@@ -29,19 +29,19 @@ async def main():
         port  = 1
         speed = 0 ## 0 = 125 KHz, 1 = 250 kHz, 2 = 500 kHz, 3 = 1 MHz
 
-        ## CAN Open
+        ## Open CAN port1
         status = await dev.CAN_open(port) 
         if status == 0: print("CAN_open: OK")
 
-        ## Set CAN speed to 0  
+        ## Set CAN port to 1 and set speed to 0  
         status = await dev.CAN_setSpeed(port, speed) 
         if status == 0: print("CAN_setSpeed: OK")
 
-        ## CAN Start
+        ## Set CAN port to 1 and start CAN
         status = await dev.CAN_start(port) 
         if status == 0: print("CAN_start: OK")
 
-        ## Read 5 frames for 1000 times
+        ## Read 5 frames for 1000 times in port1
         for i in range(1000):
             data = await dev.CAN_read(port, 5)
             if data is None:
@@ -49,17 +49,17 @@ async def main():
             else:
                 print(data)
             
-        ## CAN Stop
+        ## Set CAN port to 1 and stop CAN  
         status = await dev.CAN_stop(port) 
         if status == 0: print("CAN_stop: OK")
         
-        ## CAN Close
+        ## Close CAN port1  
         status = await dev.CAN_close(port) 
         if status == 0: print("CAN_close: OK")
     except Exception as err:
         pywpc.printGenericError(err)
  
-    ## Disconnect network device
+    ## Disconnect USB device
     dev.disconnect()
 
     ## Release device handle

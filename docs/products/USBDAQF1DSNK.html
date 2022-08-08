@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>USB-DAQ-F1-D-SNK &mdash; WPC Device Driver 0.1.15 documentation</title>
+  <title>USB-DAQ-F1-D-SNK &mdash; WPC Device Driver 0.1.16 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -31,7 +31,7 @@
             <a href="../index.html" class="icon icon-home"> WPC Device Driver
           </a>
               <div class="version">
-                0.1.15
+                0.1.16
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -105,23 +105,29 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.DI_closePort" title="pywpc.USBDAQF1DSNK.DI_closePort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_closePort</span></code></a>(port)</p></td>
 <td><p>Close all pins in specific port with digital input.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.DI_openPins" title="pywpc.USBDAQF1DSNK.DI_openPins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_openPins</span></code></a>(port, pin)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.DI_getPinMap" title="pywpc.USBDAQF1DSNK.DI_getPinMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_getPinMap</span></code></a>()</p></td>
+<td><p>Get DI port and its pins.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.DI_openPins" title="pywpc.USBDAQF1DSNK.DI_openPins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_openPins</span></code></a>(port, pin)</p></td>
 <td><p>Open specific pin to digital intput.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.DI_openPort" title="pywpc.USBDAQF1DSNK.DI_openPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_openPort</span></code></a>(port)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.DI_openPort" title="pywpc.USBDAQF1DSNK.DI_openPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_openPort</span></code></a>(port)</p></td>
 <td><p>Open all pins in specific port with digital input.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.DI_readPins" title="pywpc.USBDAQF1DSNK.DI_readPins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_readPins</span></code></a>(port, pin)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.DI_readPins" title="pywpc.USBDAQF1DSNK.DI_readPins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_readPins</span></code></a>(port, pin)</p></td>
 <td><p>Read digital pin state in specific pin.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.DI_readPort" title="pywpc.USBDAQF1DSNK.DI_readPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_readPort</span></code></a>(port)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.DI_readPort" title="pywpc.USBDAQF1DSNK.DI_readPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_readPort</span></code></a>(port)</p></td>
 <td><p>Read all digital pins state in specific port.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.DO_closePins" title="pywpc.USBDAQF1DSNK.DO_closePins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_closePins</span></code></a>(port, pin)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.DO_closePins" title="pywpc.USBDAQF1DSNK.DO_closePins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_closePins</span></code></a>(port, pin)</p></td>
 <td><p>Close specific pin with digital output.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.DO_closePort" title="pywpc.USBDAQF1DSNK.DO_closePort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_closePort</span></code></a>(port)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.DO_closePort" title="pywpc.USBDAQF1DSNK.DO_closePort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_closePort</span></code></a>(port)</p></td>
 <td><p>Close all pins in specific port with digital output.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.DO_getPinMap" title="pywpc.USBDAQF1DSNK.DO_getPinMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_getPinMap</span></code></a>()</p></td>
+<td><p>Get DO port and its pins.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.DO_openPins" title="pywpc.USBDAQF1DSNK.DO_openPins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_openPins</span></code></a>(port, pin)</p></td>
 <td><p>Open specific pin to digital output.</p></td>
@@ -129,10 +135,10 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.DO_openPort" title="pywpc.USBDAQF1DSNK.DO_openPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_openPort</span></code></a>(port)</p></td>
 <td><p>Open all pins in specific port with digital output.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.DO_writeValuePins" title="pywpc.USBDAQF1DSNK.DO_writeValuePins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_writeValuePins</span></code></a>(port, pin, value)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.DO_writePins" title="pywpc.USBDAQF1DSNK.DO_writePins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_writePins</span></code></a>(port, pin, value)</p></td>
 <td><p>Write digital value to specific pin.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.DO_writeValuePort" title="pywpc.USBDAQF1DSNK.DO_writeValuePort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_writeValuePort</span></code></a>(port, value)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.DO_writePort" title="pywpc.USBDAQF1DSNK.DO_writePort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_writePort</span></code></a>(port, value)</p></td>
 <td><p>Write all pins state in specific port with digital output.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1DSNK.Sys_getDriverInfo" title="pywpc.USBDAQF1DSNK.Sys_getDriverInfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getDriverInfo</span></code></a>()</p></td>
@@ -230,6 +236,20 @@
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 if success, error otherwise.</p></li>
 </ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1DSNK.DI_getPinMap">
+<span class="sig-name descname"><span class="pre">DI_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1DSNK.DI_getPinMap" title="Permalink to this definition"></a></dt>
+<dd><p>Get DI port and its pins.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>{port: [pins]}</p>
 </dd>
 </dl>
 </dd>
@@ -395,6 +415,20 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1DSNK.DO_getPinMap">
+<span class="sig-name descname"><span class="pre">DO_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1DSNK.DO_getPinMap" title="Permalink to this definition"></a></dt>
+<dd><p>Get DO port and its pins.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>{port: [pins]}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1DSNK.DO_openPins">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DO_openPins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1DSNK.DO_openPins" title="Permalink to this definition"></a></dt>
 <dd><p>Open specific pin to digital output.</p>
@@ -449,8 +483,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1DSNK.DO_writeValuePins">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DO_writeValuePins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1DSNK.DO_writeValuePins" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pywpc.USBDAQF1DSNK.DO_writePins">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DO_writePins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1DSNK.DO_writePins" title="Permalink to this definition"></a></dt>
 <dd><p>Write digital value to specific pin.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -486,8 +520,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1DSNK.DO_writeValuePort">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DO_writeValuePort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1DSNK.DO_writeValuePort" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pywpc.USBDAQF1DSNK.DO_writePort">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DO_writePort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1DSNK.DO_writePort" title="Permalink to this definition"></a></dt>
 <dd><p>Write all pins state in specific port with digital output.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>

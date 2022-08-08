@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>example get pin mode &mdash; WPC Device Driver 0.1.15 documentation</title>
+  <title>example get pin mode &mdash; WPC Device Driver 0.1.16 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -31,7 +31,7 @@
             <a href="../../index.html" class="icon icon-home"> WPC Device Driver
           </a>
               <div class="version">
-                0.1.15
+                0.1.16
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -56,8 +56,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#aio">AIO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#dio">DIO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#thermo">Thermo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#can">CAN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#uart">UART</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../examples.html#can-bus">CAN bus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#spi">SPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#i2c">I2C</a></li>
 </ul>
 </li>
 </ul>
@@ -104,7 +106,7 @@
 <span class="linenos">13</span>    <span class="c1">## Create device handle</span>
 <span class="linenos">14</span>    <span class="n">dev</span> <span class="o">=</span> <span class="n">pywpc</span><span class="o">.</span><span class="n">USBDAQF1D</span><span class="p">()</span>
 <span class="linenos">15</span>
-<span class="linenos">16</span>    <span class="c1">## Connect to network device</span>
+<span class="linenos">16</span>    <span class="c1">## Connect to USB device</span>
 <span class="linenos">17</span>    <span class="k">try</span><span class="p">:</span>
 <span class="linenos">18</span>        <span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;21JA1044&#39;</span><span class="p">)</span>
 <span class="linenos">19</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
@@ -169,7 +171,7 @@
 <span class="linenos">78</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos">79</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="linenos">80</span>        
-<span class="linenos">81</span>    <span class="c1">## Disconnect network device</span>
+<span class="linenos">81</span>    <span class="c1">## Disconnect USB device</span>
 <span class="linenos">82</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
 <span class="linenos">83</span>    
 <span class="linenos">84</span>    <span class="c1">## Release device handle</span>

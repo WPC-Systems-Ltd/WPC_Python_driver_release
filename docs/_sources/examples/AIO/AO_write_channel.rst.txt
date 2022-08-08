@@ -1,0 +1,6 @@
+example AO write channel
+========================
+
+.. literalinclude:: ../../../../../../WPC_Python_driver_release/Examples/Console/AIO/example_AO_write_channel.py
+   :language: python
+   :linenos:
