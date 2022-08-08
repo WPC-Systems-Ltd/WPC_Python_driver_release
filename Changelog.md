@@ -7,6 +7,10 @@ v0.0.7 Date: 2022/08/08, Developer: Chunglee_people
 
 ### Changed
 - Change WPC Python Version from `pywpc-0.1.16` to  `pywpc-0.1.17`  
+- Change example code name from
+  - `example_Thermo_read_channel_status` to `example_TC_read_channel_status` 
+  - `example_Thermo_read_channel_data` to `example_TC_read_channel_data` 
+- Change folder name from `Thermo` to `Temperature`
 
 ### Added
 - Add Thermo example code
