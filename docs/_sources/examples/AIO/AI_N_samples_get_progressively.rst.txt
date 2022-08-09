@@ -1,4 +1,4 @@
-example AI N_samples get progressively
+example AI N samples get progressively
 ======================================
 
 .. literalinclude:: ../../../../../../WPC_Python_driver_release/Examples/Console/AIO/example_AI_N_samples_get_progressively.py
