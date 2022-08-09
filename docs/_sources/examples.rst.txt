@@ -52,14 +52,16 @@ DIO
    examples/DIO/DO_blinky_pins
    examples/DIO/DO_blinky_port
 
-Thermo
-------
+Temperature
+-----------
 
 .. toctree::
    :maxdepth: 4
 
-   examples/Thermo/Thermo_read_channel_data
-   examples/Thermo/Thermo_read_channel_status
+   examples/Temperature/TC_read_channel_data
+   examples/Temperature/TC_read_channel_status
+   examples/Temperature/RTD_read_channel_data
+   examples/Temperature/RTD_read_channel_status
 
 CAN
 ---

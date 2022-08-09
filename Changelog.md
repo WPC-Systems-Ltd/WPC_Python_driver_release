@@ -1,6 +1,23 @@
 WPC_Device_Driver_Example_GUI Version Changelog
 ===================================
 
+
+v0.0.7 Date: 2022/08/08, Developer: Chunglee_people
+---------------------------------------------------
+
+### Changed
+- Change WPC Python Version from `pywpc-0.1.16` to  `pywpc-0.1.17`  
+- Change example code name from
+  - `example_Thermo_read_channel_status` to `example_TC_read_channel_status` 
+  - `example_Thermo_read_channel_data` to `example_TC_read_channel_data` 
+- Change folder name from `Thermo` to `Temperature`
+
+### Added
+- Add Thermo example code
+  - `Thermo/example_RTD_read_channel_data.py`
+  - `Thermo/example_RTD_read_channel_status.py`
+
+
 v0.0.6 Date: 2022/08/02, Developer: Chunglee_people
 ---------------------------------------------------
 
@@ -18,17 +35,6 @@ v0.0.6 Date: 2022/08/02, Developer: Chunglee_people
   - `SPI/example_SPI_read.py`
 - Add I2C example code
   - `I2C/example_I2C_write_read.py`
- 
-v0.0.5 Date: 2022/07/29, Developer: Chunglee_people
----------------------------------------------------
-
-### Changed
-- Change WPC Python Version from `pywpc-0.1.14` to  `pywpc-0.1.15`  
-
-### Added
-- Add CAN example code
-  - `CAN/example_CAN_read.py`
-  - `CAN/example_CAN_write.py`
 
 v0.0.5 Date: 2022/07/29, Developer: Chunglee_people
 ---------------------------------------------------
