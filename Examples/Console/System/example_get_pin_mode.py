@@ -27,8 +27,9 @@ async def main():
         
         ## Get pinmode from port 0 to port 3
         for i in range(4):
-            pin_mode_status = await dev.Sys_getPinModeInPort(i)
-            print(f'pins: {pin_mode_status[0]}, slot{i}, mode {pin_mode_status[1]}') 
+            ## Get pin mode
+            pin_mode = await dev.Sys_getPinModeInPort(i)
+            print("pin_mode", pin_mode)
 
             ## Wait for 0.5 seconds
             await asyncio.sleep(0.5)  ## delay(second)
@@ -50,8 +51,10 @@ async def main():
 
         ## Get pinmode from port 0 to port 3
         for i in range(4):
-            pin_mode_status = await dev.Sys_getPinModeInPort(i)
-            print(f'pins: {pin_mode_status[0]}, slot{i}, mode {pin_mode_status[1]}') 
+            ## Get pin mode
+            pin_mode = await dev.Sys_getPinModeInPort(i)
+            print("pin_mode", pin_mode)
+
             ## Wait for 0.5 seconds
             await asyncio.sleep(0.5)  ## delay(second)
 
@@ -65,8 +68,10 @@ async def main():
                 
         ## Get pinmode from port 0 to port 3
         for i in range(4):
-            pin_mode_status = await dev.Sys_getPinModeInPort(i)
-            print(f'pins: {pin_mode_status[0]}, slot{i}, mode {pin_mode_status[1]}') 
+            ## Get pin mode
+            pin_mode = await dev.Sys_getPinModeInPort(i)
+            print("pin_mode", pin_mode)
+
             ## Wait for 0.5 seconds
             await asyncio.sleep(0.5)  ## delay(second)
 
