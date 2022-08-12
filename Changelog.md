@@ -1,6 +1,10 @@
 WPC_Device_Driver_Example_GUI Version Changelog
 ===================================
 
+v0.0.9 Date: 2022/08/12, Developer: Chunglee_people
+---------------------------------------------------
+### Fixed
+- Fix Wiki link in README.md
 
 v0.0.8 Date: 2022/08/11, Developer: Chunglee_people
 ---------------------------------------------------
