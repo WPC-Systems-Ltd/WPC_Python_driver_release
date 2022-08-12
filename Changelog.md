@@ -2,6 +2,24 @@ WPC_Device_Driver_Example_GUI Version Changelog
 ===================================
 
 
+v0.0.8 Date: 2022/08/11, Developer: Chunglee_people
+---------------------------------------------------
+
+### Changed
+- Change WPC Python Version from `pywpc-0.1.17` to  `pywpc-0.1.18`  
+
+### Added
+- Add product description and picture in Sphinx home page
+- Check pinstate when open function modules
+- Add WPC_DAQ_Devices_User_Manual_r16.pdf and WPC_Wifi_Configuration_r1.pdf  in `Reference/Manuals`
+
+### Fixed
+- Fix print information when DO_closePort in example_DO_blinky_port.py
+- Fix `Run example code in console` web link in README.md
+
+### Removed
+- Remove WPC-Ethan-F4_manual_R3.pdf and wpc-usb-daq-xx_manual_r5.pdf  in `Reference/Manuals`
+
 v0.0.7 Date: 2022/08/08, Developer: Chunglee_people
 ---------------------------------------------------
 

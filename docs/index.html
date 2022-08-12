@@ -4,9 +4,10 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pywpc - WPC Python Device Driver &mdash; WPC Device Driver 0.1.17 documentation</title>
+  <title>WPC DAQ Device Programming Guide &mdash; WPC Device Driver 0.1.18 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/WPC_trademark.jpg"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -19,7 +20,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="API reference by product" href="products.html" /> 
+    <link rel="next" title="Products" href="products.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -28,9 +29,10 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
             <a href="#" class="icon icon-home"> WPC Device Driver
+            <img src="_static/WPC_logo2.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.1.17
+                0.1.18
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -40,9 +42,9 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">User resources</span></p>
+              <p class="caption" role="heading"><span class="caption-text">API REFERNECE</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="products.html">API reference by product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="products.html">Products</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Example codes</a></li>
 </ul>
 
@@ -60,7 +62,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-      <li>pywpc - WPC Python Device Driver</li>
+      <li>WPC DAQ Device Programming Guide</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -70,17 +72,174 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-pywpc">
-<span id="pywpc-wpc-python-device-driver"></span><h1>pywpc - WPC Python Device Driver<a class="headerlink" href="#module-pywpc" title="Permalink to this heading"></a></h1>
-<div class="toctree-wrapper compound">
+  <section id="wpc-daq-device-programming-guide">
+<h1>WPC DAQ Device Programming Guide<a class="headerlink" href="#wpc-daq-device-programming-guide" title="Permalink to this heading"></a></h1>
+<section id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this heading"></a></h2>
+<p>The Python-based driver contains an API for interacting with the WPC products.</p>
+</section>
+<section id="products">
+<h2>Products<a class="headerlink" href="#products" title="Permalink to this heading"></a></h2>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Photo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><dl class="simple">
+<dt><strong>WPC-USB-DAQ-D</strong></dt><dd><ul class="simple">
+<li><p>26ch 3.3V DIO/I2C/SPI</p></li>
+<li><p>I2C: 400KHz (max)</p></li>
+<li><p>USB 2.0 full-speed bus powered</p></li>
+<li><p>Python driver &amp; example codes</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><a class="reference internal image-reference" href="_images/WPC-USB-DAQ-D.jpg"><img alt="WPC-USB-DAQ-D.jpg" src="_images/WPC-USB-DAQ-D.jpg" style="width: 100%;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td><dl class="simple">
+<dt><strong>WPC-USB-DAQ-AD</strong></dt><dd><ul class="simple">
+<li><p>26ch 3.3V DIO/I2C/SPI</p></li>
+<li><p>I2C: 400KHz (max)</p></li>
+<li><p>USB 2.0 full-speed bus powered</p></li>
+<li><p>Python driver &amp; example codes</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><a class="reference internal image-reference" href="_images/WPC-USB-DAQ-AD.jpg"><img alt="WPC-USB-DAQ-AD.jpg" src="_images/WPC-USB-DAQ-AD.jpg" style="width: 100%;" /></a>
+</td>
+</tr>
+<tr class="row-even"><td><dl class="simple">
+<dt><strong>WPC-USB-DAQ-D-SNK</strong></dt><dd><ul class="simple">
+<li><p>24V 12ch DO / 14ch DI</p></li>
+<li><p>Industrial isolated DIO</p></li>
+<li><p>Sinking output / Sourcing input</p></li>
+<li><p>External 24VDC power required</p></li>
+<li><p>USB 2.0 full-speed bus powered</p></li>
+<li><p>Python driver &amp; example codes</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><a class="reference internal image-reference" href="_images/WPC-USB-DAQ-D-SNK.jpg"><img alt="WPC-USB-DAQ-D-SNK.jpg" src="_images/WPC-USB-DAQ-D-SNK.jpg" style="width: 100%;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td><dl class="simple">
+<dt><strong>WPC-USB-DAQ-TD</strong></dt><dd><ul class="simple">
+<li><p>21ch 3.3V DIO/I2C/SPI</p></li>
+<li><p>2ch thermocouple input</p></li>
+<li><p>Sensor type: (K, J, N, R, S, T, E, B)</p></li>
+<li><p>USB 2.0 full-speed bus powered</p></li>
+<li><p>Python driver &amp; example codes</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><a class="reference internal image-reference" href="_images/WPC-USB-DAQ-TD.jpg"><img alt="WPC-USB-DAQ-TD.jpg" src="_images/WPC-USB-DAQ-TD.jpg" style="width: 100%;" /></a>
+</td>
+</tr>
+<tr class="row-even"><td><dl class="simple">
+<dt><strong>WPC-USB-DAQ-RD</strong></dt><dd><ul class="simple">
+<li><p>21ch 3.3V DIO/I2C/SPI</p></li>
+<li><p>2ch thermocouple input</p></li>
+<li><p>PT-100 or PT-1000 (different model)</p></li>
+<li><p>USB 2.0 full-speed bus powered</p></li>
+<li><p>Python driver &amp; example codes</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><a class="reference internal image-reference" href="_images/WPC-USB-DAQ-AOD.jpg"><img alt="WPC-USB-DAQ-AOD.jpg" src="_images/WPC-USB-DAQ-AOD.jpg" style="width: 100%;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td><dl class="simple">
+<dt><strong>WPC-USB-DAQ-CD</strong></dt><dd><ul class="simple">
+<li><p>20ch 3.3V DIO/I2C/SPI</p></li>
+<li><p>1ch 1Mbps CAN V2.0B</p></li>
+<li><p>USB 2.0 full-speed bus powered</p></li>
+<li><p>Python driver &amp; example codes</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><a class="reference internal image-reference" href="_images/WPC-USB-DAQ-CD.jpg"><img alt="WPC-USB-DAQ-CD.jpg" src="_images/WPC-USB-DAQ-CD.jpg" style="width: 100%;" /></a>
+</td>
+</tr>
+<tr class="row-even"><td><dl class="simple">
+<dt><strong>WPC-USB-DAQ-AOD</strong></dt><dd><ul class="simple">
+<li><p>16ch 3.3V DIO/I2C/SPI</p></li>
+<li><p>8ch 16-bit analog input</p></li>
+<li><p>8ch 16-bit analog output (on-demand)</p></li>
+<li><p>USB 2.0 full-speed bus powered</p></li>
+<li><p>Python driver &amp; example codes</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><a class="reference internal image-reference" href="_images/WPC-USB-DAQ-AOD.jpg"><img alt="WPC-USB-DAQ-AOD.jpg" src="_images/WPC-USB-DAQ-AOD.jpg" style="width: 100%;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td><dl class="simple">
+<dt><strong>WPC-Ethan-D</strong></dt><dd><ul class="simple">
+<li><p>10/100 cable Ethernet</p></li>
+<li><p>8ch 24V digital input (sourcing DI, NPN)</p></li>
+<li><p>6ch 24V digital output (sinking DO, NPN)</p></li>
+<li><p>Python driver &amp; example codes</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><a class="reference internal image-reference" href="_images/WPC-Ethan-D.jpg"><img alt="WPC-Ethan-D.jpg" src="_images/WPC-Ethan-D.jpg" style="width: 100%;" /></a>
+</td>
+</tr>
+<tr class="row-even"><td><dl class="simple">
+<dt><strong>WPC-Ethan-A</strong></dt><dd><ul class="simple">
+<li><p>10/100 cable Ethernet</p></li>
+<li><p>8ch simultaneous voltage input</p></li>
+<li><p>Max sampling rate: 20KHz</p></li>
+<li><p>+/-10V voltage input range</p></li>
+<li><p>Python driver &amp; example codes</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><a class="reference internal image-reference" href="_images/WPC-Ethan-A.jpg"><img alt="WPC-Ethan-A.jpg" src="_images/WPC-Ethan-A.jpg" style="width: 100%;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td><dl class="simple">
+<dt><strong>WPC-WIFI-DAQ-E3-A</strong></dt><dd><ul class="simple">
+<li><p>8ch 16-bit +/-10V analog input</p></li>
+<li><p>Web-based configurator</p></li>
+<li><p>802.11 b/g/n WiFi</p></li>
+<li><p>2.4 GHz to 2.5 GHz</p></li>
+<li><p>Python driver &amp; example codes</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><a class="reference internal image-reference" href="_images/WPC-WIFI-DAQ-E3A.png"><img alt="WPC-WIFI-DAQ-E3A.png" src="_images/WPC-WIFI-DAQ-E3A.png" style="width: 100%;" /></a>
+</td>
+</tr>
+</tbody>
+</table>
+<span class="target" id="module-pywpc"></span><div class="toctree-wrapper compound">
 </div>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="products.html" class="btn btn-neutral float-right" title="API reference by product" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="products.html" class="btn btn-neutral float-right" title="Products" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
