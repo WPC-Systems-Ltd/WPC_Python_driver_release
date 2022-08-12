@@ -10,7 +10,7 @@ The Python-based driver contains an API for interacting with the WPC products.
 Products
 --------
 
-.. list-table:: WPC DAQ Products
+.. list-table::
    :widths: 10 10
    :header-rows: 1
 
@@ -25,7 +25,7 @@ Products
      - 
       .. image:: images/WPC-USB-DAQ-D.jpg
          :width: 100%
-         :alt: Alternative text
+         :alt: WPC-USB-DAQ-D.jpg
    * - 
       **WPC-USB-DAQ-AD**
          - 26ch 3.3V DIO/I2C/SPI
@@ -35,7 +35,7 @@ Products
      - 
       .. image:: images/WPC-USB-DAQ-AD.jpg
          :width: 100%
-         :alt: Alternative text      
+         :alt: WPC-USB-DAQ-AD.jpg  
    * - 
       **WPC-USB-DAQ-D-SNK**
          - 24V 12ch DO / 14ch DI
@@ -47,7 +47,7 @@ Products
      - 
       .. image:: images/WPC-USB-DAQ-D-SNK.jpg
          :width: 100%
-         :alt: Alternative text
+         :alt: WPC-USB-DAQ-D-SNK.jpg
    * - 
       **WPC-USB-DAQ-TD**
          - 21ch 3.3V DIO/I2C/SPI
@@ -58,7 +58,7 @@ Products
      - 
       .. image:: images/WPC-USB-DAQ-TD.jpg
          :width: 100%
-         :alt: Alternative text
+         :alt: WPC-USB-DAQ-TD.jpg
    * - 
       **WPC-USB-DAQ-RD**
          - 21ch 3.3V DIO/I2C/SPI
@@ -69,7 +69,7 @@ Products
      - 
       .. image:: images/WPC-USB-DAQ-AOD.jpg 
          :width: 100%
-         :alt: Alternative text      
+         :alt: WPC-USB-DAQ-AOD.jpg   
    * - 
       **WPC-USB-DAQ-CD**
          - 20ch 3.3V DIO/I2C/SPI
@@ -79,7 +79,7 @@ Products
      - 
       .. image:: images/WPC-USB-DAQ-CD.jpg
          :width: 100%
-         :alt: Alternative text
+         :alt: WPC-USB-DAQ-CD.jpg
    * - 
       **WPC-USB-DAQ-AOD**
          - 16ch 3.3V DIO/I2C/SPI
@@ -90,7 +90,7 @@ Products
      - 
       .. image:: images/WPC-USB-DAQ-AOD.jpg
          :width: 100%
-         :alt: Alternative text     
+         :alt: WPC-USB-DAQ-AOD.jpg   
    * - 
       **WPC-Ethan-D**
          - 10/100 cable Ethernet
@@ -100,7 +100,7 @@ Products
      - 
       .. image:: images/WPC-Ethan-D.jpg
          :width: 100%
-         :alt: Alternative text
+         :alt: WPC-Ethan-D.jpg
    * - 
       **WPC-Ethan-A**
          - 10/100 cable Ethernet
@@ -111,7 +111,7 @@ Products
      - 
       .. image:: images/WPC-Ethan-A.jpg
          :width: 100%
-         :alt: Alternative text     
+         :alt: WPC-Ethan-A.jpg  
    * - 
       **WPC-WIFI-DAQ-E3-A**
          - 8ch 16-bit +/-10V analog input
@@ -122,14 +122,14 @@ Products
      - 
       .. image:: images/WPC-WIFI-DAQ-E3A.png
          :width: 100%
-         :alt: Alternative text
+         :alt: WPC-WIFI-DAQ-E3A.png
 
 .. automodule:: pywpc
 
 .. toctree::
    :hidden:
    :maxdepth: 2
-   :caption: API REFERNECE:
+   :caption: API REFERNECE
 
    products
    examples
