@@ -1,12 +1,135 @@
-pywpc - WPC Python Device Driver
-================================
-This is python test
+WPC Python driver Programming Guide
+===================================
+
+
+About
+-----
+
+The Python-based driver contains an API for interacting with the WPC products.
+
+Products
+--------
+
+.. list-table:: WPC DAQ Products
+   :widths: 10 10
+   :header-rows: 1
+
+   * - Model
+     - Photo
+   * - 
+      **WPC-USB-DAQ-D**
+         - 26ch 3.3V DIO/I2C/SPI
+         - I2C: 400KHz (max)
+         - USB 2.0 full-speed bus powered
+         - Python driver & example codes
+     - 
+      .. image:: images/WPC-USB-DAQ-D.jpg
+         :width: 100%
+         :alt: Alternative text
+   * - 
+      **WPC-USB-DAQ-AD**
+         - 26ch 3.3V DIO/I2C/SPI
+         - I2C: 400KHz (max)
+         - USB 2.0 full-speed bus powered
+         - Python driver & example codes
+     - 
+      .. image:: images/WPC-USB-DAQ-AD.jpg
+         :width: 100%
+         :alt: Alternative text      
+   * - 
+      **WPC-USB-DAQ-D-SNK**
+         - 24V 12ch DO / 14ch DI
+         - Industrial isolated DIO
+         - Sinking output / Sourcing input
+         - External 24VDC power required
+         - USB 2.0 full-speed bus powered
+         - Python driver & example codes
+     - 
+      .. image:: images/WPC-USB-DAQ-D-SNK.jpg
+         :width: 100%
+         :alt: Alternative text
+   * - 
+      **WPC-USB-DAQ-TD**
+         - 21ch 3.3V DIO/I2C/SPI
+         - 2ch thermocouple input
+         - Sensor type: (K, J, N, R, S, T, E, B)
+         - USB 2.0 full-speed bus powered
+         - Python driver & example codes
+     - 
+      .. image:: images/WPC-USB-DAQ-TD.jpg
+         :width: 100%
+         :alt: Alternative text
+   * - 
+      **WPC-USB-DAQ-RD**
+         - 21ch 3.3V DIO/I2C/SPI
+         - 2ch thermocouple input
+         - PT-100 or PT-1000 (different model)
+         - USB 2.0 full-speed bus powered
+         - Python driver & example codes
+     - 
+      .. image:: images/WPC-USB-DAQ-AOD.jpg 
+         :width: 100%
+         :alt: Alternative text      
+   * - 
+      **WPC-USB-DAQ-CD**
+         - 20ch 3.3V DIO/I2C/SPI
+         - 1ch 1Mbps CAN V2.0B
+         - USB 2.0 full-speed bus powered
+         - Python driver & example codes
+     - 
+      .. image:: images/WPC-USB-DAQ-CD.jpg
+         :width: 100%
+         :alt: Alternative text
+   * - 
+      **WPC-USB-DAQ-AOD**
+         - 16ch 3.3V DIO/I2C/SPI
+         - 8ch 16-bit analog input
+         - 8ch 16-bit analog output (on-demand)
+         - USB 2.0 full-speed bus powered
+         - Python driver & example codes
+     - 
+      .. image:: images/WPC-USB-DAQ-AOD.jpg
+         :width: 100%
+         :alt: Alternative text     
+   * - 
+      **WPC-Ethan-D**
+         - 10/100 cable Ethernet
+         - 8ch 24V digital input (sourcing DI, NPN)
+         - 6ch 24V digital output (sinking DO, NPN)
+         - Python driver & example codes
+     - 
+      .. image:: images/WPC-Ethan-D.jpg
+         :width: 100%
+         :alt: Alternative text
+   * - 
+      **WPC-Ethan-A**
+         - 10/100 cable Ethernet
+         - 8ch simultaneous voltage input
+         - Max sampling rate: 20KHz 
+         - +/-10V voltage input range
+         - Python driver & example codes
+     - 
+      .. image:: images/WPC-Ethan-A.jpg
+         :width: 100%
+         :alt: Alternative text     
+   * - 
+      **WPC-WIFI-DAQ-E3-A**
+         - 8ch 16-bit +/-10V analog input
+         - Web-based configurator
+         - 802.11 b/g/n WiFi
+         - 2.4 GHz to 2.5 GHz
+         - Python driver & example codes
+     - 
+      .. image:: images/WPC-WIFI-DAQ-E3A.png
+         :width: 100%
+         :alt: Alternative text
+
 .. automodule:: pywpc
 
 .. toctree::
    :hidden:
    :maxdepth: 2
-   :caption: User resources
+   :caption: API REFERNECE:
 
    products
    examples
