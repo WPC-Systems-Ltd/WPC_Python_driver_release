@@ -1,4 +1,4 @@
-WPC Python driver Programming Guide
+WPC DAQ Device Programming Guide
 ===================================
 
 
