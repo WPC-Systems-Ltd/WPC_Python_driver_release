@@ -49,7 +49,7 @@ async def main():
         
         ## Close all pins in port 0 with digital output
         status = await dev.DO_closePort(port)
-        if status == 0: print("DO_openPort: OK")
+        if status == 0: print("DO_closePort: OK")
     except Exception as err:
         pywpc.printGenericError(err)
         
