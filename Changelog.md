@@ -2,6 +2,20 @@ WPC_Device_Driver_Example_GUI Version Changelog
 ===================================
 
 
+v0.0.8 Date: 2022/08/11, Developer: Chunglee_people
+---------------------------------------------------
+
+### Changed
+- Change WPC Python Version from `pywpc-0.1.17` to  `pywpc-0.1.18`  
+
+### Added
+- Add product description and picture in Sphinx home page
+- Check pinstate when open function modules
+
+### Fixed
+- Fix print information when DO_closePort in example_DO_blinky_port.py
+- Fix `Run example code in console` web link in README.md
+
 v0.0.7 Date: 2022/08/08, Developer: Chunglee_people
 ---------------------------------------------------
 
