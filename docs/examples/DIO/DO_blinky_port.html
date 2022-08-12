@@ -4,9 +4,10 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>example DO blinky port &mdash; WPC Device Driver 0.1.17 documentation</title>
+  <title>example DO blinky port &mdash; WPC Device Driver 0.1.18 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/WPC_trademark.jpg"/>
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -29,9 +30,10 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
             <a href="../../index.html" class="icon icon-home"> WPC Device Driver
+            <img src="../../_static/WPC_logo2.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.1.17
+                0.1.18
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -41,9 +43,9 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">User resources</span></p>
+              <p class="caption" role="heading"><span class="caption-text">API REFERNECE</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../products.html">API reference by product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../products.html">Products</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../examples.html">Example codes</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#system">System</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#tutorial">Tutorial</a></li>
@@ -144,7 +146,7 @@
 <span class="linenos">49</span>        
 <span class="linenos">50</span>        <span class="c1">## Close all pins in port 0 with digital output</span>
 <span class="linenos">51</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_closePort</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos">52</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_openPort: OK&quot;</span><span class="p">)</span>
+<span class="linenos">52</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_closePort: OK&quot;</span><span class="p">)</span>
 <span class="linenos">53</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos">54</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="linenos">55</span>        
