@@ -94,7 +94,17 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pywpc.</span></span><span class="sig-name descname"><span class="pre">USBDAQF1RD</span></span><a class="headerlink" href="#pywpc.USBDAQF1RD" title="Permalink to this definition"></a></dt>
-<dd><p class="rubric">Methods</p>
+<dd><p>This device <cite>WPC-USB-DAQ-RD</cite> has 2ch thermocouple input which support PT-100 or PT-1000 and 21ch 3.3V DIO/I2C/SPI</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>UART : port1 &amp; port2</p></li>
+<li><p>I2C  : port1 &amp; port2</p></li>
+<li><p>SPI  : port2</p></li>
+<li><p>RTD  : port1</p></li>
+<li><p>DIO  : port0 &amp; port1 &amp; port2 &amp; port3</p></li>
+</ul>
+</div></blockquote>
+<p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -231,25 +241,25 @@
 <td><p>Set date and time to connected WPC device.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.Thermal_close" title="pywpc.USBDAQF1RD.Thermal_close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Thermal_close</span></code></a>(port)</p></td>
-<td><p>Close thermocouple port on WPC DAQ device.</p></td>
+<td><p>Close thermocouple or RTD port on WPC DAQ device.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.Thermal_getPinMap" title="pywpc.USBDAQF1RD.Thermal_getPinMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Thermal_getPinMap</span></code></a>()</p></td>
-<td><p>Get Thermal port and its pins.</p></td>
+<td><p>Get thermocouple or RTD port and its pins.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.Thermal_getStatus" title="pywpc.USBDAQF1RD.Thermal_getStatus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Thermal_getStatus</span></code></a>(port, channel)</p></td>
-<td><p>Get thermocouple status from specific thermocouple channel.</p></td>
+<td><p>Get thermocouple or RTD status from specific channel.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.Thermal_open" title="pywpc.USBDAQF1RD.Thermal_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Thermal_open</span></code></a>(port)</p></td>
-<td><p>Open thermocouple port on WPC DAQ device.</p></td>
+<td><p>Open thermocouple or RTD port on WPC DAQ device.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.Thermal_readSensor" title="pywpc.USBDAQF1RD.Thermal_readSensor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Thermal_readSensor</span></code></a>(port, channel)</p></td>
-<td><p>Read thermocouple sensor temperature from specific thermocouple channel.</p></td>
+<td><p>Read thermocouple or RTD sensor temperature from specific channel.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.Thermal_setNoiseFilter" title="pywpc.USBDAQF1RD.Thermal_setNoiseFilter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Thermal_setNoiseFilter</span></code></a>(port, channel, mode)</p></td>
-<td><p>Set noise rejection filter to 60Hz or 50Hz om specific thermocouple channel.</p></td>
+<td><p>Set noise rejection filter to 60Hz or 50Hz on specific thermocouple or RTD channel.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.Thermal_setType" title="pywpc.USBDAQF1RD.Thermal_setType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Thermal_setType</span></code></a>(port, channel, type_)</p></td>
-<td><p>Set thermocouple type on specific thermocouple channel.</p></td>
+<td><p>Set thermocouple type on specific thermocouple or RTD channel.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.UART_close" title="pywpc.USBDAQF1RD.UART_close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_close</span></code></a>(port)</p></td>
 <td><p>Close UART port on WPC DAQ device.</p></td>
@@ -284,22 +294,14 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.UART_write" title="pywpc.USBDAQF1RD.UART_write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_write</span></code></a>(port, write_data)</p></td>
 <td><p>Write data to UART port.</p></td>
 </tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 58%" />
-<col style="width: 42%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>close</strong></p></td>
-<td></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.close" title="pywpc.USBDAQF1RD.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>()</p></td>
+<td><p>Close device handle.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>connect</strong></p></td>
-<td></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.connect" title="pywpc.USBDAQF1RD.connect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect</span></code></a>(serial_num[, verbose])</p></td>
+<td><p>Connect to USB device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>disconnect</strong></p></td>
-<td></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.disconnect" title="pywpc.USBDAQF1RD.disconnect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disconnect</span></code></a>([verbose])</p></td>
+<td><p>Disconnect USB device.</p></td>
 </tr>
 </tbody>
 </table>
@@ -311,7 +313,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -339,7 +341,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -377,7 +379,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -405,7 +407,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -429,7 +431,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -457,7 +459,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -481,7 +483,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">list</span></dt><dd><ul class="simple">
@@ -511,7 +513,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -549,7 +551,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -579,7 +581,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -603,7 +605,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -640,7 +642,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>value</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -671,7 +673,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -711,7 +713,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -735,7 +737,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>read_address</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -767,7 +769,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -791,7 +793,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -819,7 +821,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>frequency</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -850,7 +852,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>write_address</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -882,7 +884,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -921,9 +923,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
-</ul>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -946,7 +946,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>bytes_to_read</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -974,7 +974,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>write_data</strong><span class="classifier">list of bytes</span></dt><dd><ul class="simple">
@@ -1002,7 +1002,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1026,7 +1026,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -1055,7 +1055,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -1084,7 +1084,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -1115,7 +1115,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>prescaler</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -1143,7 +1143,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>write_data</strong><span class="classifier">list of bytes</span></dt><dd><ul class="simple">
@@ -1278,7 +1278,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1302,7 +1302,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1326,7 +1326,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1375,10 +1375,18 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Thermal_close">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Thermal_close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Thermal_close" title="Permalink to this definition"></a></dt>
-<dd><p>Close thermocouple port on WPC DAQ device.</p>
+<dd><p>Close thermocouple or RTD port on WPC DAQ device.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 if success, error otherwise.</p></li>
 </ul>
@@ -1391,7 +1399,7 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Thermal_getPinMap">
 <span class="sig-name descname"><span class="pre">Thermal_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Thermal_getPinMap" title="Permalink to this definition"></a></dt>
-<dd><p>Get Thermal port and its pins.</p>
+<dd><p>Get thermocouple or RTD port and its pins.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1407,12 +1415,16 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Thermal_getStatus">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Thermal_getStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Thermal_getStatus" title="Permalink to this definition"></a></dt>
-<dd><p>Get thermocouple status from specific thermocouple channel.</p>
+<dd><p>Get thermocouple or RTD status from specific channel.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+</ul>
+</dd>
 <dt><strong>channel</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>channel could set 0 or 1.</p></li>
+<li><p>Channel could set 0 or 1.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1434,10 +1446,18 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Thermal_open">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Thermal_open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Thermal_open" title="Permalink to this definition"></a></dt>
-<dd><p>Open thermocouple port on WPC DAQ device.</p>
+<dd><p>Open thermocouple or RTD port on WPC DAQ device.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 if success, error otherwise.</p></li>
 </ul>
@@ -1450,12 +1470,16 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Thermal_readSensor">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Thermal_readSensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Thermal_readSensor" title="Permalink to this definition"></a></dt>
-<dd><p>Read thermocouple sensor temperature from specific thermocouple channel.</p>
+<dd><p>Read thermocouple or RTD sensor temperature from specific channel.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+</ul>
+</dd>
 <dt><strong>channel</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>channel could set 0 or 1.</p></li>
+<li><p>Channel could set 0 or 1.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1474,12 +1498,16 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Thermal_setNoiseFilter">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Thermal_setNoiseFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Thermal_setNoiseFilter" title="Permalink to this definition"></a></dt>
-<dd><p>Set noise rejection filter to 60Hz or 50Hz om specific thermocouple channel.</p>
+<dd><p>Set noise rejection filter to 60Hz or 50Hz on specific thermocouple or RTD channel.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+</ul>
+</dd>
 <dt><strong>channel</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>channel could set 0 or 1.</p></li>
+<li><p>Channel could set 0 or 1.</p></li>
 </ul>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -1503,12 +1531,16 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Thermal_setType">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Thermal_setType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Thermal_setType" title="Permalink to this definition"></a></dt>
-<dd><p>Set thermocouple type on specific thermocouple channel.</p>
+<dd><p>Set thermocouple type on specific thermocouple or RTD channel.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+</ul>
+</dd>
 <dt><strong>channel</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>channel could set 0 or 1.</p></li>
+<li><p>Channel could set 0 or 1.</p></li>
 </ul>
 </dd>
 <dt><strong>type</strong><span class="classifier">int</span></dt><dd><p>Type (TC):
@@ -1545,7 +1577,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1585,7 +1617,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1609,7 +1641,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>bytes_to_read</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -1641,7 +1673,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1665,7 +1697,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>baud_rate: int</strong></dt><dd><ul class="simple">
@@ -1693,7 +1725,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -1722,7 +1754,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -1732,8 +1764,10 @@
 <li><p>3 : 1.5 bits</p></li>
 </ul>
 </dd>
-<dt><strong>Returns</strong></dt><dd></dd>
-<dt><strong>——-</strong></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 if success, error otherwise.</p></li>
 </ul>
@@ -1751,7 +1785,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -1781,7 +1815,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1805,7 +1839,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>write_data</strong><span class="classifier">string or list of characters</span></dt><dd><ul class="simple">
@@ -1828,17 +1862,58 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.close">
 <span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.close" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Close device handle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.connect">
 <span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serial_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.connect" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Connect to USB device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>serial_num</strong><span class="classifier">string</span></dt><dd><ul class="simple">
+<li><p>From WPC DAQ device.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.disconnect">
 <span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.disconnect" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Disconnect USB device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 

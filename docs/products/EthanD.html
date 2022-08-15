@@ -89,7 +89,14 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="pywpc.EthanD">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pywpc.</span></span><span class="sig-name descname"><span class="pre">EthanD</span></span><a class="headerlink" href="#pywpc.EthanD" title="Permalink to this definition"></a></dt>
-<dd><p class="rubric">Methods</p>
+<dd><p>This device <cite>WPC-Ethan-D</cite> has 8ch 24V digital input &amp; 6ch 24V digital output</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>DI : port1</p></li>
+<li><p>DO : port0</p></li>
+</ul>
+</div></blockquote>
+<p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -180,22 +187,14 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.Sys_setRTC" title="pywpc.EthanD.Sys_setRTC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setRTC</span></code></a>(year, month, day, hour, minute, ...)</p></td>
 <td><p>Set date and time to connected WPC device.</p></td>
 </tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 58%" />
-<col style="width: 42%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>close</strong></p></td>
-<td></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.close" title="pywpc.EthanD.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>([verbose])</p></td>
+<td><p>Close web device handle.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>connect</strong></p></td>
-<td></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.connect" title="pywpc.EthanD.connect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect</span></code></a>(IP[, port, verbose])</p></td>
+<td><p>Connect to web device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>disconnect</strong></p></td>
-<td></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.disconnect" title="pywpc.EthanD.disconnect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disconnect</span></code></a>([verbose])</p></td>
+<td><p>Disconnect web device.</p></td>
 </tr>
 </tbody>
 </table>
@@ -207,7 +206,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -235,7 +234,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -273,7 +272,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -301,7 +300,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -325,7 +324,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -353,7 +352,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -377,7 +376,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">list</span></dt><dd><ul class="simple">
@@ -407,7 +406,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -445,7 +444,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -475,7 +474,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -499,7 +498,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -536,7 +535,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>value</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -743,7 +742,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -767,7 +766,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -791,7 +790,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -840,17 +839,58 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EthanD.close">
 <span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.close" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Close web device handle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EthanD.connect">
-<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.connect" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">IP</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.connect" title="Permalink to this definition"></a></dt>
+<dd><p>Connect to web device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>IP</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><ul class="simple">
+<li><p>IP network address.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EthanD.disconnect">
 <span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.disconnect" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Disconnect web device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 

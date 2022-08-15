@@ -89,7 +89,13 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="pywpc.EthanA">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pywpc.</span></span><span class="sig-name descname"><span class="pre">EthanA</span></span><a class="headerlink" href="#pywpc.EthanA" title="Permalink to this definition"></a></dt>
-<dd><p class="rubric">Methods</p>
+<dd><p>This device <cite>WPC-Ethan-A</cite> has 8ch simultaneous voltage input</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>AI : port0</p></li>
+</ul>
+</div></blockquote>
+<p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -102,88 +108,77 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_close" title="pywpc.EthanA.AI_close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_close</span></code></a>(port)</p></td>
 <td><p>Close AI port on WPC DAQ device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_free" title="pywpc.EthanA.AI_free"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_free</span></code></a>()</p></td>
-<td><p>Free AI port.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_getPort" title="pywpc.EthanA.AI_getPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_getPort</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_getPort" title="pywpc.EthanA.AI_getPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_getPort</span></code></a>()</p></td>
 <td><p>Get AI port.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_open" title="pywpc.EthanA.AI_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_open</span></code></a>(port)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_open" title="pywpc.EthanA.AI_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_open</span></code></a>(port)</p></td>
 <td><p>Open AI port on WPC DAQ device.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_readBufferStatus" title="pywpc.EthanA.AI_readBufferStatus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_readBufferStatus</span></code></a>(port)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_readBufferStatus" title="pywpc.EthanA.AI_readBufferStatus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_readBufferStatus</span></code></a>(port)</p></td>
 <td><p>Get AI buffer status of remote device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_readOnDemand" title="pywpc.EthanA.AI_readOnDemand"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_readOnDemand</span></code></a>(port)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_readOnDemand" title="pywpc.EthanA.AI_readOnDemand"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_readOnDemand</span></code></a>(port)</p></td>
 <td><p>Read one sample from AI port.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_readStreaming" title="pywpc.EthanA.AI_readStreaming"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_readStreaming</span></code></a>(port, num_of_samples[, delay])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_readStreaming" title="pywpc.EthanA.AI_readStreaming"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_readStreaming</span></code></a>(port, num_of_samples[, delay])</p></td>
 <td><p>Read multiple samples from AI port.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_setMode" title="pywpc.EthanA.AI_setMode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_setMode</span></code></a>(port, mode)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_setMode" title="pywpc.EthanA.AI_setMode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_setMode</span></code></a>(port, mode)</p></td>
 <td><p>Configure acquisition mode setting.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_setNumSamples" title="pywpc.EthanA.AI_setNumSamples"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_setNumSamples</span></code></a>(port, sample_points)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_setNumSamples" title="pywpc.EthanA.AI_setNumSamples"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_setNumSamples</span></code></a>(port, sample_points)</p></td>
 <td><p>Configure sample points to acquisition for N-samples mode.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_setSamplingRate" title="pywpc.EthanA.AI_setSamplingRate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_setSamplingRate</span></code></a>(port, sampling_rate)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_setSamplingRate" title="pywpc.EthanA.AI_setSamplingRate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_setSamplingRate</span></code></a>(port, sampling_rate)</p></td>
 <td><p>Configure sampling rate to acquisition setting for N-samples and continuous mode.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_start" title="pywpc.EthanA.AI_start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_start</span></code></a>(port)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_start" title="pywpc.EthanA.AI_start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_start</span></code></a>(port)</p></td>
 <td><p>Start N samples or continuous AI acquisition.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_stop" title="pywpc.EthanA.AI_stop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_stop</span></code></a>(port)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_stop" title="pywpc.EthanA.AI_stop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_stop</span></code></a>(port)</p></td>
 <td><p>Stop N samples or continuous AI acquisition.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.Sys_getDriverInfo" title="pywpc.EthanA.Sys_getDriverInfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getDriverInfo</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.Sys_getDriverInfo" title="pywpc.EthanA.Sys_getDriverInfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getDriverInfo</span></code></a>()</p></td>
 <td><p>Get device firmware information.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.Sys_getGateway" title="pywpc.EthanA.Sys_getGateway"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getGateway</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.Sys_getGateway" title="pywpc.EthanA.Sys_getGateway"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getGateway</span></code></a>()</p></td>
 <td><p>Get geteway from the connected web device.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.Sys_getIPAddrAndSubmask" title="pywpc.EthanA.Sys_getIPAddrAndSubmask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getIPAddrAndSubmask</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.Sys_getIPAddrAndSubmask" title="pywpc.EthanA.Sys_getIPAddrAndSubmask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getIPAddrAndSubmask</span></code></a>()</p></td>
 <td><p>Get IP address and subnet mask from the connected web device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.Sys_getMACAddr" title="pywpc.EthanA.Sys_getMACAddr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getMACAddr</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.Sys_getMACAddr" title="pywpc.EthanA.Sys_getMACAddr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getMACAddr</span></code></a>()</p></td>
 <td><p>Get MAC address from the connected web device.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.Sys_getPinModeInPort" title="pywpc.EthanA.Sys_getPinModeInPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getPinModeInPort</span></code></a>(port)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.Sys_getPinModeInPort" title="pywpc.EthanA.Sys_getPinModeInPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getPinModeInPort</span></code></a>(port)</p></td>
 <td><p>Get pin mode in specific port.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.Sys_getRTC" title="pywpc.EthanA.Sys_getRTC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getRTC</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.Sys_getRTC" title="pywpc.EthanA.Sys_getRTC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getRTC</span></code></a>()</p></td>
 <td><p>Get date and time to connected WPC device.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.Sys_getSerialNumber" title="pywpc.EthanA.Sys_getSerialNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getSerialNumber</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.Sys_getSerialNumber" title="pywpc.EthanA.Sys_getSerialNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getSerialNumber</span></code></a>()</p></td>
 <td><p>Get serial number from the connected WPC device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.Sys_reboot" title="pywpc.EthanA.Sys_reboot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_reboot</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.Sys_reboot" title="pywpc.EthanA.Sys_reboot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_reboot</span></code></a>()</p></td>
 <td><p>Reboot from the connected WPC device.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.Sys_rebootOnBootloader" title="pywpc.EthanA.Sys_rebootOnBootloader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_rebootOnBootloader</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.Sys_rebootOnBootloader" title="pywpc.EthanA.Sys_rebootOnBootloader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_rebootOnBootloader</span></code></a>()</p></td>
 <td><p>Reboot on bootloader from the connected WPC device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.Sys_setIPAddrAndSubmask" title="pywpc.EthanA.Sys_setIPAddrAndSubmask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setIPAddrAndSubmask</span></code></a>(ip_addr[, subnet_mask])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.Sys_setIPAddrAndSubmask" title="pywpc.EthanA.Sys_setIPAddrAndSubmask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setIPAddrAndSubmask</span></code></a>(ip_addr[, subnet_mask])</p></td>
 <td><p>Set IP address and subnet mask to the connected web device.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.Sys_setRTC" title="pywpc.EthanA.Sys_setRTC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setRTC</span></code></a>(year, month, day, hour, minute, ...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.Sys_setRTC" title="pywpc.EthanA.Sys_setRTC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setRTC</span></code></a>(year, month, day, hour, minute, ...)</p></td>
 <td><p>Set date and time to connected WPC device.</p></td>
 </tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 58%" />
-<col style="width: 42%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>close</strong></p></td>
-<td></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.close" title="pywpc.EthanA.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>([verbose])</p></td>
+<td><p>Close web device handle.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>connect</strong></p></td>
-<td></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.connect" title="pywpc.EthanA.connect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect</span></code></a>(IP[, port, verbose])</p></td>
+<td><p>Connect to web device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>disconnect</strong></p></td>
-<td></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.disconnect" title="pywpc.EthanA.disconnect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disconnect</span></code></a>([verbose])</p></td>
+<td><p>Disconnect web device.</p></td>
 </tr>
 </tbody>
 </table>
@@ -195,7 +190,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -219,7 +214,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -233,12 +228,6 @@
 </dl>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EthanA.AI_free">
-<span class="sig-name descname"><span class="pre">AI_free</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanA.AI_free" title="Permalink to this definition"></a></dt>
-<dd><p>Free AI port.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -263,7 +252,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -287,7 +276,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -314,7 +303,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -336,7 +325,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>get_data_times</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -369,7 +358,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -397,7 +386,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>sample_points</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -425,7 +414,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>sampling_rate</strong><span class="classifier">int or float</span></dt><dd><ul class="simple">
@@ -453,7 +442,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -469,7 +458,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Depend on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -694,17 +683,58 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EthanA.close">
 <span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanA.close" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Close web device handle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EthanA.connect">
-<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanA.connect" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">IP</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanA.connect" title="Permalink to this definition"></a></dt>
+<dd><p>Connect to web device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>IP</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><ul class="simple">
+<li><p>IP network address.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EthanA.disconnect">
 <span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanA.disconnect" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Disconnect web device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>0 if success, error otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
