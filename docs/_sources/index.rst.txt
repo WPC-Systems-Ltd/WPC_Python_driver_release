@@ -67,9 +67,9 @@ Products
          - USB 2.0 full-speed bus powered
          - Python driver & example codes
      - 
-      .. image:: images/WPC-USB-DAQ-AOD.jpg 
+      .. image:: images/WPC-USB-DAQ-RD.jpg 
          :width: 100%
-         :alt: WPC-USB-DAQ-AOD.jpg   
+         :alt: WPC-USB-DAQ-RD.jpg
    * - 
       **WPC-USB-DAQ-CD**
          - 20ch 3.3V DIO/I2C/SPI
