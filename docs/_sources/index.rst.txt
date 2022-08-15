@@ -23,7 +23,7 @@ Products
          - USB 2.0 full-speed bus powered
          - Python driver & example codes
      - 
-      .. image:: images/WPC-USB-DAQ-D.jpg
+      .. image:: images/Products/WPC-USB-DAQ-D.jpg
          :width: 100%
          :alt: WPC-USB-DAQ-D.jpg
    * - 
@@ -33,7 +33,7 @@ Products
          - USB 2.0 full-speed bus powered
          - Python driver & example codes
      - 
-      .. image:: images/WPC-USB-DAQ-AD.jpg
+      .. image:: images/Products/WPC-USB-DAQ-AD.jpg
          :width: 100%
          :alt: WPC-USB-DAQ-AD.jpg  
    * - 
@@ -45,7 +45,7 @@ Products
          - USB 2.0 full-speed bus powered
          - Python driver & example codes
      - 
-      .. image:: images/WPC-USB-DAQ-D-SNK.jpg
+      .. image:: images/Products/WPC-USB-DAQ-D-SNK.jpg
          :width: 100%
          :alt: WPC-USB-DAQ-D-SNK.jpg
    * - 
@@ -56,7 +56,7 @@ Products
          - USB 2.0 full-speed bus powered
          - Python driver & example codes
      - 
-      .. image:: images/WPC-USB-DAQ-TD.jpg
+      .. image:: images/Products/WPC-USB-DAQ-TD.jpg
          :width: 100%
          :alt: WPC-USB-DAQ-TD.jpg
    * - 
@@ -67,7 +67,7 @@ Products
          - USB 2.0 full-speed bus powered
          - Python driver & example codes
      - 
-      .. image:: images/WPC-USB-DAQ-RD.jpg 
+      .. image:: images/Products/WPC-USB-DAQ-RD.jpg 
          :width: 100%
          :alt: WPC-USB-DAQ-RD.jpg
    * - 
@@ -77,7 +77,7 @@ Products
          - USB 2.0 full-speed bus powered
          - Python driver & example codes
      - 
-      .. image:: images/WPC-USB-DAQ-CD.jpg
+      .. image:: images/Products/WPC-USB-DAQ-CD.jpg
          :width: 100%
          :alt: WPC-USB-DAQ-CD.jpg
    * - 
@@ -88,7 +88,7 @@ Products
          - USB 2.0 full-speed bus powered
          - Python driver & example codes
      - 
-      .. image:: images/WPC-USB-DAQ-AOD.jpg
+      .. image:: images/Products/WPC-USB-DAQ-AOD.jpg
          :width: 100%
          :alt: WPC-USB-DAQ-AOD.jpg   
    * - 
@@ -98,7 +98,7 @@ Products
          - 6ch 24V digital output (sinking DO, NPN)
          - Python driver & example codes
      - 
-      .. image:: images/WPC-Ethan-D.jpg
+      .. image:: images/Products/WPC-Ethan-D.jpg
          :width: 100%
          :alt: WPC-Ethan-D.jpg
    * - 
@@ -109,7 +109,7 @@ Products
          - +/-10V voltage input range
          - Python driver & example codes
      - 
-      .. image:: images/WPC-Ethan-A.jpg
+      .. image:: images/Products/WPC-Ethan-A.jpg
          :width: 100%
          :alt: WPC-Ethan-A.jpg  
    * - 
@@ -120,7 +120,7 @@ Products
          - 2.4 GHz to 2.5 GHz
          - Python driver & example codes
      - 
-      .. image:: images/WPC-WIFI-DAQ-E3A.png
+      .. image:: images/Products/WPC-WIFI-DAQ-E3A.png
          :width: 100%
          :alt: WPC-WIFI-DAQ-E3A.png
 
