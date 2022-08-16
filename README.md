@@ -35,7 +35,7 @@ USB interface DAQ card
 Port funtion table
 ------------------
 
-| Board           | AI  | AO | DI         | DO         | CAN | UART | SPI | I2C  | RTD | Thermocouple |
+| Model           | AI  | AO | DI         | DO         | CAN | UART | SPI | I2C  | RTD | Thermocouple |
 |:----------------|:---:|:--:|:----------:|:----------:|:---:|:----:|:---:|:----:|:---:|:------------:|
 | Wifi-DAQ-E3-A   | 1   | -  | -          | -          |-    |-     |-    |-     | -   |-             |
 | Ethan-D         | -   | -  | 1          | 0          |-    |-     |-    |-     | -   |-             |
