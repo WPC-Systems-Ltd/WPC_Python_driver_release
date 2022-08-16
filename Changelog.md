@@ -10,6 +10,10 @@ v0.0.10 Date: 2022/08/15, Developer: Chunglee_people
 - Add `Port funtionality compatibility` link in functions
 - Add error code file `WPC_error_code.csv`
 
+### Changed
+- Change `Port funtionality compatibility` to `Port funtion table`
+- Change `Board` to `Model`
+
 v0.0.9 Date: 2022/08/12, Developer: Chunglee_people
 ---------------------------------------------------
 ### Fixed
