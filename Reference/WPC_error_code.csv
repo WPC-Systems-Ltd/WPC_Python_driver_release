@@ -1,0 +1,42 @@
+Error code,Error Message
+570002,The CAN queue is overflow.
+560001,The UART queue is overflow.
+520003,The AI queue is overflow.
+-8001,Fail connect to WPC DAQ. Please check USB plugin status and serial number.
+-8002,Fail connect to WPC DAQ. Please check Network status and IP address.
+-8007,Network DAQ connection lost.
+-8009,Input pin is not exist.
+-8010,Pin value did not define.
+-8011,Arguments type should be consistent. It should be list or int.
+-8012,Arguments type not correct.
+-8014,Input data must be in range.
+-8101,This DI channel on WPC DAQ is not avaliable or already occupied by other process.
+-8102,This DO channel on WPC DAQ is not avaliable already occupied by other process.
+-8201,This AI port on WPC DAQ is already in use or not avaliable.
+-8204,This AO port on WPC DAQ is already in use or not avaliable.
+-8206,This AO mode on WPC DAQ is not vaild.
+-8207,This AO span on WPC DAQ is not vaild.
+-8208,This AI Port on WPC DAQ is not vaild.
+-8209,This AO channel on WPC DAQ is already in use or not avaliable.
+-8301,This Thermal port on WPC DAQ is already in use or not avaliable.
+-8304,This thermal chip selection on WPC DAQ is already in use or not avaliable.
+-8305,This thermal mode on WPC DAQ is not vaild.
+-8306,This thermal type on WPC DAQ is not vaild.
+-8401,This I2C port on WPC DAQ is already in use or not avaliable.
+-8403,This I2C Clock is not supported by this device.
+-8404,This I2C address size on WPC DAQ is not vaild.
+-8501,This SPI port on WPC DAQ is already in use or not avaliable.
+-8502,The length of data exceed maximum transfer length of SPI.
+-8503,This SPI data size on WPC DAQ is not vaild.
+-8504,This SPI first bit on WPC DAQ is not vaild.
+-8505,This SPI prescaler on WPC DAQ is not vaild.
+-8506,This SPI Mode on WPC DAQ is not vaild.
+-8601,This UART port on WPC DAQ is already in use or not avaliable.
+-8602,The length of data exceed maximum transfer length of UART.
+-8603,Configured baud rate is not supported.
+-8604,Num of stop bit mode is not supported.
+-8605,Parity mode is not supported.
+-8701,This CAN port on WPC DAQ is already in use or not avaliable.
+-8702,This CAN speed on WPC DAQ is not vaild.
+-8703,This CAN TX on WPC DAQ is not vaild.
+-8704,This CAN TX Priority on WPC DAQ is not vaild.
