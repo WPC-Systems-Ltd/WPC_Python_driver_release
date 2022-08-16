@@ -1,6 +1,10 @@
 Device finder
 =============
 
+
+API function description 
+------------------------
+
 .. autoclass:: pywpc.Broadcaster
    :members:
    :undoc-members:

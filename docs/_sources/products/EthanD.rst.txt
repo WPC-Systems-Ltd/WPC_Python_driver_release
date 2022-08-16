@@ -1,9 +1,17 @@
 Ethan-D
 =======
 
+
+Device pinout 
+-------------
+
 .. image:: ../images/Pinouts/Ethan-D.JPG
    :width: 90%
    :alt: Ethan-D
+
+
+API function description 
+------------------------
 
 .. autoclass:: pywpc.EthanD
    :members:

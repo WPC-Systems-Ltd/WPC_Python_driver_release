@@ -55,13 +55,19 @@
 <li class="toctree-l3"><a class="reference internal" href="USBDAQF1DSNK.html">USB-DAQ-F1-D-SNK</a></li>
 <li class="toctree-l3"><a class="reference internal" href="USBDAQF1AOD.html">USB-DAQ-F1-AOD</a></li>
 <li class="toctree-l3"><a class="reference internal" href="USBDAQF1TD.html">USB-DAQ-F1-TD</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">USB-DAQ-F1-CD</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">USB-DAQ-F1-CD</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#device-pinout">Device pinout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#api-function-description">API function description</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="USBDAQF1RD.html">USB-DAQ-F1-RD</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">Example codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../errortable.html">Error Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../port.html">Port funtionality compatibility</a></li>
 </ul>
 
         </div>
@@ -91,18 +97,23 @@
              
   <section id="usb-daq-f1-cd">
 <h1>USB-DAQ-F1-CD<a class="headerlink" href="#usb-daq-f1-cd" title="Permalink to this heading"></a></h1>
+<section id="device-pinout">
+<h2>Device pinout<a class="headerlink" href="#device-pinout" title="Permalink to this heading"></a></h2>
 <a class="reference internal image-reference" href="../_images/USB-DAQ-F1-CD.JPG"><img alt="USB-DAQ-F1-CD" src="../_images/USB-DAQ-F1-CD.JPG" style="width: 90%;" /></a>
+</section>
+<section id="api-function-description">
+<h2>API function description<a class="headerlink" href="#api-function-description" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1CD">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pywpc.</span></span><span class="sig-name descname"><span class="pre">USBDAQF1CD</span></span><a class="headerlink" href="#pywpc.USBDAQF1CD" title="Permalink to this definition"></a></dt>
 <dd><p>This device <cite>WPC-USB-DAQ-CD</cite> has 20ch 3.3V DIO/I2C/SPI</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>UART : port1 &amp; port2</p></li>
-<li><p>I2C  : port1 &amp; port2</p></li>
-<li><p>SPI  : port2</p></li>
-<li><p>CAN  : port1</p></li>
-<li><p>DIO  : port0 &amp; port1 &amp; port2 &amp; port3</p></li>
+<li><p>UART : port1, port2</p></li>
+<li><p>I2C : port1, port2</p></li>
+<li><p>SPI : port2</p></li>
+<li><p>CAN : port1</p></li>
+<li><p>DIO : port0, port1, port2, port3</p></li>
 </ul>
 </div></blockquote>
 <p class="rubric">Methods</p>
@@ -341,7 +352,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -365,7 +376,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -394,7 +405,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -419,7 +430,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -461,7 +472,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -485,7 +496,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>frames</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -517,7 +528,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>status</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
@@ -546,7 +557,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>status</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
@@ -575,7 +586,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>status</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
@@ -604,7 +615,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>status</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
@@ -633,7 +644,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -664,7 +675,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>tx_mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -701,7 +712,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -725,7 +736,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -749,7 +760,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>id</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -791,7 +802,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -819,7 +830,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -857,7 +868,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -885,7 +896,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -909,7 +920,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -937,7 +948,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -961,7 +972,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">list</span></dt><dd><ul class="simple">
@@ -991,7 +1002,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1029,7 +1040,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -1059,7 +1070,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1083,7 +1094,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -1120,7 +1131,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>value</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
@@ -1151,7 +1162,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1191,7 +1202,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1215,7 +1226,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>read_address</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -1247,7 +1258,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1271,7 +1282,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -1299,7 +1310,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>frequency</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -1330,7 +1341,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>write_address</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -1362,7 +1373,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1401,7 +1412,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1424,7 +1435,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>bytes_to_read</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -1452,7 +1463,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>write_data</strong><span class="classifier">list of bytes</span></dt><dd><ul class="simple">
@@ -1480,7 +1491,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1504,7 +1515,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -1533,7 +1544,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -1562,7 +1573,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -1593,7 +1604,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>prescaler</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -1621,7 +1632,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>write_data</strong><span class="classifier">list of bytes</span></dt><dd><ul class="simple">
@@ -1756,7 +1767,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1780,7 +1791,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1804,7 +1815,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1858,7 +1869,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1898,7 +1909,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1922,7 +1933,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>bytes_to_read</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -1954,7 +1965,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1978,7 +1989,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>baud_rate: int</strong></dt><dd><ul class="simple">
@@ -2006,7 +2017,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -2035,7 +2046,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -2066,7 +2077,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
@@ -2096,7 +2107,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2120,7 +2131,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">port</a> number depends on WPC DAQ device.</p></li>
+<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
 </ul>
 </dd>
 <dt><strong>write_data</strong><span class="classifier">string or list of characters</span></dt><dd><ul class="simple">
@@ -2198,6 +2209,7 @@
 
 </dd></dl>
 
+</section>
 </section>
 
 
