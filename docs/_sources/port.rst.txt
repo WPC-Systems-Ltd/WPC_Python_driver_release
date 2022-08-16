@@ -1,4 +1,4 @@
-Port funtionality compatibility
+Port funtion table
 ===================================
 
 .. _foobar:
@@ -7,7 +7,7 @@ Port funtionality compatibility
    :widths: 2 2 2 2 2 2 2 2 2 2 2
    :header-rows: 1
    
-   * - Board
+   * - Model
      - AI
      - AO
      - DI
