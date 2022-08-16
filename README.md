@@ -32,8 +32,8 @@ USB interface DAQ card
 - USB-DAQ-F1-AOD
 - USB-DAQ-F1-DSNK
 
-Port funtionality compatibility
--------------------
+Port funtion table
+------------------
 
 | Board           | AI  | AO | DI         | DO         | CAN | UART | SPI | I2C  | RTD | Thermocouple |
 |:----------------|:---:|:--:|:----------:|:----------:|:---:|:----:|:---:|:----:|:---:|:------------:|
