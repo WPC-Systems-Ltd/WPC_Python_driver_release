@@ -1,6 +1,10 @@
 Wifi-DAQ-E3-A
 =============
 
+.. image:: ../images/Pinouts/Wifi-DAQ-E3-A.JPG
+   :width: 90%
+   :alt: Wifi-DAQ-E3-A
+
 .. autoclass:: pywpc.WifiDAQE3A
    :members:
    :undoc-members:

@@ -1,5 +1,5 @@
-Broadcaster
-===========
+Device finder
+=============
 
 .. autoclass:: pywpc.Broadcaster
    :members:

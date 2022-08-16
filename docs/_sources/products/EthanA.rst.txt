@@ -1,6 +1,10 @@
 Ethan-A
 =======
 
+.. image:: ../images/Pinouts/Ethan-A.JPG
+   :width: 90%
+   :alt: Ethan-A
+
 .. autoclass:: pywpc.EthanA
    :members:
    :undoc-members:

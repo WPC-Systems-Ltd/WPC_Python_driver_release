@@ -1,6 +1,10 @@
 Ethan-D
 =======
 
+.. image:: ../images/Pinouts/Ethan-D.JPG
+   :width: 90%
+   :alt: Ethan-D
+
 .. autoclass:: pywpc.EthanD
    :members:
    :undoc-members:

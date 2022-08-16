@@ -1,6 +1,10 @@
 USB-DAQ-F1-AD
 =============
 
+.. image:: ../images/Pinouts/USB-DAQ-F1-AD.JPG
+   :width: 90%
+   :alt: USB-DAQ-F1-AD
+
 .. autoclass:: pywpc.USBDAQF1AD
    :members:
    :undoc-members:
