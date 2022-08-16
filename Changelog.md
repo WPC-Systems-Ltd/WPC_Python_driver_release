@@ -8,6 +8,7 @@ v0.0.10 Date: 2022/08/15, Developer: Chunglee_people
 - Add github edit link in Sphinx
 - Add product description
 - Add `Port funtionality compatibility` link in functions
+- Add error code file `WPC_error_code.csv`
 
 v0.0.9 Date: 2022/08/12, Developer: Chunglee_people
 ---------------------------------------------------
