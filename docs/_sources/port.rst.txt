@@ -1,4 +1,4 @@
-Port funtion table
+Port function table
 ===================================
 
 .. _foobar:
