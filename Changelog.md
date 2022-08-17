@@ -1,6 +1,20 @@
 WPC_Device_Driver_Example_GUI Version Changelog
 ===================================
 
+
+v0.0.10 Date: 2022/08/17, Developer: Chunglee_people
+---------------------------------------------------
+### Added
+- Add github edit link in Sphinx
+- Add product description
+- Add `Port funtion table` rst link in function description
+- Add error code file `WPC_error_code.csv`
+- Add `Error table` and `Port funtion table` in sphinx
+
+### Changed
+- Change `Port funtionality compatibility` to `Port funtion table` in Readme.md
+- Change `Board` to `Model` in Readme.md
+
 v0.0.9 Date: 2022/08/12, Developer: Chunglee_people
 ---------------------------------------------------
 ### Fixed
