@@ -2,6 +2,12 @@ WPC_Device_Driver_Example_GUI Version Changelog
 ===================================
 
 
+
+v0.0.11 Date: 2022/08/17, Developer: Chunglee_people
+---------------------------------------------------
+### Removed
+- Remove unnecessary files
+
 v0.0.10 Date: 2022/08/17, Developer: Chunglee_people
 ---------------------------------------------------
 ### Added
@@ -14,6 +20,7 @@ v0.0.10 Date: 2022/08/17, Developer: Chunglee_people
 ### Changed
 - Change `Port funtionality compatibility` to `Port funtion table` in Readme.md
 - Change `Board` to `Model` in Readme.md
+- Change WPC Python Version from `pywpc-0.1.18` to  `pywpc-0.1.19`  
 
 v0.0.9 Date: 2022/08/12, Developer: Chunglee_people
 ---------------------------------------------------
