@@ -7,6 +7,7 @@
   <title>Ethan-A &mdash; WPC Device Driver 0.1.19 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/WPC_trademark.jpg"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -101,12 +102,13 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="pywpc.EthanA">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pywpc.</span></span><span class="sig-name descname"><span class="pre">EthanA</span></span><a class="headerlink" href="#pywpc.EthanA" title="Permalink to this definition"></a></dt>
-<dd><p>This device <cite>WPC-Ethan-A</cite> has 8ch simultaneous voltage input</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>AI : port0</p></li>
+<dd><p>This device <cite>WPC-Ethan-A</cite> has 8ch simultaneous voltage input.</p>
+<dl class="simple">
+<dt>Available ports:</dt><dd><ul class="simple">
+<li><p>AI: 0</p></li>
 </ul>
-</div></blockquote>
+</dd>
+</dl>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
@@ -142,7 +144,7 @@
 <td><p>Configure sample points to acquisition for N-samples mode.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_setSamplingRate" title="pywpc.EthanA.AI_setSamplingRate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_setSamplingRate</span></code></a>(port, sampling_rate)</p></td>
-<td><p>Configure sampling rate to acquisition setting for N-samples and continuous mode.</p></td>
+<td><p>Configure sampling rate to acquisition for N-samples and continuous mode.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanA.AI_start" title="pywpc.EthanA.AI_start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_start</span></code></a>(port)</p></td>
 <td><p>Start N samples or continuous AI acquisition.</p></td>
@@ -201,17 +203,13 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
-</ul>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 if success, error otherwise.</p></li>
-</ul>
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 if success, error otherwise.</p>
 </dd>
 </dl>
 </dd>
@@ -225,17 +223,13 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
-</ul>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 if success, error otherwise.</p></li>
-</ul>
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 if success, error otherwise.</p>
 </dd>
 </dl>
 </dd>
@@ -263,17 +257,13 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
-</ul>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 if success, error otherwise.</p></li>
-</ul>
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 if success, error otherwise.</p>
 </dd>
 </dl>
 </dd>
@@ -287,9 +277,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
-</ul>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -314,9 +302,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
-</ul>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -336,17 +322,11 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
-</ul>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
-<dt><strong>get_data_times</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Amount of data to get from the function call.</p></li>
-</ul>
+<dt><strong>get_data_times</strong><span class="classifier">int</span></dt><dd><p>Amount of data to get from the function call.</p>
 </dd>
-<dt><strong>delay</strong><span class="classifier">float</span></dt><dd><ul class="simple">
-<li><p>Time delay before getting data.</p></li>
-</ul>
+<dt><strong>delay</strong><span class="classifier">float</span></dt><dd><p>Time delay before getting data.</p>
 </dd>
 </dl>
 </dd>
@@ -369,21 +349,15 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
-</ul>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
-<dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : On demand, 1 : N-samples, 2 : Continuous.</p></li>
-</ul>
+<dt><strong>mode</strong><span class="classifier">int</span></dt><dd><p>0 : On demand, 1 : N-samples, 2 : Continuous.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 if success, error otherwise.</p></li>
-</ul>
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 if success, error otherwise.</p>
 </dd>
 </dl>
 </dd>
@@ -397,21 +371,15 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
-</ul>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
-<dt><strong>sample_points</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Number of sample points.</p></li>
-</ul>
+<dt><strong>sample_points</strong><span class="classifier">int</span></dt><dd><p>Number of sample points.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 if success, error otherwise.</p></li>
-</ul>
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 if success, error otherwise.</p>
 </dd>
 </dl>
 </dd>
@@ -421,25 +389,19 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EthanA.AI_setSamplingRate">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AI_setSamplingRate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampling_rate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanA.AI_setSamplingRate" title="Permalink to this definition"></a></dt>
-<dd><p>Configure sampling rate to acquisition setting for N-samples and continuous mode.</p>
+<dd><p>Configure sampling rate to acquisition for N-samples and continuous mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
-</ul>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
-<dt><strong>sampling_rate</strong><span class="classifier">int or float</span></dt><dd><ul class="simple">
-<li><p>AI sampling rate.</p></li>
-</ul>
+<dt><strong>sampling_rate</strong><span class="classifier">int or float</span></dt><dd><p>AI sampling rate.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 if success, error otherwise.</p></li>
-</ul>
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 if success, error otherwise.</p>
 </dd>
 </dl>
 </dd>
@@ -453,9 +415,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
-</ul>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -469,17 +429,13 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p></li>
-</ul>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 if success, error otherwise.</p></li>
-</ul>
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 if success, error otherwise.</p>
 </dd>
 </dl>
 </dd>
@@ -556,9 +512,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>pins</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>how many pins in specific port.</p></li>
-</ul>
+<dt><strong>pins</strong><span class="classifier">int</span></dt><dd><p>How many pins in specific port.</p>
 </dd>
 <dt><strong>pin_mode</strong><span class="classifier">list of 8 string</span></dt><dd><ul class="simple">
 <li><p>[pin0, pin1 ,……pin7]</p></li>
@@ -577,13 +531,17 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><p>Date and time represented by “A-B-C, D:E:F”.
-- “A” is year.
-- “B” is month.
-- “C” is day.
-- “D” is hour.
-- “E” is minute.
-- “F” is second.</p>
+<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><dl class="simple">
+<dt>Date and time represented by “A-B-C, D:E:F”.</dt><dd><ul class="simple">
+<li><p>“A” is year.</p></li>
+<li><p>“B” is month.</p></li>
+<li><p>“C” is day.</p></li>
+<li><p>“D” is hour.</p></li>
+<li><p>“E” is minute.</p></li>
+<li><p>“F” is second.</p></li>
+</ul>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd>
@@ -597,9 +555,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><ul class="simple">
-<li><p>Serial number represented by string of 8 characters.</p></li>
-</ul>
+<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><p>Serial number represented by string of 8 characters.</p>
 </dd>
 </dl>
 </dd>
@@ -613,9 +569,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 if success, error otherwise.</p></li>
-</ul>
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 if success, error otherwise.</p>
 </dd>
 </dl>
 </dd>
@@ -629,9 +583,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 if success, error otherwise.</p></li>
-</ul>
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 if success, error otherwise.</p>
 </dd>
 </dl>
 </dd>
@@ -653,9 +605,7 @@
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 if success, error otherwise.</p></li>
-</ul>
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 if success, error otherwise.</p>
 </dd>
 </dl>
 </dd>
@@ -699,9 +649,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 if success, error otherwise.</p></li>
-</ul>
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 if success, error otherwise.</p>
 </dd>
 </dl>
 </dd>
@@ -715,17 +663,13 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>IP</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><ul class="simple">
-<li><p>IP network address.</p></li>
-</ul>
+<dt><strong>IP</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>IP network address.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 if success, error otherwise.</p></li>
-</ul>
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 if success, error otherwise.</p>
 </dd>
 </dl>
 </dd>
@@ -739,9 +683,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 if success, error otherwise.</p></li>
-</ul>
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 if success, error otherwise.</p>
 </dd>
 </dl>
 </dd>
