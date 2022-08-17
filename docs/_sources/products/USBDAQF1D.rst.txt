@@ -1,6 +1,18 @@
 USB-DAQ-F1-D
 ============
 
+
+Device pinout 
+-------------
+
+.. image:: ../images/Pinouts/USB-DAQ-F1-D.JPG
+   :width: 90%
+   :alt: USB-DAQ-F1-D
+
+
+API function description 
+------------------------
+
 .. autoclass:: pywpc.USBDAQF1D
    :members:
    :undoc-members:

@@ -1,6 +1,18 @@
 Ethan-A
 =======
 
+
+Device pinout 
+-------------
+
+.. image:: ../images/Pinouts/Ethan-A.JPG
+   :width: 90%
+   :alt: Ethan-A
+
+
+API function description 
+------------------------
+
 .. autoclass:: pywpc.EthanA
    :members:
    :undoc-members:
