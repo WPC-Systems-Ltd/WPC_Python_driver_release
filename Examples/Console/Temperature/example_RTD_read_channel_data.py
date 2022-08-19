@@ -26,7 +26,7 @@ async def main():
         print("Firmware version: " + driver_info[-1])
         
         ## Parameters setting
-        port    = 1
+        port = 1
         channel_0 = 0 
         channel_1 = 1 
 
