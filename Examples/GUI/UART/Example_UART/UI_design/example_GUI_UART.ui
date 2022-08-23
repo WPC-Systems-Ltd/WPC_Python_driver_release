@@ -7,18 +7,21 @@
     <x>0</x>
     <y>0</y>
     <width>976</width>
-    <height>788</height>
+    <height>833</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="lb_declare">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>70</y>
+      <x>30</x>
+      <y>130</y>
       <width>651</width>
       <height>31</height>
      </rect>
@@ -74,8 +77,8 @@
    <widget class="QGroupBox" name="groupBox_connection">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>130</y>
+      <x>30</x>
+      <y>184</y>
       <width>601</width>
       <height>91</height>
      </rect>
@@ -211,7 +214,7 @@ QPushButton:pressed{
      <property name="geometry">
       <rect>
        <x>530</x>
-       <y>20</y>
+       <y>26</y>
        <width>51</width>
        <height>51</height>
       </rect>
@@ -233,9 +236,9 @@ QPushButton:pressed{
    <widget class="QGroupBox" name="groupBox_setting">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>310</y>
-      <width>301</width>
+      <x>30</x>
+      <y>410</y>
+      <width>341</width>
       <height>371</height>
      </rect>
     </property>
@@ -250,7 +253,7 @@ QPushButton:pressed{
      <bool>true</bool>
     </property>
     <property name="title">
-     <string>Setting</string>
+     <string>Parameter Setting</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -262,7 +265,7 @@ QPushButton:pressed{
      <property name="geometry">
       <rect>
        <x>660</x>
-       <y>10</y>
+       <y>-10</y>
        <width>51</width>
        <height>51</height>
       </rect>
@@ -1579,8 +1582,8 @@ color:  rgb(255, 255, 255); </string>
    <widget class="QPushButton" name="btn_write">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>240</y>
+      <x>540</x>
+      <y>326</y>
       <width>111</width>
       <height>41</height>
      </rect>
@@ -1612,8 +1615,8 @@ QPushButton:pressed{
    <widget class="QPushButton" name="btn_read">
     <property name="geometry">
      <rect>
-      <x>670</x>
-      <y>240</y>
+      <x>820</x>
+      <y>326</y>
       <width>111</width>
       <height>41</height>
      </rect>
@@ -1645,8 +1648,8 @@ QPushButton:pressed{
    <widget class="QLineEdit" name="lineEdit_byteread">
     <property name="geometry">
      <rect>
-      <x>820</x>
-      <y>250</y>
+      <x>830</x>
+      <y>280</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -1658,15 +1661,21 @@ QPushButton:pressed{
       <bold>true</bold>
      </font>
     </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
     <property name="text">
      <string>4</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="lb_byteread">
     <property name="geometry">
      <rect>
-      <x>820</x>
-      <y>220</y>
+      <x>830</x>
+      <y>250</y>
       <width>121</width>
       <height>31</height>
      </rect>
@@ -1686,9 +1695,9 @@ QPushButton:pressed{
    <widget class="QLabel" name="lb_write">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>300</y>
-      <width>71</width>
+      <x>390</x>
+      <y>380</y>
+      <width>151</width>
       <height>31</height>
      </rect>
     </property>
@@ -1701,15 +1710,15 @@ QPushButton:pressed{
      </font>
     </property>
     <property name="text">
-     <string>Write</string>
+     <string>Write (ASCII)</string>
     </property>
    </widget>
    <widget class="QLabel" name="lb_read">
     <property name="geometry">
      <rect>
-      <x>660</x>
-      <y>300</y>
-      <width>71</width>
+      <x>670</x>
+      <y>380</y>
+      <width>151</width>
       <height>31</height>
      </rect>
     </property>
@@ -1722,14 +1731,14 @@ QPushButton:pressed{
      </font>
     </property>
     <property name="text">
-     <string>Read</string>
+     <string>Read (ASCII)</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_open">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>240</y>
+      <x>40</x>
+      <y>325</y>
       <width>111</width>
       <height>41</height>
      </rect>
@@ -1761,8 +1770,8 @@ QPushButton:pressed{
    <widget class="QPushButton" name="btn_close">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>240</y>
+      <x>170</x>
+      <y>325</y>
       <width>111</width>
       <height>41</height>
      </rect>
@@ -1794,10 +1803,10 @@ QPushButton:pressed{
    <widget class="QLineEdit" name="lineEdit_write">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>340</y>
+      <x>390</x>
+      <y>420</y>
       <width>261</width>
-      <height>301</height>
+      <height>361</height>
      </rect>
     </property>
     <property name="font">
@@ -1812,10 +1821,10 @@ QPushButton:pressed{
    <widget class="QLineEdit" name="lineEdit_read">
     <property name="geometry">
      <rect>
-      <x>660</x>
-      <y>340</y>
+      <x>670</x>
+      <y>420</y>
       <width>261</width>
-      <height>301</height>
+      <height>361</height>
      </rect>
     </property>
     <property name="font">
@@ -1827,6 +1836,68 @@ QPushButton:pressed{
      <string/>
     </property>
    </widget>
+   <widget class="QLabel" name="lb_ledport">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>320</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>C:/Material/WPC_Led_green.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>294</y>
+      <width>341</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="title">
+     <string>Interface Control</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <zorder>groupBox</zorder>
+   <zorder>lb_declare</zorder>
+   <zorder>lb_rights</zorder>
+   <zorder>lb_trademark</zorder>
+   <zorder>groupBox_connection</zorder>
+   <zorder>groupBox_setting</zorder>
+   <zorder>btn_write</zorder>
+   <zorder>btn_read</zorder>
+   <zorder>lineEdit_byteread</zorder>
+   <zorder>lb_byteread</zorder>
+   <zorder>lb_write</zorder>
+   <zorder>lb_read</zorder>
+   <zorder>btn_open</zorder>
+   <zorder>btn_close</zorder>
+   <zorder>lineEdit_write</zorder>
+   <zorder>lineEdit_read</zorder>
+   <zorder>lb_ledport</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

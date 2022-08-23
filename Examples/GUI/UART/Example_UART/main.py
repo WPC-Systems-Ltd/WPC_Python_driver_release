@@ -133,6 +133,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
             ## Change LED status
             self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
+
+            ## Change LED status
+            self.ui.lb_ledport.setPixmap(QtGui.QPixmap(self.green_led_path))
             
             ## Change connection flag
             self.connect_flag = 1
@@ -147,7 +150,10 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Change LED status
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.gray_led_path))
-        
+
+        ## Change LED status
+        self.ui.lb_ledport.setPixmap(QtGui.QPixmap(self.gray_led_path))
+
         ## Change connection flag
         self.connect_flag = 0
         
