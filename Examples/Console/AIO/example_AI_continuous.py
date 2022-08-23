@@ -1,8 +1,16 @@
-import sys
+##  example_AI_continuous.py
+##
+##  Copyright (c) 2022 WPC Systems Ltd.
+##  All rights reserved.
+
+## Python
 import asyncio
+import sys
+ 
+## WPC
 sys.path.insert(0, 'pywpc/')
 sys.path.insert(0, '../../../pywpc/')
-import pywpc
+import pywpc  
 
 async def loop_func(handle, port, num_of_samples = 600, delay = 0.05, timeout = 3):
     t = 0

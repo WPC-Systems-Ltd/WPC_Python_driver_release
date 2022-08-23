@@ -1,10 +1,18 @@
-import threading
+##  example_multiple_loops_thread.py
+##
+##  Copyright (c) 2022 WPC Systems Ltd.
+##  All rights reserved.
+
+## Python
 import asyncio
 import sys
+import threading
+import time
+
+## WPC
 sys.path.insert(0, 'pywpc/')
 sys.path.insert(0, '../../../pywpc/')
-import pywpc 
-import time
+import pywpc
 
 async def getRSSI(handle, delay = 1):
     data = await handle.Wifi_readRSSI()
