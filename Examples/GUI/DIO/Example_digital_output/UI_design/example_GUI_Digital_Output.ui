@@ -367,7 +367,7 @@ QPushButton:pressed{
       </font>
      </property>
      <property name="text">
-      <string>21JA1279</string>
+      <string>21JA1439</string>
      </property>
     </widget>
     <widget class="QLabel" name="lb_led">
@@ -701,7 +701,7 @@ color:  rgb(255, 255, 255); </string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QCheckBox" name="cb_state7">
+    <widget class="QCheckBox" name="checkbox_state7">
      <property name="geometry">
       <rect>
        <x>60</x>
@@ -735,7 +735,7 @@ color:  rgb(255, 255, 255); </string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QCheckBox" name="cb_state6">
+    <widget class="QCheckBox" name="checkbox_state6">
      <property name="geometry">
       <rect>
        <x>120</x>
@@ -769,7 +769,7 @@ color:  rgb(255, 255, 255); </string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QCheckBox" name="cb_state5">
+    <widget class="QCheckBox" name="checkbox_state5">
      <property name="geometry">
       <rect>
        <x>180</x>
@@ -803,7 +803,7 @@ color:  rgb(255, 255, 255); </string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QCheckBox" name="cb_state4">
+    <widget class="QCheckBox" name="checkbox_state4">
      <property name="geometry">
       <rect>
        <x>240</x>
@@ -837,7 +837,7 @@ color:  rgb(255, 255, 255); </string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QCheckBox" name="cb_state3">
+    <widget class="QCheckBox" name="checkbox_state3">
      <property name="geometry">
       <rect>
        <x>300</x>
@@ -871,7 +871,7 @@ color:  rgb(255, 255, 255); </string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QCheckBox" name="cb_state2">
+    <widget class="QCheckBox" name="checkbox_state2">
      <property name="geometry">
       <rect>
        <x>360</x>
@@ -905,7 +905,7 @@ color:  rgb(255, 255, 255); </string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QCheckBox" name="cb_state1">
+    <widget class="QCheckBox" name="checkbox_state1">
      <property name="geometry">
       <rect>
        <x>420</x>
@@ -939,7 +939,7 @@ color:  rgb(255, 255, 255); </string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QCheckBox" name="cb_state0">
+    <widget class="QCheckBox" name="checkbox_state0">
      <property name="geometry">
       <rect>
        <x>480</x>

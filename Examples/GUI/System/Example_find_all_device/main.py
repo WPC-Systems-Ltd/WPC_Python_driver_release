@@ -1,14 +1,25 @@
+##  main.py
+##  Example_find_all_device
+##
+##  Copyright (c) 2022 WPC Systems Ltd.
+##  All rights reserved.
+
+## Python
+import asyncio
+import sys
+import os
+from qasync import QEventLoop, asyncSlot
+
+## Third party
 from PyQt5 import QtWidgets, QtGui
 from PyQt5.QtWidgets import QTableWidget,QApplication
 from PyQt5.QtCore import Qt
 from UI_design.Ui_example_GUI_Broadcasts import Ui_MainWindow 
-from qasync import QEventLoop, asyncSlot
-import sys
-import asyncio
+
+## WPC
 sys.path.insert(0, 'pywpc/')
 sys.path.insert(0, '../../../pywpc/')
-import pywpc 
-import os
+import pywpc  
 
 COLUMN_WIDTH = 160  
 

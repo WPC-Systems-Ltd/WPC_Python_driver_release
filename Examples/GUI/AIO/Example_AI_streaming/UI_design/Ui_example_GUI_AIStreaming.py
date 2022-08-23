@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\AI\Example_AI_streaming\UI_design\example_GUI_AIStreaming.ui'
+# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\AIO\Example_AI_streaming\UI_design\example_GUI_AIStreaming.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from UI_design.mplwidget import MplWidget
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -544,7 +544,7 @@ class Ui_MainWindow(object):
         self.lb_led = QtWidgets.QLabel(self.groupBox_connection)
         self.lb_led.setGeometry(QtCore.QRect(370, 20, 51, 51))
         self.lb_led.setText("")
-        self.lb_led.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\WPC_Python_driver_release\\Examples\\GUI\\AI\\Example_AI_streaming\\UI_design\\../../../../../Material/WPC_Led_green.png"))
+        self.lb_led.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\WPC_Python_driver_release\\Examples\\GUI\\AIO\\Example_AI_streaming\\UI_design\\../../../../../Material/WPC_Led_green.png"))
         self.lb_led.setScaledContents(True)
         self.lb_led.setObjectName("lb_led")
         self.lb_ip.raise_()
@@ -1487,7 +1487,7 @@ class Ui_MainWindow(object):
         self.lb_trademark = QtWidgets.QLabel(self.centralwidget)
         self.lb_trademark.setGeometry(QtCore.QRect(10, 10, 81, 81))
         self.lb_trademark.setText("")
-        self.lb_trademark.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\WPC_Python_driver_release\\Examples\\GUI\\AI\\Example_AI_streaming\\UI_design\\../Material/WPC_trademark.jpg"))
+        self.lb_trademark.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\WPC_Python_driver_release\\Examples\\GUI\\AIO\\Example_AI_streaming\\UI_design\\../Material/WPC_trademark.jpg"))
         self.lb_trademark.setScaledContents(True)
         self.lb_trademark.setObjectName("lb_trademark")
         self.MplWidget = MplWidget(self.centralwidget)
@@ -1540,4 +1540,4 @@ class Ui_MainWindow(object):
         self.lb_yscaleMin.setText(_translate("MainWindow", "Y scale min  (V)"))
         self.lb_rights.setText(_translate("MainWindow", " Ⓒ2022 WPC Systems Ltd. All right reserved"))
         self.lb_declare.setText(_translate("MainWindow", "This is example for AI streaming WPC Wifi DAQ."))
-
+from UI_design.mplwidget import MplWidget

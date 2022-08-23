@@ -1,12 +1,23 @@
+##  main.py
+##  Example_AI_streaming
+##
+##  Copyright (c) 2022 WPC Systems Ltd.
+##  All rights reserved.
+
+## Python
+import asyncio
+import sys
+import os
+from qasync import QEventLoop, asyncSlot
+
+## Third party
+import matplotlib.animation as animation
+import numpy as np
 from PyQt5 import QtWidgets, QtGui
 from PyQt5.QtWidgets import QWidget, QMessageBox
 from UI_design.Ui_example_GUI_AIStreaming import Ui_MainWindow 
-from qasync import QEventLoop, asyncSlot
-import matplotlib.animation as animation
-import numpy as np
-import os
-import sys
-import asyncio
+
+## WPC
 sys.path.insert(0, 'pywpc/')
 sys.path.insert(0, '../../../pywpc/')
 import pywpc  
