@@ -1,4 +1,4 @@
- ##  main.py
+##  main.py
 ##  Example_analog_output
 ##
 ##  Copyright (c) 2022 WPC Systems Ltd.

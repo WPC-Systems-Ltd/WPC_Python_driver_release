@@ -46,7 +46,7 @@ class MainWindow(QtWidgets.QMainWindow):
         ## Set trademark path
         self.ui.lb_trademark.setPixmap(QtGui.QPixmap(self.trademark_path))
         
-        ## Define button callback events
+        ## Define callback events
         self.ui.btn_connect.clicked.connect(self.connectEvent)
         self.ui.btn_disconnect.clicked.connect(self.disconnectEvent)
         self.ui.btn_deviceInfo.clicked.connect(self.getdeviceinfoEvent)

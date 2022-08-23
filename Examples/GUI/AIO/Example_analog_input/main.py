@@ -66,7 +66,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.channel_list.append([])
         self.plot_total_times = 0
 
-        ## Define button callback events
+        ## Define callback events
         self.ui.btn_connect.clicked.connect(self.connectEvent)
         self.ui.btn_disconnect.clicked.connect(self.disconnectEvent) 
         self.ui.btn_AIStart.clicked.connect(self.startAIEvent)
