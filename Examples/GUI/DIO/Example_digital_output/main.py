@@ -102,7 +102,7 @@ class MainWindow(QtWidgets.QMainWindow):
     @asyncSlot() 
     async def connectEvent(self):
         # Get IP from UI
-        self.IP = self.ui.ld_ip.text()
+        self.IP = self.ui.lineEdit_IP.text()
         try: 
             ## Connect to USB device
             self.dev.connect(self.IP)

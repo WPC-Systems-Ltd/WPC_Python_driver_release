@@ -94,7 +94,7 @@ class MainWindow(QtWidgets.QMainWindow):
     @asyncSlot()      
     async def connectEvent(self): 
         # Get ip from UI
-        self.ip = self.ui.lineEdit_ip.text()
+        self.ip = self.ui.lineEdit_IP.text()
         try: 
             ## Connect to network device
             dev.connect(self.ip)
@@ -112,11 +112,11 @@ class MainWindow(QtWidgets.QMainWindow):
 
     @asyncSlot()      
     async def disconnectEvent(self):
-        ## Disconnect network device
-        dev.disconnect()
-
         ## close AI port
         await dev.AI_close(self.AI_port)
+
+        ## Disconnect network device
+        dev.disconnect()
 
         ## Change LED status
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))

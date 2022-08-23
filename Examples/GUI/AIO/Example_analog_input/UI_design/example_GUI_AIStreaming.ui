@@ -546,7 +546,7 @@
       <string>IP:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_ip">
+    <widget class="QLineEdit" name="lineEdit_IP">
      <property name="geometry">
       <rect>
        <x>40</x>
@@ -1552,7 +1552,7 @@ QPushButton:pressed{
     </widget>
     <zorder>lb_ip</zorder>
     <zorder>btn_connect</zorder>
-    <zorder>lineEdit_ip</zorder>
+    <zorder>lineEdit_IP</zorder>
     <zorder>btn_disconnect</zorder>
     <zorder>lb_led</zorder>
    </widget>

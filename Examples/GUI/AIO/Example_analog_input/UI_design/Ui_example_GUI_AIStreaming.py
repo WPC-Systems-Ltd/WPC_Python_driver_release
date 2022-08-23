@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\AIO\Example_AI_streaming\UI_design\example_GUI_AIStreaming.ui'
+# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\AIO\Example_analog_input\UI_design\example_GUI_AIStreaming.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -196,15 +196,15 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.lb_ip.setFont(font)
         self.lb_ip.setObjectName("lb_ip")
-        self.lineEdit_ip = QtWidgets.QLineEdit(self.groupBox_connection)
-        self.lineEdit_ip.setGeometry(QtCore.QRect(40, 30, 111, 31))
+        self.lineEdit_IP = QtWidgets.QLineEdit(self.groupBox_connection)
+        self.lineEdit_IP.setGeometry(QtCore.QRect(40, 30, 111, 31))
         font = QtGui.QFont()
         font.setFamily("微軟正黑體")
         font.setPointSize(9)
         font.setBold(False)
         font.setWeight(50)
-        self.lineEdit_ip.setFont(font)
-        self.lineEdit_ip.setObjectName("lineEdit_ip")
+        self.lineEdit_IP.setFont(font)
+        self.lineEdit_IP.setObjectName("lineEdit_IP")
         self.btn_connect = QtWidgets.QPushButton(self.groupBox_connection)
         self.btn_connect.setGeometry(QtCore.QRect(160, 30, 81, 31))
         palette = QtGui.QPalette()
@@ -544,12 +544,12 @@ class Ui_MainWindow(object):
         self.lb_led = QtWidgets.QLabel(self.groupBox_connection)
         self.lb_led.setGeometry(QtCore.QRect(370, 20, 51, 51))
         self.lb_led.setText("")
-        self.lb_led.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\WPC_Python_driver_release\\Examples\\GUI\\AIO\\Example_AI_streaming\\UI_design\\../../../../../Material/WPC_Led_green.png"))
+        self.lb_led.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\WPC_Python_driver_release\\Examples\\GUI\\AIO\\Example_analog_input\\UI_design\\../../../../../Material/WPC_Led_green.png"))
         self.lb_led.setScaledContents(True)
         self.lb_led.setObjectName("lb_led")
         self.lb_ip.raise_()
         self.btn_connect.raise_()
-        self.lineEdit_ip.raise_()
+        self.lineEdit_IP.raise_()
         self.btn_disconnect.raise_()
         self.lb_led.raise_()
         self.groupBox_operation = QtWidgets.QGroupBox(self.centralwidget)
@@ -1487,7 +1487,7 @@ class Ui_MainWindow(object):
         self.lb_trademark = QtWidgets.QLabel(self.centralwidget)
         self.lb_trademark.setGeometry(QtCore.QRect(10, 10, 81, 81))
         self.lb_trademark.setText("")
-        self.lb_trademark.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\WPC_Python_driver_release\\Examples\\GUI\\AIO\\Example_AI_streaming\\UI_design\\../Material/WPC_trademark.jpg"))
+        self.lb_trademark.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\WPC_Python_driver_release\\Examples\\GUI\\AIO\\Example_analog_input\\UI_design\\../Material/WPC_trademark.jpg"))
         self.lb_trademark.setScaledContents(True)
         self.lb_trademark.setObjectName("lb_trademark")
         self.MplWidget = MplWidget(self.centralwidget)
@@ -1510,7 +1510,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.groupBox_connection.setTitle(_translate("MainWindow", "Connection Setting"))
         self.lb_ip.setText(_translate("MainWindow", "IP:"))
-        self.lineEdit_ip.setText(_translate("MainWindow", "192.168.5.79"))
+        self.lineEdit_IP.setText(_translate("MainWindow", "192.168.5.79"))
         self.btn_connect.setText(_translate("MainWindow", "Connect"))
         self.btn_disconnect.setText(_translate("MainWindow", "Disconnect"))
         self.groupBox_operation.setTitle(_translate("MainWindow", "Operation"))
@@ -1540,4 +1540,5 @@ class Ui_MainWindow(object):
         self.lb_yscaleMin.setText(_translate("MainWindow", "Y scale min  (V)"))
         self.lb_rights.setText(_translate("MainWindow", " Ⓒ2022 WPC Systems Ltd. All right reserved"))
         self.lb_declare.setText(_translate("MainWindow", "This is example for AI streaming WPC Wifi DAQ."))
+        
 from UI_design.mplwidget import MplWidget

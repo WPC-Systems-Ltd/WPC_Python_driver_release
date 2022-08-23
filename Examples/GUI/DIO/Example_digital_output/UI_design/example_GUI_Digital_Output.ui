@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>932</width>
-    <height>614</height>
+    <width>928</width>
+    <height>605</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -349,7 +349,7 @@ QPushButton:pressed{
       <string>Serial number</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="ld_ip">
+    <widget class="QLineEdit" name="lineEdit_IP">
      <property name="geometry">
       <rect>
        <x>130</x>
@@ -1014,7 +1014,7 @@ color:  rgb(255, 255, 255); </string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>932</width>
+     <width>928</width>
      <height>25</height>
     </rect>
    </property>
