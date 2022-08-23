@@ -9,7 +9,7 @@ v0.0.12 Date: 2022/08/23, Developer: Chunglee_people
 
 ### Added
 - Add example code packet classification
-- Add GUI example code : Example_analog_output
+- Add GUI example code : Example_analog_output, Example_UART
 
 v0.0.11 Date: 2022/08/17, Developer: Chunglee_people
 ---------------------------------------------------
