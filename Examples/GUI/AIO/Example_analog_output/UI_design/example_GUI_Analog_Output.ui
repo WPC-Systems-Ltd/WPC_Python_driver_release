@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>690</height>
+    <height>774</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -56,7 +56,7 @@
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>60</y>
+      <y>90</y>
       <width>351</width>
       <height>31</height>
      </rect>
@@ -68,14 +68,14 @@
      </font>
     </property>
     <property name="text">
-     <string>This is example for Analog Output</string>
+     <string>This is example for Analog Output.</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit0">
     <property name="geometry">
      <rect>
       <x>290</x>
-      <y>280</y>
+      <y>330</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -89,14 +89,14 @@
      </font>
     </property>
     <property name="text">
-     <string>3.3</string>
+     <string>1.23</string>
     </property>
    </widget>
    <widget class="QLabel" name="label0">
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>240</y>
+      <y>290</y>
       <width>61</width>
       <height>21</height>
      </rect>
@@ -109,14 +109,14 @@
      </font>
     </property>
     <property name="text">
-     <string>AO 0</string>
+     <string>AO0</string>
     </property>
    </widget>
    <widget class="QSlider" name="horizontalSlider0">
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>280</y>
+      <y>330</y>
       <width>211</width>
       <height>31</height>
      </rect>
@@ -129,7 +129,7 @@
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>370</y>
+      <y>420</y>
       <width>211</width>
       <height>31</height>
      </rect>
@@ -142,7 +142,7 @@
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>330</y>
+      <y>380</y>
       <width>61</width>
       <height>21</height>
      </rect>
@@ -155,14 +155,14 @@
      </font>
     </property>
     <property name="text">
-     <string>AO 1</string>
+     <string>AO1</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit1">
     <property name="geometry">
      <rect>
       <x>290</x>
-      <y>370</y>
+      <y>420</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -176,14 +176,14 @@
      </font>
     </property>
     <property name="text">
-     <string>3.3</string>
+     <string>1.23</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit2">
     <property name="geometry">
      <rect>
       <x>290</x>
-      <y>460</y>
+      <y>510</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -197,14 +197,14 @@
      </font>
     </property>
     <property name="text">
-     <string>3.3</string>
+     <string>1.23</string>
     </property>
    </widget>
    <widget class="QLabel" name="label2">
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>420</y>
+      <y>470</y>
       <width>61</width>
       <height>21</height>
      </rect>
@@ -217,14 +217,14 @@
      </font>
     </property>
     <property name="text">
-     <string>AO 2</string>
+     <string>AO2</string>
     </property>
    </widget>
    <widget class="QSlider" name="horizontalSlider2">
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>460</y>
+      <y>510</y>
       <width>211</width>
       <height>31</height>
      </rect>
@@ -237,7 +237,7 @@
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>550</y>
+      <y>600</y>
       <width>211</width>
       <height>31</height>
      </rect>
@@ -250,7 +250,7 @@
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>510</y>
+      <y>560</y>
       <width>61</width>
       <height>21</height>
      </rect>
@@ -263,14 +263,14 @@
      </font>
     </property>
     <property name="text">
-     <string>AO 3</string>
+     <string>AO3</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit3">
     <property name="geometry">
      <rect>
       <x>290</x>
-      <y>550</y>
+      <y>600</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -284,14 +284,14 @@
      </font>
     </property>
     <property name="text">
-     <string>3.3</string>
+     <string>1.23</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit7">
     <property name="geometry">
      <rect>
       <x>670</x>
-      <y>550</y>
+      <y>600</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -305,14 +305,14 @@
      </font>
     </property>
     <property name="text">
-     <string>3.3</string>
+     <string>1.23</string>
     </property>
    </widget>
    <widget class="QSlider" name="horizontalSlider6">
     <property name="geometry">
      <rect>
       <x>430</x>
-      <y>460</y>
+      <y>510</y>
       <width>211</width>
       <height>31</height>
      </rect>
@@ -325,7 +325,7 @@
     <property name="geometry">
      <rect>
       <x>440</x>
-      <y>240</y>
+      <y>290</y>
       <width>51</width>
       <height>21</height>
      </rect>
@@ -338,14 +338,14 @@
      </font>
     </property>
     <property name="text">
-     <string>AO 4</string>
+     <string>AO4</string>
     </property>
    </widget>
    <widget class="QLabel" name="label6">
     <property name="geometry">
      <rect>
       <x>440</x>
-      <y>420</y>
+      <y>470</y>
       <width>51</width>
       <height>21</height>
      </rect>
@@ -358,14 +358,14 @@
      </font>
     </property>
     <property name="text">
-     <string>AO 6</string>
+     <string>AO6</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit4">
     <property name="geometry">
      <rect>
       <x>670</x>
-      <y>280</y>
+      <y>330</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -379,14 +379,14 @@
      </font>
     </property>
     <property name="text">
-     <string>3.3</string>
+     <string>1.23</string>
     </property>
    </widget>
    <widget class="QSlider" name="horizontalSlider4">
     <property name="geometry">
      <rect>
       <x>430</x>
-      <y>280</y>
+      <y>330</y>
       <width>211</width>
       <height>31</height>
      </rect>
@@ -399,7 +399,7 @@
     <property name="geometry">
      <rect>
       <x>670</x>
-      <y>460</y>
+      <y>510</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -413,14 +413,14 @@
      </font>
     </property>
     <property name="text">
-     <string>3.3</string>
+     <string>1.23</string>
     </property>
    </widget>
    <widget class="QLabel" name="label5">
     <property name="geometry">
      <rect>
       <x>440</x>
-      <y>330</y>
+      <y>380</y>
       <width>51</width>
       <height>21</height>
      </rect>
@@ -433,14 +433,14 @@
      </font>
     </property>
     <property name="text">
-     <string>AO 5</string>
+     <string>AO5</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit5">
     <property name="geometry">
      <rect>
       <x>670</x>
-      <y>370</y>
+      <y>420</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -454,14 +454,14 @@
      </font>
     </property>
     <property name="text">
-     <string>3.3</string>
+     <string>1.23</string>
     </property>
    </widget>
    <widget class="QSlider" name="horizontalSlider5">
     <property name="geometry">
      <rect>
       <x>430</x>
-      <y>370</y>
+      <y>420</y>
       <width>211</width>
       <height>31</height>
      </rect>
@@ -474,7 +474,7 @@
     <property name="geometry">
      <rect>
       <x>440</x>
-      <y>510</y>
+      <y>560</y>
       <width>61</width>
       <height>21</height>
      </rect>
@@ -487,14 +487,14 @@
      </font>
     </property>
     <property name="text">
-     <string>AO 7</string>
+     <string>AO7</string>
     </property>
    </widget>
    <widget class="QSlider" name="horizontalSlider7">
     <property name="geometry">
      <rect>
       <x>430</x>
-      <y>550</y>
+      <y>600</y>
       <width>211</width>
       <height>31</height>
      </rect>
@@ -507,7 +507,7 @@
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>620</y>
+      <y>670</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -989,7 +989,7 @@ QPushButton:pressed{
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>620</y>
+      <y>670</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -1471,7 +1471,7 @@ QPushButton:pressed{
     <property name="geometry">
      <rect>
       <x>510</x>
-      <y>620</y>
+      <y>670</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -1485,14 +1485,14 @@ QPushButton:pressed{
      </font>
     </property>
     <property name="text">
-     <string>3.3</string>
+     <string>2.5</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox_connection">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>110</y>
+      <x>50</x>
+      <y>170</y>
       <width>601</width>
       <height>91</height>
      </rect>
@@ -1628,7 +1628,7 @@ QPushButton:pressed{
      <property name="geometry">
       <rect>
        <x>530</x>
-       <y>20</y>
+       <y>23</y>
        <width>51</width>
        <height>51</height>
       </rect>
@@ -1651,7 +1651,7 @@ QPushButton:pressed{
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>280</y>
+      <y>330</y>
       <width>21</width>
       <height>31</height>
      </rect>
@@ -1672,7 +1672,7 @@ QPushButton:pressed{
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>370</y>
+      <y>420</y>
       <width>21</width>
       <height>31</height>
      </rect>
@@ -1693,7 +1693,7 @@ QPushButton:pressed{
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>460</y>
+      <y>510</y>
       <width>21</width>
       <height>31</height>
      </rect>
@@ -1714,7 +1714,7 @@ QPushButton:pressed{
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>550</y>
+      <y>600</y>
       <width>21</width>
       <height>31</height>
      </rect>
@@ -1735,7 +1735,7 @@ QPushButton:pressed{
     <property name="geometry">
      <rect>
       <x>760</x>
-      <y>280</y>
+      <y>330</y>
       <width>21</width>
       <height>31</height>
      </rect>
@@ -1756,7 +1756,7 @@ QPushButton:pressed{
     <property name="geometry">
      <rect>
       <x>760</x>
-      <y>370</y>
+      <y>420</y>
       <width>21</width>
       <height>31</height>
      </rect>
@@ -1777,7 +1777,7 @@ QPushButton:pressed{
     <property name="geometry">
      <rect>
       <x>760</x>
-      <y>460</y>
+      <y>510</y>
       <width>21</width>
       <height>31</height>
      </rect>
@@ -1798,7 +1798,7 @@ QPushButton:pressed{
     <property name="geometry">
      <rect>
       <x>760</x>
-      <y>550</y>
+      <y>600</y>
       <width>21</width>
       <height>31</height>
      </rect>
@@ -1819,7 +1819,7 @@ QPushButton:pressed{
     <property name="geometry">
      <rect>
       <x>610</x>
-      <y>620</y>
+      <y>670</y>
       <width>21</width>
       <height>31</height>
      </rect>

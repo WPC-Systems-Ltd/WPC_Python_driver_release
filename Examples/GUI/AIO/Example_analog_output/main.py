@@ -49,7 +49,8 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Set trademark & LED path
         self.ui.lb_trademark.setPixmap(QtGui.QPixmap(self.trademark_path))
-
+        self.ui.lb_led.setPixmap(QtGui.QPixmap(self.gray_led_path))
+        
         ## Define callback events
         fct_list = [self.hrztSlider_cb0, self.hrztSlider_cb1, self.hrztSlider_cb2, self.hrztSlider_cb3, 
                     self.hrztSlider_cb4, self.hrztSlider_cb5, self.hrztSlider_cb6, self.hrztSlider_cb7]
