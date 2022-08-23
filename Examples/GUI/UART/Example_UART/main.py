@@ -49,6 +49,8 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Set trademark & LED path
         self.ui.lb_trademark.setPixmap(QtGui.QPixmap(self.trademark_path))
+        self.ui.lb_led.setPixmap(QtGui.QPixmap(self.gray_led_path))
+        self.ui.lb_ledport.setPixmap(QtGui.QPixmap(self.gray_led_path))
 
         ## Define callback events
         self.ui.btn_connect.clicked.connect(self.connectEvent)
@@ -74,6 +76,9 @@ class MainWindow(QtWidgets.QMainWindow):
         ## Open UART port
         status = await self.dev.UART_open(port) 
         if status == 0: print("UART_open: OK")
+
+        ## Change LED status
+        self.ui.lb_ledport.setPixmap(QtGui.QPixmap(self.green_led_path))
 
         ## Set UART port and baudrate
         await self.dev.UART_setBaudRate(port, int(baudrate))
@@ -123,6 +128,9 @@ class MainWindow(QtWidgets.QMainWindow):
         status = await self.dev.UART_close(port)
         if status == 0: print("UART_close: OK")
 
+        ## Change LED status
+        self.ui.lb_ledport.setPixmap(QtGui.QPixmap(self.gray_led_path))
+
     @asyncSlot() 
     async def connectEvent(self):
         # Get IP from UI
@@ -134,9 +142,6 @@ class MainWindow(QtWidgets.QMainWindow):
             ## Change LED status
             self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
 
-            ## Change LED status
-            self.ui.lb_ledport.setPixmap(QtGui.QPixmap(self.green_led_path))
-            
             ## Change connection flag
             self.connect_flag = 1
 
@@ -150,9 +155,6 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Change LED status
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.gray_led_path))
-
-        ## Change LED status
-        self.ui.lb_ledport.setPixmap(QtGui.QPixmap(self.gray_led_path))
 
         ## Change connection flag
         self.connect_flag = 0
