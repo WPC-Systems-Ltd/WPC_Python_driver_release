@@ -4,14 +4,18 @@ WPC_Python_driver_release changelog
 
 v0.0.13 Date: 2022/08/24, Developer: Chunglee_people
 ---------------------------------------------------
+### Added
+- Add GUI example code : Example_thermocouple, Example_RTD
+
 ### Changed
-- Change folder name `System` to `System_Network`
+-  Renamed case-sensitive folder
 
 v0.0.12 Date: 2022/08/23, Developer: Chunglee_people
 ---------------------------------------------------
 ### Changed
 - Change WPC Python Version from `pywpc-0.1.19` to  `pywpc-0.2.0`  
 - Change folder name `Example_AI_streaming` to `Example_analog_input`
+- Change folder name `System` to `System_Network`
 
 ### Added
 - Add example code packet classification
