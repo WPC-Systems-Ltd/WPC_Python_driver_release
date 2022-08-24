@@ -1494,20 +1494,13 @@ class Ui_MainWindow(object):
         self.MplWidget.setGeometry(QtCore.QRect(70, 440, 911, 401))
         self.MplWidget.setObjectName("MplWidget")
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1096, 25))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Example_analog_input"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Example_analog input"))
         self.groupBox_connection.setTitle(_translate("MainWindow", "Connection Setting"))
         self.lb_ip.setText(_translate("MainWindow", "IP:"))
         self.lineEdit_IP.setText(_translate("MainWindow", "192.168.5.79"))
@@ -1540,4 +1533,4 @@ class Ui_MainWindow(object):
         self.lb_yscaleMin.setText(_translate("MainWindow", "Y scale min  (V)"))
         self.lb_rights.setText(_translate("MainWindow", " Ⓒ2022 WPC Systems Ltd. All right reserved"))
         self.lb_declare.setText(_translate("MainWindow", "This is example for AI streaming with WPC DAQ Device."))
-from UI_design.mplwidget import MplWidget
+from mplwidget import MplWidget

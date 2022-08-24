@@ -6,12 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>824</width>
-    <height>791</height>
+    <width>750</width>
+    <height>700</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>750</width>
+    <height>700</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>Example - Get device information</string>
+   <string>Example _get device information</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="lb_trademark">
@@ -55,8 +61,8 @@
    <widget class="QLabel" name="lb_declare">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>80</y>
+      <x>100</x>
+      <y>90</y>
       <width>561</width>
       <height>31</height>
      </rect>
@@ -74,8 +80,8 @@
    <widget class="QGroupBox" name="groupBox_connection">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>120</y>
+      <x>100</x>
+      <y>150</y>
       <width>561</width>
       <height>81</height>
      </rect>
@@ -230,8 +236,8 @@ QPushButton:pressed{
    <widget class="QGroupBox" name="groupBox_driverInfo">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>220</y>
+      <x>100</x>
+      <y>270</y>
       <width>561</width>
       <height>371</height>
      </rect>
@@ -523,55 +529,13 @@ QPushButton:pressed{
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_errormessage">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>620</y>
-      <width>561</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="autoFillBackground">
-     <bool>true</bool>
-    </property>
-    <property name="title">
-     <string>Error Messages</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-    <property name="flat">
-     <bool>false</bool>
-    </property>
-    <widget class="QLabel" name="lb_err">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>30</y>
-       <width>561</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>824</width>
+     <width>750</width>
      <height>25</height>
     </rect>
    </property>

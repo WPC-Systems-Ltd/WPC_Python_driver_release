@@ -53,9 +53,6 @@ class MainWindow(QtWidgets.QMainWindow):
 
     @asyncSlot()      
     async def connectEvent(self):
-        ## Clear error message
-        self.clearErrorStatus()
-
         # Get IP from UI
         self.ip = self.ui.lineEdit_ipConnect.text()
         try: 
@@ -95,9 +92,6 @@ class MainWindow(QtWidgets.QMainWindow):
         if self.checkConnectionStatus() == False:
             return
 
-        ## Clear error message
-        self.clearErrorStatus()
-
         ## Get firmware model & version
         driver_info = await self.dev.Sys_getDriverInfo()
         model = driver_info[0]
@@ -127,9 +121,6 @@ class MainWindow(QtWidgets.QMainWindow):
             return False
         else:
             return True
-
-    def clearErrorStatus(self):
-        self.ui.lb_err.clear()
 
 def main(): 
     app = QtWidgets.QApplication([])

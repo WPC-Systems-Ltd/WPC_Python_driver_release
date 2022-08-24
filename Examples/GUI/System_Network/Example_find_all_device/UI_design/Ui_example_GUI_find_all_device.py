@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\System\Example_find_all_device\UI_design\example_GUI_find_all_device.ui'
+# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\System_Network\Example_find_all_device\UI_design\example_GUI_find_all_device.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -14,7 +14,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(904, 609)
+        MainWindow.resize(900, 550)
+        MainWindow.setMinimumSize(QtCore.QSize(900, 550))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.lb_declare = QtWidgets.QLabel(self.centralwidget)
@@ -25,7 +26,7 @@ class Ui_MainWindow(object):
         self.lb_declare.setFont(font)
         self.lb_declare.setObjectName("lb_declare")
         self.btn_broadcast = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_broadcast.setGeometry(QtCore.QRect(670, 170, 171, 41))
+        self.btn_broadcast.setGeometry(QtCore.QRect(670, 200, 171, 41))
         font = QtGui.QFont()
         font.setFamily("微軟正黑體")
         font.setPointSize(12)
@@ -83,7 +84,7 @@ class Ui_MainWindow(object):
         self.lb_trademark = QtWidgets.QLabel(self.centralwidget)
         self.lb_trademark.setGeometry(QtCore.QRect(10, 10, 81, 81))
         self.lb_trademark.setText("")
-        self.lb_trademark.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\WPC_Python_driver_release\\Examples\\GUI\\System\\Example_find_all_device\\UI_design\\../Material/WPC_trademark.jpg"))
+        self.lb_trademark.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\WPC_Python_driver_release\\Examples\\GUI\\System_Network\\Example_find_all_device\\UI_design\\../Material/WPC_trademark.jpg"))
         self.lb_trademark.setScaledContents(True)
         self.lb_trademark.setObjectName("lb_trademark")
         self.lb_rights = QtWidgets.QLabel(self.centralwidget)
@@ -94,20 +95,13 @@ class Ui_MainWindow(object):
         self.lb_rights.setFont(font)
         self.lb_rights.setObjectName("lb_rights")
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 904, 25))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Example - Finding all device"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Example_finding all device"))
         self.lb_declare.setText(_translate("MainWindow", "This is example for finding all available devices with WPC DAQ Device."))
         self.btn_broadcast.setText(_translate("MainWindow", "Find all devices"))
         item = self.tableWidget_brst.horizontalHeaderItem(0)

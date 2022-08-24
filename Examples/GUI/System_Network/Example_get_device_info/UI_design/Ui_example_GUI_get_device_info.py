@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\System\Example_get_device_info\UI_design\example_GUI_get_device_info.ui'
+# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\System_Network\Example_get_device_info\UI_design\example_GUI_get_device_info.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -14,13 +14,14 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(824, 791)
+        MainWindow.resize(750, 700)
+        MainWindow.setMinimumSize(QtCore.QSize(750, 700))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.lb_trademark = QtWidgets.QLabel(self.centralwidget)
         self.lb_trademark.setGeometry(QtCore.QRect(10, 0, 81, 81))
         self.lb_trademark.setText("")
-        self.lb_trademark.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\WPC_Python_driver_release\\Examples\\GUI\\System\\Example_get_device_info\\UI_design\\../Material/WPC_trademark.jpg"))
+        self.lb_trademark.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\WPC_Python_driver_release\\Examples\\GUI\\System_Network\\Example_get_device_info\\UI_design\\../Material/WPC_trademark.jpg"))
         self.lb_trademark.setScaledContents(True)
         self.lb_trademark.setObjectName("lb_trademark")
         self.lb_rights = QtWidgets.QLabel(self.centralwidget)
@@ -31,14 +32,14 @@ class Ui_MainWindow(object):
         self.lb_rights.setFont(font)
         self.lb_rights.setObjectName("lb_rights")
         self.lb_declare = QtWidgets.QLabel(self.centralwidget)
-        self.lb_declare.setGeometry(QtCore.QRect(140, 80, 561, 31))
+        self.lb_declare.setGeometry(QtCore.QRect(100, 90, 561, 31))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(14)
         self.lb_declare.setFont(font)
         self.lb_declare.setObjectName("lb_declare")
         self.groupBox_connection = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox_connection.setGeometry(QtCore.QRect(140, 120, 561, 81))
+        self.groupBox_connection.setGeometry(QtCore.QRect(100, 150, 561, 81))
         font = QtGui.QFont()
         font.setPointSize(11)
         font.setBold(True)
@@ -107,11 +108,11 @@ class Ui_MainWindow(object):
         self.lb_led = QtWidgets.QLabel(self.groupBox_connection)
         self.lb_led.setGeometry(QtCore.QRect(470, 20, 51, 51))
         self.lb_led.setText("")
-        self.lb_led.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\WPC_Python_driver_release\\Examples\\GUI\\System\\Example_get_device_info\\UI_design\\../../../../../Material/WPC_Led_green.png"))
+        self.lb_led.setPixmap(QtGui.QPixmap("d:\\Chunglee_WPC\\WPC_Python_driver_release\\Examples\\GUI\\System_Network\\Example_get_device_info\\UI_design\\../../../../../Material/WPC_Led_green.png"))
         self.lb_led.setScaledContents(True)
         self.lb_led.setObjectName("lb_led")
         self.groupBox_driverInfo = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox_driverInfo.setGeometry(QtCore.QRect(140, 220, 561, 371))
+        self.groupBox_driverInfo.setGeometry(QtCore.QRect(100, 270, 561, 371))
         font = QtGui.QFont()
         font.setPointSize(11)
         font.setBold(True)
@@ -285,24 +286,9 @@ class Ui_MainWindow(object):
 "    background-color: rgb(52, 137, 235);\n"
 "}")
         self.btn_deviceInfo.setObjectName("btn_deviceInfo")
-        self.groupBox_errormessage = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox_errormessage.setGeometry(QtCore.QRect(140, 620, 561, 101))
-        font = QtGui.QFont()
-        font.setPointSize(11)
-        font.setBold(True)
-        font.setWeight(75)
-        self.groupBox_errormessage.setFont(font)
-        self.groupBox_errormessage.setAutoFillBackground(True)
-        self.groupBox_errormessage.setAlignment(QtCore.Qt.AlignCenter)
-        self.groupBox_errormessage.setFlat(False)
-        self.groupBox_errormessage.setObjectName("groupBox_errormessage")
-        self.lb_err = QtWidgets.QLabel(self.groupBox_errormessage)
-        self.lb_err.setGeometry(QtCore.QRect(10, 30, 561, 41))
-        self.lb_err.setText("")
-        self.lb_err.setObjectName("lb_err")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 824, 25))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 750, 25))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -314,7 +300,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Example - Get device information"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Example _get device information"))
         self.lb_rights.setText(_translate("MainWindow", " Ⓒ2022 WPC Systems Ltd. All right reserved"))
         self.lb_declare.setText(_translate("MainWindow", "This is an example for getting device information with WPC DAQ Device."))
         self.groupBox_connection.setTitle(_translate("MainWindow", "Connection Setting"))
@@ -331,4 +317,3 @@ class Ui_MainWindow(object):
         self.lb_firmware.setText(_translate("MainWindow", "Firmware ver."))
         self.lb_rtc.setText(_translate("MainWindow", "RTC"))
         self.btn_deviceInfo.setText(_translate("MainWindow", "Get Device Info"))
-        self.groupBox_errormessage.setTitle(_translate("MainWindow", "Error Messages"))
