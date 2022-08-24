@@ -13,7 +13,7 @@ from qasync import QEventLoop, asyncSlot
 ## Third party
 from PyQt5 import QtWidgets, QtGui
 from PyQt5.QtWidgets import QMessageBox
-from UI_design.Ui_example_GUI_Get_Device_Information import Ui_MainWindow 
+from UI_design.Ui_example_GUI_get_device_info import Ui_MainWindow 
 ## WPC
 sys.path.insert(0, 'pywpc/')
 sys.path.insert(0, '../../../pywpc/')

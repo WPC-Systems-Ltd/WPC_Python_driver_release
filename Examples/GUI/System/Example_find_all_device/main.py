@@ -14,7 +14,7 @@ from qasync import QEventLoop, asyncSlot
 from PyQt5 import QtWidgets, QtGui
 from PyQt5.QtWidgets import QTableWidget,QApplication
 from PyQt5.QtCore import Qt
-from UI_design.Ui_example_GUI_Broadcasts import Ui_MainWindow 
+from UI_design.Ui_example_GUI_find_all_device import Ui_MainWindow 
 
 ## WPC
 sys.path.insert(0, 'pywpc/')

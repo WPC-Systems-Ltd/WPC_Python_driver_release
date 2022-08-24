@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Example_UART</string>
   </property>
   <property name="layoutDirection">
    <enum>Qt::LeftToRight</enum>
@@ -33,7 +33,7 @@
      </font>
     </property>
     <property name="text">
-     <string>This is example for UART from WPC DAQ Device.</string>
+     <string>This is example for UART with WPC DAQ Device.</string>
     </property>
    </widget>
    <widget class="QLabel" name="lb_rights">

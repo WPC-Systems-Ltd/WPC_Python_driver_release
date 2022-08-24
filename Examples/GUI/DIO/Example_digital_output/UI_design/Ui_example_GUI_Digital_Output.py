@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\DIO\Example_digital_output\UI_design\example_GUI_Digital_Output.ui'
+# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\DIO\Example_digital_output\UI_design\example_GUI_digital_output.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -404,7 +404,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Example_digital_output"))
         self.lb_7.setText(_translate("MainWindow", " 7"))
         self.lb_6.setText(_translate("MainWindow", "6"))
         self.lb_5.setText(_translate("MainWindow", "5"))
@@ -414,7 +414,7 @@ class Ui_MainWindow(object):
         self.lb_1.setText(_translate("MainWindow", "1"))
         self.lb_0.setText(_translate("MainWindow", "0"))
         self.lb_rights.setText(_translate("MainWindow", " Ⓒ2022 WPC Systems Ltd. All right reserved"))
-        self.lb_declare.setText(_translate("MainWindow", "This is example for digital output from WPC DAQ Device."))
+        self.lb_declare.setText(_translate("MainWindow", "This is example for digital output with WPC DAQ Device."))
         self.groupBox_connection.setTitle(_translate("MainWindow", "Device Connection"))
         self.btn_connect.setText(_translate("MainWindow", "Connect"))
         self.btn_disconnect.setText(_translate("MainWindow", "Disconnect"))

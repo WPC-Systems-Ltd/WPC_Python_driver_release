@@ -754,8 +754,8 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.lb_declare.setText(_translate("MainWindow", "This is example for UART from WPC DAQ Device."))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Example_UART"))
+        self.lb_declare.setText(_translate("MainWindow", "This is example for UART with WPC DAQ Device."))
         self.lb_rights.setText(_translate("MainWindow", " Ⓒ2022 WPC Systems Ltd. All right reserved"))
         self.groupBox_connection.setTitle(_translate("MainWindow", "Device Connection"))
         self.btn_connect.setText(_translate("MainWindow", "Connect"))

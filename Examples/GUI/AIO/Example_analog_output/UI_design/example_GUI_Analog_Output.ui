@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Example_analog_output</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="lb_trademark">
@@ -55,9 +55,9 @@
    <widget class="QLabel" name="lb_declare">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>100</x>
       <y>90</y>
-      <width>351</width>
+      <width>621</width>
       <height>31</height>
      </rect>
     </property>
@@ -68,7 +68,7 @@
      </font>
     </property>
     <property name="text">
-     <string>This is example for Analog Output.</string>
+     <string>This is example for Analog Output with WPC DAQ Device.</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit0">

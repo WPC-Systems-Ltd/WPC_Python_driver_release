@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\AIO\Example_analog_output\UI_design\example_GUI_Analog_Output.ui'
+# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\AIO\Example_analog_output\UI_design\example_GUI_analog_output.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -31,7 +31,7 @@ class Ui_MainWindow(object):
         self.lb_rights.setFont(font)
         self.lb_rights.setObjectName("lb_rights")
         self.lb_declare = QtWidgets.QLabel(self.centralwidget)
-        self.lb_declare.setGeometry(QtCore.QRect(230, 90, 351, 31))
+        self.lb_declare.setGeometry(QtCore.QRect(100, 90, 621, 31))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(14)
@@ -712,9 +712,9 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Example_analog_output"))
         self.lb_rights.setText(_translate("MainWindow", " Ⓒ2022 WPC Systems Ltd. All right reserved"))
-        self.lb_declare.setText(_translate("MainWindow", "This is example for Analog Output."))
+        self.lb_declare.setText(_translate("MainWindow", "This is example for Analog Output with WPC DAQ Device."))
         self.lineEdit0.setText(_translate("MainWindow", "1.23"))
         self.label0.setText(_translate("MainWindow", "AO0"))
         self.label1.setText(_translate("MainWindow", "AO1"))

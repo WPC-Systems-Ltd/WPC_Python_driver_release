@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Example_digital_output</string>
   </property>
   <property name="autoFillBackground">
    <bool>true</bool>
@@ -231,7 +231,7 @@
      </font>
     </property>
     <property name="text">
-     <string>This is example for digital output from WPC DAQ Device.</string>
+     <string>This is example for digital output with WPC DAQ Device.</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox_connection">
