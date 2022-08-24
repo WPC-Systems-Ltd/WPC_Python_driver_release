@@ -68,7 +68,6 @@ v0.0.7 Date: 2022/08/08, Developer: Chunglee_people
   - `Thermo/example_RTD_read_channel_data.py`
   - `Thermo/example_RTD_read_channel_status.py`
 
-
 v0.0.6 Date: 2022/08/02, Developer: Chunglee_people
 ---------------------------------------------------
 
@@ -112,7 +111,6 @@ v0.0.4 Date: 2022/07/20, Developer: Chunglee_people
 - Add UART example code
   - `UART/example_UART_read.py`
   - `UART/example_UART_write.py`
-
  
 v0.0.3 Date: 2022/07/07, Developer: Chunglee_people
 ---------------------------------------------------
