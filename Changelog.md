@@ -6,6 +6,7 @@ v0.0.12 Date: 2022/08/23, Developer: Chunglee_people
 ### Changed
 - Change WPC Python Version from `pywpc-0.1.19` to  `pywpc-0.2.0`  
 - Change folder name `Example_AI_streaming` to `Example_analog_input`
+- Change folder name `System` to `System_Network`
 
 ### Added
 - Add example code packet classification
