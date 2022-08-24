@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\DIO\Example_digital_output\UI_design\example_GUI_digital_output.ui'
+# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\DIO\Example_digital_output\UI_design\example_GUI_DO.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #

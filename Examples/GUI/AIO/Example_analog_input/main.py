@@ -15,7 +15,7 @@ import matplotlib.animation as animation
 import numpy as np
 from PyQt5 import QtWidgets, QtGui
 from PyQt5.QtWidgets import QWidget, QMessageBox
-from UI_design.Ui_example_GUI_analog_input import Ui_MainWindow 
+from UI_design.Ui_example_GUI_AI import Ui_MainWindow 
 
 ## WPC
 sys.path.insert(0, 'pywpc/')
