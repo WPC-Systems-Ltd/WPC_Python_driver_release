@@ -1491,7 +1491,7 @@ QPushButton:pressed{
    <widget class="QGroupBox" name="groupBox_connection">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>60</x>
       <y>170</y>
       <width>601</width>
       <height>91</height>

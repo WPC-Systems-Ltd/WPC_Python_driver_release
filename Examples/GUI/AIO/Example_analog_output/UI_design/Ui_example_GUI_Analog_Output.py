@@ -551,7 +551,7 @@ class Ui_MainWindow(object):
         self.lineEdit_setall.setFont(font)
         self.lineEdit_setall.setObjectName("lineEdit_setall")
         self.groupBox_connection = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox_connection.setGeometry(QtCore.QRect(50, 170, 601, 91))
+        self.groupBox_connection.setGeometry(QtCore.QRect(60, 170, 601, 91))
         font = QtGui.QFont()
         font.setPointSize(11)
         font.setBold(True)
