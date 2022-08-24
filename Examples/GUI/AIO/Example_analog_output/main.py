@@ -12,7 +12,7 @@ from qasync import QEventLoop, asyncSlot
 
 ## Third party
 from PyQt5 import QtWidgets, QtGui
-from UI_design.Ui_example_GUI_analog_output import Ui_MainWindow 
+from UI_design.Ui_example_GUI_AO import Ui_MainWindow 
 
 ## WPC
 sys.path.insert(0, 'pywpc/')
