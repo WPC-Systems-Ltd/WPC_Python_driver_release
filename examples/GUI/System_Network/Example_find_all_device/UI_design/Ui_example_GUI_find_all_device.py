@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\System\Example_find_all_device\UI_design\example_GUI_Broadcasts.ui'
+# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\System\Example_find_all_device\UI_design\example_GUI_find_all_device.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -95,7 +95,7 @@ class Ui_MainWindow(object):
         self.lb_rights.setObjectName("lb_rights")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 904, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 904, 25))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -107,8 +107,8 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Example - Finding all devices"))
-        self.lb_declare.setText(_translate("MainWindow", "This is example for finding all available device from WPC DAQ Device."))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Example - Finding all device"))
+        self.lb_declare.setText(_translate("MainWindow", "This is example for finding all available devices with WPC DAQ Device."))
         self.btn_broadcast.setText(_translate("MainWindow", "Find all devices"))
         item = self.tableWidget_brst.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "IP address"))

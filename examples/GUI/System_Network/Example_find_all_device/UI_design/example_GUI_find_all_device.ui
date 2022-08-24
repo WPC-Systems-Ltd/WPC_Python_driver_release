@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Example - Finding all devices</string>
+   <string>Example - Finding all device</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="lb_declare">
@@ -30,7 +30,7 @@
      </font>
     </property>
     <property name="text">
-     <string>This is example for finding all available device from WPC DAQ Device.</string>
+     <string>This is example for finding all available devices with WPC DAQ Device.</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_broadcast">
@@ -186,7 +186,7 @@ QPushButton:pressed{
      <x>0</x>
      <y>0</y>
      <width>904</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

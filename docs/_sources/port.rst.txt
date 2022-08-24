@@ -117,7 +117,7 @@ Port function table
      - 1, 2
      - --
      - --
-   * - Wifi-DAQ-E3-A
+   * - USB-DAQ-F1-RD
      - --
      - --
      - 0, 1, 2, 3

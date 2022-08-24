@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>932</width>
-    <height>614</height>
+    <width>928</width>
+    <height>605</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Example_digital_output</string>
   </property>
   <property name="autoFillBackground">
    <bool>true</bool>
@@ -220,7 +220,7 @@
      <rect>
       <x>190</x>
       <y>70</y>
-      <width>651</width>
+      <width>631</width>
       <height>31</height>
      </rect>
     </property>
@@ -231,13 +231,13 @@
      </font>
     </property>
     <property name="text">
-     <string>This is example for digital output from WPC DAQ Device.</string>
+     <string>This is example for digital output with WPC DAQ Device.</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox_connection">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>160</x>
       <y>130</y>
       <width>601</width>
       <height>91</height>
@@ -349,7 +349,7 @@ QPushButton:pressed{
       <string>Serial number</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="ld_ip">
+    <widget class="QLineEdit" name="lineEdit_IP">
      <property name="geometry">
       <rect>
        <x>130</x>
@@ -367,7 +367,7 @@ QPushButton:pressed{
       </font>
      </property>
      <property name="text">
-      <string>21JA1279</string>
+      <string>21JA1439</string>
      </property>
     </widget>
     <widget class="QLabel" name="lb_led">
@@ -657,7 +657,7 @@ color:  rgb(255, 255, 255); </string>
    <widget class="QGroupBox" name="groupBox_docontrol">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>160</x>
       <y>250</y>
       <width>601</width>
       <height>301</height>
@@ -701,7 +701,7 @@ color:  rgb(255, 255, 255); </string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QCheckBox" name="cb_state7">
+    <widget class="QCheckBox" name="checkbox_state7">
      <property name="geometry">
       <rect>
        <x>60</x>
@@ -735,7 +735,7 @@ color:  rgb(255, 255, 255); </string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QCheckBox" name="cb_state6">
+    <widget class="QCheckBox" name="checkbox_state6">
      <property name="geometry">
       <rect>
        <x>120</x>
@@ -769,7 +769,7 @@ color:  rgb(255, 255, 255); </string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QCheckBox" name="cb_state5">
+    <widget class="QCheckBox" name="checkbox_state5">
      <property name="geometry">
       <rect>
        <x>180</x>
@@ -803,7 +803,7 @@ color:  rgb(255, 255, 255); </string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QCheckBox" name="cb_state4">
+    <widget class="QCheckBox" name="checkbox_state4">
      <property name="geometry">
       <rect>
        <x>240</x>
@@ -837,7 +837,7 @@ color:  rgb(255, 255, 255); </string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QCheckBox" name="cb_state3">
+    <widget class="QCheckBox" name="checkbox_state3">
      <property name="geometry">
       <rect>
        <x>300</x>
@@ -871,7 +871,7 @@ color:  rgb(255, 255, 255); </string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QCheckBox" name="cb_state2">
+    <widget class="QCheckBox" name="checkbox_state2">
      <property name="geometry">
       <rect>
        <x>360</x>
@@ -905,7 +905,7 @@ color:  rgb(255, 255, 255); </string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QCheckBox" name="cb_state1">
+    <widget class="QCheckBox" name="checkbox_state1">
      <property name="geometry">
       <rect>
        <x>420</x>
@@ -939,7 +939,7 @@ color:  rgb(255, 255, 255); </string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QCheckBox" name="cb_state0">
+    <widget class="QCheckBox" name="checkbox_state0">
      <property name="geometry">
       <rect>
        <x>480</x>
@@ -1014,7 +1014,7 @@ color:  rgb(255, 255, 255); </string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>932</width>
+     <width>928</width>
      <height>25</height>
     </rect>
    </property>

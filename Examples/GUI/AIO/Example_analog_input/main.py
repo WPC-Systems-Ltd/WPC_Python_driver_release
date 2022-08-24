@@ -1,12 +1,23 @@
-from PyQt5 import QtWidgets, QtGui
-from PyQt5.QtWidgets import QWidget, QMessageBox
-from UI_design.Ui_example_GUI_AIStreaming import Ui_MainWindow 
+##  main.py
+##  Example_AI_streaming
+##
+##  Copyright (c) 2022 WPC Systems Ltd.
+##  All rights reserved.
+
+## Python
+import asyncio
+import sys
+import os
 from qasync import QEventLoop, asyncSlot
+
+## Third party
 import matplotlib.animation as animation
 import numpy as np
-import os
-import sys
-import asyncio
+from PyQt5 import QtWidgets, QtGui
+from PyQt5.QtWidgets import QWidget, QMessageBox
+from UI_design.Ui_example_GUI_AI import Ui_MainWindow 
+
+## WPC
 sys.path.insert(0, 'pywpc/')
 sys.path.insert(0, '../../../pywpc/')
 import pywpc  
@@ -55,7 +66,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.channel_list.append([])
         self.plot_total_times = 0
 
-        ## Define button callback events
+        ## Define callback events
         self.ui.btn_connect.clicked.connect(self.connectEvent)
         self.ui.btn_disconnect.clicked.connect(self.disconnectEvent) 
         self.ui.btn_AIStart.clicked.connect(self.startAIEvent)
@@ -83,7 +94,7 @@ class MainWindow(QtWidgets.QMainWindow):
     @asyncSlot()      
     async def connectEvent(self): 
         # Get ip from UI
-        self.ip = self.ui.lineEdit_ip.text()
+        self.ip = self.ui.lineEdit_IP.text()
         try: 
             ## Connect to network device
             dev.connect(self.ip)
@@ -101,11 +112,11 @@ class MainWindow(QtWidgets.QMainWindow):
 
     @asyncSlot()      
     async def disconnectEvent(self):
-        ## Disconnect network device
-        dev.disconnect()
-
         ## close AI port
         await dev.AI_close(self.AI_port)
+
+        ## Disconnect network device
+        dev.disconnect()
 
         ## Change LED status
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))

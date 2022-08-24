@@ -1,12 +1,19 @@
- 
-import threading
+##  example_TC_read_channel_status.py
+##
+##  Copyright (c) 2022 WPC Systems Ltd.
+##  All rights reserved.
+
+## Python
 import asyncio
 import sys
-sys.path.insert(0, 'pywpc/')
-sys.path.insert(0, '../../../pywpc/')
-import pywpc 
+import threading
 import time
 
+## WPC
+sys.path.insert(0, 'pywpc/')
+sys.path.insert(0, '../../../pywpc/')
+import pywpc
+ 
 async def getRSSI(handle, delay = 1):
     data = await handle.Wifi_readRSSI()
     print("RSSI: " + str(data) + " dBm")

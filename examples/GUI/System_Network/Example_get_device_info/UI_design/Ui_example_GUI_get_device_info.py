@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\System\Example_get_device_info\UI_design\example_GUI_Get_Device_Information.ui'
+# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\System\Example_get_device_info\UI_design\example_GUI_get_device_info.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -271,6 +271,8 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setFamily("微軟正黑體")
         font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
         self.btn_deviceInfo.setFont(font)
         self.btn_deviceInfo.setStyleSheet("QPushButton {\n"
 "    background-color: rgb(61, 79, 99);\n"
@@ -300,7 +302,7 @@ class Ui_MainWindow(object):
         self.lb_err.setObjectName("lb_err")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 824, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 824, 25))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -314,7 +316,7 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Example - Get device information"))
         self.lb_rights.setText(_translate("MainWindow", " Ⓒ2022 WPC Systems Ltd. All right reserved"))
-        self.lb_declare.setText(_translate("MainWindow", "This is an example for getting device information from WPC DAQ Device."))
+        self.lb_declare.setText(_translate("MainWindow", "This is an example for getting device information with WPC DAQ Device."))
         self.groupBox_connection.setTitle(_translate("MainWindow", "Connection Setting"))
         self.btn_connect.setText(_translate("MainWindow", "Connect"))
         self.btn_disconnect.setText(_translate("MainWindow", "Disconnect"))
