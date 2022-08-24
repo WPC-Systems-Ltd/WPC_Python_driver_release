@@ -2,56 +2,60 @@ Python driver with PyQt
 ===================================
 
 
-**AIO/Aigital Iutput**
+
+
+AIO/Aigital Iutput
+------------------
 
 .. image:: images/GUI/Example_analog_input.JPG
-    :width: 100%
+    :width: 80%
     :alt: Example_analog_input.JPG
 
 
-**AIO/Aigital Output**
-
+AIO/Aigital Output
+------------------
 .. image:: images/GUI/Example_analog_output.JPG
-    :width: 100%
+    :width: 80%
     :alt: Example_analog_output.JPG
 
-**DIO/Digital Output**
 
+DIO/Digital Output
+------------------
 .. image:: images/GUI/Example_digital_output.JPG
-    :width: 100%
+    :width: 80%
     :alt: Example_digital_output.JPG
 
 
-**System_Network/Find all device**
-
+System_Network/Find all device
+------------------------------
 .. image:: images/GUI/Example_find_all_device.JPG
-    :width: 100%
+    :width: 80%
     :alt: Example_find_all_device.JPG
 
 
-**System_Network/Get Device Info**
-
+System_Network/Get Device Info
+------------------------------
 .. image:: images/GUI/Example_get_device_info.JPG
-    :width: 100%
+    :width: 80%
     :alt: Example_get_device_info.JPG
 
 
-**Temperature/RTD**
-
+Temperature/RTD
+---------------
 .. image:: images/GUI/Example_RTD.JPG
-    :width: 100%
+    :width: 80%
     :alt: Example_RTD.JPG
 
 
-**Temperature/Thermocouple**
-
+Temperature/Thermocouple
+------------------------
 .. image:: images/GUI/Example_thermocouple.JPG
-    :width: 100%
+    :width: 80%
     :alt: Example_thermocouple.JPG
 
 
-**UART**
-
+UART/UART
+---------
 .. image:: images/GUI/Example_UART.JPG
-    :width: 100%
+    :width: 80%
     :alt: Example_UART.JPG
