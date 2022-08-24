@@ -1,5 +1,13 @@
+##  example_get_pin_mode.py
+##
+##  Copyright (c) 2022 WPC Systems Ltd.
+##  All rights reserved.
+
+## Python
 import asyncio
 import sys
+ 
+## WPC
 sys.path.insert(0, 'pywpc/')
 sys.path.insert(0, '../../../pywpc/')
 import pywpc

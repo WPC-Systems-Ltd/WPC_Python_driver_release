@@ -1,5 +1,13 @@
+##  example_RTD_read_channel_data.py
+##
+##  Copyright (c) 2022 WPC Systems Ltd.
+##  All rights reserved.
+
+## Python
 import asyncio
 import sys
+
+## WPC
 sys.path.insert(0, 'pywpc/')
 sys.path.insert(0, '../../../pywpc/')
 import pywpc
@@ -26,7 +34,7 @@ async def main():
         print("Firmware version: " + driver_info[-1])
         
         ## Parameters setting
-        port    = 1
+        port = 1
         channel_0 = 0 
         channel_1 = 1 
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\DIO\Example_digital_output\UI_design\example_GUI_Digital_Output.ui'
+# Form implementation generated from reading ui file 'd:\Chunglee_WPC\WPC_Python_driver_release\Examples\GUI\DIO\Example_digital_output\UI_design\example_GUI_DO.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(932, 614)
+        MainWindow.resize(928, 605)
         MainWindow.setAutoFillBackground(True)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -96,14 +96,14 @@ class Ui_MainWindow(object):
         self.lb_rights.setFont(font)
         self.lb_rights.setObjectName("lb_rights")
         self.lb_declare = QtWidgets.QLabel(self.centralwidget)
-        self.lb_declare.setGeometry(QtCore.QRect(190, 70, 651, 31))
+        self.lb_declare.setGeometry(QtCore.QRect(190, 70, 631, 31))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(16)
         self.lb_declare.setFont(font)
         self.lb_declare.setObjectName("lb_declare")
         self.groupBox_connection = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox_connection.setGeometry(QtCore.QRect(170, 130, 601, 91))
+        self.groupBox_connection.setGeometry(QtCore.QRect(160, 130, 601, 91))
         font = QtGui.QFont()
         font.setPointSize(11)
         font.setBold(True)
@@ -160,15 +160,15 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.lb_serialnum.setFont(font)
         self.lb_serialnum.setObjectName("lb_serialnum")
-        self.ld_ip = QtWidgets.QLineEdit(self.groupBox_connection)
-        self.ld_ip.setGeometry(QtCore.QRect(130, 40, 111, 31))
+        self.lineEdit_IP = QtWidgets.QLineEdit(self.groupBox_connection)
+        self.lineEdit_IP.setGeometry(QtCore.QRect(130, 40, 111, 31))
         font = QtGui.QFont()
         font.setFamily("微軟正黑體")
         font.setPointSize(9)
         font.setBold(False)
         font.setWeight(50)
-        self.ld_ip.setFont(font)
-        self.ld_ip.setObjectName("ld_ip")
+        self.lineEdit_IP.setFont(font)
+        self.lineEdit_IP.setObjectName("lineEdit_IP")
         self.lb_led = QtWidgets.QLabel(self.groupBox_connection)
         self.lb_led.setGeometry(QtCore.QRect(530, 20, 51, 51))
         self.lb_led.setText("")
@@ -264,7 +264,7 @@ class Ui_MainWindow(object):
         self.combobox_port.addItem("")
         self.combobox_port.addItem("")
         self.groupBox_docontrol = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox_docontrol.setGeometry(QtCore.QRect(170, 250, 601, 301))
+        self.groupBox_docontrol.setGeometry(QtCore.QRect(160, 250, 601, 301))
         font = QtGui.QFont()
         font.setPointSize(11)
         font.setBold(True)
@@ -280,94 +280,94 @@ class Ui_MainWindow(object):
         self.lb_led_2.setPixmap(QtGui.QPixmap("C:/Material/WPC_Led_green.png"))
         self.lb_led_2.setScaledContents(True)
         self.lb_led_2.setObjectName("lb_led_2")
-        self.cb_state7 = QtWidgets.QCheckBox(self.groupBox_docontrol)
-        self.cb_state7.setGeometry(QtCore.QRect(60, 150, 51, 81))
-        self.cb_state7.setBaseSize(QtCore.QSize(0, 0))
-        self.cb_state7.setStyleSheet("QCheckBox::indicator{\n"
+        self.checkbox_state7 = QtWidgets.QCheckBox(self.groupBox_docontrol)
+        self.checkbox_state7.setGeometry(QtCore.QRect(60, 150, 51, 81))
+        self.checkbox_state7.setBaseSize(QtCore.QSize(0, 0))
+        self.checkbox_state7.setStyleSheet("QCheckBox::indicator{\n"
 "    width :30px;\n"
 "    height:30px;\n"
 "}")
-        self.cb_state7.setText("")
-        self.cb_state7.setIconSize(QtCore.QSize(30, 30))
-        self.cb_state7.setChecked(True)
-        self.cb_state7.setObjectName("cb_state7")
-        self.cb_state6 = QtWidgets.QCheckBox(self.groupBox_docontrol)
-        self.cb_state6.setGeometry(QtCore.QRect(120, 150, 51, 81))
-        self.cb_state6.setBaseSize(QtCore.QSize(0, 0))
-        self.cb_state6.setStyleSheet("QCheckBox::indicator{\n"
+        self.checkbox_state7.setText("")
+        self.checkbox_state7.setIconSize(QtCore.QSize(30, 30))
+        self.checkbox_state7.setChecked(True)
+        self.checkbox_state7.setObjectName("checkbox_state7")
+        self.checkbox_state6 = QtWidgets.QCheckBox(self.groupBox_docontrol)
+        self.checkbox_state6.setGeometry(QtCore.QRect(120, 150, 51, 81))
+        self.checkbox_state6.setBaseSize(QtCore.QSize(0, 0))
+        self.checkbox_state6.setStyleSheet("QCheckBox::indicator{\n"
 "    width :30px;\n"
 "    height:30px;\n"
 "}")
-        self.cb_state6.setText("")
-        self.cb_state6.setIconSize(QtCore.QSize(30, 30))
-        self.cb_state6.setChecked(True)
-        self.cb_state6.setObjectName("cb_state6")
-        self.cb_state5 = QtWidgets.QCheckBox(self.groupBox_docontrol)
-        self.cb_state5.setGeometry(QtCore.QRect(180, 150, 51, 81))
-        self.cb_state5.setBaseSize(QtCore.QSize(0, 0))
-        self.cb_state5.setStyleSheet("QCheckBox::indicator{\n"
+        self.checkbox_state6.setText("")
+        self.checkbox_state6.setIconSize(QtCore.QSize(30, 30))
+        self.checkbox_state6.setChecked(True)
+        self.checkbox_state6.setObjectName("checkbox_state6")
+        self.checkbox_state5 = QtWidgets.QCheckBox(self.groupBox_docontrol)
+        self.checkbox_state5.setGeometry(QtCore.QRect(180, 150, 51, 81))
+        self.checkbox_state5.setBaseSize(QtCore.QSize(0, 0))
+        self.checkbox_state5.setStyleSheet("QCheckBox::indicator{\n"
 "    width :30px;\n"
 "    height:30px;\n"
 "}")
-        self.cb_state5.setText("")
-        self.cb_state5.setIconSize(QtCore.QSize(30, 30))
-        self.cb_state5.setChecked(True)
-        self.cb_state5.setObjectName("cb_state5")
-        self.cb_state4 = QtWidgets.QCheckBox(self.groupBox_docontrol)
-        self.cb_state4.setGeometry(QtCore.QRect(240, 150, 51, 81))
-        self.cb_state4.setBaseSize(QtCore.QSize(0, 0))
-        self.cb_state4.setStyleSheet("QCheckBox::indicator{\n"
+        self.checkbox_state5.setText("")
+        self.checkbox_state5.setIconSize(QtCore.QSize(30, 30))
+        self.checkbox_state5.setChecked(True)
+        self.checkbox_state5.setObjectName("checkbox_state5")
+        self.checkbox_state4 = QtWidgets.QCheckBox(self.groupBox_docontrol)
+        self.checkbox_state4.setGeometry(QtCore.QRect(240, 150, 51, 81))
+        self.checkbox_state4.setBaseSize(QtCore.QSize(0, 0))
+        self.checkbox_state4.setStyleSheet("QCheckBox::indicator{\n"
 "    width :30px;\n"
 "    height:30px;\n"
 "}")
-        self.cb_state4.setText("")
-        self.cb_state4.setIconSize(QtCore.QSize(30, 30))
-        self.cb_state4.setChecked(True)
-        self.cb_state4.setObjectName("cb_state4")
-        self.cb_state3 = QtWidgets.QCheckBox(self.groupBox_docontrol)
-        self.cb_state3.setGeometry(QtCore.QRect(300, 150, 51, 81))
-        self.cb_state3.setBaseSize(QtCore.QSize(0, 0))
-        self.cb_state3.setStyleSheet("QCheckBox::indicator{\n"
+        self.checkbox_state4.setText("")
+        self.checkbox_state4.setIconSize(QtCore.QSize(30, 30))
+        self.checkbox_state4.setChecked(True)
+        self.checkbox_state4.setObjectName("checkbox_state4")
+        self.checkbox_state3 = QtWidgets.QCheckBox(self.groupBox_docontrol)
+        self.checkbox_state3.setGeometry(QtCore.QRect(300, 150, 51, 81))
+        self.checkbox_state3.setBaseSize(QtCore.QSize(0, 0))
+        self.checkbox_state3.setStyleSheet("QCheckBox::indicator{\n"
 "    width :30px;\n"
 "    height:30px;\n"
 "}")
-        self.cb_state3.setText("")
-        self.cb_state3.setIconSize(QtCore.QSize(30, 30))
-        self.cb_state3.setChecked(True)
-        self.cb_state3.setObjectName("cb_state3")
-        self.cb_state2 = QtWidgets.QCheckBox(self.groupBox_docontrol)
-        self.cb_state2.setGeometry(QtCore.QRect(360, 150, 51, 81))
-        self.cb_state2.setBaseSize(QtCore.QSize(0, 0))
-        self.cb_state2.setStyleSheet("QCheckBox::indicator{\n"
+        self.checkbox_state3.setText("")
+        self.checkbox_state3.setIconSize(QtCore.QSize(30, 30))
+        self.checkbox_state3.setChecked(True)
+        self.checkbox_state3.setObjectName("checkbox_state3")
+        self.checkbox_state2 = QtWidgets.QCheckBox(self.groupBox_docontrol)
+        self.checkbox_state2.setGeometry(QtCore.QRect(360, 150, 51, 81))
+        self.checkbox_state2.setBaseSize(QtCore.QSize(0, 0))
+        self.checkbox_state2.setStyleSheet("QCheckBox::indicator{\n"
 "    width :30px;\n"
 "    height:30px;\n"
 "}")
-        self.cb_state2.setText("")
-        self.cb_state2.setIconSize(QtCore.QSize(30, 30))
-        self.cb_state2.setChecked(True)
-        self.cb_state2.setObjectName("cb_state2")
-        self.cb_state1 = QtWidgets.QCheckBox(self.groupBox_docontrol)
-        self.cb_state1.setGeometry(QtCore.QRect(420, 150, 51, 81))
-        self.cb_state1.setBaseSize(QtCore.QSize(0, 0))
-        self.cb_state1.setStyleSheet("QCheckBox::indicator{\n"
+        self.checkbox_state2.setText("")
+        self.checkbox_state2.setIconSize(QtCore.QSize(30, 30))
+        self.checkbox_state2.setChecked(True)
+        self.checkbox_state2.setObjectName("checkbox_state2")
+        self.checkbox_state1 = QtWidgets.QCheckBox(self.groupBox_docontrol)
+        self.checkbox_state1.setGeometry(QtCore.QRect(420, 150, 51, 81))
+        self.checkbox_state1.setBaseSize(QtCore.QSize(0, 0))
+        self.checkbox_state1.setStyleSheet("QCheckBox::indicator{\n"
 "    width :30px;\n"
 "    height:30px;\n"
 "}")
-        self.cb_state1.setText("")
-        self.cb_state1.setIconSize(QtCore.QSize(30, 30))
-        self.cb_state1.setChecked(True)
-        self.cb_state1.setObjectName("cb_state1")
-        self.cb_state0 = QtWidgets.QCheckBox(self.groupBox_docontrol)
-        self.cb_state0.setGeometry(QtCore.QRect(480, 150, 51, 81))
-        self.cb_state0.setBaseSize(QtCore.QSize(0, 0))
-        self.cb_state0.setStyleSheet("QCheckBox::indicator{\n"
+        self.checkbox_state1.setText("")
+        self.checkbox_state1.setIconSize(QtCore.QSize(30, 30))
+        self.checkbox_state1.setChecked(True)
+        self.checkbox_state1.setObjectName("checkbox_state1")
+        self.checkbox_state0 = QtWidgets.QCheckBox(self.groupBox_docontrol)
+        self.checkbox_state0.setGeometry(QtCore.QRect(480, 150, 51, 81))
+        self.checkbox_state0.setBaseSize(QtCore.QSize(0, 0))
+        self.checkbox_state0.setStyleSheet("QCheckBox::indicator{\n"
 "    width :30px;\n"
 "    height:30px;\n"
 "}")
-        self.cb_state0.setText("")
-        self.cb_state0.setIconSize(QtCore.QSize(30, 30))
-        self.cb_state0.setChecked(True)
-        self.cb_state0.setObjectName("cb_state0")
+        self.checkbox_state0.setText("")
+        self.checkbox_state0.setIconSize(QtCore.QSize(30, 30))
+        self.checkbox_state0.setChecked(True)
+        self.checkbox_state0.setObjectName("checkbox_state0")
         self.lb_port = QtWidgets.QLabel(self.centralwidget)
         self.lb_port.setGeometry(QtCore.QRect(330, 290, 121, 31))
         font = QtGui.QFont()
@@ -392,7 +392,7 @@ class Ui_MainWindow(object):
         self.lb_port.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 932, 25))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 928, 25))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -404,7 +404,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Example_digital_output"))
         self.lb_7.setText(_translate("MainWindow", " 7"))
         self.lb_6.setText(_translate("MainWindow", "6"))
         self.lb_5.setText(_translate("MainWindow", "5"))
@@ -414,12 +414,12 @@ class Ui_MainWindow(object):
         self.lb_1.setText(_translate("MainWindow", "1"))
         self.lb_0.setText(_translate("MainWindow", "0"))
         self.lb_rights.setText(_translate("MainWindow", " Ⓒ2022 WPC Systems Ltd. All right reserved"))
-        self.lb_declare.setText(_translate("MainWindow", "This is example for digital output from WPC DAQ Device."))
+        self.lb_declare.setText(_translate("MainWindow", "This is example for digital output with WPC DAQ Device."))
         self.groupBox_connection.setTitle(_translate("MainWindow", "Device Connection"))
         self.btn_connect.setText(_translate("MainWindow", "Connect"))
         self.btn_disconnect.setText(_translate("MainWindow", "Disconnect"))
         self.lb_serialnum.setText(_translate("MainWindow", "Serial number"))
-        self.ld_ip.setText(_translate("MainWindow", "21JA1279"))
+        self.lineEdit_IP.setText(_translate("MainWindow", "21JA1439"))
         self.combobox_port.setCurrentText(_translate("MainWindow", "Port 0"))
         self.combobox_port.setItemText(0, _translate("MainWindow", "Port 0"))
         self.combobox_port.setItemText(1, _translate("MainWindow", "Port 1"))

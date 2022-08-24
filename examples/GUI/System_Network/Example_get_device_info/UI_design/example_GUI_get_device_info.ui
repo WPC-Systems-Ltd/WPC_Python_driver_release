@@ -68,7 +68,7 @@
      </font>
     </property>
     <property name="text">
-     <string>This is an example for getting device information from WPC DAQ Device.</string>
+     <string>This is an example for getting device information with WPC DAQ Device.</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox_connection">
@@ -502,6 +502,8 @@ QPushButton:pressed{
       <font>
        <family>微軟正黑體</family>
        <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="styleSheet">
@@ -570,7 +572,7 @@ QPushButton:pressed{
      <x>0</x>
      <y>0</y>
      <width>824</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

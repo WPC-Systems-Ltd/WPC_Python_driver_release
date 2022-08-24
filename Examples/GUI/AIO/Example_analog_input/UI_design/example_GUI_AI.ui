@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Example_analog_input</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="groupBox_connection">
@@ -546,7 +546,7 @@
       <string>IP:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_ip">
+    <widget class="QLineEdit" name="lineEdit_IP">
      <property name="geometry">
       <rect>
        <x>40</x>
@@ -1552,7 +1552,7 @@ QPushButton:pressed{
     </widget>
     <zorder>lb_ip</zorder>
     <zorder>btn_connect</zorder>
-    <zorder>lineEdit_ip</zorder>
+    <zorder>lineEdit_IP</zorder>
     <zorder>btn_disconnect</zorder>
     <zorder>lb_led</zorder>
    </widget>
@@ -4139,9 +4139,9 @@ color:  rgb(255, 255, 255); </string>
    <widget class="QLabel" name="lb_declare">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>200</x>
       <y>90</y>
-      <width>551</width>
+      <width>631</width>
       <height>31</height>
      </rect>
     </property>
@@ -4152,7 +4152,7 @@ color:  rgb(255, 255, 255); </string>
      </font>
     </property>
     <property name="text">
-     <string>This is example for AI streaming WPC Wifi DAQ.</string>
+     <string>This is example for AI streaming with WPC DAQ Device.</string>
     </property>
    </widget>
    <widget class="QLabel" name="lb_trademark">

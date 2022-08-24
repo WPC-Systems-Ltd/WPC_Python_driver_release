@@ -1,5 +1,13 @@
+##  example_TC_read_channel_data.py
+##
+##  Copyright (c) 2022 WPC Systems Ltd.
+##  All rights reserved.
+
+## Python
 import asyncio
 import sys
+
+## WPC
 sys.path.insert(0, 'pywpc/')
 sys.path.insert(0, '../../../pywpc/')
 import pywpc
@@ -26,7 +34,7 @@ async def main():
         print("Firmware version: " + driver_info[-1])
         
         ## Parameters setting
-        port    = 1
+        port = 1
         channel = 1 
         over_sampling_mode = 0  ## 0:1 sample, 1:2 samples, 2:4 sample, 3:8 samples, 4:16 samples
         thermo_type = 3         ## 0:B type, 1:E type, 2:J type, 3:K type
