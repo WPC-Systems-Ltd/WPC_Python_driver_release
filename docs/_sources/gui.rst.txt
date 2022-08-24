@@ -1,8 +1,5 @@
-Python driver with PyQt
+Python GUI with PyQt
 ===================================
-
-
-
 
 AIO/Aigital Iutput
 ------------------
