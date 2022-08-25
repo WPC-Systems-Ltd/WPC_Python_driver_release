@@ -6,7 +6,7 @@ v0.0.13 Date: 2022/08/25, Developer: Chunglee_people
 ---------------------------------------------------
 
 ### Added
-- Add GUI example code : Example_thermocouple, Example_RTD, Example_analog_input_on_demand
+- Add GUI example code : Example_thermocouple, Example_RTD, Example_analog_input_on_demand, Example_I2C, Example_SPI
 - Add WPC_DAQ_Devices_User_Manual_r17
 
 ### Changed
