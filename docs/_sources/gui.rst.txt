@@ -9,7 +9,7 @@ AIO/Analog Iutput
     :alt: Example_analog_input.JPG
 |
 
-AIO/Analog Iutput
+AIO/Analog Iutput On Demand
 ------------------
 
 .. image:: images/GUI/Example_analog_input_ondemand.JPG
