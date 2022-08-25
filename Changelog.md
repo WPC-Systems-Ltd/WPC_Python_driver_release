@@ -1,9 +1,10 @@
-WPC_Python_driver_release changelog
+WPC Python driver release changelog
 ===================================
 
 
-v0.0.13 Date: 2022/08/24, Developer: Chunglee_people
+v0.0.13 Date: 2022/08/25, Developer: Chunglee_people
 ---------------------------------------------------
+
 ### Added
 - Add GUI example code : Example_thermocouple, Example_RTD, Example_analog_input_on_demand
 - WPC_DAQ_Devices_User_Manual_r17
@@ -17,6 +18,7 @@ v0.0.13 Date: 2022/08/24, Developer: Chunglee_people
 
 v0.0.12 Date: 2022/08/23, Developer: Chunglee_people
 ---------------------------------------------------
+
 ### Added
 - Add example code packet classification
 - Add GUI example code : Example_analog_output, Example_UART
@@ -53,13 +55,13 @@ v0.0.9 Date: 2022/08/12, Developer: Chunglee_people
 v0.0.8 Date: 2022/08/11, Developer: Chunglee_people
 ---------------------------------------------------
 
-### Changed
-- Change WPC Python Version from `pywpc-0.1.17` to  `pywpc-0.1.18`  
-
 ### Added
 - Add product description and picture in Sphinx home page
 - Check pinstate when open function modules
 - Add WPC_DAQ_Devices_User_Manual_r16.pdf and WPC_Wifi_Configuration_r1.pdf  in `Reference/Manuals`
+
+### Changed
+- Change WPC Python Version from `pywpc-0.1.17` to  `pywpc-0.1.18`  
 
 ### Fixed
 - Fix print information when DO_closePort in example_DO_blinky_port.py
@@ -71,6 +73,11 @@ v0.0.8 Date: 2022/08/11, Developer: Chunglee_people
 v0.0.7 Date: 2022/08/08, Developer: Chunglee_people
 ---------------------------------------------------
 
+### Added
+- Add Thermo example code
+  - `Thermo/example_RTD_read_channel_data.py`
+  - `Thermo/example_RTD_read_channel_status.py`
+
 ### Changed
 - Change WPC Python Version from `pywpc-0.1.16` to  `pywpc-0.1.17`  
 - Change example code name from
@@ -78,17 +85,9 @@ v0.0.7 Date: 2022/08/08, Developer: Chunglee_people
   - `example_Thermo_read_channel_data` to `example_TC_read_channel_data` 
 - Change folder name from `Thermo` to `Temperature`
 
-### Added
-- Add Thermo example code
-  - `Thermo/example_RTD_read_channel_data.py`
-  - `Thermo/example_RTD_read_channel_status.py`
-
 v0.0.6 Date: 2022/08/02, Developer: Chunglee_people
 ---------------------------------------------------
-
-### Changed
-- Change WPC Python Version from `pywpc-0.1.15` to  `pywpc-0.1.16`  
-
+ 
 ### Added
 - Add AO example code
   - `AIO/example_AO_write_all_channels.py`
@@ -101,23 +100,22 @@ v0.0.6 Date: 2022/08/02, Developer: Chunglee_people
 - Add I2C example code
   - `I2C/example_I2C_write_read.py`
 
+### Changed
+- Change WPC Python Version from `pywpc-0.1.15` to  `pywpc-0.1.16` 
+
 v0.0.5 Date: 2022/07/29, Developer: Chunglee_people
 ---------------------------------------------------
-### Changed
-- Change WPC Python Version from `pywpc-0.1.14` to  `pywpc-0.1.15`  
 
 ### Added
 - Add CAN example code
   - `CAN/example_CAN_read.py`
   - `CAN/example_CAN_write.py`
 
+### Changed
+- Change WPC Python Version from `pywpc-0.1.14` to  `pywpc-0.1.15`  
+
 v0.0.4 Date: 2022/07/20, Developer: Chunglee_people
 ---------------------------------------------------
-
-### Changed
-- Change WPC Python Version from `pywpc-0.1.13` to  `pywpc-0.1.14`  
-- Change folder name `General` to `System` in console and gui folder
-- Change `wireless device` to `WIFI` in document
 
 ### Added
 - Add Thermo example code
@@ -126,12 +124,14 @@ v0.0.4 Date: 2022/07/20, Developer: Chunglee_people
 - Add UART example code
   - `UART/example_UART_read.py`
   - `UART/example_UART_write.py`
+
+### Changed
+- Change WPC Python Version from `pywpc-0.1.13` to  `pywpc-0.1.14`  
+- Change folder name `General` to `System` in console and gui folder
+- Change `wireless device` to `WIFI` in document
  
 v0.0.3 Date: 2022/07/07, Developer: Chunglee_people
 ---------------------------------------------------
-
-### Changed
-- Change WPC Python Version from `pywpc-0.1.12` to  `pywpc-0.1.13` (templete, Need to verify)
 
 ### Added
 - Add DIO example code in console
@@ -148,11 +148,11 @@ v0.0.3 Date: 2022/07/07, Developer: Chunglee_people
   - `DIO/example_DO_toggle_in_slot.py`
   - `General/example_get_pinmode.py`
 
+### Changed
+- Change WPC Python Version from `pywpc-0.1.12` to  `pywpc-0.1.13` (templete, Need to verify)
+
 v0.0.2 Date: 2022/07/01, Developer: Chunglee_people
 ---------------------------------------------------
-
-### Changed
-- Change WPC Python Version from `pywpc-0.1.10` to  `pywpc-0.1.12`
 
 ### Added
 - Add trademark file path.
@@ -167,8 +167,12 @@ v0.0.2 Date: 2022/07/01, Developer: Chunglee_people
                                            |
                                            |
                                             ----  General
-                                            
+
+### Changed
+- Change WPC Python Version from `pywpc-0.1.10` to  `pywpc-0.1.12`
+
 v0.0.1 Date: 2022/06/29, Developer: Chunglee_people
 ---------------------------------------------------
+
 ### Added
 -  example GUI `UIexample_AIStreaming` & `UIexample_Broadcasts` & `UIexample_get_device_info`.
