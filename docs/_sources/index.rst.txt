@@ -4,9 +4,9 @@ WPC DAQ Device Programming Guide
 
 Overview
 --------
-The Python-based driver contains an API for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products. 
+WPC Python-based driver contains an API for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products. 
 
-Also, It have been tested under Window 10 operating systems. For more products information, please visit `WPC-Systems-Ltd <http://www.wpc.com.tw/>`_.
+Also, It has been tested under Window 10 operating systems. For more products information, please visit `WPC-Systems-Ltd <http://www.wpc.com.tw/>`_.
 
 Examples
 --------

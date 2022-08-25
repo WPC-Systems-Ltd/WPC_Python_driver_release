@@ -1637,7 +1637,7 @@ QPushButton:pressed{
      </font>
     </property>
     <property name="text">
-     <string>ch 0</string>
+     <string>ch0</string>
     </property>
    </widget>
    <widget class="QLabel" name="lb_ch1">
@@ -1658,7 +1658,7 @@ QPushButton:pressed{
      </font>
     </property>
     <property name="text">
-     <string>ch 1</string>
+     <string>ch1</string>
     </property>
    </widget>
    <widget class="QLabel" name="lb_ch2">
@@ -1679,7 +1679,7 @@ QPushButton:pressed{
      </font>
     </property>
     <property name="text">
-     <string>ch 2</string>
+     <string>ch2</string>
     </property>
    </widget>
    <widget class="QLabel" name="lb_ch3">
@@ -1700,7 +1700,7 @@ QPushButton:pressed{
      </font>
     </property>
     <property name="text">
-     <string>ch 3</string>
+     <string>ch3</string>
     </property>
    </widget>
    <widget class="QLabel" name="lb_ch4">
@@ -1721,7 +1721,7 @@ QPushButton:pressed{
      </font>
     </property>
     <property name="text">
-     <string>ch 4</string>
+     <string>ch4</string>
     </property>
    </widget>
    <widget class="QLabel" name="lb_ch5">
@@ -1742,7 +1742,7 @@ QPushButton:pressed{
      </font>
     </property>
     <property name="text">
-     <string>ch 5</string>
+     <string>ch5</string>
     </property>
    </widget>
    <widget class="QLabel" name="lb_ch6">
@@ -1763,7 +1763,7 @@ QPushButton:pressed{
      </font>
     </property>
     <property name="text">
-     <string>ch 6</string>
+     <string>ch6</string>
     </property>
    </widget>
    <widget class="QLabel" name="lb_ch7">
@@ -1784,7 +1784,7 @@ QPushButton:pressed{
      </font>
     </property>
     <property name="text">
-     <string>ch 7</string>
+     <string>ch7</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_AI0">

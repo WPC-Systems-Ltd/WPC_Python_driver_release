@@ -287,20 +287,13 @@ class Ui_MainWindow(object):
 "}")
         self.btn_deviceInfo.setObjectName("btn_deviceInfo")
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 750, 25))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Example _get device information"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Example_get device information"))
         self.lb_rights.setText(_translate("MainWindow", " Ⓒ2022 WPC Systems Ltd. All right reserved"))
         self.lb_declare.setText(_translate("MainWindow", "This is an example for getting device information with WPC DAQ Device."))
         self.groupBox_connection.setTitle(_translate("MainWindow", "Connection Setting"))

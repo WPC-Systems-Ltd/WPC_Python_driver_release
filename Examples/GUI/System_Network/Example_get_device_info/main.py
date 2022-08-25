@@ -65,7 +65,6 @@ class MainWindow(QtWidgets.QMainWindow):
             ## Change connection flag
             self.connect_flag = 1
         except pywpc.Error as err:
-            self.ui.lb_err.setText(str(err)) 
             print("err: " + str(err))
 
     @asyncSlot()      

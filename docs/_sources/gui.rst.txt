@@ -1,7 +1,7 @@
 GUI examples by PyQt
 ===================================
 
-AIO/Analog Iutput
+AIO/Analog Input
 ------------------
 
 .. image:: images/GUI/Example_analog_input.JPG
@@ -9,7 +9,7 @@ AIO/Analog Iutput
     :alt: Example_analog_input.JPG
 |
 
-AIO/Analog Iutput On Demand
+AIO/Analog Input On Demand
 ------------------
 
 .. image:: images/GUI/Example_analog_input_ondemand.JPG
@@ -31,14 +31,14 @@ DIO/Digital Output
     :alt: Example_digital_output.JPG
 |
 
-System_Network/Find All Device
+System Network/Find All Device
 ------------------------------
 .. image:: images/GUI/Example_find_all_device.JPG
     :width: 80%
     :alt: Example_find_all_device.JPG
 |
 
-System_Network/Get Device Info
+System Network/Get Device Info
 ------------------------------
 .. image:: images/GUI/Example_get_device_info.JPG
     :width: 80%
