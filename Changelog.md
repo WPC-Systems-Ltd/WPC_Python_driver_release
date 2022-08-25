@@ -7,14 +7,14 @@ v0.0.13 Date: 2022/08/25, Developer: Chunglee_people
 
 ### Added
 - Add GUI example code : Example_thermocouple, Example_RTD, Example_analog_input_on_demand
-- WPC_DAQ_Devices_User_Manual_r17
+- Add WPC_DAQ_Devices_User_Manual_r17
 
 ### Changed
 - Change WPC Python Version from `pywpc-0.2.0` to `pywpc-0.2.1` 
 - Renamed case-sensitive folder
 
 ### Removed
-- WPC_DAQ_Devices_User_Manual_r16
+- Remove WPC_DAQ_Devices_User_Manual_r16
 
 v0.0.12 Date: 2022/08/23, Developer: Chunglee_people
 ---------------------------------------------------
