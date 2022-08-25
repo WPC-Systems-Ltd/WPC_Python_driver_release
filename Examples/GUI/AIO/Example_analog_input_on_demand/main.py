@@ -19,7 +19,7 @@ sys.path.insert(0, 'pywpc/')
 sys.path.insert(0, '../../../pywpc/')
 import pywpc  
 
-class MainWindow(QtWidgets.QMainWindow):
+class MainWindow(QtWidgets.QMainWindow): 
     def __init__(self):
         super(MainWindow, self).__init__()
 
@@ -36,6 +36,9 @@ class MainWindow(QtWidgets.QMainWindow):
         ## Set trademark path
         self.ui.lb_trademark.setPixmap(QtGui.QPixmap(self.trademark_path))
 
+        ## Create device handle
+        self.dev = pywpc.WifiDAQE3A()
+
         ## Get Python driver version
         print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}') 
 
@@ -50,17 +53,33 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.btn_disconnect.clicked.connect(self.disconnectEvent)
         self.ui.btn_onDemand.clicked.connect(self.onDemandEvent)
 
+        ## Open AI port
+        self.openPort()
+
     def closeEvent(self, event):
+        ## Close AI port
+        self.closePort()
+
         ## Disconnect network device
-        dev.disconnect()
+        self.dev.disconnect()
         
         ## Release device handle
-        dev.close()
- 
+        self.dev.close()
+
+    @asyncSlot()      
+    async def openPort(self):
+        ## Open AI port
+        await self.dev.AI_open(self.AI_port)
+
+    @asyncSlot()      
+    async def closePort(self):
+        ## Close AI port
+        await self.dev.AI_close(self.AI_port)
+
     @asyncSlot()      
     async def onDemandEvent(self):  
         ## Set AI port to 1 and data acquisition
-        data_list =  await dev.AI_readOnDemand(self.AI_port)
+        data_list =  await self.dev.AI_readOnDemand(self.AI_port)
         for i in range(8):
             obj_lineEdit= getattr(self.ui, 'lineEdit_AI%d' %i)
             obj_lineEdit.setText(str(data_list[i]))
@@ -71,10 +90,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ip = self.ui.lineEdit_IP.text()
         try: 
             ## Connect to network device
-            dev.connect(self.ip)
-
-            ## Open AI port
-            await dev.AI_open(self.AI_port)
+            self.dev.connect(self.ip)
 
             ## Change LED status
             self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
@@ -86,11 +102,8 @@ class MainWindow(QtWidgets.QMainWindow):
 
     @asyncSlot()      
     async def disconnectEvent(self):
-        ## close AI port
-        await dev.AI_close(self.AI_port)
-
         ## Disconnect network device
-        dev.disconnect()
+        self.dev.disconnect()
 
         ## Change LED status
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
@@ -108,6 +121,4 @@ def main():
         loop.run_forever()
 
 if __name__ == "__main__":
-    ## Create device handle
-    dev = pywpc.WifiDAQE3A()
     main()
