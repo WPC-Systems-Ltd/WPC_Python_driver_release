@@ -9,6 +9,14 @@ AIO/Analog Iutput
     :alt: Example_analog_input.JPG
 |
 
+AIO/Analog Iutput
+------------------
+
+.. image:: images/GUI/Example_analog_input_ondemand.JPG
+    :width: 80%
+    :alt: Example_analog_input_ondemand.JPG
+|
+
 AIO/Analog Output
 ------------------
 .. image:: images/GUI/Example_analog_output.JPG
