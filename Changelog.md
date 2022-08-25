@@ -5,21 +5,26 @@ WPC_Python_driver_release changelog
 v0.0.13 Date: 2022/08/24, Developer: Chunglee_people
 ---------------------------------------------------
 ### Added
-- Add GUI example code : Example_thermocouple, Example_RTD
+- Add GUI example code : Example_thermocouple, Example_RTD, Example_analog_input_on_demand
+- WPC_DAQ_Devices_User_Manual_r17
 
 ### Changed
--  Renamed case-sensitive folder
+- Change WPC Python Version from `pywpc-0.2.0` to `pywpc-0.2.1` 
+- Renamed case-sensitive folder
+
+### Removed
+- WPC_DAQ_Devices_User_Manual_r16
 
 v0.0.12 Date: 2022/08/23, Developer: Chunglee_people
 ---------------------------------------------------
-### Changed
-- Change WPC Python Version from `pywpc-0.1.19` to  `pywpc-0.2.0`  
-- Change folder name `Example_AI_streaming` to `Example_analog_input`
-- Change folder name `System` to `System_Network`
-
 ### Added
 - Add example code packet classification
 - Add GUI example code : Example_analog_output, Example_UART
+
+### Changed
+- Change WPC Python Version from `pywpc-0.1.19` to `pywpc-0.2.0`  
+- Change folder name `Example_AI_streaming` to `Example_analog_input`
+- Change folder name `System` to `System_Network`
 
 v0.0.11 Date: 2022/08/17, Developer: Chunglee_people
 ---------------------------------------------------
