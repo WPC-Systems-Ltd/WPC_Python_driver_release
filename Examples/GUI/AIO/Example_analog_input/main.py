@@ -1,5 +1,5 @@
 ##  main.py
-##  Example_AI_streaming
+##  Example_analog_input
 ##
 ##  Copyright (c) 2022 WPC Systems Ltd.
 ##  All rights reserved.
