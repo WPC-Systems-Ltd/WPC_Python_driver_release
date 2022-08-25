@@ -4,20 +4,19 @@ WPC DAQ Device Programming Guide
 
 Overview
 --------
-The Python-based driver contains an API for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products.
+The Python-based driver contains an API for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products. 
 
-
-Also, It supports on Windows operating systems. For more products information, please visit `WPC offical website <http://www.wpc.com.tw/>`_
+Also, It have been tested under Window 10 operating systems. For more products information, please visit `WPC-Systems-Ltd <http://www.wpc.com.tw/>`_.
 
 Examples
 --------
-For WPC DAQ Python driver console or GUI examples, please see on `GitHub Examples folder <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples>`_
+For WPC DAQ Python driver console or GUI examples, please go check `GitHub Examples <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples>`_.
 
 Driver Version
 --------------
-The latest release of WPC DAQ Python driver is 0.2.1 from August 24, 2022.
+The latest released version of WPC DAQ Python driver is 0.2.1 from August 24, 2022.
 
-For the latest development version, archived versions and code repository, please visit `GitHub <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release>`_
+For the latest development, archived versions and code repository, please visit `GitHub source code <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release>`_.
 
 Products
 --------
