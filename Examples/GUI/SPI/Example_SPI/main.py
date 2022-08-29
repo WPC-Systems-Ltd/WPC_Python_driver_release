@@ -1,5 +1,5 @@
 ##  main.py
-##  Example_UART
+##  Example_SPI
 ##
 ##  Copyright (c) 2022 WPC Systems Ltd.
 ##  All rights reserved.
@@ -19,8 +19,6 @@ sys.path.insert(0, 'pywpc/')
 sys.path.insert(0, '../../../pywpc/')
 import pywpc  
 
-
-DEVIDER = 2000
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
@@ -58,7 +56,6 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.btn_read.clicked.connect(self.readEvent)
         self.ui.btn_set.clicked.connect(self.setEvent)
 
-
     @asyncSlot()      
     async def openPort(self):
         ## Open SPI port
@@ -93,10 +90,14 @@ class MainWindow(QtWidgets.QMainWindow):
         port_idx = self.ui.comboBox_port.currentIndex()
         port = port_idx + 1
 
-        ## Get write data from UI
+        ## Get write (Hex) from UI
         write_data = self.ui.lineEdit_write.text()
- 
-        status = await self.dev.SPI_write(port, int(write_data))
+
+        ## Convert string to int list
+        write_data_int = self.converStrtoIntList(write_data)    
+
+        ## Set SPI port and write bytes
+        status = await self.dev.SPI_write(port, write_data_int)
         if status == 0: print("SPI_write: OK")
 
     @asyncSlot() 
@@ -104,12 +105,17 @@ class MainWindow(QtWidgets.QMainWindow):
         ## Get port from UI
         port_idx = self.ui.comboBox_port.currentIndex()
         port = port_idx + 1
-
-        ## Get write data from UI
+        
+        ## Get write (Hex) from UI
         write_data = self.ui.lineEdit_write.text()
 
+        ## Convert string to int list
+        write_data_int = self.converStrtoIntList(write_data)    
+ 
         ## Set SPI port and read bytes
-        data = await self.dev.SPI_readAndWrite(port, int(write_data)) 
+        data = await self.dev.SPI_readAndWrite(port, write_data_int) 
+
+        ## Update data in UI
         self.ui.lineEdit_read.setText(str(data))
 
     @asyncSlot() 
@@ -152,7 +158,17 @@ class MainWindow(QtWidgets.QMainWindow):
         
         ## Release device handle
         self.dev.close()
- 
+
+    def converStrtoIntList(self, str_):
+        ## Split string by commas
+        write_data_strlist = str_.replace(' ','').split(',')
+        
+        ## Convert string list to int list
+        write_data_int = []
+        for item in write_data_strlist:
+            write_data_int.append(int(item, 16))
+        return write_data_int    
+
 def main(): 
     app = QtWidgets.QApplication([])
     loop = QEventLoop(app)

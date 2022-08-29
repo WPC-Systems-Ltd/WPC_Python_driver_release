@@ -1,7 +1,21 @@
-##  example_I2C_write_read.py
-##
-##  Copyright (c) 2022 WPC Systems Ltd.
-##  All rights reserved.
+'''
+
+I2C - example_I2C_write_read.py
+
+example_I2C_write_read that demonstrates how to initialize and set parameters I2C with USB-DAQ-F1-D
+as well as reading and writing from and to registers for a sensor connected over I2C.
+
+The sensor used in this example is a 24C08C expecially for Two-wore Serial EEPROM
+
+For other examples please check:
+   https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples
+
+   See README.md file to get detailed usage of this example.
+
+Copyright (c) 2022 WPC Systems Ltd.
+All rights reserved.
+
+'''
 
 ## Python
 import asyncio

@@ -242,9 +242,9 @@ QPushButton:pressed{
    <widget class="QGroupBox" name="groupBox_setting">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>20</x>
       <y>270</y>
-      <width>361</width>
+      <width>351</width>
       <height>291</height>
      </rect>
     </property>
@@ -822,7 +822,7 @@ QPushButton:pressed{
    <widget class="QPushButton" name="btn_write">
     <property name="geometry">
      <rect>
-      <x>420</x>
+      <x>390</x>
       <y>300</y>
       <width>111</width>
       <height>41</height>
@@ -855,7 +855,7 @@ QPushButton:pressed{
    <widget class="QPushButton" name="btn_read">
     <property name="geometry">
      <rect>
-      <x>690</x>
+      <x>660</x>
       <y>300</y>
       <width>111</width>
       <height>41</height>
@@ -888,7 +888,7 @@ QPushButton:pressed{
    <widget class="QLineEdit" name="lineEdit_byteread">
     <property name="geometry">
      <rect>
-      <x>830</x>
+      <x>800</x>
       <y>390</y>
       <width>91</width>
       <height>31</height>
@@ -914,7 +914,7 @@ QPushButton:pressed{
    <widget class="QLabel" name="lb_byteread">
     <property name="geometry">
      <rect>
-      <x>830</x>
+      <x>800</x>
       <y>360</y>
       <width>121</width>
       <height>31</height>
@@ -935,7 +935,7 @@ QPushButton:pressed{
    <widget class="QLabel" name="lb_write">
     <property name="geometry">
      <rect>
-      <x>420</x>
+      <x>390</x>
       <y>390</y>
       <width>121</width>
       <height>31</height>
@@ -950,15 +950,15 @@ QPushButton:pressed{
      </font>
     </property>
     <property name="text">
-     <string>Write (Int)</string>
+     <string>Write (Hex)</string>
     </property>
    </widget>
    <widget class="QLabel" name="lb_read">
     <property name="geometry">
      <rect>
-      <x>690</x>
+      <x>660</x>
       <y>390</y>
-      <width>111</width>
+      <width>121</width>
       <height>31</height>
      </rect>
     </property>
@@ -971,16 +971,16 @@ QPushButton:pressed{
      </font>
     </property>
     <property name="text">
-     <string>Read (Int)</string>
+     <string>Read (Hex)</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_write">
     <property name="geometry">
      <rect>
-      <x>420</x>
+      <x>390</x>
       <y>440</y>
-      <width>231</width>
-      <height>121</height>
+      <width>251</width>
+      <height>111</height>
      </rect>
     </property>
     <property name="font">
@@ -989,16 +989,16 @@ QPushButton:pressed{
      </font>
     </property>
     <property name="text">
-     <string/>
+     <string>0x00, 0xAA, 0x55, 0xAA, 0x55</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_read">
     <property name="geometry">
      <rect>
-      <x>690</x>
+      <x>660</x>
       <y>440</y>
-      <width>231</width>
-      <height>121</height>
+      <width>251</width>
+      <height>111</height>
      </rect>
     </property>
     <property name="font">
@@ -1013,7 +1013,7 @@ QPushButton:pressed{
    <widget class="QLineEdit" name="lineEdit_writeAddr">
     <property name="geometry">
      <rect>
-      <x>560</x>
+      <x>530</x>
       <y>300</y>
       <width>91</width>
       <height>41</height>
@@ -1025,13 +1025,13 @@ QPushButton:pressed{
      </font>
     </property>
     <property name="text">
-     <string/>
+     <string>0x50</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_readAddr">
     <property name="geometry">
      <rect>
-      <x>830</x>
+      <x>800</x>
       <y>300</y>
       <width>91</width>
       <height>41</height>
@@ -1043,15 +1043,15 @@ QPushButton:pressed{
      </font>
     </property>
     <property name="text">
-     <string/>
+     <string>0x50</string>
     </property>
    </widget>
    <widget class="QLabel" name="lb_writeAddr">
     <property name="geometry">
      <rect>
-      <x>550</x>
+      <x>490</x>
       <y>260</y>
-      <width>121</width>
+      <width>171</width>
       <height>31</height>
      </rect>
     </property>
@@ -1064,15 +1064,15 @@ QPushButton:pressed{
      </font>
     </property>
     <property name="text">
-     <string>Write Address</string>
+     <string>Write Address (Hex)</string>
     </property>
    </widget>
    <widget class="QLabel" name="lb_readAddr">
     <property name="geometry">
      <rect>
-      <x>830</x>
+      <x>760</x>
       <y>260</y>
-      <width>121</width>
+      <width>161</width>
       <height>31</height>
      </rect>
     </property>
@@ -1085,7 +1085,7 @@ QPushButton:pressed{
      </font>
     </property>
     <property name="text">
-     <string>Read Address</string>
+     <string>Read Address(Hex)</string>
     </property>
    </widget>
   </widget>

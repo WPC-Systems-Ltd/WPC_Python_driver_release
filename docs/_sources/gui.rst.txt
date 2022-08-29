@@ -64,3 +64,17 @@ Interface/UART
 .. image:: images/GUI/Example_UART.JPG
     :width: 80%
     :alt: Example_UART.JPG
+|
+
+Interface/I2C
+---------
+.. image:: images/GUI/Example_I2C.JPG
+    :width: 80%
+    :alt: Example_I2C.JPG
+|
+
+Interface/SPI
+---------
+.. image:: images/GUI/Example_SPI.JPG
+    :width: 80%
+    :alt: Example_SPI.JPG    

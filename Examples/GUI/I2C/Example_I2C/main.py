@@ -1,5 +1,5 @@
 ##  main.py
-##  Example_UART
+##  Example_I2C
 ##
 ##  Copyright (c) 2022 WPC Systems Ltd.
 ##  All rights reserved.
@@ -12,15 +12,13 @@ from qasync import QEventLoop, asyncSlot
 
 ## Third party
 from PyQt5 import QtWidgets, QtGui
-from UI_design.Ui_example_GUI_I2C import Ui_MainWindow 
+from UI_design.Ui_example_GUI_I2C import Ui_MainWindow
 
 ## WPC
 sys.path.insert(0, 'pywpc/')
 sys.path.insert(0, '../../../pywpc/')
 import pywpc  
 
-
-DEVIDER = 2000
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
@@ -37,7 +35,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Initialize parameters
         self.connect_flag = 0
-    
+
         ## Material path
         current_folder = os.getcwd().replace('\\', '/')
         self.trademark_path = current_folder + "/Material/WPC_trademark.jpg"  
@@ -73,9 +71,11 @@ class MainWindow(QtWidgets.QMainWindow):
 
     @asyncSlot() 
     async def setEvent(self):
-        ## Get parameters from UI
+        ## Get port from UI
         port_idx = self.ui.comboBox_port.currentIndex()
         port = port_idx + 1
+
+        ## Get clock rate from UI
         clock_mode = self.ui.comboBox_clockrate.currentIndex()
 
         ## Set I2C port and clock rate
@@ -84,29 +84,44 @@ class MainWindow(QtWidgets.QMainWindow):
 
     @asyncSlot() 
     async def writeEvent(self):
-        ## Get information from UI
+        ## Get port from UI
         port_idx = self.ui.comboBox_port.currentIndex()
         port = port_idx + 1
-        read_addr = self.ui.lineEdit_writeAddr.text()
 
-        ## Get write data from UI
-        write_data = self.ui.lineEdit_write.text()
+        ## Get write address (Hex) from UI
+        write_addr = self.ui.lineEdit_writeAddr.text()  
+        write_addr_int = int(write_addr, 16)
         
+        ## Get write (Hex) from UI
+        write_data = self.ui.lineEdit_write.text()
+
+        ## Convert string to int list
+        write_data_int = self.converStrtoIntList(write_data)    
+
         ## Set I2C port and write bytes
-        status = await self.dev.I2C_write(port, int(read_addr),  int(write_data))
+        status = await self.dev.I2C_write(port, write_addr_int, write_data_int)
         if status == 0: print("I2C_write: OK")
 
     @asyncSlot() 
     async def readEvent(self):
-        ## Get information from UI
+        ## Get port from UI
         port_idx = self.ui.comboBox_port.currentIndex()
         port = port_idx + 1
-        byte_read = self.ui.lineEdit_byteread.text()
-        read_addr = self.ui.lineEdit_readAddr.text()
 
+        ## Get byte to read from UI
+        byte_read = self.ui.lineEdit_byteread.text()
+        byte_read = int(byte_read)
+
+        ## Get read address (Hex) from UI
+        read_addr = self.ui.lineEdit_readAddr.text()
+        read_add_int = int(read_addr, 16)
+        
         ## Set I2C port and read bytes
-        data = await self.dev.I2C_read(port, int(read_addr), int(byte_read)) 
+        data = await self.dev.I2C_read(port, read_add_int, byte_read) 
         self.ui.lineEdit_read.setText(str(data))
+
+        ## Sleep
+        await asyncio.sleep(0.1) ## delay(second)
 
     @asyncSlot() 
     async def connectEvent(self):
@@ -148,7 +163,17 @@ class MainWindow(QtWidgets.QMainWindow):
         
         ## Release device handle
         self.dev.close()
- 
+
+    def converStrtoIntList(self, str_):
+        ## Split string by commas
+        write_data_strlist = str_.replace(' ','').split(',')
+        
+        ## Convert string list to int list
+        write_data_int = []
+        for item in write_data_strlist:
+            write_data_int.append(int(item, 16))
+        return write_data_int
+
 def main(): 
     app = QtWidgets.QApplication([])
     loop = QEventLoop(app)
