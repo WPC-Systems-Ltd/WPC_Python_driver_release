@@ -19,19 +19,19 @@ For more information, please refer to datasheet of the [24C08C EEPROM](https://g
 **Note:** For full pin assignments of `WPC-USB-DAQ-F1-D`, please see [Pin Assignment](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Reference/Pinouts).
 
 
-## WPC-USB-DAQ-F1-D (I2C Master)
+#### WPC-USB-DAQ-F1-D (I2C Master)
 
-|                  | port | VCC  | SCL  | SDA  |
-| -----------------|:----:|:----:|:----:|:----:|
-| WPC-USB-DAQ-F1-D | I2C1 | 3.3V | P2.6 | P2.7 |
+|  Model name      | port | Serial clock | Serial data |
+| -----------------|:----:|:------------:|:-----------:|
+| WPC-USB-DAQ-F1-D | I2C1 | P2.6 (SCL1)  | P2.7 (SDA1) |
 
 **Note:** External pull-up resistors (3.3 kΩ) are required for SDA/SCL pin.
 
-## 24C08C (I2C Slave)
+#### EEPROM 24C08C (I2C Slave)
 
-|                  | VCC  |  WP  |  SCL |  SDA | GND  |
-|:----------------:|:----:|:----:|:----:|:----:|:----:|
-| 24C08C EEPROM    | 3.3V |  GND | P2.6 | P2.7 | GND  |
+|   EEPROM P/N     | pin8 (VCC) | pin7 (WP) | pin6 (SCL) | pin5 (SDA) | pin4 (GND) |
+|:----------------:|:----------:|:---------:|:----------:|:----------:|:----------:|
+| 24C08C           |    3.3V    |    GND    | P2.6 (SCL1)| P2.7 (SDA1)| GND        |
 
 **Note:** The pin `WP` in 24C08C should tight to ground.
 
