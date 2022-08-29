@@ -14,12 +14,7 @@ Then, we take `WPC-USB-DAQ-F1-D` for example and use 24C08C as I2C slave, which 
 
 For more information, please refer to datasheet of the [24C08C EEPROM](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Reference/Datasheet).
 
-### Pin Assignment
-- We take I2C1 for example, use SCL1 (P2.6) and SDA1 (P2.7)
-
-<img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/USB-DAQ-F1-D.JPG" alt="drawing" width="600"/>
-
-#### WPC-USB-DAQ-F1-D (I2C Master)
+### WPC-USB-DAQ-F1-D (I2C Master)
 
 |  Model name      | port | Serial clock (SCL) | Serial data (SDA)|
 | -----------------|:----:|:------------------:|:----------------:|
@@ -27,15 +22,18 @@ For more information, please refer to datasheet of the [24C08C EEPROM](https://g
 
 **Note:** External pull-up resistors (3.3 kΩ) are required for SDA/SCL pin.
 
-#### EEPROM 24C08C (I2C Slave)
+<img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/USB-DAQ-F1-D.JPG" alt="drawing" width="600"/>
 
-<img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/25C08C.JPG" alt="drawing" width="600"/>
+
+### EEPROM 24C08C (I2C Slave)
 
 |   EEPROM P/N     | pin8 (VCC) | pin7 (WP) | pin6 (SCL) | pin5 (SDA) | pin4 (GND) |
 |:----------------:|:----------:|:---------:|:----------:|:----------:|:----------:|
 | 24C08C           |    3.3V    |    GND    | P2.6       | P2.7       | GND        |
 
 **Note:** The pin `WP` in 24C08C should tight to ground.
+
+<img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/25C08C.JPG" alt="drawing" width="400"/>
 
 ## I2C interfacing SOP 
 
