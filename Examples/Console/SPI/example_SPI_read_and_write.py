@@ -1,7 +1,22 @@
-##  example_SPI_read_and_write.py
-##
-##  Copyright (c) 2022 WPC Systems Ltd.
-##  All rights reserved.
+'''
+SPI - example_SPI_read_and_write.py
+
+This example code demonstrates how to communicate with USB-DAQ-F1-D (master) and 25LC640 (slave) with SPI interface.
+
+In the beginning, it shows how to open SPI port & DIO pins and configure SPI parameters.
+Next, write some bytes with address into EEPROM (25LC640).
+We have to make sure that bytes written in address is correct however read address from EEPROM (25LC640).
+Last, close SPI port & DIO pins
+
+For other examples please check:
+   https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples
+
+   See README.md file to get detailed usage of this example.
+
+Copyright (c) 2022 WPC Systems Ltd.
+All rights reserved.
+
+'''
 
 ## Python
 import asyncio

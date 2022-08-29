@@ -1,5 +1,4 @@
 '''
-
 I2C - example_I2C_write_read.py
 
 example_I2C_write_read that demonstrates how to initialize and set parameters I2C with USB-DAQ-F1-D

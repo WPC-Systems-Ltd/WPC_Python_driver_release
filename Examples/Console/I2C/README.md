@@ -4,31 +4,36 @@ The project `example_I2C_write_read.py` demonstrates how to use WPC python drive
 
 If you want to build your own I2C application (for example, read the temperature data from external sensor with I2C interface), try to use this as a basic template, then add your own code.
 
-## How to use example
+## How to use this example
 
-### Hardware Required
-In order to run this example, you should have one of WPC-USB-DAQ series product as well as a -AOD, -AD, -D, -TD, -CD and -RD, those contain I2C master interface.
+### Hardware Requirement
 
-Then, we take `WPC-USB-DAQ-F1-D` for example and use 24C08C as I2C slave, which connect with `WPC-USB-DAQ-F1-D`.
+In order to run this example, you should have one of WPC-USB-DAQ series product as well as -AOD, -AD, -D, -TD, -CD and -RD, those contain I2C master interface.
 
-For more information about it, you can read the [datasheet of the 24C08C sensor](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Reference/Datasheet).
+Then, we take `WPC-USB-DAQ-F1-D` for example and use 24C08C as I2C slave, which connect directly to `WPC-USB-DAQ-F1-D`.
 
-### Pin Assignment:
+For more information, please refer to datasheet of the [24C08C EEPROM](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Reference/Datasheet).
 
-**Note:** For full pin assignments of `WPC-USB-DAQ-F1-D`, please see [Pin Assignment](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts).
+### Pin Assignment
 
-**Note:** There's need to add an external pull-up resistors (3.3 kΩ) for SDA/SCL pin.
+**Note:** For full pin assignments of `WPC-USB-DAQ-F1-D`, please see [Pin Assignment](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Reference/Pinouts).
+
+
+## WPC-USB-DAQ-F1-D (I2C Master)
+
+|                  | port | VCC  | SCL  | SDA  |
+| -----------------|:----:|:----:|:----:|:----:|
+| WPC-USB-DAQ-F1-D | I2C1 | 3.3V | P2.6 | P2.7 |
+
+**Note:** External pull-up resistors (3.3 kΩ) are required for SDA/SCL pin.
+
+## 24C08C (I2C Slave)
+
+|                  | VCC  |  WP  |  SCL |  SDA | GND  |
+|:----------------:|:----:|:----:|:----:|:----:|:----:|
+| 24C08C EEPROM    | 3.3V |  GND | P2.6 | P2.7 | GND  |
 
 **Note:** The pin `WP` in 24C08C should tight to ground.
-
-|                  | SDA             | SCL             |
-|:----------------:|:---------------:|:---------------:|
-| WPC-USB-DAQ-F1-D | I2C_MASTER_SDA1 | I2C_MASTER_SCL1 |
-| 24C08C Sensor    | SDA             | SCL             |
-
-Use `port2 pin 6` for I2C_MASTER_SDA1
-Use `port2 pin 7` for I2C_MASTER_SCL1
-
 
 ## I2C interfacing SOP 
 
@@ -38,4 +43,4 @@ If function return value is 0, it represents communication with `WPC-USB-DAQ-F1-
 
 ## Troubleshooting
 
-(For any technical support, please register new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+For any technical support, please register new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
