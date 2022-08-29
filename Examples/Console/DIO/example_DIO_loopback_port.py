@@ -1,7 +1,21 @@
-##  example_DIO_loopback_port.py
-##
-##  Copyright (c) 2022 WPC Systems Ltd.
-##  All rights reserved.
+'''
+DIO - example_DIO_loopback_port.py
+
+Use DO pins to send signals and use DI pins to receive signals on single device also called "loopback".
+
+First, it shows how to open DO and DI in port.
+Second, write DO in port and read DI in port
+Last, close DO and DI in port.
+
+For other examples please check:
+   https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples
+
+   See README.md file to get detailed usage of this example.
+
+Copyright (c) 2022 WPC Systems Ltd.
+All rights reserved.
+
+'''
 
 ## Python
 import asyncio

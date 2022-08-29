@@ -1,7 +1,19 @@
-##  example_UART_write.py
-##
-##  Copyright (c) 2022 WPC Systems Ltd.
-##  All rights reserved.
+'''
+UART - example_UART_write.py
+
+First, it shows how to open UART port and configure UART parameters.
+Second, write bytes to another device.
+Last, close UART port.
+
+For other examples please check:
+   https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples
+
+   See README.md file to get detailed usage of this example.
+
+Copyright (c) 2022 WPC Systems Ltd.
+All rights reserved.
+
+'''
 
 ## Python
 import asyncio
