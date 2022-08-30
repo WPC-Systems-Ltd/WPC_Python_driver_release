@@ -24,7 +24,6 @@ sys.path.insert(0, 'pywpc/')
 sys.path.insert(0, '../../../pywpc/')
 import pywpc  
 
-
 async def main():
     print("Start example code...")
 
