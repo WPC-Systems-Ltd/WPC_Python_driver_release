@@ -3,7 +3,7 @@
 The project `example_UART_read.py` & `example_UART_write.py` demonstrate how to use WPC python driver to read and write through UART interface.
 
 To be verified, please take another WPC USB DAQ device or other device which support UART interface.
-We connect two device via UART so that we can communicate data.  
+We connect two device via UART so that can communicate data.  
 
 If you want to build your own UART application (for example, read the temperature data from external sensor with UART interface), try to use this as a basic template, then add your own code.
 

@@ -8,11 +8,12 @@ v0.0.13 Date: 2022/08/30, Developer: Chunglee_people
 ### Added
 - Add GUI example code : Example_thermocouple, Example_RTD, Example_analog_input_on_demand, Example_I2C, Example_SPI
 - Add WPC_DAQ_Devices_User_Manual_r17
-- Add README.md in `I2C` & `SPI` & `UART` & `DIO` & `CAN` example console folder
+- Add README.md in `I2C` & `SPI` & `UART` & `DIO` & `CAN` & `RTD` example console folder
 - Add description in example code
 - Add 25C08C.JPG & 25LC640.JPG in `Pinouts` folder
 - Add `Datasheet` folder in `Reference` folder
 - Add 24C08C.pdf & 25LC640.pdf in `Datasheet` folder
+- Add `RTD` & `TC` folder in `Temperature` folder
 
 ### Changed
 - Change WPC Python Version from `pywpc-0.2.0` to `pywpc-0.2.1` 
