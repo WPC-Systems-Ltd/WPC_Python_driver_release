@@ -101,11 +101,11 @@ class MainWindow(QtWidgets.QMainWindow):
 
     @asyncSlot() 
     async def connectEvent(self):
-        # Get IP from UI
-        self.IP = self.ui.lineEdit_IP.text()
+        # Get serial number from UI
+        serial_num = self.ui.lineEdit_SN.text()
         try: 
             ## Connect to USB device
-            self.dev.connect(self.IP)
+            self.dev.connect(serial_num)
 
             ## Change LED status
             self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
