@@ -1,6 +1,8 @@
 '''
 System - example_get_pin_mode.py
 
+This example demonstrates how to get pin mode from WPC-USB-DAQ-F1-D.
+
 First, get idle pin mode and show how to open DO and DI in pins.
 Second, get idle pin mode and set port idle mode. Again, get pin mode.
 Last, close DO and DI in port.

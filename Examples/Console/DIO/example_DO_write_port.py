@@ -1,6 +1,8 @@
 '''
 DIO - example_DO_write_port.py
 
+This example demonstrates how to write DO in port from WPC-USB-DAQ-F1-D.
+
 First, it shows how to open DO in port.
 Second, write DO pins in two different types (hex or list) but it should be consistency.
 Last, close DO in port.

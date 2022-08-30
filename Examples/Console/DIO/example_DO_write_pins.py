@@ -1,6 +1,8 @@
 '''
 DIO - example_DO_write_pins.py
 
+This example demonstrates how to write DO in pins from WPC-USB-DAQ-F1-D.
+
 First, it shows how to open DO in pins.
 Second, write DO pin in two different types (hex or list) but it should be consistency.
 Last, close DO in pins.
