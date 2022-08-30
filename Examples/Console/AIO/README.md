@@ -10,7 +10,7 @@ If you want to build your own AIO application, try to use this as a basic templa
 
 ### Hardware Requirement
 
-In order to run this example, you should have one of WPC-USB-DAQ-F1-AOD which contain AI and AO components.
+In order to run this example, you should get one of WPC-USB-DAQ-F1-AOD which contain AI and AO function.
 
 Then, we take `WPC-USB-DAQ-F1-AOD` for example.
 

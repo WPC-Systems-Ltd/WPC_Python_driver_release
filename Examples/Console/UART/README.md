@@ -11,7 +11,7 @@ If you want to build your own UART application (for example, read the temperatur
 
 ### Hardware Requirement
 
-In order to run this example, you should have one of WPC-USB-DAQ series product as well as, -AOD, -AD, -D, -TD, -CD and -RD, those contain UART interface.
+In order to run this example, you should get one of WPC-USB-DAQ series product as well as, -AOD, -AD, -D, -TD, -CD and -RD, those contain UART interface.
 
 Then, we take `WPC-USB-DAQ-F1-D` for example.
 

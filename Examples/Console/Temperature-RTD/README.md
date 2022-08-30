@@ -1,6 +1,6 @@
 ## Overview
 
-The project `example_RTD_read_channel_data.py` & `example_RTD_read_channel_status.py` demonstrate how to use WPC python driver to read RTD data.
+The project `example_RTD_read_channel_data.py` & `example_RTD_read_channel_status.py` demonstrate how to use WPC python driver to read RTD sensor temperature in Celcius.
 
 If you want to build your own RTD application, try to use this as a basic template, then add your own code.
 
@@ -8,7 +8,7 @@ If you want to build your own RTD application, try to use this as a basic templa
 
 ### Hardware Requirement
 
-In order to run this example, you should have `WPC-USB-DAQ-F1-RD` product, which contain RTD components.
+In order to run this example, you should get `WPC-USB-DAQ-F1-RD` with RTD sensor.
 
 It support PT100 and PT1000 resistance thermometers, also called resistance temperature detectors (RTDs)
 

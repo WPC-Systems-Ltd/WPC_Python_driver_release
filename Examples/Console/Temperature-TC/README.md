@@ -1,6 +1,6 @@
 ## Overview
 
-The project `example_TC_read_channel_data.py` & `example_TC_read_channel_status.py` demonstrate how to use WPC python driver to read thermocouple data.
+The project `example_TC_read_channel_data.py` & `example_TC_read_channel_status.py` demonstrate how to use WPC python driver to read thermocouple sensor temperature in Celcius.
 
 If you want to build your own thermocouple application, try to use this as a basic template, then add your own code.
 
@@ -8,7 +8,7 @@ If you want to build your own thermocouple application, try to use this as a bas
 
 ### Hardware Requirement
 
-In order to run this example, you should have `WPC-USB-DAQ-F1-TD` product, which contain thermocouple components.
+In order to run this example, you should have `WPC-USB-DAQ-F1-TD` product with thermocouple sensor components.
 
 Then, we take `WPC-USB-DAQ-F1-TD` for example.
 

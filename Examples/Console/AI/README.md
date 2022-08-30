@@ -1,7 +1,7 @@
 ## Overview
 
-This project example code demonstrate how to use WPC python driver to get AI data with 8 channels simultaneously.
-Also, we demonstrate how to use AI Continuous, N samples and on demand mode to get data correctly.
+This example project demonstrate how to use WPC Python driver to acquire multi-channel AI data simultaneously.
+Also, we show how to perform data acquisition in on-demand, N samples and continuous mode individually.
 
 In order to use API correctly, please refer [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
@@ -11,7 +11,7 @@ If you want to build your own AI application, try to use this as a basic templat
 
 ### Hardware Requirement
 
-In order to run this example, you should have one of WPC-USB-DAQ-F1-AD, Ethan-A and WPC-Wifi-DAQ-E3-A, those contain AI components.
+In order to run this example, you should get one of WPC-USB-DAQ-F1-AD, Ethan-A and WPC-Wifi-DAQ-E3-A, those contain AI function.
 
 Then, we take `WPC-Wifi-DAQ-E3-A` for example.
 

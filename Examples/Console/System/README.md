@@ -10,7 +10,7 @@ If you want to build your own application, try to use this as a basic template, 
 
 ### Hardware Requirement
 
-In order to run this example, you should have WPC-Wifi-DAQ-E3-A or WPC-USB-DAQ-F1-D.
+In order to run this example, you should get WPC-Wifi-DAQ-E3-A or WPC-USB-DAQ-F1-D.
 Then, we take `WPC-Wifi-DAQ-E3-A` for example for example_get_device_info.py & example_get_Wifi_DAQ_status.
 we take `WPC-USB-DAQ-F1-D` for example for eexample_get_pin_mode.py.
 

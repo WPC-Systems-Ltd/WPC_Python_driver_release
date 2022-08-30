@@ -10,7 +10,7 @@ If you want to build your own DIO application, try to use this as a basic templa
 
 ### Hardware Requirement
 
-In order to run this example, you should have one of WPC-USB-DAQ series product as well as -DSNK, -AOD, -AD, -D, -TD, -CD and -RD or Ethan-D, those contain DIO components.
+In order to run this example, you should get one of WPC-USB-DAQ series product as well as -DSNK, -AOD, -AD, -D, -TD, -CD and -RD or Ethan-D, those contain DIO function.
 
 Then, we take `WPC-USB-DAQ-F1-D` for example.
 
