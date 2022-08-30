@@ -1,7 +1,19 @@
-##  example_DO_write_pins.py
-##
-##  Copyright (c) 2022 WPC Systems Ltd.
-##  All rights reserved.
+'''
+DIO - example_DO_write_pins.py
+
+First, it shows how to open DO in pins.
+Second, write DO pin in two different types (hex or list) but it should be consistency.
+Last, close DO in pins.
+
+For other examples please check:
+   https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples
+
+   See README.md file to get detailed usage of this example.
+
+Copyright (c) 2022 WPC Systems Ltd.
+All rights reserved.
+
+'''
 
 ## Python
 import asyncio

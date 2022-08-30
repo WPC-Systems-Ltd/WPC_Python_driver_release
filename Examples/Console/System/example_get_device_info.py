@@ -1,7 +1,17 @@
-##  example_get_device_info.py
-##
-##  Copyright (c) 2022 WPC Systems Ltd.
-##  All rights reserved.
+'''
+System - example_get_device_info.py
+
+Get firmware model & version & serial number & RTC Time & IP & submask & MAC with Wifi-DAQ-E3-A.
+
+For other examples please check:
+   https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples
+
+   See README.md file to get detailed usage of this example.
+
+Copyright (c) 2022 WPC Systems Ltd.
+All rights reserved.
+
+'''
 
 ## Python
 import asyncio

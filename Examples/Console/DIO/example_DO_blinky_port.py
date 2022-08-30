@@ -1,7 +1,19 @@
-##  example_DO_blinky_port.py
-##
-##  Copyright (c) 2022 WPC Systems Ltd.
-##  All rights reserved.
+'''
+DIO - example_DO_blinky_port.py
+
+First, it shows how to open DO in port.
+Second, each loop has different voltage output so it will look like blinking. 
+Last, close DO in port.
+
+For other examples please check:
+   https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples
+
+   See README.md file to get detailed usage of this example.
+
+Copyright (c) 2022 WPC Systems Ltd.
+All rights reserved.
+
+'''
 
 ## Python
 import asyncio
