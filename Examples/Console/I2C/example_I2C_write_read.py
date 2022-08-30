@@ -1,6 +1,8 @@
 '''
 I2C - example_I2C_write_read.py
 
+This example demonstrates how to communicate with USB-DAQ-F1-D (master) and 24C08C (slave) with I2C interface.
+
 First, it shows how to open I2C port and configure I2C parameters.
 Second, write some bytes with address into EEPROM (24C08C). We have to make sure that bytes written in address is correct however read address from EEPROM (24C08C).
 Last, close I2C port
