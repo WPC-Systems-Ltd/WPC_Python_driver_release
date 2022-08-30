@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>example SPI write &mdash; WPC Device Driver 0.2.1 documentation</title>
+  <title>example SPI write &mdash; WPC Device Driver 0.2.1.1 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../../_static/WPC_logo2.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.2.1
+                0.2.1.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -50,9 +50,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../examples.html">Example codes</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#system">System</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#tutorial">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#ai">AI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#ao">AO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#aio">AIO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#dio">DIO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../examples.html#temperature">Temperature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#temperature-rtd">Temperature-RTD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#temperature-tc">Temperature-TC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#can">CAN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#uart">UART</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../examples.html#spi">SPI</a><ul class="current">
@@ -97,7 +100,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos">  2</span><span class="sd">SPI - example_SPI_write.py</span>
 <span class="linenos">  3</span>
-<span class="linenos">  4</span><span class="sd">This example code demonstrates how to communicate with USB-DAQ-F1-D (master) and 25LC640 (slave) with SPI interface.</span>
+<span class="linenos">  4</span><span class="sd">This example demonstrates how to communicate with USB-DAQ-F1-D (master) and 25LC640 (slave) with SPI interface.</span>
 <span class="linenos">  5</span>
 <span class="linenos">  6</span><span class="sd">First, it shows how to open SPI port &amp; DIO pins and configure SPI parameters.</span>
 <span class="linenos">  7</span><span class="sd">Second, write some bytes with address into EEPROM (25LC640).</span>

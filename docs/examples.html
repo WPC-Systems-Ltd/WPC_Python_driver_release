@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Example codes &mdash; WPC Device Driver 0.2.1 documentation</title>
+  <title>Example codes &mdash; WPC Device Driver 0.2.1.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="_static/WPC_logo2.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.2.1
+                0.2.1.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -62,14 +62,20 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Tutorial/multiple_loops_async.html">example multiple loops async</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#ai">AI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/AI/AI_continuous.html">example AI continuous</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/AI/AI_on_demand_in_loop.html">example AI on demand in loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/AI/AI_N_samples_once.html">example AI N samples once</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/AI/AI_N_samples_in_loop.html">example AI N samples in loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/AI/AI_on_demand_once.html">example AI on demand once</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ao">AO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/AO/AO_write_one_channel.html">example AO write one channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/AO/AO_write_all_channels.html">example AO write all channels</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#aio">AIO</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="examples/AIO/AI_continuous.html">example AI continuous</a></li>
-<li class="toctree-l3"><a class="reference internal" href="examples/AIO/AI_on_demand_in_loop.html">example AI on demand in loop</a></li>
-<li class="toctree-l3"><a class="reference internal" href="examples/AIO/AI_N_samples_once.html">example AI N samples once</a></li>
-<li class="toctree-l3"><a class="reference internal" href="examples/AIO/AI_N_samples_get_progressively.html">example AI N samples get progressively</a></li>
-<li class="toctree-l3"><a class="reference internal" href="examples/AIO/AI_on_demand_once.html">example AI on demand once</a></li>
-<li class="toctree-l3"><a class="reference internal" href="examples/AIO/AO_write_one_channel.html">example AO write one channel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="examples/AIO/AO_write_all_channels.html">example AO write all channels</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/AIO/AIO_one_channel_loopback.html">example AIO one channel loopback</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/AIO/AIO_all_channels_loopback.html">example AIO all channels loopback</a></li>
 </ul>
@@ -83,11 +89,14 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/DIO/DO_blinky_port.html">example DO blinky port</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#temperature">Temperature</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="examples/Temperature/TC_read_channel_data.html">example TC read channel data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="examples/Temperature/TC_read_channel_status.html">example TC read channel status</a></li>
-<li class="toctree-l3"><a class="reference internal" href="examples/Temperature/RTD_read_channel_data.html">example RTD read channel data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="examples/Temperature/RTD_read_channel_status.html">example RTD read channel status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#temperature-rtd">Temperature-RTD</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/Temperature-RTD/RTD_read_channel_data.html">example RTD read channel data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Temperature-RTD/RTD_read_channel_status.html">example RTD read channel status</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#temperature-tc">Temperature-TC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/Temperature-TC/TC_read_channel_data.html">example TC read channel data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Temperature-TC/TC_read_channel_status.html">example TC read channel status</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#can">CAN</a><ul>
@@ -163,17 +172,31 @@
 </ul>
 </div>
 </section>
+<section id="ai">
+<h2>AI<a class="headerlink" href="#ai" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/AI/AI_continuous.html">example AI continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/AI/AI_on_demand_in_loop.html">example AI on demand in loop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/AI/AI_N_samples_once.html">example AI N samples once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/AI/AI_N_samples_in_loop.html">example AI N samples in loop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/AI/AI_on_demand_once.html">example AI on demand once</a></li>
+</ul>
+</div>
+</section>
+<section id="ao">
+<h2>AO<a class="headerlink" href="#ao" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/AO/AO_write_one_channel.html">example AO write one channel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/AO/AO_write_all_channels.html">example AO write all channels</a></li>
+</ul>
+</div>
+</section>
 <section id="aio">
 <h2>AIO<a class="headerlink" href="#aio" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="examples/AIO/AI_continuous.html">example AI continuous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/AIO/AI_on_demand_in_loop.html">example AI on demand in loop</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/AIO/AI_N_samples_once.html">example AI N samples once</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/AIO/AI_N_samples_get_progressively.html">example AI N samples get progressively</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/AIO/AI_on_demand_once.html">example AI on demand once</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/AIO/AO_write_one_channel.html">example AO write one channel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/AIO/AO_write_all_channels.html">example AO write all channels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/AIO/AIO_one_channel_loopback.html">example AIO one channel loopback</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/AIO/AIO_all_channels_loopback.html">example AIO all channels loopback</a></li>
 </ul>
@@ -192,14 +215,21 @@
 </ul>
 </div>
 </section>
-<section id="temperature">
-<h2>Temperature<a class="headerlink" href="#temperature" title="Permalink to this heading"></a></h2>
+<section id="temperature-rtd">
+<h2>Temperature-RTD<a class="headerlink" href="#temperature-rtd" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="examples/Temperature/TC_read_channel_data.html">example TC read channel data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/Temperature/TC_read_channel_status.html">example TC read channel status</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/Temperature/RTD_read_channel_data.html">example RTD read channel data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/Temperature/RTD_read_channel_status.html">example RTD read channel status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Temperature-RTD/RTD_read_channel_data.html">example RTD read channel data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Temperature-RTD/RTD_read_channel_status.html">example RTD read channel status</a></li>
+</ul>
+</div>
+</section>
+<section id="temperature-tc">
+<h2>Temperature-TC<a class="headerlink" href="#temperature-tc" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/Temperature-TC/TC_read_channel_data.html">example TC read channel data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Temperature-TC/TC_read_channel_status.html">example TC read channel status</a></li>
 </ul>
 </div>
 </section>

@@ -1,7 +1,7 @@
 '''
 System - example_get_Wifi_DAQ_status.py
 
-This example demonstrates how to get basic information from Wifi-DAQ-E3-A such as RSSI & battery & thermo.
+This example demonstrates how to get basic information from WPC-Wifi-DAQ-E3-A such as RSSI & battery & thermo.
 
 For other examples please check:
    https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples

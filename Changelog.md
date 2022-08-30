@@ -2,6 +2,26 @@ WPC Python driver release changelog
 ===================================
 
 
+v0.0.14 Date: 2022/08/30, Developer: Chunglee_people
+---------------------------------------------------
+
+### Added
+- Add `USB-DAQ-F1-RD.JPG` in Reference/Pinouts folder
+- Add `Temperature-RTD` & `Temperature-TC` & `AI` & `AO` folder in order to create README file
+- Add README.md in `System` & `AI` & `AIO` & `AO` & `DIO` & `Temperature-RTD` & `Temperature-TC` example console folder
+
+### Changed
+- Change WPC Python Version from `pywpc-0.2.1` to `pywpc-0.2.1.1` 
+- In version 0.2.1.1:
+  - 0: Major revision (incompatible API change)
+  - 2: Minor revision (maybe reconstruct architecture)
+  - 1: Change driver source code 
+  - 1: Change Sphinx code 
+- Change API name `example_AI_N_samples_get_progressively` to `example_AI_N_samples_in_loop`
+
+### Removed
+- Temperature folder
+
 v0.0.13 Date: 2022/08/30, Developer: Chunglee_people
 ---------------------------------------------------
 

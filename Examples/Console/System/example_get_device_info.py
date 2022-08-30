@@ -1,7 +1,7 @@
 '''
 System - example_get_device_info.py
 
-This example demonstrates how to get hardware & network information from Wifi-DAQ-E3-A.
+This example demonstrates how to get hardware & network information from WPC-Wifi-DAQ-E3-A.
 
 First, get hardware information such as firmware model & version & serial number.
 Last, get network information such as IP & submask & mac.
