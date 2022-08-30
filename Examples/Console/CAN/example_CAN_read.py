@@ -1,8 +1,21 @@
-##  example_CAN_read.py
-##
-##  Copyright (c) 2022 WPC Systems Ltd.
-##  All rights reserved.
+'''
+CAN - example_CAN_read.py
 
+This example demonstrates how to read data from another device with CAN interface from WPC-USB-DAQ-F1-CD.
+
+First, it shows how to open CAN port and configure CAN parameters.
+Second, read bytes from another device.
+Last, stop and close CAN port.
+
+For other examples please check:
+   https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples
+
+   See README.md file to get detailed usage of this example.
+
+Copyright (c) 2022 WPC Systems Ltd.
+All rights reserved.
+
+'''
 ## Python
 import asyncio
 import sys
