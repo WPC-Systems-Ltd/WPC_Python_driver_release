@@ -8,7 +8,7 @@ If you want to build your own thermocouple application, try to use this as a bas
 
 ### Hardware Requirement
 
-In order to run this example, you should have `WPC-USB-DAQ-F1-TD` product with thermocouple sensor components.
+In order to run this example, you should have `WPC-USB-DAQ-F1-TD` product with thermocouple sensor.
 
 Then, we take `WPC-USB-DAQ-F1-TD` for example.
 
