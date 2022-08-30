@@ -1,7 +1,10 @@
 '''
 System - example_get_device_info.py
 
-Get firmware model & version & serial number & RTC Time & IP & submask & MAC with Wifi-DAQ-E3-A.
+This example demonstrates how to get hardware & network information from Wifi-DAQ-E3-A.
+
+First, get hardware information such as firmware model & version & serial number.
+Last, get network information such as IP & submask & mac.
 
 For other examples please check:
    https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples

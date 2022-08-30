@@ -1,7 +1,7 @@
 '''
 SPI - example_SPI_read_and_write.py
 
-This example code demonstrates how to communicate with USB-DAQ-F1-D (master) and 25LC640 (slave) with SPI interface.
+This example demonstrates how to communicate with USB-DAQ-F1-D (master) and 25LC640 (slave) with SPI interface.
 
 First, it shows how to open SPI port & DIO pins and configure SPI parameters.
 Second, write some bytes with address into EEPROM (25LC640). We have to make sure that bytes written in address is correct however read address from EEPROM (25LC640).

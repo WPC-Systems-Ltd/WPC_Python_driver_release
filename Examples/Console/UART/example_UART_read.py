@@ -1,6 +1,8 @@
 '''
 UART - example_UART_read.py
 
+This example demonstrates how to read data from another device with UART interface from WPC-USB-DAQ-F1-D.
+
 First, it shows how to open UART port and configure UART parameters.
 Second, read bytes from another device.
 Last, close UART port.

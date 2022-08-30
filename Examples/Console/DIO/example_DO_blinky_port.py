@@ -1,6 +1,8 @@
 '''
 DIO - example_DO_blinky_port.py
 
+This example demonstrates how to write DO high or low in port from WPC-USB-DAQ-F1-D.
+
 First, it shows how to open DO in port.
 Second, each loop has different voltage output so it will look like blinking. 
 Last, close DO in port.

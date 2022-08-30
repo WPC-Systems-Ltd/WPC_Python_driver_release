@@ -1,6 +1,7 @@
 '''
 DIO - example_DIO_loopback_pins.py
 
+This example demonstrates how to write DIO loopback in pins from WPC-USB-DAQ-F1-D.
 Use DO pins to send signals and use DI pins to receive signals on single device also called "loopback".
 
 First, it shows how to open DO and DI in pins.

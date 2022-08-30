@@ -1,6 +1,8 @@
 '''
 DIO - example_DO_blinky_pins.py
 
+This example demonstrates how to write DO high or low in pins from WPC-USB-DAQ-F1-D.
+
 First, it shows how to open DO in pins.
 Second, each loop has different voltage output so it will look like blinking. 
 Last, close DO in pins.

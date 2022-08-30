@@ -1,7 +1,7 @@
 '''
 System - example_find_all_devices.py
 
-Find all available WPC Wifi or ethernet device. 
+This example demonstrates how to find all available Wifi or ethernet device. 
 
 For other examples please check:
    https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples
