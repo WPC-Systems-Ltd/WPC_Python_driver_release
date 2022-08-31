@@ -1,6 +1,6 @@
 ## Overview
 
-This project example code demonstrate how to use WPC python driver to do AIO loopback.
+This example project demonstrates how to use WPC python driver to do AIO loopback.
 
 In order to use API correctly, please refer [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
@@ -16,10 +16,7 @@ Then, we take `WPC-USB-DAQ-F1-AOD` for example.
 
 ### WPC-USB-DAQ-F1-AOD
 
-- AO0 connect to AI0, AO1 connect to AI1
-- AO2 connect to AI2, AO3 connect to AI3 
-- AO4 connect to AI4, AO5 connect to AI5 
-- AO6 connect to AI6, AO7 connect to AI7 
+- AO0 <-----> AI0, AO1 <-----> AI1, AO2 <-----> AI2, ........, AO6 <-----> AI6, AO7 <-----> AI7
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/USB-DAQ-F1-AOD.JPG" alt="drawing" width="600"/>
 

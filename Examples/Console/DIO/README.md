@@ -1,6 +1,6 @@
 ## Overview
 
-DIO series example code demonstrate how to use WPC python driver to control DIO with whole port or assign pins 
+This example project demonstrates how to use WPC python driver to control DIO with whole port or assign pins 
 
 In order to use API correctly, please refer [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 

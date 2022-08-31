@@ -1,6 +1,6 @@
 ## Overview
 
-This example project demonstrate how to use WPC Python driver to acquire multi-channel AI data simultaneously.
+This example project demonstrates how to use WPC Python driver to acquire multi-channel AI data simultaneously.
 Also, we show how to perform data acquisition in on-demand, N samples and continuous mode individually.
 
 In order to use API correctly, please refer [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).

@@ -14,7 +14,7 @@ For WPC DAQ Python driver console or GUI examples, please go check `GitHub Examp
 
 Driver Version
 --------------
-The latest released version of WPC DAQ Python driver is 0.2.1.1 from August 30, 2022.
+The latest released version of WPC DAQ Python driver is 0.2.1.1 from August 31, 2022.
 
 For the latest development, archived versions and code repository, please visit `GitHub source code <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release>`_.
 
@@ -145,5 +145,6 @@ Products
    products
    examples
    port
+   SPI
    errortable
    gui

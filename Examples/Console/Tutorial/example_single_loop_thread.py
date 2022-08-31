@@ -1,4 +1,4 @@
-##  example_TC_read_channel_status.py
+##  example_single_loop_thread.py
 ##
 ##  Copyright (c) 2022 WPC Systems Ltd.
 ##  All rights reserved.

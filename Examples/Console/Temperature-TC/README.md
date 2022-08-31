@@ -1,6 +1,6 @@
 ## Overview
 
-The project `example_TC_read_channel_data.py` & `example_TC_read_channel_status.py` demonstrate how to use WPC python driver to read thermocouple sensor temperature in Celcius.
+This example project demonstrates how to use WPC python driver to read thermocouple sensor temperature in Celcius.
 
 If you want to build your own thermocouple application, try to use this as a basic template, then add your own code.
 

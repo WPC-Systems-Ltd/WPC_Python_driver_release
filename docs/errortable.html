@@ -22,7 +22,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="GUI examples by PyQt" href="gui.html" />
-    <link rel="prev" title="Port function table" href="port.html" /> 
+    <link rel="prev" title="SPI reference" href="SPI.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,9 +46,10 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">API REFERNECE</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="products.html">Products</a></li>
+<li class="toctree-l1"><a class="reference internal" href="products.html">WPC Products</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Example codes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="port.html">Port function table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SPI.html">SPI reference</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Error Table</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gui.html">GUI examples by PyQt</a></li>
 </ul>
@@ -93,15 +94,15 @@
 <tbody>
 <tr class="row-even"><td><p>570002</p></td>
 <td><p>Warning</p></td>
-<td><p>The CAN queue is overflow.</p></td>
+<td><p>CAN queue is overflow.</p></td>
 </tr>
 <tr class="row-odd"><td><p>560001</p></td>
 <td><p>Warning</p></td>
-<td><p>The UART queue is overflow.</p></td>
+<td><p>UART queue is overflow.</p></td>
 </tr>
 <tr class="row-even"><td><p>520003</p></td>
 <td><p>Warning</p></td>
-<td><p>The AI queue is overflow.</p></td>
+<td><p>AI queue is overflow.</p></td>
 </tr>
 <tr class="row-odd"><td><p>-8001</p></td>
 <td></td>
@@ -117,11 +118,11 @@
 </tr>
 <tr class="row-even"><td><p>-8009</p></td>
 <td></td>
-<td><p>Input pin is not exist.</p></td>
+<td><p>Input pin do not exist.</p></td>
 </tr>
 <tr class="row-odd"><td><p>-8010</p></td>
 <td></td>
-<td><p>Pin value did not define.</p></td>
+<td><p>Pin value do not define.</p></td>
 </tr>
 <tr class="row-even"><td><p>-8011</p></td>
 <td></td>
@@ -137,123 +138,127 @@
 </tr>
 <tr class="row-odd"><td><p>-8101</p></td>
 <td></td>
-<td><p>This DI channel on WPC DAQ is not avaliable or already occupied by other process.</p></td>
+<td><p>DI channel on WPC DAQ is not avaliable or already occupied by other process.</p></td>
 </tr>
 <tr class="row-even"><td><p>-8102</p></td>
 <td></td>
-<td><p>This DO channel on WPC DAQ is not avaliable already occupied by other process.</p></td>
+<td><p>DO channel on WPC DAQ is not avaliable already occupied by other process.</p></td>
 </tr>
 <tr class="row-odd"><td><p>-8201</p></td>
 <td></td>
-<td><p>This AI port on WPC DAQ is already in use or not avaliable.</p></td>
+<td><p>AI port on WPC DAQ is already in use or not avaliable.</p></td>
 </tr>
 <tr class="row-even"><td><p>-8204</p></td>
 <td></td>
-<td><p>This AO port on WPC DAQ is already in use or not avaliable.</p></td>
+<td><p>AO port on WPC DAQ is already in use or not avaliable.</p></td>
 </tr>
 <tr class="row-odd"><td><p>-8206</p></td>
 <td></td>
-<td><p>This AO mode on WPC DAQ is not vaild.</p></td>
+<td><p>AO mode on WPC DAQ is not vaild.</p></td>
 </tr>
 <tr class="row-even"><td><p>-8207</p></td>
 <td></td>
-<td><p>This AO span on WPC DAQ is not vaild.</p></td>
+<td><p>AO span on WPC DAQ is not vaild.</p></td>
 </tr>
 <tr class="row-odd"><td><p>-8208</p></td>
 <td></td>
-<td><p>This AI Port on WPC DAQ is not vaild.</p></td>
+<td><p>AI Port on WPC DAQ is not vaild.</p></td>
 </tr>
 <tr class="row-even"><td><p>-8209</p></td>
 <td></td>
-<td><p>This AO channel on WPC DAQ is already in use or not avaliable.</p></td>
+<td><p>AO channel on WPC DAQ is already in use or not avaliable.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8301</p></td>
+<tr class="row-odd"><td><p>-8210</p></td>
 <td></td>
-<td><p>This Thermal port on WPC DAQ is already in use or not avaliable.</p></td>
+<td><p>AI sampling rate on WPC DAQ is not vaild.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8304</p></td>
+<tr class="row-even"><td><p>-8301</p></td>
 <td></td>
-<td><p>This thermal chip selection on WPC DAQ is already in use or not avaliable.</p></td>
+<td><p>Thermal port on WPC DAQ is already in use or not avaliable.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8305</p></td>
+<tr class="row-odd"><td><p>-8304</p></td>
 <td></td>
-<td><p>This thermal mode on WPC DAQ is not vaild.</p></td>
+<td><p>Thermal chip selection on WPC DAQ is already in use or not avaliable.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8306</p></td>
+<tr class="row-even"><td><p>-8305</p></td>
 <td></td>
-<td><p>This thermal type on WPC DAQ is not vaild.</p></td>
+<td><p>Thermal mode on WPC DAQ is not vaild.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8401</p></td>
+<tr class="row-odd"><td><p>-8306</p></td>
 <td></td>
-<td><p>This I2C port on WPC DAQ is already in use or not avaliable.</p></td>
+<td><p>Thermal type on WPC DAQ is not vaild.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8403</p></td>
+<tr class="row-even"><td><p>-8401</p></td>
 <td></td>
-<td><p>This I2C Clock is not supported by this device.</p></td>
+<td><p>I2C port on WPC DAQ is already in use or not avaliable.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8404</p></td>
+<tr class="row-odd"><td><p>-8403</p></td>
 <td></td>
-<td><p>This I2C address size on WPC DAQ is not vaild.</p></td>
+<td><p>I2C Clock is not supported by this device.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8501</p></td>
+<tr class="row-even"><td><p>-8404</p></td>
 <td></td>
-<td><p>This SPI port on WPC DAQ is already in use or not avaliable.</p></td>
+<td><p>I2C address size on WPC DAQ is not vaild.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8502</p></td>
+<tr class="row-odd"><td><p>-8501</p></td>
+<td></td>
+<td><p>SPI port on WPC DAQ is already in use or not avaliable.</p></td>
+</tr>
+<tr class="row-even"><td><p>-8502</p></td>
 <td></td>
 <td><p>The length of data exceed maximum transfer length of SPI.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8503</p></td>
+<tr class="row-odd"><td><p>-8503</p></td>
 <td></td>
-<td><p>This SPI data size on WPC DAQ is not vaild.</p></td>
+<td><p>SPI data size on WPC DAQ is not vaild.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8504</p></td>
+<tr class="row-even"><td><p>-8504</p></td>
 <td></td>
-<td><p>This SPI first bit on WPC DAQ is not vaild.</p></td>
+<td><p>SPI first bit on WPC DAQ is not vaild.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8505</p></td>
+<tr class="row-odd"><td><p>-8505</p></td>
 <td></td>
-<td><p>This SPI prescaler on WPC DAQ is not vaild.</p></td>
+<td><p>SPI prescaler on WPC DAQ is not vaild.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8506</p></td>
+<tr class="row-even"><td><p>-8506</p></td>
 <td></td>
-<td><p>This SPI Mode on WPC DAQ is not vaild.</p></td>
+<td><p>SPI Mode on WPC DAQ is not vaild.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8601</p></td>
+<tr class="row-odd"><td><p>-8601</p></td>
 <td></td>
-<td><p>This UART port on WPC DAQ is already in use or not avaliable.</p></td>
+<td><p>UART port on WPC DAQ is already in use or not avaliable.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8602</p></td>
+<tr class="row-even"><td><p>-8602</p></td>
 <td></td>
 <td><p>The length of data exceed maximum transfer length of UART.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8603</p></td>
+<tr class="row-odd"><td><p>-8603</p></td>
 <td></td>
 <td><p>Configured baud rate is not supported.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8604</p></td>
+<tr class="row-even"><td><p>-8604</p></td>
 <td></td>
-<td><p>Num of stop bit mode is not supported.</p></td>
+<td><p>UART stop bit mode is not supported.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8605</p></td>
+<tr class="row-odd"><td><p>-8605</p></td>
 <td></td>
-<td><p>Parity mode is not supported.</p></td>
+<td><p>UART Parity mode is not supported.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8701</p></td>
+<tr class="row-even"><td><p>-8701</p></td>
 <td></td>
-<td><p>This CAN port on WPC DAQ is already in use or not avaliable.</p></td>
+<td><p>CAN port on WPC DAQ is already in use or not avaliable.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8702</p></td>
+<tr class="row-odd"><td><p>-8702</p></td>
 <td></td>
-<td><p>This CAN speed on WPC DAQ is not vaild.</p></td>
+<td><p>CAN speed on WPC DAQ is not vaild.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8703</p></td>
+<tr class="row-even"><td><p>-8703</p></td>
 <td></td>
-<td><p>This CAN TX on WPC DAQ is not vaild.</p></td>
+<td><p>CAN TX on WPC DAQ is not vaild.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8704</p></td>
+<tr class="row-odd"><td><p>-8704</p></td>
 <td></td>
-<td><p>This CAN TX Priority on WPC DAQ is not vaild.</p></td>
+<td><p>CAN TX Priority on WPC DAQ is not vaild.</p></td>
 </tr>
 </tbody>
 </table>
@@ -263,7 +268,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="port.html" class="btn btn-neutral float-left" title="Port function table" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="SPI.html" class="btn btn-neutral float-left" title="SPI reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="gui.html" class="btn btn-neutral float-right" title="GUI examples by PyQt" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

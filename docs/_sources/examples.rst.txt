@@ -1,28 +1,6 @@
 Example codes
 =============
 
-System
-------
-
-.. toctree::
-   :maxdepth: 4
-
-   examples/System/get_device_info
-   examples/System/find_all_devices
-   examples/System/get_Wifi_DAQ_status
-   examples/System/get_pin_mode
-
-Tutorial
---------
-
-.. toctree::
-   :maxdepth: 4
-
-   examples/Tutorial/single_loop_thread
-   examples/Tutorial/single_loop_async
-   examples/Tutorial/multiple_loops_thread
-   examples/Tutorial/multiple_loops_async
-
 AI
 --
 
@@ -66,24 +44,6 @@ DIO
    examples/DIO/DO_blinky_pins
    examples/DIO/DO_blinky_port
 
-Temperature-RTD
----------------
-
-.. toctree::
-   :maxdepth: 4
-
-   examples/Temperature-RTD/RTD_read_channel_data
-   examples/Temperature-RTD/RTD_read_channel_status
-
-Temperature-TC
---------------
-
-.. toctree::
-   :maxdepth: 4
-
-   examples/Temperature-TC/TC_read_channel_data
-   examples/Temperature-TC/TC_read_channel_status
-
 CAN
 ---
 
@@ -93,14 +53,13 @@ CAN
    examples/CAN/CAN_read
    examples/CAN/CAN_write
 
-UART
-----
+I2C
+---
 
 .. toctree::
    :maxdepth: 4
 
-   examples/UART/UART_read
-   examples/UART/UART_write
+   examples/I2C/I2C_write_read
 
 SPI
 ---
@@ -111,10 +70,51 @@ SPI
    examples/SPI/SPI_read_and_write
    examples/SPI/SPI_write
 
-I2C
----
+UART
+----
 
 .. toctree::
    :maxdepth: 4
 
-   examples/I2C/I2C_write_read
+   examples/UART/UART_read
+   examples/UART/UART_write
+
+System
+------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/System/get_device_info
+   examples/System/find_all_devices
+   examples/System/get_Wifi_DAQ_status
+   examples/System/get_pin_mode
+
+Tutorial
+--------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Tutorial/single_loop_thread
+   examples/Tutorial/single_loop_async
+   examples/Tutorial/multiple_loops_thread
+   examples/Tutorial/multiple_loops_async
+
+Temperature-TC
+--------------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Temperature-TC/TC_read_channel_data
+   examples/Temperature-TC/TC_read_channel_status
+
+Temperature-RTD
+---------------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Temperature-RTD/RTD_read_channel_data
+   examples/Temperature-RTD/RTD_read_channel_status

@@ -46,7 +46,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">API REFERNECE</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../products.html">Products</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../products.html">WPC Products</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../products.html#device-finder">Device finder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../products.html#wifi">WIFI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../products.html#ethernet-devices">Ethernet devices</a></li>
@@ -68,6 +68,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">Example codes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../port.html">Port function table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPI.html">SPI reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../errortable.html">Error Table</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gui.html">GUI examples by PyQt</a></li>
 </ul>
@@ -86,7 +87,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../products.html">Products</a> &raquo;</li>
+          <li><a href="../products.html">WPC Products</a> &raquo;</li>
       <li>USB-DAQ-F1-D</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -898,15 +899,16 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1D.SPI_setDataSize">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setDataSize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.SPI_setDataSize" title="Permalink to this definition"></a></dt>
-<dd><p>Set data frame format.</p>
+<dd><p>Set data frame format.
+Please check <a class="reference internal" href="../SPI.html#spifoobar"><span class="std std-ref">SPI data size mode</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : 8-bit data.</p></li>
-<li><p>1 : 16-bit data.</p></li>
+<li><p>0 : 8-bits data.</p></li>
+<li><p>1 : 16-bits data.</p></li>
 </ul>
 </dd>
 </dl>
@@ -923,7 +925,8 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1D.SPI_setFirstBit">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setFirstBit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.SPI_setFirstBit" title="Permalink to this definition"></a></dt>
-<dd><p>Set LSB first or MSB first.</p>
+<dd><p>Set LSB first or MSB first.
+Please check :ref:` SPI MSB/LSB mode &lt;SPIfoobar&gt;`.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -948,7 +951,8 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1D.SPI_setMode">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.SPI_setMode" title="Permalink to this definition"></a></dt>
-<dd><p>Set clock phase and clock polarity.</p>
+<dd><p>Set clock phase and clock polarity.
+Please check <a class="reference internal" href="../SPI.html#spifoobar"><span class="std std-ref">SPI mode</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -975,7 +979,8 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1D.SPI_setPrescaler">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setPrescaler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prescaler</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1D.SPI_setPrescaler" title="Permalink to this definition"></a></dt>
-<dd><p>Set the maximum speed of SPI communication.</p>
+<dd><p>Set the maximum speed of SPI communication. 
+Please check <a class="reference internal" href="../SPI.html#spifoobar"><span class="std std-ref">SPI clock</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
