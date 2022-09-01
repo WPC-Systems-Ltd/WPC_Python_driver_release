@@ -1,13 +1,55 @@
  
-## WPC Device Driver Example GUI
+## About
  
-- WPC device driver only support python 3.10
+WPC Python-based driver contains an API for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products.
 
-## Python version requirement
-- Python 3.10 
+## Quick Start
+The following is a basic example of using pywpc module to find all available devices.
 
-Products
---------
+```python
+from wpcsys import pywpc
+
+# Create device handle
+dev = pywpc.Broadcaster()
+
+# Show package name
+pywpc.PKG_FULL_NAME
+
+# Show pywpc version
+pywpc.__version__
+
+# Connect
+dev.connect()
+
+# Find all available device
+await dev.Bcst_getDeviceInfo()
+
+# Disonnect
+dev.disconnect()
+
+# Release device handle
+dev.close()
+```
+
+## Installation
+
+Install `wpcsys` using `pip`:
+
+```
+$ pip install wpcsys
+```
+
+### Requirements
+
+- [Python](https://www.python.org) \>= 3.10
+- [PyQt5](https://pypi.org/project/PyQt5/)(tested to work with\>=5.15.7)
+- [matplotlib](https://matplotlib.org/) \>= 3.5.2
+- [Numpy](http://www.numpy.org) \>= (tested to work with\>=1.23.0)
+- [pyusb](https://pypi.org/project/pyusb/) \>= 1.2.1
+- [qasync](https://pypi.org/project/qasync/) \>= 0.23.0
+
+## Products
+ 
 WiFi based DAQ card
 - Wifi-DAQ-E3-A
 
@@ -32,8 +74,7 @@ USB interface DAQ card
 - USB-DAQ-F1-AOD
 - USB-DAQ-F1-DSNK
 
-Port funtion table
-------------------
+## Port funtion table
 
 | Model           | AI  | AO | DI         | DO         | CAN | UART | SPI | I2C  | RTD | Thermocouple |
 |:----------------|:---:|:--:|:----------:|:----------:|:---:|:----:|:---:|:----:|:---:|:------------:|
@@ -51,18 +92,17 @@ Port funtion table
 Take `USB-DAQ-F1-AOD` for example
 - port0 is available for `AI`
 - port2 is available for `DI`
-- port0 & port1 are available for `DO`
+- port0 and port1 are available for `DO`
 - port2 is available for `UART`
 
 ## References
+
 - [User manual - WPC Python Device Driver](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)
 - [Recommendations for new python user to create environment](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-install-miniconda-and-build-your-own-virtual-environment) 
 - [Run example code in console](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-run-WPC-Python-driver-example-code-in-console)
 
-License
-=======
+## License
 
-**WPC Python driver** is licensed under an MIT-style license (see
-`LICENSE <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/LICENSE>`_).
-Other incorporated projects may be licensed under different licenses. All
+**WPC Python driver** is licensed under an MIT-style license see
+[LICENSE](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/LICENSE). Other incorporated projects may be licensed under different licenses. All
 licenses allow for non-commercial and commercial use.
