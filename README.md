@@ -1,10 +1,10 @@
 ## About
 
-WPC Python driver contains APIs for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products.
+**WPC Python** driver contains APIs for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products.
 
 ## Quick Start
 
-The following is a basic example of using pywpc module to find all available devices.
+The following is a simple example of using pywpc module to find all available devices.
 
 ```python
 >>> from wpcsys import pywpc
