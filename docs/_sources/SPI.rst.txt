@@ -2,7 +2,6 @@
 SPI setting reference
 =====================
 
-
 .. _SPIfoobar:
 
 SPI Clock
@@ -80,16 +79,16 @@ SPI Data Size
    * - 1
      - 16 bits
 
-SPI MSB/LSB mode
-----------------
+SPI Endianness
+--------------
 
 .. list-table::
    :widths: 50 50
    :header-rows: 1
 
    * - Value
-     - Fisrt bit
+     - Endianness
    * - 0
-     - MSB
+     - MSB first (big-endian)
    * - 1
-     - LSB
+     - LSB first (little-endian)
