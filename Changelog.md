@@ -2,7 +2,7 @@ WPC Python driver release changelog
 ===================================
 
 
-v0.0.14 Date: 2022/08/30, Developer: Chunglee_people
+v0.0.14 Date: 2022/09/01, Developer: Chunglee_people
 ----------------------------------------------------
 
 ### Added
