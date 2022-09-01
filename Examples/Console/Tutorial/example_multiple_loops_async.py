@@ -5,12 +5,9 @@
 
 ## Python
 import asyncio
-import sys
 
 ## WPC
-sys.path.insert(0, 'pywpc/')
-sys.path.insert(0, '../../../pywpc/')
-import pywpc
+from wpcsys import pywpc
 
 async def readRSSI_loop(handle, delay = 1):
     while True:

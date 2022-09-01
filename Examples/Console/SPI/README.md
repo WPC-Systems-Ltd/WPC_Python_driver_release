@@ -1,6 +1,6 @@
 ## Overview
 
-The project `example_SPI_write.py` & `example_SPI_read_and_write` demonstrate how to use WPC python driver to read and write EEPROM (25LC640) through SPI interface.
+This example project demonstrates how to use WPC python driver to read and write EEPROM (25LC640) through SPI interface.
 
 If you want to build your own SPI application (for example, read the temperature data from external sensor with SPI interface), try to use this as a basic template, then add your own code.
 
@@ -8,7 +8,7 @@ If you want to build your own SPI application (for example, read the temperature
 
 ### Hardware Requirement
 
-In order to run this example, you should have one of WPC-USB-DAQ series product as well as, -AD, -D, -TD, -CD and -RD, those contain SPI master interface.
+In order to run this example, you should get one of WPC-USB-DAQ series product as well as, -AD, -D, -TD, -CD and -RD, those contain SPI master interface.
 
 Then, we take `WPC-USB-DAQ-F1-D` for example and use 25LC640 as SPI slave, which connect directly to `WPC-USB-DAQ-F1-D`.
 

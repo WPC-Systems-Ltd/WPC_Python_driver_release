@@ -1,0 +1,11 @@
+
+SPI Clock Reference
+===================
+
+WPC-USB-Series products
+-----------------------
+
+.. image:: images/USB_SPI_clock.JPG
+    :width: 80%
+    :alt: USB_SPI_clock.JPG
+ 

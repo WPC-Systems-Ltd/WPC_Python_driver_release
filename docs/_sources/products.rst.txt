@@ -1,5 +1,5 @@
-Products
-========
+WPC Products
+============
 
 Device finder
 -------------
