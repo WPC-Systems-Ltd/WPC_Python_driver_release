@@ -1,1 +1,1 @@
-recursive-include wpc *.pyd
+recursive-include wpcsys *.pyd

@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name= "wpc",
+    name= "wpcsys",
     version="0.2.2",
     description='WPC Device Driver Python API',
     long_description=long_description,
@@ -12,7 +12,7 @@ setup(
     author="chunglee_people",
     author_email="lschung@wpc.com.tw",
     url="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release",
-    packages=['wpc'],
+    packages=['wpcsys'],
     include_package_data=True,
     license='MIT',
     install_requires=['pyusb>=1.2.1', 'numpy>=1.23.0',
