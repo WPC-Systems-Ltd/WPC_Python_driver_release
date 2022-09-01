@@ -7,28 +7,35 @@ WPC Python-based driver contains an API for interacting with the WPC USB-DAQ, Et
 The following is a basic example of using pywpc module to find all available devices.
 
 ```python
-from wpcsys import pywpc
+>>> from wpcsys import pywpc
 
-# Create device handle
-dev = pywpc.Broadcaster()
+>>> dev = pywpc.Broadcaster()
+...
+Opened handle (Device finder)
+ 
+>>> pywpc.PKG_FULL_NAME
+...
+WPC Python device driver
 
-# Show package name
-pywpc.PKG_FULL_NAME
+>>> pywpc.__version__
+...
+0.2.2
 
-# Show pywpc version
-pywpc.__version__
+>>> dev.connect()
+...
+Binded Device finder
 
-# Connect
-dev.connect()
+>>> await dev.Bcst_getDeviceInfo()
+...
+[['192.168.5.79', '255.255.255.0', '34:86:5d:19:06:6c', 'Wifi-DAQ-E3-A_R0.3.4']]
 
-# Find all available device
-await dev.Bcst_getDeviceInfo()
+>>> dev.disconnect()
+...
+Disconnected Device finder
 
-# Disonnect
-dev.disconnect()
-
-# Release device handle
-dev.close()
+>>> dev.close()
+...
+Closed handle (Device finder)
 ```
 
 ## Installation
