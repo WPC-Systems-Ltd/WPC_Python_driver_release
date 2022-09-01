@@ -1,7 +1,6 @@
- 
 ## About
 
-WPC Python-based driver contains an API for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products.
+WPC Python driver contains APIs for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products.
 
 ## Quick Start
 
@@ -54,7 +53,6 @@ Upgrade `wpcsys` using `pip`:
 ```
 $ pip install --upgrade wpcsys
 ```
-
 
 ## Requirements
 
