@@ -1,6 +1,6 @@
 
-SPI reference
-=============
+SPI setting reference
+=====================
 
 
 .. _SPIfoobar:
@@ -12,7 +12,7 @@ SPI Clock
    :widths: 50 50 50
    :header-rows: 1
 
-   * - Clock or prescaler
+   * - Prescaler
      - SPI1 frequency
      - SPI2 frequency
    * - Peripheral clock
@@ -50,19 +50,19 @@ SPI Mode
    :widths: 50 50 50
    :header-rows: 1
 
-   * - Mode
+   * - 
      - CPOL
      - CPHA
-   * - 0
+   * - Mode 0
      - 0
      - 0
-   * - 1
+   * - Mode 1
      - 0
      - 1
-   * - 2
+   * - Mode 2
      - 1
      - 0
-   * - 3
+   * - Mode 3
      - 1
      - 1
 
@@ -76,9 +76,9 @@ SPI Data Size
    * - Value
      - Data size
    * - 0
-     - 8 bits per block
+     - 8 bits
    * - 1
-     - 16 bits per block
+     - 16 bits
 
 SPI MSB/LSB mode
 ----------------

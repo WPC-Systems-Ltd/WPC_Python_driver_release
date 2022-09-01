@@ -20,7 +20,7 @@ from UI_design.Ui_example_GUI_AI import Ui_MainWindow
 ## WPC
 sys.path.insert(0, 'pywpc/')
 sys.path.insert(0, '../../../pywpc/')
-import pywpc  
+import pywpc 
 
 class MatplotlibWidget(QWidget):
     def __init__(self, parent=None):
