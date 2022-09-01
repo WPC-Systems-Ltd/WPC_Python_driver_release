@@ -47,7 +47,16 @@ Install `wpcsys` using `pip`:
 $ pip install wpcsys
 ```
 
-### Requirements
+## Upgrade
+
+Upgrade `wpcsys` using `pip`:
+
+```
+$ pip install --upgrade wpcsys
+```
+
+
+## Requirements
 
 - [Python](https://www.python.org) \>= 3.10
 - [PyQt5](https://pypi.org/project/PyQt5/)(tested to work with\>=5.15.7)
