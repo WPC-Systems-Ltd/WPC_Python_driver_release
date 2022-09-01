@@ -1,0 +1,6 @@
+example RTD read channel data
+=============================
+
+.. literalinclude:: ../../../../../../WPC_Python_driver_release/Examples/Console/Temperature-RTD/example_RTD_read_channel_data.py
+   :language: python
+   :linenos:

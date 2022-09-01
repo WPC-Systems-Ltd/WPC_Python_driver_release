@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>USB-DAQ-F1-TD &mdash; WPC Device Driver 0.2.1 documentation</title>
+  <title>USB-DAQ-F1-TD &mdash; WPC Device Driver 0.2.3 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../_static/WPC_logo2.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.2.1
+                0.2.3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -46,7 +46,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">API REFERNECE</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../products.html">Products</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../products.html">WPC Products</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../products.html#device-finder">Device finder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../products.html#wifi">WIFI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../products.html#ethernet-devices">Ethernet devices</a></li>
@@ -68,6 +68,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">Example codes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../port.html">Port function table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPI.html">SPI setting reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../errortable.html">Error Table</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gui.html">GUI examples by PyQt</a></li>
 </ul>
@@ -86,7 +87,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../products.html">Products</a> &raquo;</li>
+          <li><a href="../products.html">WPC Products</a> &raquo;</li>
       <li>USB-DAQ-F1-TD</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -132,7 +133,7 @@
 <td><p>Close all pins in specific port with digital input.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1TD.DI_getPinMap" title="pywpc.USBDAQF1TD.DI_getPinMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_getPinMap</span></code></a>()</p></td>
-<td><p>Get DI port and its pins.</p></td>
+<td><p>Get all available DI port numbers &amp; the pins that are associated with them.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1TD.DI_openPins" title="pywpc.USBDAQF1TD.DI_openPins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_openPins</span></code></a>(port, pin)</p></td>
 <td><p>Open specific pin to digital intput.</p></td>
@@ -153,7 +154,7 @@
 <td><p>Close all pins in specific port with digital output.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1TD.DO_getPinMap" title="pywpc.USBDAQF1TD.DO_getPinMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_getPinMap</span></code></a>()</p></td>
-<td><p>Get DO port and its pins.</p></td>
+<td><p>Get all available DO port numbers &amp; the pins that are associated with them.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1TD.DO_openPins" title="pywpc.USBDAQF1TD.DO_openPins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_openPins</span></code></a>(port, pin)</p></td>
 <td><p>Open specific pin to digital output.</p></td>
@@ -171,7 +172,7 @@
 <td><p>Close I2C port on WPC DAQ device.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1TD.I2C_getPinMap" title="pywpc.USBDAQF1TD.I2C_getPinMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_getPinMap</span></code></a>()</p></td>
-<td><p>Get I2C port and its pins.</p></td>
+<td><p>Get all available I2C port numbers &amp; the pins that are associated with them.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1TD.I2C_open" title="pywpc.USBDAQF1TD.I2C_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_open</span></code></a>(port)</p></td>
 <td><p>Open I2C port on WPC DAQ device.</p></td>
@@ -195,7 +196,7 @@
 <td><p>Close SPI port on WPC DAQ device.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1TD.SPI_getPinMap" title="pywpc.USBDAQF1TD.SPI_getPinMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_getPinMap</span></code></a>()</p></td>
-<td><p>Get SPI port and its pins on WPC DAQ device.</p></td>
+<td><p>Get all available SPI port numbers &amp; the pins that are associated with them.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1TD.SPI_open" title="pywpc.USBDAQF1TD.SPI_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_open</span></code></a>(port)</p></td>
 <td><p>Open SPI port on WPC DAQ device.</p></td>
@@ -258,7 +259,7 @@
 <td><p>Close thermocouple or RTD port on WPC DAQ device.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1TD.Thermal_getPinMap" title="pywpc.USBDAQF1TD.Thermal_getPinMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Thermal_getPinMap</span></code></a>()</p></td>
-<td><p>Get thermocouple or RTD port and its pins.</p></td>
+<td><p>Get all available thermal port numbers &amp; the pins that are associated with them.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1TD.Thermal_getStatus" title="pywpc.USBDAQF1TD.Thermal_getStatus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Thermal_getStatus</span></code></a>(port, channel)</p></td>
 <td><p>Get thermocouple or RTD status from specific channel.</p></td>
@@ -285,7 +286,7 @@
 <td><p>Close UART port on WPC DAQ device.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1TD.UART_getPinMap" title="pywpc.USBDAQF1TD.UART_getPinMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_getPinMap</span></code></a>()</p></td>
-<td><p>Get UART port and its pins.</p></td>
+<td><p>Get all available UART port numbers &amp; the pins that are associated with them.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1TD.UART_open" title="pywpc.USBDAQF1TD.UART_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_open</span></code></a>(port)</p></td>
 <td><p>Open UART port on WPC DAQ device.</p></td>
@@ -370,11 +371,13 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1TD.DI_getPinMap">
 <span class="sig-name descname"><span class="pre">DI_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1TD.DI_getPinMap" title="Permalink to this definition"></a></dt>
-<dd><p>Get DI port and its pins.</p>
+<dd><p>Get all available DI port numbers &amp; the pins that are associated with them.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>{port: [pins]}</p>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is an integer representing its number.
+For example: {0: [0, 1, 2, 3, 4, 5, 6, 7], 1: [0, 1, 2, 3, 4, 5]} means that there are two DI ports. They are numbered as 0 &amp; 1. Port 0 has 8 pins: P0.0 to P0.7. Port 1 has 6 pins: P1.0 to P1.5.
+General format: {DI_port: [pin, …, pin]}</p>
 </dd>
 </dl>
 </dd>
@@ -514,11 +517,13 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1TD.DO_getPinMap">
 <span class="sig-name descname"><span class="pre">DO_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1TD.DO_getPinMap" title="Permalink to this definition"></a></dt>
-<dd><p>Get DO port and its pins.</p>
+<dd><p>Get all available DO port numbers &amp; the pins that are associated with them.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>{port: [pins]}</p>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is an integer representing its number.
+For example: {0: [0, 1, 2, 3, 4, 5, 6, 7], 1: [0, 1, 2, 3, 4, 5]} means that there are two DO ports. They are numbered as 0 &amp; 1. Port 0 has 8 pins: P0.0 to P0.7. Port 1 has 6 pins: P1.0 to P1.5.
+General format: {DO_port: [pin, …, pin]}</p>
 </dd>
 </dl>
 </dd>
@@ -654,11 +659,13 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1TD.I2C_getPinMap">
 <span class="sig-name descname"><span class="pre">I2C_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1TD.I2C_getPinMap" title="Permalink to this definition"></a></dt>
-<dd><p>Get I2C port and its pins.</p>
+<dd><p>Get all available I2C port numbers &amp; the pins that are associated with them.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>{I2C port: [(port0, pin0), …, (portN, pinN)]}</p>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is a tuple constituted of its physical port number &amp; pin number.
+For example: {1: [(2, 6), (2, 7)], 2: [(3, 0), (3, 1)]} means that there are two I2C ports. They are numbered as 1 &amp; 2. I2C1 has two pins: P2.6 &amp; P2.7. I2C2 has two pins: P3.0 &amp; P3.1.
+General format: {I2C_port: [(port, pin), …, (port, pin)]}</p>
 </dd>
 </dl>
 </dd>
@@ -828,11 +835,14 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1TD.SPI_getPinMap">
 <span class="sig-name descname"><span class="pre">SPI_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1TD.SPI_getPinMap" title="Permalink to this definition"></a></dt>
-<dd><p>Get SPI port and its pins on WPC DAQ device.</p>
+<dd><p>Get all available SPI port numbers &amp; the pins that are associated with them.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>{SPI port: [(port0, pin0), …, (portN, pinN)]}</p>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is a tuple constituted of its physical port number &amp; pin number.
+For example: {1: [(2, 1), (2, 2), (2, 3)], 2: [(3, 3), (3, 4), (3, 5)]} means that there are two SPI ports. They are numbered as 1 &amp; 2. SPI1 has three pins: P2.1 &amp; P2.2 &amp; P2.3. 
+SPI2 has three pins: P3.3 &amp; P3.4 &amp; P3.5.
+General format: {SPI_port: [(port, pin), …, (port, pin)]}</p>
 </dd>
 </dl>
 </dd>
@@ -926,7 +936,8 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1TD.SPI_setDataSize">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setDataSize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1TD.SPI_setDataSize" title="Permalink to this definition"></a></dt>
-<dd><p>Set data frame format.</p>
+<dd><p>Set data frame format.
+Please check <a class="reference internal" href="../SPI.html#spifoobar"><span class="std std-ref">SPI data size mode</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -951,7 +962,8 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1TD.SPI_setFirstBit">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setFirstBit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1TD.SPI_setFirstBit" title="Permalink to this definition"></a></dt>
-<dd><p>Set LSB first or MSB first.</p>
+<dd><p>Set LSB first or MSB first.
+Please check :ref:` SPI MSB/LSB mode &lt;SPIfoobar&gt;`.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -976,7 +988,8 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1TD.SPI_setMode">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1TD.SPI_setMode" title="Permalink to this definition"></a></dt>
-<dd><p>Set clock phase and clock polarity.</p>
+<dd><p>Set clock phase and clock polarity.
+Please check <a class="reference internal" href="../SPI.html#spifoobar"><span class="std std-ref">SPI mode</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1003,7 +1016,8 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1TD.SPI_setPrescaler">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setPrescaler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prescaler</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1TD.SPI_setPrescaler" title="Permalink to this definition"></a></dt>
-<dd><p>Set the maximum speed of SPI communication.</p>
+<dd><p>Set the maximum speed of SPI communication. 
+Please check <a class="reference internal" href="../SPI.html#spifoobar"><span class="std std-ref">SPI clock</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1266,13 +1280,13 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1TD.Thermal_getPinMap">
 <span class="sig-name descname"><span class="pre">Thermal_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1TD.Thermal_getPinMap" title="Permalink to this definition"></a></dt>
-<dd><p>Get thermocouple or RTD port and its pins.</p>
+<dd><p>Get all available thermal port numbers &amp; the pins that are associated with them.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><ul class="simple">
-<li><p>{Thermal port: [(port0, pin0), …, (portN, pinN)]}</p></li>
-</ul>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is a tuple constituted of its physical port number &amp; pin number.
+For example: {1: [(1, 5), (2, 0), (2, 1), (2, 2), (2, 3)]} means that there is one thermal port. They is numbered as 1. thermal1 has five pins: P1.5 &amp; P2.0 &amp; P2.1 &amp; P2.2 &amp; P2.3. 
+General format: {thermal_port: [(port, pin), …, (port, pin)]}</p>
 </dd>
 </dl>
 </dd>
@@ -1504,11 +1518,13 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1TD.UART_getPinMap">
 <span class="sig-name descname"><span class="pre">UART_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1TD.UART_getPinMap" title="Permalink to this definition"></a></dt>
-<dd><p>Get UART port and its pins.</p>
+<dd><p>Get all available UART port numbers &amp; the pins that are associated with them.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>{UART port: [(port0, pin0), …, (portN, pinN)]}</p>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is a tuple constituted of its physical port number &amp; pin number.
+For example: {1: [(0, 3), (0, 4)], 2: [(1, 2), (1, 3)]} means that there are two UART ports. They are numbered as 1 &amp; 2. UART1 has two pins: P0.3 &amp; P0.4. UART2 has two pins: P1.2 &amp; P1.3.
+General format: {UART_port: [(port, pin), …, (port, pin)]}</p>
 </dd>
 </dl>
 </dd>

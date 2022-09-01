@@ -2,8 +2,31 @@ WPC Python driver release changelog
 ===================================
 
 
+v0.0.14 Date: 2022/09/01, Developer: Chunglee_people
+----------------------------------------------------
+
+### Added
+- Add LICENSE, MANIFEST.in and setup.py in order to deliver `wpcsys` in PyPI
+- Add `about` , `Quick Start`, `Requirements` and `License` in Readme.md
+- Add `USB-DAQ-F1-RD.JPG` in Reference/Pinouts folder
+- Add `Temperature-RTD` & `Temperature-TC` & `AI` & `AO` folder in order to create README file
+- Add README.md in `System` & `AI` & `AIO` & `AO` & `DIO` & `Temperature-RTD` & `Temperature-TC` example console folder
+
+### Changed
+- Change WPC Python Version from `pywpc-0.2.1` to `pywpc-0.2.3`
+- In version 0.2.1.1:
+  - 0: Major revision (incompatible API change)
+  - 2: Minor revision (maybe reconstruct architecture)
+  - 1: Change driver source code 
+  - 1: Change Sphinx code 
+- Change API name `example_AI_N_samples_get_progressively` to `example_AI_N_samples_in_loop`
+
+### Removed
+- Remove Temperature folder
+- Remove `system` import path and import `from wpcsys import pywpc`
+ 
 v0.0.13 Date: 2022/08/30, Developer: Chunglee_people
----------------------------------------------------
+----------------------------------------------------
 
 ### Added
 - Add GUI example code : Example_thermocouple, Example_RTD, Example_analog_input_on_demand, Example_I2C, Example_SPI
@@ -23,7 +46,7 @@ v0.0.13 Date: 2022/08/30, Developer: Chunglee_people
 - Remove WPC_DAQ_Devices_User_Manual_r16
 
 v0.0.12 Date: 2022/08/23, Developer: Chunglee_people
----------------------------------------------------
+----------------------------------------------------
 
 ### Added
 - Add example code packet classification
@@ -35,12 +58,12 @@ v0.0.12 Date: 2022/08/23, Developer: Chunglee_people
 - Change folder name `System` to `System_Network`
 
 v0.0.11 Date: 2022/08/17, Developer: Chunglee_people
----------------------------------------------------
+----------------------------------------------------
 ### Removed
 - Remove unnecessary files
 
 v0.0.10 Date: 2022/08/17, Developer: Chunglee_people
----------------------------------------------------
+----------------------------------------------------
 ### Added
 - Add github edit link in Sphinx
 - Add product description

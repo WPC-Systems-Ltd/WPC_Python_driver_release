@@ -1,25 +1,82 @@
- 
-## WPC Device Driver Example GUI
- 
-- WPC device driver only support python 3.10
+## About
 
-## Python version requirement
-- Python 3.10 
+**WPC Python driver** contains APIs for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products.
 
-Products
---------
+## Quick Start
+
+The following is a simple example of using pywpc module to find all available devices.
+
+```python
+>>> from wpcsys import pywpc
+
+>>> dev = pywpc.Broadcaster()
+...
+Opened handle (Device finder)
+ 
+>>> pywpc.PKG_FULL_NAME
+...
+WPC Python device driver
+
+>>> pywpc.__version__
+...
+0.2.2
+
+>>> dev.connect()
+...
+Binded Device finder
+
+>>> await dev.Bcst_getDeviceInfo()
+...
+[['192.168.5.79', '255.255.255.0', '34:86:5d:19:06:6c', 'Wifi-DAQ-E3-A_R0.3.4']]
+
+>>> dev.disconnect()
+...
+Disconnected Device finder
+
+>>> dev.close()
+...
+Closed handle (Device finder)
+```
+
+## Installation
+
+Install `wpcsys` using `pip`:
+
+```
+$ pip install wpcsys
+```
+
+## Upgrade
+
+Upgrade `wpcsys` using `pip`:
+
+```
+$ pip install --upgrade wpcsys
+```
+
+## Requirements
+
+- [Python](https://www.python.org) \>= 3.10
+- [PyQt5](https://pypi.org/project/PyQt5/)(tested to work with\>=5.15.7)
+- [matplotlib](https://matplotlib.org/) \>= 3.5.2
+- [Numpy](http://www.numpy.org) \>= (tested to work with\>=1.23.0)
+- [pyusb](https://pypi.org/project/pyusb/) \>= 1.2.1
+- [qasync](https://pypi.org/project/qasync/) \>= 0.23.0
+
+## Products
+ 
 WiFi based DAQ card
 - Wifi-DAQ-E3-A
 
 Ethernet based remote controller
-- STEM
-- STEM-Lite
+- STEM (unsupported)
+- STEM-Lite (unsupported)
 
 Ethernet based motion card
-- EMotion
+- EMotion (unsupported)
 
 Ethernet based DAQ card
-- EPC
+- EPC (unsupported)
 - Ethan-D
 - Ethan-A
 
@@ -32,8 +89,7 @@ USB interface DAQ card
 - USB-DAQ-F1-AOD
 - USB-DAQ-F1-DSNK
 
-Port funtion table
-------------------
+## Port funtion table
 
 | Model           | AI  | AO | DI         | DO         | CAN | UART | SPI | I2C  | RTD | Thermocouple |
 |:----------------|:---:|:--:|:----------:|:----------:|:---:|:----:|:---:|:----:|:---:|:------------:|
@@ -51,10 +107,17 @@ Port funtion table
 Take `USB-DAQ-F1-AOD` for example
 - port0 is available for `AI`
 - port2 is available for `DI`
-- port0 & port1 are available for `DO`
+- port0 and port1 are available for `DO`
 - port2 is available for `UART`
 
 ## References
+
 - [User manual - WPC Python Device Driver](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)
 - [Recommendations for new python user to create environment](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-install-miniconda-and-build-your-own-virtual-environment) 
 - [Run example code in console](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-run-WPC-Python-driver-example-code-in-console)
+
+## License
+
+**WPC Python driver** is licensed under an MIT-style license see
+[LICENSE](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/LICENSE). Other incorporated projects may be licensed under different licenses. All
+licenses allow for non-commercial and commercial use.

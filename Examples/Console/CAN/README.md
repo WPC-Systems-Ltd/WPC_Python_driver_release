@@ -1,9 +1,9 @@
 ## Overview
 
-The project `example_CAN_read.py` & `example_CAN_write` demonstrate how to use WPC python driver to read and write through CAN interface.
+This example project demonstrates how to use WPC python driver to read and write through CAN interface.
 
-To be verified, please take another `WPC-USB-DAQ-F1-CD` or other device which support CAN interface.
-We connect two device via CAN so that we can communicate data.  
+In order to verify, please take another `WPC-USB-DAQ-F1-CD` or other device which support CAN interface.
+We connect two device via CAN so that can communicate data.  
 
 If you want to build your own CAN application, try to use this as a basic template, then add your own code.
 
@@ -11,13 +11,13 @@ If you want to build your own CAN application, try to use this as a basic templa
 
 ### Hardware Requirement
 
-In order to run this example, we strongly recommend that you should have two WPC-USB-DAQ-F1-CD products which contain CAN interface.
+In order to verify, please get two  WPC-USB-DAQ-F1-CD devices or one with any other device which support CAN interface.
 
 Then, we take `WPC-USB-DAQ-F1-CD` for example.
 
 ### WPC-USB-DAQ-F1-CD
 
-CAN_H connect to another CAN_H device and CAN_L connect to another CAN_L device. Short pin35 & pin36 for termination resistor enabling.
+Both connect CAN_H to CAN_H and CAN_L to CAN_L then short pin35, pin36 together for enabling termination resistor.
  
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/USB-DAQ-F1-CD.JPG" alt="drawing" width="600"/>

@@ -5,14 +5,11 @@
 
 ## Python
 import asyncio
-import sys
 import threading
 import time
 
 ## WPC
-sys.path.insert(0, 'pywpc/')
-sys.path.insert(0, '../../../pywpc/')
-import pywpc
+from wpcsys import pywpc
 
 async def getRSSI(handle, delay = 1):
     data = await handle.Wifi_readRSSI()

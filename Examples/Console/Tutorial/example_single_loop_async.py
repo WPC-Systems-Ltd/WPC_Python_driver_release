@@ -1,16 +1,13 @@
-##  example_TC_read_channel_status.py
+##  example_single_loop_async.py
 ##
 ##  Copyright (c) 2022 WPC Systems Ltd.
 ##  All rights reserved.
 
 ## Python
 import asyncio
-import sys
- 
+
 ## WPC
-sys.path.insert(0, 'pywpc/')
-sys.path.insert(0, '../../../pywpc/')
-import pywpc
+from wpcsys import pywpc
 
 async def loop_func(handle, timeout = 3, delay = 0.5):
     t = 0

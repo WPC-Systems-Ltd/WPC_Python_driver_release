@@ -1,16 +1,28 @@
-##  example_AIO_one_channel_loopback.py
-##
-##  Copyright (c) 2022 WPC Systems Ltd.
-##  All rights reserved.
+'''
+AIO - example_AIO_one_channel_loopback.py
+
+This example demonstrates how to write AIO loopback in specific channel from WPC-USB-DAQ-F1-AOD.
+Use AO pins to send signals and use AI pins to receive signals on single device also called "loopback".
+
+First, it shows how to open AO and AI in port.
+Second, write digital signals to AO in specific channel and read AI ondemand data.
+Last, close AO and AI in port.
+
+For other examples please check:
+   https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples
+
+   See README.md file to get detailed usage of this example.
+
+Copyright (c) 2022 WPC Systems Ltd.
+All rights reserved.
+
+'''
 
 ## Python
 import asyncio
-import sys
- 
+
 ## WPC
-sys.path.insert(0, 'pywpc/')
-sys.path.insert(0, '../../../pywpc/')
-import pywpc  
+from wpcsys import pywpc
 
 async def main():
     print("Start example code...")

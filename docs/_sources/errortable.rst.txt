@@ -10,13 +10,13 @@ Error Table
      - Error messages
    * - 570002
      - Warning
-     - The CAN queue is overflow.
+     - CAN queue is overflow.
    * - 560001
      - Warning
-     - The UART queue is overflow.
+     - UART queue is overflow.
    * - 520003
      - Warning
-     - The AI queue is overflow.
+     - AI queue is overflow.
    * - -8001
      - 
      - Fail connect to WPC DAQ. Please check USB plugin status and serial number.
@@ -28,10 +28,10 @@ Error Table
      - Network DAQ connection lost.
    * - -8009
      - 
-     - Input pin is not exist.
+     - Input pin do not exist.
    * - -8010
      - 
-     - Pin value did not define.
+     - Pin value do not define.
    * - -8011
      - 
      - Arguments type should be consistent. It should be list or int.
@@ -43,70 +43,73 @@ Error Table
      - Input data must be in range.
    * - -8101
      - 
-     - This DI channel on WPC DAQ is not avaliable or already occupied by other process.
+     - DI channel on WPC DAQ is not avaliable or already occupied by other process.
    * - -8102
      - 
-     - This DO channel on WPC DAQ is not avaliable already occupied by other process.
+     - DO channel on WPC DAQ is not avaliable already occupied by other process.
    * - -8201
      - 
-     - This AI port on WPC DAQ is already in use or not avaliable.
+     - AI port on WPC DAQ is already in use or not avaliable.
    * - -8204
      - 
-     - This AO port on WPC DAQ is already in use or not avaliable.
+     - AO port on WPC DAQ is already in use or not avaliable.
    * - -8206
      - 
-     - This AO mode on WPC DAQ is not vaild.
+     - AO mode on WPC DAQ is not vaild.
    * - -8207
      - 
-     - This AO span on WPC DAQ is not vaild.
+     - AO span on WPC DAQ is not vaild.
    * - -8208
      - 
-     - This AI Port on WPC DAQ is not vaild.
+     - AI Port on WPC DAQ is not vaild.
    * - -8209
      - 
-     - This AO channel on WPC DAQ is already in use or not avaliable.
+     - AO channel on WPC DAQ is already in use or not avaliable.
+   * - -8210
+     - 
+     - AI sampling rate on WPC DAQ is not vaild.
    * - -8301
      - 
-     - This Thermal port on WPC DAQ is already in use or not avaliable.
+     - Thermal port on WPC DAQ is already in use or not avaliable.
    * - -8304
      - 
-     - This thermal chip selection on WPC DAQ is already in use or not avaliable.
+     - Thermal chip selection on WPC DAQ is already in use or not avaliable.
    * - -8305
      - 
-     - This thermal mode on WPC DAQ is not vaild.
+     - Thermal mode on WPC DAQ is not vaild.
    * - -8306
      - 
-     - This thermal type on WPC DAQ is not vaild.
+     - Thermal type on WPC DAQ is not vaild.
    * - -8401
      - 
-     - This I2C port on WPC DAQ is already in use or not avaliable.
+     - I2C port on WPC DAQ is already in use or not avaliable.
    * - -8403
      - 
-     - This I2C Clock is not supported by this device.
+     - I2C Clock is not supported by this device.
    * - -8404
      - 
-     - This I2C address size on WPC DAQ is not vaild.
+     - I2C address size on WPC DAQ is not vaild.
    * - -8501
      - 
-     - This SPI port on WPC DAQ is already in use or not avaliable.
+     - SPI port on WPC DAQ is already in use or not avaliable.
    * - -8502
      - 
      - The length of data exceed maximum transfer length of SPI.
    * - -8503
      - 
-     - This SPI data size on WPC DAQ is not vaild.
+     - SPI data size on WPC DAQ is not vaild.
    * - -8504
      - 
-     - This SPI first bit on WPC DAQ is not vaild.
+     - SPI first bit on WPC DAQ is not vaild.
    * - -8505
      - 
-     - This SPI prescaler on WPC DAQ is not vaild.
+     - SPI prescaler on WPC DAQ is not vaild.
    * - -8506
      - 
-     - This SPI Mode on WPC DAQ is not vaild.
+     - SPI Mode on WPC DAQ is not vaild.
    * - -8601
      - 
-     - This UART port on WPC DAQ is already in use or not avaliable.
+     - UART port on WPC DAQ is already in use or not avaliable.
    * - -8602
      - 
      - The length of data exceed maximum transfer length of UART.
@@ -115,19 +118,19 @@ Error Table
      - Configured baud rate is not supported.
    * - -8604
      - 
-     - Num of stop bit mode is not supported.
+     - UART stop bit mode is not supported.
    * - -8605
      - 
-     - Parity mode is not supported.
+     - UART Parity mode is not supported.
    * - -8701
      - 
-     - This CAN port on WPC DAQ is already in use or not avaliable.
+     - CAN port on WPC DAQ is already in use or not avaliable.
    * - -8702
      - 
-     - This CAN speed on WPC DAQ is not vaild.
+     - CAN speed on WPC DAQ is not vaild.
    * - -8703
      - 
-     - This CAN TX on WPC DAQ is not vaild.
+     - CAN TX on WPC DAQ is not vaild.
    * - -8704
      - 
-     - This CAN TX Priority on WPC DAQ is not vaild.
+     - CAN TX Priority on WPC DAQ is not vaild.

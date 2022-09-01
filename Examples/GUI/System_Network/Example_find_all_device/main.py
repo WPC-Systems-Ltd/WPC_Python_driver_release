@@ -6,7 +6,6 @@
 
 ## Python
 import asyncio
-import sys
 import os
 from qasync import QEventLoop, asyncSlot
 
@@ -17,9 +16,7 @@ from PyQt5.QtCore import Qt
 from UI_design.Ui_example_GUI_find_all_device import Ui_MainWindow 
 
 ## WPC
-sys.path.insert(0, 'pywpc/')
-sys.path.insert(0, '../../../pywpc/')
-import pywpc  
+from wpcsys import pywpc
 
 COLUMN_WIDTH = 160  
 
