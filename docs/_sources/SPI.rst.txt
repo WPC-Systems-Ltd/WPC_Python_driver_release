@@ -83,7 +83,7 @@ SPI Endianness
 --------------
 
 .. list-table::
-   :widths: 50 50
+   :widths: 20 50
    :header-rows: 1
 
    * - Value
