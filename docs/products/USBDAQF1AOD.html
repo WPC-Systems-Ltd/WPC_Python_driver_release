@@ -187,7 +187,7 @@
 <td><p>Close all pins in specific port with digital input.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.DI_getPinMap" title="pywpc.USBDAQF1AOD.DI_getPinMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_getPinMap</span></code></a>()</p></td>
-<td><p>Get DI port and its pins.</p></td>
+<td><p>Get all available DI port numbers &amp; the pins that are associated with them.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.DI_openPins" title="pywpc.USBDAQF1AOD.DI_openPins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_openPins</span></code></a>(port, pin)</p></td>
 <td><p>Open specific pin to digital intput.</p></td>
@@ -208,7 +208,7 @@
 <td><p>Close all pins in specific port with digital output.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.DO_getPinMap" title="pywpc.USBDAQF1AOD.DO_getPinMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_getPinMap</span></code></a>()</p></td>
-<td><p>Get DO port and its pins.</p></td>
+<td><p>Get all available DO port numbers &amp; the pins that are associated with them.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.DO_openPins" title="pywpc.USBDAQF1AOD.DO_openPins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_openPins</span></code></a>(port, pin)</p></td>
 <td><p>Open specific pin to digital output.</p></td>
@@ -226,7 +226,7 @@
 <td><p>Close I2C port on WPC DAQ device.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.I2C_getPinMap" title="pywpc.USBDAQF1AOD.I2C_getPinMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_getPinMap</span></code></a>()</p></td>
-<td><p>Get I2C port and its pins.</p></td>
+<td><p>Get all available I2C port numbers &amp; the pins that are associated with them.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.I2C_open" title="pywpc.USBDAQF1AOD.I2C_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_open</span></code></a>(port)</p></td>
 <td><p>Open I2C port on WPC DAQ device.</p></td>
@@ -280,7 +280,7 @@
 <td><p>Close UART port on WPC DAQ device.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.UART_getPinMap" title="pywpc.USBDAQF1AOD.UART_getPinMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_getPinMap</span></code></a>()</p></td>
-<td><p>Get UART port and its pins.</p></td>
+<td><p>Get all available UART port numbers &amp; the pins that are associated with them.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.UART_open" title="pywpc.USBDAQF1AOD.UART_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_open</span></code></a>(port)</p></td>
 <td><p>Open UART port on WPC DAQ device.</p></td>
@@ -744,11 +744,13 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.DI_getPinMap">
 <span class="sig-name descname"><span class="pre">DI_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.DI_getPinMap" title="Permalink to this definition"></a></dt>
-<dd><p>Get DI port and its pins.</p>
+<dd><p>Get all available DI port numbers &amp; the pins that are associated with them.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>{port: [pins]}</p>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is an integer representing its number.
+For example: {0: [0, 1, 2, 3, 4, 5, 6, 7], 1: [0, 1, 2, 3, 4, 5]} means that there are two DI ports. They are numbered as 0 &amp; 1. Port 0 has 8 pins: P0.0 to P0.7. Port 1 has 6 pins: P1.0 to P1.5.
+General format: {DI_port: [pin, …, pin]}</p>
 </dd>
 </dl>
 </dd>
@@ -888,11 +890,13 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.DO_getPinMap">
 <span class="sig-name descname"><span class="pre">DO_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.DO_getPinMap" title="Permalink to this definition"></a></dt>
-<dd><p>Get DO port and its pins.</p>
+<dd><p>Get all available DO port numbers &amp; the pins that are associated with them.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>{port: [pins]}</p>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is an integer representing its number.
+For example: {0: [0, 1, 2, 3, 4, 5, 6, 7], 1: [0, 1, 2, 3, 4, 5]} means that there are two DO ports. They are numbered as 0 &amp; 1. Port 0 has 8 pins: P0.0 to P0.7. Port 1 has 6 pins: P1.0 to P1.5.
+General format: {DO_port: [pin, …, pin]}</p>
 </dd>
 </dl>
 </dd>
@@ -1028,11 +1032,13 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.I2C_getPinMap">
 <span class="sig-name descname"><span class="pre">I2C_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.I2C_getPinMap" title="Permalink to this definition"></a></dt>
-<dd><p>Get I2C port and its pins.</p>
+<dd><p>Get all available I2C port numbers &amp; the pins that are associated with them.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>{I2C port: [(port0, pin0), …, (portN, pinN)]}</p>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is a tuple constituted of its physical port number &amp; pin number.
+For example: {1: [(2, 6), (2, 7)], 2: [(3, 0), (3, 1)]} means that there are two I2C ports. They are numbered as 1 &amp; 2. I2C1 has two pins: P2.6 &amp; P2.7. I2C2 has two pins: P3.0 &amp; P3.1.
+General format: {I2C_port: [(port, pin), …, (port, pin)]}</p>
 </dd>
 </dl>
 </dd>
@@ -1401,11 +1407,13 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.UART_getPinMap">
 <span class="sig-name descname"><span class="pre">UART_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.UART_getPinMap" title="Permalink to this definition"></a></dt>
-<dd><p>Get UART port and its pins.</p>
+<dd><p>Get all available UART port numbers &amp; the pins that are associated with them.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>{UART port: [(port0, pin0), …, (portN, pinN)]}</p>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is a tuple constituted of its physical port number &amp; pin number.
+For example: {1: [(0, 3), (0, 4)], 2: [(1, 2), (1, 3)]} means that there are two UART ports. They are numbered as 1 &amp; 2. UART1 has two pins: P0.3 &amp; P0.4. UART2 has two pins: P1.2 &amp; P1.3.
+General format: {UART_port: [(port, pin), …, (port, pin)]}</p>
 </dd>
 </dl>
 </dd>

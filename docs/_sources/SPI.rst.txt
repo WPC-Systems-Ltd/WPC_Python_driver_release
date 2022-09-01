@@ -49,7 +49,7 @@ SPI Mode
    :widths: 50 50 50
    :header-rows: 1
 
-   * - 
+   * - Value
      - CPOL
      - CPHA
    * - Mode 0

@@ -54,14 +54,14 @@ WiFi based DAQ card
 - Wifi-DAQ-E3-A
 
 Ethernet based remote controller
-- STEM
-- STEM-Lite
+- STEM (unsupported)
+- STEM-Lite (unsupported)
 
 Ethernet based motion card
-- EMotion
+- EMotion (unsupported)
 
 Ethernet based DAQ card
-- EPC
+- EPC (unsupported)
 - Ethan-D
 - Ethan-A
 

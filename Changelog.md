@@ -7,12 +7,13 @@ v0.0.14 Date: 2022/09/01, Developer: Chunglee_people
 
 ### Added
 - Add LICENSE, MANIFEST.in and setup.py in order to deliver `wpcsys` in PyPI
+- Add `about` , `Quick Start`, `Requirements` and `License` in Readme.md
 - Add `USB-DAQ-F1-RD.JPG` in Reference/Pinouts folder
 - Add `Temperature-RTD` & `Temperature-TC` & `AI` & `AO` folder in order to create README file
 - Add README.md in `System` & `AI` & `AIO` & `AO` & `DIO` & `Temperature-RTD` & `Temperature-TC` example console folder
 
 ### Changed
-- Change WPC Python Version from `pywpc-0.2.1` to `pywpc-0.2.2`
+- Change WPC Python Version from `pywpc-0.2.1` to `pywpc-0.2.3`
 - In version 0.2.1.1:
   - 0: Major revision (incompatible API change)
   - 2: Minor revision (maybe reconstruct architecture)
