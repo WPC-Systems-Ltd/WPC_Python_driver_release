@@ -6,7 +6,6 @@
 
 ## Python
 import asyncio
-import sys
 import os
 from qasync import QEventLoop, asyncSlot
 
@@ -16,10 +15,7 @@ from PyQt5.QtWidgets import QMessageBox
 from UI_design.Ui_example_GUI_DO import Ui_MainWindow 
 
 ## WPC
-sys.path.insert(0, 'pywpc/')
-sys.path.insert(0, '../../../pywpc/')
-import pywpc  
-
+from wpcsys import pywpc
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
