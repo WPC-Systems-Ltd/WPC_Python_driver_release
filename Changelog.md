@@ -2,6 +2,15 @@ WPC Python driver release changelog
 ===================================
 
 
+v0.0.15 Date: 2022/09/05, Developer: Chunglee_people
+----------------------------------------------------
+
+### Added
+- Add `Material` folder in GUI example code
+
+### Changed
+- Change `Material` path
+
 v0.0.14 Date: 2022/09/01, Developer: Chunglee_people
 ----------------------------------------------------
 
