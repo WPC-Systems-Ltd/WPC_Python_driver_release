@@ -110,6 +110,10 @@ Take `USB-DAQ-F1-AOD` for example
 - port0 and port1 are available for `DO`
 - port2 is available for `UART`
 
+## Create executable of Python script using wpcEXEbuilder
+
+Please refer [WPC_PyPI_wpcEXEbuilder](https://github.com/WPC-Systems-Ltd/WPC_PyPI_wpcEXEbuilder)
+
 ## References
 
 - [User manual - WPC Python Device Driver](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)
