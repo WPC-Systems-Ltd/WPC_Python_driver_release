@@ -259,12 +259,14 @@
 <dt class="sig sig-object py" id="pywpc.EthanD.DI_getPinMap">
 <span class="sig-name descname"><span class="pre">DI_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.DI_getPinMap" title="Permalink to this definition"></a></dt>
 <dd><p>Get all available DI port numbers &amp; the pins that are associated with them.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is an integer representing its number.
-For example: {0: [0, 1, 2, 3, 4, 5, 6, 7], 1: [0, 1, 2, 3, 4, 5]} means that there are two DI ports. They are numbered as 0 &amp; 1. Port 0 has 8 pins: P0.0 to P0.7. Port 1 has 6 pins: P1.0 to P1.5.
-General format: {DI_port: [pin, …, pin]}</p>
+<dd class="field-odd"><dl>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port.</p>
+<p>Each pin is an integer representing its number.</p>
+<p>For example: {0: [0, 1, 2, 3, 4, 5, 6, 7], 1: [0, 1, 2, 3, 4, 5]} means that there are two DI ports.</p>
+<p>They are numbered as 0 &amp; 1. Port 0 has 8 pins: P0.0 to P0.7. Port 1 has 6 pins: P1.0 to P1.5.</p>
+<p>General format: {DI_port: [pin, …, pin]}.</p>
 </dd>
 </dl>
 </dd>
@@ -405,12 +407,14 @@ General format: {DI_port: [pin, …, pin]}</p>
 <dt class="sig sig-object py" id="pywpc.EthanD.DO_getPinMap">
 <span class="sig-name descname"><span class="pre">DO_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.DO_getPinMap" title="Permalink to this definition"></a></dt>
 <dd><p>Get all available DO port numbers &amp; the pins that are associated with them.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is an integer representing its number.
-For example: {0: [0, 1, 2, 3, 4, 5, 6, 7], 1: [0, 1, 2, 3, 4, 5]} means that there are two DO ports. They are numbered as 0 &amp; 1. Port 0 has 8 pins: P0.0 to P0.7. Port 1 has 6 pins: P1.0 to P1.5.
-General format: {DO_port: [pin, …, pin]}</p>
+<dd class="field-odd"><dl>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port.</p>
+<p>Each pin is an integer representing its number.</p>
+<p>For example: {0: [0, 1, 2, 3, 4, 5, 6, 7], 1: [0, 1, 2, 3, 4, 5]} means that there are two DO ports.</p>
+<p>They are numbered as 0 &amp; 1. Port 0 has 8 pins: P0.0 to P0.7. Port 1 has 6 pins: P1.0 to P1.5.</p>
+<p>General format: {DO_port: [pin, …, pin]}.</p>
 </dd>
 </dl>
 </dd>
@@ -531,9 +535,9 @@ General format: {DO_port: [pin, …, pin]}</p>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>driver_info</strong><span class="classifier">list of three string</span></dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[0]</span></code>: Model name</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[1]</span></code>: Mode</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[2]</span></code>: Firmware version</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[0]</span></code>: Model name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[1]</span></code>: Mode.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[2]</span></code>: Firmware version.</p></li>
 </ul>
 </dd>
 </dl>
