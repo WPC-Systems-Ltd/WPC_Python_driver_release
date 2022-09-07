@@ -2,6 +2,17 @@ WPC Python driver release changelog
 ===================================
 
 
+v0.0.15 Date: 2022/09/05, Developer: Chunglee_people
+----------------------------------------------------
+
+### Added
+- Add `Material` folder in GUI example code
+- Add package `wpcEXEbuild` requirement in `wpcsys`
+- Add `How to build your own Python code to EXE file` in wiki
+### Changed
+- Change `Material` path
+- Change author_email to wu@wpc.com.tw
+
 v0.0.14 Date: 2022/09/01, Developer: Chunglee_people
 ----------------------------------------------------
 

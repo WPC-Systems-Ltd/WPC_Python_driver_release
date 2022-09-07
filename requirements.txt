@@ -5,3 +5,4 @@ PyQt5-Qt5==5.15.2
 PyQt5-sip==12.11.0
 pyusb==1.2.1
 qasync==0.23.0
+wpcEXEbuild==0.0.1

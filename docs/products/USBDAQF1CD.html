@@ -381,12 +381,12 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>counter_info</strong><span class="classifier">list of 6 int.</span></dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[0]</span></code>: TX interrupt counter</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[1]</span></code>: RX interrupt counter</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[2]</span></code>: SPI counter</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[3]</span></code>: Send counter</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[4]</span></code>: Bus error counter</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[5]</span></code>: Overflow counter</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[0]</span></code>: TX interrupt counter.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[1]</span></code>: RX interrupt counter.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[2]</span></code>: SPI counter.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[3]</span></code>: Send counter.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[4]</span></code>: Bus error counter.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[5]</span></code>: Overflow counter.</p></li>
 </ul>
 </dd>
 </dl>
@@ -408,8 +408,8 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>Error_info</strong><span class="classifier">list of two int</span></dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Error_info[0]</span></code>: TX error code</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Error_info[1]</span></code>: RX error code</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Error_info[0]</span></code>: TX error code.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Error_info[1]</span></code>: RX error code.</p></li>
 </ul>
 </dd>
 </dl>
@@ -431,9 +431,9 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>ITR_info</strong><span class="classifier">list of three int</span></dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ITR_info[0]</span></code>: Interrupt enable</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ITR_info[1]</span></code>: Interrupt state</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ITR_info[2]</span></code>: Error state</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITR_info[0]</span></code>: Interrupt enable.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITR_info[1]</span></code>: Interrupt state.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITR_info[2]</span></code>: Error state.s</p></li>
 </ul>
 </dd>
 </dl>
@@ -445,12 +445,14 @@
 <dt class="sig sig-object py" id="pywpc.USBDAQF1CD.CAN_getPinMap">
 <span class="sig-name descname"><span class="pre">CAN_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.CAN_getPinMap" title="Permalink to this definition"></a></dt>
 <dd><p>Get all available CAN port numbers &amp; the pins that are associated with them.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is a tuple constituted of its physical port number &amp; pin number.
-For example: {1: [(1, 4), (1, 5), (2, 0), (2, 1), (2, 2), (2, 3)]} means that there is one CAN port. They is numbered as 1. CAN1 has six pins: P1.4 &amp; P1.5 &amp; P2.0 &amp; P2.1 &amp; P2.2 &amp; P2.3. 
-General format: {CAN_port: [(port, pin), …, (port, pin)]}</p>
+<dd class="field-odd"><dl>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port.</p>
+<p>Each pin is a tuple constituted of its physical port number &amp; pin number.</p>
+<p>For example: {1: [(1, 4), (1, 5), (2, 0), (2, 1), (2, 2), (2, 3)]} means that there is one CAN port.</p>
+<p>They is numbered as 1. CAN1 has six pins: P1.4 &amp; P1.5 &amp; P2.0 &amp; P2.1 &amp; P2.2 &amp; P2.3.</p>
+<p>General format: {CAN_port: [(port, pin), …, (port, pin)]}.</p>
 </dd>
 </dl>
 </dd>
@@ -511,8 +513,8 @@ General format: {CAN_port: [(port, pin), …, (port, pin)]}</p>
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>status</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
-<li><p>True : interrupt</p></li>
-<li><p>False : No interrupt</p></li>
+<li><p>True : interrupt.</p></li>
+<li><p>False : No interrupt.</p></li>
 </ul>
 </dd>
 </dl>
@@ -536,8 +538,8 @@ General format: {CAN_port: [(port, pin), …, (port, pin)]}</p>
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>status</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
-<li><p>True : Filter</p></li>
-<li><p>False : Mask</p></li>
+<li><p>True : Filter.</p></li>
+<li><p>False : Mask.</p></li>
 </ul>
 </dd>
 </dl>
@@ -561,8 +563,8 @@ General format: {CAN_port: [(port, pin), …, (port, pin)]}</p>
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>status</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
-<li><p>True : On</p></li>
-<li><p>False : Off</p></li>
+<li><p>True : On.</p></li>
+<li><p>False : Off.</p></li>
 </ul>
 </dd>
 </dl>
@@ -586,8 +588,8 @@ General format: {CAN_port: [(port, pin), …, (port, pin)]}</p>
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>status</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
-<li><p>True : On</p></li>
-<li><p>False : Off</p></li>
+<li><p>True : On.</p></li>
+<li><p>False : Off.</p></li>
 </ul>
 </dd>
 </dl>
@@ -611,10 +613,10 @@ General format: {CAN_port: [(port, pin), …, (port, pin)]}</p>
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : 125 KHz</p></li>
-<li><p>1 : 250 kHz</p></li>
-<li><p>2 : 500 kHz</p></li>
-<li><p>3 : 1 MHz</p></li>
+<li><p>0 : 125 KHz.</p></li>
+<li><p>1 : 250 kHz.</p></li>
+<li><p>2 : 500 kHz.</p></li>
+<li><p>3 : 1 MHz.</p></li>
 </ul>
 </dd>
 </dl>
@@ -638,16 +640,16 @@ General format: {CAN_port: [(port, pin), …, (port, pin)]}</p>
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>tx_mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0: buffer 0</p></li>
-<li><p>1: buffer 1</p></li>
-<li><p>2: buffer 2</p></li>
+<li><p>0: buffer 0.</p></li>
+<li><p>1: buffer 1.</p></li>
+<li><p>2: buffer 2.</p></li>
 </ul>
 </dd>
 <dt><strong>priority</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0: lowest</p></li>
-<li><p>1: low intermediate</p></li>
-<li><p>2: high intermediate</p></li>
-<li><p>3: high highest</p></li>
+<li><p>0: lowest.</p></li>
+<li><p>1: low intermediate.</p></li>
+<li><p>2: high intermediate.</p></li>
+<li><p>3: high highest.</p></li>
 </ul>
 </dd>
 </dl>
@@ -710,18 +712,18 @@ General format: {CAN_port: [(port, pin), …, (port, pin)]}</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
-<dt><strong>id</strong><span class="classifier">int</span></dt><dd><p>Identifier</p>
+<dt><strong>id</strong><span class="classifier">int</span></dt><dd><p>Identifier.</p>
 </dd>
 <dt><strong>data</strong><span class="classifier">list of 8 bytes</span></dt><dd><p>The list of data to be transferred.</p>
 </dd>
 <dt><strong>CAN_type</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
-<li><p>True  : CAN Remote</p></li>
-<li><p>False : CAN Data</p></li>
+<li><p>True  : CAN Remote.</p></li>
+<li><p>False : CAN Data.</p></li>
 </ul>
 </dd>
 <dt><strong>CAN_length</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
-<li><p>True  : Extended</p></li>
-<li><p>False : Standard</p></li>
+<li><p>True  : Extended.</p></li>
+<li><p>False : Standard.</p></li>
 </ul>
 </dd>
 </dl>
@@ -781,12 +783,14 @@ General format: {CAN_port: [(port, pin), …, (port, pin)]}</p>
 <dt class="sig sig-object py" id="pywpc.USBDAQF1CD.DI_getPinMap">
 <span class="sig-name descname"><span class="pre">DI_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.DI_getPinMap" title="Permalink to this definition"></a></dt>
 <dd><p>Get all available DI port numbers &amp; the pins that are associated with them.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is an integer representing its number.
-For example: {0: [0, 1, 2, 3, 4, 5, 6, 7], 1: [0, 1, 2, 3, 4, 5]} means that there are two DI ports. They are numbered as 0 &amp; 1. Port 0 has 8 pins: P0.0 to P0.7. Port 1 has 6 pins: P1.0 to P1.5.
-General format: {DI_port: [pin, …, pin]}</p>
+<dd class="field-odd"><dl>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port.</p>
+<p>Each pin is an integer representing its number.</p>
+<p>For example: {0: [0, 1, 2, 3, 4, 5, 6, 7], 1: [0, 1, 2, 3, 4, 5]} means that there are two DI ports.</p>
+<p>They are numbered as 0 &amp; 1. Port 0 has 8 pins: P0.0 to P0.7. Port 1 has 6 pins: P1.0 to P1.5.</p>
+<p>General format: {DI_port: [pin, …, pin]}.</p>
 </dd>
 </dl>
 </dd>
@@ -927,12 +931,14 @@ General format: {DI_port: [pin, …, pin]}</p>
 <dt class="sig sig-object py" id="pywpc.USBDAQF1CD.DO_getPinMap">
 <span class="sig-name descname"><span class="pre">DO_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.DO_getPinMap" title="Permalink to this definition"></a></dt>
 <dd><p>Get all available DO port numbers &amp; the pins that are associated with them.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is an integer representing its number.
-For example: {0: [0, 1, 2, 3, 4, 5, 6, 7], 1: [0, 1, 2, 3, 4, 5]} means that there are two DO ports. They are numbered as 0 &amp; 1. Port 0 has 8 pins: P0.0 to P0.7. Port 1 has 6 pins: P1.0 to P1.5.
-General format: {DO_port: [pin, …, pin]}</p>
+<dd class="field-odd"><dl>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port.</p>
+<p>Each pin is an integer representing its number.</p>
+<p>For example: {0: [0, 1, 2, 3, 4, 5, 6, 7], 1: [0, 1, 2, 3, 4, 5]} means that there are two DO ports.</p>
+<p>They are numbered as 0 &amp; 1. Port 0 has 8 pins: P0.0 to P0.7. Port 1 has 6 pins: P1.0 to P1.5.</p>
+<p>General format: {DO_port: [pin, …, pin]}.</p>
 </dd>
 </dl>
 </dd>
@@ -1069,12 +1075,14 @@ General format: {DO_port: [pin, …, pin]}</p>
 <dt class="sig sig-object py" id="pywpc.USBDAQF1CD.I2C_getPinMap">
 <span class="sig-name descname"><span class="pre">I2C_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.I2C_getPinMap" title="Permalink to this definition"></a></dt>
 <dd><p>Get all available I2C port numbers &amp; the pins that are associated with them.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is a tuple constituted of its physical port number &amp; pin number.
-For example: {1: [(2, 6), (2, 7)], 2: [(3, 0), (3, 1)]} means that there are two I2C ports. They are numbered as 1 &amp; 2. I2C1 has two pins: P2.6 &amp; P2.7. I2C2 has two pins: P3.0 &amp; P3.1.
-General format: {I2C_port: [(port, pin), …, (port, pin)]}</p>
+<dd class="field-odd"><dl>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port.</p>
+<p>Each pin is a tuple constituted of its physical port number &amp; pin number.</p>
+<p>For example: {1: [(2, 6), (2, 7)], 2: [(3, 0), (3, 1)]} means that there are two I2C ports.</p>
+<p>They are numbered as 1 &amp; 2. I2C1 has two pins: P2.6 &amp; P2.7. I2C2 has two pins: P3.0 &amp; P3.1.</p>
+<p>General format: {I2C_port: [(port, pin), …, (port, pin)]}.</p>
 </dd>
 </dl>
 </dd>
@@ -1155,8 +1163,8 @@ General format: {I2C_port: [(port, pin), …, (port, pin)]}</p>
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0: 7-bit address</p></li>
-<li><p>1: 10-bit address</p></li>
+<li><p>0: 7-bit address.</p></li>
+<li><p>1: 10-bit address.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1180,10 +1188,10 @@ General format: {I2C_port: [(port, pin), …, (port, pin)]}</p>
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>frequency</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Standard (100000)</p></li>
-<li><p>1 : Fast (400000)</p></li>
-<li><p>2 : Fast Plus (1000000)</p></li>
-<li><p>3 : High Speed (3400000)</p></li>
+<li><p>0 : Standard (100000).</p></li>
+<li><p>1 : Fast (400000).</p></li>
+<li><p>2 : Fast Plus (1000000).</p></li>
+<li><p>3 : High Speed (3400000).</p></li>
 </ul>
 </dd>
 </dl>
@@ -1245,13 +1253,15 @@ General format: {I2C_port: [(port, pin), …, (port, pin)]}</p>
 <dt class="sig sig-object py" id="pywpc.USBDAQF1CD.SPI_getPinMap">
 <span class="sig-name descname"><span class="pre">SPI_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.SPI_getPinMap" title="Permalink to this definition"></a></dt>
 <dd><p>Get all available SPI port numbers &amp; the pins that are associated with them.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is a tuple constituted of its physical port number &amp; pin number.
-For example: {1: [(2, 1), (2, 2), (2, 3)], 2: [(3, 3), (3, 4), (3, 5)]} means that there are two SPI ports. They are numbered as 1 &amp; 2. SPI1 has three pins: P2.1 &amp; P2.2 &amp; P2.3. 
-SPI2 has three pins: P3.3 &amp; P3.4 &amp; P3.5.
-General format: {SPI_port: [(port, pin), …, (port, pin)]}</p>
+<dd class="field-odd"><dl>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port.</p>
+<p>Each pin is a tuple constituted of its physical port number &amp; pin number.</p>
+<p>For example: {1: [(2, 1), (2, 2), (2, 3)], 2: [(3, 3), (3, 4), (3, 5)]} means that there are two SPI ports.</p>
+<p>They are numbered as 1 &amp; 2. SPI1 has three pins: P2.1 &amp; P2.2 &amp; P2.3.</p>
+<p>SPI2 has three pins: P3.3 &amp; P3.4 &amp; P3.5.</p>
+<p>General format: {SPI_port: [(port, pin), …, (port, pin)]}.</p>
 </dd>
 </dl>
 </dd>
@@ -1372,7 +1382,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dt class="sig sig-object py" id="pywpc.USBDAQF1CD.SPI_setFirstBit">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setFirstBit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.SPI_setFirstBit" title="Permalink to this definition"></a></dt>
 <dd><p>Set LSB first or MSB first.
-Please check :ref:` SPI MSB/LSB mode &lt;SPIfoobar&gt;`.</p>
+Please check <a class="reference internal" href="../SPI.html#spifoobar"><span class="std std-ref">SPI MSB/LSB mode</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1475,9 +1485,9 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>driver_info</strong><span class="classifier">list of three string</span></dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[0]</span></code>: Model name</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[1]</span></code>: Mode</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[2]</span></code>: Firmware version</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[0]</span></code>: Model name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[1]</span></code>: Mode.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[2]</span></code>: Firmware version.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1690,12 +1700,14 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dt class="sig sig-object py" id="pywpc.USBDAQF1CD.UART_getPinMap">
 <span class="sig-name descname"><span class="pre">UART_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.UART_getPinMap" title="Permalink to this definition"></a></dt>
 <dd><p>Get all available UART port numbers &amp; the pins that are associated with them.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is a tuple constituted of its physical port number &amp; pin number.
-For example: {1: [(0, 3), (0, 4)], 2: [(1, 2), (1, 3)]} means that there are two UART ports. They are numbered as 1 &amp; 2. UART1 has two pins: P0.3 &amp; P0.4. UART2 has two pins: P1.2 &amp; P1.3.
-General format: {UART_port: [(port, pin), …, (port, pin)]}</p>
+<dd class="field-odd"><dl>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port.</p>
+<p>Each pin is a tuple constituted of its physical port number &amp; pin number.</p>
+<p>For example: {1: [(0, 3), (0, 4)], 2: [(1, 2), (1, 3)]} means that there are two UART ports.</p>
+<p>They are numbered as 1 &amp; 2. UART1 has two pins: P0.3 &amp; P0.4. UART2 has two pins: P1.2 &amp; P1.3.</p>
+<p>General format: {UART_port: [(port, pin), …, (port, pin)]}.</p>
 </dd>
 </dl>
 </dd>
@@ -1775,7 +1787,7 @@ General format: {UART_port: [(port, pin), …, (port, pin)]}</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
-<dt><strong>baud_rate: int</strong></dt><dd><p>In bits per second (baud)</p>
+<dt><strong>baud_rate: int</strong></dt><dd><p>In bits per second (baud).</p>
 </dd>
 </dl>
 </dd>

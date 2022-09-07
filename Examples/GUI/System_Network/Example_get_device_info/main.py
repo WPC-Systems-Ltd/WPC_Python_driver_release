@@ -35,13 +35,16 @@ class MainWindow(QtWidgets.QMainWindow):
         self.connect_flag = 0
 
         ## Material path
-        self.trademark_path = os.getcwd() + "\Material\WPC_trademark.jpg" 
-        self.blue_led_path = os.getcwd() + "\Material\WPC_Led_blue.png"
-        self.red_led_path = os.getcwd() + "\Material\WPC_Led_red.png"
-        self.green_led_path = os.getcwd() + "\Material\WPC_Led_green.png"
+        file_path = os.path.dirname(__file__)
+        self.trademark_path = file_path + "\Material\WPC_trademark.jpg" 
+        self.blue_led_path = file_path + "\Material\WPC_Led_blue.png"
+        self.red_led_path = file_path + "\Material\WPC_Led_red.png"
+        self.green_led_path = file_path + "\Material\WPC_Led_green.png"
+        self.gray_led_path = file_path + "\Material\WPC_Led_gray.png"
 
-        ## Set trademark path
+        ## Set trademark & LED path
         self.ui.lb_trademark.setPixmap(QtGui.QPixmap(self.trademark_path))
+        self.ui.lb_led.setPixmap(QtGui.QPixmap(self.gray_led_path))
         
         ## Define callback events
         self.ui.btn_connect.clicked.connect(self.connectEvent)

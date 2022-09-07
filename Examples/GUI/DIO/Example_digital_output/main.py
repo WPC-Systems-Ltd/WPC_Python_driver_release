@@ -36,13 +36,19 @@ class MainWindow(QtWidgets.QMainWindow):
         self.connect_flag = 0
 
         ## Material path
-        current_folder = os.getcwd().replace('\\', '/')
-        self.trademark_path = current_folder + "/Material/WPC_trademark.jpg"  
-        self.gray_led_path = current_folder + "/Material/WPC_Led_gray.png"
-        self.green_led_path = current_folder + "/Material/WPC_Led_green.png"
-        self.switch_gray_path = current_folder + "/Material/switch_gray.png"
-        self.switch_blue_path = current_folder + "/Material/switch_blue.png" 
+        file_path = os.path.dirname(__file__)
+        self.trademark_path = file_path + "\Material\WPC_trademark.jpg" 
+        self.blue_led_path = file_path + "\Material\WPC_Led_blue.png"
+        self.red_led_path = file_path + "\Material\WPC_Led_red.png"
+        self.green_led_path = file_path + "\Material\WPC_Led_green.png"
+        self.gray_led_path = file_path + "\Material\WPC_Led_gray.png"
+        self.switch_blue_path = file_path + "\Material\WPC_switch_blue.png"
+        self.switch_gray_path = file_path + "\Material\WPC_switch_gray.png"
 
+        ## Convert backward slash to forward slash
+        self.switch_blue_path = self.switch_blue_path.replace('\\', '/')
+        self.switch_gray_path = self.switch_gray_path.replace('\\', '/')
+ 
         ## Set trademark & LED path
         self.ui.lb_trademark.setPixmap(QtGui.QPixmap(self.trademark_path))
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.gray_led_path))
@@ -55,7 +61,6 @@ class MainWindow(QtWidgets.QMainWindow):
             obj_chbox_state = getattr(self.ui, 'checkbox_state%d' %i)
             obj_chbox_state.stateChanged.connect(self.stateDOEvent)
             obj_chbox_state.setStyleSheet("QCheckBox::indicator{ width: 60px;height: 60px;} QCheckBox::indicator:unchecked {image: url("+self.switch_gray_path+");} QCheckBox::indicator:checked {image: url("+self.switch_blue_path+");}")
-
 
     @asyncSlot() 
     async def OpenDOport(self):
