@@ -59,9 +59,10 @@ $ pip install --upgrade wpcsys
 - [Python](https://www.python.org) \>= 3.10
 - [PyQt5](https://pypi.org/project/PyQt5/)(tested to work with\>=5.15.7)
 - [matplotlib](https://matplotlib.org/) \>= 3.5.2
-- [Numpy](http://www.numpy.org) \>= (tested to work with\>=1.23.0)
+- [Numpy](http://www.numpy.org)(tested to work with\>=1.23.0)
 - [pyusb](https://pypi.org/project/pyusb/) \>= 1.2.1
 - [qasync](https://pypi.org/project/qasync/) \>= 0.23.0
+- [wpcEXEbuild](https://pypi.org/project/wpcEXEbuild/) \>= 0.0.1
 
 ## Products
  
@@ -110,15 +111,12 @@ Take `USB-DAQ-F1-AOD` for example
 - port0 and port1 are available for `DO`
 - port2 is available for `UART`
 
-## Create executable of Python script using wpcEXEbuilder
-
-Please refer [WPC_PyPI_wpcEXEbuilder](https://github.com/WPC-Systems-Ltd/WPC_PyPI_wpcEXEbuilder)
-
 ## References
 
 - [User manual - WPC Python Device Driver](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)
 - [Recommendations for new python user to create environment](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-install-miniconda-and-build-your-own-virtual-environment) 
 - [Run example code in console](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-run-WPC-Python-driver-example-code-in-console)
+- [How to build your own Python code to EXE file](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-build-your-own-Python-code-to-EXE-file)
 
 ## License
 

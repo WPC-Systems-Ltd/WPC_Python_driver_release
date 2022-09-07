@@ -1,6 +1,6 @@
 example AO write all channels
 =============================
 
-.. literalinclude:: ../../../../../../WPC_Python_driver_release/Examples/Console/AO/example_AO_write_all_channels.py
+.. literalinclude:: ../../../../../WPC_Python_driver_release/Examples/Console/AO/example_AO_write_all_channels.py
    :language: python
    :linenos:
