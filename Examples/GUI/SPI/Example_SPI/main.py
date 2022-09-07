@@ -34,12 +34,12 @@ class MainWindow(QtWidgets.QMainWindow):
         self.connect_flag = 0
     
         ## Material path
-        current_folder = os.getcwd().replace('\\', '/')
-        self.trademark_path = current_folder + "/Material/WPC_trademark.jpg"  
-        self.gray_led_path = current_folder + "/Material/WPC_Led_gray.png"
-        self.green_led_path = current_folder + "/Material/WPC_Led_green.png"
-        self.switch_gray_path = current_folder + "/Material/switch_gray.png"
-        self.switch_blue_path = current_folder + "/Material/switch_blue.png" 
+        file_path = os.path.dirname(__file__)
+        self.trademark_path = file_path + "\Material\WPC_trademark.jpg" 
+        self.blue_led_path = file_path + "\Material\WPC_Led_blue.png"
+        self.red_led_path = file_path + "\Material\WPC_Led_red.png"
+        self.green_led_path = file_path + "\Material\WPC_Led_green.png"
+        self.gray_led_path = file_path + "\Material\WPC_Led_gray.png"
 
         ## Set trademark & LED path
         self.ui.lb_trademark.setPixmap(QtGui.QPixmap(self.trademark_path))

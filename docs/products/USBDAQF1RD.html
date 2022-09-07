@@ -366,12 +366,14 @@
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.DI_getPinMap">
 <span class="sig-name descname"><span class="pre">DI_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.DI_getPinMap" title="Permalink to this definition"></a></dt>
 <dd><p>Get all available DI port numbers &amp; the pins that are associated with them.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is an integer representing its number.
-For example: {0: [0, 1, 2, 3, 4, 5, 6, 7], 1: [0, 1, 2, 3, 4, 5]} means that there are two DI ports. They are numbered as 0 &amp; 1. Port 0 has 8 pins: P0.0 to P0.7. Port 1 has 6 pins: P1.0 to P1.5.
-General format: {DI_port: [pin, …, pin]}</p>
+<dd class="field-odd"><dl>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port.</p>
+<p>Each pin is an integer representing its number.</p>
+<p>For example: {0: [0, 1, 2, 3, 4, 5, 6, 7], 1: [0, 1, 2, 3, 4, 5]} means that there are two DI ports.</p>
+<p>They are numbered as 0 &amp; 1. Port 0 has 8 pins: P0.0 to P0.7. Port 1 has 6 pins: P1.0 to P1.5.</p>
+<p>General format: {DI_port: [pin, …, pin]}.</p>
 </dd>
 </dl>
 </dd>
@@ -512,12 +514,14 @@ General format: {DI_port: [pin, …, pin]}</p>
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.DO_getPinMap">
 <span class="sig-name descname"><span class="pre">DO_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.DO_getPinMap" title="Permalink to this definition"></a></dt>
 <dd><p>Get all available DO port numbers &amp; the pins that are associated with them.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is an integer representing its number.
-For example: {0: [0, 1, 2, 3, 4, 5, 6, 7], 1: [0, 1, 2, 3, 4, 5]} means that there are two DO ports. They are numbered as 0 &amp; 1. Port 0 has 8 pins: P0.0 to P0.7. Port 1 has 6 pins: P1.0 to P1.5.
-General format: {DO_port: [pin, …, pin]}</p>
+<dd class="field-odd"><dl>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port.</p>
+<p>Each pin is an integer representing its number.</p>
+<p>For example: {0: [0, 1, 2, 3, 4, 5, 6, 7], 1: [0, 1, 2, 3, 4, 5]} means that there are two DO ports.</p>
+<p>They are numbered as 0 &amp; 1. Port 0 has 8 pins: P0.0 to P0.7. Port 1 has 6 pins: P1.0 to P1.5.</p>
+<p>General format: {DO_port: [pin, …, pin]}.</p>
 </dd>
 </dl>
 </dd>
@@ -654,12 +658,14 @@ General format: {DO_port: [pin, …, pin]}</p>
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.I2C_getPinMap">
 <span class="sig-name descname"><span class="pre">I2C_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.I2C_getPinMap" title="Permalink to this definition"></a></dt>
 <dd><p>Get all available I2C port numbers &amp; the pins that are associated with them.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is a tuple constituted of its physical port number &amp; pin number.
-For example: {1: [(2, 6), (2, 7)], 2: [(3, 0), (3, 1)]} means that there are two I2C ports. They are numbered as 1 &amp; 2. I2C1 has two pins: P2.6 &amp; P2.7. I2C2 has two pins: P3.0 &amp; P3.1.
-General format: {I2C_port: [(port, pin), …, (port, pin)]}</p>
+<dd class="field-odd"><dl>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port.</p>
+<p>Each pin is a tuple constituted of its physical port number &amp; pin number.</p>
+<p>For example: {1: [(2, 6), (2, 7)], 2: [(3, 0), (3, 1)]} means that there are two I2C ports.</p>
+<p>They are numbered as 1 &amp; 2. I2C1 has two pins: P2.6 &amp; P2.7. I2C2 has two pins: P3.0 &amp; P3.1.</p>
+<p>General format: {I2C_port: [(port, pin), …, (port, pin)]}.</p>
 </dd>
 </dl>
 </dd>
@@ -740,8 +746,8 @@ General format: {I2C_port: [(port, pin), …, (port, pin)]}</p>
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0: 7-bit address</p></li>
-<li><p>1: 10-bit address</p></li>
+<li><p>0: 7-bit address.</p></li>
+<li><p>1: 10-bit address.</p></li>
 </ul>
 </dd>
 </dl>
@@ -765,10 +771,10 @@ General format: {I2C_port: [(port, pin), …, (port, pin)]}</p>
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>frequency</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Standard (100000)</p></li>
-<li><p>1 : Fast (400000)</p></li>
-<li><p>2 : Fast Plus (1000000)</p></li>
-<li><p>3 : High Speed (3400000)</p></li>
+<li><p>0 : Standard (100000).</p></li>
+<li><p>1 : Fast (400000).</p></li>
+<li><p>2 : Fast Plus (1000000).</p></li>
+<li><p>3 : High Speed (3400000).</p></li>
 </ul>
 </dd>
 </dl>
@@ -830,13 +836,15 @@ General format: {I2C_port: [(port, pin), …, (port, pin)]}</p>
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.SPI_getPinMap">
 <span class="sig-name descname"><span class="pre">SPI_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.SPI_getPinMap" title="Permalink to this definition"></a></dt>
 <dd><p>Get all available SPI port numbers &amp; the pins that are associated with them.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is a tuple constituted of its physical port number &amp; pin number.
-For example: {1: [(2, 1), (2, 2), (2, 3)], 2: [(3, 3), (3, 4), (3, 5)]} means that there are two SPI ports. They are numbered as 1 &amp; 2. SPI1 has three pins: P2.1 &amp; P2.2 &amp; P2.3. 
-SPI2 has three pins: P3.3 &amp; P3.4 &amp; P3.5.
-General format: {SPI_port: [(port, pin), …, (port, pin)]}</p>
+<dd class="field-odd"><dl>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port.</p>
+<p>Each pin is a tuple constituted of its physical port number &amp; pin number.</p>
+<p>For example: {1: [(2, 1), (2, 2), (2, 3)], 2: [(3, 3), (3, 4), (3, 5)]} means that there are two SPI ports.</p>
+<p>They are numbered as 1 &amp; 2. SPI1 has three pins: P2.1 &amp; P2.2 &amp; P2.3.</p>
+<p>SPI2 has three pins: P3.3 &amp; P3.4 &amp; P3.5.</p>
+<p>General format: {SPI_port: [(port, pin), …, (port, pin)]}.</p>
 </dd>
 </dl>
 </dd>
@@ -957,7 +965,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.SPI_setFirstBit">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setFirstBit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.SPI_setFirstBit" title="Permalink to this definition"></a></dt>
 <dd><p>Set LSB first or MSB first.
-Please check :ref:` SPI MSB/LSB mode &lt;SPIfoobar&gt;`.</p>
+Please check <a class="reference internal" href="../SPI.html#spifoobar"><span class="std std-ref">SPI MSB/LSB mode</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1060,9 +1068,9 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>driver_info</strong><span class="classifier">list of three string</span></dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[0]</span></code>: Model name</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[1]</span></code>: Mode</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[2]</span></code>: Firmware version</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[0]</span></code>: Model name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[1]</span></code>: Mode.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[2]</span></code>: Firmware version.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1275,12 +1283,14 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Thermal_getPinMap">
 <span class="sig-name descname"><span class="pre">Thermal_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Thermal_getPinMap" title="Permalink to this definition"></a></dt>
 <dd><p>Get all available thermal port numbers &amp; the pins that are associated with them.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is a tuple constituted of its physical port number &amp; pin number.
-For example: {1: [(1, 5), (2, 0), (2, 1), (2, 2), (2, 3)]} means that there is one thermal port. They is numbered as 1. thermal1 has five pins: P1.5 &amp; P2.0 &amp; P2.1 &amp; P2.2 &amp; P2.3. 
-General format: {thermal_port: [(port, pin), …, (port, pin)]}</p>
+<dd class="field-odd"><dl>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port.</p>
+<p>Each pin is a tuple constituted of its physical port number &amp; pin number.</p>
+<p>For example: {1: [(1, 5), (2, 0), (2, 1), (2, 2), (2, 3)]} means that there is one thermal port.</p>
+<p>They is numbered as 1. thermal1 has five pins: P1.5 &amp; P2.0 &amp; P2.1 &amp; P2.2 &amp; P2.3.</p>
+<p>General format: {thermal_port: [(port, pin), …, (port, pin)]}.</p>
 </dd>
 </dl>
 </dd>
@@ -1370,8 +1380,8 @@ General format: {thermal_port: [(port, pin), …, (port, pin)]}</p>
 <dt><strong>channel</strong><span class="classifier">int</span></dt><dd><p>Channel could set 0 or 1.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : 60 (HZ) (default)</p></li>
-<li><p>1 : 50 (HZ)</p></li>
+<li><p>0 : 60 (HZ) (default).</p></li>
+<li><p>1 : 50 (HZ).</p></li>
 </ul>
 </dd>
 </dl>
@@ -1398,19 +1408,19 @@ General format: {thermal_port: [(port, pin), …, (port, pin)]}</p>
 </dd>
 <dt><strong>type</strong><span class="classifier">int</span></dt><dd><dl class="simple">
 <dt>Type (TC):</dt><dd><ul class="simple">
-<li><p>0 = B type,</p></li>
-<li><p>1 = E type,</p></li>
-<li><p>2 = J type,</p></li>
-<li><p>3 = K type (default),</p></li>
-<li><p>4 = N type,</p></li>
-<li><p>5 = R type,</p></li>
-<li><p>6 = S type,</p></li>
-<li><p>7 = T type,</p></li>
+<li><p>0 = B type.</p></li>
+<li><p>1 = E type.</p></li>
+<li><p>2 = J type.</p></li>
+<li><p>3 = K type (default).</p></li>
+<li><p>4 = N type.</p></li>
+<li><p>5 = R type.</p></li>
+<li><p>6 = S type.</p></li>
+<li><p>7 = T type.</p></li>
 </ul>
 </dd>
 <dt>Type (RTD):</dt><dd><ul class="simple">
-<li><p>0 = 2- or 4-wire mode</p></li>
-<li><p>1 = 3-wire mode</p></li>
+<li><p>0 = 2- or 4-wire mode.</p></li>
+<li><p>1 = 3-wire mode.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1450,12 +1460,14 @@ General format: {thermal_port: [(port, pin), …, (port, pin)]}</p>
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.UART_getPinMap">
 <span class="sig-name descname"><span class="pre">UART_getPinMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.UART_getPinMap" title="Permalink to this definition"></a></dt>
 <dd><p>Get all available UART port numbers &amp; the pins that are associated with them.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port. Each pin is a tuple constituted of its physical port number &amp; pin number.
-For example: {1: [(0, 3), (0, 4)], 2: [(1, 2), (1, 3)]} means that there are two UART ports. They are numbered as 1 &amp; 2. UART1 has two pins: P0.3 &amp; P0.4. UART2 has two pins: P1.2 &amp; P1.3.
-General format: {UART_port: [(port, pin), …, (port, pin)]}</p>
+<dd class="field-odd"><dl>
+<dt><strong>Pinmap</strong><span class="classifier">dictionary</span></dt><dd><p>Each key is an available port. Its associated value yields the corresponding pins of that port.</p>
+<p>Each pin is a tuple constituted of its physical port number &amp; pin number.</p>
+<p>For example: {1: [(0, 3), (0, 4)], 2: [(1, 2), (1, 3)]} means that there are two UART ports.</p>
+<p>They are numbered as 1 &amp; 2. UART1 has two pins: P0.3 &amp; P0.4. UART2 has two pins: P1.2 &amp; P1.3.</p>
+<p>General format: {UART_port: [(port, pin), …, (port, pin)]}.</p>
 </dd>
 </dl>
 </dd>
@@ -1535,7 +1547,7 @@ General format: {UART_port: [(port, pin), …, (port, pin)]}</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
-<dt><strong>baud_rate: int</strong></dt><dd><p>In bits per second (baud)</p>
+<dt><strong>baud_rate: int</strong></dt><dd><p>In bits per second (baud).</p>
 </dd>
 </dl>
 </dd>

@@ -1,6 +1,6 @@
 example I2C write and read
 ==========================
 
-.. literalinclude:: ../../../../../../WPC_Python_driver_release/Examples/Console/I2C/example_I2C_write_read.py
+.. literalinclude:: ../../../../../WPC_Python_driver_release/Examples/Console/I2C/example_I2C_write_read.py
    :language: python
    :linenos:

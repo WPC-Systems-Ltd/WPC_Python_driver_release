@@ -1,6 +1,6 @@
 example CAN read
 ================
 
-.. literalinclude:: ../../../../../../WPC_Python_driver_release/Examples/Console/CAN/example_CAN_read.py
+.. literalinclude:: ../../../../../WPC_Python_driver_release/Examples/Console/CAN/example_CAN_read.py
    :language: python
    :linenos:
