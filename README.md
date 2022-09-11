@@ -2,9 +2,11 @@
 
 **WPC Python driver** contains APIs for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products.
 
+**pywpc.pyd** is a Python based dll file which support on win10 x64.
+
 ## Quick Start
 
-The following is a simple example of using pywpc module to find all available devices.
+In the bellowing example, we use **pywpc** library to find all available WPC devices.
 
 ```python
 >>> from wpcsys import pywpc
@@ -40,7 +42,7 @@ Closed handle (Device finder)
 
 ## Installation
 
-Install `wpcsys` using `pip`:
+Install [wpcsys](https://pypi.org/project/wpcsys/) using `pip`:
 
 ```
 $ pip install wpcsys
@@ -121,5 +123,6 @@ Take `USB-DAQ-F1-AOD` for example
 ## License
 
 **WPC Python driver** is licensed under an MIT-style license see
-[LICENSE](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/LICENSE). Other incorporated projects may be licensed under different licenses. All
-licenses allow for non-commercial and commercial use.
+[LICENSE](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/LICENSE). Other incorporated projects may be licensed under different licenses.
+
+All licenses allow for non-commercial and commercial use.
