@@ -16,7 +16,7 @@ SPI Clock
      - SPI2 frequency
    * - Peripheral clock
      - f_PCLK2 = 72 MHZ
-     - f_PCLK1 = 72 MHZ
+     - f_PCLK1 = 36 MHZ
    * - 2
      - 36 MHz
      - 18 MHz
