@@ -2,14 +2,21 @@ WPC Python driver release changelog
 ===================================
 
 
-v0.0.15 Date: 2022/09/17, Developer: Chunglee_people
+
+v0.0.16 Date: 2022/09/17, Developer: Chunglee_people
+----------------------------------------------------
+
+### Added
+- Add mode 1 (Reserved) in `UART_setParity`
+ 
+
+v0.0.15 Date: 2022/09/05, Developer: Chunglee_people
 ----------------------------------------------------
 
 ### Added
 - Add `Material` folder in GUI example code
 - Add package `wpcEXEbuild` requirement in `wpcsys`
 - Add `How to build your own Python code to EXE file` in wiki
-- Add mode 1 (Reserved) in `UART_setParity`
 
 ### Changed
 - Change `Material` path
