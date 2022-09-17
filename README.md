@@ -2,7 +2,7 @@
 
 **WPC Python driver** contains APIs for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products.
 
-It builded in [asynchronous](https://docs.python.org/3/library/asyncio.html) structure which is non-blocking mode with high program performance.
+In order to optimize driver API performance, we adopt [async/await](https://docs.python.org/3/library/asyncio.html) structure for the driver implementation as known as non-blocking mode. 
 
 ## Quick Start
 
