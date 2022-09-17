@@ -2,11 +2,13 @@
 
 **WPC Python driver** contains APIs for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products.
 
-**pywpc.pyd** is a Python based dll file which support on win10 x64.
+In order to optimize driver API performance, we adopt [async/await](https://docs.python.org/3/library/asyncio.html) structure for the driver implementation as known as non-blocking mode. 
 
 ## Quick Start
 
-In the bellowing example, we use **pywpc** library to find all available WPC devices.
+In the bellowing example, we use **pywpc** to find all available WPC devices.
+
+**pywpc.pyd** is a Python based dll file which support on win10 x64.
 
 ```python
 >>> from wpcsys import pywpc
