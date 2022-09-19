@@ -7,7 +7,7 @@ WPC Python device driver contains Application programming interfaces, APIs for i
 
 Also, It has been tested under Windows 10 64-bit operating system.
 
-For more products information, please visit `WPC-Systems-Ltd <http://www.wpc.com.tw/>`_official website.
+For more products information, please visit `WPC-Systems-Ltd <http://www.wpc.com.tw/>`_ official website.
 
 WPC Python device driver contains APIs for interacting with WPC DAQ and Ethernet cards.
 
