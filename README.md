@@ -61,9 +61,9 @@ $ pip install --upgrade wpcsys
 ## Requirements
 
 - [Python](https://www.python.org) \>= 3.10
-- [PyQt5](https://pypi.org/project/PyQt5/)(has been tested \>=5.15.7)
+- [PyQt5](https://pypi.org/project/PyQt5/) (has been tested \>=5.15.7)
 - [matplotlib](https://matplotlib.org/) \>= 3.5.2
-- [Numpy](http://www.numpy.org)(has been tested \>=1.23.0)
+- [Numpy](http://www.numpy.org) (has been tested \>=1.23.0)
 - [pyusb](https://pypi.org/project/pyusb/) \>= 1.2.1
 - [qasync](https://pypi.org/project/qasync/) \>= 0.23.0
 - [wpcEXEbuild](https://pypi.org/project/wpcEXEbuild/) \>= 0.0.1
