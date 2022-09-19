@@ -17,7 +17,7 @@ setup(
     license='MIT',
     install_requires=['pyusb>=1.2.1', 'numpy>=1.23.0',
                       'qasync>=0.23.0', 'matplotlib>=3.5.2', 'qasync>=0.23.0', 
-                      'PyQt5>=5.15.7', 'PyQt5-Qt5>=5.15.2', 'PyQt5-sip>=12.11.0','wpcEXEbuild>=0.0.1'],
+                      'PyQt5>=5.15.7', 'PyQt5-Qt5>=5.15.2', 'PyQt5-sip>=12.11.0', 'wpcEXEbuild>=0.0.1'],
     keywords='wpc, daq, driver, usb, ethernet, wifi, data acquisition',
     python_requires=">=3.10",
 )

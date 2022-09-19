@@ -1,10 +1,14 @@
 ## About
 
-**WPC Python driver** contains APIs for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products.
+**WPC Python device driver** contains APIs for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products.
+
+In order to optimize driver API performance, we adopt [async/await](https://docs.python.org/3/library/asyncio.html) structure for the driver implementation as known as non-blocking mode. 
 
 ## Quick Start
 
-The following is a simple example of using pywpc module to find all available devices.
+In the bellowing example, we use **pywpc** to find all available WPC devices.
+
+**pywpc.pyd** is a Python based dll file which support on win10 x64.
 
 ```python
 >>> from wpcsys import pywpc
@@ -40,7 +44,7 @@ Closed handle (Device finder)
 
 ## Installation
 
-Install `wpcsys` using `pip`:
+Install [wpcsys](https://pypi.org/project/wpcsys/) using `pip`:
 
 ```
 $ pip install wpcsys
@@ -57,9 +61,9 @@ $ pip install --upgrade wpcsys
 ## Requirements
 
 - [Python](https://www.python.org) \>= 3.10
-- [PyQt5](https://pypi.org/project/PyQt5/)(tested to work with\>=5.15.7)
+- [PyQt5](https://pypi.org/project/PyQt5/) (has been tested \>=5.15.7)
 - [matplotlib](https://matplotlib.org/) \>= 3.5.2
-- [Numpy](http://www.numpy.org)(tested to work with\>=1.23.0)
+- [Numpy](http://www.numpy.org) (has been tested \>=1.23.0)
 - [pyusb](https://pypi.org/project/pyusb/) \>= 1.2.1
 - [qasync](https://pypi.org/project/qasync/) \>= 0.23.0
 - [wpcEXEbuild](https://pypi.org/project/wpcEXEbuild/) \>= 0.0.1
@@ -113,13 +117,14 @@ Take `USB-DAQ-F1-AOD` for example
 
 ## References
 
-- [User manual - WPC Python Device Driver](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)
+- [User manual - WPC Python device driver](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)
 - [Recommendations for new python user to create environment](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-install-miniconda-and-build-your-own-virtual-environment) 
 - [Run example code in console](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-run-WPC-Python-driver-example-code-in-console)
 - [How to build your own Python code to EXE file](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-build-your-own-Python-code-to-EXE-file)
 
 ## License
 
-**WPC Python driver** is licensed under an MIT-style license see
-[LICENSE](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/LICENSE). Other incorporated projects may be licensed under different licenses. All
-licenses allow for non-commercial and commercial use.
+**WPC Python device driver** is licensed under an MIT-style license see
+[LICENSE](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/LICENSE). Other incorporated projects may be licensed under different licenses.
+
+All licenses allow for non-commercial and commercial use.
