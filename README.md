@@ -1,6 +1,6 @@
 ## About
 
-**WPC Python device driver** contains APIs for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products.
+**WPC Python driver** contains APIs for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products.
 
 In order to optimize driver API performance, we adopt [async/await](https://docs.python.org/3/library/asyncio.html) structure for the driver implementation as known as non-blocking mode. 
 
@@ -19,11 +19,11 @@ Opened handle (Device finder)
  
 >>> pywpc.PKG_FULL_NAME
 ...
-WPC Python device driver
+WPC Python driver
 
 >>> pywpc.__version__
 ...
-0.2.2
+0.2.4
 
 >>> dev.connect()
 ...
@@ -117,14 +117,14 @@ Take `USB-DAQ-F1-AOD` for example
 
 ## References
 
-- [User manual - WPC Python device driver](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)
+- [User manual - WPC Python driver](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)
 - [Recommendations for new python user to create environment](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-install-miniconda-and-build-your-own-virtual-environment) 
 - [Run example code in console](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-run-WPC-Python-driver-example-code-in-console)
 - [How to build your own Python code to EXE file](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-build-your-own-Python-code-to-EXE-file)
 
 ## License
 
-**WPC Python device driver** is licensed under an MIT-style license see
+**WPC Python driver release** is licensed under an MIT-style license see
 [LICENSE](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/LICENSE). Other incorporated projects may be licensed under different licenses.
 
 All licenses allow for non-commercial and commercial use.
