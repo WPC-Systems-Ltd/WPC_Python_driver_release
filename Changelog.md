@@ -3,13 +3,14 @@ WPC Python driver release changelog
 
 
 
-v0.0.16 Date: 2022/09/21, Developer: Chunglee_people
+v0.0.16 Date: 2022/09/26, Developer: Chunglee_people
 ----------------------------------------------------
 
 ### Added
 - Add mode 1 (Reserved) in `UART_setParity`
 
 ### Changed
+- Change WPC Python Version from `pywpc-0.2.3` to `pywpc-0.2.4`
 - Change sphinx project name from `WPC Device Driver` to `WPC Python driver`
 - Change sphinx index.rst title from `WPC DAQ Device Programming Guide` to `WPC Python Driver Programming Guide`
 - Uniform name to `WPC Python driver` in project

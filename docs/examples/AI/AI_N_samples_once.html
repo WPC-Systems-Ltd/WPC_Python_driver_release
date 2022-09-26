@@ -153,7 +153,7 @@
 <span class="linenos"> 50</span>        <span class="n">mode</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1">## 0 : On demand, 1 : N-samples, 2 : Continuous.</span>
 <span class="linenos"> 51</span>        <span class="n">sampling_rate</span> <span class="o">=</span> <span class="mi">1000</span>
 <span class="linenos"> 52</span>        <span class="n">samples</span> <span class="o">=</span> <span class="mi">50</span>    
-<span class="linenos"> 53</span>        <span class="n">read_poins</span> <span class="o">=</span> <span class="mi">50</span> 
+<span class="linenos"> 53</span>        <span class="n">read_points</span> <span class="o">=</span> <span class="mi">50</span> 
 <span class="linenos"> 54</span>
 <span class="linenos"> 55</span>        <span class="c1">## Open port 1</span>
 <span class="linenos"> 56</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_open</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
@@ -179,7 +179,7 @@
 <span class="linenos"> 76</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="linenos"> 77</span>        
 <span class="linenos"> 78</span>        <span class="c1">## Set AI port to 1 and get 50 points </span>
-<span class="linenos"> 79</span>        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_readStreaming</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">read_poins</span><span class="p">)</span>
+<span class="linenos"> 79</span>        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_readStreaming</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">read_points</span><span class="p">)</span>
 <span class="linenos"> 80</span>        
 <span class="linenos"> 81</span>        <span class="c1">## Read acquisition data 50 points </span>
 <span class="linenos"> 82</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Get data points: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)))</span> 

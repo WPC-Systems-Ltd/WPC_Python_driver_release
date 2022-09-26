@@ -50,7 +50,7 @@ async def main():
         mode = 1  ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 1000
         samples = 50    
-        read_poins = 50 
+        read_points = 50 
 
         ## Open port 1
         status = await dev.AI_open(port)
@@ -76,7 +76,7 @@ async def main():
         await asyncio.sleep(1)
         
         ## Set AI port to 1 and get 50 points 
-        data = await dev.AI_readStreaming(port, read_poins)
+        data = await dev.AI_readStreaming(port, read_points)
         
         ## Read acquisition data 50 points 
         print("Get data points: " + str(len(data))) 
