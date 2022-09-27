@@ -1,6 +1,15 @@
 WPC Python driver release changelog
 ===================================
 
+
+v0.0.17 Date: 2022/09/27, Developer: Chunglee_people
+----------------------------------------------------
+### Added
+- Update `wpcsys` in 0.2.4
+
+### Fixed
+- Fix duplicated decription in README.md
+
 v0.0.16 Date: 2022/09/26, Developer: Chunglee_people
 ----------------------------------------------------
 
