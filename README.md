@@ -1,6 +1,8 @@
 ## About
 
-**WPC Python driver** contains APIs for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products.
+**WPC Python device driver** contains APIs for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products.
+
+In order to optimize driver API performance, we adopt [async/await](https://docs.python.org/3/library/asyncio.html) structure for the driver implementation as known as non-blocking mode. 
 
 In order to optimize driver API performance, we adopt [async/await](https://docs.python.org/3/library/asyncio.html) structure for the driver implementation as known as non-blocking mode. 
 
@@ -126,5 +128,4 @@ Take `USB-DAQ-F1-AOD` for example
 
 **WPC Python driver release** is licensed under an MIT-style license see
 [LICENSE](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/LICENSE). Other incorporated projects may be licensed under different licenses.
-
 All licenses allow for non-commercial and commercial use.
