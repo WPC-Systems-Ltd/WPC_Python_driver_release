@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>USB-DAQ-F1-CD &mdash; WPC Python device driver 0.2.3 documentation</title>
+  <title>USB-DAQ-F1-CD &mdash; WPC Python driver 0.2.4 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -30,11 +30,11 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> WPC Python device driver
+            <a href="../index.html" class="icon icon-home"> WPC Python driver
             <img src="../_static/WPC_logo2.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.2.3
+                0.2.4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -79,7 +79,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">WPC Python device driver</a>
+          <a href="../index.html">WPC Python driver</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -111,11 +111,11 @@
 <dd><p>This device <cite>WPC-USB-DAQ-CD</cite> has 20ch 3.3V DIO/I2C/SPI.</p>
 <dl class="simple">
 <dt>Available ports:</dt><dd><ul class="simple">
-<li><p>UART: 1, 2</p></li>
-<li><p>I2C: 1, 2</p></li>
-<li><p>SPI: 2</p></li>
-<li><p>CAN: 1</p></li>
-<li><p>DIO: 0, 1, 2, 3</p></li>
+<li><p>UART : 1, 2</p></li>
+<li><p>I2C : 1, 2</p></li>
+<li><p>SPI : 2</p></li>
+<li><p>CAN : 1</p></li>
+<li><p>DIO : 0, 1, 2, 3</p></li>
 </ul>
 </dd>
 </dl>
@@ -384,9 +384,9 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">counter_info[0]</span></code>: TX interrupt counter.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">counter_info[1]</span></code>: RX interrupt counter.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">counter_info[2]</span></code>: SPI counter.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[3]</span></code>: Send counter.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[4]</span></code>: Bus error counter.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[5]</span></code>: Overflow counter.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[3]</span></code>: send counter.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[4]</span></code>: bus error counter.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[5]</span></code>: overflow counter.</p></li>
 </ul>
 </dd>
 </dl>
@@ -431,9 +431,9 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>ITR_info</strong><span class="classifier">list of three int</span></dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ITR_info[0]</span></code>: Interrupt enable.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ITR_info[1]</span></code>: Interrupt state.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ITR_info[2]</span></code>: Error state.s</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITR_info[0]</span></code>: interrupt enable.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITR_info[1]</span></code>: interrupt state.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITR_info[2]</span></code>: error state.s</p></li>
 </ul>
 </dd>
 </dl>
@@ -514,7 +514,7 @@
 </dd>
 <dt><strong>status</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
 <li><p>True : interrupt.</p></li>
-<li><p>False : No interrupt.</p></li>
+<li><p>False : no interrupt.</p></li>
 </ul>
 </dd>
 </dl>
@@ -538,8 +538,8 @@
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>status</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
-<li><p>True : Filter.</p></li>
-<li><p>False : Mask.</p></li>
+<li><p>True : filter.</p></li>
+<li><p>False : mask.</p></li>
 </ul>
 </dd>
 </dl>
@@ -563,8 +563,8 @@
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>status</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
-<li><p>True : On.</p></li>
-<li><p>False : Off.</p></li>
+<li><p>True : on.</p></li>
+<li><p>False : off.</p></li>
 </ul>
 </dd>
 </dl>
@@ -588,8 +588,8 @@
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>status</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
-<li><p>True : On.</p></li>
-<li><p>False : Off.</p></li>
+<li><p>True : on.</p></li>
+<li><p>False : off.</p></li>
 </ul>
 </dd>
 </dl>
@@ -640,16 +640,16 @@
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>tx_mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0: buffer 0.</p></li>
-<li><p>1: buffer 1.</p></li>
-<li><p>2: buffer 2.</p></li>
+<li><p>0 : buffer 0.</p></li>
+<li><p>1 : buffer 1.</p></li>
+<li><p>2 : buffer 2.</p></li>
 </ul>
 </dd>
 <dt><strong>priority</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0: lowest.</p></li>
-<li><p>1: low intermediate.</p></li>
-<li><p>2: high intermediate.</p></li>
-<li><p>3: high highest.</p></li>
+<li><p>0 : lowest.</p></li>
+<li><p>1 : low intermediate.</p></li>
+<li><p>2 : high intermediate.</p></li>
+<li><p>3 : high highest.</p></li>
 </ul>
 </dd>
 </dl>
@@ -722,8 +722,8 @@
 </ul>
 </dd>
 <dt><strong>CAN_length</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
-<li><p>True  : Extended.</p></li>
-<li><p>False : Standard.</p></li>
+<li><p>True  : extended.</p></li>
+<li><p>False : standard.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1188,10 +1188,10 @@
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>frequency</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : Standard (100000).</p></li>
-<li><p>1 : Fast (400000).</p></li>
-<li><p>2 : Fast Plus (1000000).</p></li>
-<li><p>3 : High Speed (3400000).</p></li>
+<li><p>0 : standard (100000).</p></li>
+<li><p>1 : fast (400000).</p></li>
+<li><p>2 : fast Plus (1000000).</p></li>
+<li><p>3 : high speed (3400000).</p></li>
 </ul>
 </dd>
 </dl>
@@ -1862,10 +1862,10 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : No parity.</p></li>
-<li><p>1 : Reserved.</p></li>
-<li><p>2 : Even parity.</p></li>
-<li><p>3 : Odd parity.</p></li>
+<li><p>0 : none.</p></li>
+<li><p>1 : reserved.</p></li>
+<li><p>2 : even parity.</p></li>
+<li><p>3 : odd parity.</p></li>
 </ul>
 </dd>
 </dl>
