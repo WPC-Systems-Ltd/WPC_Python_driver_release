@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wifi-DAQ-E3-A &mdash; WPC Python device driver 0.2.3 documentation</title>
+  <title>Wifi-DAQ-E3-A &mdash; WPC Python driver 0.2.4 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -30,11 +30,11 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> WPC Python device driver
+            <a href="../index.html" class="icon icon-home"> WPC Python driver
             <img src="../_static/WPC_logo2.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.2.3
+                0.2.4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -73,7 +73,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">WPC Python device driver</a>
+          <a href="../index.html">WPC Python driver</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -105,7 +105,7 @@
 <dd><p>This device <cite>Wifi-DAQ-E3-A</cite> has 8ch 16-bit +/-10V analog input. Max sampling rate is 10KHz.</p>
 <dl class="simple">
 <dt>Available ports:</dt><dd><ul class="simple">
-<li><p>AI: 1</p></li>
+<li><p>AI : 1</p></li>
 </ul>
 </dd>
 </dl>
@@ -305,10 +305,10 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>buffer_status</strong><span class="classifier">list of 4 positive int.</span></dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">buffer_status[0]</span></code>: Buffer zero times</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">buffer_status[1]</span></code>: Buffer full times</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">buffer_status[2]</span></code>: Buffer remain</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">buffer_status[3]</span></code>: Buffer max values</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">buffer_status[0]</span></code>: buffer zero times</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">buffer_status[1]</span></code>: buffer full times</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">buffer_status[2]</span></code>: buffer remain</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">buffer_status[3]</span></code>: buffer max values</p></li>
 </ul>
 </dd>
 </dl>
@@ -372,7 +372,7 @@
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
-<dt><strong>mode</strong><span class="classifier">int</span></dt><dd><p>0 : On demand, 1 : N-samples, 2 : Continuous.</p>
+<dt><strong>mode</strong><span class="classifier">int</span></dt><dd><p>0 : on demand, 1 : N-samples, 2 : continuous.</p>
 </dd>
 </dl>
 </dd>
@@ -437,6 +437,12 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 if success, error otherwise.</p>
 </dd>
 </dl>
 </dd>
@@ -677,8 +683,8 @@
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>bandwidth</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>1 : Bandwidth is HT20</p></li>
-<li><p>2 : Bandwidth is HT40</p></li>
+<li><p>1 : bandwidth is HT20.</p></li>
+<li><p>2 : bandwidth is HT40.</p></li>
 </ul>
 </dd>
 </dl>
@@ -710,7 +716,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>accleration_three_axis</strong><span class="classifier">list of 3 float</span></dt><dd><p>Accelerations in x-, y-, and z-axis.</p>
+<dt><strong>accleration_three_axis</strong><span class="classifier">list of 3 int</span></dt><dd><p>Accelerations in x-, y-, and z-axis.</p>
 </dd>
 </dl>
 </dd>
@@ -752,7 +758,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>thermo</strong><span class="classifier">int</span></dt><dd><p>Temperature in Celsius.</p>
+<dt><strong>thermo</strong><span class="classifier">float</span></dt><dd><p>Temperature in Celsius.</p>
 </dd>
 </dl>
 </dd>
