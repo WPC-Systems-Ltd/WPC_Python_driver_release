@@ -1,6 +1,6 @@
 ## About
 
-**WPC Python device driver** contains APIs for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products.
+**WPC Python driver** contains APIs for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products.
 
 In order to optimize driver API performance, we adopt [async/await](https://docs.python.org/3/library/asyncio.html) structure for the driver implementation as known as non-blocking mode.
 
@@ -97,7 +97,7 @@ USB interface DAQ card
 ## Port funtion table
 
 | Model           | AI  | AO | DI         | DO         | CAN | UART | SPI | I2C  | RTD | Thermocouple |
-|:----------------|:---:|:--:|:----------:|:----------:|:---:|:----:|:---:|:----:|:---:|:------------:|
+|:---------------:|:---:|:--:|:----------:|:----------:|:---:|:----:|:---:|:----:|:---:|:------------:|
 | Wifi-DAQ-E3-A   | 1   | -  | -          | -          |-    |-     |-    |-     | -   |-             |
 | Ethan-D         | -   | -  | 1          | 0          |-    |-     |-    |-     | -   |-             |
 | Ethan-A         | 0   | -  | -          | -          |-    |-     |-    |-     | -   |-             |
