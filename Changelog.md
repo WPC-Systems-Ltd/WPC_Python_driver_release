@@ -1,10 +1,17 @@
 WPC Python driver release changelog
 ===================================
 
+v0.0.19 Date: 2022/10/03, Developer: Chunglee_people
+----------------------------------------------------
+ 
+### Changed
+- Change WPC_DAQ_Devices_User_Manual to R18
+- Change WPC Python Version from `pywpc-0.2.5` to `pywpc-0.2.6`
 
 v0.0.18 Date: 2022/09/30, Developer: Chunglee_people
 ----------------------------------------------------
 - Update `wpcsys` in 0.2.5
+- Change WPC Python Version from `pywpc-0.2.4` to `pywpc-0.2.5`
 
 v0.0.17 Date: 2022/09/27, Developer: Chunglee_people
 ----------------------------------------------------
