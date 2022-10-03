@@ -52,13 +52,13 @@ async def main():
         status = await dev.DO_openPins(port, [0,1,2,3,4]) 
         if status == 0: print("DO_openPins: OK")
         
-        ## Set pin0, pin1 to high, others to low
+        ## Set pin0 and pin1 to high, others to low in port 0
         await dev.DO_writePins(port, [0,1,2,3,4], [1,1,0,0,0]) 
         if status == 0: print("DO_writePins: OK")
 
         ## Open pin5, pin6 and pin7 in port 0 with digital output
         status = await dev.DI_openPins(port, [5,6,7])
-        if status == 0: print("DO_openPins: OK")
+        if status == 0: print("DI_openPins: OK")
 
         ## Read pin5, pin6 and pin7 state in port 0
         state_list = await dev.DI_readPins(port, [7,5,6])
