@@ -31,11 +31,11 @@ async def main():
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}') 
 
     ## Create device handle
-    dev = pywpc.WifiDAQE3A()
+    dev = pywpc.EthanA()
 
     ## Connect to network device
     try:
-        dev.connect("192.168.5.79")
+        dev.connect("192.168.1.110")
     except Exception as err:
         pywpc.printGenericError(err) 
 
@@ -46,7 +46,7 @@ async def main():
         print("Firmware version: " + driver_info[-1])
 
         ## Parameters setting
-        port = 1
+        port = 0
         mode = 1  ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 1000
         samples = 50    

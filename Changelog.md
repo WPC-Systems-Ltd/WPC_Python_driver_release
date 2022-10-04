@@ -1,12 +1,26 @@
 WPC Python driver release changelog
 ===================================
 
+v0.0.20 Date: 2022/10/04, Developer: Chunglee_people
+----------------------------------------------------
+
+### Changed
+- Change WPC Python Version from `pywpc-0.2.6` to `pywpc-0.2.7`
+- Update `wpcsys` in 0.2.7
+
+### Fixed
+- Fix bug of AI module in EthanA
+
 v0.0.19 Date: 2022/10/03, Developer: Chunglee_people
 ----------------------------------------------------
 
 ### Changed
 - Change WPC_DAQ_Devices_User_Manual to R18
 - Change WPC Python Version from `pywpc-0.2.5` to `pywpc-0.2.6`
+- Update `wpcsys` in 0.2.6
+
+### Fixed
+- Fix bug of DI module in EthanD
 
 v0.0.18 Date: 2022/09/30, Developer: Chunglee_people
 ----------------------------------------------------
@@ -15,6 +29,9 @@ v0.0.18 Date: 2022/09/30, Developer: Chunglee_people
 - Update `wpcsys` in 0.2.5
 - Change WPC Python Version from `pywpc-0.2.4` to `pywpc-0.2.5`
 
+### Fixed
+- Fix bug of missing EthDevice initial
+
 v0.0.17 Date: 2022/09/27, Developer: Chunglee_people
 ----------------------------------------------------
 
@@ -22,6 +39,7 @@ v0.0.17 Date: 2022/09/27, Developer: Chunglee_people
 - Update `wpcsys` in 0.2.4
 
 ### Fixed
+- Fix bug in WifiSystemModule
 - Fix duplicated decription in README.md
 
 v0.0.16 Date: 2022/09/26, Developer: Chunglee_people
