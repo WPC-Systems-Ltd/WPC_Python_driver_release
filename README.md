@@ -23,7 +23,7 @@ WPC Python driver
 
 >>> pywpc.__version__
 ...
-0.2.6
+0.2.7
 
 >>> dev.connect()
 ...
