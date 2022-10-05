@@ -92,17 +92,17 @@ class MainWindow(QtWidgets.QMainWindow):
             return
 
         ## Get firmware model & version
-        driver_info = await self.dev.Sys_getDriverInfo()
+        driver_info = await self.dev.Sys_getDriverInfo_async()
         model = driver_info[0]
         version = driver_info[-1]
         
         ## Get serial number & RTC Time
-        serial_number = await self.dev.Sys_getSerialNumber()
-        rtc = await self.dev.Sys_getRTC()
+        serial_number = await self.dev.Sys_getSerialNumber_async()
+        rtc = await self.dev.Sys_getRTC_async()
 
         ## Get IP & submask & MAC
-        ip, submask = await self.dev.Sys_getIPAddrAndSubmask() 
-        mac = await self.dev.Sys_getMACAddr()
+        ip, submask = await self.dev.Sys_getIPAddrAndSubmask_async() 
+        mac = await self.dev.Sys_getMACAddr_async()
 
         ## Update information in UI
         self.ui.lineEdit_ip.setText(ip)

@@ -11,13 +11,13 @@ from wpcsys import pywpc
 
 async def readRSSI_loop(handle, delay = 1):
     while True:
-        data = await handle.Wifi_readRSSI()
+        data = await handle.Wifi_readRSSI_async()
         print("RSSI: " + str(data) + " dBm")
         await asyncio.sleep(delay)  ## delay(second)
 
 async def readBattery_loop(handle, delay= 1):
     while True:
-        data = await handle.Wifi_readBattery()
+        data = await handle.Wifi_readBattery_async()
         print("Battery: "+ str(data) + " mV")
         await asyncio.sleep(delay)  ## delay(second)
 
@@ -39,7 +39,7 @@ async def main():
     ## Perform two async thread to get data
     try:
         ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo()
+        driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
         

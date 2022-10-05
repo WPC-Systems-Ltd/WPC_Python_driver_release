@@ -40,7 +40,7 @@ async def main():
 
     try: 
         ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo()
+        driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
@@ -49,7 +49,7 @@ async def main():
         pinindex = [0,7]
  
         ## Open pin0 and pin7 in port 0 with digital output
-        status = await dev.DO_openPins(port, pinindex)
+        status = await dev.DO_openPins_async(port, pinindex)
         if status == 0: print("DO_openPins: OK")
 
         for i in range(10):
@@ -58,7 +58,7 @@ async def main():
             else:
                 value = [1,0]
 
-            await dev.DO_writePins(port, pinindex, value) 
+            await dev.DO_writePins_async(port, pinindex, value) 
             print(f'Port: {port}, pinindex = {pinindex}, digital state = {value}') 
             await asyncio.sleep(0.5)  ## delay(second)
 
@@ -66,7 +66,7 @@ async def main():
         await asyncio.sleep(3)  ## delay(second)
         
         ## Close pin0 and pin7 in port 0 with digital output 
-        status = await dev.DO_closePins(port, pinindex)
+        status = await dev.DO_closePins_async(port, pinindex)
         if status == 0: print("DO_closePins: OK")
     except Exception as err:
         pywpc.printGenericError(err)

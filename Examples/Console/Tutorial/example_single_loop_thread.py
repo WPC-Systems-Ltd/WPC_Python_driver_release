@@ -12,7 +12,7 @@ import time
 from wpcsys import pywpc
  
 async def getRSSI(handle, delay = 1):
-    data = await handle.Wifi_readRSSI()
+    data = await handle.Wifi_readRSSI_async()
     print("RSSI: " + str(data) + " dBm")
     await asyncio.sleep(delay)  ## delay(second)
 
@@ -39,7 +39,7 @@ async def main():
     ## Perform two sync thread to query data
     try:
         ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo()
+        driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 

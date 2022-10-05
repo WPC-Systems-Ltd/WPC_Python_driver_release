@@ -57,13 +57,13 @@ class MainWindow(QtWidgets.QMainWindow):
     async def openPort(self):
         ## Open SPI port
         for i in range(1,3):
-            await self.dev.SPI_open(i)
+            await self.dev.SPI_open_async(i)
 
     @asyncSlot()      
     async def closePort(self):
         ## Close SPI port
         for i in range(1,3):
-            await self.dev.SPI_close(i)
+            await self.dev.SPI_close_async(i)
 
     @asyncSlot() 
     async def setEvent(self):
@@ -74,11 +74,11 @@ class MainWindow(QtWidgets.QMainWindow):
         prescaler = self.ui.comboBox_prescaler.currentIndex()
 
         ## Set SPI port and prescaler
-        status = await self.dev.SPI_setPrescaler(port, prescaler)
+        status = await self.dev.SPI_setPrescaler_async(port, prescaler)
         if status == 0: print("SPI_setPrescaler: OK")
        
         ## Set SPI port and SPI mode
-        status = await self.dev.SPI_setMode(port, mode)
+        status = await self.dev.SPI_setMode_async(port, mode)
         if status == 0: print("SPI_setMode: OK")
 
     @asyncSlot() 
@@ -94,7 +94,7 @@ class MainWindow(QtWidgets.QMainWindow):
         write_data_int = self.converStrtoIntList(write_data)    
 
         ## Set SPI port and write bytes
-        status = await self.dev.SPI_write(port, write_data_int)
+        status = await self.dev.SPI_write_async(port, write_data_int)
         if status == 0: print("SPI_write: OK")
 
     @asyncSlot() 
@@ -110,7 +110,7 @@ class MainWindow(QtWidgets.QMainWindow):
         write_data_int = self.converStrtoIntList(write_data)    
  
         ## Set SPI port and read bytes
-        data = await self.dev.SPI_readAndWrite(port, write_data_int) 
+        data = await self.dev.SPI_readAndWrite_async(port, write_data_int) 
 
         ## Update data in UI
         self.ui.lineEdit_read.setText(str(data))

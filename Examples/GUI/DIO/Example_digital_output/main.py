@@ -66,12 +66,12 @@ class MainWindow(QtWidgets.QMainWindow):
     async def OpenDOport(self):
        for i in range(4):
         await asyncio.sleep(0.1) ## delay(second)
-        status = await self.dev.DO_openPort(i)
+        status = await self.dev.DO_openPort_async(i)
     @asyncSlot() 
     async def CloseDOport(self):
        for i in range(4):
         await asyncio.sleep(0.1) ## delay(second)
-        status = await self.dev.DO_closePort(i)
+        status = await self.dev.DO_closePort_async(i)
 
     @asyncSlot() 
     async def portEvent(self):
@@ -98,7 +98,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.state_cal += int(state) << i
 
         ## Write DO state to MCU
-        await self.dev.DO_writePort(port, self.state_cal)
+        await self.dev.DO_writePort_async(port, self.state_cal)
 
     @asyncSlot() 
     async def connectEvent(self):

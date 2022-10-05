@@ -28,7 +28,7 @@ async def loop_func(handle, port, num_of_samples = 600, delay = 0.05, timeout = 
     t = 0
     while t < timeout:
         ## data acquisition
-        data = await handle.AI_readStreaming(port, num_of_samples, delay) ## Get 600 points at a time 
+        data = await handle.AI_readStreaming_async(port, num_of_samples, delay) ## Get 600 points at a time 
         print("data :" + str(data))
         await asyncio.sleep(delay)
         t += delay
@@ -50,7 +50,7 @@ async def main():
 
     try:
         ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo()
+        driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
@@ -60,29 +60,29 @@ async def main():
         sampling_rate = 1000
      
         ## Open port 1
-        status = await dev.AI_open(port)
+        status = await dev.AI_open_async(port)
         if status == 0: print("AI_open: OK")
 
         ## Set AI port to 1 and acquisition mode to continuous mode (2)
-        status = await dev.AI_setMode(port, mode)
+        status = await dev.AI_setMode_async(port, mode)
         if status == 0: print("AI_setMode: OK")
 
         ## Set AI port to 1 and sampling rate to 1k (Hz)
-        status = await dev.AI_setSamplingRate(port, sampling_rate)
+        status = await dev.AI_setSamplingRate_async(port, sampling_rate)
         if status == 0: print("AI_setSamplingRate: OK")
         
         ## Wait amount of time (sec)
         await asyncio.sleep(1)
 
         ## Set AI port to 1 and start acquisition
-        status = await dev.AI_start(port)
+        status = await dev.AI_start_async(port)
         if status == 0: print("AI_start: OK")
 
         ## Start async thread
         await loop_func(dev, port, 600, 0.05, 3)
 
         ## Close port 1
-        status = await dev.AI_close(port) 
+        status = await dev.AI_close_async(port) 
         if status == 0: print("AI_close: OK")
     except Exception as err:
         pywpc.printGenericError(err)

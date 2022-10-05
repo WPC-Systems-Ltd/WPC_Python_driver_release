@@ -1,6 +1,17 @@
 WPC Python driver release changelog
 ===================================
 
+
+v1.0.0 Date: 2022/10/04, Developer: Chunglee_people
+----------------------------------------------------
+### Added
+- Add `PyQt5Designer` in requirements.txt and setup.py
+
+### Changed
+- Change API name to XXX_async
+- Change WPC Python Version from `pywpc-0.2.7` to `pywpc-1.0.0`
+- Update `wpcsys` in 1.0.0
+
 v0.0.20 Date: 2022/10/04, Developer: Chunglee_people
 ----------------------------------------------------
 

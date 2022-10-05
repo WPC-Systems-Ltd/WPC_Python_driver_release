@@ -76,7 +76,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.tableWidget_brst.setRowCount(0) 
 
         ## Perform device information
-        broadcast_info = await dev.Bcst_getDeviceInfo()
+        broadcast_info = await dev.Bcst_getDeviceInfo_async()
 
         ## Return information length
         device_amount = len(broadcast_info) 

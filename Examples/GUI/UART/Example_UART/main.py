@@ -14,7 +14,7 @@ from PyQt5 import QtWidgets, QtGui
 from UI_design.Ui_example_GUI_UART import Ui_MainWindow 
 
 ## WPC
-from wpcsys import pywpc 
+from wpcsys import pywpc
 
 DEVIDER = 2000
 class MainWindow(QtWidgets.QMainWindow):
@@ -70,23 +70,23 @@ class MainWindow(QtWidgets.QMainWindow):
         port = port_idx + 1 
 
         ## Open UART port
-        status = await self.dev.UART_open(port) 
+        status = await self.dev.UART_open_async(port) 
         if status == 0: print("UART_open: OK")
 
         ## Change LED status
         self.ui.lb_ledport.setPixmap(QtGui.QPixmap(self.green_led_path))
 
         ## Set UART port and baudrate
-        await self.dev.UART_setBaudRate(port, int(baudrate))
+        await self.dev.UART_setBaudRate_async(port, int(baudrate))
 
         ## Set UART port and data bit
-        await self.dev.UART_setDataBit(port, databit_idx)
+        await self.dev.UART_setDataBit_async(port, databit_idx)
 
         ## Set UART port and parity
-        await self.dev.UART_setParity(port, parity_idx)
+        await self.dev.UART_setParity_async(port, parity_idx)
 
         ## Set UART port and stop bit
-        await self.dev.UART_setNumStopBit(port, stopbit_idx)
+        await self.dev.UART_setNumStopBit_async(port, stopbit_idx)
 
     @asyncSlot() 
     async def writeEvent(self):
@@ -98,7 +98,7 @@ class MainWindow(QtWidgets.QMainWindow):
         write_data = self.ui.lineEdit_write.text()
 
         ## Set UART port and and write data to device
-        status = await self.dev.UART_write(port, write_data)
+        status = await self.dev.UART_write_async(port, write_data)
         if status == 0: print("UART_write: OK")
 
     @asyncSlot() 
@@ -111,7 +111,7 @@ class MainWindow(QtWidgets.QMainWindow):
         port = port_idx + 1
 
         ## Set UART port and read bytes
-        data = await self.dev.UART_read(port, int(read_bytes)) 
+        data = await self.dev.UART_read_async(port, int(read_bytes)) 
         self.ui.lineEdit_read.setText(str(data))
 
     @asyncSlot() 
@@ -121,7 +121,7 @@ class MainWindow(QtWidgets.QMainWindow):
         port = port_idx + 1
 
         ## Close UART port
-        status = await self.dev.UART_close(port)
+        status = await self.dev.UART_close_async(port)
         if status == 0: print("UART_close: OK")
 
         ## Change LED status
