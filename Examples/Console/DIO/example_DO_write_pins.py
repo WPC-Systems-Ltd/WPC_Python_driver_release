@@ -40,7 +40,7 @@ async def main():
 
     try: 
         ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo()
+        driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
         
@@ -49,36 +49,36 @@ async def main():
         pin_index = [0,1,2,3,4]
 
         ## Open pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output.
-        status = await dev.DO_openPins(port, pin_index)
+        status = await dev.DO_openPins_async(port, pin_index)
         if status == 0: print("DO_openPins: OK")
 
         ## Wait for 1 second
         await asyncio.sleep(1)  ## delay(second)
        
         ## Set pin0, pin1 to high, others to low.
-        status = await dev.DO_writePins(port, pin_index, [1,1,0,0,0]) 
+        status = await dev.DO_writePins_async(port, pin_index, [1,1,0,0,0]) 
         if status == 0: print("DO_writePins: OK")
 
         ## Open pin5, pin6 and pin7 in port 0 with digital output (1110 0000 in binary) (0xE0 in hex).
-        status = await dev.DO_openPins(port, 0xE0)
+        status = await dev.DO_openPins_async(port, 0xE0)
         if status == 0: print("DO_openPins: OK")
 
         ## Wait for 1 second
         await asyncio.sleep(1)  ## delay(second)
 
         ## Set pin7 and pin6 to high, others to low (1100 0000 in binary) (0xC0 in hex).
-        status = await dev.DO_writePins(port, 0xE0, 0xC0) 
+        status = await dev.DO_writePins_async(port, 0xE0, 0xC0) 
         if status == 0: print("DO_writePins: OK")
 
         ## Wait for 5 second
         await asyncio.sleep(5)  ## delay(second)
         
         ## Close pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output.
-        status = await dev.DO_closePins(port, pin_index)
+        status = await dev.DO_closePins_async(port, pin_index)
         if status == 0: print("DO_closePins: OK")
 
         ## Close pin5, pin6 and pin7 in port 0 with digital output.
-        status = await dev.DO_closePins(port, 0xE0)
+        status = await dev.DO_closePins_async(port, 0xE0)
         if status == 0: print("DO_closePins: OK")
     except Exception as err:
         pywpc.printGenericError(err)

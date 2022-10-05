@@ -58,13 +58,13 @@ class MainWindow(QtWidgets.QMainWindow):
     async def openPort(self):
         ## Open I2C port
         for i in range(1,3):
-            await self.dev.I2C_open(i)
+            await self.dev.I2C_open_async(i)
 
     @asyncSlot()      
     async def closePort(self):
         ## Close I2C port
         for i in range(1,3):
-            await self.dev.I2C_close(i)
+            await self.dev.I2C_close_async(i)
 
     @asyncSlot() 
     async def setEvent(self):
@@ -76,7 +76,7 @@ class MainWindow(QtWidgets.QMainWindow):
         clock_mode = self.ui.comboBox_clockrate.currentIndex()
 
         ## Set I2C port and clock rate
-        status = await self.dev.I2C_setClockRate(port, clock_mode)
+        status = await self.dev.I2C_setClockRate_async(port, clock_mode)
         if status == 0: print("SPI_setPrescaler: OK")
 
     @asyncSlot() 
@@ -96,7 +96,7 @@ class MainWindow(QtWidgets.QMainWindow):
         write_data_int = self.converStrtoIntList(write_data)    
 
         ## Set I2C port and write bytes
-        status = await self.dev.I2C_write(port, write_addr_int, write_data_int)
+        status = await self.dev.I2C_write_async(port, write_addr_int, write_data_int)
         if status == 0: print("I2C_write: OK")
 
     @asyncSlot() 
@@ -114,7 +114,7 @@ class MainWindow(QtWidgets.QMainWindow):
         read_add_int = int(read_addr, 16)
         
         ## Set I2C port and read bytes
-        data = await self.dev.I2C_read(port, read_add_int, byte_read) 
+        data = await self.dev.I2C_read_async(port, read_add_int, byte_read) 
         self.ui.lineEdit_read.setText(str(data))
 
         ## Sleep

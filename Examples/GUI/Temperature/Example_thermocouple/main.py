@@ -58,7 +58,7 @@ class MainWindow(QtWidgets.QMainWindow):
     async def tempEvent(self): 
         ## Set thermo port to 1 and read thermo in channels
         for i in range(2):
-            data = await self.dev.Thermal_readSensor(self.port, i)
+            data = await self.dev.Thermal_readSensor_async(self.port, i)
             if i == 0:
                 self.ui.lineEdit_sensor0.setText(str(data))
             else:
@@ -73,17 +73,17 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Set thermo port to 1 and set type
         for i in range(2):
-            status = await self.dev.Thermal_setType(self.port, i, type_idx)
+            status = await self.dev.Thermal_setType_async(self.port, i, type_idx)
             if status == 0: print("setType: OK")   
 
         ## Set thermo port to 1 and over-sampling mode 
         for i in range(2):
-            status = await self.dev.Thermal_setOverSampling(self.port, i, oversampling_idx)
+            status = await self.dev.Thermal_setOverSampling_async(self.port, i, oversampling_idx)
             if status == 0: print("setOverSampling: OK")
 
         ## Set thermo port to 1 and Noise Filter
         for i in range(2):
-            status = await self.dev.Thermal_setNoiseFilter(self.port, i, noiserejection_idx)
+            status = await self.dev.Thermal_setNoiseFilter_async(self.port, i, noiserejection_idx)
             if status == 0: print("setNoiseFilter: OK")
   
     @asyncSlot() 
@@ -103,7 +103,7 @@ class MainWindow(QtWidgets.QMainWindow):
             print("err: " + str(err))
         
         ## Open thermo port1
-        status = await self.dev.Thermal_open(self.port)
+        status = await self.dev.Thermal_open_async(self.port)
         if status == 0: print("Thermal_open: OK")
     @asyncSlot()      
 
@@ -118,7 +118,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.connect_flag = 0
 
         ## Close thermo port1
-        status = await self.dev.Thermal_close(self.port)
+        status = await self.dev.Thermal_close_async(self.port)
         if status == 0: print("Thermal_close: OK")   
 
     def closeEvent(self, event):

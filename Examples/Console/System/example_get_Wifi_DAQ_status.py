@@ -17,7 +17,7 @@ All rights reserved.
 import asyncio
 
 ## WPC
-from wpcsys import pywpc 
+from wpcsys import pywpc
 
 async def main():
     print("Start example code...")
@@ -37,14 +37,14 @@ async def main():
     ## Perform to Get RSSI, Battery and Thermo
     try:
         ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo()
+        driver_info = await dev.Sys_getDriverInfo_async()
         print("Firmware model: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Get RSSI, battery and thermo
-        data1 = await dev.Wifi_readRSSI()
-        data2 = await dev.Wifi_readBattery()
-        data3 = await dev.Wifi_readThermo()
+        data1 = await dev.Wifi_readRSSI_async()
+        data2 = await dev.Wifi_readBattery_async()
+        data3 = await dev.Wifi_readThermo_async()
 
         print("RSSI: " + str(data1) + " dBm")
         print("Battery: "+ str(data2) + " mV")

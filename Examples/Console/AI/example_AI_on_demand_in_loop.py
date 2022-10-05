@@ -28,7 +28,7 @@ async def loop_func(handle, port, delay, timeout = 3):
     t = 0
     while t < timeout:
         ## data acquisition
-        data =  await handle.AI_readOnDemand(port)
+        data =  await handle.AI_readOnDemand_async(port)
         print("data :" + str(data))
         await asyncio.sleep(delay)
         t += delay
@@ -50,7 +50,7 @@ async def main():
 
     try:
         ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo()
+        driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
         
@@ -58,14 +58,14 @@ async def main():
         port = 1
 
         ## Open port 1
-        status = await dev.AI_open(port)
+        status = await dev.AI_open_async(port)
         if status == 0: print("AI_open: OK") 
  
         ## Set AI port to 1 and start async thread
         await loop_func(dev, port, 1, 3)
     
         ## Close port 1
-        status = await dev.AI_close(port) 
+        status = await dev.AI_close_async(port) 
         if status == 0: print("AI_close: OK")
     except Exception as err:
         pywpc.printGenericError(err)

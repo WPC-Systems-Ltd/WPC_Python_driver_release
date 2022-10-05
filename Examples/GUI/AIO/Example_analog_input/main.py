@@ -46,8 +46,11 @@ class MainWindow(QtWidgets.QMainWindow):
         ## Get Python driver version
         print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}') 
 
-        ## Wifi DAQ AI port
-        self.AI_port = 1 
+        ## Create device handle
+        self.dev = pywpc.EthanA()
+        
+        ## AI port
+        self.AI_port = 0 
 
         ## Connection flag
         self.connect_flag = 0
@@ -86,10 +89,10 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def closeEvent(self, event):
         ## Disconnect network device
-        dev.disconnect()
+        self.dev.disconnect()
         
         ## Release device handle
-        dev.close()
+        self.dev.close()
  
     @asyncSlot()      
     async def connectEvent(self): 
@@ -97,10 +100,10 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ip = self.ui.lineEdit_IP.text()
         try: 
             ## Connect to network device
-            dev.connect(self.ip)
+            self.dev.connect(self.ip)
 
             ## Open AI port
-            await dev.AI_open(self.AI_port)
+            await self.dev.AI_open_async(self.AI_port)
 
             ## Change LED status
             self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
@@ -113,10 +116,10 @@ class MainWindow(QtWidgets.QMainWindow):
     @asyncSlot()      
     async def disconnectEvent(self):
         ## close AI port
-        await dev.AI_close(self.AI_port)
+        await self.dev.AI_close_async(self.AI_port)
 
         ## Disconnect network device
-        dev.disconnect()
+        self.dev.disconnect()
 
         ## Change LED status
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
@@ -128,7 +131,7 @@ class MainWindow(QtWidgets.QMainWindow):
     async def loop_fct(self, port, num_of_sample , delay): 
         while True:
             ## data acquisition
-            data = await dev.AI_readStreaming(port, num_of_sample, delay)## Get 600 points at a time 
+            data = await self.dev.AI_readStreaming_async(port, num_of_sample, delay)## Get 600 points at a time 
             if data is not None:
                 self.setDisplayPlotNums(data, self.ai_n_samples)
             else: 
@@ -145,18 +148,18 @@ class MainWindow(QtWidgets.QMainWindow):
         
         ## On Demand
         if mode == 0:
-            data = await dev.AI_readOnDemand(self.AI_port)
+            data = await self.dev.AI_readOnDemand_async(self.AI_port)
             self.setDisplayPlotNums([data], self.ai_n_samples)
         ## N-Samples/ Continuous 
         else:
-            await dev.AI_start(self.AI_port)
+            await self.dev.AI_start_async(self.AI_port)
 
     @asyncSlot()      
     async def stopAIEvent(self): 
         ## Check connection status
         if self.checkConnectionStatus() == False:
             return
-        await dev.AI_stop(self.AI_port)
+        await self.dev.AI_stop_async(self.AI_port)
 
     @asyncSlot()
     async def chooseAIModeEvent(self, *args):
@@ -166,7 +169,7 @@ class MainWindow(QtWidgets.QMainWindow):
             
         ## Get AI mode from UI
         mode = int(self.ui.comboBox_aiMode.currentIndex())
-        await dev.AI_setMode(self.AI_port, mode)
+        await self.dev.AI_setMode_async(self.AI_port, mode)
 
     @asyncSlot()
     async def setSamplingRateEvent(self):
@@ -177,7 +180,7 @@ class MainWindow(QtWidgets.QMainWindow):
         # Get Sampling rate from UI
         sampling_rate = float(self.ui.lineEdit_samplingRate.text())
         self.ai_sampling_rate = sampling_rate
-        await dev.AI_setSamplingRate(self.AI_port, sampling_rate)
+        await self.dev.AI_setSamplingRate_async(self.AI_port, sampling_rate)
 
     @asyncSlot()
     async def setNumofSampleEvent(self):
@@ -188,7 +191,7 @@ class MainWindow(QtWidgets.QMainWindow):
         # Get NumSamples from UI
         n_samples = int(self.ui.lineEdit_numSamples.text())
         self.ai_n_samples = n_samples
-        await dev.AI_setNumSamples(self.AI_port, n_samples)
+        await self.dev.AI_setNumSamples_async(self.AI_port, n_samples)
       
     def plotInitial(self):
         self.checkboxstatus = [1 for x in range(8)]
@@ -295,6 +298,4 @@ def main():
         loop.run_forever()
 
 if __name__ == "__main__":
-    ## Create device handle
-    dev = pywpc.WifiDAQE3A()
     main()

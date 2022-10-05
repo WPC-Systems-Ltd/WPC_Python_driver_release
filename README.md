@@ -23,13 +23,13 @@ WPC Python driver
 
 >>> pywpc.__version__
 ...
-0.2.7
+1.0.0
 
 >>> dev.connect()
 ...
 Binded Device finder
 
->>> await dev.Bcst_getDeviceInfo()
+>>> await dev.Bcst_getDeviceInfo_async()
 ...
 [['192.168.5.79', '255.255.255.0', '34:86:5d:19:06:6c', 'Wifi-DAQ-E3-A_R0.3.4']]
 

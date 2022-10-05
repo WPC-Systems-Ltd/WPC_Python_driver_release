@@ -41,7 +41,7 @@ async def main():
 
     try: 
         ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo()
+        driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
@@ -50,30 +50,30 @@ async def main():
         port_DI = 1
 
         ## Open all pins in port 0 with digital output 
-        status = await dev.DO_openPort(port_DO)
+        status = await dev.DO_openPort_async(port_DO)
         if status == 0: print("DO_openPort in port 0: OK")
 
         ## Set pin0, pin1 and pin2 to high, others to low
-        status = await dev.DO_writePort(port_DO, [0,0,0,0,0,1,1,1])
+        status = await dev.DO_writePort_async(port_DO, [0,0,0,0,0,1,1,1])
         if status == 0: print("DO_writePort: OK")
 
         ## Open all pins in port 1 with digital input
-        status = await dev.DI_openPort(port_DI)
+        status = await dev.DI_openPort_async(port_DI)
         if status == 0: print("DI_openPort in port 1: OK")
 
         ## Read all pins state in port 1
-        state_list = await dev.DI_readPort(port_DI)
+        state_list = await dev.DI_readPort_async(port_DI)
         print(state_list)
 
         ## Wait for 3 seconds
         await asyncio.sleep(3)
         
         ## Close all pins in port 0 with digital output
-        status = await dev.DO_closePort(port_DO)
+        status = await dev.DO_closePort_async(port_DO)
         if status == 0: print("DO_closePort in port 0: OK")
         
         ## Close all pins in port 1 with digital input
-        status = await dev.DI_closePort(port_DI)
+        status = await dev.DI_closePort_async(port_DI)
         if status == 0: print("DI_closePort in port 1: OK")
     except Exception as err:
         pywpc.printGenericError(err)

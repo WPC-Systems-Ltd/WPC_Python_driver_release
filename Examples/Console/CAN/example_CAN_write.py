@@ -21,7 +21,7 @@ All rights reserved.
 import asyncio
 
 ## WPC
-from wpcsys import pywpc 
+from wpcsys import pywpc
 
 async def main():
     print("Start example code...")
@@ -34,13 +34,13 @@ async def main():
 
     ## Connect to USB device
     try:
-        dev.connect('21JA1320')
+        dev.connect('21JA1318')
     except Exception as err:
         pywpc.printGenericError(err)
 
     try: 
         ## Get Firmware model & version
-        driver_info = await dev.Sys_getDriverInfo()
+        driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
         
@@ -49,46 +49,46 @@ async def main():
         speed = 0 ## 0 = 125 KHz, 1 = 250 kHz, 2 = 500 kHz, 3 = 1 MHz
 
         ## Open CAN port1
-        status = await dev.CAN_open(port) 
+        status = await dev.CAN_open_async(port) 
         if status == 0: print("CAN_open: OK")
 
         ## Set CAN port to 1 and set speed to 0  
-        status = await dev.CAN_setSpeed(port, speed) 
+        status = await dev.CAN_setSpeed_async(port, speed) 
         if status == 0: print("CAN_setSpeed: OK")
 
         ## Set CAN port to 1 and start CAN
-        status = await dev.CAN_start(port) 
+        status = await dev.CAN_start_async(port) 
         if status == 0: print("CAN_start: OK")
  
         ## CAN_length: True: Extended, False: Standard 
         ## CAN_type:   True: Remote, False: Data
 
         ## ID: 10, data with 8 bytes, Standard & Data 
-        status = await dev.CAN_write(port, 10, [33,22,11,88,77,55,66], CAN_length = False, CAN_type = False)
+        status = await dev.CAN_write_async(port, 10, [33,22,11,88,77,55,66], CAN_length = False, CAN_type = False)
         if status == 0: print("CAN_write: OK")
         await asyncio.sleep(1)  ## delay(second)
 
         ## ID: 20, data with 8 bytes, Extended & Remote 
-        status = await dev.CAN_write(port, 20, [5,20,12,58,88,22,99,77], CAN_length = True, CAN_type = True)
+        status = await dev.CAN_write_async(port, 20, [5,20,12,58,88,22,99,77], CAN_length = True, CAN_type = True)
         if status == 0: print("CAN_write: OK")
         await asyncio.sleep(1)  ## delay(second)
 
         ## ID: 30, data less than 8 bytes, Standard & Data
-        status = await dev.CAN_write(port, 30, [1,2,3], CAN_length = False, CAN_type = False)
+        status = await dev.CAN_write_async(port, 30, [1,2,3], CAN_length = False, CAN_type = False)
         if status == 0: print("CAN_write: OK")
         await asyncio.sleep(1)  ## delay(second)
         
         ## ID: 40, data more than 8 bytes, Standard & Data
-        status = await dev.CAN_write(port, 40, [1,2,3,4,5,6,7,8,9,10,11,12,13,15], CAN_length = False, CAN_type = False)
+        status = await dev.CAN_write_async(port, 40, [1,2,3,4,5,6,7,8,9,10,11,12,13,15], CAN_length = False, CAN_type = False)
         if status == 0: print("CAN_write: OK")
         await asyncio.sleep(1)  ## delay(second)
 
         ## Set CAN port to 1 and stop CAN  
-        status = await dev.CAN_stop(port) 
+        status = await dev.CAN_stop_async(port) 
         if status == 0: print("CAN_stop: OK")
         
         ## Close CAN port1
-        status = await dev.CAN_close(port) 
+        status = await dev.CAN_close_async(port) 
         if status == 0: print("CAN_close: OK")
     except Exception as err:
         pywpc.printGenericError(err)

@@ -11,7 +11,7 @@ from qasync import QEventLoop, asyncSlot
 
 ## Third party
 from PyQt5 import QtWidgets, QtGui
-from UI_design.Ui_example_GUI_RTD import Ui_MainWindow 
+from UI_design.Ui_example_GUI_RTD import Ui_MainWindow
 
 ## WPC
 from wpcsys import pywpc
@@ -58,7 +58,7 @@ class MainWindow(QtWidgets.QMainWindow):
     async def RTDEvent(self): 
         ## Set RTD port to 1 and read RTD in channels
         for i in range(2):
-            data = await self.dev.Thermal_readSensor(self.port, i)
+            data = await self.dev.Thermal_readSensor_async(self.port, i)
             if i == 0:
                 self.ui.lineEdit_sensor0.setText(str(data))
             else:
@@ -72,12 +72,12 @@ class MainWindow(QtWidgets.QMainWindow):
         
         ## Set RTD port to 1 and set type
         for i in range(2):
-            status = await self.dev.Thermal_setType(self.port, i, type_idx)
+            status = await self.dev.Thermal_setType_async(self.port, i, type_idx)
             if status == 0: print("setType: OK")   
  
         ## Set RTD port to 1 and noise filter
         for i in range(2):
-            status = await self.dev.Thermal_setNoiseFilter(self.port, i, noiserejection_idx)
+            status = await self.dev.Thermal_setNoiseFilter_async(self.port, i, noiserejection_idx)
             if status == 0: print("setNoiseFilter: OK")
   
     @asyncSlot() 
@@ -97,7 +97,7 @@ class MainWindow(QtWidgets.QMainWindow):
             print("err: " + str(err))
         
         ## Open RTD port1
-        status = await self.dev.Thermal_open(self.port)
+        status = await self.dev.Thermal_open_async(self.port)
         if status == 0: print("Thermal_open: OK")
     @asyncSlot()      
 
@@ -112,7 +112,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.connect_flag = 0
 
         ## Close RTD port1
-        status = await self.dev.Thermal_close(self.port)
+        status = await self.dev.Thermal_close_async(self.port)
         if status == 0: print("Thermal_close: OK")   
 
     def closeEvent(self, event):

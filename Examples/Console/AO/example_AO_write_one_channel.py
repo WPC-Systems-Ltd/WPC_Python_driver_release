@@ -21,7 +21,7 @@ All rights reserved.
 import asyncio
 
 ## WPC
-from wpcsys import pywpc  
+from wpcsys import pywpc
 
 async def main():
     print("Start example code...")
@@ -40,7 +40,7 @@ async def main():
         
     try: 
         ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo()
+        driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
         
@@ -48,30 +48,30 @@ async def main():
         port = 0
 
         ## Open AO port0
-        status = await dev.AO_open(port)
+        status = await dev.AO_open_async(port)
         if status == 0: print("AO_open: OK")
 
         ## Set AO port to 0 and write data 1.5(V) in channel 4 
-        status = await dev.AO_writeOneChannel(port, 4, 1.5)
+        status = await dev.AO_writeOneChannel_async(port, 4, 1.5)
         if status == 0: print("AO_writeByChannels: OK")
         
         ## Set AO port to 0 and write data 2.5(V) in channel 5 
-        status = await dev.AO_writeOneChannel(port, 5, 2.5)
+        status = await dev.AO_writeOneChannel_async(port, 5, 2.5)
         if status == 0: print("AO_writeByChannels: OK")
         
         ## Set AO port to 0 and write data 3.5(V) in channel 6 
-        status = await dev.AO_writeOneChannel(port, 6, 3.5)
+        status = await dev.AO_writeOneChannel_async(port, 6, 3.5)
         if status == 0: print("AO_writeByChannels: OK")
         
         ## Set AO port to 0 and write data 4.5(V) in channel 7 
-        status = await dev.AO_writeOneChannel(port, 7, 4.5)
+        status = await dev.AO_writeOneChannel_async(port, 7, 4.5)
         if status == 0: print("AO_writeByChannels: OK")
 
         ## Sleep
         await asyncio.sleep(1) ## delay(second)
         
         ## Close AO port0
-        status = await dev.AO_close(port) 
+        status = await dev.AO_close_async(port) 
         if status == 0: print("AO_close: OK") 
     except Exception as err:
         pywpc.printGenericError(err)

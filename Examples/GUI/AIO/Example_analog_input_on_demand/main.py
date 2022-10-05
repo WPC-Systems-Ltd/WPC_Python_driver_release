@@ -69,17 +69,17 @@ class MainWindow(QtWidgets.QMainWindow):
     @asyncSlot()      
     async def openPort(self):
         ## Open AI port
-        await self.dev.AI_open(self.AI_port)
+        await self.dev.AI_open_async(self.AI_port)
 
     @asyncSlot()      
     async def closePort(self):
         ## Close AI port
-        await self.dev.AI_close(self.AI_port)
+        await self.dev.AI_close_async(self.AI_port)
 
     @asyncSlot()      
     async def onDemandEvent(self):  
         ## Set AI port to 1 and data acquisition
-        data_list =  await self.dev.AI_readOnDemand(self.AI_port)
+        data_list =  await self.dev.AI_readOnDemand_async(self.AI_port)
         for i in range(8):
             obj_lineEdit= getattr(self.ui, 'lineEdit_AI%d' %i)
             obj_lineEdit.setText(str(data_list[i]))

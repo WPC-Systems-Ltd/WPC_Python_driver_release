@@ -109,7 +109,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.connect_flag = 1
  
             ## Open AO port0
-            status = await self.dev.AO_open(self.port)
+            status = await self.dev.AO_open_async(self.port)
             if status == 0: print("AO_open: OK")
 
         except pywpc.Error as err:
@@ -118,7 +118,7 @@ class MainWindow(QtWidgets.QMainWindow):
     @asyncSlot()      
     async def disconnectEvent(self):
         ## Close AO port0
-        status = await self.dev.AO_close(self.port) 
+        status = await self.dev.AO_close_async(self.port) 
         if status == 0: print("AO_close: OK") 
 
         ## Disconnect network device
@@ -145,7 +145,7 @@ class MainWindow(QtWidgets.QMainWindow):
             voltage_list.append(float(obj_lineEdit.text()))
 
         ## Set AO port to 0 and write data simultaneously
-        status = await self.dev.AO_writeAllChannels(self.port, voltage_list)
+        status = await self.dev.AO_writeAllChannels_async(self.port, voltage_list)
         if status == 0: print("AO_writeAllChannels: OK")
 
     def setLineEditValueEvent(self):
