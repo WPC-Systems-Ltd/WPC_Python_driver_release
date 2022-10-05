@@ -40,7 +40,7 @@ async def main():
 
     try: 
         ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo()
+        driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
         
@@ -52,32 +52,32 @@ async def main():
                                 ## 4:N type, 5:R type, 6:S type, 7:T type
         
         ## Open thermo port1
-        status = await dev.Thermal_open(port)
+        status = await dev.Thermal_open_async(port)
         if status == 0: print("Thermal_open: OK")
 
         ## Sleep
         await asyncio.sleep(0.1) ## delay(second)
         
         ## Set thermo port to 1 and set over-sampling mode to no over-sampling in channel 1 
-        status = await dev.Thermal_setOverSampling(port, channel, over_sampling_mode)
+        status = await dev.Thermal_setOverSampling_async(port, channel, over_sampling_mode)
         if status == 0: print("setOverSampling: OK")   
 
         ## Sleep
         await asyncio.sleep(0.1) ## delay(second)
         
         ## Set thermo port to 1 and set K type in channel 1 
-        status = await dev.Thermal_setType(port, channel, thermo_type)
+        status = await dev.Thermal_setType_async(port, channel, thermo_type)
         if status == 0: print("setType: OK")   
  
         ## Sleep
         await asyncio.sleep(0.1) ## delay(second)
 
         ## Set thermo port to 1 and read thermo in channel 1
-        data = await dev.Thermal_readSensor(port, channel)
+        data = await dev.Thermal_readSensor_async(port, channel)
         print("Read channel 1 data:", data, "°C")
 
         ## Close thermo port1
-        status = await dev.Thermal_close(port)
+        status = await dev.Thermal_close_async(port)
         if status == 0: print("Thermal_close: OK")   
     except Exception as err:
         pywpc.printGenericError(err)

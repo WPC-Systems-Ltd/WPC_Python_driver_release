@@ -41,7 +41,7 @@ async def main():
 
     try: 
         ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo()
+        driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
         
@@ -49,30 +49,30 @@ async def main():
         port = 0
         
         ## Open pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output
-        status = await dev.DO_openPins(port, [0,1,2,3,4]) 
+        status = await dev.DO_openPins_async(port, [0,1,2,3,4]) 
         if status == 0: print("DO_openPins: OK")
         
         ## Set pin0 and pin1 to high, others to low in port 0
-        await dev.DO_writePins(port, [0,1,2,3,4], [1,1,0,0,0]) 
+        await dev.DO_writePins_async(port, [0,1,2,3,4], [1,1,0,0,0]) 
         if status == 0: print("DO_writePins: OK")
 
         ## Open pin5, pin6 and pin7 in port 0 with digital output
-        status = await dev.DI_openPins(port, [5,6,7])
+        status = await dev.DI_openPins_async(port, [5,6,7])
         if status == 0: print("DI_openPins: OK")
 
         ## Read pin5, pin6 and pin7 state in port 0
-        state_list = await dev.DI_readPins(port, [7,5,6])
+        state_list = await dev.DI_readPins_async(port, [7,5,6])
         print(state_list)
 
         ## Wait for 3 seconds
         await asyncio.sleep(3) ## delay(second)
 
         ## Close pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output 
-        status = await dev.DO_closePins(port, [0,1,2,3,4])
+        status = await dev.DO_closePins_async(port, [0,1,2,3,4])
         if status == 0: print("DO_closePins: OK")
 
         ## Close pin5, pin6 and pin7 in port 0 with digital input
-        status = await dev.DI_closePins(port, [5,6,7])
+        status = await dev.DI_closePins_async(port, [5,6,7])
         if status == 0: print("DO_closePins: OK")
     except Exception as err:
         pywpc.printGenericError(err)

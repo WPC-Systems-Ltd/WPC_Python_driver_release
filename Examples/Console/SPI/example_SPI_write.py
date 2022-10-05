@@ -40,7 +40,7 @@ async def main():
         
     try: 
         ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo()
+        driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
@@ -66,15 +66,15 @@ async def main():
         '''
 
         ## Open pin0 in port2 with digital output
-        status = await dev.DO_openPins(DO_port, DO_index) 
+        status = await dev.DO_openPins_async(DO_port, DO_index) 
         if status == 0: print("DO_openPins: OK")
 
         ## Open SPI port1
-        status = await dev.SPI_open(SPI_port)
+        status = await dev.SPI_open_async(SPI_port)
         if status == 0: print("SPI_open: OK")
         
         ## Set CS(pin0) to high
-        status = await dev.DO_writePins(DO_port, DO_index, [1])
+        status = await dev.DO_writePins_async(DO_port, DO_index, [1])
         if status == 0: print("DO_writePins: OK")
 
         '''
@@ -82,19 +82,19 @@ async def main():
         '''
 
         ## Set SPI port to 1 and set datasize to 8-bits data
-        status = await dev.SPI_setDataSize(SPI_port, datasize)
+        status = await dev.SPI_setDataSize_async(SPI_port, datasize)
         if status == 0: print("SPI_setDataSize: OK")
         
         ## Set SPI port to 1 and set first_bit to MSB first
-        status = await dev.SPI_setFirstBit(SPI_port, first_bit)
+        status = await dev.SPI_setFirstBit_async(SPI_port, first_bit)
         if status == 0: print("SPI_setFirstBit: OK")
         
         ## Set SPI port to 1 and set prescaler to 64
-        status = await dev.SPI_setPrescaler(SPI_port, prescaler)
+        status = await dev.SPI_setPrescaler_async(SPI_port, prescaler)
         if status == 0: print("SPI_setPrescaler: OK")
        
         ## Set SPI port to 1 and set CPOL and CPHA to 0 (mode 0)
-        status = await dev.SPI_setMode(SPI_port, mode)
+        status = await dev.SPI_setMode_async(SPI_port, mode)
         if status == 0: print("SPI_setMode: OK")
 
         '''
@@ -102,15 +102,15 @@ async def main():
         '''
 
         ## Set CS(pin0) to low
-        status = await dev.DO_writePins(DO_port, DO_index, [0]) 
+        status = await dev.DO_writePins_async(DO_port, DO_index, [0]) 
         if status == 0: print("DO_writePins: OK")
         
         ## Write WREN byte
-        status = await dev.SPI_write(SPI_port, [WREN])
+        status = await dev.SPI_write_async(SPI_port, [WREN])
         if status == 0: print("SPI_write: OK")
 
         ## Set CS(pin0) to high
-        status = await dev.DO_writePins(DO_port, DO_index, [1])
+        status = await dev.DO_writePins_async(DO_port, DO_index, [1])
         if status == 0: print("DO_writePins: OK")
 
         '''
@@ -118,15 +118,15 @@ async def main():
         '''
 
         ## Set CS(pin0) to low
-        status = await dev.DO_writePins(DO_port, DO_index, [0]) 
+        status = await dev.DO_writePins_async(DO_port, DO_index, [0]) 
         if status == 0: print("DO_writePins: OK") 
         
         ## Write data byte 0x55 in to address 0x0002
-        status = await dev.SPI_write(SPI_port, [WRITE, 0x00, 0x02, 0x55])
+        status = await dev.SPI_write_async(SPI_port, [WRITE, 0x00, 0x02, 0x55])
         if status == 0: print("SPI_write: OK")
         
         ## Set CS(pin0) to high
-        status = await dev.DO_writePins(DO_port, DO_index, [1])
+        status = await dev.DO_writePins_async(DO_port, DO_index, [1])
         if status == 0: print("DO_writePins: OK")
  
         '''
@@ -134,11 +134,11 @@ async def main():
         '''
 
         ## Close SPI port1
-        status = await dev.SPI_close(SPI_port)
+        status = await dev.SPI_close_async(SPI_port)
         if status == 0: print("SPI_close: OK")
 
         ## Close pin0 in port2 with digital output
-        status = await dev.DO_closePins(DO_port, DO_index) 
+        status = await dev.DO_closePins_async(DO_port, DO_index) 
         if status == 0: print("DO_closePins: OK")
     except Exception as err:
         pywpc.printGenericError(err)

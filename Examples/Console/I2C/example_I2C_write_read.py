@@ -42,7 +42,7 @@ async def main():
         
     try: 
         ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo()
+        driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
@@ -61,7 +61,7 @@ async def main():
         ''' 
 
         ## Open I2C port1
-        status = await dev.I2C_open(I2C_port)
+        status = await dev.I2C_open_async(I2C_port)
         if status == 0: print("I2C_open: OK")
         
         '''
@@ -69,7 +69,7 @@ async def main():
         '''
 
         ## Set I2C port to 1 and set clock rate to standard mode
-        status = await dev.I2C_setClockRate(I2C_port, mode)
+        status = await dev.I2C_setClockRate_async(I2C_port, mode)
         if status == 0: print("I2C_setClockRate: OK")
 
         '''
@@ -77,7 +77,7 @@ async def main():
         '''
         
         ## Write WREN byte
-        status = await dev.I2C_write(I2C_port, device_address, [word_address, 0xAA, 0x55, 0xAA, 0x55])
+        status = await dev.I2C_write_async(I2C_port, device_address, [word_address, 0xAA, 0x55, 0xAA, 0x55])
         if status == 0: print("I2C_write: OK")
         
         ## Sleep
@@ -87,13 +87,13 @@ async def main():
         Read data via I2C
         '''
 
-        status = await dev.I2C_write(I2C_port, device_address, [word_address])
+        status = await dev.I2C_write_async(I2C_port, device_address, [word_address])
         if status == 0: print("I2C_write: OK")
 
         ## Sleep
         await asyncio.sleep(0.1) ## delay(second)
 
-        data_list = await dev.I2C_read(I2C_port, device_address, 4)
+        data_list = await dev.I2C_read_async(I2C_port, device_address, 4)
         print("read data :", data_list)
        
         '''
@@ -101,7 +101,7 @@ async def main():
         ''' 
 
         ## Close I2C port1
-        status = await dev.I2C_close(I2C_port)
+        status = await dev.I2C_close_async(I2C_port)
         if status == 0: print("I2C_close: OK")
     except Exception as err:
         pywpc.printGenericError(err)

@@ -21,7 +21,7 @@ All rights reserved.
 import asyncio
  
 ## WPC
-from wpcsys import pywpc 
+from wpcsys import pywpc
 
 async def main():
     print("Start example code...")
@@ -34,20 +34,20 @@ async def main():
 
     ## Connect to USB device
     try:
-        dev.connect('21JA1044')
+        dev.connect('21JA1439')
     except Exception as err:
         pywpc.printGenericError(err)
 
     try: 
         ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo()
+        driver_info = await dev.Sys_getDriverInfo_async()
         print("Firmware model: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
         
         ## Get pinmode from port 0 to port 3
         for i in range(4):
             ## Get pin mode
-            pin_mode = await dev.Sys_getPinModeInPort(i)
+            pin_mode = await dev.Sys_getPinModeInPort_async(i)
             print("pin_mode", pin_mode)
 
             ## Wait for 0.5 seconds
@@ -60,18 +60,18 @@ async def main():
         port_DI = 1
         
         ## Open pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output
-        await dev.DO_openPins(port_DO, [0,1,2,3,4])
+        await dev.DO_openPins_async(port_DO, [0,1,2,3,4])
 
         ## Set pin0, pin3 and pin4 to digital high, others to digital low
         await dev.DO_writeValuePins(port_DO, [0,1,2,3,4], [1,0,0,1,1]) 
 
         ## Open pin4, pin5, pin6 and pin7 in port 1 with digital input 
-        await dev.DI_openPins(port_DI, [4,5,6,7])
+        await dev.DI_openPins_async(port_DI, [4,5,6,7])
 
         ## Get pinmode from port 0 to port 3
         for i in range(4):
             ## Get pin mode
-            pin_mode = await dev.Sys_getPinModeInPort(i)
+            pin_mode = await dev.Sys_getPinModeInPort_async(i)
             print("pin_mode", pin_mode)
 
             ## Wait for 0.5 seconds
@@ -81,24 +81,24 @@ async def main():
         await asyncio.sleep(1)  ## delay(second)
 
         ## Set port 0 to idle
-        await dev.sys_setPortIdle(0)
+        await dev.Sys_setPortIdle_async(0)
         print()
         print("====================")
                 
         ## Get pinmode from port 0 to port 3
         for i in range(4):
             ## Get pin mode
-            pin_mode = await dev.Sys_getPinModeInPort(i)
+            pin_mode = await dev.Sys_getPinModeInPort_async(i)
             print("pin_mode", pin_mode)
 
             ## Wait for 0.5 seconds
             await asyncio.sleep(0.5)  ## delay(second)
 
         ## Close pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output 
-        await dev.DO_closePins(port_DO, [0,1,2,3,4])
+        await dev.DO_closePins_async(port_DO, [0,1,2,3,4])
 
         ## Close pin4, pin5, pin6 and pin7 in port 1 with digital input
-        await dev.DI_closePins(port_DI, [4,5,6,7])
+        await dev.DI_closePins_async(port_DI, [4,5,6,7])
     except Exception as err:
         pywpc.printGenericError(err)
         

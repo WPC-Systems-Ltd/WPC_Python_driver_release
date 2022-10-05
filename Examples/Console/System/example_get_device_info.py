@@ -20,7 +20,7 @@ All rights reserved.
 import asyncio 
  
 ## WPC
-from wpcsys import pywpc 
+from wpcsys import pywpc
 
 async def main():  
     print("Start example code...")
@@ -40,19 +40,19 @@ async def main():
     ## Perform DAQ basic information 
     try:
         ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo()
+        driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
  
         ## Get serial number & RTC Time
-        print(f'Serial number = ' + await dev.Sys_getSerialNumber())
-        print(f'RTC data time = ' + await dev.Sys_getRTC())
+        print(f'Serial number = ' + await dev.Sys_getSerialNumber_async())
+        print(f'RTC data time = ' + await dev.Sys_getRTC_async())
 
         ## Get IP & submask & MAC
-        ip_addr, submask = await dev.Sys_getIPAddrAndSubmask()
+        ip_addr, submask = await dev.Sys_getIPAddrAndSubmask_async()
         print(f'IP = ' + ip_addr)
         print(f'Submask = '+ submask)
-        print(f'MAC = ' + await dev.Sys_getMACAddr())
+        print(f'MAC = ' + await dev.Sys_getMACAddr_async())
     except Exception as err:
         pywpc.printGenericError(err)
 

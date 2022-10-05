@@ -28,7 +28,7 @@ async def loop_func(handle, port, num_of_samples = 600, delay = 0.005, timeout =
     t = 0
     while t < timeout:
         ## data acquisition
-        data = await handle.AI_readStreaming(port, num_of_samples, delay)
+        data = await handle.AI_readStreaming_async(port, num_of_samples, delay)
         if data is not None:
             print(data)
             print("Get data points: " + str(len(data)))
@@ -51,7 +51,7 @@ async def main():
 
     try:
         ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo()
+        driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
@@ -62,30 +62,30 @@ async def main():
         samples = 3000
 
         ## Open port 1
-        status = await dev.AI_open(port)
+        status = await dev.AI_open_async(port)
         if status == 0: print("AI_open: OK")
 
         ## Set AI port to 1 and acquisition mode to N-samples mode (1)
-        status = await dev.AI_setMode(port, mode)
+        status = await dev.AI_setMode_async(port, mode)
         if status == 0: print("AI_setMode: OK")
 
         ## Set AI port to 1 and set sampling rate to 5k (Hz)
-        status = await dev.AI_setSamplingRate(port, sampling_rate) 
+        status = await dev.AI_setSamplingRate_async(port, sampling_rate) 
         if status == 0: print("AI_setSamplingRate: OK")
 
         ## Set AI port to 1 and # of samples to 3000 (pts)
-        status = await dev.AI_setNumSamples(port, samples) 
+        status = await dev.AI_setNumSamples_async(port, samples) 
         if status == 0: print("AI_setNumSamples: OK")
 
         ## Set AI port to 1 and start acquisition
-        status = await dev.AI_start(port)
+        status = await dev.AI_start_async(port)
         if status == 0: print("AI_start: OK")
 
         ## Start async thread
         await loop_func(dev, port, 600, 0.005, 3)
 
         ## Close port 1
-        status = await dev.AI_close(port) 
+        status = await dev.AI_close_async(port) 
         if status == 0: print("AI_close: OK")
     except Exception as err:
         pywpc.printGenericError(err) 
