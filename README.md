@@ -4,6 +4,12 @@
 
 In order to optimize driver API performance, we adopt [async/await](https://docs.python.org/3/library/asyncio.html) structure for the driver implementation as known as non-blocking mode.
 
+![pypi](https://img.shields.io/pypi/v/wpcsys)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Python](https://img.shields.io/pypi/pyversions/Django)
+
+
+
 ## Quick Start
 
 In the bellowing example, we use **pywpc** to find all available WPC devices.
