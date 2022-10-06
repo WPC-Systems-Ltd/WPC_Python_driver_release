@@ -7,6 +7,7 @@ In order to optimize driver API performance, we adopt [async/await](https://docs
 ![pypi](https://img.shields.io/pypi/v/wpcsys)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Python](https://img.shields.io/pypi/pyversions/Django)
+![Wheel](https://img.shields.io/pypi/wheel/wpcsys)
 
 
 
