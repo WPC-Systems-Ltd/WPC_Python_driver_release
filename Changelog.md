@@ -8,6 +8,10 @@ v1.0.1 Date: 2022/10/05, Developer: Chunglee_people
 ### Added
 - Update wpcsys in PyPI depended on conda environment version 
 - Add get release version and get python version in setup.py
+- Add classifiers in setup.py
+
+### Changed
+- Change description name from `WPC Device Driver Python API` to `WPC Systems Python API`
 
 ### Fixed
 - Fix python_requires depends on conda environment version
@@ -16,6 +20,7 @@ v1.0.0 Date: 2022/10/04, Developer: Chunglee_people
 ----------------------------------------------------
 
 ### Added
+- From this version, we will release pywpc.pyd for python3.8, python3.9 and python3.10 in PyPI
 - Add `PyQt5Designer` in requirements.txt and setup.py
 
 ### Changed

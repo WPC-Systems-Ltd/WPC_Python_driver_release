@@ -59,13 +59,15 @@ $ pip install --upgrade wpcsys
 ```
 
 ## Requirements
-
-- [Python](https://www.python.org) \>= 3.10
-- [PyQt5](https://pypi.org/project/PyQt5/) (has been tested \>=5.15.7)
+- [Python](https://www.python.org) \>= 3.8 
+- [PyQt5](https://pypi.org/project/PyQt5/) (has been tested \>=5.15.4)
+- [PyQt5Designer](https://pypi.org/project/PyQt5Designer/) \>= 5.14.1
+- [PyQt5-Qt5](https://pypi.org/project/PyQt5-Qt5/) \>= 5.15.2
+- [PyQt5-sip](https://pypi.org/project/PyQt5-sip/) \>= 12.10.1
+- [qasync](https://pypi.org/project/qasync/) \>= 0.23.0
 - [matplotlib](https://matplotlib.org/) \>= 3.5.2
 - [Numpy](http://www.numpy.org) (has been tested \>=1.23.0)
-- [pyusb](https://pypi.org/project/pyusb/) \>= 1.2.1
-- [qasync](https://pypi.org/project/qasync/) \>= 0.23.0
+- [pyusb](https://pypi.org/project/pyusb/) \>= 1.2.1 
 - [wpcEXEbuild](https://pypi.org/project/wpcEXEbuild/) \>= 0.0.1
 
 ## Products
