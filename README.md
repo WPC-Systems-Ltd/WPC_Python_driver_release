@@ -9,8 +9,6 @@ In order to optimize driver API performance, we adopt [async/await](https://docs
 ![Python](https://img.shields.io/badge/Python-3.8%20|%203.9%20|%203.10-blue.svg)
 ![Wheel](https://img.shields.io/pypi/wheel/wpcsys)
 
-
-
 ## Quick Start
 
 In the bellowing example, we use **pywpc** to find all available WPC devices.

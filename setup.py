@@ -39,12 +39,13 @@ setup(
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Science/Research",
         "Intended Audience :: Developers",
-        "Operating System :: Microsoft :: Windows",
+        "Operating System :: Microsoft :: Windows :: Windows 10",
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
         'Topic :: Software Development :: Embedded Systems',
         "Topic :: System :: Hardware :: Hardware Drivers"
+        "Topic :: Documentation :: Sphinx"
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
     install_requires=['pyusb>=1.2.1', 'numpy>=1.23.0',

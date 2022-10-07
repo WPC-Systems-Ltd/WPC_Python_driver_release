@@ -2,7 +2,7 @@ WPC Python driver release changelog
 ===================================
 
 
-v1.0.1 Date: 2022/10/05, Developer: Chunglee_people
+v1.0.0.3 Date: 2022/10/05, Developer: Chunglee_people
 ----------------------------------------------------
 
 ### Added
@@ -11,7 +11,7 @@ v1.0.1 Date: 2022/10/05, Developer: Chunglee_people
 - Add classifiers in setup.py
 
 ### Changed
-- Change description name from `WPC Device Driver Python API` to `WPC Systems Python API`
+- Change description name from `WPC Device Driver Python API` to `WPC Systems Python API` in setup.py
 
 ### Fixed
 - Fix python_requires depends on conda environment version
