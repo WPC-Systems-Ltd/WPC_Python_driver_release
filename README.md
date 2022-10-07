@@ -1,8 +1,13 @@
 ## About
 
-**WPC Python driver** contains APIs for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products.
+**WPC Python driver** is also known as `pywpc` which contains APIs for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products.
+
+Some functions in the `pywpc` package may be unavailable with earlier versions of the WPC DAQ firmware driver. Make sure it's the latest firmeware version of your product. Please visit WPC Systems offical website to download [WPC Device Manager and LabVIEW Run-time engine
+](http://www.wpc.com.tw/36039260092584721462-daq1.html) and upgrade WPC DAQ driver.
 
 In order to optimize driver API performance, we adopt [async/await](https://docs.python.org/3/library/asyncio.html) structure for the driver implementation as known as non-blocking mode.
+
+`pywpc` supports python 3.8 to 3.10 in Windows 10 operating systems.
 
 [![pip install](https://img.shields.io/badge/pip%20install-wpcsys-orange.svg)](https://pypi.org/project/wpcsys/)
 [![PyPI](https://img.shields.io/pypi/v/wpcsys)](https://pypi.org/project/wpcsys/)
@@ -56,6 +61,7 @@ $ pip install wpcsys
 ## Upgrade
 
 Upgrade `wpcsys` using `pip`:
+
 
 ```
 $ pip install --upgrade wpcsys
