@@ -15,8 +15,6 @@ For getting started with console and GUI examples which are implemented by our d
 
 Driver Version
 --------------
-The latest version 1.0.0 was released in October 5, 2022.
-
 For the latest development, archived versions and code repository, please visit `GitHub source code <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release>`_.
 
 Products

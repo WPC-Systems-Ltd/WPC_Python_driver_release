@@ -10,12 +10,17 @@ v1.0.0.3 Date: 2022/10/05, Developer: Chunglee_people
 - Add get release version and get python version in setup.py
 - Add classifiers in setup.py
 - Add `Useful conda commands` in wiki page
+- Add `from wpcsys import pywpc` in version.py
 
 ### Changed
 - Change description name from `WPC Device Driver Python API` to `WPC Systems Python API` in setup.py
 
 ### Fixed
 - Fix python_requires depends on conda environment version
+
+### Removed
+- Remove `pywpc.__version__` at Quick Start in README.md
+- Remove driver release date in sphinx
 
 v1.0.0 Date: 2022/10/04, Developer: Chunglee_people
 ----------------------------------------------------

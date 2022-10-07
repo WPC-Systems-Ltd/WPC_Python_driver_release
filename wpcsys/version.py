@@ -1,1 +1,3 @@
-version = "1.0.0"
+from wpcsys import pywpc
+
+version = pywpc.__version__

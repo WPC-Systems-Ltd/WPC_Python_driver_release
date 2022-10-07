@@ -26,10 +26,6 @@ Opened handle (Device finder)
 ...
 WPC Python driver
 
->>> pywpc.__version__
-...
-1.0.0
-
 >>> dev.connect()
 ...
 Binded Device finder
