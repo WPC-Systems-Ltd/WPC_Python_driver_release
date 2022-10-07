@@ -4,9 +4,11 @@
 
 In order to optimize driver API performance, we adopt [async/await](https://docs.python.org/3/library/asyncio.html) structure for the driver implementation as known as non-blocking mode.
 
-![pypi](https://img.shields.io/pypi/v/wpcsys)
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+[![pip install](https://img.shields.io/badge/pip%20install-wpcsys-orange.svg)](https://pypi.org/project/wpcsys/)
+[![PyPI](https://img.shields.io/pypi/v/wpcsys)](https://pypi.org/project/wpcsys/)
 ![Python](https://img.shields.io/badge/Python-3.8%20|%203.9%20|%203.10-blue.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![docs](https://img.shields.io/badge/docs-passing-green.svg)](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)
 ![Wheel](https://img.shields.io/pypi/wheel/wpcsys)
 
 ## Quick Start
