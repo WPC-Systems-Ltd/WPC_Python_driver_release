@@ -4,7 +4,7 @@
 
 In order to optimize driver API performance, we adopt [async/await](https://docs.python.org/3/library/asyncio.html) structure for the driver implementation as known as non-blocking mode.
 
-Some functions in the `pywpc` package may be unavailable with earlier versions of the WPC DAQ firmware driver. Make sure it's the latest firmeware version of your product. Please visit WPC Systems offical website to download [WPC Device Manager and LabVIEW Run-time engine
+Some functions in the `pywpc` package may be unavailable with earlier versions of the WPC DAQ firmware driver. Make sure it's the latest firmware version of your product. Please visit WPC Systems offical website to download [WPC Device Manager and LabVIEW Run-time engine
 ](http://www.wpc.com.tw/36039260092584721462-daq1.html) and upgrade WPC DAQ driver.
 
 
