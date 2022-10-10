@@ -1,6 +1,6 @@
 ## About
 
-**WPC Python driver** is also known as `pywpc` which contains APIs for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products. It supports python 3.8 to 3.10 in Windows 10 operating systems.
+**WPC Python driver** is also known as `pywpc` which contains APIs for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products. It supports Python 3.8 to 3.10 in Windows 10 operating systems.
 
 In order to optimize driver API performance, we adopt [async/await](https://docs.python.org/3/library/asyncio.html) structure for the driver implementation as known as non-blocking mode.
 
@@ -15,6 +15,14 @@ Some functions in the `pywpc` package may be unavailable with earlier versions o
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![docs](https://img.shields.io/badge/docs-passing-green.svg)](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)
 ![Wheel](https://img.shields.io/pypi/wheel/wpcsys)
+
+|                  |                 Link                                                            |
+|:-----------------|:-------------------------------------------------------------------------------:|
+| WPC Systems Ltd  | http://www.wpc.com.tw/                                                          |
+| Documentation    | https://wpc-systems-ltd.github.io/WPC_Python_driver_release/                    |
+| Example code     | https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples | 
+
+
 
 ## Quick Start
 
