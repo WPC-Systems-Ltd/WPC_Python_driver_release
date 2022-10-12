@@ -14,6 +14,7 @@ v1.0.1 Date: 2022/10/12, Developer: Chunglee_people
 
 ### Changed
 - Change WPC Python Version from `pywpc-1.0.0` to `pywpc-1.0.1`
+- Change device handle name `Broadcaster` to `DeviceFinder`
 - Change description name from `WPC Device Driver Python API` to `WPC Systems Python API` in setup.py
 
 ### Fixed

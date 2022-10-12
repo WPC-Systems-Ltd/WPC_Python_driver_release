@@ -95,8 +95,8 @@
 <section id="api-function-description">
 <h2>API function description<a class="headerlink" href="#api-function-description" title="Permalink to this heading"></a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="pywpc.Broadcaster">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pywpc.</span></span><span class="sig-name descname"><span class="pre">Broadcaster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.Broadcaster" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pywpc.DeviceFinder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pywpc.</span></span><span class="sig-name descname"><span class="pre">DeviceFinder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.DeviceFinder" title="Permalink to this definition"></a></dt>
 <dd><p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
@@ -104,22 +104,22 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.Broadcaster.Bcst_checkMACAndReboot_async" title="pywpc.Broadcaster.Bcst_checkMACAndReboot_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bcst_checkMACAndReboot_async</span></code></a>(mac_addr)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.DeviceFinder.Bcst_checkMACAndReboot_async" title="pywpc.DeviceFinder.Bcst_checkMACAndReboot_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bcst_checkMACAndReboot_async</span></code></a>(mac_addr)</p></td>
 <td><p>Reboot device with broadcast mode.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.Broadcaster.Bcst_checkMACAndSetIP_async" title="pywpc.Broadcaster.Bcst_checkMACAndSetIP_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bcst_checkMACAndSetIP_async</span></code></a>(ip_addr, mac_addr)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.DeviceFinder.Bcst_checkMACAndSetIP_async" title="pywpc.DeviceFinder.Bcst_checkMACAndSetIP_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bcst_checkMACAndSetIP_async</span></code></a>(ip_addr, mac_addr)</p></td>
 <td><p>Set IP with broadcast mode.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.Broadcaster.Bcst_getDeviceInfo_async" title="pywpc.Broadcaster.Bcst_getDeviceInfo_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bcst_getDeviceInfo_async</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.DeviceFinder.Bcst_getDeviceInfo_async" title="pywpc.DeviceFinder.Bcst_getDeviceInfo_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bcst_getDeviceInfo_async</span></code></a>()</p></td>
 <td><p>Get device information with broadcast mode.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.Broadcaster.close" title="pywpc.Broadcaster.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>([verbose])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.DeviceFinder.close" title="pywpc.DeviceFinder.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>([verbose])</p></td>
 <td><p>Close broadcast device handle.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.Broadcaster.connect" title="pywpc.Broadcaster.connect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect</span></code></a>([verbose])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.DeviceFinder.connect" title="pywpc.DeviceFinder.connect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect</span></code></a>([verbose])</p></td>
 <td><p>Connect to broadcast device.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.Broadcaster.disconnect" title="pywpc.Broadcaster.disconnect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disconnect</span></code></a>([verbose])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.DeviceFinder.disconnect" title="pywpc.DeviceFinder.disconnect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disconnect</span></code></a>([verbose])</p></td>
 <td><p>Disonnect broadcast device.</p></td>
 </tr>
 </tbody>
@@ -136,8 +136,8 @@
 </tbody>
 </table>
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.Broadcaster.Bcst_checkMACAndReboot_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Bcst_checkMACAndReboot_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mac_addr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.Broadcaster.Bcst_checkMACAndReboot_async" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pywpc.DeviceFinder.Bcst_checkMACAndReboot_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Bcst_checkMACAndReboot_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mac_addr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.DeviceFinder.Bcst_checkMACAndReboot_async" title="Permalink to this definition"></a></dt>
 <dd><p>Reboot device with broadcast mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -156,8 +156,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.Broadcaster.Bcst_checkMACAndSetIP_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Bcst_checkMACAndSetIP_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip_addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mac_addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subnet_mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'255.255.255.0'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.Broadcaster.Bcst_checkMACAndSetIP_async" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pywpc.DeviceFinder.Bcst_checkMACAndSetIP_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Bcst_checkMACAndSetIP_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip_addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mac_addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subnet_mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'255.255.255.0'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.DeviceFinder.Bcst_checkMACAndSetIP_async" title="Permalink to this definition"></a></dt>
 <dd><p>Set IP with broadcast mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -178,8 +178,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.Broadcaster.Bcst_getDeviceInfo_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Bcst_getDeviceInfo_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.Broadcaster.Bcst_getDeviceInfo_async" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pywpc.DeviceFinder.Bcst_getDeviceInfo_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Bcst_getDeviceInfo_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.DeviceFinder.Bcst_getDeviceInfo_async" title="Permalink to this definition"></a></dt>
 <dd><p>Get device information with broadcast mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -195,8 +195,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.Broadcaster.close">
-<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.Broadcaster.close" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pywpc.DeviceFinder.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.DeviceFinder.close" title="Permalink to this definition"></a></dt>
 <dd><p>Close broadcast device handle.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -209,8 +209,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.Broadcaster.connect">
-<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.Broadcaster.connect" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pywpc.DeviceFinder.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.DeviceFinder.connect" title="Permalink to this definition"></a></dt>
 <dd><p>Connect to broadcast device.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -223,8 +223,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.Broadcaster.disconnect">
-<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.Broadcaster.disconnect" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pywpc.DeviceFinder.disconnect">
+<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.DeviceFinder.disconnect" title="Permalink to this definition"></a></dt>
 <dd><p>Disonnect broadcast device.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -237,8 +237,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.Broadcaster.getAllUSBDevices">
-<span class="sig-name descname"><span class="pre">getAllUSBDevices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.Broadcaster.getAllUSBDevices" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pywpc.DeviceFinder.getAllUSBDevices">
+<span class="sig-name descname"><span class="pre">getAllUSBDevices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.DeviceFinder.getAllUSBDevices" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>

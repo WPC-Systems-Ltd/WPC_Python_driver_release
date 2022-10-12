@@ -37,6 +37,10 @@ pywpc
 ...
 1.0.1
 
+>>> pywpc.product
+...
+['DeviceFinder', 'WifiDAQE3A', 'EthanD', 'EthanA', 'USBDAQF1D', 'USBDAQF1AD','USBDAQF1DSNK','USBDAQF1AOD','USBDAQF1TD','USBDAQF1CD','USBDAQF1RD']
+
 ```
 
 ## Installation

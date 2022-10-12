@@ -26,7 +26,7 @@ async def main():
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
 
     ## Create device handle
-    dev = pywpc.Broadcaster()
+    dev = pywpc.DeviceFinder()
 
     ## Connect to network device
     try:

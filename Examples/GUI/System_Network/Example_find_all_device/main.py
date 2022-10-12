@@ -109,7 +109,6 @@ def main():
 
 if __name__ == "__main__":
     ## Create device handle 
-    dev = pywpc.Broadcaster()
+    dev = pywpc.DeviceFinder()
     main()
-   
  
