@@ -1,4 +1,4 @@
-## About
+## Overview
 
 **WPC Python driver** is also known as `pywpc` which contains APIs for interacting with the WPC USB-DAQ, Ethernet and Wifi-DAQ series products. It supports Python 3.8 to 3.10 in Windows 10 operating systems.
 
@@ -89,27 +89,19 @@ $ pip install --upgrade wpcsys
 
 ## Products
  
-WiFi based DAQ card
+Wifi based DAQ card
 - Wifi-DAQ-E3-A
 
-Ethernet based remote controller
-- STEM (unsupported)
-- STEM-Lite (unsupported)
-
-Ethernet based motion card
-- EMotion (unsupported)
-
 Ethernet based DAQ card
-- EPC (unsupported)
-- Ethan-D
 - Ethan-A
-
+- Ethan-D
+ 
 USB interface DAQ card
 - USB-DAQ-F1-D
 - USB-DAQ-F1-AD
-- USB-DAQ-F1-TD
-- USB-DAQ-F1-RD
 - USB-DAQ-F1-CD
+- USB-DAQ-F1-TD
+- USB-DAQ-F1-RD 
 - USB-DAQ-F1-AOD
 - USB-DAQ-F1-DSNK
 
@@ -118,15 +110,15 @@ USB interface DAQ card
 | Model           | AI  | AO | DI         | DO         | CAN | UART | SPI | I2C  | RTD | Thermocouple |
 |:---------------:|:---:|:--:|:----------:|:----------:|:---:|:----:|:---:|:----:|:---:|:------------:|
 | Wifi-DAQ-E3-A   | 1   | -  | -          | -          |-    |-     |-    |-     | -   |-             |
-| Ethan-D         | -   | -  | 1          | 0          |-    |-     |-    |-     | -   |-             |
 | Ethan-A         | 0   | -  | -          | -          |-    |-     |-    |-     | -   |-             |
-| USB-DAQ-F1-DSNK | -   | -  | 0, 1       | 2, 3       |-    |-     |-    |-     | -   |-             |
-| USB-DAQ-F1-AOD  | 0   | 0  | 0, 1, 2, 3 | 0, 1, 2, 3 |-    |1, 2  |-    | 1, 2 | -   |-             |
-| USB-DAQ-F1-AD   | 0   | -  | 0, 1, 2, 3 | 0, 1, 2, 3 |-    |1, 2  |2    | 1, 2 | -   |-             |
+| Ethan-D         | -   | -  | 1          | 0          |-    |-     |-    |-     | -   |-             |
 | USB-DAQ-F1-D    | -   | -  | 0, 1, 2, 3 | 0, 1, 2, 3 |-    |1, 2  |1, 2 | 1, 2 | -   |-             |
-| USB-DAQ-F1-TD   | -   | -  | 0, 1, 2, 3 | 0, 1, 2, 3 |-    |1, 2  |2    | 1, 2 | -   |1             |
+| USB-DAQ-F1-AD   | 0   | -  | 0, 1, 2, 3 | 0, 1, 2, 3 |-    |1, 2  |2    | 1, 2 | -   |-             |
 | USB-DAQ-F1-CD   | -   | -  | 0, 1, 2, 3 | 0, 1, 2, 3 |1    |1, 2  |2    | 1, 2 | -   |-             |
+| USB-DAQ-F1-TD   | -   | -  | 0, 1, 2, 3 | 0, 1, 2, 3 |-    |1, 2  |2    | 1, 2 | -   |1             |
 | USB-DAQ-F1-RD   | -   | -  | 0, 1, 2, 3 | 0, 1, 2, 3 |-    |1, 2  |2    | 1, 2 | 1   |-             |
+| USB-DAQ-F1-AOD  | 0   | 0  | 0, 1, 2, 3 | 0, 1, 2, 3 |-    |1, 2  |-    | 1, 2 | -   |-             |
+| USB-DAQ-F1-DSNK | -   | -  | 0, 1       | 2, 3       |-    |-     |-    |-     | -   |-             |
 
 Take `USB-DAQ-F1-AOD` for example
 - port0 is available for `AI`

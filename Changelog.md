@@ -2,7 +2,7 @@ WPC Python driver release changelog
 ===================================
 
 
-v1.0.0.3 Date: 2022/10/05, Developer: Chunglee_people
+v1.0.1 Date: 2022/10/12, Developer: Chunglee_people
 ----------------------------------------------------
 
 ### Added
@@ -13,14 +13,17 @@ v1.0.0.3 Date: 2022/10/05, Developer: Chunglee_people
 - Add `from wpcsys import pywpc` in version.py
 
 ### Changed
+- Change WPC Python Version from `pywpc-1.0.0` to `pywpc-1.0.1`
 - Change description name from `WPC Device Driver Python API` to `WPC Systems Python API` in setup.py
 
 ### Fixed
 - Fix python_requires depends on conda environment version
+- Fix version return value at System_Network in Example_find_all_device
 
 ### Removed
 - Remove `pywpc.__version__` at Quick Start in README.md
 - Remove driver release date in sphinx
+- Remove unsupported products from README.md
 
 v1.0.0 Date: 2022/10/04, Developer: Chunglee_people
 ----------------------------------------------------
@@ -44,7 +47,7 @@ v0.0.20 Date: 2022/10/04, Developer: Chunglee_people
 ### Fixed
 - Fix bug of AI module in EthanA
 
-v0.0.19 Date: 2022/10/03, Developer: Chunglee_people
+v0.0.19 Date: 2022/10/03, Developer: Chunglee_people 
 ----------------------------------------------------
 
 ### Changed
