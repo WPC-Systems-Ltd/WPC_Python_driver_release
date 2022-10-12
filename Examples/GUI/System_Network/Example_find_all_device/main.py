@@ -87,7 +87,7 @@ class MainWindow(QtWidgets.QMainWindow):
             model_version = broadcast_info[i][3]
             str_list = model_version.split('_')
             model = str_list[0]
-            version = str_list[1] 
+            version = str_list[-1] 
             self.broadcast_list.append({'ip': ip , 'submask': submask, 'mac':mac, 'model': model, 'firmware_ver': version}) 
         self.loaddata()
 
@@ -109,7 +109,6 @@ def main():
 
 if __name__ == "__main__":
     ## Create device handle 
-    dev = pywpc.Broadcaster()
+    dev = pywpc.DeviceFinder()
     main()
-   
  

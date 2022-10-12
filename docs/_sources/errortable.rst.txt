@@ -122,6 +122,9 @@ Error Table
    * - -8605
      - 
      - UART Parity mode is not supported.
+   * - -8606
+     - 
+     - UART Data bit mode is not supported.
    * - -8701
      - 
      - CAN port on WPC DAQ is already in use or not avaliable.

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>USB-DAQ-F1-RD &mdash; WPC Python driver 1.0.0 documentation</title>
+  <title>USB-DAQ-F1-RD &mdash; WPC Python driver 1.0.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../_static/WPC_logo2.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.0.0
+                1.0.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -294,13 +294,13 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.UART_setBaudRate_async" title="pywpc.USBDAQF1RD.UART_setBaudRate_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_setBaudRate_async</span></code></a>(port, baud_rate)</p></td>
 <td><p>Set the data rate in bits per second.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.UART_setDataBit_async" title="pywpc.USBDAQF1RD.UART_setDataBit_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_setDataBit_async</span></code></a>(port, mode)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.UART_setDataBit_async" title="pywpc.USBDAQF1RD.UART_setDataBit_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_setDataBit_async</span></code></a>(port[, mode])</p></td>
 <td><p>Set data size in mode.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.UART_setNumStopBit_async" title="pywpc.USBDAQF1RD.UART_setNumStopBit_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_setNumStopBit_async</span></code></a>(port, mode)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.UART_setNumStopBit_async" title="pywpc.USBDAQF1RD.UART_setNumStopBit_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_setNumStopBit_async</span></code></a>(port[, mode])</p></td>
 <td><p>Set number of stop bits in mode.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.UART_setParity_async" title="pywpc.USBDAQF1RD.UART_setParity_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_setParity_async</span></code></a>(port, mode)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.UART_setParity_async" title="pywpc.USBDAQF1RD.UART_setParity_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_setParity_async</span></code></a>(port[, mode])</p></td>
 <td><p>Set parity in mode.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1RD.UART_stopReading_async" title="pywpc.USBDAQF1RD.UART_stopReading_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_stopReading_async</span></code></a>(port)</p></td>
@@ -1563,8 +1563,8 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.UART_setDataBit_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_setDataBit_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.UART_setDataBit_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set data size in mode.</p>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_setDataBit_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.UART_setDataBit_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set data size in mode. Default mode is 0.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1588,7 +1588,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.UART_setNumStopBit_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_setNumStopBit_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.UART_setNumStopBit_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_setNumStopBit_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.UART_setNumStopBit_async" title="Permalink to this definition"></a></dt>
 <dd><p>Set number of stop bits in mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1615,8 +1615,8 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.UART_setParity_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_setParity_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.UART_setParity_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set parity in mode.</p>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_setParity_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.UART_setParity_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set parity in mode. Default mode is 0.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">

@@ -37,6 +37,7 @@ Error code,Error Message
 -8603,Configured baud rate is not supported.
 -8604,UART stop bit mode is not supported.
 -8605,UART Parity mode is not supported.
+-8606,UART Data bit mode is not supported.
 -8701,CAN port on WPC DAQ is already in use or not avaliable.
 -8702,CAN speed on WPC DAQ is not vaild.
 -8703,CAN TX on WPC DAQ is not vaild.

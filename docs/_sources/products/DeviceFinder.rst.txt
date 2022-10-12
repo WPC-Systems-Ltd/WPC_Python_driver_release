@@ -5,7 +5,7 @@ Device finder
 API function description 
 ------------------------
 
-.. autoclass:: pywpc.Broadcaster
+.. autoclass:: pywpc.DeviceFinder
    :members:
    :undoc-members:
    :inherited-members:
