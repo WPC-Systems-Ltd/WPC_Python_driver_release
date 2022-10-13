@@ -1,6 +1,0 @@
-example SPI read
-================
-
-.. literalinclude:: ../../../../../../WPC_Python_driver_release/Examples/Console/SPI/example_SPI_read.py
-   :language: python
-   :linenos:

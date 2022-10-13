@@ -17,10 +17,10 @@ Some functions in the `pywpc` package may be unavailable with earlier versions o
 ![Wheel](https://img.shields.io/pypi/wheel/wpcsys)
 
 |                   |                 Link                                                            |
-|:------------------|:-------------------------------------------------------------------------------:|
+|:------------------|:--------------------------------------------------------------------------------|
 | WPC official site | http://www.wpc.com.tw/                                                          |
 | User guide        | https://wpc-systems-ltd.github.io/WPC_Python_driver_release/                    |
-| Example code      | https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples | 
+| Example code      | https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples |
 
 ## Quick Start
 
@@ -35,11 +35,11 @@ pywpc
 
 >>> pywpc.__version__
 ...
-1.0.1
+1.0.2
 
 >>> pywpc.product
 ...
-['DeviceFinder', 'WifiDAQE3A', 'EthanD', 'EthanA', 'USBDAQF1D', 'USBDAQF1AD','USBDAQF1DSNK','USBDAQF1AOD','USBDAQF1TD','USBDAQF1CD','USBDAQF1RD']
+['DeviceFinder', 'WifiDAQE3A', 'EthanD', 'EthanA', 'USBDAQF1D', 'USBDAQF1AD', 'USBDAQF1DSNK', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1CD', 'USBDAQF1RD']
 
 ```
 
@@ -49,7 +49,7 @@ Install [wpcsys](https://pypi.org/project/wpcsys/) using `pip`:
 
 ```
 $ pip install wpcsys
-``` 
+```
 
 ## Upgrade
 
@@ -63,15 +63,15 @@ $ pip install --upgrade wpcsys
 Python 3.8 or later with all [requirements.txt](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/requirements.txt) dependencies installed, including PyQt5, PyQt5Designer, qasync and so on.
 
 ```
-$ pip install -r /path/to/requirements.txt
+$ pip install -r {/path/to/requirements.txt}
 ```
- 
+
 ## Products
- 
+
 Ethernet based DAQ card
 - Ethan-A
 - Ethan-D
- 
+
 USB interface DAQ card
 - USB-DAQ-F1-D (Digital)
 - USB-DAQ-F1-DSNK (24V Digital)
@@ -111,7 +111,7 @@ Take `USB-DAQ-F1-AOD` for example
 - [User manual - WPC Python driver](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)
 - [Run example code in console](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-run-WPC-Python-driver-example-code-in-console)
 - [How to build your own Python code to EXE file](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-build-your-own-Python-code-to-EXE-file)
-- [How to install miniconda and build your own virtual environment](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-install-miniconda-and-build-your-own-virtual-environment) 
+- [How to install miniconda and build your own virtual environment](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-install-miniconda-and-build-your-own-virtual-environment)
 
 ## License
 

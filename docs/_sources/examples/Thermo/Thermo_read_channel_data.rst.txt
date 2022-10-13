@@ -1,6 +1,0 @@
-example Thermo read channel data
-================================
-
-.. literalinclude:: ../../../../../../WPC_Python_driver_release/Examples/Console/Thermo/example_Thermo_read_channel_data.py
-   :language: python
-   :linenos:

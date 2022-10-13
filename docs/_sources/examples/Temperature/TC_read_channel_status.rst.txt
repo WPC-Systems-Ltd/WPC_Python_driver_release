@@ -1,6 +1,0 @@
-example TC read channel status
-==============================
-
-.. literalinclude:: ../../../../../../WPC_Python_driver_release/Examples/Console/Temperature/example_TC_read_channel_status.py
-   :language: python
-   :linenos:
