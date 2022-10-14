@@ -1,6 +1,0 @@
-example AI continuous
-=====================
-
-.. literalinclude:: ../../../../../../WPC_Python_driver_release/Examples/Console/AIO/example_AI_continuous.py
-   :language: python
-   :linenos:

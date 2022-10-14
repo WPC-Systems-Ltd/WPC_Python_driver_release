@@ -1,6 +1,0 @@
-example AI on demand once
-=========================
-
-.. literalinclude:: ../../../../../../WPC_Python_driver_release/Examples/Console/AIO/example_AI_on_demand_once.py
-   :language: python
-   :linenos:

@@ -2,11 +2,28 @@ WPC Python driver release changelog
 ===================================
 
 
+v1.0.2 Date: 2022/10/13, Developer: Linc
+----------------------------------------
+
+### Added
+- `distclass` option in `setup`
+
+### Changed
+- Made install requirement read from `requirements.txt`
+
+### Removed
+- Version-dependent Python requirement
+
+### Fixed
+- Bug of version
+- Bug of classifier string
+
+
 v1.0.1 Date: 2022/10/12, Developer: Chunglee_people
 ----------------------------------------------------
 
 ### Added
-- Update wpcsys in PyPI depended on conda environment version 
+- Update wpcsys in PyPI depended on conda environment version
 - Add get release version and get python version in setup.py
 - Add classifiers in setup.py
 - Add `Useful conda commands` in wiki page
@@ -48,7 +65,7 @@ v0.0.20 Date: 2022/10/04, Developer: Chunglee_people
 ### Fixed
 - Fix bug of AI module in EthanA
 
-v0.0.19 Date: 2022/10/03, Developer: Chunglee_people 
+v0.0.19 Date: 2022/10/03, Developer: Chunglee_people
 ----------------------------------------------------
 
 ### Changed
@@ -93,7 +110,7 @@ v0.0.16 Date: 2022/09/26, Developer: Chunglee_people
 - Change sphinx project name from `WPC Device Driver` to `WPC Python device driver`
 - Change sphinx index.rst title from `WPC DAQ Device Programming Guide` to `WPC Python Device Driver Programming Guide`
 - Uniform name to `WPC Python device driver` in project.
- 
+
 v0.0.15 Date: 2022/09/05, Developer: Chunglee_people
 ----------------------------------------------------
 
@@ -121,14 +138,14 @@ v0.0.14 Date: 2022/09/01, Developer: Chunglee_people
 - In version 0.2.1.1:
   - 0: Major revision (incompatible API change)
   - 2: Minor revision (maybe reconstruct architecture)
-  - 1: Change driver source code 
-  - 1: Change Sphinx code 
+  - 1: Change driver source code
+  - 1: Change Sphinx code
 - Change API name `example_AI_N_samples_get_progressively` to `example_AI_N_samples_in_loop`
 
 ### Removed
 - Remove Temperature folder
 - Remove `system` import path and import `from wpcsys import pywpc`
- 
+
 v0.0.13 Date: 2022/08/30, Developer: Chunglee_people
 ----------------------------------------------------
 
@@ -143,7 +160,7 @@ v0.0.13 Date: 2022/08/30, Developer: Chunglee_people
 - Add `RTD` & `TC` folder in `Temperature` folder
 
 ### Changed
-- Change WPC Python Version from `pywpc-0.2.0` to `pywpc-0.2.1` 
+- Change WPC Python Version from `pywpc-0.2.0` to `pywpc-0.2.1`
 - Renamed case-sensitive folder
 
 ### Removed
@@ -214,13 +231,13 @@ v0.0.7 Date: 2022/08/08, Developer: Chunglee_people
 ### Changed
 - Change WPC Python Version from `pywpc-0.1.16` to  `pywpc-0.1.17`  
 - Change example code name from
-  - `example_Thermo_read_channel_status` to `example_TC_read_channel_status` 
-  - `example_Thermo_read_channel_data` to `example_TC_read_channel_data` 
+  - `example_Thermo_read_channel_status` to `example_TC_read_channel_status`
+  - `example_Thermo_read_channel_data` to `example_TC_read_channel_data`
 - Change folder name from `Thermo` to `Temperature`
 
 v0.0.6 Date: 2022/08/02, Developer: Chunglee_people
 ---------------------------------------------------
- 
+
 ### Added
 - Add AO example code
   - `AIO/example_AO_write_all_channels.py`
@@ -234,7 +251,7 @@ v0.0.6 Date: 2022/08/02, Developer: Chunglee_people
   - `I2C/example_I2C_write_read.py`
 
 ### Changed
-- Change WPC Python Version from `pywpc-0.1.15` to  `pywpc-0.1.16` 
+- Change WPC Python Version from `pywpc-0.1.15` to  `pywpc-0.1.16`
 
 v0.0.5 Date: 2022/07/29, Developer: Chunglee_people
 ---------------------------------------------------
@@ -262,7 +279,7 @@ v0.0.4 Date: 2022/07/20, Developer: Chunglee_people
 - Change WPC Python Version from `pywpc-0.1.13` to  `pywpc-0.1.14`  
 - Change folder name `General` to `System` in console and gui folder
 - Change `wireless device` to `WIFI` in document
- 
+
 v0.0.3 Date: 2022/07/07, Developer: Chunglee_people
 ---------------------------------------------------
 
@@ -276,8 +293,8 @@ v0.0.3 Date: 2022/07/07, Developer: Chunglee_people
   - `DIO/example_DI_read_in_pins.py`
   - `DIO/example_DI_read_in_slot.py`
   - `DIO/example_DO_write_in_pins.py`
-  - `DIO/example_DO_write_in_slot.py` 
-  - `DIO/example_DO_toggle_in_pins.py` 
+  - `DIO/example_DO_write_in_slot.py`
+  - `DIO/example_DO_toggle_in_pins.py`
   - `DIO/example_DO_toggle_in_slot.py`
   - `General/example_get_pinmode.py`
 

@@ -1,12 +1,10 @@
 ## Overview
 
-**WPC Python driver** is also known as `pywpc` which contains APIs for interacting with basically WPC DAQ cards or any other WPC USB, WiFi and Ethernet based devices. It supports Python 3.8 to 3.10 in Windows 10 operating systems.
+**WPC Python driver**, also known as `pywpc`, contains APIs for interacting with basically WPC DAQ cards or any other WPC USB, WiFi and Ethernet based devices. It supports Python version from 3.8 to 3.10 under Windows 10 operating systems.
 
-In order to optimize driver API performance, we adopt [async/await](https://docs.python.org/3/library/asyncio.html) structure for the driver implementation as known as non-blocking mode.
+In order to optimize the performance of driver API, we adopt [async/await](https://docs.python.org/3/library/asyncio.html) structure for driver implementation also known as non-blocking method.
 
-Some functions in the `pywpc` package may be unavailable with earlier versions of the WPC DAQ firmware driver. Make sure it's the latest firmware version of your product. Please visit WPC Systems offical website to download [WPC Device Manager and LabVIEW Run-time engine
-](http://www.wpc.com.tw/36039260092584721462-daq1.html) and upgrade WPC DAQ firmware driver.
-
+Please note, some API functions in the `pywpc` package may not compatible with earlier versions of WPC DAQ firmware. Make sure the latest version of firmware is up to date with your products. To update device firmware to the latest version, please use [WPC Device Manager and LabVIEW Run-time engine](http://www.wpc.com.tw/36039260092584721462-daq1.html) available at WPC Systems Ltd. [official website](http://www.wpc.com.tw).
 
 [![pip install](https://img.shields.io/badge/pip%20install-wpcsys-orange.svg)](https://pypi.org/project/wpcsys/)
 [![PyPI](https://img.shields.io/pypi/v/wpcsys)](https://pypi.org/project/wpcsys/)
@@ -17,10 +15,10 @@ Some functions in the `pywpc` package may be unavailable with earlier versions o
 ![Wheel](https://img.shields.io/pypi/wheel/wpcsys)
 
 |                   |                 Link                                                            |
-|:------------------|:-------------------------------------------------------------------------------:|
+|:------------------|:--------------------------------------------------------------------------------|
 | WPC official site | http://www.wpc.com.tw/                                                          |
 | User guide        | https://wpc-systems-ltd.github.io/WPC_Python_driver_release/                    |
-| Example code      | https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples | 
+| Example code      | https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples |
 
 ## Quick Start
 
@@ -30,16 +28,13 @@ Some functions in the `pywpc` package may be unavailable with earlier versions o
 >>> from wpcsys import pywpc
 
 >>> pywpc.PKG_NAME
-...
 pywpc
 
 >>> pywpc.__version__
-...
-1.0.1
+1.0.2
 
 >>> pywpc.product
-...
-['DeviceFinder', 'WifiDAQE3A', 'EthanD', 'EthanA', 'USBDAQF1D', 'USBDAQF1AD','USBDAQF1DSNK','USBDAQF1AOD','USBDAQF1TD','USBDAQF1CD','USBDAQF1RD']
+['DeviceFinder', 'WifiDAQE3A', 'EthanD', 'EthanA', 'USBDAQF1D', 'USBDAQF1AD', 'USBDAQF1DSNK', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1CD', 'USBDAQF1RD']
 
 ```
 
@@ -49,7 +44,7 @@ Install [wpcsys](https://pypi.org/project/wpcsys/) using `pip`:
 
 ```
 $ pip install wpcsys
-``` 
+```
 
 ## Upgrade
 
@@ -63,15 +58,15 @@ $ pip install --upgrade wpcsys
 Python 3.8 or later with all [requirements.txt](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/requirements.txt) dependencies installed, including PyQt5, PyQt5Designer, qasync and so on.
 
 ```
-$ pip install -r /path/to/requirements.txt
+$ pip install -r requirements.txt
 ```
- 
+
 ## Products
- 
+
 Ethernet based DAQ card
 - Ethan-A
 - Ethan-D
- 
+
 USB interface DAQ card
 - USB-DAQ-F1-D (Digital)
 - USB-DAQ-F1-DSNK (24V Digital)
@@ -84,7 +79,7 @@ USB interface DAQ card
 Wifi based DAQ card
 - Wifi-DAQ-E3-A
 
-## Port funtion table
+## Port function table
 
 | Model           | AI  | AO | DI         | DO         | CAN | UART | SPI | I2C  | RTD | Thermocouple |
 |:----------------|:---:|:--:|:----------:|:----------:|:---:|:----:|:---:|:----:|:---:|:------------:|
@@ -99,11 +94,11 @@ Wifi based DAQ card
 | USB-DAQ-F1-AOD  | 0   | 0  | 0, 1, 2, 3 | 0, 1, 2, 3 |-    |1, 2  |-    | 1, 2 | -   |-             |
 | Wifi-DAQ-E3-A   | 1   | -  | -          | -          |-    |-     |-    |-     | -   |-             |
 
-Take `USB-DAQ-F1-AOD` for example
-- port0 is available for `AI`
-- port2 is available for `DI`
-- port0 and port1 are available for `DO`
-- port2 is available for `UART`
+Take `USB-DAQ-F1-AOD` for example:
+- Port 0 is available for `AI`
+- Port 2 is available for `DI`
+- Ports 0 & 1 are available for `DO`
+- Port 2 is available for `UART`
 
 ## References
 
@@ -111,7 +106,7 @@ Take `USB-DAQ-F1-AOD` for example
 - [User manual - WPC Python driver](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)
 - [Run example code in console](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-run-WPC-Python-driver-example-code-in-console)
 - [How to build your own Python code to EXE file](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-build-your-own-Python-code-to-EXE-file)
-- [How to install miniconda and build your own virtual environment](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-install-miniconda-and-build-your-own-virtual-environment) 
+- [How to install miniconda and build your own virtual environment](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-install-miniconda-and-build-your-own-virtual-environment)
 
 ## License
 

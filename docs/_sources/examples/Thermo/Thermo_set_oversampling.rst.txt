@@ -1,6 +1,0 @@
-example Thermo set over sampling
-================================
-
-.. literalinclude:: ../../../../../../WPC_Python_driver_release/Examples/Console/Thermo/example_Thermo_set_oversampling.py
-   :language: python
-   :linenos:
