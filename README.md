@@ -58,7 +58,7 @@ $ pip install --upgrade wpcsys
 Python 3.8 or later with all [requirements.txt](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/requirements.txt) dependencies installed, including PyQt5, PyQt5Designer, qasync and so on.
 
 ```
-$ pip install -r {/path/to/requirements.txt}
+$ pip install -r requirements.txt
 ```
 
 ## Products
@@ -94,11 +94,11 @@ Wifi based DAQ card
 | USB-DAQ-F1-AOD  | 0   | 0  | 0, 1, 2, 3 | 0, 1, 2, 3 |-    |1, 2  |-    | 1, 2 | -   |-             |
 | Wifi-DAQ-E3-A   | 1   | -  | -          | -          |-    |-     |-    |-     | -   |-             |
 
-Take `USB-DAQ-F1-AOD` for example
-- port0 is available for `AI`
-- port2 is available for `DI`
-- port0 and port1 are available for `DO`
-- port2 is available for `UART`
+Take `USB-DAQ-F1-AOD` for example:
+- Port 0 is available for `AI`
+- Port 2 is available for `DI`
+- Ports 0 & 1 are available for `DO`
+- Port 2 is available for `UART`
 
 ## References
 
