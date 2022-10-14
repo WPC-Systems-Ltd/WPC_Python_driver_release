@@ -28,15 +28,12 @@ Please note, some API functions in the `pywpc` package may not compatible with e
 >>> from wpcsys import pywpc
 
 >>> pywpc.PKG_NAME
-...
 pywpc
 
 >>> pywpc.__version__
-...
 1.0.2
 
 >>> pywpc.product
-...
 ['DeviceFinder', 'WifiDAQE3A', 'EthanD', 'EthanA', 'USBDAQF1D', 'USBDAQF1AD', 'USBDAQF1DSNK', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1CD', 'USBDAQF1RD']
 
 ```
