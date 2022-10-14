@@ -1,6 +1,0 @@
-example I2C read
-================
-
-.. literalinclude:: ../../../../../../WPC_Python_driver_release/Examples/Console/I2C/example_I2C_read.py
-   :language: python
-   :linenos:

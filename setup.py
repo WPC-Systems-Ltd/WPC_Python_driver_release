@@ -1,56 +1,59 @@
-from setuptools import setup, find_packages
-from platform import python_version
+##  setup.py
+##  - Build wheel file & make distribution
+##
+##  Copyright (c) 2022 WPC Systems Ltd.
+##  All rights reserved.
+
+## Python
+import sys
+import setuptools as sut
+
+## WPC
+sys.path.append('wpcsys/')
+import pywpc
+
+class BinaryDistribution(sut.dist.Distribution):
+    """Distribution which always forces a binary package with platform name"""
+    def has_ext_modules(x):
+        return True
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
-## --- get release version ---
-release_version = "unknown"
-with open("wpcsys/version.py") as f:
-    line = f.read().strip()
-    release_version = line.replace("version = ", "").replace('"', '')
+with open("requirements.txt", "r", encoding="utf-8") as fh:
+    install_requires = fh.readlines()
+    install_requires = [str_.rstrip(' \n') for str_ in install_requires]
 
-
-## --- get python version ---
-py_ver = python_version()
-if py_ver == "3.10.4":
-    python_requires = '==3.10.*'
-    release_version = release_version + ".1"
-if py_ver == "3.9.0":
-    python_requires = '==3.9.*'
-    release_version = release_version + ".2"
-if py_ver == "3.8.0":
-    python_requires = '==3.8.*'
-    release_version = release_version + ".3"   
-
-setup(
-    name= "wpcsys",
-    version= release_version,
+sut.setup(
+    name="wpcsys",
+    version=pywpc.__version__,
     description='WPC Systems Python API',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    author="chunglee_people",
+
+    author="chunglee_people, Chieh-An Lin",
     author_email="wu@wpc.com.tw",
     url="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release",
+
     packages=['wpcsys'],
-    include_package_data=True,
-    license='MIT',
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Science/Research",
         "Intended Audience :: Developers",
         "Operating System :: Microsoft :: Windows :: Windows 10",
-        'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: 3.9',
-        'Programming Language :: Python :: 3.10',
-        'Topic :: Software Development :: Embedded Systems',
-        "Topic :: System :: Hardware :: Hardware Drivers"
-        "Topic :: Documentation :: Sphinx"
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Topic :: Software Development :: Embedded Systems",
+        "Topic :: System :: Hardware :: Hardware Drivers",
+        "Topic :: Documentation :: Sphinx",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
-    install_requires=['pyusb>=1.2.1', 'numpy>=1.23.0',
-                      'qasync>=0.23.0', 'matplotlib>=3.5.2', 'PyQt5Designer>=5.14.1',
-                      'PyQt5>=5.15.4', 'PyQt5-Qt5>=5.15.2', 'PyQt5-sip>=12.10.1', 'wpcEXEbuild>=0.0.1'],
+    distclass=BinaryDistribution,
+    license='MIT',
     keywords='wpc, daq, driver, usb, ethernet, wifi, data acquisition',
-    python_requires = python_requires,
+
+    include_package_data=True,
+    install_requires=install_requires,
+    python_requires='>=3.8',
 )

@@ -1,6 +1,0 @@
-example AO write synchronize
-============================
-
-.. literalinclude:: ../../../../../../WPC_Python_driver_release/Examples/Console/AIO/example_AO_write_synchronize.py
-   :language: python
-   :linenos:
