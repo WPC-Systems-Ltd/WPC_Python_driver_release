@@ -1,6 +1,12 @@
 WPC Python driver release changelog
 ===================================
 
+v1.0.3 Date: 2022/10/14, Developer: Chunglee_people
+---------------------------------------------------
+
+### Added
+- Add .nojekyll
+- Add `WPC_7steps_Of_Python_Project_Workflow_r6.pdf` in Reference/Manuals
 
 v1.0.2 Date: 2022/10/13, Developer: Linc
 ----------------------------------------
