@@ -84,7 +84,7 @@ USB interface DAQ card
 Wifi based DAQ card
 - Wifi-DAQ-E3-A
 
-## Port funtion table
+## Port function table
 
 | Model           | AI  | AO | DI         | DO         | CAN | UART | SPI | I2C  | RTD | Thermocouple |
 |:----------------|:---:|:--:|:----------:|:----------:|:---:|:----:|:---:|:----:|:---:|:------------:|
