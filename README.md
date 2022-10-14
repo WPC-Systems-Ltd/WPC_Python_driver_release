@@ -1,12 +1,10 @@
 ## Overview
 
-**WPC Python driver** is also known as `pywpc` which contains APIs for interacting with basically WPC DAQ cards or any other WPC USB, WiFi and Ethernet based devices. It supports Python 3.8 to 3.10 in Windows 10 operating systems.
+**WPC Python driver**, also known as `pywpc`, contains APIs for interacting with basically WPC DAQ cards or any other WPC USB, WiFi and Ethernet based devices. It supports Python version from 3.8 to 3.10 under Windows 10 operating systems.
 
-In order to optimize driver API performance, we adopt [async/await](https://docs.python.org/3/library/asyncio.html) structure for the driver implementation as known as non-blocking mode.
+In order to optimize the performance of driver API, we adopt [async/await](https://docs.python.org/3/library/asyncio.html) structure for driver implementation also known as non-blocking method.
 
-Some functions in the `pywpc` package may be unavailable with earlier versions of the WPC DAQ firmware driver. Make sure it's the latest firmware version of your product. Please visit WPC Systems offical website to download [WPC Device Manager and LabVIEW Run-time engine
-](http://www.wpc.com.tw/36039260092584721462-daq1.html) and upgrade WPC DAQ firmware driver.
-
+Please note, some API functions in the `pywpc` package may not compatible with earlier versions of WPC DAQ firmware. Make sure the latest version of firmware is up to date with your products. To update device firmware to the latest version, please use [WPC Device Manager and LabVIEW Run-time engine](http://www.wpc.com.tw/36039260092584721462-daq1.html) available at WPC Systems Ltd. [official website](http://www.wpc.com.tw).
 
 [![pip install](https://img.shields.io/badge/pip%20install-wpcsys-orange.svg)](https://pypi.org/project/wpcsys/)
 [![PyPI](https://img.shields.io/pypi/v/wpcsys)](https://pypi.org/project/wpcsys/)
