@@ -1,8 +1,17 @@
 WPC Python driver release changelog
 ===================================
 
-v1.0.2.1 Date: 2022/10/14, Developer: Chunglee_people
+
+v1.0.3 Date: 2022/10/17, Developer: Chunglee_people
 ---------------------------------------------------
+### Added
+- Add `AI_setMode_async` in AI_ondemand example code
+
+### Fixed
+- Fix GUI `Example_analog_input` code
+
+v1.0.2.1 Date: 2022/10/14, Developer: Chunglee_people
+------------------------------------------------------
 
 ### Added
 - Add .nojekyll

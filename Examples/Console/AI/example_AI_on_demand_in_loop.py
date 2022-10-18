@@ -56,7 +56,7 @@ async def main():
         
         ## Parameters setting
         port = 1
-
+        mode = 0
         ## Open port 1
         status = await dev.AI_open_async(port)
         if status == 0: print("AI_open: OK") 
@@ -64,6 +64,10 @@ async def main():
         ## Set AI port to 1 and start async thread
         await loop_func(dev, port, 1, 3)
     
+        ## Set AI port to 1 and acquisition mode to on demand mode (0)
+        status = await dev.AI_setMode_async(port, mode)
+        if status == 0: print("AI_setMode: OK")
+        
         ## Close port 1
         status = await dev.AI_close_async(port) 
         if status == 0: print("AI_close: OK")
