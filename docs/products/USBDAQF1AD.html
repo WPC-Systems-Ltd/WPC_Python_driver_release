@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>USB-DAQ-F1-AD &mdash; WPC Python driver 1.0.2 documentation</title>
+  <title>USB-DAQ-F1-AD &mdash; WPC Python driver 1.0.3 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -18,7 +18,6 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -35,7 +34,7 @@
             <img src="../_static/WPC_logo2.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.0.2
+                1.0.3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -48,8 +47,9 @@
               <p class="caption" role="heading"><span class="caption-text">API REFERNECE</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../products.html">WPC Products</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../products.html#data-logger">Data logger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../products.html#device-finder">Device finder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../products.html#wifi">WIFI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../products.html#wifi-devices">Wifi devices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../products.html#ethernet-devices">Ethernet devices</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../products.html#usb-devices">USB devices</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="USBDAQF1D.html">USB-DAQ-F1-D</a></li>
@@ -448,7 +448,7 @@
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>sample</strong><span class="classifier">list of float.</span></dt><dd><p>List of values measured from channels.</p>
+<dt><strong>sample</strong><span class="classifier">list of list of float.</span></dt><dd><p>List of values measured from channels.</p>
 </dd>
 </dl>
 </dd>
@@ -1655,14 +1655,14 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AD.UART_setDataBit_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_setDataBit_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.UART_setDataBit_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set data size in mode. Default mode is 0.</p>
+<dd><p>Set data size in mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : 8-bit data.</p></li>
+<li><p>0 : 8-bit data. (default)</p></li>
 <li><p>1 : 9-bit data.</p></li>
 </ul>
 </dd>
@@ -1707,14 +1707,14 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AD.UART_setParity_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_setParity_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.UART_setParity_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set parity in mode. Default mode is 0.</p>
+<dd><p>Set parity in mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : none.</p></li>
+<li><p>0 : none. (default)</p></li>
 <li><p>1 : reserved.</p></li>
 <li><p>2 : even parity.</p></li>
 <li><p>3 : odd parity.</p></li>

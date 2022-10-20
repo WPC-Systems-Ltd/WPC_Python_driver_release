@@ -10,13 +10,13 @@ Error Table
      - Error messages
    * - 570002
      - Warning
-     - CAN queue is overflow.
+     - Occurrence CAN queue overflow.
    * - 560001
      - Warning
-     - UART queue is overflow.
+     - Occurrence UART queue overflow.
    * - 520003
      - Warning
-     - AI queue is overflow.
+     - Occurrence AI queue overflow.
    * - -8001
      - 
      - Fail connect to WPC DAQ. Please check USB plugin status and serial number.
@@ -28,88 +28,91 @@ Error Table
      - Network DAQ connection lost.
    * - -8009
      - 
-     - Input pin do not exist.
+     - Invalid pin index.
    * - -8010
      - 
-     - Pin value do not define.
+     - The numbers of pin should be consistent with the number of value.
    * - -8011
      - 
-     - Arguments type should be consistent. It should be list or int.
+     - There is a type mismatch between the pin and the value.
    * - -8012
      - 
-     - Arguments type not correct.
+     - Unsupported data type.
    * - -8014
      - 
-     - Input data must be in range.
+     - The data must be in the range of 0~255.
    * - -8101
      - 
-     - DI channel on WPC DAQ is not avaliable or already occupied by other process.
+     - DI port on WPC DAQ is not avaliable or already occupied by other process.
    * - -8102
      - 
-     - DO channel on WPC DAQ is not avaliable already occupied by other process.
+     - DO port on WPC DAQ is not avaliable or already occupied by other process.
    * - -8201
      - 
-     - AI port on WPC DAQ is already in use or not avaliable.
+     - AI port on WPC DAQ is not avaliable or already occupied by other process.
    * - -8204
      - 
-     - AO port on WPC DAQ is already in use or not avaliable.
+     - AO port on WPC DAQ is not avaliable or already occupied by other process.
    * - -8206
      - 
-     - AO mode on WPC DAQ is not vaild.
+     - Specified AO generation mode from WPC DAQ is invalid.
    * - -8207
      - 
-     - AO span on WPC DAQ is not vaild.
+     - Specified AO span mode from WPC DAQ is invalid.
    * - -8208
      - 
-     - AI Port on WPC DAQ is not vaild.
+     - Specified AI acquisition mode from WPC DAQ is invalid.
    * - -8209
      - 
-     - AO channel on WPC DAQ is already in use or not avaliable.
+     - AO channel on WPC DAQ is not avaliable or already occupied by other process.
    * - -8210
      - 
      - AI sampling rate on WPC DAQ is not vaild.
    * - -8301
      - 
-     - Thermal port on WPC DAQ is already in use or not avaliable.
+     - Thermal port on WPC DAQ is not avaliable or already occupied by other process.
    * - -8304
      - 
-     - Thermal chip selection on WPC DAQ is already in use or not avaliable.
+     - Thermal channel on WPC DAQ is not avaliable or already occupied by other process.
    * - -8305
      - 
-     - Thermal mode on WPC DAQ is not vaild.
+     - Specified thermal filter mode from WPC DAQ is invalid.
    * - -8306
      - 
-     - Thermal type on WPC DAQ is not vaild.
+     - Specified thermal type mode from WPC DAQ is invalid.
+   * - -8307
+     - 
+     - Specified sampling mode from WPC DAQ is invalid.
    * - -8401
      - 
-     - I2C port on WPC DAQ is already in use or not avaliable.
+     - I2C port on WPC DAQ is not avaliable or already occupied by other process.
    * - -8403
      - 
-     - I2C Clock is not supported by this device.
+     - Specified I2C clock mode from WPC DAQ is invalid.
    * - -8404
      - 
-     - I2C address size on WPC DAQ is not vaild.
+     - Specified I2C address mode from WPC DAQ is invalid.
    * - -8501
      - 
-     - SPI port on WPC DAQ is already in use or not avaliable.
+     - SPI port on WPC DAQ is not avaliable or already occupied by other process.
    * - -8502
      - 
      - The length of data exceed maximum transfer length of SPI.
    * - -8503
      - 
-     - SPI data size on WPC DAQ is not vaild.
+     - Specified SPI data size mode from WPC DAQ is invalid.
    * - -8504
      - 
-     - SPI first bit on WPC DAQ is not vaild.
+     - Specified SPI first bit mode from WPC DAQ is invalid.
    * - -8505
      - 
-     - SPI prescaler on WPC DAQ is not vaild.
+     - Specified SPI prescaler mode from WPC DAQ is invalid.
    * - -8506
      - 
-     - SPI Mode on WPC DAQ is not vaild.
+     - Specified SPI mode from WPC DAQ is invalid.
    * - -8601
      - 
-     - UART port on WPC DAQ is already in use or not avaliable.
+     - UART port on WPC DAQ is not avaliable or already occupied by other process.
    * - -8602
      - 
      - The length of data exceed maximum transfer length of UART.
@@ -118,19 +121,19 @@ Error Table
      - Configured baud rate is not supported.
    * - -8604
      - 
-     - UART stop bit mode is not supported.
+     - Specified UART stop bit mode from WPC DAQ is invalid.
    * - -8605
      - 
-     - UART Parity mode is not supported.
+     - Specified UART parity mode from WPC DAQ is invalid.
    * - -8606
      - 
-     - UART Data bit mode is not supported.
+     - Specified UART data bit mode from WPC DAQ is invalid.
    * - -8701
      - 
-     - CAN port on WPC DAQ is already in use or not avaliable.
+     - CAN port on WPC DAQ is not avaliable or already occupied by other process.
    * - -8702
      - 
-     - CAN speed on WPC DAQ is not vaild.
+     - Specified CAN speed mode from WPC DAQ is invalid.
    * - -8703
      - 
      - CAN TX on WPC DAQ is not vaild.

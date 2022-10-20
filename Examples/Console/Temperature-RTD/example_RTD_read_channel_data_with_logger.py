@@ -1,10 +1,10 @@
 '''
 Temperature-RTD - example_RTD_read_channel_data.py
 
-This example demonstrates how to read RTD data in two channels from WPC-USB-DAQ-F1-RD.
+This example demonstrates how to read RTD data in two channels and save data into csv file from WPC-USB-DAQ-F1-RD.
 
 First, it shows how to open thermal port
-Second, read channel 0 and channel 1 RTD data
+Second, read channel 0 and channel 1 RTD data and save them. 
 Last, close thermal port.
 
 For other examples please check:
@@ -28,6 +28,15 @@ async def main():
 
     ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
+
+    ## Create datalogger handle 
+    dev_logger = pywpc.DataLogger()
+
+    ## Open file with WPC_test.csv
+    dev_logger.Logger_openFile("WPC_test.csv")
+
+    ## Write header into CSV file
+    dev_logger.Logger_writeList(["RTD CH0","RTD CH1"])
 
     ## Create device handle
     dev = pywpc.USBDAQF1RD()
@@ -63,10 +72,16 @@ async def main():
         ## Set RTD port to 1 and read RTD in channel 1
         data1 = await dev.Thermal_readSensor_async(port, channel_1)
         print("Read channel 1 data:", data1, "°C")
+        
+        ## Write data into CSV file
+        dev_logger.Logger_writeList([data0, data1])
 
         ## Close RTD port1
         status = await dev.Thermal_close_async(port)
-        if status == 0: print("Thermal_close: OK")   
+        if status == 0: print("Thermal_close: OK")
+
+        ## Close File
+        dev_logger.Logger_closeFile() 
     except Exception as err:
         pywpc.printGenericError(err)
 
