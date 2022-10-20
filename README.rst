@@ -47,6 +47,7 @@ You can download WPC Device Manager by `latest release <https://github.com/WPC-S
     :alt: docs
 
 .. image:: https://img.shields.io/pypi/wheel/wpcsys
+    :target: https://pypi.org/project/wpcsys/
     :alt: Wheel
 
 .. note::
