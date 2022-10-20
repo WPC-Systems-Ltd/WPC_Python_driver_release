@@ -100,7 +100,7 @@
   <section id="example-rtd-read-channel-data-with-logger">
 <h1>example RTD read channel data with logger<a class="headerlink" href="#example-rtd-read-channel-data-with-logger" title="Permalink to this heading"></a></h1>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="sd">&#39;&#39;&#39;</span>
-<span class="linenos"> 2</span><span class="sd">Temperature-RTD - example_RTD_read_channel_data.py</span>
+<span class="linenos"> 2</span><span class="sd">Temperature-RTD - example_RTD_read_channel_data_with_logger.py</span>
 <span class="linenos"> 3</span>
 <span class="linenos"> 4</span><span class="sd">This example demonstrates how to read RTD data in two channels and save data into csv file from WPC-USB-DAQ-F1-RD.</span>
 <span class="linenos"> 5</span>
@@ -136,8 +136,8 @@
 <span class="linenos">35</span>    <span class="c1">## Open file with WPC_test.csv</span>
 <span class="linenos">36</span>    <span class="n">dev_logger</span><span class="o">.</span><span class="n">Logger_openFile</span><span class="p">(</span><span class="s2">&quot;WPC_test.csv&quot;</span><span class="p">)</span>
 <span class="linenos">37</span>
-<span class="linenos">38</span>    <span class="c1">## Write header into CSV file</span>
-<span class="linenos">39</span>    <span class="n">dev_logger</span><span class="o">.</span><span class="n">Logger_writeList</span><span class="p">([</span><span class="s2">&quot;RTD CH0&quot;</span><span class="p">,</span><span class="s2">&quot;RTD CH1&quot;</span><span class="p">])</span>
+<span class="linenos">38</span>    <span class="c1">## Write header into CSV file </span>
+<span class="linenos">39</span>    <span class="n">dev_logger</span><span class="o">.</span><span class="n">Logger_writeHeader</span><span class="p">([</span><span class="s2">&quot;RTD CH0&quot;</span><span class="p">,</span><span class="s2">&quot;RTD CH1&quot;</span><span class="p">])</span>
 <span class="linenos">40</span>
 <span class="linenos">41</span>    <span class="c1">## Create device handle</span>
 <span class="linenos">42</span>    <span class="n">dev</span> <span class="o">=</span> <span class="n">pywpc</span><span class="o">.</span><span class="n">USBDAQF1RD</span><span class="p">()</span>

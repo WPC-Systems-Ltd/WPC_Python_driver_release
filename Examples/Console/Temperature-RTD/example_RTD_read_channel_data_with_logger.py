@@ -1,5 +1,5 @@
 '''
-Temperature-RTD - example_RTD_read_channel_data.py
+Temperature-RTD - example_RTD_read_channel_data_with_logger.py
 
 This example demonstrates how to read RTD data in two channels and save data into csv file from WPC-USB-DAQ-F1-RD.
 
@@ -35,8 +35,8 @@ async def main():
     ## Open file with WPC_test.csv
     dev_logger.Logger_openFile("WPC_test.csv")
 
-    ## Write header into CSV file
-    dev_logger.Logger_writeList(["RTD CH0","RTD CH1"])
+    ## Write header into CSV file 
+    dev_logger.Logger_writeHeader(["RTD CH0","RTD CH1"])
 
     ## Create device handle
     dev = pywpc.USBDAQF1RD()

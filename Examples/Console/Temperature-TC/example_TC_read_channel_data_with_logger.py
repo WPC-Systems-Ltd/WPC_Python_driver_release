@@ -1,5 +1,5 @@
 '''
-Temperature-TC - example_TC_read_channel_data.py
+Temperature-TC - example_TC_read_channel_data_with_logger.py
 
 This example demonstrates how to read thermocouple and save data into csv file from WPC-USB-DAQ-F1-TD.
 
@@ -36,7 +36,7 @@ async def main():
     dev_logger.Logger_openFile("WPC_test.csv")
 
     ## Write header into CSV file
-    dev_logger.Logger_writeList(["Thermo CH1"])
+    dev_logger.Logger_writeHeader(["Thermo CH1"])
 
     ## Create device handle
     dev = pywpc.USBDAQF1TD()
