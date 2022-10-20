@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WPC Python Driver Programming Guide &mdash; WPC Python driver 1.0.2 documentation</title>
+  <title>WPC Python Driver Programming Guide &mdash; WPC Python driver 1.0.3 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/custom_sphinx.css" type="text/css" />
@@ -18,7 +18,6 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -34,7 +33,7 @@
             <img src="_static/WPC_logo2.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.0.2
+                1.0.3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -81,17 +80,78 @@
 <h1>WPC Python Driver Programming Guide<a class="headerlink" href="#wpc-python-driver-programming-guide" title="Permalink to this heading"></a></h1>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
-<p>WPC Python driver contains Application programming interfaces, APIs for interacting with basically WPC DAQ cards or any other WPC USB, WiFi and Ethernet based devices.</p>
-<p>Also, It has been tested under Windows 10 64-bit operating system.</p>
-<p>For more products information, please visit <a class="reference external" href="http://www.wpc.com.tw/">WPC-Systems-Ltd</a> official website.</p>
+<p><strong>WPC Python driver</strong>, also known as <cite>pywpc</cite>, contains APIs for interacting with basically WPC DAQ cards or any other WPC USB, WiFi and Ethernet based devices.
+It supports Python version from 3.8 to 3.10 under Windows 10 operating systems.
+In order to optimize the performance of driver API, we adopt <a class="reference external" href="https://docs.python.org/3/library/asyncio.html">async/await</a> structure for driver implementation also known as non-blocking method.</p>
+<p>Some API functions in the <cite>pywpc</cite> package may not compatible with earlier versions of WPC DAQ firmware.
+To update device firmware to the latest version, please use WPC Device Manager and <a class="reference external" href="https://drive.google.com/file/d/1Uj6r65KhNxvuApiqrMkZp-NWyq-Eek-k/view">LabVIEW Run-time engine</a>.
+You can download WPC Device Manager by <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/releases/tag/v1.0.2">latest release</a> or visit <a class="reference external" href="http://www.wpc.com.tw/36039260092584721462-daq1.html">WPC Systems Ltd. official website</a>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Link</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>WPC official site</p></td>
+<td><p><a class="reference external" href="http://www.wpc.com.tw/">http://www.wpc.com.tw/</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>User guide</p></td>
+<td><p><a class="reference external" href="https://wpc-systems-ltd.github.io/WPC_Python_driver_release/">https://wpc-systems-ltd.github.io/WPC_Python_driver_release/</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Example code</p></td>
+<td><p><a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples">https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples</a></p></td>
+</tr>
+</tbody>
+</table>
+<a class="reference external image-reference" href="https://pypi.org/project/wpcsys/"><img alt="pip install" src="https://img.shields.io/badge/pip%20install-wpcsys-orange.svg" /></a>
+<a class="reference external image-reference" href="https://pypi.org/project/wpcsys/"><img alt="PyPI" src="https://img.shields.io/pypi/v/wpcsys" /></a>
+<a class="reference external image-reference" href="https://pypi.org/project/wpcsys/"><img alt="Python" src="https://img.shields.io/badge/Python-3.8%20|%203.9%20|%203.10-blue.svg" /></a>
+<a class="reference external image-reference" href="https://www.microsoft.com/zh-tw/software-download/windows10"><img alt="OS" src="https://img.shields.io/badge/os-Windows%2010-brown.svg" /></a>
+<a class="reference external image-reference" href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a>
+<a class="reference external image-reference" href="https://wpc-systems-ltd.github.io/WPC_Python_driver_release/"><img alt="docs" src="https://img.shields.io/badge/docs-passing-green.svg" /></a>
+<img alt="Wheel" src="https://img.shields.io/pypi/wheel/wpcsys" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure the latest version of firmware is up to date with your products.</p>
+</div>
 </section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
-<p>For getting started with console and GUI examples which are implemented by our driver APIs, please go check <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples">GitHub Examples</a>.</p>
+<section id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this heading"></a></h2>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">wpcsys</span> <span class="kn">import</span> <span class="n">pywpc</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_NAME</span>
+<span class="go">pywpc</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pywpc</span><span class="o">.</span><span class="n">__version__</span>
+<span class="go">1.0.2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pywpc</span><span class="o">.</span><span class="n">product</span>
+<span class="go">[&#39;DeviceFinder&#39;, &#39;WifiDAQE3A&#39;, &#39;EthanD&#39;, &#39;EthanA&#39;, &#39;USBDAQF1D&#39;, &#39;USBDAQF1AD&#39;, &#39;USBDAQF1DSNK&#39;, &#39;USBDAQF1AOD&#39;, &#39;USBDAQF1TD&#39;, &#39;USBDAQF1CD&#39;, &#39;USBDAQF1RD&#39;]</span>
+</pre></div>
+</div>
 </section>
-<section id="driver-version">
-<h2>Driver Version<a class="headerlink" href="#driver-version" title="Permalink to this heading"></a></h2>
-<p>For the latest development, archived versions and code repository, please visit <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release">GitHub source code</a>.</p>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h2>
+<p>Install <a class="reference external" href="https://pypi.org/project/wpcsys/">wpcsys</a> using <cite>pip</cite>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install wpcsys
+</pre></div>
+</div>
+</section>
+<section id="upgrade">
+<h2>Upgrade<a class="headerlink" href="#upgrade" title="Permalink to this heading"></a></h2>
+<p>Upgrade <a class="reference external" href="https://pypi.org/project/wpcsys/">wpcsys</a> using <cite>pip</cite>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install --upgrade wpcsys
+</pre></div>
+</div>
+</section>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
+<p>Python 3.8 or later with all <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/requirements.txt">requirements.txt</a> dependencies installed, including PyQt5, PyQt5Designer, qasync and so on.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install -r requirements.txt
+</pre></div>
+</div>
 </section>
 <section id="products">
 <h2>Products<a class="headerlink" href="#products" title="Permalink to this heading"></a></h2>
@@ -245,6 +305,21 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/Useful-Conda-Commands">Useful conda commands</a></p></li>
+<li><p><a class="reference external" href="https://wpc-systems-ltd.github.io/WPC_Python_driver_release/">User manual - WPC Python driver</a></p></li>
+<li><p><a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-run-WPC-Python-driver-example-code-in-console">Run example code in console</a></p></li>
+<li><p><a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-build-your-own-Python-code-to-EXE-file">How to build your own Python code to EXE file</a></p></li>
+<li><p><a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-install-miniconda-and-build-your-own-virtual-environment">How to install miniconda and build your own virtual environment</a></p></li>
+</ul>
+</section>
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this heading"></a></h2>
+<p><strong>WPC Python driver release</strong> is licensed under an MIT-style license see <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/LICENSE">LICENSE</a> Other incorporated projects may be licensed under different licenses.
+All licenses allow for non-commercial and commercial use.</p>
 <span class="target" id="module-pywpc"></span><div class="toctree-wrapper compound">
 </div>
 </section>

@@ -1,11 +1,11 @@
 '''
-AI - example_AI_on_demand_in_loop.py
+AI - example_AI_continuous_with_logger.py
 
-This example demonstrates how to get AI data in on demand mode.
+This example demonstrates how to get AI data in continuous mode and save data into csv file.
 Also, it uses async loop to get AI data with 3 seconds timeout with 8 channels from Wifi-DAQ-E3-A.
 
 First, it shows how to open AI port and configure AI parameters.
-Second, read AI ondemand data.
+Second, read and save AI streaming data.
 Last, close AI port.
 
 For other examples please check:
@@ -24,12 +24,18 @@ import asyncio
 ## WPC
 from wpcsys import pywpc
 
-async def loop_func(handle, port, delay, timeout = 3):
+async def loop_func(handle, logger_handle, port, num_of_samples = 600, delay = 0.05, timeout = 3):
     t = 0
     while t < timeout:
-        ## data acquisition
-        data =  await handle.AI_readOnDemand_async(port)
+        ## Data acquisition
+        data = await handle.AI_readStreaming_async(port, num_of_samples, delay) ## Get 600 points at a time
+        
+        ## Print data
         print("data :" + str(data))
+        
+        ## Write data into CSV file
+        logger_handle.Logger_write2DList(data)
+
         await asyncio.sleep(delay)
         t += delay
 
@@ -37,7 +43,16 @@ async def main():
     print("Start example code...")
 
     ## Get Python driver version
-    print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
+    print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}') 
+
+    ## Create datalogger handle 
+    dev_logger = pywpc.DataLogger()
+
+    ## Open file with WPC_test.csv
+    dev_logger.Logger_openFile("WPC_test.csv")
+
+    ## Write header into CSV file
+    dev_logger.Logger_writeList(["CH0","CH1","CH2","CH3","CH4","CH5","CH6","CH7"])
 
     ## Create device handle
     dev = pywpc.WifiDAQE3A()
@@ -53,35 +68,51 @@ async def main():
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-        
+
         ## Parameters setting
         port = 1
-        mode = 0
+        mode = 2  ## 0 : On demand, 1 : N-samples, 2 : Continuous.
+        sampling_rate = 1000
+     
         ## Open port 1
         status = await dev.AI_open_async(port)
-        if status == 0: print("AI_open: OK") 
- 
-        ## Set AI port to 1 and start async thread
-        await loop_func(dev, port, 1, 3)
-    
-        ## Set AI port to 1 and acquisition mode to on demand mode (0)
+        if status == 0: print("AI_open: OK")
+
+        ## Set AI port to 1 and acquisition mode to continuous mode (2)
         status = await dev.AI_setMode_async(port, mode)
         if status == 0: print("AI_setMode: OK")
+
+        ## Set AI port to 1 and sampling rate to 1k (Hz)
+        status = await dev.AI_setSamplingRate_async(port, sampling_rate)
+        if status == 0: print("AI_setSamplingRate: OK")
         
+        ## Wait amount of time (sec)
+        await asyncio.sleep(1)
+
+        ## Set AI port to 1 and start acquisition
+        status = await dev.AI_start_async(port)
+        if status == 0: print("AI_start: OK")
+
+        ## Start async thread
+        await loop_func(dev, dev_logger, port, 600, 0.05, 3)
+
         ## Close port 1
         status = await dev.AI_close_async(port) 
         if status == 0: print("AI_close: OK")
+        
+        ## Close File
+        dev_logger.Logger_closeFile()
     except Exception as err:
         pywpc.printGenericError(err)
- 
+
     ## Disconnect network device
     dev.disconnect()
-    
+
     ## Release device handle
     dev.close()
 
     print("End example code...")
     return
-    
+
 if __name__ == '__main__':
-    asyncio.run(main())
+    asyncio.run(main()) 

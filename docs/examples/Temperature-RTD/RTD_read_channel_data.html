@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>example RTD read channel data &mdash; WPC Python driver 1.0.2 documentation</title>
+  <title>example RTD read channel data &mdash; WPC Python driver 1.0.3 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/custom_sphinx.css" type="text/css" />
@@ -18,11 +18,10 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="example RTD read channel status" href="RTD_read_channel_status.html" />
+    <link rel="next" title="example RTD read channel data with logger" href="RTD_read_channel_data_with_logger.html" />
     <link rel="prev" title="example TC read channel status" href="../Temperature-TC/TC_read_channel_status.html" /> 
 </head>
 
@@ -35,7 +34,7 @@
             <img src="../../_static/WPC_logo2.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.0.2
+                1.0.3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -62,6 +61,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#temperature-tc">Temperature-TC</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../examples.html#temperature-rtd">Temperature-RTD</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">example RTD read channel data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RTD_read_channel_data_with_logger.html">example RTD read channel data with logger</a></li>
 <li class="toctree-l3"><a class="reference internal" href="RTD_read_channel_status.html">example RTD read channel status</a></li>
 </ul>
 </li>
@@ -158,12 +158,12 @@
 <span class="linenos">57</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span> <span class="c1">## delay(second)</span>
 <span class="linenos">58</span>
 <span class="linenos">59</span>        <span class="c1">## Set RTD port to 1 and read RTD in channel 0</span>
-<span class="linenos">60</span>        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_readSensor_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">channel_0</span><span class="p">)</span>
-<span class="linenos">61</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Read channel 0 data:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="s2">&quot;°C&quot;</span><span class="p">)</span>
+<span class="linenos">60</span>        <span class="n">data0</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_readSensor_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">channel_0</span><span class="p">)</span>
+<span class="linenos">61</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Read channel 0 data:&quot;</span><span class="p">,</span> <span class="n">data0</span><span class="p">,</span> <span class="s2">&quot;°C&quot;</span><span class="p">)</span>
 <span class="linenos">62</span>
 <span class="linenos">63</span>        <span class="c1">## Set RTD port to 1 and read RTD in channel 1</span>
-<span class="linenos">64</span>        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_readSensor_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">channel_1</span><span class="p">)</span>
-<span class="linenos">65</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Read channel 1 data:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="s2">&quot;°C&quot;</span><span class="p">)</span>
+<span class="linenos">64</span>        <span class="n">data1</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_readSensor_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">channel_1</span><span class="p">)</span>
+<span class="linenos">65</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Read channel 1 data:&quot;</span><span class="p">,</span> <span class="n">data1</span><span class="p">,</span> <span class="s2">&quot;°C&quot;</span><span class="p">)</span>
 <span class="linenos">66</span>
 <span class="linenos">67</span>        <span class="c1">## Close RTD port1</span>
 <span class="linenos">68</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_close_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
@@ -191,7 +191,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../Temperature-TC/TC_read_channel_status.html" class="btn btn-neutral float-left" title="example TC read channel status" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="RTD_read_channel_status.html" class="btn btn-neutral float-right" title="example RTD read channel status" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="RTD_read_channel_data_with_logger.html" class="btn btn-neutral float-right" title="example RTD read channel data with logger" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

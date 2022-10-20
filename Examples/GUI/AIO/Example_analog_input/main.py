@@ -96,11 +96,14 @@ class MainWindow(QtWidgets.QMainWindow):
  
     @asyncSlot()      
     async def connectEvent(self): 
-        # Get ip from UI
-        self.ip = self.ui.lineEdit_IP.text()
-        try: 
-            ## Connect to network device
-            self.dev.connect(self.ip)
+        if self.connect_flag == 0 :
+            # Get ip from UI
+            self.ip = self.ui.lineEdit_IP.text()
+            try: 
+                ## Connect to network device
+                self.dev.connect(self.ip)
+            except pywpc.Error as err:
+                print(str(err))
 
             ## Open AI port
             await self.dev.AI_open_async(self.AI_port)
@@ -110,22 +113,21 @@ class MainWindow(QtWidgets.QMainWindow):
 
             ## Change connection flag
             self.connect_flag = 1
-        except pywpc.Error as err: 
-            print("err: " + str(err))
-
+ 
     @asyncSlot()      
     async def disconnectEvent(self):
-        ## close AI port
-        await self.dev.AI_close_async(self.AI_port)
+        if self.connect_flag == 1:
+            ## close AI port
+            await self.dev.AI_close_async(self.AI_port)
 
-        ## Disconnect network device
-        self.dev.disconnect()
+            ## Disconnect network device
+            self.dev.disconnect()
 
-        ## Change LED status
-        self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
-        
-        ## Change connection flag
-        self.connect_flag = 0
+            ## Change LED status
+            self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
+            
+            ## Change connection flag
+            self.connect_flag = 0
 
     @asyncSlot() 
     async def loop_fct(self, port, num_of_sample , delay): 

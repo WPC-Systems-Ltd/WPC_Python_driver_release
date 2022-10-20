@@ -1,0 +1,11 @@
+Data logger
+===========
+
+
+API function description 
+------------------------
+
+.. autoclass:: pywpc.DataLogger
+   :members:
+   :undoc-members:
+   :inherited-members:

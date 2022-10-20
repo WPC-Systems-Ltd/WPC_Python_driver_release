@@ -1,6 +1,14 @@
 WPC Products
 ============
 
+Data logger
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   products/DataLogger
+
 Device finder
 -------------
 
@@ -9,8 +17,8 @@ Device finder
 
    products/DeviceFinder
 
-WIFI
-----
+Wifi devices
+------------
 
 .. toctree::
    :maxdepth: 4
