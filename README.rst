@@ -1,0 +1,242 @@
+WPC Python Driver Programming Guide
+===================================
+
+Overview
+--------
+
+**WPC Python driver**, also known as `pywpc`, contains APIs for interacting with basically WPC DAQ cards or any other WPC USB, WiFi and Ethernet based devices. 
+It supports Python version from 3.8 to 3.10 under Windows 10 operating systems.
+In order to optimize the performance of driver API, we adopt `async/await <https://docs.python.org/3/library/asyncio.html>`_ structure for driver implementation also known as non-blocking method.
+
+Some API functions in the `pywpc` package may not compatible with earlier versions of WPC DAQ firmware.
+To update device firmware to the latest version, please use WPC Device Manager and `LabVIEW Run-time engine <https://drive.google.com/file/d/1Uj6r65KhNxvuApiqrMkZp-NWyq-Eek-k/view>`_.
+You can download WPC Device Manager by `latest release <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/releases/tag/v1.0.2>`_ or visit `WPC Systems Ltd. official website <http://www.wpc.com.tw/36039260092584721462-daq1.html>`_.
+
++-------------------+-----------------------------------------------------------------------------------+ 
+|                   | Link                                                                              | 
++===================+===================================================================================+
+| WPC official site | http://www.wpc.com.tw/                                                            |
++-------------------+-----------------------------------------------------------------------------------+
+| User guide        | https://wpc-systems-ltd.github.io/WPC_Python_driver_release/                      |
++-------------------+-----------------------------------------------------------------------------------+
+| Example code      | https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples   |
++-------------------+-----------------------------------------------------------------------------------+
+
+.. image:: https://img.shields.io/badge/pip%20install-wpcsys-orange.svg
+    :target: https://pypi.org/project/wpcsys/
+    :alt: pip install
+
+.. image:: https://img.shields.io/pypi/v/wpcsys
+    :target: https://pypi.org/project/wpcsys/
+    :alt: PyPI
+
+.. image:: https://img.shields.io/badge/Python-3.8%20|%203.9%20|%203.10-blue.svg
+    :target: https://pypi.org/project/wpcsys/
+    :alt: Python
+
+.. image:: https://img.shields.io/badge/os-Windows%2010-brown.svg
+    :target: https://www.microsoft.com/zh-tw/software-download/windows10
+    :alt: OS
+
+.. image:: https://img.shields.io/badge/License-MIT-yellow.svg
+    :target: https://opensource.org/licenses/MIT
+    :alt: License: MIT
+
+.. image:: https://img.shields.io/badge/docs-passing-green.svg
+    :target: https://wpc-systems-ltd.github.io/WPC_Python_driver_release/
+    :alt: docs
+
+.. image:: https://img.shields.io/pypi/wheel/wpcsys
+    :alt: Wheel
+
+.. note::
+
+   Make sure the latest version of firmware is up to date with your products.
+
+Quick Start
+-----------
+**Easy, fast, and just works!**
+
+   >>> from wpcsys import pywpc
+   >>> pywpc.PKG_NAME
+   pywpc
+   >>> pywpc.__version__
+   1.0.2
+   >>> pywpc.product
+   ['DeviceFinder', 'WifiDAQE3A', 'EthanD', 'EthanA', 'USBDAQF1D', 'USBDAQF1AD', 'USBDAQF1DSNK', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1CD', 'USBDAQF1RD']
+
+Installation
+------------
+Install `wpcsys <https://pypi.org/project/wpcsys/>`_ using `pip`:
+
+.. code-block:: shell
+    
+   pip install wpcsys
+
+Upgrade
+-------
+Upgrade `wpcsys <https://pypi.org/project/wpcsys/>`_ using `pip`:
+
+.. code-block:: shell
+
+   pip install --upgrade wpcsys
+
+Requirements
+------------
+Python 3.8 or later with all `requirements.txt <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/requirements.txt>`_ dependencies installed, including PyQt5, PyQt5Designer, qasync and so on.
+
+.. code-block:: shell
+
+   pip install -r requirements.txt
+
+
+
+Products
+--------
+
+.. list-table::
+   :widths: 10 10
+   :header-rows: 1
+
+   * - Model
+     - Photo
+   * - 
+      **WPC-USB-DAQ-D**
+         - 26ch 3.3V DIO/I2C/SPI
+         - I2C: 400KHz (max)
+         - USB 2.0 full-speed bus powered
+         - Python driver & example codes
+     - 
+      .. image:: images/Products/WPC-USB-DAQ-D.jpg
+         :width: 100%
+         :alt: WPC-USB-DAQ-D.jpg
+   * - 
+      **WPC-USB-DAQ-AD**
+         - 20ch 3.3V DIO/I2C/SPI
+         - 8ch 16-bit analog input
+         - USB 2.0 full-speed bus powered
+         - Python driver & example codes
+     - 
+      .. image:: images/Products/WPC-USB-DAQ-AD.jpg
+         :width: 100%
+         :alt: WPC-USB-DAQ-AD.jpg  
+   * - 
+      **WPC-USB-DAQ-D-SNK**
+         - 24V 12ch DO / 14ch DI
+         - Industrial isolated DIO
+         - Sinking output / Sourcing input
+         - External 24VDC power required
+         - USB 2.0 full-speed bus powered
+         - Python driver & example codes
+     - 
+      .. image:: images/Products/WPC-USB-DAQ-D-SNK.jpg
+         :width: 100%
+         :alt: WPC-USB-DAQ-D-SNK.jpg
+   * - 
+      **WPC-USB-DAQ-TD**
+         - 21ch 3.3V DIO/I2C/SPI
+         - 2ch thermocouple input
+         - Sensor type: (K, J, N, R, S, T, E, B)
+         - USB 2.0 full-speed bus powered
+         - Python driver & example codes
+     - 
+      .. image:: images/Products/WPC-USB-DAQ-TD.jpg
+         :width: 100%
+         :alt: WPC-USB-DAQ-TD.jpg
+   * - 
+      **WPC-USB-DAQ-RD**
+         - 21ch 3.3V DIO/I2C/SPI
+         - 2ch thermocouple input
+         - PT-100 or PT-1000 (different model)
+         - USB 2.0 full-speed bus powered
+         - Python driver & example codes
+     - 
+      .. image:: images/Products/WPC-USB-DAQ-RD.jpg 
+         :width: 100%
+         :alt: WPC-USB-DAQ-RD.jpg
+   * - 
+      **WPC-USB-DAQ-CD**
+         - 20ch 3.3V DIO/I2C/SPI
+         - 1ch 1Mbps CAN V2.0B
+         - USB 2.0 full-speed bus powered
+         - Python driver & example codes
+     - 
+      .. image:: images/Products/WPC-USB-DAQ-CD.jpg
+         :width: 100%
+         :alt: WPC-USB-DAQ-CD.jpg
+   * - 
+      **WPC-USB-DAQ-AOD**
+         - 16ch 3.3V DIO/I2C/SPI
+         - 8ch 16-bit analog input
+         - 8ch 16-bit analog output (on-demand)
+         - USB 2.0 full-speed bus powered
+         - Python driver & example codes
+     - 
+      .. image:: images/Products/WPC-USB-DAQ-AOD.jpg
+         :width: 100%
+         :alt: WPC-USB-DAQ-AOD.jpg   
+   * - 
+      **WPC-Ethan-D**
+         - 10/100 cable Ethernet
+         - 8ch 24V digital input (sourcing DI, NPN)
+         - 6ch 24V digital output (sinking DO, NPN)
+         - Python driver & example codes
+     - 
+      .. image:: images/Products/WPC-Ethan-D.jpg
+         :width: 100%
+         :alt: WPC-Ethan-D.jpg
+   * - 
+      **WPC-Ethan-A**
+         - 10/100 cable Ethernet
+         - 8ch simultaneous voltage input
+         - Max sampling rate: 20KHz 
+         - +/-10V voltage input range
+         - Python driver & example codes
+     - 
+      .. image:: images/Products/WPC-Ethan-A.jpg
+         :width: 100%
+         :alt: WPC-Ethan-A.jpg  
+   * - 
+      **WPC-WIFI-DAQ-E3-A**
+         - 8ch 16-bit +/-10V analog input
+         - Web-based configurator
+         - 802.11 b/g/n WiFi
+         - 2.4 GHz to 2.5 GHz
+         - Python driver & example codes
+     - 
+      .. image:: images/Products/WPC-WIFI-DAQ-E3A.png
+         :width: 100%
+         :alt: WPC-WIFI-DAQ-E3A.png
+
+
+References
+----------
+- `Useful conda commands <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/Useful-Conda-Commands>`_
+
+- `User manual - WPC Python driver <https://wpc-systems-ltd.github.io/WPC_Python_driver_release/>`_
+
+- `Run example code in console <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-run-WPC-Python-driver-example-code-in-console>`_
+
+- `How to build your own Python code to EXE file <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-build-your-own-Python-code-to-EXE-file>`_
+
+- `How to install miniconda and build your own virtual environment <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-install-miniconda-and-build-your-own-virtual-environment>`_
+
+License
+-------
+
+**WPC Python driver release** is licensed under an MIT-style license see `LICENSE <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/LICENSE>`_ Other incorporated projects may be licensed under different licenses.
+All licenses allow for non-commercial and commercial use.
+ 
+.. automodule:: pywpc
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+   :caption: API REFERNECE
+
+   products
+   examples
+   port
+   SPI
+   errortable
+   gui
