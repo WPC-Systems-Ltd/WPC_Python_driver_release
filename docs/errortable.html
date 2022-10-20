@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Error Table &mdash; WPC Python driver 1.0.2 documentation</title>
+  <title>Error Table &mdash; WPC Python driver 1.0.3 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/custom_sphinx.css" type="text/css" />
@@ -18,7 +18,6 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -35,7 +34,7 @@
             <img src="_static/WPC_logo2.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.0.2
+                1.0.3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -95,15 +94,15 @@
 <tbody>
 <tr class="row-even"><td><p>570002</p></td>
 <td><p>Warning</p></td>
-<td><p>CAN queue is overflow.</p></td>
+<td><p>Occurrence CAN queue overflow.</p></td>
 </tr>
 <tr class="row-odd"><td><p>560001</p></td>
 <td><p>Warning</p></td>
-<td><p>UART queue is overflow.</p></td>
+<td><p>Occurrence UART queue overflow.</p></td>
 </tr>
 <tr class="row-even"><td><p>520003</p></td>
 <td><p>Warning</p></td>
-<td><p>AI queue is overflow.</p></td>
+<td><p>Occurrence AI queue overflow.</p></td>
 </tr>
 <tr class="row-odd"><td><p>-8001</p></td>
 <td></td>
@@ -119,55 +118,55 @@
 </tr>
 <tr class="row-even"><td><p>-8009</p></td>
 <td></td>
-<td><p>Input pin do not exist.</p></td>
+<td><p>Invalid pin index.</p></td>
 </tr>
 <tr class="row-odd"><td><p>-8010</p></td>
 <td></td>
-<td><p>Pin value do not define.</p></td>
+<td><p>The numbers of pin should be consistent with the number of value.</p></td>
 </tr>
 <tr class="row-even"><td><p>-8011</p></td>
 <td></td>
-<td><p>Arguments type should be consistent. It should be list or int.</p></td>
+<td><p>There is a type mismatch between the pin and the value.</p></td>
 </tr>
 <tr class="row-odd"><td><p>-8012</p></td>
 <td></td>
-<td><p>Arguments type not correct.</p></td>
+<td><p>Unsupported data type.</p></td>
 </tr>
 <tr class="row-even"><td><p>-8014</p></td>
 <td></td>
-<td><p>Input data must be in range.</p></td>
+<td><p>The data must be in the range of 0~255.</p></td>
 </tr>
 <tr class="row-odd"><td><p>-8101</p></td>
 <td></td>
-<td><p>DI channel on WPC DAQ is not avaliable or already occupied by other process.</p></td>
+<td><p>DI port on WPC DAQ is not avaliable or already occupied by other process.</p></td>
 </tr>
 <tr class="row-even"><td><p>-8102</p></td>
 <td></td>
-<td><p>DO channel on WPC DAQ is not avaliable already occupied by other process.</p></td>
+<td><p>DO port on WPC DAQ is not avaliable or already occupied by other process.</p></td>
 </tr>
 <tr class="row-odd"><td><p>-8201</p></td>
 <td></td>
-<td><p>AI port on WPC DAQ is already in use or not avaliable.</p></td>
+<td><p>AI port on WPC DAQ is not avaliable or already occupied by other process.</p></td>
 </tr>
 <tr class="row-even"><td><p>-8204</p></td>
 <td></td>
-<td><p>AO port on WPC DAQ is already in use or not avaliable.</p></td>
+<td><p>AO port on WPC DAQ is not avaliable or already occupied by other process.</p></td>
 </tr>
 <tr class="row-odd"><td><p>-8206</p></td>
 <td></td>
-<td><p>AO mode on WPC DAQ is not vaild.</p></td>
+<td><p>Specified AO generation mode from WPC DAQ is invalid.</p></td>
 </tr>
 <tr class="row-even"><td><p>-8207</p></td>
 <td></td>
-<td><p>AO span on WPC DAQ is not vaild.</p></td>
+<td><p>Specified AO span mode from WPC DAQ is invalid.</p></td>
 </tr>
 <tr class="row-odd"><td><p>-8208</p></td>
 <td></td>
-<td><p>AI Port on WPC DAQ is not vaild.</p></td>
+<td><p>Specified AI acquisition mode from WPC DAQ is invalid.</p></td>
 </tr>
 <tr class="row-even"><td><p>-8209</p></td>
 <td></td>
-<td><p>AO channel on WPC DAQ is already in use or not avaliable.</p></td>
+<td><p>AO channel on WPC DAQ is not avaliable or already occupied by other process.</p></td>
 </tr>
 <tr class="row-odd"><td><p>-8210</p></td>
 <td></td>
@@ -175,93 +174,97 @@
 </tr>
 <tr class="row-even"><td><p>-8301</p></td>
 <td></td>
-<td><p>Thermal port on WPC DAQ is already in use or not avaliable.</p></td>
+<td><p>Thermal port on WPC DAQ is not avaliable or already occupied by other process.</p></td>
 </tr>
 <tr class="row-odd"><td><p>-8304</p></td>
 <td></td>
-<td><p>Thermal chip selection on WPC DAQ is already in use or not avaliable.</p></td>
+<td><p>Thermal channel on WPC DAQ is not avaliable or already occupied by other process.</p></td>
 </tr>
 <tr class="row-even"><td><p>-8305</p></td>
 <td></td>
-<td><p>Thermal mode on WPC DAQ is not vaild.</p></td>
+<td><p>Specified thermal filter mode from WPC DAQ is invalid.</p></td>
 </tr>
 <tr class="row-odd"><td><p>-8306</p></td>
 <td></td>
-<td><p>Thermal type on WPC DAQ is not vaild.</p></td>
+<td><p>Specified thermal type mode from WPC DAQ is invalid.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8401</p></td>
+<tr class="row-even"><td><p>-8307</p></td>
 <td></td>
-<td><p>I2C port on WPC DAQ is already in use or not avaliable.</p></td>
+<td><p>Specified sampling mode from WPC DAQ is invalid.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8403</p></td>
+<tr class="row-odd"><td><p>-8401</p></td>
 <td></td>
-<td><p>I2C Clock is not supported by this device.</p></td>
+<td><p>I2C port on WPC DAQ is not avaliable or already occupied by other process.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8404</p></td>
+<tr class="row-even"><td><p>-8403</p></td>
 <td></td>
-<td><p>I2C address size on WPC DAQ is not vaild.</p></td>
+<td><p>Specified I2C clock mode from WPC DAQ is invalid.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8501</p></td>
+<tr class="row-odd"><td><p>-8404</p></td>
 <td></td>
-<td><p>SPI port on WPC DAQ is already in use or not avaliable.</p></td>
+<td><p>Specified I2C address mode from WPC DAQ is invalid.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8502</p></td>
+<tr class="row-even"><td><p>-8501</p></td>
+<td></td>
+<td><p>SPI port on WPC DAQ is not avaliable or already occupied by other process.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-8502</p></td>
 <td></td>
 <td><p>The length of data exceed maximum transfer length of SPI.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8503</p></td>
+<tr class="row-even"><td><p>-8503</p></td>
 <td></td>
-<td><p>SPI data size on WPC DAQ is not vaild.</p></td>
+<td><p>Specified SPI data size mode from WPC DAQ is invalid.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8504</p></td>
+<tr class="row-odd"><td><p>-8504</p></td>
 <td></td>
-<td><p>SPI first bit on WPC DAQ is not vaild.</p></td>
+<td><p>Specified SPI first bit mode from WPC DAQ is invalid.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8505</p></td>
+<tr class="row-even"><td><p>-8505</p></td>
 <td></td>
-<td><p>SPI prescaler on WPC DAQ is not vaild.</p></td>
+<td><p>Specified SPI prescaler mode from WPC DAQ is invalid.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8506</p></td>
+<tr class="row-odd"><td><p>-8506</p></td>
 <td></td>
-<td><p>SPI Mode on WPC DAQ is not vaild.</p></td>
+<td><p>Specified SPI mode from WPC DAQ is invalid.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8601</p></td>
+<tr class="row-even"><td><p>-8601</p></td>
 <td></td>
-<td><p>UART port on WPC DAQ is already in use or not avaliable.</p></td>
+<td><p>UART port on WPC DAQ is not avaliable or already occupied by other process.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8602</p></td>
+<tr class="row-odd"><td><p>-8602</p></td>
 <td></td>
 <td><p>The length of data exceed maximum transfer length of UART.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8603</p></td>
+<tr class="row-even"><td><p>-8603</p></td>
 <td></td>
 <td><p>Configured baud rate is not supported.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8604</p></td>
+<tr class="row-odd"><td><p>-8604</p></td>
 <td></td>
-<td><p>UART stop bit mode is not supported.</p></td>
+<td><p>Specified UART stop bit mode from WPC DAQ is invalid.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8605</p></td>
+<tr class="row-even"><td><p>-8605</p></td>
 <td></td>
-<td><p>UART Parity mode is not supported.</p></td>
+<td><p>Specified UART parity mode from WPC DAQ is invalid.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8606</p></td>
+<tr class="row-odd"><td><p>-8606</p></td>
 <td></td>
-<td><p>UART Data bit mode is not supported.</p></td>
+<td><p>Specified UART data bit mode from WPC DAQ is invalid.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8701</p></td>
+<tr class="row-even"><td><p>-8701</p></td>
 <td></td>
-<td><p>CAN port on WPC DAQ is already in use or not avaliable.</p></td>
+<td><p>CAN port on WPC DAQ is not avaliable or already occupied by other process.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8702</p></td>
+<tr class="row-odd"><td><p>-8702</p></td>
 <td></td>
-<td><p>CAN speed on WPC DAQ is not vaild.</p></td>
+<td><p>Specified CAN speed mode from WPC DAQ is invalid.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8703</p></td>
+<tr class="row-even"><td><p>-8703</p></td>
 <td></td>
 <td><p>CAN TX on WPC DAQ is not vaild.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8704</p></td>
+<tr class="row-odd"><td><p>-8704</p></td>
 <td></td>
 <td><p>CAN TX Priority on WPC DAQ is not vaild.</p></td>
 </tr>

@@ -27,7 +27,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 sut.setup(
     name="wpcsys",
     version=pywpc.__version__,
-    description='WPC Systems Python API',
+    description='WPC Python driver APIs, the easiest way to Control & Data Acquisition (DAQ)',
     long_description=long_description,
     long_description_content_type='text/markdown',
 
