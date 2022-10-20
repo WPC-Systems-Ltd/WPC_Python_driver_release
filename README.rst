@@ -107,8 +107,8 @@ Products
          - USB 2.0 full-speed bus powered
          - Python driver & example codes
      - 
-      .. image:: images/Products/WPC-USB-DAQ-D.jpg
-         :width: 100%
+      .. image:: docs/_images/WPC-USB-DAQ-D.jpg
+         :width: 60%
          :alt: WPC-USB-DAQ-D.jpg
    * - 
       **WPC-USB-DAQ-AD**
@@ -117,8 +117,8 @@ Products
          - USB 2.0 full-speed bus powered
          - Python driver & example codes
      - 
-      .. image:: images/Products/WPC-USB-DAQ-AD.jpg
-         :width: 100%
+      .. image:: docs/_images/WPC-USB-DAQ-AD.jpg
+         :width: 60%
          :alt: WPC-USB-DAQ-AD.jpg  
    * - 
       **WPC-USB-DAQ-D-SNK**
@@ -129,8 +129,8 @@ Products
          - USB 2.0 full-speed bus powered
          - Python driver & example codes
      - 
-      .. image:: images/Products/WPC-USB-DAQ-D-SNK.jpg
-         :width: 100%
+      .. image:: docs/_images/WPC-USB-DAQ-D-SNK.jpg
+         :width: 60%
          :alt: WPC-USB-DAQ-D-SNK.jpg
    * - 
       **WPC-USB-DAQ-TD**
@@ -140,8 +140,8 @@ Products
          - USB 2.0 full-speed bus powered
          - Python driver & example codes
      - 
-      .. image:: images/Products/WPC-USB-DAQ-TD.jpg
-         :width: 100%
+      .. image:: docs/_images/WPC-USB-DAQ-TD.jpg
+         :width: 60%
          :alt: WPC-USB-DAQ-TD.jpg
    * - 
       **WPC-USB-DAQ-RD**
@@ -151,8 +151,8 @@ Products
          - USB 2.0 full-speed bus powered
          - Python driver & example codes
      - 
-      .. image:: images/Products/WPC-USB-DAQ-RD.jpg 
-         :width: 100%
+      .. image:: docs/_images/WPC-USB-DAQ-RD.jpg 
+         :width: 60%
          :alt: WPC-USB-DAQ-RD.jpg
    * - 
       **WPC-USB-DAQ-CD**
@@ -161,8 +161,8 @@ Products
          - USB 2.0 full-speed bus powered
          - Python driver & example codes
      - 
-      .. image:: images/Products/WPC-USB-DAQ-CD.jpg
-         :width: 100%
+      .. image:: docs/_images/WPC-USB-DAQ-CD.jpg
+         :width: 60%
          :alt: WPC-USB-DAQ-CD.jpg
    * - 
       **WPC-USB-DAQ-AOD**
@@ -172,8 +172,8 @@ Products
          - USB 2.0 full-speed bus powered
          - Python driver & example codes
      - 
-      .. image:: images/Products/WPC-USB-DAQ-AOD.jpg
-         :width: 100%
+      .. image:: docs/_images/WPC-USB-DAQ-AOD.jpg
+         :width: 60%
          :alt: WPC-USB-DAQ-AOD.jpg   
    * - 
       **WPC-Ethan-D**
@@ -182,8 +182,8 @@ Products
          - 6ch 24V digital output (sinking DO, NPN)
          - Python driver & example codes
      - 
-      .. image:: images/Products/WPC-Ethan-D.jpg
-         :width: 100%
+      .. image:: docs/_images/WPC-Ethan-D.jpg
+         :width: 60%
          :alt: WPC-Ethan-D.jpg
    * - 
       **WPC-Ethan-A**
@@ -193,8 +193,8 @@ Products
          - +/-10V voltage input range
          - Python driver & example codes
      - 
-      .. image:: images/Products/WPC-Ethan-A.jpg
-         :width: 100%
+      .. image:: docs/_images/WPC-Ethan-A.jpg
+         :width: 60%
          :alt: WPC-Ethan-A.jpg  
    * - 
       **WPC-WIFI-DAQ-E3-A**
@@ -204,8 +204,8 @@ Products
          - 2.4 GHz to 2.5 GHz
          - Python driver & example codes
      - 
-      .. image:: images/Products/WPC-WIFI-DAQ-E3A.png
-         :width: 100%
+      .. image:: docs/_images/WPC-WIFI-DAQ-E3A.png
+         :width: 60%
          :alt: WPC-WIFI-DAQ-E3A.png
 
 
@@ -227,16 +227,3 @@ License
 **WPC Python driver release** is licensed under an MIT-style license see `LICENSE <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/LICENSE>`_ Other incorporated projects may be licensed under different licenses.
 All licenses allow for non-commercial and commercial use.
  
-.. automodule:: pywpc
-
-.. toctree::
-   :hidden:
-   :maxdepth: 2
-   :caption: API REFERNECE
-
-   products
-   examples
-   port
-   SPI
-   errortable
-   gui
