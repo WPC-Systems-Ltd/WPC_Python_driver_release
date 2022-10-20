@@ -9,6 +9,7 @@ v1.0.3 Date: 2022/10/20, Developer: Chunglee_people
 - Add logger example code `example_AI_continuous_with_logger` & `example_RTD_read_channel_data_with_logger` & `example_TC_read_channel_data with_logger`
 
 ### Fixed
+- Fix sphinx homepage content
 - Fix GUI `Example_analog_input` code
 
 v1.0.2.1 Date: 2022/10/14, Developer: Chunglee_people

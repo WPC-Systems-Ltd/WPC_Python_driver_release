@@ -22,6 +22,33 @@ You can download WPC Device Manager by `latest release <https://github.com/WPC-S
 | Example code      | https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples   |
 +-------------------+-----------------------------------------------------------------------------------+
 
+.. image:: https://img.shields.io/badge/pip%20install-wpcsys-orange.svg
+    :target: https://pypi.org/project/wpcsys/
+    :alt: pip install
+
+.. image:: https://img.shields.io/pypi/v/wpcsys
+    :target: https://pypi.org/project/wpcsys/
+    :alt: PyPI
+
+.. image:: https://img.shields.io/badge/Python-3.8%20|%203.9%20|%203.10-blue.svg
+    :target: https://pypi.org/project/wpcsys/
+    :alt: Python
+
+.. image:: https://img.shields.io/badge/os-Windows%2010-brown.svg
+    :target: https://www.microsoft.com/zh-tw/software-download/windows10
+    :alt: OS
+
+.. image:: https://img.shields.io/badge/License-MIT-yellow.svg
+    :target: https://opensource.org/licenses/MIT
+    :alt: License: MIT
+
+.. image:: https://img.shields.io/badge/docs-passing-green.svg
+    :target: https://wpc-systems-ltd.github.io/WPC_Python_driver_release/
+    :alt: docs
+
+.. image:: https://img.shields.io/pypi/wheel/wpcsys
+    :alt: Wheel
+
 .. note::
 
    Make sure the latest version of firmware is up to date with your products.
