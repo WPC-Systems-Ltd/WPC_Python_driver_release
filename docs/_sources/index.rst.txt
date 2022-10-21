@@ -13,7 +13,7 @@
 .. toctree::
    :hidden:
    :maxdepth: 2
-   :caption: EXAMPLE CODE
+   :caption: EXAMPLE CODES
 
    examples_GUI
    examples
