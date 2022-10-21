@@ -66,17 +66,16 @@ Quick Start
    >>> pywpc.product
    ['DeviceFinder', 'WifiDAQE3A', 'EthanD', 'EthanA', 'USBDAQF1D', 'USBDAQF1AD', 'USBDAQF1DSNK', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1CD', 'USBDAQF1RD']
 
-Installation
+Install and Upgrade
 ------------
-Install `wpcsys <https://pypi.org/project/wpcsys/>`_ using `pip`:
+
+- Install
 
 .. code-block:: shell
     
    pip install wpcsys
 
-Upgrade
--------
-Upgrade `wpcsys <https://pypi.org/project/wpcsys/>`_ using `pip`:
+- Upgrade
 
 .. code-block:: shell
 
@@ -90,6 +89,35 @@ Python 3.8 or later with all `requirements.txt <https://github.com/WPC-Systems-L
 
    pip install -r requirements.txt
 
+Products
+--------
+Ethernet based DAQ card
+
+- Ethan-A
+
+- Ethan-D
+
+USB interface DAQ card
+
+- USB-DAQ-F1-D (Digital)
+
+- USB-DAQ-F1-DSNK (24V Digital)
+
+- USB-DAQ-F1-AD (Digital + AI)
+
+- USB-DAQ-F1-TD (Digital + Thermocouple)
+
+- USB-DAQ-F1-RD (Digital + RTD)
+
+- USB-DAQ-F1-CD (Digital + CAN)
+
+- USB-DAQ-F1-AOD (Digital + AI + AO)
+
+Wifi based DAQ card
+
+- Wifi-DAQ-E3-A
+
+.. include:: ref_port.rst
 
 References
 ----------
@@ -108,4 +136,3 @@ License
 
 **WPC Python driver release** is licensed under an MIT-style license see `LICENSE <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/LICENSE>`_ Other incorporated projects may be licensed under different licenses.
 All licenses allow for non-commercial and commercial use.
- 

@@ -1,5 +1,5 @@
-Error Table
-===========
+Ref Error Table
+===============
 
 .. list-table::
    :widths: 10 10 10

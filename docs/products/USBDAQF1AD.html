@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>USB-DAQ-F1-AD &mdash; WPC Python driver 1.0.3 documentation</title>
+  <title>USB-DAQ-F1-AD &mdash; WPC Python driver 1.0.4 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -18,7 +18,6 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -35,7 +34,7 @@
             <img src="../_static/WPC_logo2.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.0.3
+                1.0.4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -45,9 +44,10 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">API REFERNECE</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Products</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../products.html">WPC Products</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../products_list.html">Products List</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../products.html">Products Module</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../products.html#data-logger">Data logger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../products.html#device-finder">Device finder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../products.html#wifi-devices">Wifi devices</a></li>
@@ -68,11 +68,17 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../examples.html">Example codes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../port.html">Port function table</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SPI.html">SPI setting reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../errortable.html">Error Table</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../gui.html">GUI examples by PyQt</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">EXAMPLE CODE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples_GUI.html">Example Codes With GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Example Codes With Console</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API REFERNECE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ref_port.html">Ref Port Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref_error.html">Ref Error Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref_SPI.html">Ref SPI Setting</a></li>
 </ul>
 
         </div>
@@ -89,7 +95,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../products.html">WPC Products</a> &raquo;</li>
+          <li><a href="../products.html">Products Module</a> &raquo;</li>
       <li>USB-DAQ-F1-AD</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -344,7 +350,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -364,7 +370,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -398,7 +404,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -418,7 +424,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -443,7 +449,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -463,7 +469,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>get_data_times</strong><span class="classifier">int</span></dt><dd><p>Amount of data to get from the function call.</p>
 </dd>
@@ -490,7 +496,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><p>0 : on demand, 1 : N-samples, 2 : continuous.</p>
 </dd>
@@ -512,7 +518,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>sample_points</strong><span class="classifier">int</span></dt><dd><p>Number of sample points.</p>
 </dd>
@@ -534,7 +540,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>sampling_rate</strong><span class="classifier">int or float</span></dt><dd><p>AI sampling rate.</p>
 </dd>
@@ -556,7 +562,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -576,7 +582,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -596,7 +602,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><p>Pin number you want to close.</p>
 </dd>
@@ -618,7 +624,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -656,7 +662,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><p>Pin number you want to set to digital intput.</p>
 </dd>
@@ -678,7 +684,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -698,7 +704,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><p>Pin number you want to read.</p>
 </dd>
@@ -720,7 +726,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -740,7 +746,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">list</span></dt><dd><ul class="simple">
 <li><p>Pin number you want to close.</p></li>
@@ -766,7 +772,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -804,7 +810,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
 <li><p>Pin number you want to set to digital output.</p></li>
@@ -830,7 +836,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -850,7 +856,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
 <li><p>Pin number you want to set.</p></li>
@@ -883,7 +889,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>value</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
 <li><p>Pin number you want to set digital high or low.</p></li>
@@ -911,7 +917,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -949,7 +955,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -969,7 +975,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>read_address</strong><span class="classifier">int</span></dt><dd><p>7-bit slave address of the device to request bytes from.</p>
 </dd>
@@ -993,7 +999,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1013,7 +1019,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0: 7-bit address.</p></li>
@@ -1038,7 +1044,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>frequency</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 : standard (100000).</p></li>
@@ -1065,7 +1071,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>write_address</strong><span class="classifier">int</span></dt><dd><p>7-bit slave address of the device to send bytes.</p>
 </dd>
@@ -1089,7 +1095,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1128,7 +1134,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1148,7 +1154,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>write_data</strong><span class="classifier">list of bytes</span></dt><dd><p>The list of data to be transferred.</p>
 </dd>
@@ -1170,7 +1176,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>bytes_to_read</strong><span class="classifier">int</span></dt><dd><p>The number of bytes to receive.</p>
 </dd>
@@ -1192,7 +1198,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1209,11 +1215,11 @@
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AD.SPI_setDataSize_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setDataSize_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.SPI_setDataSize_async" title="Permalink to this definition"></a></dt>
 <dd><p>Set data frame format.
-Please check <a class="reference internal" href="../SPI.html#spifoobar"><span class="std std-ref">SPI data size mode</span></a>.</p>
+Please check <a class="reference internal" href="../ref_SPI.html#spifoobar"><span class="std std-ref">SPI data size mode</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 : 8-bit data.</p></li>
@@ -1235,11 +1241,11 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AD.SPI_setFirstBit_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setFirstBit_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.SPI_setFirstBit_async" title="Permalink to this definition"></a></dt>
 <dd><p>Set LSB first or MSB first.
-Please check <a class="reference internal" href="../SPI.html#spifoobar"><span class="std std-ref">SPI MSB/LSB mode</span></a>.</p>
+Please check <a class="reference internal" href="../ref_SPI.html#spifoobar"><span class="std std-ref">SPI MSB/LSB mode</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 : MSB first.</p></li>
@@ -1261,11 +1267,11 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AD.SPI_setMode_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.SPI_setMode_async" title="Permalink to this definition"></a></dt>
 <dd><p>Set clock phase and clock polarity.
-Please check <a class="reference internal" href="../SPI.html#spifoobar"><span class="std std-ref">SPI mode</span></a>.</p>
+Please check <a class="reference internal" href="../ref_SPI.html#spifoobar"><span class="std std-ref">SPI mode</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 : CPOL= 0, CPHA= 0</p></li>
@@ -1289,11 +1295,11 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AD.SPI_setPrescaler_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setPrescaler_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prescaler</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.SPI_setPrescaler_async" title="Permalink to this definition"></a></dt>
 <dd><p>Set the maximum speed of SPI communication. 
-Please check <a class="reference internal" href="../SPI.html#spifoobar"><span class="std std-ref">SPI clock</span></a>.</p>
+Please check <a class="reference internal" href="../ref_SPI.html#spifoobar"><span class="std std-ref">SPI clock</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>prescaler</strong><span class="classifier">int</span></dt><dd><p>Prescaler : 2, 4, 8, 16, 32, 64, 128, or 256.</p>
 </dd>
@@ -1315,7 +1321,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>write_data</strong><span class="classifier">list of bytes</span></dt><dd><p>The list of data to be transferred.</p>
 </dd>
@@ -1355,7 +1361,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1446,7 +1452,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1466,7 +1472,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1486,7 +1492,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1536,7 +1542,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1574,7 +1580,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1594,7 +1600,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>bytes_to_read</strong><span class="classifier">int</span></dt><dd><p>The number of bytes to receive.</p>
 </dd>
@@ -1618,7 +1624,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1638,7 +1644,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>baud_rate: int</strong></dt><dd><p>In bits per second (baud).</p>
 </dd>
@@ -1660,7 +1666,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 : 8-bit data. (default)</p></li>
@@ -1685,7 +1691,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 : 1 bit</p></li>
@@ -1712,7 +1718,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 : none. (default)</p></li>
@@ -1739,7 +1745,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1759,7 +1765,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>write_data</strong><span class="classifier">string or list of characters</span></dt><dd><p>Data to be transferred.</p>
 </dd>

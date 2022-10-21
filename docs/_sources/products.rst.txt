@@ -1,5 +1,5 @@
-WPC Products
-============
+Products Module
+===============
 
 Data logger
 -----------

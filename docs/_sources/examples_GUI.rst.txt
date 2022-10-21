@@ -1,5 +1,5 @@
-GUI examples by PyQt
-====================
+Example Codes With GUI
+======================
 
 AIO/Analog Input
 ------------------
