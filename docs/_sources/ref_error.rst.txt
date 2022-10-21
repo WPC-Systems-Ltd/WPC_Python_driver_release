@@ -17,6 +17,75 @@ Ref Error Table
    * - 520003
      - Warning
      - Occurrence AI queue overflow.
+   * - -7001
+     - 
+     - Firmware functionaliy error. Please contact WPC technical support.
+   * - -7002
+     - 
+     - Firmware pin mode index error. Please contact WPC technical support.
+   * - -7003
+     - 
+     - Firmware HAL handle index error. Please contact WPC technical support.
+   * - -7004
+     - 
+     - Firmware HAL error. Please contact WPC technical support.
+   * - -7005
+     - 
+     - Firmware I2C error. Please contact WPC technical support.
+   * - -7006
+     - 
+     - Firmware SPI error. Please contact WPC technical support.
+   * - -7007
+     - 
+     - Firmware UART error. Please contact WPC technical support.
+   * - -7008
+     - 
+     - Firmware holder 1 error. Please contact WPC technical support.
+   * - -7009
+     - 
+     - Firmware EEPROM error. Please contact WPC technical support.
+   * - -7010
+     - 
+     - Firmware OLED error. Please contact WPC technical support.
+   * - -7011
+     - 
+     - Firmware system error. Please contact WPC technical support.
+   * - -7012
+     - 
+     - Firmware holder 2 error. Please contact WPC technical support.
+   * - -7013
+     - 
+     - Firmware DIO error. Please contact WPC technical support.
+   * - -7014
+     - 
+     - Firmware motion error. Please contact WPC technical support.
+   * - -7015
+     - 
+     - Firmware AIO error. Please contact WPC technical support.
+   * - -7016
+     - 
+     - Firmware thermal error. Please contact WPC technical support.
+   * - -7017
+     - 
+     - Firmware CAN error. Please contact WPC technical support.
+   * - -7018
+     - 
+     - Firmware holder 3 error. Please contact WPC technical support.
+   * - -7019
+     - 
+     - Firmware USB error. Please contact WPC technical support.
+   * - -7020
+     - 
+     - Firmware TCP error. Please contact WPC technical support.
+   * - -7021
+     - 
+     - Firmware UDP error. Please contact WPC technical support.
+   * - -7022
+     - 
+     - Firmware bootloader error. Please contact WPC technical support.
+   * - -7023
+     - 
+     - Firmware commands error. Please contact WPC technical support.
    * - -8001
      - 
      - Fail connect to WPC DAQ. Please check USB plugin status and serial number.
