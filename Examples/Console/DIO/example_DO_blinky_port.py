@@ -52,7 +52,6 @@ async def main():
         if status == 0: print("DO_openPort: OK")
 
         ## Toggle digital state for 10 times. Each times delay for 0.5 second
-
         for i in range(10):
             if i%2 == 0:
                 value = [0,1,0,1,0,1,0,1]

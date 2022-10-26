@@ -1,6 +1,15 @@
 WPC Python driver release changelog
 ===================================
 
+v1.0.4 Date: 2022/10/26, Developer: Chunglee_people
+---------------------------------------------------
+
+### Added
+- Add README.md in console - AI folder
+- Add firmware error code
+
+### Changed
+- Replace README.md with README.rst
 
 v1.0.3 Date: 2022/10/20, Developer: Chunglee_people
 ---------------------------------------------------

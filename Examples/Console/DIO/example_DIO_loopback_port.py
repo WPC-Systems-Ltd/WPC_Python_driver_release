@@ -31,11 +31,11 @@ async def main():
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
 
     ## Create device handle
-    dev = pywpc.USBDAQF1D()
+    dev = pywpc.USBDAQF1AD()
 
     ## Connect to USB device
     try:
-        dev.connect('21JA1044')
+        dev.connect('21JA1245')
     except Exception as err:
         pywpc.printGenericError(err)
 
@@ -53,14 +53,14 @@ async def main():
         status = await dev.DO_openPort_async(port_DO)
         if status == 0: print("DO_openPort in port 0: OK")
 
-        ## Set pin0, pin1 and pin2 to high, others to low
-        status = await dev.DO_writePort_async(port_DO, [0,0,0,0,0,1,1,1])
-        if status == 0: print("DO_writePort: OK")
-
         ## Open all pins in port 1 with digital input
         status = await dev.DI_openPort_async(port_DI)
         if status == 0: print("DI_openPort in port 1: OK")
 
+        ## Set pin0, pin1 and pin2 to high, others to low
+        status = await dev.DO_writePort_async(port_DO, [0,0,0,1,0,0,0,0])
+        if status == 0: print("DO_writePort: OK")
+        
         ## Read all pins state in port 1
         state_list = await dev.DI_readPort_async(port_DI)
         print(state_list)
