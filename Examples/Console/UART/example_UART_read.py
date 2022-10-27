@@ -53,23 +53,23 @@ async def main():
        
         ## Open UART port2
         status = await dev.UART_open_async(port) 
-        if status == 0: print("UART_open: OK")
+        print("UART_open_async status: ", status)
 
         ## Set UART port to 2 and set baudrate to 9600
         status = await dev.UART_setBaudRate_async(port, baudrate)
-        if status == 0: print("UART_setBaudRate: OK")
+        print("UART_setBaudRate_async status: ", status)
  
         ## Set UART port to 2 and set data bit to 8-bit data
         status = await dev.UART_setDataBit_async(port, data_bit_mode)
-        if status == 0: print("UART_setDataBit: OK")
+        print("UART_setDataBit_async status: ", status)
         
         ## Set UART port to 2 and set parity to None
         status = await dev.UART_setParity_async(port, parity_mode)
-        if status == 0: print("UART_setParity: OK")
+        print("UART_setParity_async status: ", status)
 
         ## Set UART port to 2 and set stop bit to 8-bit data
         status = await dev.UART_setNumStopBit_async(port, stop_bit_mode)
-        if status == 0: print("UART_setNumStopBit: OK")
+        print("UART_setNumStopBit_async status: ", status)
 
         ## Sleep
         await asyncio.sleep(10) ## delay(second)
@@ -80,7 +80,7 @@ async def main():
 
         ## Close UART port2
         status = await dev.UART_close_async(port) 
-        if status == 0: print("UART_close: OK")
+        print("UART_close_async status: ", status)
     except Exception as err:
         pywpc.printGenericError(err)
 

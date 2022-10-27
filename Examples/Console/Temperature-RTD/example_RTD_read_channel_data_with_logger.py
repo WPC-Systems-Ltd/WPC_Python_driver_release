@@ -60,7 +60,7 @@ async def main():
 
         ## Open RTD port1
         status = await dev.Thermal_open_async(port)
-        if status == 0: print("Thermal_open: OK")
+        print("Thermal_open_async status: ", status)
 
         ## Sleep
         await asyncio.sleep(0.1) ## delay(second)
@@ -78,7 +78,7 @@ async def main():
 
         ## Close RTD port1
         status = await dev.Thermal_close_async(port)
-        if status == 0: print("Thermal_close: OK")
+        print("Thermal_close_async status: ", status)
 
         ## Close File
         dev_logger.Logger_closeFile() 

@@ -76,29 +76,29 @@ async def main():
      
         ## Open port 1
         status = await dev.AI_open_async(port)
-        if status == 0: print("AI_open: OK")
+        print("AI_open_async status: ", status) 
 
         ## Set AI port to 1 and acquisition mode to continuous mode (2)
         status = await dev.AI_setMode_async(port, mode)
-        if status == 0: print("AI_setMode: OK")
+        print("AI_setMode_async status: ", status)
 
         ## Set AI port to 1 and sampling rate to 1k (Hz)
         status = await dev.AI_setSamplingRate_async(port, sampling_rate)
-        if status == 0: print("AI_setSamplingRate: OK")
+        print("AI_setSamplingRate_async status: ", status)
         
         ## Wait amount of time (sec)
         await asyncio.sleep(1)
 
         ## Set AI port to 1 and start acquisition
         status = await dev.AI_start_async(port)
-        if status == 0: print("AI_start: OK")
+        print("AI_start_async status: ", status)
 
         ## Start async thread
         await loop_func(dev, dev_logger, port, 600, 0.05, 3)
 
         ## Close port 1
         status = await dev.AI_close_async(port) 
-        if status == 0: print("AI_close: OK")
+        print("AI_close_async status: ", status)
         
         ## Close File
         dev_logger.Logger_closeFile()

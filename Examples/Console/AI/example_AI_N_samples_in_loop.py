@@ -63,30 +63,30 @@ async def main():
 
         ## Open port 1
         status = await dev.AI_open_async(port)
-        if status == 0: print("AI_open: OK")
+        print("AI_open_async status: ", status)
 
         ## Set AI port to 1 and acquisition mode to N-samples mode (1)
         status = await dev.AI_setMode_async(port, mode)
-        if status == 0: print("AI_setMode: OK")
+        print("AI_setMode_async status: ", status)
 
         ## Set AI port to 1 and set sampling rate to 5k (Hz)
         status = await dev.AI_setSamplingRate_async(port, sampling_rate) 
-        if status == 0: print("AI_setSamplingRate: OK")
+        print("AI_setSamplingRate_async status: ", status)
 
         ## Set AI port to 1 and # of samples to 3000 (pts)
         status = await dev.AI_setNumSamples_async(port, samples) 
-        if status == 0: print("AI_setNumSamples: OK")
+        print("AI_setNumSamples_async status: ", status)
 
         ## Set AI port to 1 and start acquisition
         status = await dev.AI_start_async(port)
-        if status == 0: print("AI_start: OK")
+        print("AI_start_async status: ", status)
 
         ## Start async thread
         await loop_func(dev, port, 600, 0.005, 3)
 
         ## Close port 1
         status = await dev.AI_close_async(port) 
-        if status == 0: print("AI_close: OK")
+        print("AI_close_async status: ", status)
     except Exception as err:
         pywpc.printGenericError(err) 
 

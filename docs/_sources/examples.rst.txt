@@ -1,6 +1,17 @@
 Example Codes With Console
 ==========================
 
+System
+------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/System/get_device_info
+   examples/System/find_all_devices
+   examples/System/get_Wifi_DAQ_status
+   examples/System/get_pin_mode
+
 AI
 --
 
@@ -54,6 +65,26 @@ CAN
    examples/CAN/CAN_read
    examples/CAN/CAN_write
 
+Temperature-TC
+--------------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Temperature-TC/TC_read_channel_data
+   examples/Temperature-TC/TC_read_channel_data_with_logger
+   examples/Temperature-TC/TC_read_channel_status
+
+Temperature-RTD
+---------------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Temperature-RTD/RTD_read_channel_data
+   examples/Temperature-RTD/RTD_read_channel_data_with_logger
+   examples/Temperature-RTD/RTD_read_channel_status
+
 I2C
 ---
 
@@ -80,17 +111,6 @@ UART
    examples/UART/UART_read
    examples/UART/UART_write
 
-System
-------
-
-.. toctree::
-   :maxdepth: 4
-
-   examples/System/get_device_info
-   examples/System/find_all_devices
-   examples/System/get_Wifi_DAQ_status
-   examples/System/get_pin_mode
-
 Tutorial
 --------
 
@@ -101,23 +121,3 @@ Tutorial
    examples/Tutorial/single_loop_async
    examples/Tutorial/multiple_loops_thread
    examples/Tutorial/multiple_loops_async
-
-Temperature-TC
---------------
-
-.. toctree::
-   :maxdepth: 4
-
-   examples/Temperature-TC/TC_read_channel_data
-   examples/Temperature-TC/TC_read_channel_data_with_logger
-   examples/Temperature-TC/TC_read_channel_status
-
-Temperature-RTD
----------------
-
-.. toctree::
-   :maxdepth: 4
-
-   examples/Temperature-RTD/RTD_read_channel_data
-   examples/Temperature-RTD/RTD_read_channel_data_with_logger
-   examples/Temperature-RTD/RTD_read_channel_status

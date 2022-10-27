@@ -51,11 +51,11 @@ async def main():
 
         ## Open port 1
         status = await dev.AI_open_async(port)
-        if status == 0: print("AI_open: OK")
+        print("AI_open_async status: ", status)
 
         ## Set AI port to 1 and acquisition mode to on demand mode (0)
         status = await dev.AI_setMode_async(port, mode)
-        if status == 0: print("AI_setMode: OK")
+        print("AI_setMode_async status: ", status)
         
         ## Set AI port to 1 and data acquisition
         data =  await dev.AI_readOnDemand_async(port)
@@ -63,7 +63,7 @@ async def main():
 
         ## Close port 1
         status = await dev.AI_close_async(port) 
-        if status == 0: print("AI_close: OK")
+        print("AI_close_async status: ", status)
     except Exception as err:
         pywpc.printGenericError(err)
 

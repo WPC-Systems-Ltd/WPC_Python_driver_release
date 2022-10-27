@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>example get pin mode &mdash; WPC Python driver 1.0.4 documentation</title>
+  <title>example get pin mode &mdash; WPC Python driver 1.0.5 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/custom_sphinx.css" type="text/css" />
@@ -21,7 +21,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="example single loop thread" href="../Tutorial/single_loop_thread.html" />
+    <link rel="next" title="example AI continuous" href="../AI/AI_continuous.html" />
     <link rel="prev" title="example get Wifi DAQ status" href="get_Wifi_DAQ_status.html" /> 
 </head>
 
@@ -34,7 +34,7 @@
             <img src="../../_static/WPC_logo2.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.0.4
+                1.0.5
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -53,14 +53,6 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../examples_GUI.html">Example Codes With GUI</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../examples.html">Example Codes With Console</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../examples.html#ai">AI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../examples.html#ao">AO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../examples.html#aio">AIO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../examples.html#dio">DIO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../examples.html#can">CAN</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../examples.html#i2c">I2C</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../examples.html#spi">SPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../examples.html#uart">UART</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../examples.html#system">System</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="get_device_info.html">example get device info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="find_all_devices.html">example find all devices</a></li>
@@ -68,9 +60,17 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">example get pin mode</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../examples.html#tutorial">Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#ai">AI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#ao">AO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#aio">AIO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#dio">DIO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#can">CAN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#temperature-tc">Temperature-TC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#temperature-rtd">Temperature-RTD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#i2c">I2C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#spi">SPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#uart">UART</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#tutorial">Tutorial</a></li>
 </ul>
 </li>
 </ul>
@@ -169,59 +169,65 @@
 <span class="linenos"> 60</span>        <span class="n">port_DI</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="linenos"> 61</span>        
 <span class="linenos"> 62</span>        <span class="c1">## Open pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output</span>
-<span class="linenos"> 63</span>        <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_openPins_async</span><span class="p">(</span><span class="n">port_DO</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
-<span class="linenos"> 64</span>
-<span class="linenos"> 65</span>        <span class="c1">## Set pin0, pin3 and pin4 to digital high, others to digital low</span>
-<span class="linenos"> 66</span>        <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writeValuePins</span><span class="p">(</span><span class="n">port_DO</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span> 
-<span class="linenos"> 67</span>
-<span class="linenos"> 68</span>        <span class="c1">## Open pin4, pin5, pin6 and pin7 in port 1 with digital input </span>
-<span class="linenos"> 69</span>        <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DI_openPins_async</span><span class="p">(</span><span class="n">port_DI</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
-<span class="linenos"> 70</span>
-<span class="linenos"> 71</span>        <span class="c1">## Get pinmode from port 0 to port 3</span>
-<span class="linenos"> 72</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
-<span class="linenos"> 73</span>            <span class="c1">## Get pin mode</span>
-<span class="linenos"> 74</span>            <span class="n">pin_mode</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getPinModeInPort_async</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="linenos"> 75</span>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pin_mode&quot;</span><span class="p">,</span> <span class="n">pin_mode</span><span class="p">)</span>
-<span class="linenos"> 76</span>
-<span class="linenos"> 77</span>            <span class="c1">## Wait for 0.5 seconds</span>
-<span class="linenos"> 78</span>            <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>  <span class="c1">## delay(second)</span>
+<span class="linenos"> 63</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_openPins_async</span><span class="p">(</span><span class="n">port_DO</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="linenos"> 64</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_openPins_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
+<span class="linenos"> 65</span>
+<span class="linenos"> 66</span>        <span class="c1">## Set pin0, pin3 and pin4 to digital high, others to digital low</span>
+<span class="linenos"> 67</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writeValuePins</span><span class="p">(</span><span class="n">port_DO</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span> 
+<span class="linenos"> 68</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_writeValuePins status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
+<span class="linenos"> 69</span>
+<span class="linenos"> 70</span>        <span class="c1">## Open pin4, pin5, pin6 and pin7 in port 1 with digital input </span>
+<span class="linenos"> 71</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DI_openPins_async</span><span class="p">(</span><span class="n">port_DI</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="linenos"> 72</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DI_openPins_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
+<span class="linenos"> 73</span>
+<span class="linenos"> 74</span>        <span class="c1">## Get pinmode from port 0 to port 3</span>
+<span class="linenos"> 75</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="linenos"> 76</span>            <span class="c1">## Get pin mode</span>
+<span class="linenos"> 77</span>            <span class="n">pin_mode</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getPinModeInPort_async</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="linenos"> 78</span>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pin_mode&quot;</span><span class="p">,</span> <span class="n">pin_mode</span><span class="p">)</span>
 <span class="linenos"> 79</span>
-<span class="linenos"> 80</span>        <span class="c1">## Wait for 1 seconds</span>
-<span class="linenos"> 81</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">## delay(second)</span>
+<span class="linenos"> 80</span>            <span class="c1">## Wait for 0.5 seconds</span>
+<span class="linenos"> 81</span>            <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>  <span class="c1">## delay(second)</span>
 <span class="linenos"> 82</span>
-<span class="linenos"> 83</span>        <span class="c1">## Set port 0 to idle</span>
-<span class="linenos"> 84</span>        <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_setPortIdle_async</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="linenos"> 85</span>        <span class="nb">print</span><span class="p">()</span>
-<span class="linenos"> 86</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;====================&quot;</span><span class="p">)</span>
-<span class="linenos"> 87</span>                
-<span class="linenos"> 88</span>        <span class="c1">## Get pinmode from port 0 to port 3</span>
-<span class="linenos"> 89</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
-<span class="linenos"> 90</span>            <span class="c1">## Get pin mode</span>
-<span class="linenos"> 91</span>            <span class="n">pin_mode</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getPinModeInPort_async</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="linenos"> 92</span>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pin_mode&quot;</span><span class="p">,</span> <span class="n">pin_mode</span><span class="p">)</span>
-<span class="linenos"> 93</span>
-<span class="linenos"> 94</span>            <span class="c1">## Wait for 0.5 seconds</span>
-<span class="linenos"> 95</span>            <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>  <span class="c1">## delay(second)</span>
-<span class="linenos"> 96</span>
-<span class="linenos"> 97</span>        <span class="c1">## Close pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output </span>
-<span class="linenos"> 98</span>        <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_closePins_async</span><span class="p">(</span><span class="n">port_DO</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
-<span class="linenos"> 99</span>
-<span class="linenos">100</span>        <span class="c1">## Close pin4, pin5, pin6 and pin7 in port 1 with digital input</span>
-<span class="linenos">101</span>        <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DI_closePins_async</span><span class="p">(</span><span class="n">port_DI</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
-<span class="linenos">102</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos">103</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="linenos">104</span>        
-<span class="linenos">105</span>    <span class="c1">## Disconnect USB device</span>
-<span class="linenos">106</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
-<span class="linenos">107</span>    
-<span class="linenos">108</span>    <span class="c1">## Release device handle</span>
-<span class="linenos">109</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="linenos">110</span>    
-<span class="linenos">111</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;End example code...&quot;</span><span class="p">)</span>
-<span class="linenos">112</span>    <span class="k">return</span>
-<span class="linenos">113</span>
-<span class="linenos">114</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">115</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+<span class="linenos"> 83</span>        <span class="c1">## Wait for 1 seconds</span>
+<span class="linenos"> 84</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">## delay(second)</span>
+<span class="linenos"> 85</span>
+<span class="linenos"> 86</span>        <span class="c1">## Set port 0 to idle</span>
+<span class="linenos"> 87</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_setPortIdle_async</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos"> 88</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sys_setPortIdle_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
+<span class="linenos"> 89</span>
+<span class="linenos"> 90</span>        <span class="nb">print</span><span class="p">()</span>
+<span class="linenos"> 91</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;====================&quot;</span><span class="p">)</span>
+<span class="linenos"> 92</span>                
+<span class="linenos"> 93</span>        <span class="c1">## Get pinmode from port 0 to port 3</span>
+<span class="linenos"> 94</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="linenos"> 95</span>            <span class="c1">## Get pin mode</span>
+<span class="linenos"> 96</span>            <span class="n">pin_mode</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getPinModeInPort_async</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="linenos"> 97</span>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pin_mode&quot;</span><span class="p">,</span> <span class="n">pin_mode</span><span class="p">)</span>
+<span class="linenos"> 98</span>
+<span class="linenos"> 99</span>            <span class="c1">## Wait for 0.5 seconds</span>
+<span class="linenos">100</span>            <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>  <span class="c1">## delay(second)</span>
+<span class="linenos">101</span>
+<span class="linenos">102</span>        <span class="c1">## Close pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output </span>
+<span class="linenos">103</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_closePins_async</span><span class="p">(</span><span class="n">port_DO</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="linenos">104</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_closePins_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
+<span class="linenos">105</span>        <span class="c1">## Close pin4, pin5, pin6 and pin7 in port 1 with digital input</span>
+<span class="linenos">106</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DI_closePins_async</span><span class="p">(</span><span class="n">port_DI</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="linenos">107</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DI_closePins_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
+<span class="linenos">108</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos">109</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">110</span>        
+<span class="linenos">111</span>    <span class="c1">## Disconnect USB device</span>
+<span class="linenos">112</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+<span class="linenos">113</span>    
+<span class="linenos">114</span>    <span class="c1">## Release device handle</span>
+<span class="linenos">115</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos">116</span>    
+<span class="linenos">117</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;End example code...&quot;</span><span class="p">)</span>
+<span class="linenos">118</span>    <span class="k">return</span>
+<span class="linenos">119</span>
+<span class="linenos">120</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">121</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </pre></div>
 </div>
 </section>
@@ -231,7 +237,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="get_Wifi_DAQ_status.html" class="btn btn-neutral float-left" title="example get Wifi DAQ status" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../Tutorial/single_loop_thread.html" class="btn btn-neutral float-right" title="example single loop thread" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../AI/AI_continuous.html" class="btn btn-neutral float-right" title="example AI continuous" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

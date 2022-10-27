@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>example UART read &mdash; WPC Python driver 1.0.4 documentation</title>
+  <title>example UART read &mdash; WPC Python driver 1.0.5 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../../_static/WPC_logo2.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.0.4
+                1.0.5
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -53,11 +53,14 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../examples_GUI.html">Example Codes With GUI</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../examples.html">Example Codes With Console</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#system">System</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#ai">AI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#ao">AO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#aio">AIO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#dio">DIO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#can">CAN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#temperature-tc">Temperature-TC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples.html#temperature-rtd">Temperature-RTD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#i2c">I2C</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#spi">SPI</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../examples.html#uart">UART</a><ul class="current">
@@ -65,10 +68,7 @@
 <li class="toctree-l3"><a class="reference internal" href="UART_write.html">example UART write</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../examples.html#system">System</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html#tutorial">Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../examples.html#temperature-tc">Temperature-TC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../examples.html#temperature-rtd">Temperature-RTD</a></li>
 </ul>
 </li>
 </ul>
@@ -160,23 +160,23 @@
 <span class="linenos">53</span>       
 <span class="linenos">54</span>        <span class="c1">## Open UART port2</span>
 <span class="linenos">55</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_open_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> 
-<span class="linenos">56</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_open: OK&quot;</span><span class="p">)</span>
+<span class="linenos">56</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_open_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
 <span class="linenos">57</span>
 <span class="linenos">58</span>        <span class="c1">## Set UART port to 2 and set baudrate to 9600</span>
 <span class="linenos">59</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_setBaudRate_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">baudrate</span><span class="p">)</span>
-<span class="linenos">60</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_setBaudRate: OK&quot;</span><span class="p">)</span>
+<span class="linenos">60</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_setBaudRate_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
 <span class="linenos">61</span> 
 <span class="linenos">62</span>        <span class="c1">## Set UART port to 2 and set data bit to 8-bit data</span>
 <span class="linenos">63</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_setDataBit_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">data_bit_mode</span><span class="p">)</span>
-<span class="linenos">64</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_setDataBit: OK&quot;</span><span class="p">)</span>
+<span class="linenos">64</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_setDataBit_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
 <span class="linenos">65</span>        
 <span class="linenos">66</span>        <span class="c1">## Set UART port to 2 and set parity to None</span>
 <span class="linenos">67</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_setParity_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">parity_mode</span><span class="p">)</span>
-<span class="linenos">68</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_setParity: OK&quot;</span><span class="p">)</span>
+<span class="linenos">68</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_setParity_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
 <span class="linenos">69</span>
 <span class="linenos">70</span>        <span class="c1">## Set UART port to 2 and set stop bit to 8-bit data</span>
 <span class="linenos">71</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_setNumStopBit_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">stop_bit_mode</span><span class="p">)</span>
-<span class="linenos">72</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_setNumStopBit: OK&quot;</span><span class="p">)</span>
+<span class="linenos">72</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_setNumStopBit_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
 <span class="linenos">73</span>
 <span class="linenos">74</span>        <span class="c1">## Sleep</span>
 <span class="linenos">75</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1">## delay(second)</span>
@@ -187,7 +187,7 @@
 <span class="linenos">80</span>
 <span class="linenos">81</span>        <span class="c1">## Close UART port2</span>
 <span class="linenos">82</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_close_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> 
-<span class="linenos">83</span>        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_close: OK&quot;</span><span class="p">)</span>
+<span class="linenos">83</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_close_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
 <span class="linenos">84</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos">85</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="linenos">86</span>

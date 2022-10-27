@@ -51,15 +51,15 @@ async def main():
 
         ## Open all pins in port 0 with digital output 
         status = await dev.DO_openPort_async(port_DO)
-        if status == 0: print("DO_openPort in port 0: OK")
+        print("DO_openPort_async status: ", status)
 
         ## Open all pins in port 1 with digital input
         status = await dev.DI_openPort_async(port_DI)
-        if status == 0: print("DI_openPort in port 1: OK")
+        print("DI_openPort_async status: ", status)
 
         ## Set pin0, pin1 and pin2 to high, others to low
         status = await dev.DO_writePort_async(port_DO, [0,0,0,1,0,0,0,0])
-        if status == 0: print("DO_writePort: OK")
+        print("DO_writePort_async status: ", status)
         
         ## Read all pins state in port 1
         state_list = await dev.DI_readPort_async(port_DI)
@@ -70,11 +70,11 @@ async def main():
         
         ## Close all pins in port 0 with digital output
         status = await dev.DO_closePort_async(port_DO)
-        if status == 0: print("DO_closePort in port 0: OK")
+        print("DO_closePort_async status: ", status)
         
         ## Close all pins in port 1 with digital input
         status = await dev.DI_closePort_async(port_DI)
-        if status == 0: print("DI_closePort in port 1: OK")
+        print("DI_closePort_async status: ", status)
     except Exception as err:
         pywpc.printGenericError(err)
         

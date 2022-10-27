@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>USB-DAQ-F1-AOD &mdash; WPC Python driver 1.0.4 documentation</title>
+  <title>USB-DAQ-F1-AOD &mdash; WPC Python driver 1.0.5 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../_static/WPC_logo2.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.0.4
+                1.0.5
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -48,8 +48,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../products_list.html">Products List</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../products.html">Products Module</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../products.html#data-logger">Data logger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../products.html#device-finder">Device finder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../products.html#utilities">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../products.html#wifi-devices">Wifi devices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../products.html#ethernet-devices">Ethernet devices</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../products.html#usb-devices">USB devices</a><ul class="current">
@@ -152,7 +151,7 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AI_readOnDemand_async" title="pywpc.USBDAQF1AOD.AI_readOnDemand_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_readOnDemand_async</span></code></a>(port)</p></td>
 <td><p>Read one sample from AI port.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AI_readStreaming_async" title="pywpc.USBDAQF1AOD.AI_readStreaming_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_readStreaming_async</span></code></a>(port, num_of_samples)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AI_readStreaming_async" title="pywpc.USBDAQF1AOD.AI_readStreaming_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_readStreaming_async</span></code></a>(port, num_samples[, ...])</p></td>
 <td><p>Read multiple samples from AI port.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1AOD.AI_setMode_async" title="pywpc.USBDAQF1AOD.AI_setMode_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AI_setMode_async</span></code></a>(port, mode)</p></td>
@@ -449,14 +448,14 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.AI_readStreaming_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AI_readStreaming_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_of_samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.005</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AI_readStreaming_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AI_readStreaming_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.005</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AI_readStreaming_async" title="Permalink to this definition"></a></dt>
 <dd><p>Read multiple samples from AI port.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
-<dt><strong>get_data_times</strong><span class="classifier">int</span></dt><dd><p>Amount of data to get from the function call.</p>
+<dt><strong>num_samples</strong><span class="classifier">int</span></dt><dd><p>Amount of data to get from the function call.</p>
 </dd>
 <dt><strong>delay</strong><span class="classifier">float:</span></dt><dd><p>Time delay (second) before getting data.</p>
 </dd>
@@ -1014,7 +1013,7 @@
 <li><p>High = 1, Low = 0.</p></li>
 <li><p>For example if intput type is list</p></li>
 <li><p>you want to write pin 0 and pin 2 to high, others to low.</p></li>
-<li><p>[0,0,0,0,0,1,0,1] in LSB.</p></li>
+<li><p>[1,0,1,0,0,0,0,0] in LSB.</p></li>
 </ul>
 </dd>
 </dl>

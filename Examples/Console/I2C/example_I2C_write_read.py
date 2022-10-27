@@ -62,7 +62,7 @@ async def main():
 
         ## Open I2C port1
         status = await dev.I2C_open_async(I2C_port)
-        if status == 0: print("I2C_open: OK")
+        print("I2C_open_async status: ", status)
         
         '''
         Set I2C parameter
@@ -70,7 +70,7 @@ async def main():
 
         ## Set I2C port to 1 and set clock rate to standard mode
         status = await dev.I2C_setClockRate_async(I2C_port, mode)
-        if status == 0: print("I2C_setClockRate: OK")
+        print("I2C_setClockRate_async status: ", status)
 
         '''
         Write data via I2C
@@ -78,7 +78,7 @@ async def main():
         
         ## Write WREN byte
         status = await dev.I2C_write_async(I2C_port, device_address, [word_address, 0xAA, 0x55, 0xAA, 0x55])
-        if status == 0: print("I2C_write: OK")
+        print("I2C_write_async status: ", status)
         
         ## Sleep
         await asyncio.sleep(0.1) ## delay(second)
@@ -88,7 +88,7 @@ async def main():
         '''
 
         status = await dev.I2C_write_async(I2C_port, device_address, [word_address])
-        if status == 0: print("I2C_write: OK")
+        print("I2C_write_async status: ", status)
 
         ## Sleep
         await asyncio.sleep(0.1) ## delay(second)
@@ -102,7 +102,7 @@ async def main():
 
         ## Close I2C port1
         status = await dev.I2C_close_async(I2C_port)
-        if status == 0: print("I2C_close: OK")
+        print("I2C_close_async status: ", status)
     except Exception as err:
         pywpc.printGenericError(err)
 

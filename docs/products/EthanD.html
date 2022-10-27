@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ethan-D &mdash; WPC Python driver 1.0.4 documentation</title>
+  <title>Ethan-D &mdash; WPC Python driver 1.0.5 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../_static/WPC_logo2.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.0.4
+                1.0.5
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -48,8 +48,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../products_list.html">Products List</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../products.html">Products Module</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../products.html#data-logger">Data logger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../products.html#device-finder">Device finder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../products.html#utilities">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../products.html#wifi-devices">Wifi devices</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../products.html#ethernet-devices">Ethernet devices</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Ethan-D</a><ul>
@@ -168,17 +167,29 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.DO_writePort_async" title="pywpc.EthanD.DO_writePort_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_writePort_async</span></code></a>(port, value)</p></td>
 <td><p>Write all pins state in specific port with digital output.</p></td>
 </tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.Net_getGateway_async" title="pywpc.EthanD.Net_getGateway_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Net_getGateway_async</span></code></a>()</p></td>
+<td><p>Get geteway from the connected web device.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.Net_getIPAddrAndSubmask_async" title="pywpc.EthanD.Net_getIPAddrAndSubmask_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Net_getIPAddrAndSubmask_async</span></code></a>()</p></td>
+<td><p>Get IP address and subnet mask from the connected web device.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.Net_getMACAddr_async" title="pywpc.EthanD.Net_getMACAddr_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Net_getMACAddr_async</span></code></a>()</p></td>
+<td><p>Get MAC address from the connected web device.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.Net_setIPAddrAndSubmask_async" title="pywpc.EthanD.Net_setIPAddrAndSubmask_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Net_setIPAddrAndSubmask_async</span></code></a>(ip_addr[, ...])</p></td>
+<td><p>Set IP address and subnet mask to the connected web device.</p></td>
+</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.Sys_getDriverInfo_async" title="pywpc.EthanD.Sys_getDriverInfo_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getDriverInfo_async</span></code></a>()</p></td>
 <td><p>Get device firmware information.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.Sys_getGateway_async" title="pywpc.EthanD.Sys_getGateway_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getGateway_async</span></code></a>()</p></td>
-<td><p>Get geteway from the connected web device.</p></td>
+<td><p>Deprecated in v1.0.5.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.Sys_getIPAddrAndSubmask_async" title="pywpc.EthanD.Sys_getIPAddrAndSubmask_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getIPAddrAndSubmask_async</span></code></a>()</p></td>
-<td><p>Get IP address and subnet mask from the connected web device.</p></td>
+<td><p>Deprecated in v1.0.5.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.Sys_getMACAddr_async" title="pywpc.EthanD.Sys_getMACAddr_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getMACAddr_async</span></code></a>()</p></td>
-<td><p>Get MAC address from the connected web device.</p></td>
+<td><p>Deprecated in v1.0.5.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.Sys_getPinModeInPort_async" title="pywpc.EthanD.Sys_getPinModeInPort_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getPinModeInPort_async</span></code></a>(port)</p></td>
 <td><p>Get pin mode in specific port.</p></td>
@@ -196,7 +207,7 @@
 <td><p>Reboot from the connected WPC device.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.Sys_setIPAddrAndSubmask_async" title="pywpc.EthanD.Sys_setIPAddrAndSubmask_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setIPAddrAndSubmask_async</span></code></a>(ip_addr[, ...])</p></td>
-<td><p>Set IP address and subnet mask to the connected web device.</p></td>
+<td><p>Deprecated in v1.0.5.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.Sys_setPortDI_async" title="pywpc.EthanD.Sys_setPortDI_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setPortDI_async</span></code></a>(port)</p></td>
 <td><p>Open port as DI.</p></td>
@@ -213,7 +224,7 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.close" title="pywpc.EthanD.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>([verbose])</p></td>
 <td><p>Close web device handle.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.connect" title="pywpc.EthanD.connect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect</span></code></a>(IP[, port, verbose])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.connect" title="pywpc.EthanD.connect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect</span></code></a>(ip_addr[, port, verbose])</p></td>
 <td><p>Connect to web device.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.disconnect" title="pywpc.EthanD.disconnect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disconnect</span></code></a>([verbose])</p></td>
@@ -522,8 +533,75 @@
 <li><p>High = 1, Low = 0.</p></li>
 <li><p>For example if intput type is list</p></li>
 <li><p>you want to write pin 0 and pin 2 to high, others to low.</p></li>
-<li><p>[0,0,0,0,0,1,0,1] in LSB.</p></li>
+<li><p>[1,0,1,0,0,0,0,0] in LSB.</p></li>
 </ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 if success, error otherwise.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanD.Net_getGateway_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Net_getGateway_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.Net_getGateway_async" title="Permalink to this definition"></a></dt>
+<dd><p>Get geteway from the connected web device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>gateway</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>Network gateway.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanD.Net_getIPAddrAndSubmask_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Net_getIPAddrAndSubmask_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.Net_getIPAddrAndSubmask_async" title="Permalink to this definition"></a></dt>
+<dd><p>Get IP address and subnet mask from the connected web device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>network_info</strong><span class="classifier">list of 2 str.</span></dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">network_info[0]</span></code>: IP address</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">network_info[1]</span></code>: subnet mask</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanD.Net_getMACAddr_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Net_getMACAddr_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.Net_getMACAddr_async" title="Permalink to this definition"></a></dt>
+<dd><p>Get MAC address from the connected web device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>mac_addr</strong><span class="classifier">str of 6 int separated by colon.</span></dt><dd><p>MAC address.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanD.Net_setIPAddrAndSubmask_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Net_setIPAddrAndSubmask_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip_addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subnet_mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'255.255.255.0'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.Net_setIPAddrAndSubmask_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set IP address and subnet mask to the connected web device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ip_addr</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>IP network address.</p>
+</dd>
+<dt><strong>subnet_mask</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>Subnet mask. (default: “255.255.255.0”)</p>
 </dd>
 </dl>
 </dd>
@@ -557,46 +635,22 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EthanD.Sys_getGateway_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getGateway_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.Sys_getGateway_async" title="Permalink to this definition"></a></dt>
-<dd><p>Get geteway from the connected web device.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>gateway</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>Network gateway.</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<dd><p>Deprecated in v1.0.5. Will be removed in v1.2.0.</p>
+<p>See :ref:<code class="docutils literal notranslate"><span class="pre">Net_getGateway_async</span></code>.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EthanD.Sys_getIPAddrAndSubmask_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getIPAddrAndSubmask_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.Sys_getIPAddrAndSubmask_async" title="Permalink to this definition"></a></dt>
-<dd><p>Get IP address and subnet mask from the connected web device.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>network_info</strong><span class="classifier">list of 2 str.</span></dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">network_info[0]</span></code>: IP address</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">network_info[1]</span></code>: subnet mask</p></li>
-</ul>
-</dd>
-</dl>
-</dd>
-</dl>
+<dd><p>Deprecated in v1.0.5. Will be removed in v1.2.0.</p>
+<p>See :ref:<code class="docutils literal notranslate"><span class="pre">Net_getIPAddrAndSubmask_async</span></code>.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EthanD.Sys_getMACAddr_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getMACAddr_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.Sys_getMACAddr_async" title="Permalink to this definition"></a></dt>
-<dd><p>Get MAC address from the connected web device.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>mac_addr</strong><span class="classifier">str of 6 int separated by colon.</span></dt><dd><p>MAC address.</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<dd><p>Deprecated in v1.0.5. Will be removed in v1.2.0.</p>
+<p>See :ref:<code class="docutils literal notranslate"><span class="pre">Net_getMACAddr_async</span></code>.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -693,23 +747,8 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EthanD.Sys_setIPAddrAndSubmask_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setIPAddrAndSubmask_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip_addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subnet_mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'255.255.255.0'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.Sys_setIPAddrAndSubmask_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set IP address and subnet mask to the connected web device.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>ip_addr</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>IP network address.</p>
-</dd>
-<dt><strong>subnet_mask</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>Subnet mask. (default: “255.255.255.0”)</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 if success, error otherwise.</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<dd><p>Deprecated in v1.0.5. Will be removed in v1.2.0.</p>
+<p>See :ref:<code class="docutils literal notranslate"><span class="pre">Net_setIPAddrAndSubmask_async</span></code>.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -818,12 +857,12 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EthanD.connect">
-<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">IP</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.connect" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip_addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.connect" title="Permalink to this definition"></a></dt>
 <dd><p>Connect to web device.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>IP</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>IP network address.</p>
+<dt><strong>ip_addr</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>IP network address.</p>
 </dd>
 </dl>
 </dd>

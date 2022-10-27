@@ -50,46 +50,46 @@ async def main():
 
         ## Open CAN port1
         status = await dev.CAN_open_async(port) 
-        if status == 0: print("CAN_open: OK")
+        print("CAN_open_async status: ", status)
 
         ## Set CAN port to 1 and set speed to 0  
         status = await dev.CAN_setSpeed_async(port, speed) 
-        if status == 0: print("CAN_setSpeed: OK")
+        print("CAN_setSpeed_async status: ", status)
 
         ## Set CAN port to 1 and start CAN
         status = await dev.CAN_start_async(port) 
-        if status == 0: print("CAN_start: OK")
+        print("CAN_start_async status: ", status)
  
         ## CAN_length: True: Extended, False: Standard 
         ## CAN_type:   True: Remote, False: Data
 
         ## ID: 10, data with 8 bytes, Standard & Data 
         status = await dev.CAN_write_async(port, 10, [33,22,11,88,77,55,66], CAN_length = False, CAN_type = False)
-        if status == 0: print("CAN_write: OK")
+        print("CAN_write_async status: ", status)
         await asyncio.sleep(1)  ## delay(second)
 
         ## ID: 20, data with 8 bytes, Extended & Remote 
         status = await dev.CAN_write_async(port, 20, [5,20,12,58,88,22,99,77], CAN_length = True, CAN_type = True)
-        if status == 0: print("CAN_write: OK")
+        print("CAN_write_async status: ", status)
         await asyncio.sleep(1)  ## delay(second)
 
         ## ID: 30, data less than 8 bytes, Standard & Data
         status = await dev.CAN_write_async(port, 30, [1,2,3], CAN_length = False, CAN_type = False)
-        if status == 0: print("CAN_write: OK")
+        print("CAN_write_async status: ", status)
         await asyncio.sleep(1)  ## delay(second)
         
         ## ID: 40, data more than 8 bytes, Standard & Data
         status = await dev.CAN_write_async(port, 40, [1,2,3,4,5,6,7,8,9,10,11,12,13,15], CAN_length = False, CAN_type = False)
-        if status == 0: print("CAN_write: OK")
+        print("CAN_write_async status: ", status)
         await asyncio.sleep(1)  ## delay(second)
 
         ## Set CAN port to 1 and stop CAN  
         status = await dev.CAN_stop_async(port) 
-        if status == 0: print("CAN_stop: OK")
+        print("CAN_stop_async status: ", status)
         
         ## Close CAN port1
         status = await dev.CAN_close_async(port) 
-        if status == 0: print("CAN_close: OK")
+        print("CAN_close_async status: ", status)
     except Exception as err:
         pywpc.printGenericError(err)
  

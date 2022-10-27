@@ -60,13 +60,16 @@ async def main():
         port_DI = 1
         
         ## Open pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output
-        await dev.DO_openPins_async(port_DO, [0,1,2,3,4])
+        status = await dev.DO_openPins_async(port_DO, [0,1,2,3,4])
+        print("DO_openPins_async status: ", status)
 
         ## Set pin0, pin3 and pin4 to digital high, others to digital low
-        await dev.DO_writeValuePins(port_DO, [0,1,2,3,4], [1,0,0,1,1]) 
+        status = await dev.DO_writeValuePins(port_DO, [0,1,2,3,4], [1,0,0,1,1]) 
+        print("DO_writeValuePins status: ", status)
 
         ## Open pin4, pin5, pin6 and pin7 in port 1 with digital input 
-        await dev.DI_openPins_async(port_DI, [4,5,6,7])
+        status = await dev.DI_openPins_async(port_DI, [4,5,6,7])
+        print("DI_openPins_async status: ", status)
 
         ## Get pinmode from port 0 to port 3
         for i in range(4):
@@ -81,7 +84,9 @@ async def main():
         await asyncio.sleep(1)  ## delay(second)
 
         ## Set port 0 to idle
-        await dev.Sys_setPortIdle_async(0)
+        status = await dev.Sys_setPortIdle_async(0)
+        print("Sys_setPortIdle_async status: ", status)
+
         print()
         print("====================")
                 
@@ -95,10 +100,11 @@ async def main():
             await asyncio.sleep(0.5)  ## delay(second)
 
         ## Close pin0, pin1, pin2, pin3 and pin4 in port 0 with digital output 
-        await dev.DO_closePins_async(port_DO, [0,1,2,3,4])
-
+        status = await dev.DO_closePins_async(port_DO, [0,1,2,3,4])
+        print("DO_closePins_async status: ", status)
         ## Close pin4, pin5, pin6 and pin7 in port 1 with digital input
-        await dev.DI_closePins_async(port_DI, [4,5,6,7])
+        status = await dev.DI_closePins_async(port_DI, [4,5,6,7])
+        print("DI_closePins_async status: ", status)
     except Exception as err:
         pywpc.printGenericError(err)
         

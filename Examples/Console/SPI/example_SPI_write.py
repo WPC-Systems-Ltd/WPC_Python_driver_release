@@ -67,15 +67,15 @@ async def main():
 
         ## Open pin0 in port2 with digital output
         status = await dev.DO_openPins_async(DO_port, DO_index) 
-        if status == 0: print("DO_openPins: OK")
+        print("DO_openPins_async status: ", status)
 
         ## Open SPI port1
         status = await dev.SPI_open_async(SPI_port)
-        if status == 0: print("SPI_open: OK")
+        print("SPI_open_async status: ", status)
         
         ## Set CS(pin0) to high
         status = await dev.DO_writePins_async(DO_port, DO_index, [1])
-        if status == 0: print("DO_writePins: OK")
+        print("DO_writePins_async status: ", status)
 
         '''
         Set SPI parameter
@@ -83,19 +83,19 @@ async def main():
 
         ## Set SPI port to 1 and set datasize to 8-bits data
         status = await dev.SPI_setDataSize_async(SPI_port, datasize)
-        if status == 0: print("SPI_setDataSize: OK")
+        print("SPI_setDataSize_async status: ", status)
         
         ## Set SPI port to 1 and set first_bit to MSB first
         status = await dev.SPI_setFirstBit_async(SPI_port, first_bit)
-        if status == 0: print("SPI_setFirstBit: OK")
+        print("SPI_setFirstBit_async status: ", status)
         
         ## Set SPI port to 1 and set prescaler to 64
         status = await dev.SPI_setPrescaler_async(SPI_port, prescaler)
-        if status == 0: print("SPI_setPrescaler: OK")
+        print("SPI_setPrescaler_async status: ", status)
        
         ## Set SPI port to 1 and set CPOL and CPHA to 0 (mode 0)
         status = await dev.SPI_setMode_async(SPI_port, mode)
-        if status == 0: print("SPI_setMode: OK")
+        print("SPI_setMode_async status: ", status)
 
         '''
         Write data via SPI
@@ -103,15 +103,15 @@ async def main():
 
         ## Set CS(pin0) to low
         status = await dev.DO_writePins_async(DO_port, DO_index, [0]) 
-        if status == 0: print("DO_writePins: OK")
+        print("DO_writePins_async status: ", status)
         
         ## Write WREN byte
         status = await dev.SPI_write_async(SPI_port, [WREN])
-        if status == 0: print("SPI_write: OK")
+        print("SPI_write_async status: ", status)
 
         ## Set CS(pin0) to high
         status = await dev.DO_writePins_async(DO_port, DO_index, [1])
-        if status == 0: print("DO_writePins: OK")
+        print("DO_writePins_async status: ", status)
 
         '''
         Write data via SPI
@@ -119,15 +119,15 @@ async def main():
 
         ## Set CS(pin0) to low
         status = await dev.DO_writePins_async(DO_port, DO_index, [0]) 
-        if status == 0: print("DO_writePins: OK") 
+        print("DO_writePins_async status: ", status)
         
         ## Write data byte 0x55 in to address 0x0002
         status = await dev.SPI_write_async(SPI_port, [WRITE, 0x00, 0x02, 0x55])
-        if status == 0: print("SPI_write: OK")
+        print("SPI_write_async status: ", status)
         
         ## Set CS(pin0) to high
         status = await dev.DO_writePins_async(DO_port, DO_index, [1])
-        if status == 0: print("DO_writePins: OK")
+        print("DO_writePins_async status: ", status)
  
         '''
         Close DO pins and SPI port
@@ -135,11 +135,11 @@ async def main():
 
         ## Close SPI port1
         status = await dev.SPI_close_async(SPI_port)
-        if status == 0: print("SPI_close: OK")
+        print("SPI_close_async status: ", status)
 
         ## Close pin0 in port2 with digital output
         status = await dev.DO_closePins_async(DO_port, DO_index) 
-        if status == 0: print("DO_closePins: OK")
+        print("DO_closePins_async status: ", status)
     except Exception as err:
         pywpc.printGenericError(err)
 

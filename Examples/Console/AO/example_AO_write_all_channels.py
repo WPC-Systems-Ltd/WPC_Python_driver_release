@@ -49,18 +49,18 @@ async def main():
  
         ## Open AO port0
         status = await dev.AO_open_async(port)
-        if status == 0: print("AO_open: OK")
+        print("AO_open_async status: ", status)
  
         ## Set AO port to 0 and write data simultaneously
         status = await dev.AO_writeAllChannels_async(port, [0,1,2,3,4,5,4,3])
-        if status == 0: print("AO_writeAllChannels: OK")
+        print("AO_writeAllChannels_async status: ", status)
 
         ## Sleep
         await asyncio.sleep(1) ## delay(second)
  
         ## Close AO port0
         status = await dev.AO_close_async(port) 
-        if status == 0: print("AO_close: OK") 
+        print("AO_close_async status: ", status)
     except Exception as err:
         pywpc.printGenericError(err)
 

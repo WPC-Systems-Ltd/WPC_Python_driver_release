@@ -49,25 +49,25 @@ async def main():
         
         ## Open all pins in port 0 and set it to digital output
         status = await dev.DO_openPort_async(port)
-        if status == 0: print("DO_openPort: OK")
+        print("DO_openPort_async status: ", status)
         
         ## Set pin0, pin3 and pin4 to high, others to low
         status = await dev.DO_writePort_async(port, [0,0,0,1,1,0,0,1])
-        if status == 0: print("DO_writePort: OK")
+        print("DO_writePort_async status: ", status)
 
         ## Wait for 5 second
         await asyncio.sleep(5)  ## delay(second)
 
         ## Set pin7 and pin6 to high, others to low (1100 0000 in binary) (0xC0 in hex).
         status = await dev.DO_writePort_async(port, 0xC0)
-        if status == 0: print("DO_writePort: OK")
+        print("DO_writePort_async status: ", status)
        
         ## Wait for 5 second
         await asyncio.sleep(5)  ## delay(second)
 
         ## Close all pins in port 0 with digital output
         status = await dev.DO_closePort_async(port)
-        if status == 0: print("DO_closePort: OK")
+        print("DO_closePort_async status: ", status)
     except Exception as err:
         pywpc.printGenericError(err)
         

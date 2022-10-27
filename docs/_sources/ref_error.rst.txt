@@ -19,79 +19,79 @@ Ref Error Table
      - Occurrence AI queue overflow.
    * - -7001
      - 
-     - Firmware functionaliy error. Please contact WPC technical support.
+     - Functionality not enabled in firmware.
    * - -7002
      - 
-     - Firmware pin mode index error. Please contact WPC technical support.
+     - Firmware pin mode index error.
    * - -7003
      - 
-     - Firmware HAL handle index error. Please contact WPC technical support.
+     - Firmware HAL handle index error.
    * - -7004
      - 
-     - Firmware HAL error. Please contact WPC technical support.
+     - Firmware HAL error.
    * - -7005
      - 
-     - Firmware I2C error. Please contact WPC technical support.
+     - Firmware I2C error.
    * - -7006
      - 
-     - Firmware SPI error. Please contact WPC technical support.
+     - Firmware SPI error.
    * - -7007
      - 
-     - Firmware UART error. Please contact WPC technical support.
+     - Firmware UART error.
    * - -7008
      - 
-     - Firmware holder 1 error. Please contact WPC technical support.
+     - Firmware error placeholder.
    * - -7009
      - 
-     - Firmware EEPROM error. Please contact WPC technical support.
+     - Firmware EEPROM error.
    * - -7010
      - 
-     - Firmware OLED error. Please contact WPC technical support.
+     - Firmware OLED error.
    * - -7011
      - 
-     - Firmware system error. Please contact WPC technical support.
+     - Firmware system error.
    * - -7012
      - 
-     - Firmware holder 2 error. Please contact WPC technical support.
+     - Firmware error placeholder.
    * - -7013
      - 
-     - Firmware DIO error. Please contact WPC technical support.
+     - Firmware DIO error.
    * - -7014
      - 
-     - Firmware motion error. Please contact WPC technical support.
+     - Firmware motion error.
    * - -7015
      - 
-     - Firmware AIO error. Please contact WPC technical support.
+     - Firmware AI error.
    * - -7016
      - 
-     - Firmware thermal error. Please contact WPC technical support.
+     - Firmware AO error.
    * - -7017
      - 
-     - Firmware CAN error. Please contact WPC technical support.
+     - Firmware thermal error.
    * - -7018
      - 
-     - Firmware holder 3 error. Please contact WPC technical support.
+     - Firmware CAN error.
    * - -7019
      - 
-     - Firmware USB error. Please contact WPC technical support.
+     - Firmware USB read/write error.
    * - -7020
      - 
-     - Firmware TCP error. Please contact WPC technical support.
+     - Firmware TCP read/write error.
    * - -7021
      - 
-     - Firmware UDP error. Please contact WPC technical support.
+     - Firmware UDP read/write error.
    * - -7022
      - 
-     - Firmware bootloader error. Please contact WPC technical support.
+     - Firmware bootloader error.
    * - -7023
      - 
-     - Firmware commands error. Please contact WPC technical support.
+     - Firmware commands error.
    * - -8001
      - 
-     - Fail connect to WPC DAQ. Please check USB plugin status and serial number.
+     - Failed to connect to WPC DAQ. Please check USB plugin status and serial number.
    * - -8002
      - 
-     - Fail connect to WPC DAQ. Please check Network status and IP address.
+     - Failed to connect to WPC DAQ. Please check network status and IP address.
    * - -8007
      - 
      - Network DAQ connection lost.
@@ -100,112 +100,112 @@ Ref Error Table
      - Invalid pin index.
    * - -8010
      - 
-     - The numbers of pin should be consistent with the number of value.
+     - Inconsistency between the number of pins & the number of values.
    * - -8011
      - 
-     - There is a type mismatch between the pin and the value.
+     - Inconsistency between the type of pins & the type of values.
    * - -8012
      - 
      - Unsupported data type.
    * - -8014
      - 
-     - The data must be in the range of 0~255.
+     - Input value not in range.
    * - -8101
      - 
-     - DI port on WPC DAQ is not avaliable or already occupied by other process.
+     - DI port not avaliable or already occupied by other process.
    * - -8102
      - 
-     - DO port on WPC DAQ is not avaliable or already occupied by other process.
+     - DO port not available or already occupied by other process.
    * - -8201
      - 
-     - AI port on WPC DAQ is not avaliable or already occupied by other process.
+     - AI port not available or already occupied by other process.
    * - -8204
      - 
-     - AO port on WPC DAQ is not avaliable or already occupied by other process.
+     - AO port not available or already occupied by other process.
    * - -8206
      - 
-     - Specified AO generation mode from WPC DAQ is invalid.
+     - The specified AO generation mode is invalid.
    * - -8207
      - 
-     - Specified AO span mode from WPC DAQ is invalid.
+     - The specified AO span mode is invalid.
    * - -8208
      - 
-     - Specified AI acquisition mode from WPC DAQ is invalid.
+     - The specified AI acquisition mode is invalid.
    * - -8209
      - 
-     - AO channel on WPC DAQ is not avaliable or already occupied by other process.
+     - AO channel not avaliable or already occupied by other process.
    * - -8210
      - 
-     - AI sampling rate on WPC DAQ is not vaild.
+     - The specified AI sampling rate is invalid.
    * - -8301
      - 
-     - Thermal port on WPC DAQ is not avaliable or already occupied by other process.
+     - Thermal port not avaliable or already occupied by other process.
    * - -8304
      - 
-     - Thermal channel on WPC DAQ is not avaliable or already occupied by other process.
+     - Thermal channel not avaliable or already occupied by other process.
    * - -8305
      - 
-     - Specified thermal filter mode from WPC DAQ is invalid.
+     - The specified thermal filter mode is invalid.
    * - -8306
      - 
-     - Specified thermal type mode from WPC DAQ is invalid.
-   * - -8307
-     - 
-     - Specified sampling mode from WPC DAQ is invalid.
+     - The specified thermal type mode is invalid.
    * - -8401
      - 
-     - I2C port on WPC DAQ is not avaliable or already occupied by other process.
+     - I2C port not avaliable or already occupied by other process.
    * - -8403
      - 
-     - Specified I2C clock mode from WPC DAQ is invalid.
+     - The specified I2C clock mode is invalid.
    * - -8404
      - 
-     - Specified I2C address mode from WPC DAQ is invalid.
+     - The specified I2C address mode is invalid.
    * - -8501
      - 
-     - SPI port on WPC DAQ is not avaliable or already occupied by other process.
+     - SPI port not avaliable or already occupied by other process.
    * - -8502
      - 
-     - The length of data exceed maximum transfer length of SPI.
+     - The length of data exceeds maximum transfer length of SPI.
    * - -8503
      - 
-     - Specified SPI data size mode from WPC DAQ is invalid.
+     - The specified SPI data size mode is invalid.
    * - -8504
      - 
-     - Specified SPI first bit mode from WPC DAQ is invalid.
+     - The specified SPI first bit mode is invalid.
    * - -8505
      - 
-     - Specified SPI prescaler mode from WPC DAQ is invalid.
+     - The specified SPI prescaler mode is invalid.
    * - -8506
      - 
-     - Specified SPI mode from WPC DAQ is invalid.
+     - The specified SPI mode is invalid.
    * - -8601
      - 
-     - UART port on WPC DAQ is not avaliable or already occupied by other process.
+     - UART port not avaliable or already occupied by other process.
    * - -8602
      - 
-     - The length of data exceed maximum transfer length of UART.
+     - The length of data exceeds maximum transfer length of UART.
    * - -8603
      - 
-     - Configured baud rate is not supported.
+     - The specified UART baud rate is invalid.
    * - -8604
      - 
-     - Specified UART stop bit mode from WPC DAQ is invalid.
+     - The specified UART stop bit mode is invalid.
    * - -8605
      - 
-     - Specified UART parity mode from WPC DAQ is invalid.
+     - The specified UART parity mode is invalid.
    * - -8606
      - 
-     - Specified UART data bit mode from WPC DAQ is invalid.
+     - The specified UART data bit mode is invalid.
    * - -8701
      - 
-     - CAN port on WPC DAQ is not avaliable or already occupied by other process.
+     - CAN port not avaliable or already occupied by other process.
    * - -8702
      - 
-     - Specified CAN speed mode from WPC DAQ is invalid.
+     - The specified CAN speed mode from WPC DAQ is invalid.
    * - -8703
      - 
-     - CAN TX on WPC DAQ is not vaild.
-   * - -8704
+     - The length of the specified CAN data is invalid.
+   * - -8793
      - 
-     - CAN TX Priority on WPC DAQ is not vaild.
+     - The specified CAN TX is invalid.
+   * - -8794
+     - 
+     - The specified CAN TX priority is invalid.

@@ -49,15 +49,15 @@ async def main():
 
         ## Open CAN port1
         status = await dev.CAN_open_async(port) 
-        if status == 0: print("CAN_open: OK")
+        print("CAN_open_async status: ", status)
 
         ## Set CAN port to 1 and set speed to 0  
         status = await dev.CAN_setSpeed_async(port, speed) 
-        if status == 0: print("CAN_setSpeed: OK")
+        print("CAN_setSpeed_async status: ", status)
 
         ## Set CAN port to 1 and start CAN
         status = await dev.CAN_start_async(port) 
-        if status == 0: print("CAN_start: OK")
+        print("CAN_start_async status: ", status)
 
         ## Read 5 frames for 1000 times in port1
         for i in range(1000):
@@ -69,11 +69,11 @@ async def main():
             
         ## Set CAN port to 1 and stop CAN  
         status = await dev.CAN_stop_async(port) 
-        if status == 0: print("CAN_stop: OK")
+        print("CAN_stop_async status: ", status)
         
         ## Close CAN port1  
         status = await dev.CAN_close_async(port) 
-        if status == 0: print("CAN_close: OK")
+        print("CAN_close_async status: ", status)
     except Exception as err:
         pywpc.printGenericError(err)
  

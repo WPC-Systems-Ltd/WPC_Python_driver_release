@@ -62,7 +62,7 @@ Quick Start
    >>> pywpc.PKG_NAME
    pywpc
    >>> pywpc.__version__
-   1.0.2
+   1.0.5
    >>> pywpc.product
    ['DeviceFinder', 'WifiDAQE3A', 'EthanD', 'EthanA', 'USBDAQF1D', 'USBDAQF1AD', 'USBDAQF1DSNK', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1CD', 'USBDAQF1RD']
 

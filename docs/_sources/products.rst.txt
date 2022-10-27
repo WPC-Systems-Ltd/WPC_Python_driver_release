@@ -1,21 +1,14 @@
 Products Module
 ===============
 
-Data logger
------------
-
-.. toctree::
-   :maxdepth: 4
-
-   products/DataLogger
-
-Device finder
--------------
+Utilities
+---------
 
 .. toctree::
    :maxdepth: 4
 
    products/DeviceFinder
+   products/DataLogger
 
 Wifi devices
 ------------
