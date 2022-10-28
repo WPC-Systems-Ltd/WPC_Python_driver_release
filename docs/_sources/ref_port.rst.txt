@@ -1,5 +1,5 @@
-Ref Port Table
-==============
+I/O Function Table
+==================
 
 .. _foobar:
 

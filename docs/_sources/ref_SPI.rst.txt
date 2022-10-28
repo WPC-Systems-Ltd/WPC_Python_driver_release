@@ -1,6 +1,6 @@
 
-Ref SPI Setting
-===============
+SPI Setting Table
+=================
 
 .. _SPIfoobar:
 

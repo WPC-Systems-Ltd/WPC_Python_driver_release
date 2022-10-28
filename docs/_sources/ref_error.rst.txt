@@ -1,5 +1,5 @@
-Ref Error Table
-===============
+Error Code Table
+================
 
 .. list-table::
    :widths: 10 10 10
@@ -202,10 +202,7 @@ Ref Error Table
      - The specified CAN speed mode from WPC DAQ is invalid.
    * - -8703
      - 
-     - The length of the specified CAN data is invalid.
-   * - -8793
-     - 
      - The specified CAN TX is invalid.
-   * - -8794
+   * - -8704
      - 
      - The specified CAN TX priority is invalid.

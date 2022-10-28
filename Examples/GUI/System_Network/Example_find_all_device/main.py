@@ -30,7 +30,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
 
         ## Set trademark path
-        trademark_path = os.getcwd() + "\Material\WPC_trademark.jpg" 
+        trademark_path = os.getcwd() + "\Material\\trademark.jpg" 
         self.ui.lb_trademark.setPixmap(QtGui.QPixmap(trademark_path))
 
         ## Initialize table 

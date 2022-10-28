@@ -37,13 +37,13 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Material path
         file_path = os.path.dirname(__file__)
-        self.trademark_path = file_path + "\Material\WPC_trademark.jpg" 
-        self.blue_led_path = file_path + "\Material\WPC_Led_blue.png"
-        self.red_led_path = file_path + "\Material\WPC_Led_red.png"
-        self.green_led_path = file_path + "\Material\WPC_Led_green.png"
-        self.gray_led_path = file_path + "\Material\WPC_Led_gray.png"
-        self.switch_blue_path = file_path + "\Material\WPC_switch_blue.png"
-        self.switch_gray_path = file_path + "\Material\WPC_switch_gray.png"
+        self.trademark_path = file_path + "\Material\\trademark.jpg" 
+        self.blue_led_path = file_path + "\Material\LED_blue.png"
+        self.red_led_path = file_path + "\Material\LED_red.png"
+        self.green_led_path = file_path + "\Material\LED_green.png"
+        self.gray_led_path = file_path + "\Material\LED_gray.png"
+        self.switch_blue_path = file_path + "\Material\switch_blue.png"
+        self.switch_gray_path = file_path + "\Material\switch_gray.png"
 
         ## Convert backward slash to forward slash
         self.switch_blue_path = self.switch_blue_path.replace('\\', '/')

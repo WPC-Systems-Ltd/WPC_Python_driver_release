@@ -5,11 +5,11 @@
 .. toctree::
    :hidden:
    :maxdepth: 2
-   :caption: Products
-   
-   products_list
+   :caption: API REFERNECE
+    
    products
-
+   products_list
+   
 .. toctree::
    :hidden:
    :maxdepth: 2
@@ -21,7 +21,7 @@
 .. toctree::
    :hidden:
    :maxdepth: 2
-   :caption: API REFERNECE
+   :caption: APPENDIX
    
    ref_port
    ref_error

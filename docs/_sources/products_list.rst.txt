@@ -1,5 +1,5 @@
-Products List
-=============
+Products Feature
+================
 
 
 .. list-table::
