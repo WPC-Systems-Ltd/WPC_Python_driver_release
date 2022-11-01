@@ -1,0 +1,6 @@
+example DO write pins
+=====================
+
+.. literalinclude:: ..\..\..\..\..\codeproduct\USBDAQF1TD\DIO\example_DO_write_pins.py
+   :language: python
+   :linenos:

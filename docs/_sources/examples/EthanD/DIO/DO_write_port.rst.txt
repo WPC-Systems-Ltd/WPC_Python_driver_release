@@ -1,0 +1,6 @@
+example DO write port
+=====================
+
+.. literalinclude:: ..\..\..\..\..\codeproduct\EthanD\DIO\example_DO_write_port.py
+   :language: python
+   :linenos:

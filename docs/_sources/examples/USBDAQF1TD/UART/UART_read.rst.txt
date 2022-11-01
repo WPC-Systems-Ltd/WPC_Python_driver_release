@@ -1,0 +1,6 @@
+example UART read
+=================
+
+.. literalinclude:: ..\..\..\..\..\codeproduct\USBDAQF1TD\UART\example_UART_read.py
+   :language: python
+   :linenos:

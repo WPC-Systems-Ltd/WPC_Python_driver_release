@@ -1,0 +1,6 @@
+example AI continuous
+=====================
+
+.. literalinclude:: ..\..\..\..\..\codeproduct\USBDAQF1AD\AI\example_AI_continuous.py
+   :language: python
+   :linenos:

@@ -5,9 +5,9 @@ Wifi-DAQ-E3-A
 Device pinout 
 -------------
 
-.. image:: ../images/Pinouts/Wifi-DAQ-E3-A.JPG
+.. image:: ../images/Pinouts/pinout-WifiDAQE3A.JPG
    :width: 90%
-   :alt: Wifi-DAQ-E3-A
+   :alt: WifiDAQE3A
 
 
 API function description 

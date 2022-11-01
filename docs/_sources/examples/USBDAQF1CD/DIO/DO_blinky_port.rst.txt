@@ -1,0 +1,6 @@
+example DO blinky port
+======================
+
+.. literalinclude:: ..\..\..\..\..\codeproduct\USBDAQF1CD\DIO\example_DO_blinky_port.py
+   :language: python
+   :linenos:

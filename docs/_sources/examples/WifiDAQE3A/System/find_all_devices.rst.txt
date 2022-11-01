@@ -1,0 +1,6 @@
+example find all devices
+========================
+
+.. literalinclude:: ..\..\..\..\..\codeproduct\WifiDAQE3A\System\example_find_all_devices.py
+   :language: python
+   :linenos:

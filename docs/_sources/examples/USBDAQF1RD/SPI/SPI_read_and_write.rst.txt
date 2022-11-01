@@ -1,0 +1,6 @@
+example SPI read and write
+==========================
+
+.. literalinclude:: ..\..\..\..\..\codeproduct\USBDAQF1RD\SPI\example_SPI_read_and_write.py
+   :language: python
+   :linenos:

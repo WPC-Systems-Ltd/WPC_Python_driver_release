@@ -1,6 +1,0 @@
-example single loop async
-=========================
-
-.. literalinclude:: ../../../../../WPC_Python_driver_release/Examples/Console/Tutorial/example_single_loop_async.py
-   :language: python
-   :linenos:

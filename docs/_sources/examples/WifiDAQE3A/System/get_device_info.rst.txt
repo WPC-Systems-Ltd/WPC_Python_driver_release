@@ -1,0 +1,6 @@
+example get device info
+=======================
+
+.. literalinclude:: ..\..\..\..\..\codeproduct\WifiDAQE3A\System\example_get_device_info.py
+   :language: python
+   :linenos:

@@ -1,6 +1,0 @@
-example AO write one channel
-============================
-
-.. literalinclude:: ../../../../../WPC_Python_driver_release/Examples/Console/AO/example_AO_write_one_channel.py
-   :language: python
-   :linenos:

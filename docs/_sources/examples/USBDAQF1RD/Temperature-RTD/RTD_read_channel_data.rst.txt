@@ -1,0 +1,6 @@
+example RTD read channel data
+=============================
+
+.. literalinclude:: ..\..\..\..\..\codeproduct\USBDAQF1RD\Temperature-RTD\example_RTD_read_channel_data.py
+   :language: python
+   :linenos:

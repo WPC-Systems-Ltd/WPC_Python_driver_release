@@ -1,123 +1,296 @@
 Example Codes - Console
 =======================
 
-System
-------
+Ethan-A
+-------
 
 .. toctree::
    :maxdepth: 4
 
-   examples/System/get_device_info
-   examples/System/find_all_devices
-   examples/System/get_Wifi_DAQ_status
-   examples/System/get_pin_mode
+   examples/EthanA/AI/AI_continuous.rst
 
-AI
---
+   examples/EthanA/AI/AI_continuous_with_logger.rst
 
-.. toctree::
-   :maxdepth: 4
+   examples/EthanA/AI/AI_on_demand_in_loop.rst
 
-   examples/AI/AI_continuous
-   examples/AI/AI_continuous_with_logger
-   examples/AI/AI_on_demand_in_loop
-   examples/AI/AI_N_samples_once
-   examples/AI/AI_N_samples_in_loop
-   examples/AI/AI_on_demand_once
+   examples/EthanA/AI/AI_N_samples_once.rst
 
-AO
---
+   examples/EthanA/AI/AI_N_samples_in_loop.rst
 
-.. toctree::
-   :maxdepth: 4
+   examples/EthanA/AI/AI_on_demand_once.rst
 
-   examples/AO/AO_write_one_channel
-   examples/AO/AO_write_all_channels
+   examples/EthanA/System/get_device_info.rst
 
-AIO
----
+   examples/EthanA/System/find_all_devices.rst
+
+
+Ethan-D
+-------
 
 .. toctree::
    :maxdepth: 4
 
-   examples/AIO/AIO_one_channel_loopback
-   examples/AIO/AIO_all_channels_loopback
+   examples/EthanD/DIO/DIO_loopback_pins.rst
 
-DIO
----
+   examples/EthanD/DIO/DIO_loopback_port.rst
+
+   examples/EthanD/DIO/DO_write_pins.rst
+
+   examples/EthanD/DIO/DO_write_port.rst
+
+   examples/EthanD/DIO/DO_blinky_pins.rst
+
+   examples/EthanD/DIO/DO_blinky_port.rst
+
+   examples/EthanD/System/get_device_info.rst
+
+   examples/EthanD/System/find_all_devices.rst
+
+
+USB-DAQ-F1-AD
+-------------
 
 .. toctree::
    :maxdepth: 4
 
-   examples/DIO/DIO_loopback_pins
-   examples/DIO/DIO_loopback_port
-   examples/DIO/DO_write_pins
-   examples/DIO/DO_write_port
-   examples/DIO/DO_blinky_pins
-   examples/DIO/DO_blinky_port
+   examples/USBDAQF1AD/AI/AI_continuous.rst
 
-CAN
----
+   examples/USBDAQF1AD/AI/AI_continuous_with_logger.rst
 
-.. toctree::
-   :maxdepth: 4
+   examples/USBDAQF1AD/AI/AI_on_demand_in_loop.rst
 
-   examples/CAN/CAN_read
-   examples/CAN/CAN_write
+   examples/USBDAQF1AD/AI/AI_N_samples_once.rst
 
-Temperature-TC
+   examples/USBDAQF1AD/AI/AI_N_samples_in_loop.rst
+
+   examples/USBDAQF1AD/AI/AI_on_demand_once.rst
+
+   examples/USBDAQF1AD/DIO/DIO_loopback_pins.rst
+
+   examples/USBDAQF1AD/DIO/DIO_loopback_port.rst
+
+   examples/USBDAQF1AD/DIO/DO_write_pins.rst
+
+   examples/USBDAQF1AD/DIO/DO_write_port.rst
+
+   examples/USBDAQF1AD/DIO/DO_blinky_pins.rst
+
+   examples/USBDAQF1AD/DIO/DO_blinky_port.rst
+
+   examples/USBDAQF1AD/UART/UART_read.rst
+
+   examples/USBDAQF1AD/UART/UART_write.rst
+
+   examples/USBDAQF1AD/I2C/I2C_write_read.rst
+
+   examples/USBDAQF1AD/SPI/SPI_read_and_write.rst
+
+   examples/USBDAQF1AD/SPI/SPI_write.rst
+
+
+USB-DAQ-F1-AOD
 --------------
 
 .. toctree::
    :maxdepth: 4
 
-   examples/Temperature-TC/TC_read_channel_data
-   examples/Temperature-TC/TC_read_channel_data_with_logger
-   examples/Temperature-TC/TC_read_channel_status
+   examples/USBDAQF1AOD/AIO/AIO_one_channel_loopback.rst
 
-Temperature-RTD
----------------
+   examples/USBDAQF1AOD/AIO/AIO_all_channels_loopback.rst
 
-.. toctree::
-   :maxdepth: 4
+   examples/USBDAQF1AOD/AO/AO_write_one_channel.rst
 
-   examples/Temperature-RTD/RTD_read_channel_data
-   examples/Temperature-RTD/RTD_read_channel_data_with_logger
-   examples/Temperature-RTD/RTD_read_channel_status
+   examples/USBDAQF1AOD/AO/AO_write_all_channels.rst
 
-I2C
----
+   examples/USBDAQF1AOD/DIO/DIO_loopback_pins.rst
 
-.. toctree::
-   :maxdepth: 4
+   examples/USBDAQF1AOD/DIO/DIO_loopback_port.rst
 
-   examples/I2C/I2C_write_read
+   examples/USBDAQF1AOD/DIO/DO_write_pins.rst
 
-SPI
----
+   examples/USBDAQF1AOD/DIO/DO_write_port.rst
 
-.. toctree::
-   :maxdepth: 4
+   examples/USBDAQF1AOD/DIO/DO_blinky_pins.rst
 
-   examples/SPI/SPI_read_and_write
-   examples/SPI/SPI_write
+   examples/USBDAQF1AOD/DIO/DO_blinky_port.rst
 
-UART
-----
+   examples/USBDAQF1AOD/UART/UART_read.rst
+
+   examples/USBDAQF1AOD/UART/UART_write.rst
+
+   examples/USBDAQF1AOD/I2C/I2C_write_read.rst
+
+
+USB-DAQ-F1-CD
+-------------
 
 .. toctree::
    :maxdepth: 4
 
-   examples/UART/UART_read
-   examples/UART/UART_write
+   examples/USBDAQF1CD/DIO/DIO_loopback_pins.rst
 
-Tutorial
---------
+   examples/USBDAQF1CD/DIO/DIO_loopback_port.rst
+
+   examples/USBDAQF1CD/DIO/DO_write_pins.rst
+
+   examples/USBDAQF1CD/DIO/DO_write_port.rst
+
+   examples/USBDAQF1CD/DIO/DO_blinky_pins.rst
+
+   examples/USBDAQF1CD/DIO/DO_blinky_port.rst
+
+   examples/USBDAQF1CD/UART/UART_read.rst
+
+   examples/USBDAQF1CD/UART/UART_write.rst
+
+   examples/USBDAQF1CD/I2C/I2C_write_read.rst
+
+   examples/USBDAQF1CD/SPI/SPI_read_and_write.rst
+
+   examples/USBDAQF1CD/SPI/SPI_write.rst
+
+   examples/USBDAQF1CD/CAN/CAN_read.rst
+
+   examples/USBDAQF1CD/CAN/CAN_write.rst
+
+
+USB-DAQ-F1-D
+------------
 
 .. toctree::
    :maxdepth: 4
 
-   examples/Tutorial/single_loop_thread
-   examples/Tutorial/single_loop_async
-   examples/Tutorial/multiple_loops_thread
-   examples/Tutorial/multiple_loops_async
+   examples/USBDAQF1D/DIO/DIO_loopback_pins.rst
+
+   examples/USBDAQF1D/DIO/DIO_loopback_port.rst
+
+   examples/USBDAQF1D/DIO/DO_write_pins.rst
+
+   examples/USBDAQF1D/DIO/DO_write_port.rst
+
+   examples/USBDAQF1D/DIO/DO_blinky_pins.rst
+
+   examples/USBDAQF1D/DIO/DO_blinky_port.rst
+
+   examples/USBDAQF1D/UART/UART_read.rst
+
+   examples/USBDAQF1D/UART/UART_write.rst
+
+   examples/USBDAQF1D/I2C/I2C_write_read.rst
+
+   examples/USBDAQF1D/SPI/SPI_read_and_write.rst
+
+   examples/USBDAQF1D/SPI/SPI_write.rst
+
+
+USB-DAQ-F1-D-SNK
+----------------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/USBDAQF1DSNK/DIO/DIO_loopback_pins.rst
+
+   examples/USBDAQF1DSNK/DIO/DIO_loopback_port.rst
+
+   examples/USBDAQF1DSNK/DIO/DO_write_pins.rst
+
+   examples/USBDAQF1DSNK/DIO/DO_write_port.rst
+
+   examples/USBDAQF1DSNK/DIO/DO_blinky_pins.rst
+
+   examples/USBDAQF1DSNK/DIO/DO_blinky_port.rst
+
+
+USB-DAQ-F1-RD
+-------------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/USBDAQF1RD/DIO/DIO_loopback_pins.rst
+
+   examples/USBDAQF1RD/DIO/DIO_loopback_port.rst
+
+   examples/USBDAQF1RD/DIO/DO_write_pins.rst
+
+   examples/USBDAQF1RD/DIO/DO_write_port.rst
+
+   examples/USBDAQF1RD/DIO/DO_blinky_pins.rst
+
+   examples/USBDAQF1RD/DIO/DO_blinky_port.rst
+
+   examples/USBDAQF1RD/UART/UART_read.rst
+
+   examples/USBDAQF1RD/UART/UART_write.rst
+
+   examples/USBDAQF1RD/I2C/I2C_write_read.rst
+
+   examples/USBDAQF1RD/SPI/SPI_read_and_write.rst
+
+   examples/USBDAQF1RD/SPI/SPI_write.rst
+
+   examples/USBDAQF1RD/Temperature-RTD/RTD_read_channel_data.rst
+
+   examples/USBDAQF1RD/Temperature-RTD/RTD_read_channel_data_with_logger.rst
+
+   examples/USBDAQF1RD/Temperature-RTD/RTD_read_channel_status.rst
+
+
+USB-DAQ-F1-TD
+-------------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/USBDAQF1TD/DIO/DIO_loopback_pins.rst
+
+   examples/USBDAQF1TD/DIO/DIO_loopback_port.rst
+
+   examples/USBDAQF1TD/DIO/DO_write_pins.rst
+
+   examples/USBDAQF1TD/DIO/DO_write_port.rst
+
+   examples/USBDAQF1TD/DIO/DO_blinky_pins.rst
+
+   examples/USBDAQF1TD/DIO/DO_blinky_port.rst
+
+   examples/USBDAQF1TD/UART/UART_read.rst
+
+   examples/USBDAQF1TD/UART/UART_write.rst
+
+   examples/USBDAQF1TD/I2C/I2C_write_read.rst
+
+   examples/USBDAQF1TD/SPI/SPI_read_and_write.rst
+
+   examples/USBDAQF1TD/SPI/SPI_write.rst
+
+   examples/USBDAQF1TD/Temperature-TC/TC_read_channel_data.rst
+
+   examples/USBDAQF1TD/Temperature-TC/TC_read_channel_data_with_logger.rst
+
+   examples/USBDAQF1TD/Temperature-TC/TC_read_channel_status.rst
+
+
+Wifi-DAQ-E3-A
+-------------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/WifiDAQE3A/AI/AI_continuous.rst
+
+   examples/WifiDAQE3A/AI/AI_continuous_with_logger.rst
+
+   examples/WifiDAQE3A/AI/AI_on_demand_in_loop.rst
+
+   examples/WifiDAQE3A/AI/AI_N_samples_once.rst
+
+   examples/WifiDAQE3A/AI/AI_N_samples_in_loop.rst
+
+   examples/WifiDAQE3A/AI/AI_on_demand_once.rst
+
+   examples/WifiDAQE3A/System/get_device_info.rst
+
+   examples/WifiDAQE3A/System/find_all_devices.rst
+

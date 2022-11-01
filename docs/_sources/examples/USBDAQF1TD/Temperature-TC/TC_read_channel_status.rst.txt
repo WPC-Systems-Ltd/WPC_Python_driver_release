@@ -1,0 +1,6 @@
+example TC read channel status
+==============================
+
+.. literalinclude:: ..\..\..\..\..\codeproduct\USBDAQF1TD\Temperature-TC\example_TC_read_channel_status.py
+   :language: python
+   :linenos:

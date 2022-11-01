@@ -5,9 +5,9 @@ Ethan-A
 Device pinout 
 -------------
 
-.. image:: ../images/Pinouts/Ethan-A.JPG
+.. image:: ../images/Pinouts/pinout-EthanA.JPG
    :width: 90%
-   :alt: Ethan-A
+   :alt: EthanA
 
 
 API function description 

@@ -15,9 +15,9 @@ Products Feature
          - USB 2.0 full-speed bus powered
          - Python driver & example codes
      - 
-      .. image:: images/Products/WPC-USB-DAQ-D.jpg
+      .. image:: images/Products/product-USBDAQD.jpg
          :width: 100%
-         :alt: WPC-USB-DAQ-D.jpg
+         :alt: product-USBDAQD.jpg
    * - 
       **WPC-USB-DAQ-AD**
          - 20ch 3.3V DIO/I2C/SPI
@@ -25,9 +25,9 @@ Products Feature
          - USB 2.0 full-speed bus powered
          - Python driver & example codes
      - 
-      .. image:: images/Products/WPC-USB-DAQ-AD.jpg
+      .. image:: images/Products/product-USBDAQAD.jpg
          :width: 100%
-         :alt: WPC-USB-DAQ-AD.jpg  
+         :alt: product-USBDAQAD.jpg 
    * - 
       **WPC-USB-DAQ-D-SNK**
          - 24V 12ch DO / 14ch DI
@@ -37,9 +37,9 @@ Products Feature
          - USB 2.0 full-speed bus powered
          - Python driver & example codes
      - 
-      .. image:: images/Products/WPC-USB-DAQ-D-SNK.jpg
+      .. image:: images/Products/product-USBDAQDSNK.jpg
          :width: 100%
-         :alt: WPC-USB-DAQ-D-SNK.jpg
+         :alt: product-USBDAQADSNK.jpg
    * - 
       **WPC-USB-DAQ-TD**
          - 21ch 3.3V DIO/I2C/SPI
@@ -48,9 +48,9 @@ Products Feature
          - USB 2.0 full-speed bus powered
          - Python driver & example codes
      - 
-      .. image:: images/Products/WPC-USB-DAQ-TD.jpg
+      .. image:: images/Products/product-USBDAQTD.jpg
          :width: 100%
-         :alt: WPC-USB-DAQ-TD.jpg
+         :alt: product-USBDAQTD.jpg
    * - 
       **WPC-USB-DAQ-RD**
          - 21ch 3.3V DIO/I2C/SPI
@@ -59,9 +59,9 @@ Products Feature
          - USB 2.0 full-speed bus powered
          - Python driver & example codes
      - 
-      .. image:: images/Products/WPC-USB-DAQ-RD.jpg 
+      .. image:: images/Products/product-USBDAQRD.jpg
          :width: 100%
-         :alt: WPC-USB-DAQ-RD.jpg
+         :alt: product-USBDAQRD.jpg
    * - 
       **WPC-USB-DAQ-CD**
          - 20ch 3.3V DIO/I2C/SPI
@@ -69,9 +69,9 @@ Products Feature
          - USB 2.0 full-speed bus powered
          - Python driver & example codes
      - 
-      .. image:: images/Products/WPC-USB-DAQ-CD.jpg
+      .. image:: images/Products/product-USBDAQCD.jpg
          :width: 100%
-         :alt: WPC-USB-DAQ-CD.jpg
+         :alt: product-USBDAQCD.jpg
    * - 
       **WPC-USB-DAQ-AOD**
          - 16ch 3.3V DIO/I2C/SPI
@@ -80,9 +80,9 @@ Products Feature
          - USB 2.0 full-speed bus powered
          - Python driver & example codes
      - 
-      .. image:: images/Products/WPC-USB-DAQ-AOD.jpg
+      .. image:: images/Products/product-USBDAQAOD.jpg
          :width: 100%
-         :alt: WPC-USB-DAQ-AOD.jpg   
+         :alt: product-USBDAQAOD.jpg 
    * - 
       **WPC-Ethan-D**
          - 10/100 cable Ethernet
@@ -90,9 +90,9 @@ Products Feature
          - 6ch 24V digital output (sinking DO, NPN)
          - Python driver & example codes
      - 
-      .. image:: images/Products/WPC-Ethan-D.jpg
+      .. image:: images/Products/product-EthanD.jpg
          :width: 100%
-         :alt: WPC-Ethan-D.jpg
+         :alt: product-EthanD.jpg
    * - 
       **WPC-Ethan-A**
          - 10/100 cable Ethernet
@@ -101,9 +101,9 @@ Products Feature
          - +/-10V voltage input range
          - Python driver & example codes
      - 
-      .. image:: images/Products/WPC-Ethan-A.jpg
+      .. image:: images/Products/product-EthanA.jpg
          :width: 100%
-         :alt: WPC-Ethan-A.jpg  
+         :alt: product-EthanA.jpg
    * - 
       **WPC-WIFI-DAQ-E3-A**
          - 8ch 16-bit +/-10V analog input
@@ -112,7 +112,7 @@ Products Feature
          - 2.4 GHz to 2.5 GHz
          - Python driver & example codes
      - 
-      .. image:: images/Products/WPC-WIFI-DAQ-E3A.png
+      .. image:: images/Products/product-WIFIDAQE3A.png
          :width: 100%
-         :alt: WPC-WIFI-DAQ-E3A.png
+         :alt: product-WIFIDAQE3A.png
          

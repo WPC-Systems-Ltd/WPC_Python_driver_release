@@ -1,0 +1,6 @@
+example CAN read
+================
+
+.. literalinclude:: ..\..\..\..\..\codeproduct\USBDAQF1CD\CAN\example_CAN_read.py
+   :language: python
+   :linenos:

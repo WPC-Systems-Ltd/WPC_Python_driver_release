@@ -1,0 +1,6 @@
+example DIO loopback port
+=========================
+
+.. literalinclude:: ..\..\..\..\..\codeproduct\USBDAQF1AOD\DIO\example_DIO_loopback_port.py
+   :language: python
+   :linenos:

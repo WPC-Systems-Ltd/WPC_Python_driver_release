@@ -4,11 +4,11 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ethan-D &mdash; WPC Python driver 1.0.5 documentation</title>
+  <title>Ethan-D &mdash; WPC Python driver 1.0.6 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
-    <link rel="shortcut icon" href="../_static/WPC_trademark.jpg"/>
+    <link rel="shortcut icon" href="../_static/WPC-trademark.jpg"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -31,10 +31,10 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
             <a href="../index.html" class="icon icon-home"> WPC Python driver
-            <img src="../_static/WPC_logo2.PNG" class="logo" alt="Logo"/>
+            <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.0.5
+                1.0.6
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -103,7 +103,7 @@
 <h1>Ethan-D<a class="headerlink" href="#ethan-d" title="Permalink to this heading"></a></h1>
 <section id="device-pinout">
 <h2>Device pinout<a class="headerlink" href="#device-pinout" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="../_images/Ethan-D.JPG"><img alt="Ethan-D" src="../_images/Ethan-D.JPG" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/pinout-EthanD.JPG"><img alt="EthanD" src="../_images/pinout-EthanD.JPG" style="width: 90%;" /></a>
 </section>
 <section id="api-function-description">
 <h2>API function description<a class="headerlink" href="#api-function-description" title="Permalink to this heading"></a></h2>
@@ -118,120 +118,6 @@
 </ul>
 </dd>
 </dl>
-<p class="rubric">Methods</p>
-<table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.DI_closePins_async" title="pywpc.EthanD.DI_closePins_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_closePins_async</span></code></a>(port, pin)</p></td>
-<td><p>Close specific pin with digital intput.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.DI_closePort_async" title="pywpc.EthanD.DI_closePort_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_closePort_async</span></code></a>(port)</p></td>
-<td><p>Close all pins in specific port with digital input.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.DI_getPinMap" title="pywpc.EthanD.DI_getPinMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_getPinMap</span></code></a>()</p></td>
-<td><p>Get all available DI port numbers &amp; the pins that are associated with them.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.DI_openPins_async" title="pywpc.EthanD.DI_openPins_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_openPins_async</span></code></a>(port, pin)</p></td>
-<td><p>Open specific pin to digital intput.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.DI_openPort_async" title="pywpc.EthanD.DI_openPort_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_openPort_async</span></code></a>(port)</p></td>
-<td><p>Open all pins in specific port with digital input.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.DI_readPins_async" title="pywpc.EthanD.DI_readPins_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_readPins_async</span></code></a>(port, pin)</p></td>
-<td><p>Read digital pin state in specific pin.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.DI_readPort_async" title="pywpc.EthanD.DI_readPort_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_readPort_async</span></code></a>(port)</p></td>
-<td><p>Read all digital pins state in specific port.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.DO_closePins_async" title="pywpc.EthanD.DO_closePins_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_closePins_async</span></code></a>(port, pin)</p></td>
-<td><p>Close specific pin with digital output.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.DO_closePort_async" title="pywpc.EthanD.DO_closePort_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_closePort_async</span></code></a>(port)</p></td>
-<td><p>Close all pins in specific port with digital output.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.DO_getPinMap" title="pywpc.EthanD.DO_getPinMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_getPinMap</span></code></a>()</p></td>
-<td><p>Get all available DO port numbers &amp; the pins that are associated with them.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.DO_openPins_async" title="pywpc.EthanD.DO_openPins_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_openPins_async</span></code></a>(port, pin)</p></td>
-<td><p>Open specific pin to digital output.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.DO_openPort_async" title="pywpc.EthanD.DO_openPort_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_openPort_async</span></code></a>(port)</p></td>
-<td><p>Open all pins in specific port with digital output.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.DO_writePins_async" title="pywpc.EthanD.DO_writePins_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_writePins_async</span></code></a>(port, pin, value)</p></td>
-<td><p>Write digital value to specific pin.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.DO_writePort_async" title="pywpc.EthanD.DO_writePort_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_writePort_async</span></code></a>(port, value)</p></td>
-<td><p>Write all pins state in specific port with digital output.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.Net_getGateway_async" title="pywpc.EthanD.Net_getGateway_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Net_getGateway_async</span></code></a>()</p></td>
-<td><p>Get geteway from the connected web device.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.Net_getIPAddrAndSubmask_async" title="pywpc.EthanD.Net_getIPAddrAndSubmask_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Net_getIPAddrAndSubmask_async</span></code></a>()</p></td>
-<td><p>Get IP address and subnet mask from the connected web device.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.Net_getMACAddr_async" title="pywpc.EthanD.Net_getMACAddr_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Net_getMACAddr_async</span></code></a>()</p></td>
-<td><p>Get MAC address from the connected web device.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.Net_setIPAddrAndSubmask_async" title="pywpc.EthanD.Net_setIPAddrAndSubmask_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Net_setIPAddrAndSubmask_async</span></code></a>(ip_addr[, ...])</p></td>
-<td><p>Set IP address and subnet mask to the connected web device.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.Sys_getDriverInfo_async" title="pywpc.EthanD.Sys_getDriverInfo_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getDriverInfo_async</span></code></a>()</p></td>
-<td><p>Get device firmware information.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.Sys_getGateway_async" title="pywpc.EthanD.Sys_getGateway_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getGateway_async</span></code></a>()</p></td>
-<td><p>Deprecated in v1.0.5.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.Sys_getIPAddrAndSubmask_async" title="pywpc.EthanD.Sys_getIPAddrAndSubmask_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getIPAddrAndSubmask_async</span></code></a>()</p></td>
-<td><p>Deprecated in v1.0.5.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.Sys_getMACAddr_async" title="pywpc.EthanD.Sys_getMACAddr_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getMACAddr_async</span></code></a>()</p></td>
-<td><p>Deprecated in v1.0.5.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.Sys_getPinModeInPort_async" title="pywpc.EthanD.Sys_getPinModeInPort_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getPinModeInPort_async</span></code></a>(port)</p></td>
-<td><p>Get pin mode in specific port.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.Sys_getRTC_async" title="pywpc.EthanD.Sys_getRTC_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getRTC_async</span></code></a>()</p></td>
-<td><p>Get date and time to connected WPC device.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.Sys_getSerialNumber_async" title="pywpc.EthanD.Sys_getSerialNumber_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getSerialNumber_async</span></code></a>()</p></td>
-<td><p>Get serial number from the connected WPC device.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.Sys_rebootOnBootloader_async" title="pywpc.EthanD.Sys_rebootOnBootloader_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_rebootOnBootloader_async</span></code></a>()</p></td>
-<td><p>Reboot on bootloader from the connected WPC device.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.Sys_reboot_async" title="pywpc.EthanD.Sys_reboot_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_reboot_async</span></code></a>()</p></td>
-<td><p>Reboot from the connected WPC device.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.Sys_setIPAddrAndSubmask_async" title="pywpc.EthanD.Sys_setIPAddrAndSubmask_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setIPAddrAndSubmask_async</span></code></a>(ip_addr[, ...])</p></td>
-<td><p>Deprecated in v1.0.5.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.Sys_setPortDI_async" title="pywpc.EthanD.Sys_setPortDI_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setPortDI_async</span></code></a>(port)</p></td>
-<td><p>Open port as DI.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.Sys_setPortDO_async" title="pywpc.EthanD.Sys_setPortDO_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setPortDO_async</span></code></a>(port)</p></td>
-<td><p>Open port as DO.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.Sys_setPortIdle_async" title="pywpc.EthanD.Sys_setPortIdle_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setPortIdle_async</span></code></a>(port)</p></td>
-<td><p>Set all pins in specific port to IDLE state.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.Sys_setRTC_async" title="pywpc.EthanD.Sys_setRTC_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setRTC_async</span></code></a>(year, month, day, hour, ...)</p></td>
-<td><p>Set date and time to connected WPC device.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.close" title="pywpc.EthanD.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>([verbose])</p></td>
-<td><p>Close web device handle.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.EthanD.connect" title="pywpc.EthanD.connect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect</span></code></a>(ip_addr[, port, verbose])</p></td>
-<td><p>Connect to web device.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.EthanD.disconnect" title="pywpc.EthanD.disconnect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disconnect</span></code></a>([verbose])</p></td>
-<td><p>Disconnect web device.</p></td>
-</tr>
-</tbody>
-</table>
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EthanD.DI_closePins_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DI_closePins_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.DI_closePins_async" title="Permalink to this definition"></a></dt>

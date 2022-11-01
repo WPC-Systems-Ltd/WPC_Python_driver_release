@@ -1,0 +1,6 @@
+example RTD read channel data with logger
+=========================================
+
+.. literalinclude:: ..\..\..\..\..\codeproduct\USBDAQF1RD\Temperature-RTD\example_RTD_read_channel_data_with_logger.py
+   :language: python
+   :linenos:

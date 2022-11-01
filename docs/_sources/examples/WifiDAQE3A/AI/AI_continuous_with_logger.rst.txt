@@ -1,0 +1,6 @@
+example AI continuous with logger
+=================================
+
+.. literalinclude:: ..\..\..\..\..\codeproduct\WifiDAQE3A\AI\example_AI_continuous_with_logger.py
+   :language: python
+   :linenos:

@@ -1,6 +1,0 @@
-example DO write port
-=====================
-
-.. literalinclude:: ../../../../../WPC_Python_driver_release/Examples/Console/DIO/example_DO_write_port.py
-   :language: python
-   :linenos:

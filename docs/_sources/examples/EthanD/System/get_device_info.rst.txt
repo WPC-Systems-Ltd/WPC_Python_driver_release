@@ -1,0 +1,6 @@
+example get device info
+=======================
+
+.. literalinclude:: ..\..\..\..\..\codeproduct\EthanD\System\example_get_device_info.py
+   :language: python
+   :linenos:

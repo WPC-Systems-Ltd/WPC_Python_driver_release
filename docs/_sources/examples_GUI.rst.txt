@@ -2,79 +2,79 @@ Example Codes - GUI
 ===================
 
 AIO/Analog Input
-------------------
+----------------
 
-.. image:: images/GUI/Example_analog_input.JPG
+.. image:: images/GUI/GUI-AI.JPG
     :width: 80%
-    :alt: Example_analog_input.JPG
-|
+    :alt: GUI-AI.JPG
+
 
 AIO/Analog Input On Demand
-------------------
+--------------------------
 
-.. image:: images/GUI/Example_analog_input_ondemand.JPG
+.. image:: images/GUI/GUI-AIOnDemand.JPG
     :width: 80%
-    :alt: Example_analog_input_ondemand.JPG
-|
+    :alt: GUI-AIOnDemand.JPG
+
 
 AIO/Analog Output
-------------------
-.. image:: images/GUI/Example_analog_output.JPG
+-----------------
+.. image:: images/GUI/GUI-AO.JPG
     :width: 80%
-    :alt: Example_analog_output.JPG
-|
+    :alt: GUI-AO.JPG
+
 
 DIO/Digital Output
 ------------------
-.. image:: images/GUI/Example_digital_output.JPG
+.. image:: images/GUI/GUI-DO.JPG
     :width: 80%
-    :alt: Example_digital_output.JPG
-|
+    :alt: GUI-DO.JPG
+
 
 System Network/Find All Device
 ------------------------------
-.. image:: images/GUI/Example_find_all_device.JPG
+.. image:: images/GUI/GUI-FindDevice.JPG
     :width: 80%
-    :alt: Example_find_all_device.JPG
-|
+    :alt: GUI-FindDevice.JPG
+
 
 System Network/Get Device Info
 ------------------------------
-.. image:: images/GUI/Example_get_device_info.JPG
+.. image:: images/GUI/GUI-DeviceInfo.JPG
     :width: 80%
-    :alt: Example_get_device_info.JPG
-|
+    :alt: GUI-DeviceInfos.JPG
+
 
 Temperature/RTD
 ---------------
-.. image:: images/GUI/Example_RTD.JPG
+.. image:: images/GUI/GUI-RTD.JPG
     :width: 80%
-    :alt: Example_RTD.JPG
-|
+    :alt: GUI-RTD.JPG
+
 
 Temperature/Thermocouple
 ------------------------
-.. image:: images/GUI/Example_thermocouple.JPG
+.. image:: images/GUI/GUI-TC.JPG
     :width: 80%
-    :alt: Example_thermocouple.JPG
-|
+    :alt: GUI-TC.JPG
+
 
 Interface/UART
----------
-.. image:: images/GUI/Example_UART.JPG
+--------------
+.. image:: images/GUI/GUI-UART.JPG
     :width: 80%
-    :alt: Example_UART.JPG
-|
+    :alt: GUI-UART.JPG
+
 
 Interface/I2C
----------
-.. image:: images/GUI/Example_I2C.JPG
+-------------
+.. image:: images/GUI/GUI-I2C.JPG
     :width: 80%
-    :alt: Example_I2C.JPG
-|
+    :alt: GUI-I2C.JPG
+
 
 Interface/SPI
----------
-.. image:: images/GUI/Example_SPI.JPG
+-------------
+.. image:: images/GUI/GUI-SPI.JPG
     :width: 80%
-    :alt: Example_SPI.JPG    
+    :alt: GUI-SPI.JPG   
