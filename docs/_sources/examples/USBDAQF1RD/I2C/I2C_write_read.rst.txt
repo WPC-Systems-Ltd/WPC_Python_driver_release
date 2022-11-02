@@ -1,6 +1,0 @@
-example I2C write and read
-==========================
-
-.. literalinclude:: ..\..\..\..\..\examples\USBDAQF1RD\I2C\example_I2C_write_read.py
-   :language: python
-   :linenos:

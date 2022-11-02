@@ -15,19 +15,15 @@ For other examples please check:
 
 Copyright (c) 2022 WPC Systems Ltd.
 All rights reserved.
-
 '''
 
 ## Python
-import asyncio
 
-## WPC
-try:
-    from wpcsys import pywpc
-except:
-    import sys
-    sys.path.insert(0, 'src/')
-    import pywpc
+import asyncio
+ 
+## WPC 
+ 
+from wpcsys import pywpc 
 
 async def main():
     print("Start example code...")
@@ -68,8 +64,8 @@ async def main():
         status = await dev.DO_writePort_async(port, 0xC0)
         print("DO_writePort_async status: ", status)
        
-        ## Wait for 5 second
-        await asyncio.sleep(5)  ## delay(second)
+        ## Wait for 1 second
+        await asyncio.sleep(1)  ## delay(second)
 
         ## Close all pins with digital output
         status = await dev.DO_closePort_async(port)

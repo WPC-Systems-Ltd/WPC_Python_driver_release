@@ -1,6 +1,0 @@
-example AI on demand once
-=========================
-
-.. literalinclude:: ..\..\..\..\..\examples\USBDAQF1AD\AI\example_AI_on_demand_once.py
-   :language: python
-   :linenos:

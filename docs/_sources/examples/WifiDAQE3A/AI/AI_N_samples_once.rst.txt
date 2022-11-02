@@ -1,6 +1,0 @@
-example AI N samples once
-=========================
-
-.. literalinclude:: ..\..\..\..\..\examples\WifiDAQE3A\AI\example_AI_N_samples_once.py
-   :language: python
-   :linenos:

@@ -1,6 +1,0 @@
-example DO blinky pins
-======================
-
-.. literalinclude:: ..\..\..\..\..\examples\USBDAQF1CD\DIO\example_DO_blinky_pins.py
-   :language: python
-   :linenos:

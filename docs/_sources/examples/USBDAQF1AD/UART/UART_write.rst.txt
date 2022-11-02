@@ -1,6 +1,0 @@
-example UART write
-==================
-
-.. literalinclude:: ..\..\..\..\..\examples\USBDAQF1AD\UART\example_UART_write.py
-   :language: python
-   :linenos:

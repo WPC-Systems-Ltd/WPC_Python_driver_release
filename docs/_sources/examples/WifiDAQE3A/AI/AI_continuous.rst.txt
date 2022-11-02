@@ -1,6 +1,0 @@
-example AI continuous
-=====================
-
-.. literalinclude:: ..\..\..\..\..\examples\WifiDAQE3A\AI\example_AI_continuous.py
-   :language: python
-   :linenos:

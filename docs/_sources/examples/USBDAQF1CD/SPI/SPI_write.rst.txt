@@ -1,6 +1,0 @@
-example SPI write
-=================
-
-.. literalinclude:: ..\..\..\..\..\examples\USBDAQF1CD\SPI\example_SPI_write.py
-   :language: python
-   :linenos:

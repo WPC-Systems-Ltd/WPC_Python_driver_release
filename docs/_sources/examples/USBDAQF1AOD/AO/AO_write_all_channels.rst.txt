@@ -1,6 +1,0 @@
-example AO write all channels
-=============================
-
-.. literalinclude:: ..\..\..\..\..\examples\USBDAQF1AOD\AO\example_AO_write_all_channels.py
-   :language: python
-   :linenos:

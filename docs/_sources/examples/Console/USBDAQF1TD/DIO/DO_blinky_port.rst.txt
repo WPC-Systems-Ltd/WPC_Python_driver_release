@@ -1,0 +1,6 @@
+example DO blinky port
+======================
+
+.. literalinclude:: ..\..\..\..\..\..\..\WPC_Python_driver_release\examples\Console\USBDAQF1TD\DIO\example_DO_blinky_port.py
+   :language: python
+   :linenos:

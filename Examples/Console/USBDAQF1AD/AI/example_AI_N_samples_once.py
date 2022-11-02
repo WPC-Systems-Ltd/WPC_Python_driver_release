@@ -16,14 +16,15 @@ For other examples please check:
 
 Copyright (c) 2022 WPC Systems Ltd.
 All rights reserved.
-
-
 '''
 
 ## Python
-import asyncio
 
-from wpcsys import pywpc
+import asyncio
+ 
+## WPC 
+ 
+from wpcsys import pywpc 
 
 async def main():
     print("Start example code...")

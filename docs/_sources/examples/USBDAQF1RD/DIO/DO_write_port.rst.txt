@@ -1,6 +1,0 @@
-example DO write port
-=====================
-
-.. literalinclude:: ..\..\..\..\..\examples\USBDAQF1RD\DIO\example_DO_write_port.py
-   :language: python
-   :linenos:

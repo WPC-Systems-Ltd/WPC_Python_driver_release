@@ -1,0 +1,6 @@
+example DO write port
+=====================
+
+.. literalinclude:: ..\..\..\..\..\..\..\WPC_Python_driver_release\examples\Console\USBDAQF1AD\DIO\example_DO_write_port.py
+   :language: python
+   :linenos:
