@@ -1,6 +1,6 @@
 example AI on demand in loop
 ============================
 
-.. literalinclude:: ..\..\..\..\..\codeproduct\EthanA\AI\example_AI_on_demand_in_loop.py
+.. literalinclude:: ..\..\..\..\..\examples\EthanA\AI\example_AI_on_demand_in_loop.py
    :language: python
    :linenos:

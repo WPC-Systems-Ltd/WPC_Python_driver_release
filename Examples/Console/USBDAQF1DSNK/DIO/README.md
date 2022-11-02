@@ -2,6 +2,8 @@
 > **Note**
 > Make sure you are connected to correct IP or serial number.
 
+# DIO
+
 ## Overview
 
 This example project demonstrates how to use WPC python driver to control DIO with whole port or assign pins 
@@ -20,7 +22,7 @@ Then, we take `USBDAQF1DSNK` for example.
 
 ### USBDAQF1DSNK
 
-<img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/USBDAQF1DSNK.JPG" alt="drawing" width="600"/>
+<img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-USBDAQF1DSNK.JPG" alt="drawing" width="600"/>
 
 ## DIO interfacing SOP 
 

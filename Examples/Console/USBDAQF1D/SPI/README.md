@@ -2,6 +2,8 @@
 > **Note**
 > Make sure you are connected to correct IP or serial number.
 
+# SPI
+
 ## Overview
 
 This example project demonstrates how to use WPC python driver to read and write EEPROM (25LC640) through SPI interface.
@@ -24,7 +26,7 @@ For more information, please refer to datasheet of the [25LC640 EEPROM](https://
 | -----------------|:----:|:----:|:----:|:----:|:----:|
 | USBDAQF1D   | SPI1 | P2.3 | P2.2 | P2.1 | P2.0 |
 
-<img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/USBDAQF1D.JPG" alt="drawing" width="600"/>
+<img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-USBDAQF1D.JPG" alt="drawing" width="600"/>
 
 
 ### EEPROM 25LC640 (SPI Slave)

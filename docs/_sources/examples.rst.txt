@@ -1,6 +1,15 @@
 Example Codes - Console
 =======================
 
+Device finder
+-------------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/DeviceFinder/DeviceFinder/find_all_devices.rst
+
+
 Ethan-A
 -------
 
@@ -20,8 +29,6 @@ Ethan-A
    examples/EthanA/AI/AI_on_demand_once.rst
 
    examples/EthanA/System/get_device_info.rst
-
-   examples/EthanA/System/find_all_devices.rst
 
 
 Ethan-D
@@ -43,8 +50,6 @@ Ethan-D
    examples/EthanD/DIO/DO_blinky_port.rst
 
    examples/EthanD/System/get_device_info.rst
-
-   examples/EthanD/System/find_all_devices.rst
 
 
 USB-DAQ-F1-AD
@@ -291,6 +296,4 @@ Wifi-DAQ-E3-A
    examples/WifiDAQE3A/AI/AI_on_demand_once.rst
 
    examples/WifiDAQE3A/System/get_device_info.rst
-
-   examples/WifiDAQE3A/System/find_all_devices.rst
 

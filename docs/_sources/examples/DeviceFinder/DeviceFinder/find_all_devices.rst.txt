@@ -1,0 +1,6 @@
+example find all devices
+========================
+
+.. literalinclude:: ..\..\..\..\..\examples\DeviceFinder\DeviceFinder\example_find_all_devices.py
+   :language: python
+   :linenos:

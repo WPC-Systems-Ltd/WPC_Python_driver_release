@@ -1,6 +1,6 @@
 example DIO loopback pins
 =========================
 
-.. literalinclude:: ..\..\..\..\..\codeproduct\USBDAQF1RD\DIO\example_DIO_loopback_pins.py
+.. literalinclude:: ..\..\..\..\..\examples\USBDAQF1RD\DIO\example_DIO_loopback_pins.py
    :language: python
    :linenos:

@@ -2,6 +2,8 @@
 > **Note**
 > Make sure you are connected to correct IP or serial number.
 
+# Temperature-TC
+
 ## Overview
 
 This example project demonstrates how to use WPC python driver to read thermocouple sensor temperature in Celcius.
@@ -18,7 +20,7 @@ Then, we take `USBDAQF1TD` for example.
 
 ### USBDAQF1TD
 
-<img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/USBDAQF1TD.JPG" alt="drawing" width="600"/>
+<img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-USBDAQF1TD.JPG" alt="drawing" width="600"/>
 
 ## Thermocouple interfacing SOP 
 

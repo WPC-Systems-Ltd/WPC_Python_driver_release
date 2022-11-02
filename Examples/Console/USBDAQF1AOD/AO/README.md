@@ -2,6 +2,8 @@
 > **Note**
 > Make sure you are connected to correct IP or serial number.
 
+# AO
+
 ## Overview
 
 This example project demonstrates how to use WPC python driver to output digital signal.
@@ -20,7 +22,7 @@ Then, we take `USBDAQF1AOD` for example.
 
 ### USBDAQF1AOD
 
-<img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/USBDAQF1AOD.JPG" alt="drawing" width="600"/>
+<img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-USBDAQF1AOD.JPG" alt="drawing" width="600"/>
 
 ## AO interfacing SOP 
 

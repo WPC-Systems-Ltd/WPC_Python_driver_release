@@ -63,5 +63,6 @@ Error code,Error message
 -8606,The specified UART data bit mode is invalid.
 -8701,CAN port not avaliable or already occupied by other process.
 -8702,The specified CAN speed mode from WPC DAQ is invalid.
--8703,The specified CAN TX is invalid.
--8704,The specified CAN TX priority is invalid.
+-8703,The length of the specified CAN data is invalid.
+-8793,The specified CAN TX is invalid.
+-8794,The specified CAN TX priority is invalid.

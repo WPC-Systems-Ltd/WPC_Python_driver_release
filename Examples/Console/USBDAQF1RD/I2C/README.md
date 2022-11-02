@@ -2,6 +2,8 @@
 > **Note**
 > Make sure you are connected to correct IP or serial number.
 
+# I2C
+
 ## Overview
 
 This example project demonstrates how to use WPC python driver to read and write EEPROM (24C08C) through I2C interface.
@@ -26,7 +28,7 @@ For more information, please refer to datasheet of the [24C08C EEPROM](https://g
 
 **Note:** External pull-up resistors (3.3 kΩ) are required for SDA/SCL pin.
 
-<img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/USBDAQF1RD.JPG" alt="drawing" width="600"/>
+<img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-USBDAQF1RD.JPG" alt="drawing" width="600"/>
 
 
 ### EEPROM 24C08C (I2C Slave)

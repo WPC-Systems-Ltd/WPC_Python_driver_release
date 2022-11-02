@@ -2,6 +2,8 @@
 > **Note**
 > Make sure you are connected to correct IP or serial number.
 
+# AI
+
 ## Overview
 
 This example project demonstrates how to use WPC Python driver to acquire multi-channel AI data simultaneously.
@@ -21,7 +23,7 @@ Then, we take WifiDAQE3A for example.
 
 ### WifiDAQE3A
 
-<img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/WifiDAQE3A.JPG" alt="drawing" width="600"/>
+<img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-WifiDAQE3A.JPG" alt="drawing" width="600"/>
 
 ## AI interfacing SOP 
 

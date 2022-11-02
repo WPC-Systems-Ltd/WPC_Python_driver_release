@@ -1,6 +1,6 @@
 example DIO loopback pins
 =========================
 
-.. literalinclude:: ..\..\..\..\..\codeproduct\EthanD\DIO\example_DIO_loopback_pins.py
+.. literalinclude:: ..\..\..\..\..\examples\EthanD\DIO\example_DIO_loopback_pins.py
    :language: python
    :linenos:

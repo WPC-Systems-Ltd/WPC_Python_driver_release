@@ -6,9 +6,9 @@
    :hidden:
    :maxdepth: 2
    :caption: API REFERNECE
-    
-   products
+
    products_list
+   products
    
 .. toctree::
    :hidden:

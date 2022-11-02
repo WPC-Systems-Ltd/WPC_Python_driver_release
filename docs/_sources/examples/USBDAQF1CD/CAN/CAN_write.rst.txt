@@ -1,6 +1,6 @@
 example CAN write
 =================
 
-.. literalinclude:: ..\..\..\..\..\codeproduct\USBDAQF1CD\CAN\example_CAN_write.py
+.. literalinclude:: ..\..\..\..\..\examples\USBDAQF1CD\CAN\example_CAN_write.py
    :language: python
    :linenos:

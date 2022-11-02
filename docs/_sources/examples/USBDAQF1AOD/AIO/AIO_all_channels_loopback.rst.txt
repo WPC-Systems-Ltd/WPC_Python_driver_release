@@ -1,6 +1,6 @@
 example AIO all channels loopback 
 ==================================
 
-.. literalinclude:: ..\..\..\..\..\codeproduct\USBDAQF1AOD\AIO\example_AIO_all_channels_loopback.py
+.. literalinclude:: ..\..\..\..\..\examples\USBDAQF1AOD\AIO\example_AIO_all_channels_loopback.py
    :language: python
    :linenos:

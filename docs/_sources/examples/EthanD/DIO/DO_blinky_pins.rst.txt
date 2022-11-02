@@ -1,6 +1,6 @@
 example DO blinky pins
 ======================
 
-.. literalinclude:: ..\..\..\..\..\codeproduct\EthanD\DIO\example_DO_blinky_pins.py
+.. literalinclude:: ..\..\..\..\..\examples\EthanD\DIO\example_DO_blinky_pins.py
    :language: python
    :linenos:

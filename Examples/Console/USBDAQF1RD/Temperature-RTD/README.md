@@ -2,6 +2,8 @@
 > **Note**
 > Make sure you are connected to correct IP or serial number.
 
+# Temperature-RTD
+
 ## Overview
 
 This example project demonstrates how to use WPC python driver to read RTD sensor temperature in Celcius.
@@ -20,7 +22,7 @@ Then, we take `USBDAQF1RD` for example.
 
 ### USBDAQF1RD
 
-<img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/USBDAQF1RD.JPG" alt="drawing" width="600"/>
+<img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-USBDAQF1RD.JPG" alt="drawing" width="600"/>
 
 ## RTD interfacing SOP 
 

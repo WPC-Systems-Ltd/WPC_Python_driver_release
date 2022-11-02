@@ -1,6 +1,0 @@
-example find all devices
-========================
-
-.. literalinclude:: ..\..\..\..\..\codeproduct\EthanD\System\example_find_all_devices.py
-   :language: python
-   :linenos:

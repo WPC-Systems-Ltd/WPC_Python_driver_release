@@ -1,6 +1,6 @@
 example TC read channel data
 ============================
 
-.. literalinclude:: ..\..\..\..\..\codeproduct\USBDAQF1TD\Temperature-TC\example_TC_read_channel_data.py
+.. literalinclude:: ..\..\..\..\..\examples\USBDAQF1TD\Temperature-TC\example_TC_read_channel_data.py
    :language: python
    :linenos:
