@@ -23,7 +23,12 @@ All rights reserved.
 import asyncio
 
 ## WPC
-from wpcsys import pywpc
+try:
+    from wpcsys import pywpc
+except:
+    import sys
+    sys.path.insert(0, 'src/')
+    import pywpc
 
 async def loop_func(handle, logger_handle, port, num_of_samples = 600, delay = 0.05, timeout = 3):
     t = 0
@@ -31,11 +36,12 @@ async def loop_func(handle, logger_handle, port, num_of_samples = 600, delay = 0
         ## Data acquisition
         data = await handle.AI_readStreaming_async(port, num_of_samples, delay) ## Get 600 points at a time
         
-        ## Print data
-        print("data :" + str(data))
-        
-        ## Write data into CSV file
-        logger_handle.Logger_write2DList(data)
+        if len(data) > 0:
+            ## Print data
+            print("data :" + str(data))
+
+            ## Write data into CSV file
+            logger_handle.Logger_write2DList(data)
 
         await asyncio.sleep(delay)
         t += delay

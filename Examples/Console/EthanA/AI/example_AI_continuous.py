@@ -23,14 +23,21 @@ All rights reserved.
 import asyncio
 
 ## WPC
-from wpcsys import pywpc
+try:
+    from wpcsys import pywpc
+except:
+    import sys
+    sys.path.insert(0, 'src/')
+    import pywpc
 
 async def loop_func(handle, port, num_of_samples = 600, delay = 0.05, timeout = 3):
     t = 0
     while t < timeout:
         ## data acquisition
         data = await handle.AI_readStreaming_async(port, num_of_samples, delay) ## Get 600 points at a time 
-        print("data :" + str(data))
+        if len(data) > 0:
+            ## Print data
+            print("data :" + str(data))
         await asyncio.sleep(delay)
         t += delay
 

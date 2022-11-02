@@ -21,7 +21,12 @@ All rights reserved.
 import asyncio 
  
 ## WPC
-from wpcsys import pywpc
+try:
+    from wpcsys import pywpc
+except:
+    import sys
+    sys.path.insert(0, 'src/')
+    import pywpc
 
 async def main():  
     print("Start example code...")
@@ -36,7 +41,7 @@ async def main():
     try:
         dev.connect("192.168.5.79")
     except Exception as err:
-        pywpc.printGenericError(er
+        pywpc.printGenericError(err)
 
     ## Perform DAQ basic information 
     try:

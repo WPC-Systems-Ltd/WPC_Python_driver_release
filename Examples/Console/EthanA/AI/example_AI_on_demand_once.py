@@ -23,7 +23,12 @@ All rights reserved.
 import asyncio
 
 ## WPC
-from wpcsys import pywpc
+try:
+    from wpcsys import pywpc
+except:
+    import sys
+    sys.path.insert(0, 'src/')
+    import pywpc
 
 async def main():
     print("Start example code...")
@@ -31,6 +36,9 @@ async def main():
     ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
 
+    ## Create device handle
+    dev = pywpc.EthanA()
+    
     ## Connect to device
     try:
         dev.connect("192.168.1.110")
