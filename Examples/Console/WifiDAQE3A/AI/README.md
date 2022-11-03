@@ -1,4 +1,3 @@
-
 # AI
 > **Note**
 > Make sure you are connected to correct IP or serial number.
@@ -14,7 +13,7 @@ If you want to build your own AI application, try to use this as a basic templat
 
 ## How to use this example
 
-### Hardware Requirement
+### Hardware requirement
 
 In order to run this example, you should get WifiDAQE3A product, which contains AI function.
 
@@ -24,7 +23,7 @@ Then, we take WifiDAQE3A for example.
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-WifiDAQE3A.JPG" alt="drawing" width="600"/>
 
-## AI interfacing SOP 
+## AI interfacing SOP
 
 Create device handle -> Connect to device -> Open AI port -> Read AI data -> Close AI port -> Disconnect device -> Release device handle.
 

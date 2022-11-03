@@ -1,6 +1,6 @@
-example AI continuous with logger
-=================================
+AI continuous with logger
+=========================
 
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1AD/AI/example_AI_continuous_with_logger.py
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1AD/AI/AI_continuous_with_logger.py
    :language: python
    :linenos:

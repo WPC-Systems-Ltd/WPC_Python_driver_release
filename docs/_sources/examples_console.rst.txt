@@ -7,7 +7,7 @@ Device finder
 .. toctree::
    :maxdepth: 4
 
-   examples/Console/DeviceFinder/DeviceFinder/find_all_devices.rst
+   examples/Console/DeviceFinder/Find_devices/find_all_devices.rst
 
 
 Ethan-A
@@ -28,7 +28,7 @@ Ethan-A
 
    examples/Console/EthanA/AI/AI_on_demand_once.rst
 
-   examples/Console/EthanA/System/get_device_info.rst
+   examples/Console/EthanA/System_ETH/get_network_info.rst
 
    examples/Console/EthanA/Tutorial/single_loop_thread.rst
 
@@ -57,7 +57,7 @@ Ethan-D
 
    examples/Console/EthanD/DIO/DO_blinky_port.rst
 
-   examples/Console/EthanD/System/get_device_info.rst
+   examples/Console/EthanD/System_ETH/get_network_info.rst
 
    examples/Console/EthanD/Tutorial/single_loop_thread.rst
 
@@ -107,6 +107,10 @@ USB-DAQ-F1-AD
    examples/Console/USBDAQF1AD/UART/UART_read.rst
 
    examples/Console/USBDAQF1AD/UART/UART_write.rst
+
+   examples/Console/USBDAQF1AD/System_USB/get_USB_info.rst
+
+   examples/Console/USBDAQF1AD/System_USB/get_pin_mode.rst
 
    examples/Console/USBDAQF1AD/Tutorial/single_loop_thread.rst
 
@@ -161,6 +165,10 @@ USB-DAQ-F1-AOD
 
    examples/Console/USBDAQF1AOD/UART/UART_write.rst
 
+   examples/Console/USBDAQF1AOD/System_USB/get_USB_info.rst
+
+   examples/Console/USBDAQF1AOD/System_USB/get_pin_mode.rst
+
    examples/Console/USBDAQF1AOD/Tutorial/single_loop_thread.rst
 
    examples/Console/USBDAQF1AOD/Tutorial/single_loop_async.rst
@@ -202,6 +210,10 @@ USB-DAQ-F1-CD
 
    examples/Console/USBDAQF1CD/CAN/CAN_write.rst
 
+   examples/Console/USBDAQF1CD/System_USB/get_USB_info.rst
+
+   examples/Console/USBDAQF1CD/System_USB/get_pin_mode.rst
+
    examples/Console/USBDAQF1CD/Tutorial/single_loop_thread.rst
 
    examples/Console/USBDAQF1CD/Tutorial/single_loop_async.rst
@@ -239,6 +251,10 @@ USB-DAQ-F1-D
 
    examples/Console/USBDAQF1D/UART/UART_write.rst
 
+   examples/Console/USBDAQF1D/System_USB/get_USB_info.rst
+
+   examples/Console/USBDAQF1D/System_USB/get_pin_mode.rst
+
    examples/Console/USBDAQF1D/Tutorial/single_loop_thread.rst
 
    examples/Console/USBDAQF1D/Tutorial/single_loop_async.rst
@@ -265,6 +281,10 @@ USB-DAQ-F1-D-SNK
    examples/Console/USBDAQF1DSNK/DIO/DO_blinky_pins.rst
 
    examples/Console/USBDAQF1DSNK/DIO/DO_blinky_port.rst
+
+   examples/Console/USBDAQF1DSNK/System_USB/get_USB_info.rst
+
+   examples/Console/USBDAQF1DSNK/System_USB/get_pin_mode.rst
 
    examples/Console/USBDAQF1DSNK/Tutorial/single_loop_thread.rst
 
@@ -309,6 +329,10 @@ USB-DAQ-F1-RD
 
    examples/Console/USBDAQF1RD/Temperature_RTD/RTD_read_channel_status.rst
 
+   examples/Console/USBDAQF1RD/System_USB/get_USB_info.rst
+
+   examples/Console/USBDAQF1RD/System_USB/get_pin_mode.rst
+
    examples/Console/USBDAQF1RD/Tutorial/single_loop_thread.rst
 
    examples/Console/USBDAQF1RD/Tutorial/single_loop_async.rst
@@ -352,6 +376,10 @@ USB-DAQ-F1-TD
 
    examples/Console/USBDAQF1TD/Temperature_TC/TC_read_channel_status.rst
 
+   examples/Console/USBDAQF1TD/System_USB/get_USB_info.rst
+
+   examples/Console/USBDAQF1TD/System_USB/get_pin_mode.rst
+
    examples/Console/USBDAQF1TD/Tutorial/single_loop_thread.rst
 
    examples/Console/USBDAQF1TD/Tutorial/single_loop_async.rst
@@ -379,7 +407,9 @@ Wifi-DAQ-E3-A
 
    examples/Console/WifiDAQE3A/AI/AI_on_demand_once.rst
 
-   examples/Console/WifiDAQE3A/System/get_device_info.rst
+   examples/Console/WifiDAQE3A/System_Wifi/get_network_info.rst
+
+   examples/Console/WifiDAQE3A/System_Wifi/get_Wifi_DAQ_status.rst
 
    examples/Console/WifiDAQE3A/Tutorial/single_loop_thread.rst
 

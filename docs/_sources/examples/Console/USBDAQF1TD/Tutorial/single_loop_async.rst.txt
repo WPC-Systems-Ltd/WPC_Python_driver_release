@@ -1,6 +1,6 @@
-example single loop async
-=========================
+Single loop async
+=================
 
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1TD/Tutorial/example_single_loop_async.py
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1TD/Tutorial/single_loop_async.py
    :language: python
    :linenos:

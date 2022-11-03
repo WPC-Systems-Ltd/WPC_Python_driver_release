@@ -1,6 +1,6 @@
-example DO write port
-=====================
+DO write port
+=============
 
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1AD/DIO/example_DO_write_port.py
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1AD/DIO/DO_write_port.py
    :language: python
    :linenos:

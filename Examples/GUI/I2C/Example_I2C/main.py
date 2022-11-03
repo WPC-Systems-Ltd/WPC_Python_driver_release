@@ -25,7 +25,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
 
         ## Create device handle
-        self.dev = pywpc.USBDAQF1D()
+        self.dev = pywpc.USBDAQF1TD()
 
         ## Get Python driver version 
         print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
@@ -57,14 +57,16 @@ class MainWindow(QtWidgets.QMainWindow):
     @asyncSlot()      
     async def openPort(self):
         ## Open I2C port
-        for i in range(1,3):
-            await self.dev.I2C_open_async(i)
+        for i in range(1,3): 
+            status = await self.dev.I2C_open_async(i)
+            print("I2C_open_async status: ", status)
 
     @asyncSlot()      
     async def closePort(self):
         ## Close I2C port
         for i in range(1,3):
-            await self.dev.I2C_close_async(i)
+            status = await self.dev.I2C_close_async(i)
+            print("I2C_close_async status: ", status)
 
     @asyncSlot() 
     async def setEvent(self):
@@ -77,7 +79,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Set I2C port and clock rate
         status = await self.dev.I2C_setClockRate_async(port, clock_mode)
-        if status == 0: print("SPI_setPrescaler: OK")
+        print("I2C_setClockRate_async status: ", status)
 
     @asyncSlot() 
     async def writeEvent(self):
@@ -96,8 +98,9 @@ class MainWindow(QtWidgets.QMainWindow):
         write_data_int = self.converStrtoIntList(write_data)    
 
         ## Set I2C port and write bytes
-        status = await self.dev.I2C_write_async(port, write_addr_int, write_data_int)
-        if status == 0: print("I2C_write: OK")
+        status = await self.dev.I2C_write_async(port, write_addr_int, write_data_int) 
+        print("I2C_write_async status: ", status)
+
 
     @asyncSlot() 
     async def readEvent(self):
@@ -134,16 +137,26 @@ class MainWindow(QtWidgets.QMainWindow):
             ## Change connection flag
             self.connect_flag = 1
 
-            ## Open SPI port
-            self.openPort()
+            ## Get port
+            port = self.ui.comboBox_port.currentIndex()
+
+            port = port +1
+            ## Open I2C port
+            status = await self.dev.I2C_open_async(port)
+            print("I2C_open_async status: ", status)
 
         except pywpc.Error as err:
             print("err: " + str(err))
 
     @asyncSlot()      
     async def disconnectEvent(self):
-        ## Close SPI port
-        self.closePort()
+        ## Get port 
+        port = self.ui.comboBox_port.currentIndex()
+        port = port +1
+        
+        ## Close I2C port   
+        status = await self.dev.I2C_close_async(port)
+        print("I2C_close_async status: ", status)
 
         ## Disconnect network device
         self.dev.disconnect()

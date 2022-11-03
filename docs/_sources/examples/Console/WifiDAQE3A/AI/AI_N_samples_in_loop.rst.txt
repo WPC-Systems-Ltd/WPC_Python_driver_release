@@ -1,6 +1,6 @@
-example AI N samples in loop
-============================
+AI N samples in loop
+====================
 
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/WifiDAQE3A/AI/example_AI_N_samples_in_loop.py
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/WifiDAQE3A/AI/AI_N_samples_in_loop.py
    :language: python
    :linenos:

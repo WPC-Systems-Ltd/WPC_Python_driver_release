@@ -1,6 +1,6 @@
-example RTD read channel data
-=============================
+RTD read channel data
+=====================
 
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1RD/Temperature_RTD/example_RTD_read_channel_data.py
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1RD/Temperature_RTD/RTD_read_channel_data.py
    :language: python
    :linenos:

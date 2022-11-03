@@ -1,6 +1,6 @@
-example DO blinky pins
-======================
+DO blinky pins
+==============
 
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1CD/DIO/example_DO_blinky_pins.py
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1CD/DIO/DO_blinky_pins.py
    :language: python
    :linenos:

@@ -134,10 +134,9 @@ class MainWindow(QtWidgets.QMainWindow):
         while True:
             ## data acquisition
             data = await self.dev.AI_readStreaming_async(port, num_of_sample, delay)## Get 600 points at a time 
-            if data is not None:
+            if len(data) >0 :
                 self.setDisplayPlotNums(data, self.ai_n_samples)
-            else: 
-                await asyncio.sleep(delay) 
+            await asyncio.sleep(delay) 
 
     @asyncSlot()      
     async def startAIEvent(self):
@@ -147,10 +146,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Get AI mode from UI
         mode = self.ui.comboBox_aiMode.currentIndex()
-        
         ## On Demand
         if mode == 0:
-            data = await self.dev.AI_readOnDemand_async(self.AI_port)
+            data = await self.dev.AI_readOnDemand_async(self.AI_port) 
             self.setDisplayPlotNums([data], self.ai_n_samples)
         ## N-Samples/ Continuous 
         else:
@@ -269,7 +267,6 @@ class MainWindow(QtWidgets.QMainWindow):
     def setDisplayPlotNums(self, data, nums):
         data = np.array(data)
         self.plot_total_times += len(data)
-        
         # for plotting
         for k in range(8):
             self.channel_list[k].extend(data[:, k])

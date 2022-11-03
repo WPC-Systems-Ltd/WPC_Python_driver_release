@@ -1,6 +1,6 @@
-example DIO loopback port
-=========================
+DIO loopback port
+=================
 
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1RD/DIO/example_DIO_loopback_port.py
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1RD/DIO/DIO_loopback_port.py
    :language: python
    :linenos:

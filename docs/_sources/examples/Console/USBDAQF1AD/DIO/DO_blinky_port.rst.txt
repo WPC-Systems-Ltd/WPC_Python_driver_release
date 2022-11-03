@@ -1,6 +1,6 @@
-example DO blinky port
-======================
+DO blinky port
+==============
 
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1AD/DIO/example_DO_blinky_port.py
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1AD/DIO/DO_blinky_port.py
    :language: python
    :linenos:

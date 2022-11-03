@@ -1,6 +1,6 @@
-example TC read channel data
-============================
+TC read channel data
+====================
 
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1TD/Temperature_TC/example_TC_read_channel_data.py
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1TD/Temperature_TC/TC_read_channel_data.py
    :language: python
    :linenos:

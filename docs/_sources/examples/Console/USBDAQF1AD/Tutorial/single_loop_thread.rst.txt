@@ -1,6 +1,6 @@
-example single loop thread
-==========================
+Single loop thread
+==================
 
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1AD/Tutorial/example_single_loop_thread.py
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1AD/Tutorial/single_loop_thread.py
    :language: python
    :linenos:

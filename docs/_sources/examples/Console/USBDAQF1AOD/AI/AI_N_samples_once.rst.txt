@@ -1,6 +1,6 @@
-example AI N samples once
-=========================
+AI N samples once
+=================
 
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1AOD/AI/example_AI_N_samples_once.py
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1AOD/AI/AI_N_samples_once.py
    :language: python
    :linenos:
