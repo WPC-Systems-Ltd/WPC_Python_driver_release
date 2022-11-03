@@ -67,6 +67,7 @@ class MainWindow(QtWidgets.QMainWindow):
        for i in range(4):
         await asyncio.sleep(0.1) ## delay(second)
         status = await self.dev.DO_openPort_async(i)
+        
     @asyncSlot() 
     async def CloseDOport(self):
        for i in range(4):
