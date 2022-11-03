@@ -1,6 +1,6 @@
 example AI continuous
 =====================
 
-.. literalinclude:: ..\..\..\..\..\..\..\WPC_Python_driver_release\examples\Console\WifiDAQE3A\AI\example_AI_continuous.py
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/WifiDAQE3A/AI/example_AI_continuous.py
    :language: python
    :linenos:

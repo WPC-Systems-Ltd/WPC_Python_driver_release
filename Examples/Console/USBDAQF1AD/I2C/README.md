@@ -7,6 +7,8 @@
 
 This example project demonstrates how to use WPC python driver to read and write EEPROM (24C08C) through I2C interface.
 
+In order to use API correctly, please refer [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
+
 If you want to build your own I2C application (for example, read the temperature data from external sensor with I2C interface), try to use this as a basic template, then add your own code.
 
 ## How to use this example

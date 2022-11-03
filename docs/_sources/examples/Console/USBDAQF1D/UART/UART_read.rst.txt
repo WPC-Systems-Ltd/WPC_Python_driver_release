@@ -1,6 +1,6 @@
 example UART read
 =================
 
-.. literalinclude:: ..\..\..\..\..\..\..\WPC_Python_driver_release\examples\Console\USBDAQF1D\UART\example_UART_read.py
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1D/UART/example_UART_read.py
    :language: python
    :linenos:

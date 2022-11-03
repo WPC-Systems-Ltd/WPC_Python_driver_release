@@ -3,8 +3,6 @@
 > **Note**
 > Make sure you are connected to correct IP or serial number.
 
-# System
-
 ## Overview
 
 This example project demonstrates how to use WPC python driver to get basic information 
@@ -14,7 +12,7 @@ Additionally, try to execute `example_find_all_devices` to find all WPC network 
 
 In order to use API correctly, please refer [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-If you want to build your own application, try to use this as a basic template, then add your own code.
+If you want to build your own system application, try to use this as a basic template, then add your own code.
 
 ## How to use this example
 

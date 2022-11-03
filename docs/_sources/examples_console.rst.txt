@@ -1,0 +1,391 @@
+Example Codes - Console
+=======================
+
+Device finder
+-------------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/DeviceFinder/DeviceFinder/find_all_devices.rst
+
+
+Ethan-A
+-------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/EthanA/AI/AI_continuous.rst
+
+   examples/Console/EthanA/AI/AI_continuous_with_logger.rst
+
+   examples/Console/EthanA/AI/AI_on_demand_in_loop.rst
+
+   examples/Console/EthanA/AI/AI_N_samples_once.rst
+
+   examples/Console/EthanA/AI/AI_N_samples_in_loop.rst
+
+   examples/Console/EthanA/AI/AI_on_demand_once.rst
+
+   examples/Console/EthanA/System/get_device_info.rst
+
+   examples/Console/EthanA/Tutorial/single_loop_thread.rst
+
+   examples/Console/EthanA/Tutorial/single_loop_async.rst
+
+   examples/Console/EthanA/Tutorial/multiple_loops_thread.rst
+
+   examples/Console/EthanA/Tutorial/multiple_loops_async.rst
+
+
+Ethan-D
+-------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/EthanD/DIO/DIO_loopback_pins.rst
+
+   examples/Console/EthanD/DIO/DIO_loopback_port.rst
+
+   examples/Console/EthanD/DIO/DO_write_pins.rst
+
+   examples/Console/EthanD/DIO/DO_write_port.rst
+
+   examples/Console/EthanD/DIO/DO_blinky_pins.rst
+
+   examples/Console/EthanD/DIO/DO_blinky_port.rst
+
+   examples/Console/EthanD/System/get_device_info.rst
+
+   examples/Console/EthanD/Tutorial/single_loop_thread.rst
+
+   examples/Console/EthanD/Tutorial/single_loop_async.rst
+
+   examples/Console/EthanD/Tutorial/multiple_loops_thread.rst
+
+   examples/Console/EthanD/Tutorial/multiple_loops_async.rst
+
+
+USB-DAQ-F1-AD
+-------------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/USBDAQF1AD/AI/AI_continuous.rst
+
+   examples/Console/USBDAQF1AD/AI/AI_continuous_with_logger.rst
+
+   examples/Console/USBDAQF1AD/AI/AI_on_demand_in_loop.rst
+
+   examples/Console/USBDAQF1AD/AI/AI_N_samples_once.rst
+
+   examples/Console/USBDAQF1AD/AI/AI_N_samples_in_loop.rst
+
+   examples/Console/USBDAQF1AD/AI/AI_on_demand_once.rst
+
+   examples/Console/USBDAQF1AD/DIO/DIO_loopback_pins.rst
+
+   examples/Console/USBDAQF1AD/DIO/DIO_loopback_port.rst
+
+   examples/Console/USBDAQF1AD/DIO/DO_write_pins.rst
+
+   examples/Console/USBDAQF1AD/DIO/DO_write_port.rst
+
+   examples/Console/USBDAQF1AD/DIO/DO_blinky_pins.rst
+
+   examples/Console/USBDAQF1AD/DIO/DO_blinky_port.rst
+
+   examples/Console/USBDAQF1AD/I2C/I2C_write_read.rst
+
+   examples/Console/USBDAQF1AD/SPI/SPI_read_and_write.rst
+
+   examples/Console/USBDAQF1AD/SPI/SPI_write.rst
+
+   examples/Console/USBDAQF1AD/UART/UART_read.rst
+
+   examples/Console/USBDAQF1AD/UART/UART_write.rst
+
+   examples/Console/USBDAQF1AD/Tutorial/single_loop_thread.rst
+
+   examples/Console/USBDAQF1AD/Tutorial/single_loop_async.rst
+
+   examples/Console/USBDAQF1AD/Tutorial/multiple_loops_thread.rst
+
+   examples/Console/USBDAQF1AD/Tutorial/multiple_loops_async.rst
+
+
+USB-DAQ-F1-AOD
+--------------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/USBDAQF1AOD/AI/AI_continuous.rst
+
+   examples/Console/USBDAQF1AOD/AI/AI_continuous_with_logger.rst
+
+   examples/Console/USBDAQF1AOD/AI/AI_on_demand_in_loop.rst
+
+   examples/Console/USBDAQF1AOD/AI/AI_N_samples_once.rst
+
+   examples/Console/USBDAQF1AOD/AI/AI_N_samples_in_loop.rst
+
+   examples/Console/USBDAQF1AOD/AI/AI_on_demand_once.rst
+
+   examples/Console/USBDAQF1AOD/AO/AO_write_one_channel.rst
+
+   examples/Console/USBDAQF1AOD/AO/AO_write_all_channels.rst
+
+   examples/Console/USBDAQF1AOD/AIO/AIO_one_channel_loopback.rst
+
+   examples/Console/USBDAQF1AOD/AIO/AIO_all_channels_loopback.rst
+
+   examples/Console/USBDAQF1AOD/DIO/DIO_loopback_pins.rst
+
+   examples/Console/USBDAQF1AOD/DIO/DIO_loopback_port.rst
+
+   examples/Console/USBDAQF1AOD/DIO/DO_write_pins.rst
+
+   examples/Console/USBDAQF1AOD/DIO/DO_write_port.rst
+
+   examples/Console/USBDAQF1AOD/DIO/DO_blinky_pins.rst
+
+   examples/Console/USBDAQF1AOD/DIO/DO_blinky_port.rst
+
+   examples/Console/USBDAQF1AOD/I2C/I2C_write_read.rst
+
+   examples/Console/USBDAQF1AOD/UART/UART_read.rst
+
+   examples/Console/USBDAQF1AOD/UART/UART_write.rst
+
+   examples/Console/USBDAQF1AOD/Tutorial/single_loop_thread.rst
+
+   examples/Console/USBDAQF1AOD/Tutorial/single_loop_async.rst
+
+   examples/Console/USBDAQF1AOD/Tutorial/multiple_loops_thread.rst
+
+   examples/Console/USBDAQF1AOD/Tutorial/multiple_loops_async.rst
+
+
+USB-DAQ-F1-CD
+-------------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/USBDAQF1CD/DIO/DIO_loopback_pins.rst
+
+   examples/Console/USBDAQF1CD/DIO/DIO_loopback_port.rst
+
+   examples/Console/USBDAQF1CD/DIO/DO_write_pins.rst
+
+   examples/Console/USBDAQF1CD/DIO/DO_write_port.rst
+
+   examples/Console/USBDAQF1CD/DIO/DO_blinky_pins.rst
+
+   examples/Console/USBDAQF1CD/DIO/DO_blinky_port.rst
+
+   examples/Console/USBDAQF1CD/I2C/I2C_write_read.rst
+
+   examples/Console/USBDAQF1CD/SPI/SPI_read_and_write.rst
+
+   examples/Console/USBDAQF1CD/SPI/SPI_write.rst
+
+   examples/Console/USBDAQF1CD/UART/UART_read.rst
+
+   examples/Console/USBDAQF1CD/UART/UART_write.rst
+
+   examples/Console/USBDAQF1CD/CAN/CAN_read.rst
+
+   examples/Console/USBDAQF1CD/CAN/CAN_write.rst
+
+   examples/Console/USBDAQF1CD/Tutorial/single_loop_thread.rst
+
+   examples/Console/USBDAQF1CD/Tutorial/single_loop_async.rst
+
+   examples/Console/USBDAQF1CD/Tutorial/multiple_loops_thread.rst
+
+   examples/Console/USBDAQF1CD/Tutorial/multiple_loops_async.rst
+
+
+USB-DAQ-F1-D
+------------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/USBDAQF1D/DIO/DIO_loopback_pins.rst
+
+   examples/Console/USBDAQF1D/DIO/DIO_loopback_port.rst
+
+   examples/Console/USBDAQF1D/DIO/DO_write_pins.rst
+
+   examples/Console/USBDAQF1D/DIO/DO_write_port.rst
+
+   examples/Console/USBDAQF1D/DIO/DO_blinky_pins.rst
+
+   examples/Console/USBDAQF1D/DIO/DO_blinky_port.rst
+
+   examples/Console/USBDAQF1D/I2C/I2C_write_read.rst
+
+   examples/Console/USBDAQF1D/SPI/SPI_read_and_write.rst
+
+   examples/Console/USBDAQF1D/SPI/SPI_write.rst
+
+   examples/Console/USBDAQF1D/UART/UART_read.rst
+
+   examples/Console/USBDAQF1D/UART/UART_write.rst
+
+   examples/Console/USBDAQF1D/Tutorial/single_loop_thread.rst
+
+   examples/Console/USBDAQF1D/Tutorial/single_loop_async.rst
+
+   examples/Console/USBDAQF1D/Tutorial/multiple_loops_thread.rst
+
+   examples/Console/USBDAQF1D/Tutorial/multiple_loops_async.rst
+
+
+USB-DAQ-F1-D-SNK
+----------------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/USBDAQF1DSNK/DIO/DIO_loopback_pins.rst
+
+   examples/Console/USBDAQF1DSNK/DIO/DIO_loopback_port.rst
+
+   examples/Console/USBDAQF1DSNK/DIO/DO_write_pins.rst
+
+   examples/Console/USBDAQF1DSNK/DIO/DO_write_port.rst
+
+   examples/Console/USBDAQF1DSNK/DIO/DO_blinky_pins.rst
+
+   examples/Console/USBDAQF1DSNK/DIO/DO_blinky_port.rst
+
+   examples/Console/USBDAQF1DSNK/Tutorial/single_loop_thread.rst
+
+   examples/Console/USBDAQF1DSNK/Tutorial/single_loop_async.rst
+
+   examples/Console/USBDAQF1DSNK/Tutorial/multiple_loops_thread.rst
+
+   examples/Console/USBDAQF1DSNK/Tutorial/multiple_loops_async.rst
+
+
+USB-DAQ-F1-RD
+-------------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/USBDAQF1RD/DIO/DIO_loopback_pins.rst
+
+   examples/Console/USBDAQF1RD/DIO/DIO_loopback_port.rst
+
+   examples/Console/USBDAQF1RD/DIO/DO_write_pins.rst
+
+   examples/Console/USBDAQF1RD/DIO/DO_write_port.rst
+
+   examples/Console/USBDAQF1RD/DIO/DO_blinky_pins.rst
+
+   examples/Console/USBDAQF1RD/DIO/DO_blinky_port.rst
+
+   examples/Console/USBDAQF1RD/I2C/I2C_write_read.rst
+
+   examples/Console/USBDAQF1RD/SPI/SPI_read_and_write.rst
+
+   examples/Console/USBDAQF1RD/SPI/SPI_write.rst
+
+   examples/Console/USBDAQF1RD/UART/UART_read.rst
+
+   examples/Console/USBDAQF1RD/UART/UART_write.rst
+
+   examples/Console/USBDAQF1RD/Temperature_RTD/RTD_read_channel_data.rst
+
+   examples/Console/USBDAQF1RD/Temperature_RTD/RTD_read_channel_data_with_logger.rst
+
+   examples/Console/USBDAQF1RD/Temperature_RTD/RTD_read_channel_status.rst
+
+   examples/Console/USBDAQF1RD/Tutorial/single_loop_thread.rst
+
+   examples/Console/USBDAQF1RD/Tutorial/single_loop_async.rst
+
+   examples/Console/USBDAQF1RD/Tutorial/multiple_loops_thread.rst
+
+   examples/Console/USBDAQF1RD/Tutorial/multiple_loops_async.rst
+
+
+USB-DAQ-F1-TD
+-------------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/USBDAQF1TD/DIO/DIO_loopback_pins.rst
+
+   examples/Console/USBDAQF1TD/DIO/DIO_loopback_port.rst
+
+   examples/Console/USBDAQF1TD/DIO/DO_write_pins.rst
+
+   examples/Console/USBDAQF1TD/DIO/DO_write_port.rst
+
+   examples/Console/USBDAQF1TD/DIO/DO_blinky_pins.rst
+
+   examples/Console/USBDAQF1TD/DIO/DO_blinky_port.rst
+
+   examples/Console/USBDAQF1TD/I2C/I2C_write_read.rst
+
+   examples/Console/USBDAQF1TD/SPI/SPI_read_and_write.rst
+
+   examples/Console/USBDAQF1TD/SPI/SPI_write.rst
+
+   examples/Console/USBDAQF1TD/UART/UART_read.rst
+
+   examples/Console/USBDAQF1TD/UART/UART_write.rst
+
+   examples/Console/USBDAQF1TD/Temperature_TC/TC_read_channel_data.rst
+
+   examples/Console/USBDAQF1TD/Temperature_TC/TC_read_channel_data_with_logger.rst
+
+   examples/Console/USBDAQF1TD/Temperature_TC/TC_read_channel_status.rst
+
+   examples/Console/USBDAQF1TD/Tutorial/single_loop_thread.rst
+
+   examples/Console/USBDAQF1TD/Tutorial/single_loop_async.rst
+
+   examples/Console/USBDAQF1TD/Tutorial/multiple_loops_thread.rst
+
+   examples/Console/USBDAQF1TD/Tutorial/multiple_loops_async.rst
+
+
+Wifi-DAQ-E3-A
+-------------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/WifiDAQE3A/AI/AI_continuous.rst
+
+   examples/Console/WifiDAQE3A/AI/AI_continuous_with_logger.rst
+
+   examples/Console/WifiDAQE3A/AI/AI_on_demand_in_loop.rst
+
+   examples/Console/WifiDAQE3A/AI/AI_N_samples_once.rst
+
+   examples/Console/WifiDAQE3A/AI/AI_N_samples_in_loop.rst
+
+   examples/Console/WifiDAQE3A/AI/AI_on_demand_once.rst
+
+   examples/Console/WifiDAQE3A/System/get_device_info.rst
+
+   examples/Console/WifiDAQE3A/Tutorial/single_loop_thread.rst
+
+   examples/Console/WifiDAQE3A/Tutorial/single_loop_async.rst
+
+   examples/Console/WifiDAQE3A/Tutorial/multiple_loops_thread.rst
+
+   examples/Console/WifiDAQE3A/Tutorial/multiple_loops_async.rst
+

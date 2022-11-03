@@ -67,8 +67,8 @@ async def main():
         state_list = await dev.DI_readPort_async(port_DI)
         print(state_list)
 
-        ## Wait for 3 seconds
-        await asyncio.sleep(3)
+        ## Wait for 1 seconds
+        await asyncio.sleep(1)
         
         ## Close all pins with digital output
         status = await dev.DO_closePort_async(port_DO)

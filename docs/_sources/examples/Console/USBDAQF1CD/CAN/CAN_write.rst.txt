@@ -1,6 +1,6 @@
 example CAN write
 =================
 
-.. literalinclude:: ..\..\..\..\..\..\..\WPC_Python_driver_release\examples\Console\USBDAQF1CD\CAN\example_CAN_write.py
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1CD/CAN/example_CAN_write.py
    :language: python
    :linenos:

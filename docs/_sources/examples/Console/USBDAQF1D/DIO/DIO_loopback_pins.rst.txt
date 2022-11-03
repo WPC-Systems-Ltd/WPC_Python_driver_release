@@ -1,6 +1,6 @@
 example DIO loopback pins
 =========================
 
-.. literalinclude:: ..\..\..\..\..\..\..\WPC_Python_driver_release\examples\Console\USBDAQF1D\DIO\example_DIO_loopback_pins.py
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1D/DIO/example_DIO_loopback_pins.py
    :language: python
    :linenos:

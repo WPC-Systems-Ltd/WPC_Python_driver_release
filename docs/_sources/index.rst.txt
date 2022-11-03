@@ -7,22 +7,22 @@
    :maxdepth: 2
    :caption: API REFERNECE
 
-   products_list
-   products
-   
+   products_summary
+   product_list
+
 .. toctree::
    :hidden:
    :maxdepth: 2
    :caption: EXAMPLE CODES
 
    examples_GUI
-   examples
+   examples_console
 
 .. toctree::
    :hidden:
    :maxdepth: 2
-   :caption: APPENDIX
-   
+   :caption: APPENDICES
+
    ref_port
    ref_error
    ref_SPI

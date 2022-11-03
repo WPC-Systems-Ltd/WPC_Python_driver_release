@@ -66,13 +66,13 @@ async def main():
         status = await dev.AI_open_async(port)
         print("AI_open_async status: ", status)
  
-        ## Set AI port and start async thread
-        await loop_func(dev, port, 1, 3)
-    
         ## Set AI port and acquisition mode to on demand mode (0)
         status = await dev.AI_setMode_async(port, mode)
         print("AI_setMode_async status: ", status)
-        
+
+        ## Set AI port and start async thread
+        await loop_func(dev, port, 1, 3)
+
         ## Close port
         status = await dev.AI_close_async(port) 
         print("AI_close_async status: ", status)

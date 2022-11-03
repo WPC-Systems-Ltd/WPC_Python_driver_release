@@ -1,6 +1,6 @@
 example SPI write
 =================
 
-.. literalinclude:: ..\..\..\..\..\..\..\WPC_Python_driver_release\examples\Console\USBDAQF1CD\SPI\example_SPI_write.py
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1CD/SPI/example_SPI_write.py
    :language: python
    :linenos:

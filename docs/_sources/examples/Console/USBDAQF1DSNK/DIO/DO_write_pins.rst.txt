@@ -1,6 +1,6 @@
 example DO write pins
 =====================
 
-.. literalinclude:: ..\..\..\..\..\..\..\WPC_Python_driver_release\examples\Console\USBDAQF1DSNK\DIO\example_DO_write_pins.py
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1DSNK/DIO/example_DO_write_pins.py
    :language: python
    :linenos:

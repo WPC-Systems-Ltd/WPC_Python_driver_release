@@ -4,7 +4,7 @@ WPC Python Driver Programming Guide
 Overview
 --------
 
-**WPC Python driver**, also known as `pywpc`, contains APIs for interacting with basically WPC DAQ cards or any other WPC USB, WiFi and Ethernet based devices. 
+**WPC Python driver**, also known as `pywpc`, contains APIs for interacting with basically WPC DAQ cards or any other WPC USB, WiFi and Ethernet based devices.
 It supports Python version from 3.8 to 3.10 under Windows 10 operating systems.
 In order to optimize the performance of driver API, we adopt `async/await <https://docs.python.org/3/library/asyncio.html>`_ structure for driver implementation also known as non-blocking method.
 
@@ -12,8 +12,8 @@ Some API functions in the `pywpc` package may not compatible with earlier versio
 To update device firmware to the latest version, please use WPC Device Manager and `LabVIEW Run-time engine <https://drive.google.com/file/d/1Uj6r65KhNxvuApiqrMkZp-NWyq-Eek-k/view>`_.
 You can download WPC Device Manager by `latest release <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/releases/tag/v1.0.2>`_ or visit `WPC Systems Ltd. official website <http://www.wpc.com.tw/36039260092584721462-daq1.html>`_.
 
-+-------------------+-----------------------------------------------------------------------------------+ 
-|                   | Link                                                                              | 
++-------------------+-----------------------------------------------------------------------------------+
+|                   | Link                                                                              |
 +===================+===================================================================================+
 | WPC official site | http://www.wpc.com.tw/                                                            |
 +-------------------+-----------------------------------------------------------------------------------+
@@ -63,7 +63,7 @@ Quick Start
    pywpc
    >>> pywpc.__version__
    1.0.7
-   >>> pywpc.product
+   >>> pywpc.HANDLE_LIST
    ['DeviceFinder', 'WifiDAQE3A', 'EthanD', 'EthanA', 'USBDAQF1D', 'USBDAQF1AD', 'USBDAQF1DSNK', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1CD', 'USBDAQF1RD']
 
 Install and Upgrade
@@ -72,7 +72,7 @@ Install and Upgrade
 - Install
 
 .. code-block:: shell
-    
+
    pip install wpcsys
 
 - Upgrade
