@@ -1,22 +1,25 @@
 WPC Python driver release changelog
 ===================================
 
-v1.0.6 Date: 2022/11/02, Developer: Chunglee_people
+v1.0.7 Date: 2022/11/03, Developer: Chunglee_people
 ---------------------------------------------------
 
 ### Added
 - Own example codes for each product
 - Add README.md in console - AI folder
 - Add firmware error code
+- `libusb-1.0.dll`
+- Included dll in `MANIFEST.in`
 
 ### Changed
-- Replace README.md with README.rst
+- Replace `README.md` with `README.rst`
 
 ### Fixed
-- Fix AI & CAN API error 
+- Fix AI & CAN API error
 
 v1.0.3 Date: 2022/10/20, Developer: Chunglee_people
 ---------------------------------------------------
+
 ### Added
 - Add `AI_setMode_async` in AI_ondemand example code
 - Add logger example code `example_AI_continuous_with_logger` & `example_RTD_read_channel_data_with_logger` & `example_TC_read_channel_data with_logger`
