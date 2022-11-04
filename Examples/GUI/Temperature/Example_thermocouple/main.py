@@ -37,11 +37,11 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Material path
         file_path = os.path.dirname(__file__)
-        self.trademark_path = file_path + "\Material\WPC_trademark.jpg" 
-        self.blue_led_path = file_path + "\Material\WPC_Led_blue.png"
-        self.red_led_path = file_path + "\Material\WPC_Led_red.png"
-        self.green_led_path = file_path + "\Material\WPC_Led_green.png"
-        self.gray_led_path = file_path + "\Material\WPC_Led_gray.png"
+        self.trademark_path = file_path + "\Material\\trademark.jpg"  
+        self.blue_led_path = file_path + "\Material\LED_blue.png"
+        self.red_led_path = file_path + "\Material\LED_red.png"
+        self.green_led_path = file_path + "\Material\LED_green.png"
+        self.gray_led_path = file_path + "\Material\LED_gray.png"
 
         ## Set trademark & LED path
         self.ui.lb_trademark.setPixmap(QtGui.QPixmap(self.trademark_path))
@@ -56,12 +56,14 @@ class MainWindow(QtWidgets.QMainWindow):
 
     @asyncSlot() 
     async def tempEvent(self): 
-        ## Set thermo port to 1 and read thermo in channels
+        ## Set thermo port and read sensor in two channels
         for i in range(2):
             data = await self.dev.Thermal_readSensor_async(self.port, i)
             if i == 0:
+                print("Read channel 0 data:", data, "°C") 
                 self.ui.lineEdit_sensor0.setText(str(data))
             else:
+                print("Read channel 1 data:", data, "°C")
                 self.ui.lineEdit_sensor1.setText(str(data))
 
     @asyncSlot()
@@ -71,26 +73,30 @@ class MainWindow(QtWidgets.QMainWindow):
         oversampling_idx = self.ui.comboBox_oversampling.currentIndex()
         noiserejection_idx = self.ui.comboBox_noiserejection.currentIndex()
 
-        ## Set thermo port to 1 and set type
+        ## Set thermo port and set type
         for i in range(2):
             status = await self.dev.Thermal_setType_async(self.port, i, type_idx)
-            if status == 0: print("setType: OK")   
+            print("Thermal_setType_async status: ", status) 
 
-        ## Set thermo port to 1 and over-sampling mode 
+        ## Set thermo port and over-sampling mode 
         for i in range(2):
             status = await self.dev.Thermal_setOverSampling_async(self.port, i, oversampling_idx)
-            if status == 0: print("setOverSampling: OK")
+            print("Thermal_setOverSampling_async status: ", status)
 
-        ## Set thermo port to 1 and Noise Filter
+        ## Set thermo port  and Noise Filter
         for i in range(2):
             status = await self.dev.Thermal_setNoiseFilter_async(self.port, i, noiserejection_idx)
-            if status == 0: print("setNoiseFilter: OK")
+            print("Thermal_setNoiseFilter_async status: ", status)
   
     @asyncSlot() 
     async def connectEvent(self):
-        ## Get serial_number from UI
-        serial_number = self.ui.lineEdit_SN.text()
+        if self.connect_flag == 1:
+            return
+ 
         try: 
+            ## Get serial_number from UI
+            serial_number = self.ui.lineEdit_SN.text()
+            
             ## Connect to USB device
             self.dev.connect(serial_number)
 
@@ -102,12 +108,19 @@ class MainWindow(QtWidgets.QMainWindow):
         except pywpc.Error as err:
             print("err: " + str(err))
         
-        ## Open thermo port1
-        status = await self.dev.Thermal_open_async(self.port)
-        if status == 0: print("Thermal_open: OK")
-    @asyncSlot()      
+        ## Open thermo port
+        status = await self.dev.Thermal_open_async(self.port) 
+        print("Thermal_open_async status: ", status)
 
+    @asyncSlot()  
     async def disconnectEvent(self):
+        if self.connect_flag == 0:
+            return
+
+        ## Close thermo port
+        status = await self.dev.Thermal_close_async(self.port)
+        print("Thermal_close status: ", status) 
+
         ## Disconnect network device
         self.dev.disconnect()
 
@@ -116,11 +129,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Change connection flag
         self.connect_flag = 0
-
-        ## Close thermo port1
-        status = await self.dev.Thermal_close_async(self.port)
-        if status == 0: print("Thermal_close: OK")   
-
+ 
     def closeEvent(self, event):
         ## Disconnect network device
         self.dev.disconnect()

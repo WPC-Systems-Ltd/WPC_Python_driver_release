@@ -33,11 +33,11 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Material path
         file_path = os.path.dirname(__file__)
-        self.trademark_path = file_path + "\Material\WPC_trademark.jpg" 
-        self.blue_led_path = file_path + "\Material\WPC_Led_blue.png"
-        self.red_led_path = file_path + "\Material\WPC_Led_red.png"
-        self.green_led_path = file_path + "\Material\WPC_Led_green.png"
-        self.gray_led_path = file_path + "\Material\WPC_Led_gray.png"
+        self.trademark_path = file_path + "\Material\\trademark.jpg" 
+        self.blue_led_path = file_path + "\Material\LED_blue.png"
+        self.red_led_path = file_path + "\Material\LED_red.png"
+        self.green_led_path = file_path + "\Material\LED_green.png"
+        self.gray_led_path = file_path + "\Material\LED_gray.png"
 
         ## Set trademark & LED path
         self.ui.lb_trademark.setPixmap(QtGui.QPixmap(self.trademark_path))
@@ -50,7 +50,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.dev = pywpc.EthanA()
         
         ## AI port
-        self.AI_port = 0 
+        self.port = 0 
 
         ## Connection flag
         self.connect_flag = 0
@@ -85,7 +85,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.plotAnimation()
 
         ## Function loop
-        self.loop_fct(self.AI_port, 600, 0.005) ## delay [sec]
+        self.loop_fct(self.port, 600, 0.005) ## delay [sec]
 
     def closeEvent(self, event):
         ## Disconnect network device
@@ -96,48 +96,53 @@ class MainWindow(QtWidgets.QMainWindow):
  
     @asyncSlot()      
     async def connectEvent(self): 
-        if self.connect_flag == 0 :
-            # Get ip from UI
-            self.ip = self.ui.lineEdit_IP.text()
-            try: 
-                ## Connect to network device
-                self.dev.connect(self.ip)
-            except pywpc.Error as err:
-                print(str(err))
+        if self.connect_flag == 1:
+            return 
 
-            ## Open AI port
-            await self.dev.AI_open_async(self.AI_port)
+        ## Get IP 
+        ip = self.ui.lineEdit_IP.text()
+        try: 
+            ## Connect to device
+            self.dev.connect(ip)
+        except pywpc.Error as err:
+            print(str(err))
 
-            ## Change LED status
-            self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
+        ## Open AI port
+        status = await self.dev.AI_open_async(self.port)
+        print("AI_open_async status: ", status)
 
-            ## Change connection flag
-            self.connect_flag = 1
+        ## Change LED status
+        self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
+
+        ## Change connection flag
+        self.connect_flag = 1
  
     @asyncSlot()      
     async def disconnectEvent(self):
-        if self.connect_flag == 1:
-            ## close AI port
-            await self.dev.AI_close_async(self.AI_port)
+        if self.connect_flag == 0:
+            return 
+   
+        ## close AI port
+        status = await self.dev.AI_close_async(self.port)
+        print("AI_close_async status: ", status)
 
-            ## Disconnect network device
-            self.dev.disconnect()
+        ## Disconnect network device
+        self.dev.disconnect()
 
-            ## Change LED status
-            self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
-            
-            ## Change connection flag
-            self.connect_flag = 0
+        ## Change LED status
+        self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
+        
+        ## Change connection flag
+        self.connect_flag = 0
 
     @asyncSlot() 
     async def loop_fct(self, port, num_of_sample , delay): 
         while True:
             ## data acquisition
             data = await self.dev.AI_readStreaming_async(port, num_of_sample, delay)## Get 600 points at a time 
-            if data is not None:
+            if len(data) >0 :
                 self.setDisplayPlotNums(data, self.ai_n_samples)
-            else: 
-                await asyncio.sleep(delay) 
+            await asyncio.sleep(delay) 
 
     @asyncSlot()      
     async def startAIEvent(self):
@@ -150,18 +155,22 @@ class MainWindow(QtWidgets.QMainWindow):
         
         ## On Demand
         if mode == 0:
-            data = await self.dev.AI_readOnDemand_async(self.AI_port)
+            data = await self.dev.AI_readOnDemand_async(self.port) 
             self.setDisplayPlotNums([data], self.ai_n_samples)
         ## N-Samples/ Continuous 
         else:
-            await self.dev.AI_start_async(self.AI_port)
-
+            status = await self.dev.AI_start_async(self.port)
+            print("AI_start_async status: ", status)
+    
     @asyncSlot()      
     async def stopAIEvent(self): 
         ## Check connection status
         if self.checkConnectionStatus() == False:
             return
-        await self.dev.AI_stop_async(self.AI_port)
+        
+        ## Send AI stop
+        status = await self.dev.AI_stop_async(self.port)
+        print("AI_stop_async status: ", status)
 
     @asyncSlot()
     async def chooseAIModeEvent(self, *args):
@@ -171,18 +180,24 @@ class MainWindow(QtWidgets.QMainWindow):
             
         ## Get AI mode from UI
         mode = int(self.ui.comboBox_aiMode.currentIndex())
-        await self.dev.AI_setMode_async(self.AI_port, mode)
 
+        ## Send AI mode
+        status = await self.dev.AI_setMode_async(self.port, mode)
+        print("AI_setMode_async status: ", status)
+    
     @asyncSlot()
     async def setSamplingRateEvent(self):
         ## Check connection status
         if self.checkConnectionStatus() == False:
             return
 
-        # Get Sampling rate from UI
+        ## Get Sampling rate from UI
         sampling_rate = float(self.ui.lineEdit_samplingRate.text())
         self.ai_sampling_rate = sampling_rate
-        await self.dev.AI_setSamplingRate_async(self.AI_port, sampling_rate)
+        
+        ## Send set sampling rate
+        status = await self.dev.AI_setSamplingRate_async(self.port, sampling_rate)
+        print("AI_setSamplingRate_async status: ", status)
 
     @asyncSlot()
     async def setNumofSampleEvent(self):
@@ -190,11 +205,14 @@ class MainWindow(QtWidgets.QMainWindow):
         if self.checkConnectionStatus() == False:
             return
 
-        # Get NumSamples from UI
+        ## Get NumSamples from UI
         n_samples = int(self.ui.lineEdit_numSamples.text())
         self.ai_n_samples = n_samples
-        await self.dev.AI_setNumSamples_async(self.AI_port, n_samples)
-      
+        
+        ## Send set number of samples
+        status = await self.dev.AI_setNumSamples_async(self.port, n_samples)
+        print("AI_setNumSamples_async status: ", status)
+
     def plotInitial(self):
         self.checkboxstatus = [1 for x in range(8)]
         self.matplotlibwidget = MatplotlibWidget()
@@ -212,13 +230,13 @@ class MainWindow(QtWidgets.QMainWindow):
         for i in range(8):
             self.checkboxstatus[i] = int(list_ch[i].isChecked())
 
-        # Get xmin, xmax and x list
+        ## Get xmin, xmax and x list
         m = len(self.channel_list[0])
         x_max = self.plot_total_times
         x_min = max(x_max - m, 0)
         x_list = list(range(x_min, x_max))
 
-        # Get xticks
+        ## Get xticks
         if m > 5:
             dx = m // 6
             ticks = np.arange(x_min, x_max, dx)
@@ -227,13 +245,13 @@ class MainWindow(QtWidgets.QMainWindow):
         yield x_list, ticks, x_min, x_max, self.checkboxstatus
  
     def plotChart(self, update):
-        # Define update value
+        ## Define update value
         x_list, ticks, x_min, x_max, self.checkboxstatus = update
  
-        # Clear all axes info
+        ## Clear all axes info
         self.ui.MplWidget.canvas.axes.clear()
         
-        # Plot 8 channels data
+        ## Plot 8 channels data
         try:
             for i in range(8):
                 self.ui.MplWidget.canvas.axes.plot(x_list, self.channel_list[i], alpha=self.checkboxstatus[i],
@@ -243,24 +261,24 @@ class MainWindow(QtWidgets.QMainWindow):
             print("err_ylist " + str(len(self.channel_list[i])))
 
 
-        # Set x,y limit
+        ## Set x,y limit
         self.ui.MplWidget.canvas.axes.set_ylim(float(self.plot_y_min) * 1.05, float(self.plot_y_max) * 1.05)
         self.ui.MplWidget.canvas.axes.set_xlim(x_min, x_max)
 
-        # Set xtickslabel
+        ## Set xtickslabel
         self.ui.MplWidget.canvas.axes.set_xticks(ticks)
         new_ticks = self.plotConvertXtick(ticks)
         self.ui.MplWidget.canvas.axes.set_xticklabels(new_ticks)
 
-        # Set label
+        ## Set label
         self.ui.MplWidget.canvas.axes.set_xlabel("Time (s)", fontsize=12)
         self.ui.MplWidget.canvas.axes.set_ylabel("Voltage (V)", fontsize=12)
 
-        # Set legend
+        ## Set legend
         self.ui.MplWidget.canvas.axes.legend(('ch0', 'ch1', 'ch2', 'ch3', 'ch4', 'ch5', 'ch6', 'ch7'),
                                             loc='center left', shadow=False, fontsize=10, bbox_to_anchor=(1, 0.75),
                                             facecolor='#f0f0f0')
-        # Set grid
+        ## Set grid
         self.ui.MplWidget.canvas.axes.grid(color='#bac3d1', linestyle='-', linewidth=0.8)  # grid
 
     def plotConvertXtick(self, xtick):
@@ -269,18 +287,17 @@ class MainWindow(QtWidgets.QMainWindow):
     def setDisplayPlotNums(self, data, nums):
         data = np.array(data)
         self.plot_total_times += len(data)
-        
-        # for plotting
+        ## for plotting
         for k in range(8):
             self.channel_list[k].extend(data[:, k])
             self.channel_list[k] = self.channel_list[k][-(nums):]
 
     def setYscaleMaxEvent(self):
-        # Get yscaleMax from MainUI window
+        ## Get yscaleMax from MainUI window
         self.plot_y_max = self.ui.lineEdit_yscaleMax.text()
 
     def setYscaleMinEvent(self):
-        # Get yscaleMin from MainUI window
+        ## Get yscaleMin from MainUI window
         self.plot_y_min = self.ui.lineEdit_yscaleMin.text()
 
     def checkConnectionStatus(self):

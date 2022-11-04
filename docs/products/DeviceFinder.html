@@ -4,11 +4,11 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Device finder &mdash; WPC Python driver 1.0.3 documentation</title>
+  <title>Device finder &mdash; WPC Python driver 1.0.8 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
-    <link rel="shortcut icon" href="../_static/WPC_trademark.jpg"/>
+    <link rel="shortcut icon" href="../_static/WPC-trademark.jpg"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Wifi-DAQ-E3-A" href="WifiDAQE3A.html" />
-    <link rel="prev" title="Data logger" href="DataLogger.html" /> 
+    <link rel="next" title="Data logger" href="DataLogger.html" />
+    <link rel="prev" title="Products Usage" href="../product_list.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -31,10 +31,10 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
             <a href="../index.html" class="icon icon-home"> WPC Python driver
-            <img src="../_static/WPC_logo2.PNG" class="logo" alt="Logo"/>
+            <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.0.3
+                1.0.8
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -46,25 +46,32 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">API REFERNECE</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../products.html">WPC Products</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../products.html#data-logger">Data logger</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../products.html#device-finder">Device finder</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../products_summary.html">Products Feature</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../product_list.html">Products Usage</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../product_list.html#utilities">Utilities</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Device finder</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#api-function-description">API function description</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="DataLogger.html">Data logger</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../products.html#wifi-devices">Wifi devices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../products.html#ethernet-devices">Ethernet devices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../products.html#usb-devices">USB devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../product_list.html#wifi-devices">Wifi devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../product_list.html#ethernet-devices">Ethernet devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../product_list.html#usb-devices">USB devices</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../examples.html">Example codes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../port.html">Port function table</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SPI.html">SPI setting reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../errortable.html">Error Table</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../gui.html">GUI examples by PyQt</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">EXAMPLE CODES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples_GUI.html">Example Codes - GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples_console.html">Example Codes - Console</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">APPENDICES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ref_port.html">I/O Function Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref_error.html">Error Code Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref_SPI.html">SPI Setting Table</a></li>
 </ul>
 
         </div>
@@ -81,7 +88,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../products.html">WPC Products</a> &raquo;</li>
+          <li><a href="../product_list.html">Products Usage</a> &raquo;</li>
       <li>Device finder</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -98,45 +105,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="pywpc.DeviceFinder">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pywpc.</span></span><span class="sig-name descname"><span class="pre">DeviceFinder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.DeviceFinder" title="Permalink to this definition"></a></dt>
-<dd><p class="rubric">Methods</p>
-<table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.DeviceFinder.Bcst_checkMACAndReboot_async" title="pywpc.DeviceFinder.Bcst_checkMACAndReboot_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bcst_checkMACAndReboot_async</span></code></a>(mac_addr)</p></td>
-<td><p>Reboot device with broadcast mode.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.DeviceFinder.Bcst_checkMACAndSetIP_async" title="pywpc.DeviceFinder.Bcst_checkMACAndSetIP_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bcst_checkMACAndSetIP_async</span></code></a>(ip_addr, mac_addr)</p></td>
-<td><p>Set IP with broadcast mode.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.DeviceFinder.Bcst_getDeviceInfo_async" title="pywpc.DeviceFinder.Bcst_getDeviceInfo_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bcst_getDeviceInfo_async</span></code></a>()</p></td>
-<td><p>Get device information with broadcast mode.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.DeviceFinder.close" title="pywpc.DeviceFinder.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>([verbose])</p></td>
-<td><p>Close broadcast device handle.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.DeviceFinder.connect" title="pywpc.DeviceFinder.connect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect</span></code></a>([verbose])</p></td>
-<td><p>Connect to broadcast device.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.DeviceFinder.disconnect" title="pywpc.DeviceFinder.disconnect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disconnect</span></code></a>([verbose])</p></td>
-<td><p>Disonnect broadcast device.</p></td>
-</tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 67%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>getAllUSBDevices</strong></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
+<dd><dl class="py method">
 <dt class="sig sig-object py" id="pywpc.DeviceFinder.Bcst_checkMACAndReboot_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Bcst_checkMACAndReboot_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mac_addr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.DeviceFinder.Bcst_checkMACAndReboot_async" title="Permalink to this definition"></a></dt>
 <dd><p>Reboot device with broadcast mode.</p>
@@ -179,9 +148,9 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.DeviceFinder.Bcst_getDeviceInfo_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Bcst_getDeviceInfo_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.DeviceFinder.Bcst_getDeviceInfo_async" title="Permalink to this definition"></a></dt>
-<dd><p>Get device information with broadcast mode.</p>
+<dt class="sig sig-object py" id="pywpc.DeviceFinder.Bcst_enumerateNetworkDevices_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Bcst_enumerateNetworkDevices_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.DeviceFinder.Bcst_enumerateNetworkDevices_async" title="Permalink to this definition"></a></dt>
+<dd><p>Get all network device information from broadcasting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
@@ -194,6 +163,11 @@
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.DeviceFinder.Bcst_enumerateUSBDevices">
+<span class="sig-name descname"><span class="pre">Bcst_enumerateUSBDevices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.DeviceFinder.Bcst_enumerateUSBDevices" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.DeviceFinder.close">
@@ -237,11 +211,6 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.DeviceFinder.getAllUSBDevices">
-<span class="sig-name descname"><span class="pre">getAllUSBDevices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.DeviceFinder.getAllUSBDevices" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
 </dd></dl>
 
 </section>
@@ -251,8 +220,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="DataLogger.html" class="btn btn-neutral float-left" title="Data logger" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="WifiDAQE3A.html" class="btn btn-neutral float-right" title="Wifi-DAQ-E3-A" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../product_list.html" class="btn btn-neutral float-left" title="Products Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="DataLogger.html" class="btn btn-neutral float-right" title="Data logger" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

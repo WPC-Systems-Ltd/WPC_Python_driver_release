@@ -5,9 +5,9 @@ USB-DAQ-F1-RD
 Device pinout 
 -------------
 
-.. image:: ../images/Pinouts/USB-DAQ-F1-RD.JPG
+.. image:: ../images/Pinouts/pinout-USBDAQF1RD.JPG
    :width: 90%
-   :alt: USB-DAQ-F1-RD
+   :alt: USBDAQF1RD
 
 
 API function description 

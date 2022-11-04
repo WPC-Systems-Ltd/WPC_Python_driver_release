@@ -1,0 +1,6 @@
+CAN read
+========
+
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1CD/CAN/CAN_read.py
+   :language: python
+   :linenos:

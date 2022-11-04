@@ -4,11 +4,11 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>USB-DAQ-F1-CD &mdash; WPC Python driver 1.0.3 documentation</title>
+  <title>USB-DAQ-F1-CD &mdash; WPC Python driver 1.0.8 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
-    <link rel="shortcut icon" href="../_static/WPC_trademark.jpg"/>
+    <link rel="shortcut icon" href="../_static/WPC-trademark.jpg"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="USB-DAQ-F1-RD" href="USBDAQF1RD.html" />
-    <link rel="prev" title="USB-DAQ-F1-TD" href="USBDAQF1TD.html" /> 
+    <link rel="next" title="Example Codes - GUI" href="../examples_GUI.html" />
+    <link rel="prev" title="USB-DAQ-F1-RD" href="USBDAQF1RD.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -31,10 +31,10 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
             <a href="../index.html" class="icon icon-home"> WPC Python driver
-            <img src="../_static/WPC_logo2.PNG" class="logo" alt="Logo"/>
+            <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.0.3
+                1.0.8
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -46,32 +46,38 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">API REFERNECE</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../products.html">WPC Products</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../products.html#data-logger">Data logger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../products.html#device-finder">Device finder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../products.html#wifi-devices">Wifi devices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../products.html#ethernet-devices">Ethernet devices</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../products.html#usb-devices">USB devices</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../products_summary.html">Products Feature</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../product_list.html">Products Usage</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../product_list.html#utilities">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../product_list.html#wifi-devices">Wifi devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../product_list.html#ethernet-devices">Ethernet devices</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../product_list.html#usb-devices">USB devices</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="USBDAQF1D.html">USB-DAQ-F1-D</a></li>
-<li class="toctree-l3"><a class="reference internal" href="USBDAQF1AD.html">USB-DAQ-F1-AD</a></li>
 <li class="toctree-l3"><a class="reference internal" href="USBDAQF1DSNK.html">USB-DAQ-F1-D-SNK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="USBDAQF1AD.html">USB-DAQ-F1-AD</a></li>
 <li class="toctree-l3"><a class="reference internal" href="USBDAQF1AOD.html">USB-DAQ-F1-AOD</a></li>
 <li class="toctree-l3"><a class="reference internal" href="USBDAQF1TD.html">USB-DAQ-F1-TD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="USBDAQF1RD.html">USB-DAQ-F1-RD</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">USB-DAQ-F1-CD</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#device-pinout">Device pinout</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#api-function-description">API function description</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="USBDAQF1RD.html">USB-DAQ-F1-RD</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../examples.html">Example codes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../port.html">Port function table</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SPI.html">SPI setting reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../errortable.html">Error Table</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../gui.html">GUI examples by PyQt</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">EXAMPLE CODES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples_GUI.html">Example Codes - GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples_console.html">Example Codes - Console</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">APPENDICES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ref_port.html">I/O Function Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref_error.html">Error Code Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref_SPI.html">SPI Setting Table</a></li>
 </ul>
 
         </div>
@@ -88,7 +94,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../products.html">WPC Products</a> &raquo;</li>
+          <li><a href="../product_list.html">Products Usage</a> &raquo;</li>
       <li>USB-DAQ-F1-CD</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -102,7 +108,7 @@
 <h1>USB-DAQ-F1-CD<a class="headerlink" href="#usb-daq-f1-cd" title="Permalink to this heading"></a></h1>
 <section id="device-pinout">
 <h2>Device pinout<a class="headerlink" href="#device-pinout" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="../_images/USB-DAQ-F1-CD.JPG"><img alt="USB-DAQ-F1-CD" src="../_images/USB-DAQ-F1-CD.JPG" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/pinout-USBDAQF1CD.JPG"><img alt="USBDAQF1CD" src="../_images/pinout-USBDAQF1CD.JPG" style="width: 90%;" /></a>
 </section>
 <section id="api-function-description">
 <h2>API function description<a class="headerlink" href="#api-function-description" title="Permalink to this heading"></a></h2>
@@ -120,234 +126,6 @@
 </ul>
 </dd>
 </dl>
-<p class="rubric">Methods</p>
-<table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.CAN_close_async" title="pywpc.USBDAQF1CD.CAN_close_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CAN_close_async</span></code></a>(port)</p></td>
-<td><p>Close CAN port on WPC DAQ device.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.CAN_getCounters_async" title="pywpc.USBDAQF1CD.CAN_getCounters_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CAN_getCounters_async</span></code></a>(port)</p></td>
-<td><p>Get CAN counters.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.CAN_getErrors_async" title="pywpc.USBDAQF1CD.CAN_getErrors_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CAN_getErrors_async</span></code></a>(port)</p></td>
-<td><p>Get CAN error counters.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.CAN_getInterrupts_async" title="pywpc.USBDAQF1CD.CAN_getInterrupts_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CAN_getInterrupts_async</span></code></a>(port)</p></td>
-<td><p>Get CAN interrupts and error states.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.CAN_getPinMap" title="pywpc.USBDAQF1CD.CAN_getPinMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CAN_getPinMap</span></code></a>()</p></td>
-<td><p>Get all available CAN port numbers &amp; the pins that are associated with them.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.CAN_open_async" title="pywpc.USBDAQF1CD.CAN_open_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CAN_open_async</span></code></a>(port)</p></td>
-<td><p>Open CAN port on WPC DAQ device.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.CAN_read_async" title="pywpc.USBDAQF1CD.CAN_read_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CAN_read_async</span></code></a>(port, frames[, delay])</p></td>
-<td><p>Read data from CAN port.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.CAN_setEnableInterrupt_async" title="pywpc.USBDAQF1CD.CAN_setEnableInterrupt_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CAN_setEnableInterrupt_async</span></code></a>(port, status)</p></td>
-<td><p>Set CAN interrupts status.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.CAN_setRXFilterOrMask_async" title="pywpc.USBDAQF1CD.CAN_setRXFilterOrMask_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CAN_setRXFilterOrMask_async</span></code></a>(port, status)</p></td>
-<td><p>Set CAN RX filter status.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.CAN_setRXFilteringOn_async" title="pywpc.USBDAQF1CD.CAN_setRXFilteringOn_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CAN_setRXFilteringOn_async</span></code></a>(port, status)</p></td>
-<td><p>Set CAN filtering status.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.CAN_setRXRollover_async" title="pywpc.USBDAQF1CD.CAN_setRXRollover_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CAN_setRXRollover_async</span></code></a>(port, status)</p></td>
-<td><p>Set CAN RX rollover status.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.CAN_setSpeed_async" title="pywpc.USBDAQF1CD.CAN_setSpeed_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CAN_setSpeed_async</span></code></a>(port, mode)</p></td>
-<td><p>Set CAN speed in mode.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.CAN_setTXPriority_async" title="pywpc.USBDAQF1CD.CAN_setTXPriority_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CAN_setTXPriority_async</span></code></a>(port, tx_mode, ...)</p></td>
-<td><p>Set CAN TX priority in mode.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.CAN_start_async" title="pywpc.USBDAQF1CD.CAN_start_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CAN_start_async</span></code></a>(port)</p></td>
-<td><p>Start CAN communication.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.CAN_stop_async" title="pywpc.USBDAQF1CD.CAN_stop_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CAN_stop_async</span></code></a>(port)</p></td>
-<td><p>Stop CAN communication.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.CAN_write_async" title="pywpc.USBDAQF1CD.CAN_write_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CAN_write_async</span></code></a>(port, id, data[, CAN_type, ...])</p></td>
-<td><p>Write data to CAN port.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.DI_closePins_async" title="pywpc.USBDAQF1CD.DI_closePins_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_closePins_async</span></code></a>(port, pin)</p></td>
-<td><p>Close specific pin with digital intput.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.DI_closePort_async" title="pywpc.USBDAQF1CD.DI_closePort_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_closePort_async</span></code></a>(port)</p></td>
-<td><p>Close all pins in specific port with digital input.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.DI_getPinMap" title="pywpc.USBDAQF1CD.DI_getPinMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_getPinMap</span></code></a>()</p></td>
-<td><p>Get all available DI port numbers &amp; the pins that are associated with them.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.DI_openPins_async" title="pywpc.USBDAQF1CD.DI_openPins_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_openPins_async</span></code></a>(port, pin)</p></td>
-<td><p>Open specific pin to digital intput.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.DI_openPort_async" title="pywpc.USBDAQF1CD.DI_openPort_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_openPort_async</span></code></a>(port)</p></td>
-<td><p>Open all pins in specific port with digital input.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.DI_readPins_async" title="pywpc.USBDAQF1CD.DI_readPins_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_readPins_async</span></code></a>(port, pin)</p></td>
-<td><p>Read digital pin state in specific pin.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.DI_readPort_async" title="pywpc.USBDAQF1CD.DI_readPort_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DI_readPort_async</span></code></a>(port)</p></td>
-<td><p>Read all digital pins state in specific port.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.DO_closePins_async" title="pywpc.USBDAQF1CD.DO_closePins_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_closePins_async</span></code></a>(port, pin)</p></td>
-<td><p>Close specific pin with digital output.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.DO_closePort_async" title="pywpc.USBDAQF1CD.DO_closePort_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_closePort_async</span></code></a>(port)</p></td>
-<td><p>Close all pins in specific port with digital output.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.DO_getPinMap" title="pywpc.USBDAQF1CD.DO_getPinMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_getPinMap</span></code></a>()</p></td>
-<td><p>Get all available DO port numbers &amp; the pins that are associated with them.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.DO_openPins_async" title="pywpc.USBDAQF1CD.DO_openPins_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_openPins_async</span></code></a>(port, pin)</p></td>
-<td><p>Open specific pin to digital output.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.DO_openPort_async" title="pywpc.USBDAQF1CD.DO_openPort_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_openPort_async</span></code></a>(port)</p></td>
-<td><p>Open all pins in specific port with digital output.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.DO_writePins_async" title="pywpc.USBDAQF1CD.DO_writePins_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_writePins_async</span></code></a>(port, pin, value)</p></td>
-<td><p>Write digital value to specific pin.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.DO_writePort_async" title="pywpc.USBDAQF1CD.DO_writePort_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DO_writePort_async</span></code></a>(port, value)</p></td>
-<td><p>Write all pins state in specific port with digital output.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.I2C_close_async" title="pywpc.USBDAQF1CD.I2C_close_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_close_async</span></code></a>(port)</p></td>
-<td><p>Close I2C port on WPC DAQ device.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.I2C_getPinMap" title="pywpc.USBDAQF1CD.I2C_getPinMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_getPinMap</span></code></a>()</p></td>
-<td><p>Get all available I2C port numbers &amp; the pins that are associated with them.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.I2C_open_async" title="pywpc.USBDAQF1CD.I2C_open_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_open_async</span></code></a>(port)</p></td>
-<td><p>Open I2C port on WPC DAQ device.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.I2C_read_async" title="pywpc.USBDAQF1CD.I2C_read_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_read_async</span></code></a>(port, read_address, bytes_to_read)</p></td>
-<td><p>Read data from read address.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.I2C_reset_async" title="pywpc.USBDAQF1CD.I2C_reset_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_reset_async</span></code></a>(port)</p></td>
-<td><p>Reset I2C to default settings.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.I2C_setAddressSize_async" title="pywpc.USBDAQF1CD.I2C_setAddressSize_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_setAddressSize_async</span></code></a>(port, mode)</p></td>
-<td><p>Set I2C address size functionality.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.I2C_setClockRate_async" title="pywpc.USBDAQF1CD.I2C_setClockRate_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_setClockRate_async</span></code></a>(port, mode)</p></td>
-<td><p>Set the frequency mode of the desired communication clock.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.I2C_write_async" title="pywpc.USBDAQF1CD.I2C_write_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">I2C_write_async</span></code></a>(port, write_address, write_data)</p></td>
-<td><p>Write data to write address.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.SPI_close_async" title="pywpc.USBDAQF1CD.SPI_close_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_close_async</span></code></a>(port)</p></td>
-<td><p>Close SPI port on WPC DAQ device.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.SPI_getPinMap" title="pywpc.USBDAQF1CD.SPI_getPinMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_getPinMap</span></code></a>()</p></td>
-<td><p>Get all available SPI port numbers &amp; the pins that are associated with them.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.SPI_open_async" title="pywpc.USBDAQF1CD.SPI_open_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_open_async</span></code></a>(port)</p></td>
-<td><p>Open SPI port on WPC DAQ device.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.SPI_readAndWrite_async" title="pywpc.USBDAQF1CD.SPI_readAndWrite_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_readAndWrite_async</span></code></a>(port, write_data)</p></td>
-<td><p>Write and read data simultaneously to SPI port.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.SPI_read_async" title="pywpc.USBDAQF1CD.SPI_read_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_read_async</span></code></a>(port, bytes_to_read)</p></td>
-<td><p>Read data from SPI port.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.SPI_reset_async" title="pywpc.USBDAQF1CD.SPI_reset_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_reset_async</span></code></a>(port)</p></td>
-<td><p>Reset SPI to default settings.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.SPI_setDataSize_async" title="pywpc.USBDAQF1CD.SPI_setDataSize_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_setDataSize_async</span></code></a>(port, mode)</p></td>
-<td><p>Set data frame format.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.SPI_setFirstBit_async" title="pywpc.USBDAQF1CD.SPI_setFirstBit_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_setFirstBit_async</span></code></a>(port, mode)</p></td>
-<td><p>Set LSB first or MSB first.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.SPI_setMode_async" title="pywpc.USBDAQF1CD.SPI_setMode_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_setMode_async</span></code></a>(port, mode)</p></td>
-<td><p>Set clock phase and clock polarity.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.SPI_setPrescaler_async" title="pywpc.USBDAQF1CD.SPI_setPrescaler_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_setPrescaler_async</span></code></a>(port, prescaler)</p></td>
-<td><p>Set the maximum speed of SPI communication.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.SPI_write_async" title="pywpc.USBDAQF1CD.SPI_write_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPI_write_async</span></code></a>(port, write_data)</p></td>
-<td><p>Write data to SPI port.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.Sys_getDriverInfo_async" title="pywpc.USBDAQF1CD.Sys_getDriverInfo_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getDriverInfo_async</span></code></a>()</p></td>
-<td><p>Get device firmware information.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.Sys_getPinModeInPort_async" title="pywpc.USBDAQF1CD.Sys_getPinModeInPort_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getPinModeInPort_async</span></code></a>(port)</p></td>
-<td><p>Get pin mode in specific port.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.Sys_getRTC_async" title="pywpc.USBDAQF1CD.Sys_getRTC_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getRTC_async</span></code></a>()</p></td>
-<td><p>Get date and time to connected WPC device.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.Sys_getSerialNumber_async" title="pywpc.USBDAQF1CD.Sys_getSerialNumber_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_getSerialNumber_async</span></code></a>()</p></td>
-<td><p>Get serial number from the connected WPC device.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.Sys_rebootOnBootloader_async" title="pywpc.USBDAQF1CD.Sys_rebootOnBootloader_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_rebootOnBootloader_async</span></code></a>()</p></td>
-<td><p>Reboot on bootloader from the connected WPC device.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.Sys_reboot_async" title="pywpc.USBDAQF1CD.Sys_reboot_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_reboot_async</span></code></a>()</p></td>
-<td><p>Reboot from the connected WPC device.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.Sys_setPortDI_async" title="pywpc.USBDAQF1CD.Sys_setPortDI_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setPortDI_async</span></code></a>(port)</p></td>
-<td><p>Open port as DI.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.Sys_setPortDO_async" title="pywpc.USBDAQF1CD.Sys_setPortDO_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setPortDO_async</span></code></a>(port)</p></td>
-<td><p>Open port as DO.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.Sys_setPortIdle_async" title="pywpc.USBDAQF1CD.Sys_setPortIdle_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setPortIdle_async</span></code></a>(port)</p></td>
-<td><p>Set all pins in specific port to IDLE state.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.Sys_setRTC_async" title="pywpc.USBDAQF1CD.Sys_setRTC_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sys_setRTC_async</span></code></a>(year, month, day, hour, ...)</p></td>
-<td><p>Set date and time to connected WPC device.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.UART_close_async" title="pywpc.USBDAQF1CD.UART_close_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_close_async</span></code></a>(port)</p></td>
-<td><p>Close UART port on WPC DAQ device.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.UART_getPinMap" title="pywpc.USBDAQF1CD.UART_getPinMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_getPinMap</span></code></a>()</p></td>
-<td><p>Get all available UART port numbers &amp; the pins that are associated with them.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.UART_open_async" title="pywpc.USBDAQF1CD.UART_open_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_open_async</span></code></a>(port)</p></td>
-<td><p>Open UART port on WPC DAQ device.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.UART_read_async" title="pywpc.USBDAQF1CD.UART_read_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_read_async</span></code></a>(port, bytes_to_read[, delay])</p></td>
-<td><p>Read data from UART port.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.UART_reset_async" title="pywpc.USBDAQF1CD.UART_reset_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_reset_async</span></code></a>(port)</p></td>
-<td><p>Reset UART to default settings.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.UART_setBaudRate_async" title="pywpc.USBDAQF1CD.UART_setBaudRate_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_setBaudRate_async</span></code></a>(port, baud_rate)</p></td>
-<td><p>Set the data rate in bits per second.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.UART_setDataBit_async" title="pywpc.USBDAQF1CD.UART_setDataBit_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_setDataBit_async</span></code></a>(port[, mode])</p></td>
-<td><p>Set data size in mode.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.UART_setNumStopBit_async" title="pywpc.USBDAQF1CD.UART_setNumStopBit_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_setNumStopBit_async</span></code></a>(port[, mode])</p></td>
-<td><p>Set number of stop bits in mode.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.UART_setParity_async" title="pywpc.USBDAQF1CD.UART_setParity_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_setParity_async</span></code></a>(port[, mode])</p></td>
-<td><p>Set parity in mode.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.UART_stopReading_async" title="pywpc.USBDAQF1CD.UART_stopReading_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_stopReading_async</span></code></a>(port)</p></td>
-<td><p>Stop reading a stream via UART.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.UART_write_async" title="pywpc.USBDAQF1CD.UART_write_async"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UART_write_async</span></code></a>(port, write_data)</p></td>
-<td><p>Write data to UART port.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.close" title="pywpc.USBDAQF1CD.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>()</p></td>
-<td><p>Close device handle.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.connect" title="pywpc.USBDAQF1CD.connect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect</span></code></a>(serial_num[, verbose])</p></td>
-<td><p>Connect to USB device.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.USBDAQF1CD.disconnect" title="pywpc.USBDAQF1CD.disconnect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disconnect</span></code></a>([verbose])</p></td>
-<td><p>Disconnect USB device.</p></td>
-</tr>
-</tbody>
-</table>
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1CD.CAN_close_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CAN_close_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.CAN_close_async" title="Permalink to this definition"></a></dt>
@@ -355,87 +133,13 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 if success, error otherwise.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1CD.CAN_getCounters_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CAN_getCounters_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.CAN_getCounters_async" title="Permalink to this definition"></a></dt>
-<dd><p>Get CAN counters.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>counter_info</strong><span class="classifier">list of 6 int.</span></dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[0]</span></code>: TX interrupt counter.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[1]</span></code>: RX interrupt counter.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[2]</span></code>: SPI counter.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[3]</span></code>: send counter.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[4]</span></code>: bus error counter.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">counter_info[5]</span></code>: overflow counter.</p></li>
-</ul>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1CD.CAN_getErrors_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CAN_getErrors_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.CAN_getErrors_async" title="Permalink to this definition"></a></dt>
-<dd><p>Get CAN error counters.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>Error_info</strong><span class="classifier">list of two int</span></dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Error_info[0]</span></code>: TX error code.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Error_info[1]</span></code>: RX error code.</p></li>
-</ul>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1CD.CAN_getInterrupts_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CAN_getInterrupts_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.CAN_getInterrupts_async" title="Permalink to this definition"></a></dt>
-<dd><p>Get CAN interrupts and error states.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>ITR_info</strong><span class="classifier">list of three int</span></dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ITR_info[0]</span></code>: interrupt enable.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ITR_info[1]</span></code>: interrupt state.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ITR_info[2]</span></code>: error state.s</p></li>
-</ul>
 </dd>
 </dl>
 </dd>
@@ -467,7 +171,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -482,14 +186,14 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1CD.CAN_read_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CAN_read_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frames</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.005</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.CAN_read_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CAN_read_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_frames</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.005</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.CAN_read_async" title="Permalink to this definition"></a></dt>
 <dd><p>Read data from CAN port.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
-<dt><strong>frames</strong><span class="classifier">int</span></dt><dd><p>The number of frame to receive.</p>
+<dt><strong>num_frames</strong><span class="classifier">int</span></dt><dd><p>The number of frame to receive.</p>
 </dd>
 <dt><strong>delay</strong><span class="classifier">float</span></dt><dd><p>Time delay before getting data.</p>
 </dd>
@@ -497,32 +201,7 @@
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>CAN_data</strong><span class="classifier">list of bytes</span></dt><dd><p>The received data.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1CD.CAN_setEnableInterrupt_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CAN_setEnableInterrupt_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.CAN_setEnableInterrupt_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set CAN interrupts status.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
-</dd>
-<dt><strong>status</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
-<li><p>True : interrupt.</p></li>
-<li><p>False : no interrupt.</p></li>
-</ul>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 if success, error otherwise.</p>
+<dt><strong>frame_list</strong><span class="classifier">list of CANFrame</span></dt><dd><p>The received CAN frames.</p>
 </dd>
 </dl>
 </dd>
@@ -531,16 +210,27 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1CD.CAN_setRXFilterOrMask_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CAN_setRXFilterOrMask_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.CAN_setRXFilterOrMask_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CAN_setRXFilterOrMask_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remote</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.CAN_setRXFilterOrMask_async" title="Permalink to this definition"></a></dt>
 <dd><p>Set CAN RX filter status.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
-<dt><strong>status</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
-<li><p>True : filter.</p></li>
-<li><p>False : mask.</p></li>
+<dt><strong>index</strong><span class="classifier">int</span></dt><dd><p>RX filter &amp; mask index.</p>
+</dd>
+<dt><strong>id_</strong><span class="classifier">int</span></dt><dd><p>Identifier.</p>
+</dd>
+<dt><strong>data</strong><span class="classifier">list of 8 bytes</span></dt><dd><p>The list of data to be transferred.</p>
+</dd>
+<dt><strong>remote</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
+<li><p>True  : CAN Remote.</p></li>
+<li><p>False : CAN Data.</p></li>
+</ul>
+</dd>
+<dt><strong>id_format</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
+<li><p>True  : extended.</p></li>
+<li><p>False : standard.</p></li>
 </ul>
 </dd>
 </dl>
@@ -561,32 +251,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
-</dd>
-<dt><strong>status</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
-<li><p>True : on.</p></li>
-<li><p>False : off.</p></li>
-</ul>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 if success, error otherwise.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1CD.CAN_setRXRollover_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CAN_setRXRollover_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.CAN_setRXRollover_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set CAN RX rollover status.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>status</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
 <li><p>True : on.</p></li>
@@ -611,7 +276,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 : 125 KHz.</p></li>
@@ -632,46 +297,13 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1CD.CAN_setTXPriority_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CAN_setTXPriority_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tx_mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority_mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.CAN_setTXPriority_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set CAN TX priority in mode.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
-</dd>
-<dt><strong>tx_mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : buffer 0.</p></li>
-<li><p>1 : buffer 1.</p></li>
-<li><p>2 : buffer 2.</p></li>
-</ul>
-</dd>
-<dt><strong>priority</strong><span class="classifier">int</span></dt><dd><ul class="simple">
-<li><p>0 : lowest.</p></li>
-<li><p>1 : low intermediate.</p></li>
-<li><p>2 : high intermediate.</p></li>
-<li><p>3 : high highest.</p></li>
-</ul>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 if success, error otherwise.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1CD.CAN_start_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CAN_start_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.CAN_start_async" title="Permalink to this definition"></a></dt>
 <dd><p>Start CAN communication.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -691,7 +323,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -706,23 +338,23 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1CD.CAN_write_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CAN_write_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CAN_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CAN_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.CAN_write_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CAN_write_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remote</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.CAN_write_async" title="Permalink to this definition"></a></dt>
 <dd><p>Write data to CAN port.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
-<dt><strong>id</strong><span class="classifier">int</span></dt><dd><p>Identifier.</p>
+<dt><strong>id_</strong><span class="classifier">int</span></dt><dd><p>Identifier.</p>
 </dd>
 <dt><strong>data</strong><span class="classifier">list of 8 bytes</span></dt><dd><p>The list of data to be transferred.</p>
 </dd>
-<dt><strong>CAN_type</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
+<dt><strong>remote</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
 <li><p>True  : CAN Remote.</p></li>
 <li><p>False : CAN Data.</p></li>
 </ul>
 </dd>
-<dt><strong>CAN_length</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
+<dt><strong>id_format</strong><span class="classifier">bool</span></dt><dd><ul class="simple">
 <li><p>True  : extended.</p></li>
 <li><p>False : standard.</p></li>
 </ul>
@@ -745,7 +377,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><p>Pin number you want to close.</p>
 </dd>
@@ -767,7 +399,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -805,7 +437,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><p>Pin number you want to set to digital intput.</p>
 </dd>
@@ -827,7 +459,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -847,7 +479,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><p>Pin number you want to read.</p>
 </dd>
@@ -869,7 +501,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -889,7 +521,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">list</span></dt><dd><ul class="simple">
 <li><p>Pin number you want to close.</p></li>
@@ -915,7 +547,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -953,7 +585,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
 <li><p>Pin number you want to set to digital output.</p></li>
@@ -979,7 +611,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -999,7 +631,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
 <li><p>Pin number you want to set.</p></li>
@@ -1032,14 +664,14 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>value</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
 <li><p>Pin number you want to set digital high or low.</p></li>
 <li><p>High = 1, Low = 0.</p></li>
 <li><p>For example if intput type is list</p></li>
 <li><p>you want to write pin 0 and pin 2 to high, others to low.</p></li>
-<li><p>[0,0,0,0,0,1,0,1] in LSB.</p></li>
+<li><p>[1,0,1,0,0,0,0,0] in LSB.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1060,7 +692,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1098,7 +730,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1118,7 +750,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>read_address</strong><span class="classifier">int</span></dt><dd><p>7-bit slave address of the device to request bytes from.</p>
 </dd>
@@ -1142,7 +774,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1162,7 +794,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0: 7-bit address.</p></li>
@@ -1187,7 +819,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>frequency</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 : standard (100000).</p></li>
@@ -1214,7 +846,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>write_address</strong><span class="classifier">int</span></dt><dd><p>7-bit slave address of the device to send bytes.</p>
 </dd>
@@ -1238,7 +870,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1277,7 +909,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1297,7 +929,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>write_data</strong><span class="classifier">list of bytes</span></dt><dd><p>The list of data to be transferred.</p>
 </dd>
@@ -1319,7 +951,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>bytes_to_read</strong><span class="classifier">int</span></dt><dd><p>The number of bytes to receive.</p>
 </dd>
@@ -1341,7 +973,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1358,11 +990,11 @@
 <dt class="sig sig-object py" id="pywpc.USBDAQF1CD.SPI_setDataSize_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setDataSize_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.SPI_setDataSize_async" title="Permalink to this definition"></a></dt>
 <dd><p>Set data frame format.
-Please check <a class="reference internal" href="../SPI.html#spifoobar"><span class="std std-ref">SPI data size mode</span></a>.</p>
+Please check <a class="reference internal" href="../ref_SPI.html#spifoobar"><span class="std std-ref">SPI data size mode</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 : 8-bit data.</p></li>
@@ -1384,11 +1016,11 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dt class="sig sig-object py" id="pywpc.USBDAQF1CD.SPI_setFirstBit_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setFirstBit_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.SPI_setFirstBit_async" title="Permalink to this definition"></a></dt>
 <dd><p>Set LSB first or MSB first.
-Please check <a class="reference internal" href="../SPI.html#spifoobar"><span class="std std-ref">SPI MSB/LSB mode</span></a>.</p>
+Please check <a class="reference internal" href="../ref_SPI.html#spifoobar"><span class="std std-ref">SPI MSB/LSB mode</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 : MSB first.</p></li>
@@ -1410,11 +1042,11 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dt class="sig sig-object py" id="pywpc.USBDAQF1CD.SPI_setMode_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.SPI_setMode_async" title="Permalink to this definition"></a></dt>
 <dd><p>Set clock phase and clock polarity.
-Please check <a class="reference internal" href="../SPI.html#spifoobar"><span class="std std-ref">SPI mode</span></a>.</p>
+Please check <a class="reference internal" href="../ref_SPI.html#spifoobar"><span class="std std-ref">SPI mode</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 : CPOL= 0, CPHA= 0</p></li>
@@ -1437,12 +1069,12 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1CD.SPI_setPrescaler_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setPrescaler_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prescaler</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.SPI_setPrescaler_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set the maximum speed of SPI communication. 
-Please check <a class="reference internal" href="../SPI.html#spifoobar"><span class="std std-ref">SPI clock</span></a>.</p>
+<dd><p>Set the maximum speed of SPI communication.
+Please check <a class="reference internal" href="../ref_SPI.html#spifoobar"><span class="std std-ref">SPI clock</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>prescaler</strong><span class="classifier">int</span></dt><dd><p>Prescaler : 2, 4, 8, 16, 32, 64, 128, or 256.</p>
 </dd>
@@ -1464,7 +1096,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>write_data</strong><span class="classifier">list of bytes</span></dt><dd><p>The list of data to be transferred.</p>
 </dd>
@@ -1504,7 +1136,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1595,7 +1227,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1615,7 +1247,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1635,7 +1267,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1685,7 +1317,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1723,7 +1355,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1743,7 +1375,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>bytes_to_read</strong><span class="classifier">int</span></dt><dd><p>The number of bytes to receive.</p>
 </dd>
@@ -1767,7 +1399,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1787,7 +1419,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>baud_rate: int</strong></dt><dd><p>In bits per second (baud).</p>
 </dd>
@@ -1809,7 +1441,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 : 8-bit data. (default)</p></li>
@@ -1834,7 +1466,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 : 1 bit</p></li>
@@ -1861,7 +1493,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>0 : none. (default)</p></li>
@@ -1888,7 +1520,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 </dl>
 </dd>
@@ -1908,7 +1540,7 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Available <a class="reference internal" href="../ref_port.html#foobar"><span class="std std-ref">port</span></a> number depends on WPC DAQ device.</p>
 </dd>
 <dt><strong>write_data</strong><span class="classifier">string or list of characters</span></dt><dd><p>Data to be transferred.</p>
 </dd>
@@ -1980,8 +1612,8 @@ Please check <a class="reference internal" href="../SPI.html#spifoobar"><span cl
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="USBDAQF1TD.html" class="btn btn-neutral float-left" title="USB-DAQ-F1-TD" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="USBDAQF1RD.html" class="btn btn-neutral float-right" title="USB-DAQ-F1-RD" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="USBDAQF1RD.html" class="btn btn-neutral float-left" title="USB-DAQ-F1-RD" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../examples_GUI.html" class="btn btn-neutral float-right" title="Example Codes - GUI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
