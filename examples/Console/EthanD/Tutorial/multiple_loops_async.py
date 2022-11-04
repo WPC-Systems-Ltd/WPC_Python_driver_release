@@ -4,7 +4,7 @@ Tutorial - multiple_loops_async.py
 This example project demonstrates how to use two async thread to get RTC & print string from EthanD.
 
 For other examples please check:
-    https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples
+    https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
 Copyright (c) 2022 WPC Systems Ltd.
