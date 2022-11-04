@@ -127,7 +127,7 @@ class MainWindow(QtWidgets.QMainWindow):
         ## Close UART port
         status = await self.dev.UART_close_async(port)
         print("UART_close_async status: ", status)
- 
+        
         ## Change LED status
         self.ui.lb_ledport.setPixmap(QtGui.QPixmap(self.gray_led_path))
 
