@@ -1,6 +1,0 @@
-Single loop async
-=================
-
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1D/Tutorial/single_loop_async.py
-   :language: python
-   :linenos:

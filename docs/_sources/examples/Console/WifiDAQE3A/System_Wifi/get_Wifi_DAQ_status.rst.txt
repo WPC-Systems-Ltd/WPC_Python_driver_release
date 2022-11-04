@@ -1,6 +1,0 @@
-Get Wifi DAQ status
-===================
-
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/WifiDAQE3A/System_Wifi/get_Wifi_DAQ_status.py
-   :language: python
-   :linenos:

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>984</width>
-    <height>600</height>
+    <width>988</width>
+    <height>609</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -83,9 +83,9 @@
    <widget class="QGroupBox" name="groupBox_connection">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>150</y>
-      <width>601</width>
+      <x>140</x>
+      <y>140</y>
+      <width>681</width>
       <height>91</height>
      </rect>
     </property>
@@ -111,7 +111,7 @@
     <widget class="QPushButton" name="btn_connect">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>310</x>
        <y>30</y>
        <width>111</width>
        <height>41</height>
@@ -144,9 +144,9 @@ QPushButton:pressed{
     <widget class="QPushButton" name="btn_disconnect">
      <property name="geometry">
       <rect>
-       <x>370</x>
+       <x>450</x>
        <y>30</y>
-       <width>141</width>
+       <width>121</width>
        <height>41</height>
       </rect>
      </property>
@@ -177,16 +177,16 @@ QPushButton:pressed{
     <widget class="QLabel" name="lb_serialnum">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>30</x>
        <y>40</y>
-       <width>121</width>
+       <width>131</width>
        <height>31</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>Times New Roman</family>
-       <pointsize>12</pointsize>
+       <pointsize>14</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -198,29 +198,29 @@ QPushButton:pressed{
     <widget class="QLineEdit" name="lineEdit_SN">
      <property name="geometry">
       <rect>
-       <x>130</x>
-       <y>40</y>
+       <x>170</x>
+       <y>30</y>
        <width>111</width>
-       <height>31</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>微軟正黑體</family>
-       <pointsize>9</pointsize>
+       <pointsize>12</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
      <property name="text">
-      <string>21JA1279</string>
+      <string>21JA1239</string>
      </property>
     </widget>
     <widget class="QLabel" name="lb_led">
      <property name="geometry">
       <rect>
-       <x>530</x>
-       <y>26</y>
+       <x>620</x>
+       <y>20</y>
        <width>51</width>
        <height>51</height>
       </rect>
@@ -531,6 +531,9 @@ QPushButton:pressed{
       <string notr="true">background-color: rgb(61, 79, 99);
 border-radius : 5px;
 color:  rgb(255, 255, 255); </string>
+     </property>
+     <property name="currentIndex">
+      <number>1</number>
      </property>
      <item>
       <property name="text">

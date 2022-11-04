@@ -96,40 +96,44 @@ class MainWindow(QtWidgets.QMainWindow):
  
     @asyncSlot()      
     async def connectEvent(self): 
-        if self.connect_flag == 0 :
-            # Get IP from UI
-            self.ip = self.ui.lineEdit_IP.text()
-            try: 
-                ## Connect to network device
-                self.dev.connect(self.ip)
-            except pywpc.Error as err:
-                print(str(err))
+        if self.connect_flag == 1:
+            return 
 
-            ## Open AI port
-            status = await self.dev.AI_open_async(self.port)
-            print("AI_open_async status: ", status)
+        ## Get IP 
+        ip = self.ui.lineEdit_IP.text()
+        try: 
+            ## Connect to device
+            self.dev.connect(ip)
+        except pywpc.Error as err:
+            print(str(err))
 
-            ## Change LED status
-            self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
+        ## Open AI port
+        status = await self.dev.AI_open_async(self.port)
+        print("AI_open_async status: ", status)
 
-            ## Change connection flag
-            self.connect_flag = 1
+        ## Change LED status
+        self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
+
+        ## Change connection flag
+        self.connect_flag = 1
  
     @asyncSlot()      
     async def disconnectEvent(self):
-        if self.connect_flag == 1:
-            ## close AI port
-            status = await self.dev.AI_close_async(self.port)
-            print("AI_close_async status: ", status)
+        if self.connect_flag == 0:
+            return 
+   
+        ## close AI port
+        status = await self.dev.AI_close_async(self.port)
+        print("AI_close_async status: ", status)
 
-            ## Disconnect network device
-            self.dev.disconnect()
+        ## Disconnect network device
+        self.dev.disconnect()
 
-            ## Change LED status
-            self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
-            
-            ## Change connection flag
-            self.connect_flag = 0
+        ## Change LED status
+        self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
+        
+        ## Change connection flag
+        self.connect_flag = 0
 
     @asyncSlot() 
     async def loop_fct(self, port, num_of_sample , delay): 

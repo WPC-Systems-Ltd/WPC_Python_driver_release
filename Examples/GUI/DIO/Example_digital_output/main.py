@@ -61,19 +61,7 @@ class MainWindow(QtWidgets.QMainWindow):
             obj_chbox_state = getattr(self.ui, 'checkbox_state%d' %i)
             obj_chbox_state.stateChanged.connect(self.stateDOEvent)
             obj_chbox_state.setStyleSheet("QCheckBox::indicator{ width: 60px;height: 60px;} QCheckBox::indicator:unchecked {image: url("+self.switch_gray_path+");} QCheckBox::indicator:checked {image: url("+self.switch_blue_path+");}")
-
-    @asyncSlot() 
-    async def OpenDOport(self):
-       for i in range(4):
-        await asyncio.sleep(0.1) ## delay(second)
-        status = await self.dev.DO_openPort_async(i)
-        
-    @asyncSlot() 
-    async def CloseDOport(self):
-       for i in range(4):
-        await asyncio.sleep(0.1) ## delay(second)
-        status = await self.dev.DO_closePort_async(i)
-
+  
     @asyncSlot() 
     async def portEvent(self):
         ## Check connection status
@@ -103,9 +91,13 @@ class MainWindow(QtWidgets.QMainWindow):
 
     @asyncSlot() 
     async def connectEvent(self):
-        # Get serial number from UI
-        serial_num = self.ui.lineEdit_SN.text()
+        if self.connect_flag == 1:
+            return
+
         try: 
+            ## Get serial number
+            serial_num = self.ui.lineEdit_SN.text()
+
             ## Connect to USB device
             self.dev.connect(serial_num)
 
@@ -116,17 +108,26 @@ class MainWindow(QtWidgets.QMainWindow):
             self.connect_flag = 1
 
             ## Open all DO port
-            self.OpenDOport()
-
+            for i in range(4): 
+                status = await self.dev.DO_openPort_async(i) 
+                print("DO_openPort_async status: ", status)
+                await asyncio.sleep(0.1) ## delay(second)
+ 
         except pywpc.Error as err:
             print("err: " + str(err))
 
     @asyncSlot()      
     async def disconnectEvent(self):
-        ## Close DO port
-        self.CloseDOport()
+        if self.connect_flag == 0:
+            return
 
-        ## Disconnect network device
+        ## Close DO port
+        for i in range(4): 
+            status = await self.dev.DO_closePort_async(i) 
+            print("DO_closePort_async status: ", status)
+            await asyncio.sleep(0.1) ## delay(second)
+ 
+        ## Disconnect device
         self.dev.disconnect() 
         
         ## Change LED status

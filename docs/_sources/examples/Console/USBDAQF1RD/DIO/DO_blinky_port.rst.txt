@@ -1,6 +1,0 @@
-DO blinky port
-==============
-
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1RD/DIO/DO_blinky_port.py
-   :language: python
-   :linenos:

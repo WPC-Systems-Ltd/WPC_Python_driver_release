@@ -52,22 +52,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.btn_write.clicked.connect(self.writeEvent)
         self.ui.btn_read.clicked.connect(self.readEvent)
         self.ui.btn_set.clicked.connect(self.setEvent)
-
-
-    @asyncSlot()      
-    async def openPort(self):
-        ## Open I2C port
-        for i in range(1,3): 
-            status = await self.dev.I2C_open_async(i)
-            print("I2C_open_async status: ", status)
-
-    @asyncSlot()      
-    async def closePort(self):
-        ## Close I2C port
-        for i in range(1,3):
-            status = await self.dev.I2C_close_async(i)
-            print("I2C_close_async status: ", status)
-
+        
     @asyncSlot() 
     async def setEvent(self):
         ## Get port from UI
@@ -125,9 +110,13 @@ class MainWindow(QtWidgets.QMainWindow):
 
     @asyncSlot() 
     async def connectEvent(self):
-        # Get serial_number from UI
-        serial_num = self.ui.lineEdit_SN.text()
+        if self.connect_flag == 1:
+            return
+
         try: 
+            # Get serial_numbe 
+            serial_num = self.ui.lineEdit_SN.text()
+
             ## Connect to USB device
             self.dev.connect(serial_num)
 
@@ -138,9 +127,9 @@ class MainWindow(QtWidgets.QMainWindow):
             self.connect_flag = 1
 
             ## Get port
-            port = self.ui.comboBox_port.currentIndex()
+            port_index = self.ui.comboBox_port.currentIndex()
 
-            port = port +1
+            port = port_index +1
             ## Open I2C port
             status = await self.dev.I2C_open_async(port)
             print("I2C_open_async status: ", status)
@@ -150,9 +139,12 @@ class MainWindow(QtWidgets.QMainWindow):
 
     @asyncSlot()      
     async def disconnectEvent(self):
+        if self.connect_flag == 0:
+            return
+            
         ## Get port 
-        port = self.ui.comboBox_port.currentIndex()
-        port = port +1
+        port_index = self.ui.comboBox_port.currentIndex()
+        port = port_index +1
         
         ## Close I2C port   
         status = await self.dev.I2C_close_async(port)

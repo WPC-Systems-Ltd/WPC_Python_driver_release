@@ -1,6 +1,0 @@
-Multiple loops async
-====================
-
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1CD/Tutorial/multiple_loops_async.py
-   :language: python
-   :linenos:

@@ -1,6 +1,0 @@
-Single loop thread
-==================
-
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/WifiDAQE3A/Tutorial/single_loop_thread.py
-   :language: python
-   :linenos:

@@ -191,7 +191,7 @@ QPushButton:pressed{
       </font>
      </property>
      <property name="text">
-      <string>21JA1236</string>
+      <string>21JA1385</string>
      </property>
     </widget>
     <widget class="QLabel" name="lb_led">

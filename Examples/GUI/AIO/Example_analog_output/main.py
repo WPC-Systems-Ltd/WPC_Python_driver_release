@@ -96,9 +96,13 @@ class MainWindow(QtWidgets.QMainWindow):
 
     @asyncSlot() 
     async def connectEvent(self):
-        # Get serial number from UI
-        serial_num = self.ui.lineEdit_SN.text()
+        if self.connect_flag == 0:
+            return
+
         try: 
+            ## Get serial number
+            serial_num = self.ui.lineEdit_SN.text()
+
             ## Connect to USB device
             self.dev.connect(serial_num)
 
@@ -117,6 +121,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
     @asyncSlot()      
     async def disconnectEvent(self):
+        if self.connect_flag == 0:
+            return
+
         ## Close AO port
         status = await self.dev.AO_close_async(self.port) 
         print("AO_close_async status: ", status) 

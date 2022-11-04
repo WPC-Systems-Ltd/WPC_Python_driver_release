@@ -37,7 +37,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.initiBroadcastTable()
 
         ## Define button callback events
-        self.ui.btn_broadcast.clicked.connect(self.broadcastEvent)
+        self.ui.btn_broadcast.clicked.connect(self.broadcastNetworkEvent)
         
         ## Connect to network device
         dev.connect() 
@@ -66,7 +66,7 @@ class MainWindow(QtWidgets.QMainWindow):
         QApplication.restoreOverrideCursor()
         
     @asyncSlot()      
-    async def broadcastEvent(self):
+    async def broadcastNetworkEvent(self):
 
         ## Add WaitCursor
         QApplication.setOverrideCursor(Qt.WaitCursor)
@@ -76,7 +76,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.tableWidget_brst.setRowCount(0) 
 
         ## Perform device information
-        broadcast_info = await dev.Bcst_getDeviceInfo_async()
+        broadcast_info = await dev.Bcst_enumerateNetworkDevices_async()
+        print(broadcast_info)
 
         ## Return information length
         device_amount = len(broadcast_info) 
