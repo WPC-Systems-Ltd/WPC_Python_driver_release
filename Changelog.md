@@ -1,14 +1,14 @@
 WPC Python driver release changelog
 ===================================
 
-v1.0.7 Date: 2022/11/03, Developer: Chunglee_people
+v1.0.8 Date: 2022/11/07, Developer: Chunglee_people
 ---------------------------------------------------
 
 ### Added
-- Own example codes for each product
+- Each product has its own example codes 
 - Add README.md in console - AI folder
 - Add firmware error code
-- `libusb-1.0.dll`
+- Add `libusb-1.0.dll`
 - Included dll in `MANIFEST.in`
 
 ### Changed
