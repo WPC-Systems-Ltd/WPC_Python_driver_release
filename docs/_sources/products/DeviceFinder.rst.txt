@@ -1,0 +1,11 @@
+Device finder
+=============
+
+
+API function description 
+------------------------
+
+.. autoclass:: pywpc.DeviceFinder
+   :members:
+   :undoc-members:
+   :inherited-members:

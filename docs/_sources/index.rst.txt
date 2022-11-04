@@ -1,0 +1,28 @@
+.. include:: README.rst
+
+.. automodule:: pywpc
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+   :caption: API REFERNECE
+
+   products_summary
+   product_list
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+   :caption: EXAMPLE CODES
+
+   examples_GUI
+   examples_console
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+   :caption: APPENDICES
+
+   ref_port
+   ref_error
+   ref_SPI

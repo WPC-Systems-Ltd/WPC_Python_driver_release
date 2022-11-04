@@ -1,0 +1,19 @@
+USB-DAQ-F1-CD
+=============
+
+
+Device pinout 
+-------------
+
+.. image:: ../images/Pinouts/pinout-USBDAQF1CD.JPG
+   :width: 90%
+   :alt: USBDAQF1CD
+
+
+API function description 
+------------------------
+
+.. autoclass:: pywpc.USBDAQF1CD
+   :members:
+   :undoc-members:
+   :inherited-members:

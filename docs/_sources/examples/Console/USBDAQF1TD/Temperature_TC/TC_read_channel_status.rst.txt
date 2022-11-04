@@ -1,0 +1,6 @@
+TC read channel status
+======================
+
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1TD/Temperature_TC/TC_read_channel_status.py
+   :language: python
+   :linenos:
