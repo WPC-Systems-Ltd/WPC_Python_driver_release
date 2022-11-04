@@ -8,7 +8,7 @@ Second, get idle pin mode and set port idle mode. Again, get pin mode.
 Last, close DO and DI in port.
 
 For other examples please check:
-    https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples
+    https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
 Copyright (c) 2022 WPC Systems Ltd.

@@ -8,7 +8,7 @@ Second, write some bytes with address into EEPROM (25LC640). We have to make sur
 Last, close SPI port & DIO pins.
 
 For other examples please check:
-    https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples
+    https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
 Copyright (c) 2022 WPC Systems Ltd.
