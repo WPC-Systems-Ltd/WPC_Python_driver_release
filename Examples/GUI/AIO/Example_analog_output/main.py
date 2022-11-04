@@ -37,11 +37,11 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Material path
         file_path = os.path.dirname(__file__)
-        self.trademark_path = file_path + "\Material\WPC_trademark.jpg" 
-        self.blue_led_path = file_path + "\Material\WPC_Led_blue.png"
-        self.red_led_path = file_path + "\Material\WPC_Led_red.png"
-        self.green_led_path = file_path + "\Material\WPC_Led_green.png"
-        self.gray_led_path = file_path + "\Material\WPC_Led_gray.png"
+        self.trademark_path = file_path + "\Material\\trademark.jpg" 
+        self.blue_led_path = file_path + "\Material\LED_blue.png"
+        self.red_led_path = file_path + "\Material\LED_red.png"
+        self.green_led_path = file_path + "\Material\LED_green.png"
+        self.gray_led_path = file_path + "\Material\LED_gray.png"
 
         ## Set trademark & LED path
         self.ui.lb_trademark.setPixmap(QtGui.QPixmap(self.trademark_path))
@@ -96,9 +96,13 @@ class MainWindow(QtWidgets.QMainWindow):
 
     @asyncSlot() 
     async def connectEvent(self):
-        # Get serial number from UI
-        serial_num = self.ui.lineEdit_SN.text()
+        if self.connect_flag == 0:
+            return
+
         try: 
+            ## Get serial number
+            serial_num = self.ui.lineEdit_SN.text()
+
             ## Connect to USB device
             self.dev.connect(serial_num)
 
@@ -108,18 +112,21 @@ class MainWindow(QtWidgets.QMainWindow):
             ## Change connection flag
             self.connect_flag = 1
  
-            ## Open AO port0
+            ## Open AO port
             status = await self.dev.AO_open_async(self.port)
-            if status == 0: print("AO_open: OK")
+            print("AO_open_async status: ", status)
 
         except pywpc.Error as err:
             print("err: " + str(err))
 
     @asyncSlot()      
     async def disconnectEvent(self):
-        ## Close AO port0
+        if self.connect_flag == 0:
+            return
+
+        ## Close AO port
         status = await self.dev.AO_close_async(self.port) 
-        if status == 0: print("AO_close: OK") 
+        print("AO_close_async status: ", status) 
 
         ## Disconnect network device
         self.dev.disconnect() 
@@ -146,7 +153,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Set AO port to 0 and write data simultaneously
         status = await self.dev.AO_writeAllChannels_async(self.port, voltage_list)
-        if status == 0: print("AO_writeAllChannels: OK")
+        print("AO_writeAllChannels_async status: ", status)
 
     def setLineEditValueEvent(self):
         voltage = self.ui.lineEdit_setall.text()

@@ -36,11 +36,11 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Material path
         file_path = os.path.dirname(__file__)
-        self.trademark_path = file_path + "\Material\WPC_trademark.jpg" 
-        self.blue_led_path = file_path + "\Material\WPC_Led_blue.png"
-        self.red_led_path = file_path + "\Material\WPC_Led_red.png"
-        self.green_led_path = file_path + "\Material\WPC_Led_green.png"
-        self.gray_led_path = file_path + "\Material\WPC_Led_gray.png"
+        self.trademark_path = file_path + "\Material\\trademark.jpg" 
+        self.blue_led_path = file_path + "\Material\LED_blue.png"
+        self.red_led_path = file_path + "\Material\LED_red.png"
+        self.green_led_path = file_path + "\Material\LED_green.png"
+        self.gray_led_path = file_path + "\Material\LED_gray.png"
 
         ## Set trademark & LED path
         self.ui.lb_trademark.setPixmap(QtGui.QPixmap(self.trademark_path))
@@ -53,11 +53,14 @@ class MainWindow(QtWidgets.QMainWindow):
 
     @asyncSlot()      
     async def connectEvent(self):
-        # Get IP from UI
-        self.ip = self.ui.lineEdit_ipConnect.text()
+        if self.connect_flag == 1:
+            return
+
+        # Get IP
+        ip = self.ui.lineEdit_ipConnect.text()
         try: 
             ## Connect to network device
-            self.dev.connect(self.ip)
+            self.dev.connect(ip)
 
             ## Change LED status
             self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
@@ -69,6 +72,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
     @asyncSlot()      
     async def disconnectEvent(self):
+        if self.connect_flag == 0:
+            return
+
         ## Disconnect network device
         self.dev.disconnect() 
 

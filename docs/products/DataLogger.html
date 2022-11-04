@@ -4,11 +4,11 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data logger &mdash; WPC Python driver 1.0.3 documentation</title>
+  <title>Data logger &mdash; WPC Python driver 1.0.8 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
-    <link rel="shortcut icon" href="../_static/WPC_trademark.jpg"/>
+    <link rel="shortcut icon" href="../_static/WPC-trademark.jpg"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Device finder" href="DeviceFinder.html" />
-    <link rel="prev" title="WPC Products" href="../products.html" /> 
+    <link rel="next" title="Wifi-DAQ-E3-A" href="WifiDAQE3A.html" />
+    <link rel="prev" title="Device finder" href="DeviceFinder.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -31,10 +31,10 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
             <a href="../index.html" class="icon icon-home"> WPC Python driver
-            <img src="../_static/WPC_logo2.PNG" class="logo" alt="Logo"/>
+            <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.0.3
+                1.0.8
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -46,25 +46,32 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">API REFERNECE</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../products.html">WPC Products</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../products.html#data-logger">Data logger</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../products_summary.html">Products Feature</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../product_list.html">Products Usage</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../product_list.html#utilities">Utilities</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="DeviceFinder.html">Device finder</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Data logger</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#api-function-description">API function description</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../products.html#device-finder">Device finder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../products.html#wifi-devices">Wifi devices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../products.html#ethernet-devices">Ethernet devices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../products.html#usb-devices">USB devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../product_list.html#wifi-devices">Wifi devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../product_list.html#ethernet-devices">Ethernet devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../product_list.html#usb-devices">USB devices</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../examples.html">Example codes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../port.html">Port function table</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SPI.html">SPI setting reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../errortable.html">Error Table</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../gui.html">GUI examples by PyQt</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">EXAMPLE CODES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples_GUI.html">Example Codes - GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples_console.html">Example Codes - Console</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">APPENDICES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ref_port.html">I/O Function Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref_error.html">Error Code Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref_SPI.html">SPI Setting Table</a></li>
 </ul>
 
         </div>
@@ -81,7 +88,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../products.html">WPC Products</a> &raquo;</li>
+          <li><a href="../product_list.html">Products Usage</a> &raquo;</li>
       <li>Data logger</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -98,34 +105,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="pywpc.DataLogger">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pywpc.</span></span><span class="sig-name descname"><span class="pre">DataLogger</span></span><a class="headerlink" href="#pywpc.DataLogger" title="Permalink to this definition"></a></dt>
-<dd><p class="rubric">Methods</p>
-<table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.DataLogger.Logger_closeFile" title="pywpc.DataLogger.Logger_closeFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Logger_closeFile</span></code></a>([verbose])</p></td>
-<td><p>Close CSV file.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.DataLogger.Logger_openFile" title="pywpc.DataLogger.Logger_openFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Logger_openFile</span></code></a>(filename[, clear_old, verbose])</p></td>
-<td><p>Open CSV file.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.DataLogger.Logger_write2DList" title="pywpc.DataLogger.Logger_write2DList"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Logger_write2DList</span></code></a>(value_mat)</p></td>
-<td><p>Write list of list into file.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.DataLogger.Logger_writeHeader" title="pywpc.DataLogger.Logger_writeHeader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Logger_writeHeader</span></code></a>(header)</p></td>
-<td><p>Write header into file.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pywpc.DataLogger.Logger_writeList" title="pywpc.DataLogger.Logger_writeList"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Logger_writeList</span></code></a>(value_list)</p></td>
-<td><p>Write list into file.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pywpc.DataLogger.Logger_writeValue" title="pywpc.DataLogger.Logger_writeValue"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Logger_writeValue</span></code></a>(value)</p></td>
-<td><p>Write value into file.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
+<dd><dl class="py method">
 <dt class="sig sig-object py" id="pywpc.DataLogger.Logger_closeFile">
 <span class="sig-name descname"><span class="pre">Logger_closeFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.DataLogger.Logger_closeFile" title="Permalink to this definition"></a></dt>
 <dd><p>Close CSV file.</p>
@@ -252,8 +232,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../products.html" class="btn btn-neutral float-left" title="WPC Products" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="DeviceFinder.html" class="btn btn-neutral float-right" title="Device finder" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="DeviceFinder.html" class="btn btn-neutral float-left" title="Device finder" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="WifiDAQE3A.html" class="btn btn-neutral float-right" title="Wifi-DAQ-E3-A" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

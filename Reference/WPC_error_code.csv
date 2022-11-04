@@ -2,44 +2,67 @@ Error code,Error message
 570002,Occurrence CAN queue overflow.
 560001,Occurrence UART queue overflow.
 520003,Occurrence AI queue overflow.
--8001,Fail connect to WPC DAQ. Please check USB plugin status and serial number.
--8002,Fail connect to WPC DAQ. Please check Network status and IP address.
+-7001,Functionality not enabled in firmware.
+-7002,Firmware pin mode index error.
+-7003,Firmware HAL handle index error.
+-7004,Firmware HAL error.
+-7005,Firmware I2C error.
+-7006,Firmware SPI error.
+-7007,Firmware UART error.
+-7008,Firmware error placeholder.
+-7009,Firmware EEPROM error.
+-7010,Firmware OLED error.
+-7011,Firmware system error.
+-7012,Firmware error placeholder.
+-7013,Firmware DIO error.
+-7014,Firmware motion error.
+-7015,Firmware AI error.
+-7016,Firmware AO error.
+-7017,Firmware thermal error.
+-7018,Firmware CAN error.
+-7019,Firmware USB read/write error.
+-7020,Firmware TCP read/write error.
+-7021,Firmware UDP read/write error.
+-7022,Firmware bootloader error.
+-7023,Firmware commands error.
+-8001,Failed to connect to WPC DAQ. Please check USB plugin status and serial number.
+-8002,Failed to connect to WPC DAQ. Please check network status and IP address.
 -8007,Network DAQ connection lost.
 -8009,Invalid pin index.
--8010,The numbers of pin should be consistent with the number of value.
--8011,There is a type mismatch between the pin and the value.
+-8010,Inconsistency between the number of pins & the number of values.
+-8011,Inconsistency between the type of pins & the type of values.
 -8012,Unsupported data type.
--8014,The data must be in the range of 0~255.
--8101,DI port on WPC DAQ is not avaliable or already occupied by other process.
--8102,DO port on WPC DAQ is not avaliable or already occupied by other process.
--8201,AI port on WPC DAQ is not avaliable or already occupied by other process.
--8204,AO port on WPC DAQ is not avaliable or already occupied by other process.
--8206,Specified AO generation mode from WPC DAQ is invalid.
--8207,Specified AO span mode from WPC DAQ is invalid.
--8208,Specified AI acquisition mode from WPC DAQ is invalid.
--8209,AO channel on WPC DAQ is not avaliable or already occupied by other process.
--8210,AI sampling rate on WPC DAQ is not vaild.
--8301,Thermal port on WPC DAQ is not avaliable or already occupied by other process.
--8304,Thermal channel on WPC DAQ is not avaliable or already occupied by other process.
--8305,Specified thermal filter mode from WPC DAQ is invalid.
--8306,Specified thermal type mode from WPC DAQ is invalid.
--8307,Specified sampling mode from WPC DAQ is invalid.
--8401,I2C port on WPC DAQ is not avaliable or already occupied by other process.
--8403,Specified I2C clock mode from WPC DAQ is invalid.
--8404,Specified I2C address mode from WPC DAQ is invalid.
--8501,SPI port on WPC DAQ is not avaliable or already occupied by other process.
--8502,The length of data exceed maximum transfer length of SPI.
--8503,Specified SPI data size mode from WPC DAQ is invalid.
--8504,Specified SPI first bit mode from WPC DAQ is invalid.
--8505,Specified SPI prescaler mode from WPC DAQ is invalid.
--8506,Specified SPI mode from WPC DAQ is invalid.
--8601,UART port on WPC DAQ is not avaliable or already occupied by other process.
--8602,The length of data exceed maximum transfer length of UART.
--8603,Configured baud rate is not supported.
--8604,Specified UART stop bit mode from WPC DAQ is invalid.
--8605,Specified UART parity mode from WPC DAQ is invalid.
--8606,Specified UART data bit mode from WPC DAQ is invalid.
--8701,CAN port on WPC DAQ is not avaliable or already occupied by other process.
--8702,Specified CAN speed mode from WPC DAQ is invalid.
--8703,CAN TX on WPC DAQ is not vaild.
--8704,CAN TX Priority on WPC DAQ is not vaild.
+-8014,Input value not in range.
+-8101,DI port not avaliable or already occupied by other process.
+-8102,DO port not available or already occupied by other process.
+-8201,AI port not available or already occupied by other process.
+-8204,AO port not available or already occupied by other process.
+-8206,The specified AO generation mode is invalid.
+-8207,The specified AO span mode is invalid.
+-8208,The specified AI acquisition mode is invalid.
+-8209,AO channel not avaliable or already occupied by other process.
+-8210,The specified AI sampling rate is invalid.
+-8301,Thermal port not avaliable or already occupied by other process.
+-8304,Thermal channel not avaliable or already occupied by other process.
+-8305,The specified thermal filter mode is invalid.
+-8306,The specified thermal type mode is invalid.
+-8401,I2C port not avaliable or already occupied by other process.
+-8403,The specified I2C clock mode is invalid.
+-8404,The specified I2C address mode is invalid.
+-8501,SPI port not avaliable or already occupied by other process.
+-8502,The length of data exceeds maximum transfer length of SPI.
+-8503,The specified SPI data size mode is invalid.
+-8504,The specified SPI first bit mode is invalid.
+-8505,The specified SPI prescaler mode is invalid.
+-8506,The specified SPI mode is invalid.
+-8601,UART port not avaliable or already occupied by other process.
+-8602,The length of data exceeds maximum transfer length of UART.
+-8603,The specified UART baud rate is invalid.
+-8604,The specified UART stop bit mode is invalid.
+-8605,The specified UART parity mode is invalid.
+-8606,The specified UART data bit mode is invalid.
+-8701,CAN port not avaliable or already occupied by other process.
+-8702,The specified CAN speed mode from WPC DAQ is invalid.
+-8703,The length of the specified CAN data is invalid.
+-8793,The specified CAN TX is invalid.
+-8794,The specified CAN TX priority is invalid.

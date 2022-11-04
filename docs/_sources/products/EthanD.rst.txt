@@ -5,9 +5,9 @@ Ethan-D
 Device pinout 
 -------------
 
-.. image:: ../images/Pinouts/Ethan-D.JPG
+.. image:: ../images/Pinouts/pinout-EthanD.JPG
    :width: 90%
-   :alt: Ethan-D
+   :alt: EthanD
 
 
 API function description 

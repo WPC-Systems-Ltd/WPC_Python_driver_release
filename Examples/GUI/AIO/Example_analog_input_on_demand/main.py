@@ -26,11 +26,11 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Material path
         file_path = os.path.dirname(__file__)
-        self.trademark_path = file_path + "\Material\WPC_trademark.jpg"
-        self.blue_led_path = file_path + "\Material\WPC_Led_blue.png"
-        self.red_led_path = file_path + "\Material\WPC_Led_red.png"
-        self.green_led_path = file_path + "\Material\WPC_Led_green.png"
-        self.gray_led_path = file_path + "\Material\WPC_Led_gray.png"
+        self.trademark_path = file_path + "\Material\\trademark.jpg" 
+        self.blue_led_path = file_path + "\Material\LED_blue.png"
+        self.red_led_path = file_path + "\Material\LED_red.png"
+        self.green_led_path = file_path + "\Material\LED_green.png"
+        self.gray_led_path = file_path + "\Material\LED_gray.png"
 
         ## Set trademark & LED path
         self.ui.lb_trademark.setPixmap(QtGui.QPixmap(self.trademark_path))
@@ -42,8 +42,8 @@ class MainWindow(QtWidgets.QMainWindow):
         ## Get Python driver version
         print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}') 
 
-        ## Wifi DAQ AI port
-        self.AI_port = 1 
+        ## AI port
+        self.port = 1 
 
         ## Connection flag
         self.connect_flag = 0
@@ -69,20 +69,23 @@ class MainWindow(QtWidgets.QMainWindow):
     @asyncSlot()      
     async def openPort(self):
         ## Open AI port
-        await self.dev.AI_open_async(self.AI_port)
+        status = await self.dev.AI_open_async(self.port)
+        print("AI_open_async status: ", status)
 
     @asyncSlot()      
     async def closePort(self):
         ## Close AI port
-        await self.dev.AI_close_async(self.AI_port)
+        status = await self.dev.AI_close_async(self.port)
+        print("AI_close_async status: ", status)
 
     @asyncSlot()      
     async def onDemandEvent(self):  
         ## Set AI port to 1 and data acquisition
-        data_list =  await self.dev.AI_readOnDemand_async(self.AI_port)
-        for i in range(8):
-            obj_lineEdit= getattr(self.ui, 'lineEdit_AI%d' %i)
-            obj_lineEdit.setText(str(data_list[i]))
+        data =  await self.dev.AI_readOnDemand_async(self.port)
+        if len(data) > 0:
+            for i in range(8):
+                obj_lineEdit= getattr(self.ui, 'lineEdit_AI%d' %i)
+                obj_lineEdit.setText(str(data[i]))
 
     @asyncSlot()      
     async def connectEvent(self): 

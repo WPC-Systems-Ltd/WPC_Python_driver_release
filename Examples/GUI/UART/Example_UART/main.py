@@ -26,7 +26,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
 
         ## Create device handle
-        self.dev = pywpc.USBDAQF1AOD()
+        self.dev = pywpc.USBDAQF1TD()
 
         ## Get Python driver version 
         print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
@@ -37,11 +37,11 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Material path
         file_path = os.path.dirname(__file__)
-        self.trademark_path = file_path + "\Material\WPC_trademark.jpg" 
-        self.blue_led_path = file_path + "\Material\WPC_Led_blue.png"
-        self.red_led_path = file_path + "\Material\WPC_Led_red.png"
-        self.green_led_path = file_path + "\Material\WPC_Led_green.png"
-        self.gray_led_path = file_path + "\Material\WPC_Led_gray.png"
+        self.trademark_path = file_path + "\Material\\trademark.jpg" 
+        self.blue_led_path = file_path + "\Material\LED_blue.png"
+        self.red_led_path = file_path + "\Material\LED_red.png"
+        self.green_led_path = file_path + "\Material\LED_green.png"
+        self.gray_led_path = file_path + "\Material\LED_gray.png"
 
         ## Set trademark & LED path
         self.ui.lb_trademark.setPixmap(QtGui.QPixmap(self.trademark_path))
@@ -71,22 +71,26 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Open UART port
         status = await self.dev.UART_open_async(port) 
-        if status == 0: print("UART_open: OK")
+        print("UART_open_async status: ", status)
 
         ## Change LED status
         self.ui.lb_ledport.setPixmap(QtGui.QPixmap(self.green_led_path))
 
         ## Set UART port and baudrate
-        await self.dev.UART_setBaudRate_async(port, int(baudrate))
+        status = await self.dev.UART_setBaudRate_async(port, int(baudrate))
+        print("UART_setBaudRate_async status: ", status)
 
         ## Set UART port and data bit
-        await self.dev.UART_setDataBit_async(port, databit_idx)
+        status = await self.dev.UART_setDataBit_async(port, databit_idx)
+        print("UART_setDataBit_async status: ", status)
 
         ## Set UART port and parity
-        await self.dev.UART_setParity_async(port, parity_idx)
+        status = await self.dev.UART_setParity_async(port, parity_idx)
+        print("UART_setParity_async status: ", status)
 
         ## Set UART port and stop bit
-        await self.dev.UART_setNumStopBit_async(port, stopbit_idx)
+        status = await self.dev.UART_setNumStopBit_async(port, stopbit_idx)
+        print("UART_setNumStopBit_async status: ", status)
 
     @asyncSlot() 
     async def writeEvent(self):
@@ -99,7 +103,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Set UART port and and write data to device
         status = await self.dev.UART_write_async(port, write_data)
-        if status == 0: print("UART_write: OK")
+        print("UART_write_async status: ", status)
 
     @asyncSlot() 
     async def readEvent(self):
@@ -116,24 +120,27 @@ class MainWindow(QtWidgets.QMainWindow):
 
     @asyncSlot() 
     async def closePortEvent(self):
-        ## Get information from UI
+        ## Get port
         port_idx = self.ui.comboBox_port.currentIndex()
         port = port_idx + 1
 
         ## Close UART port
         status = await self.dev.UART_close_async(port)
-        if status == 0: print("UART_close: OK")
-
+        print("UART_close_async status: ", status)
+ 
         ## Change LED status
         self.ui.lb_ledport.setPixmap(QtGui.QPixmap(self.gray_led_path))
 
     @asyncSlot() 
     async def connectEvent(self):
-        # Get IP from UI
-        self.IP = self.ui.lineEdit_IP.text()
-        try: 
+        if self.connect_flag == 1:
+            return 
+        try:
+            ## Get serial_number from UI
+            serial_number = self.ui.lineEdit_SN.text()
+            
             ## Connect to USB device
-            self.dev.connect(self.IP)
+            self.dev.connect(serial_number)
 
             ## Change LED status
             self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
@@ -145,7 +152,10 @@ class MainWindow(QtWidgets.QMainWindow):
             print("err: " + str(err))
 
     @asyncSlot()      
-    async def disconnectEvent(self):
+    async def disconnectEvent(self): 
+        if self.connect_flag == 0:
+            return
+
         ## Disconnect network device
         self.dev.disconnect()
 

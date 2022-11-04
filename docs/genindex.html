@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; WPC Python driver 1.0.3 documentation</title>
+  <title>Index &mdash; WPC Python driver 1.0.8 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/custom_sphinx.css" type="text/css" />
-    <link rel="shortcut icon" href="_static/WPC_trademark.jpg"/>
+    <link rel="shortcut icon" href="_static/WPC-trademark.jpg"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -28,10 +28,10 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
             <a href="index.html" class="icon icon-home"> WPC Python driver
-            <img src="_static/WPC_logo2.PNG" class="logo" alt="Logo"/>
+            <img src="_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.0.3
+                1.0.8
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -43,12 +43,19 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">API REFERNECE</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="products.html">WPC Products</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Example codes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="port.html">Port function table</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SPI.html">SPI setting reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="errortable.html">Error Table</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gui.html">GUI examples by PyQt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="products_summary.html">Products Feature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="product_list.html">Products Usage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">EXAMPLE CODES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples_GUI.html">Example Codes - GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples_console.html">Example Codes - Console</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">APPENDICES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ref_port.html">I/O Function Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ref_error.html">Error Code Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ref_SPI.html">SPI Setting Table</a></li>
 </ul>
 
         </div>
@@ -83,10 +90,10 @@
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
  | <a href="#E"><strong>E</strong></a>
- | <a href="#G"><strong>G</strong></a>
  | <a href="#I"><strong>I</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
  | <a href="#P"><strong>P</strong></a>
  | <a href="#S"><strong>S</strong></a>
  | <a href="#T"><strong>T</strong></a>
@@ -239,11 +246,13 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="products/DeviceFinder.html#pywpc.DeviceFinder.Bcst_checkMACAndReboot_async">Bcst_checkMACAndReboot_async() (pywpc.DeviceFinder method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="products/DeviceFinder.html#pywpc.DeviceFinder.Bcst_checkMACAndSetIP_async">Bcst_checkMACAndSetIP_async() (pywpc.DeviceFinder method)</a>
 </li>
-      <li><a href="products/DeviceFinder.html#pywpc.DeviceFinder.Bcst_getDeviceInfo_async">Bcst_getDeviceInfo_async() (pywpc.DeviceFinder method)</a>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="products/DeviceFinder.html#pywpc.DeviceFinder.Bcst_enumerateNetworkDevices_async">Bcst_enumerateNetworkDevices_async() (pywpc.DeviceFinder method)</a>
+</li>
+      <li><a href="products/DeviceFinder.html#pywpc.DeviceFinder.Bcst_enumerateUSBDevices">Bcst_enumerateUSBDevices() (pywpc.DeviceFinder method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -253,29 +262,17 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="products/USBDAQF1CD.html#pywpc.USBDAQF1CD.CAN_close_async">CAN_close_async() (pywpc.USBDAQF1CD method)</a>
 </li>
-      <li><a href="products/USBDAQF1CD.html#pywpc.USBDAQF1CD.CAN_getCounters_async">CAN_getCounters_async() (pywpc.USBDAQF1CD method)</a>
-</li>
-      <li><a href="products/USBDAQF1CD.html#pywpc.USBDAQF1CD.CAN_getErrors_async">CAN_getErrors_async() (pywpc.USBDAQF1CD method)</a>
-</li>
-      <li><a href="products/USBDAQF1CD.html#pywpc.USBDAQF1CD.CAN_getInterrupts_async">CAN_getInterrupts_async() (pywpc.USBDAQF1CD method)</a>
-</li>
       <li><a href="products/USBDAQF1CD.html#pywpc.USBDAQF1CD.CAN_getPinMap">CAN_getPinMap() (pywpc.USBDAQF1CD method)</a>
 </li>
       <li><a href="products/USBDAQF1CD.html#pywpc.USBDAQF1CD.CAN_open_async">CAN_open_async() (pywpc.USBDAQF1CD method)</a>
 </li>
       <li><a href="products/USBDAQF1CD.html#pywpc.USBDAQF1CD.CAN_read_async">CAN_read_async() (pywpc.USBDAQF1CD method)</a>
 </li>
-      <li><a href="products/USBDAQF1CD.html#pywpc.USBDAQF1CD.CAN_setEnableInterrupt_async">CAN_setEnableInterrupt_async() (pywpc.USBDAQF1CD method)</a>
-</li>
       <li><a href="products/USBDAQF1CD.html#pywpc.USBDAQF1CD.CAN_setRXFilteringOn_async">CAN_setRXFilteringOn_async() (pywpc.USBDAQF1CD method)</a>
 </li>
       <li><a href="products/USBDAQF1CD.html#pywpc.USBDAQF1CD.CAN_setRXFilterOrMask_async">CAN_setRXFilterOrMask_async() (pywpc.USBDAQF1CD method)</a>
 </li>
-      <li><a href="products/USBDAQF1CD.html#pywpc.USBDAQF1CD.CAN_setRXRollover_async">CAN_setRXRollover_async() (pywpc.USBDAQF1CD method)</a>
-</li>
       <li><a href="products/USBDAQF1CD.html#pywpc.USBDAQF1CD.CAN_setSpeed_async">CAN_setSpeed_async() (pywpc.USBDAQF1CD method)</a>
-</li>
-      <li><a href="products/USBDAQF1CD.html#pywpc.USBDAQF1CD.CAN_setTXPriority_async">CAN_setTXPriority_async() (pywpc.USBDAQF1CD method)</a>
 </li>
       <li><a href="products/USBDAQF1CD.html#pywpc.USBDAQF1CD.CAN_start_async">CAN_start_async() (pywpc.USBDAQF1CD method)</a>
 </li>
@@ -636,14 +633,6 @@
   </ul></td>
 </tr></table>
 
-<h2 id="G">G</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="products/DeviceFinder.html#pywpc.DeviceFinder.getAllUSBDevices">getAllUSBDevices() (pywpc.DeviceFinder method)</a>
-</li>
-  </ul></td>
-</tr></table>
-
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -792,6 +781,46 @@
 
       <ul>
         <li><a href="index.html#module-pywpc">pywpc</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="products/EthanA.html#pywpc.EthanA.Net_getGateway_async">Net_getGateway_async() (pywpc.EthanA method)</a>
+
+      <ul>
+        <li><a href="products/EthanD.html#pywpc.EthanD.Net_getGateway_async">(pywpc.EthanD method)</a>
+</li>
+        <li><a href="products/WifiDAQE3A.html#pywpc.WifiDAQE3A.Net_getGateway_async">(pywpc.WifiDAQE3A method)</a>
+</li>
+      </ul></li>
+      <li><a href="products/EthanA.html#pywpc.EthanA.Net_getIPAddrAndSubmask_async">Net_getIPAddrAndSubmask_async() (pywpc.EthanA method)</a>
+
+      <ul>
+        <li><a href="products/EthanD.html#pywpc.EthanD.Net_getIPAddrAndSubmask_async">(pywpc.EthanD method)</a>
+</li>
+        <li><a href="products/WifiDAQE3A.html#pywpc.WifiDAQE3A.Net_getIPAddrAndSubmask_async">(pywpc.WifiDAQE3A method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="products/EthanA.html#pywpc.EthanA.Net_getMACAddr_async">Net_getMACAddr_async() (pywpc.EthanA method)</a>
+
+      <ul>
+        <li><a href="products/EthanD.html#pywpc.EthanD.Net_getMACAddr_async">(pywpc.EthanD method)</a>
+</li>
+        <li><a href="products/WifiDAQE3A.html#pywpc.WifiDAQE3A.Net_getMACAddr_async">(pywpc.WifiDAQE3A method)</a>
+</li>
+      </ul></li>
+      <li><a href="products/EthanA.html#pywpc.EthanA.Net_setIPAddrAndSubmask_async">Net_setIPAddrAndSubmask_async() (pywpc.EthanA method)</a>
+
+      <ul>
+        <li><a href="products/EthanD.html#pywpc.EthanD.Net_setIPAddrAndSubmask_async">(pywpc.EthanD method)</a>
+</li>
+        <li><a href="products/WifiDAQE3A.html#pywpc.WifiDAQE3A.Net_setIPAddrAndSubmask_async">(pywpc.WifiDAQE3A method)</a>
 </li>
       </ul></li>
   </ul></td>
