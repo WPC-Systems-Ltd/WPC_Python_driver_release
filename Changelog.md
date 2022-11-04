@@ -1,14 +1,18 @@
 WPC Python driver release changelog
 ===================================
 
+v1.0.9 Date: 2022/11/04, Developer: Chunglee_people
+------------------------------------------------------
+### Fixed
+- Fix example code website
  
-v1.0.8.1 Date: 2022/11/07, Developer: Chunglee_people
+v1.0.8.1 Date: 2022/11/04, Developer: Chunglee_people
 ------------------------------------------------------
 
 ### Removed
 - Remove old `Examples` folder
 
-v1.0.8 Date: 2022/11/07, Developer: Chunglee_people
+v1.0.8 Date: 2022/11/04, Developer: Chunglee_people
 ---------------------------------------------------
 
 ### Added

@@ -1,6 +1,3 @@
-WPC Python Driver Programming Guide
-===================================
-
 Overview
 --------
 
@@ -10,7 +7,7 @@ In order to optimize the performance of driver API, we adopt `async/await <https
 
 Some API functions in the `pywpc` package may not compatible with earlier versions of WPC DAQ firmware.
 To update device firmware to the latest version, please use WPC Device Manager and `LabVIEW Run-time engine <https://drive.google.com/file/d/1Uj6r65KhNxvuApiqrMkZp-NWyq-Eek-k/view>`_.
-You can download WPC Device Manager by `latest release <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/releases/tag/v1.0.2>`_ or visit `WPC Systems Ltd. official website <http://www.wpc.com.tw/36039260092584721462-daq1.html>`_.
+You can download WPC Device Manager by `latest release <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/releases/tag/v1.0.9>`_ or visit `WPC Systems Ltd. official website <http://www.wpc.com.tw/36039260092584721462-daq1.html>`_.
 
 +-------------------+-----------------------------------------------------------------------------------+
 |                   | Link                                                                              |
@@ -19,7 +16,7 @@ You can download WPC Device Manager by `latest release <https://github.com/WPC-S
 +-------------------+-----------------------------------------------------------------------------------+
 | User guide        | https://wpc-systems-ltd.github.io/WPC_Python_driver_release/                      |
 +-------------------+-----------------------------------------------------------------------------------+
-| Example code      | https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples   |
+| Example code      | https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples   |
 +-------------------+-----------------------------------------------------------------------------------+
 
 .. image:: https://img.shields.io/badge/pip%20install-wpcsys-orange.svg
@@ -62,7 +59,7 @@ Quick Start
    >>> pywpc.PKG_NAME
    pywpc
    >>> pywpc.__version__
-   1.0.8
+   1.0.9
    >>> pywpc.HANDLE_LIST
    ['DeviceFinder', 'DataLogger', 'WifiDAQE3A', 'EthanD', 'EthanA', 'USBDAQF1D', 'USBDAQF1DSNK', 'USBDAQF1AD', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1RD', 'USBDAQF1CD']
 

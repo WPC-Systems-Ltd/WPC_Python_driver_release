@@ -9,7 +9,7 @@ Second, write all digital signals to AO and read AI ondemand data.
 Last, close AO and AI in port.
 
 For other examples please check:
-    https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples
+    https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
 Copyright (c) 2022 WPC Systems Ltd.

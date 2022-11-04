@@ -4,7 +4,7 @@ System_Wifi - get_Wifi_DAQ_status.py
 This example demonstrates how to get basic information such as RSSI & battery & thermo from WifiDAQE3A.
 
 For other examples please check:
-    https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Examples
+    https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
 Copyright (c) 2022 WPC Systems Ltd.
