@@ -1,6 +1,5 @@
-##  main.py
-##  Example_find_all_device
-##
+##  Example_find_all_device/ main.py
+##  This is example for finding all available ethernet devices with WPC DAQ Device.
 ##  Copyright (c) 2022 WPC Systems Ltd.
 ##  All rights reserved.
 
@@ -39,7 +38,7 @@ class MainWindow(QtWidgets.QMainWindow):
         ## Define button callback events
         self.ui.btn_broadcast.clicked.connect(self.broadcastNetworkEvent)
         
-        ## Connect to network device
+        ## Connect to device
         dev.connect() 
  
         ## Get Python driver version 
@@ -93,12 +92,13 @@ class MainWindow(QtWidgets.QMainWindow):
         self.loaddata()
 
     def closeEvent(self, event):
-        ## Disconnect network device
-        dev.disconnect()
-        
-        ## Release device handle
-        dev.close()
-
+        if self.dev is not None:
+            ## Disconnect device
+            self.dev.disconnect()
+            
+            ## Release device handle
+            self.dev.close()
+            
 def main(): 
     app = QtWidgets.QApplication([])
     loop = QEventLoop(app)

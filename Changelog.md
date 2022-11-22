@@ -1,6 +1,12 @@
 WPC Python driver release changelog
 ===================================
 
+### Added
+- Add handle combobox in GUI example code
+### Changed
+- Update `WPC_DAQ_Devices_User_Manual` from r19 to r20
+
+
 v1.0.9 Date: 2022/11/04, Developer: Chunglee_people
 ------------------------------------------------------
 ### Fixed
