@@ -62,9 +62,9 @@ Quick Start
    >>> pywpc.PKG_NAME
    pywpc
    >>> pywpc.__version__
-   1.0.9
+   1.1.0
    >>> pywpc.HANDLE_LIST
-   ['DeviceFinder', 'DataLogger', 'WifiDAQE3A', 'EthanD', 'EthanA', 'USBDAQF1D', 'USBDAQF1DSNK', 'USBDAQF1AD', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1RD', 'USBDAQF1CD']
+   ['DeviceFinder', 'DataLogger', 'WifiDAQE3A', 'EthanD', 'EthanA', 'EthanL', 'EthanO', 'USBDAQF1D', 'USBDAQF1DSNK', 'USBDAQF1AD', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1RD', 'USBDAQF1CD']
 
 Install and Upgrade
 -------------------
@@ -97,6 +97,10 @@ Ethernet based DAQ card
 
 - Ethan-D
 
+- Ethan-L
+
+- Ethan-O
+
 USB interface DAQ card
 
 - USB-DAQ-F1-D (Digital)
@@ -126,6 +130,10 @@ I/O Function Table
 | Ethan-A        |0    |     |          |          |     |     |     |     |     |             |
 +----------------+-----+-----+----------+----------+-----+-----+-----+-----+-----+-------------+
 | Ethan-D        |     |     |1         |1         |     |     |     |     |     |             |
++----------------+-----+-----+----------+----------+-----+-----+-----+-----+-----+-------------+
+| Ethan-L        |     |     |1         |0         |     |     |     |     |     |             |
++----------------+-----+-----+----------+----------+-----+-----+-----+-----+-----+-------------+
+| Ethan-O        |     | 0   |          |          |     |     |     |     |     |             |
 +----------------+-----+-----+----------+----------+-----+-----+-----+-----+-----+-------------+
 | USB-DAQ-F1-D   |     |     |0, 1, 2, 3|0, 1, 2, 3|     |1, 2 |1, 2 |1, 2 |     |             |
 +----------------+-----+-----+----------+----------+-----+-----+-----+-----+-----+-------------+

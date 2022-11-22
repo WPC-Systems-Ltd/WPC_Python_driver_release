@@ -104,6 +104,34 @@ Products Feature
       .. image:: images/Products/product-EthanA.jpg
          :width: 100%
          :alt: product-EthanA.jpg
+
+   * - 
+      **WPC-Ethan-L**
+         - 10/100 T-based Ethernet interface
+         - 6ch high quality mechanical relay
+         - 4ch Form-A (NO), 2ch Form-C (NO+NC) 
+         - Max current: 1A
+         - Operating time: 2ms (excluding bounce)
+         - Release time: 1ms (excluding bounce)
+         - Power input: 24VDC
+         - Support Python, C# and LabVIEW
+     - 
+      .. image:: images/Products/product-EthanA.jpg
+         :width: 100%
+         :alt: product-EthanL.jpg
+
+   * - 
+      **WPC-Ethan-O**
+         - 10/100 T-based Ethernet interface
+         - 8ch voltage output
+         - +/-10V voltage output range
+         - Max update rate: 1KHz
+         - Power input: 24VDC
+         - Support Python, C# and LabVIEW
+     - 
+      .. image:: images/Products/product-EthanA.jpg
+         :width: 100%
+         :alt: product-EthanO.jpg                  
    * - 
       **WPC-WIFI-DAQ-E3-A**
          - 8ch 16-bit +/-10V analog input
