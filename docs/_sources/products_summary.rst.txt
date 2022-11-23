@@ -9,7 +9,7 @@ Products Feature
    * - Model
      - Photo
    * - 
-      **WPC-USB-DAQ-D**
+      **USBDAQD**
          - 26ch 3.3V DIO/I2C/SPI
          - I2C: 400KHz (max)
          - USB 2.0 full-speed bus powered
@@ -19,7 +19,7 @@ Products Feature
          :width: 100%
          :alt: product-USBDAQD.jpg
    * - 
-      **WPC-USB-DAQ-AD**
+      **USBDAQAD**
          - 20ch 3.3V DIO/I2C/SPI
          - 8ch 16-bit analog input
          - USB 2.0 full-speed bus powered
@@ -29,7 +29,7 @@ Products Feature
          :width: 100%
          :alt: product-USBDAQAD.jpg 
    * - 
-      **WPC-USB-DAQ-D-SNK**
+      **USBDAQDSNK**
          - 24V 12ch DO / 14ch DI
          - Industrial isolated DIO
          - Sinking output / Sourcing input
@@ -41,7 +41,7 @@ Products Feature
          :width: 100%
          :alt: product-USBDAQADSNK.jpg
    * - 
-      **WPC-USB-DAQ-TD**
+      **USBDAQTD**
          - 21ch 3.3V DIO/I2C/SPI
          - 2ch thermocouple input
          - Sensor type: (K, J, N, R, S, T, E, B)
@@ -52,7 +52,7 @@ Products Feature
          :width: 100%
          :alt: product-USBDAQTD.jpg
    * - 
-      **WPC-USB-DAQ-RD**
+      **USBDAQRD**
          - 21ch 3.3V DIO/I2C/SPI
          - 2ch thermocouple input
          - PT-100 or PT-1000 (different model)
@@ -63,7 +63,7 @@ Products Feature
          :width: 100%
          :alt: product-USBDAQRD.jpg
    * - 
-      **WPC-USB-DAQ-CD**
+      **USBDAQCD**
          - 20ch 3.3V DIO/I2C/SPI
          - 1ch 1Mbps CAN V2.0B
          - USB 2.0 full-speed bus powered
@@ -73,7 +73,7 @@ Products Feature
          :width: 100%
          :alt: product-USBDAQCD.jpg
    * - 
-      **WPC-USB-DAQ-AOD**
+      **USBDAQAOD**
          - 16ch 3.3V DIO/I2C/SPI
          - 8ch 16-bit analog input
          - 8ch 16-bit analog output (on-demand)
@@ -82,19 +82,9 @@ Products Feature
      - 
       .. image:: images/Products/product-USBDAQAOD.jpg
          :width: 100%
-         :alt: product-USBDAQAOD.jpg 
+         :alt: product-USBDAQAOD.jpg
    * - 
-      **WPC-Ethan-D**
-         - 10/100 cable Ethernet
-         - 8ch 24V digital input (sourcing DI, NPN)
-         - 6ch 24V digital output (sinking DO, NPN)
-         - Support Python, C# and LabVIEW
-     - 
-      .. image:: images/Products/product-EthanD.jpg
-         :width: 100%
-         :alt: product-EthanD.jpg
-   * - 
-      **WPC-Ethan-A**
+      **EthanA**
          - 10/100 cable Ethernet
          - 8ch simultaneous voltage input
          - Max sampling rate: 20KHz 
@@ -104,9 +94,19 @@ Products Feature
       .. image:: images/Products/product-EthanA.jpg
          :width: 100%
          :alt: product-EthanA.jpg
+   * - 
+      **EthanD**
+         - 10/100 cable Ethernet
+         - 8ch 24V digital input (sourcing DI, NPN)
+         - 6ch 24V digital output (sinking DO, NPN)
+         - Support Python, C# and LabVIEW
+     - 
+      .. image:: images/Products/product-EthanD.jpg
+         :width: 100%
+         :alt: product-EthanD.jpg
 
    * - 
-      **WPC-Ethan-L**
+      **EthanL**
          - 10/100 T-based Ethernet interface
          - 6ch high quality mechanical relay
          - 4ch Form-A (NO), 2ch Form-C (NO+NC) 
@@ -121,7 +121,7 @@ Products Feature
          :alt: product-EthanL.jpg
 
    * - 
-      **WPC-Ethan-O**
+      **EthanO**
          - 10/100 T-based Ethernet interface
          - 8ch voltage output
          - +/-10V voltage output range
@@ -133,7 +133,7 @@ Products Feature
          :width: 100%
          :alt: product-EthanO.jpg                  
    * - 
-      **WPC-WIFI-DAQ-E3-A**
+      **WifiDAQE3A**
          - 8ch 16-bit +/-10V analog input
          - Web-based configurator
          - 802.11 b/g/n WiFi

@@ -137,6 +137,9 @@ Error Code Table
    * - -8210
      - 
      - The specified AI sampling rate is invalid.
+   * - -8211
+     - 
+     - The specified AO form is invalid.
    * - -8301
      - 
      - Thermal port not avaliable or already occupied by other process.
