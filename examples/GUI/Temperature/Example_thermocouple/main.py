@@ -1,6 +1,5 @@
-##  main.py
-##  Example_UART
-##
+##  Example_Thermo/ main.py
+##  This is example for thermocouple with WPC DAQ Device.
 ##  Copyright (c) 2022 WPC Systems Ltd.
 ##  All rights reserved.
 
@@ -24,16 +23,15 @@ class MainWindow(QtWidgets.QMainWindow):
         ## UI initialize
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-
-        ## Create device handle
-        self.dev = pywpc.USBDAQF1TD()
-
+  
         ## Get Python driver version 
         print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
-
-        ## Initialize parameters
+ 
+        ## Connection flag
         self.connect_flag = 0
-        self.port = 1
+
+        ## Handle declaration
+        self.dev = None
 
         ## Material path
         file_path = os.path.dirname(__file__)
@@ -54,60 +52,91 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.btn_set.clicked.connect(self.setEvent)
         self.ui.btn_temp.clicked.connect(self.tempEvent)
 
+    def selectHandle(self): 
+        handle_idx = int(self.ui.comboBox_handle.currentIndex()) 
+        if handle_idx == 0:
+            self.dev = pywpc.USBDAQF1TD()
+
+    def updateParam(self):
+        ## Get IP or serial_number from GUI
+        self.ip = self.ui.lineEdit_IP.text()
+
+        ## Get port from GUI
+        self.port = int(self.ui.comboBox_port.currentIndex())+1 
+        
+        ## Get type from GUI
+        self.type = self.ui.comboBox_type.currentIndex()
+        
+        ## Get oversampling from GUI
+        self.oversampling = self.ui.comboBox_oversampling.currentIndex()
+        
+        ## Get noiserejection from GUI
+        self.noiserejection = self.ui.comboBox_noiserejection.currentIndex()
+ 
     @asyncSlot() 
     async def tempEvent(self): 
-        ## Set thermo port and read sensor in two channels
-        for i in range(2):
-            data = await self.dev.Thermal_readSensor_async(self.port, i)
-            if i == 0:
-                print("Read channel 0 data:", data, "°C") 
-                self.ui.lineEdit_sensor0.setText(str(data))
-            else:
-                print("Read channel 1 data:", data, "°C")
-                self.ui.lineEdit_sensor1.setText(str(data))
+        ## Update Param
+        self.updateParam() 
+
+        ## Read sensor in Channel 0 
+        data = await self.dev.Thermal_readSensor_async(self.port, 0)
+        print("Read channel 0 data:", data, "°C")
+
+        ## Update in GUI
+        self.ui.lineEdit_sensor0.setText(str(data))
+
+        ## Read sensor in Channel 1
+        data = await self.dev.Thermal_readSensor_async(self.port, 1)
+        print("Read channel 1 data:", data, "°C")
+
+        ## Update in GUI  
+        self.ui.lineEdit_sensor1.setText(str(data))
+ 
 
     @asyncSlot()
     async def setEvent(self):
-       ## Get information from UI  
-        type_idx = self.ui.comboBox_type.currentIndex()
-        oversampling_idx = self.ui.comboBox_oversampling.currentIndex()
-        noiserejection_idx = self.ui.comboBox_noiserejection.currentIndex()
-
-        ## Set thermo port and set type
+        ## Update Param
+        self.updateParam() 
+ 
+        ## Set thermo port and type
         for i in range(2):
-            status = await self.dev.Thermal_setType_async(self.port, i, type_idx)
+            status = await self.dev.Thermal_setType_async(self.port, i, self.type)
             print("Thermal_setType_async status: ", status) 
 
         ## Set thermo port and over-sampling mode 
         for i in range(2):
-            status = await self.dev.Thermal_setOverSampling_async(self.port, i, oversampling_idx)
+            status = await self.dev.Thermal_setOverSampling_async(self.port, i, self.oversampling)
             print("Thermal_setOverSampling_async status: ", status)
 
-        ## Set thermo port  and Noise Filter
+        ## Set thermo port and Noise Filter
         for i in range(2):
-            status = await self.dev.Thermal_setNoiseFilter_async(self.port, i, noiserejection_idx)
+            status = await self.dev.Thermal_setNoiseFilter_async(self.port, i, self.noiserejection)
             print("Thermal_setNoiseFilter_async status: ", status)
   
     @asyncSlot() 
     async def connectEvent(self):
         if self.connect_flag == 1:
             return
- 
-        try: 
-            ## Get serial_number from UI
-            serial_number = self.ui.lineEdit_SN.text()
-            
-            ## Connect to USB device
-            self.dev.connect(serial_number)
-
-            ## Change LED status
-            self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
-
-            ## Change connection flag
-            self.connect_flag = 1
-        except pywpc.Error as err:
-            print("err: " + str(err))
         
+        ## Select handle
+        self.selectHandle()
+         
+        ## Update Param
+        self.updateParam()
+
+        ## Connect to device
+        try:  
+            self.dev.connect(self.ip) 
+        except pywpc.Error as err: 
+            print("err: " + str(err))
+            return
+        
+        ## Change LED status
+        self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
+
+        ## Change connection flag
+        self.connect_flag = 1
+ 
         ## Open thermo port
         status = await self.dev.Thermal_open_async(self.port) 
         print("Thermal_open_async status: ", status)
@@ -116,26 +145,30 @@ class MainWindow(QtWidgets.QMainWindow):
     async def disconnectEvent(self):
         if self.connect_flag == 0:
             return
+        
+        ## Update Param
+        self.updateParam()
 
         ## Close thermo port
         status = await self.dev.Thermal_close_async(self.port)
         print("Thermal_close status: ", status) 
 
-        ## Disconnect network device
+        ## Disconnect device
         self.dev.disconnect()
 
         ## Change LED status
-        self.ui.lb_led.setPixmap(QtGui.QPixmap(self.gray_led_path))
+        self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
 
         ## Change connection flag
         self.connect_flag = 0
  
     def closeEvent(self, event):
-        ## Disconnect network device
-        self.dev.disconnect()
-        
-        ## Release device handle
-        self.dev.close()
+        if self.dev is not None:
+            ## Disconnect device
+            self.dev.disconnect()
+            
+            ## Release device handle
+            self.dev.close()
  
 def main(): 
     app = QtWidgets.QApplication([])

@@ -1,6 +1,5 @@
-##  main.py
-##  Example_SPI
-##
+##  Example_SPI/ main.py
+##  This is example for SPI with WPC DAQ Device.
 ##  Copyright (c) 2022 WPC Systems Ltd.
 ##  All rights reserved.
 
@@ -26,18 +25,16 @@ class MainWindow(QtWidgets.QMainWindow):
         ## UI initialize
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-
-        ## Create device handle
-        self.dev = pywpc.USBDAQF1TD()
-
+ 
         ## Get Python driver version 
         print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
-
-        ## Initialize parameters
+ 
+        ## Connection flag
         self.connect_flag = 0
-        self.DO_port = 0
-        self.DO_index = [0] ## CS pin
 
+        ## Handle declaration
+        self.dev = None
+ 
         ## Material path
         file_path = os.path.dirname(__file__)
         self.trademark_path = file_path + "\Material\\trademark.jpg" 
@@ -53,49 +50,72 @@ class MainWindow(QtWidgets.QMainWindow):
         ## Define callback events
         self.ui.btn_connect.clicked.connect(self.connectEvent)
         self.ui.btn_disconnect.clicked.connect(self.disconnectEvent)
-
         self.ui.btn_write.clicked.connect(self.writeEvent)
         self.ui.btn_read.clicked.connect(self.readEvent)
         self.ui.btn_set.clicked.connect(self.setEvent)
+        
+    def selectHandle(self): 
+        handle_idx = int(self.ui.comboBox_handle.currentIndex()) 
+        if handle_idx == 0:
+            self.dev = pywpc.USBDAQF1D()
+        elif handle_idx == 1:
+            self.dev = pywpc.USBDAQF1AD()
+        elif handle_idx == 2:
+            self.dev = pywpc.USBDAQF1TD()
+        elif handle_idx == 3:
+            self.dev = pywpc.USBDAQF1RD()
+        elif handle_idx == 4:
+            self.dev = pywpc.USBDAQF1CD()
+        elif handle_idx == 5:
+            self.dev = pywpc.USBDAQF1AOD()
 
+    def updateParam(self):
+        ## DO port and pin 
+        self.DO_port = 0
+        self.DO_index = [0] ## CS pin
+
+        ## Get IP or serial_number from GUI
+        self.ip = self.ui.lineEdit_IP.text()
+
+        ## Get port from GUI
+        self.port = int(self.ui.comboBox_port.currentIndex())+1 
+
+        ## Get mode from GUI
+        self.mode = self.ui.comboBox_mode.currentIndex()
+
+        ## Get prescaler from GUI
+        self.prescaler = self.ui.comboBox_prescaler.currentIndex()
+
+        ## Get write (Hex) from GUI
+        data = self.ui.lineEdit_write.text()
+
+        ## Convert string to int list
+        self.write_data = self.converStrtoIntList(data)
+    
     @asyncSlot() 
-    async def setEvent(self): 
-        ## Get port
-        port_idx = self.ui.comboBox_port.currentIndex()
-        port = port_idx + 1
-
-        ## Get mode
-        mode = self.ui.comboBox_mode.currentIndex()
-
-        ## Get prescaler
-        prescaler = self.ui.comboBox_prescaler.currentIndex()
-
+    async def setEvent(self):  
+        ## Update Param
+        self.updateParam()
+ 
         ## Set SPI port and prescaler
-        status = await self.dev.SPI_setPrescaler_async(port, prescaler)
+        status = await self.dev.SPI_setPrescaler_async(self.port, self.prescaler)
         print("SPI_setPrescaler_async status: ", status)
        
-        ## Set SPI port and SPI mode
-        status = await self.dev.SPI_setMode_async(port, mode) 
+        ## Set SPI port and mode
+        status = await self.dev.SPI_setMode_async(self.port, self.mode) 
         print("SPI_setMode_async status: ", status)
 
     @asyncSlot() 
     async def writeEvent(self):
-        ## Get port
-        port_idx = self.ui.comboBox_port.currentIndex()
-        port = port_idx + 1
-
-        ## Get write (Hex) from UI
-        write_data = self.ui.lineEdit_write.text()
-
-        ## Convert string to int list
-        write_data_int = self.converStrtoIntList(write_data)  
-
+        ## Update Param
+        self.updateParam() 
+ 
         ## Set CS(pin0) to low
         status = await self.dev.DO_writePins_async(self.DO_port, self.DO_index, [0])
         print("DO_writePins_async status: ", status)
 
         ## Write WREN byte
-        status = await self.dev.SPI_write_async(port, [WREN])
+        status = await self.dev.SPI_write_async(self.port, [WREN])
         print("SPI_write_async status: ", status)
 
         ## Set CS(pin0) to high
@@ -107,7 +127,7 @@ class MainWindow(QtWidgets.QMainWindow):
         print("DO_writePins_async status: ", status)
 
         ## Set SPI port and write bytes
-        status = await self.dev.SPI_write_async(port, write_data_int)
+        status = await self.dev.SPI_write_async(self.port, self.write_data)
         print("SPI_write_async status: ", status)
  
         ## Set CS(pin0) to high
@@ -116,103 +136,93 @@ class MainWindow(QtWidgets.QMainWindow):
  
     @asyncSlot() 
     async def readEvent(self):
-        ## Get port from UI
-        port_idx = self.ui.comboBox_port.currentIndex()
-        port = port_idx + 1
+        ## Update Param
+        self.updateParam() 
          
         ## Set CS(pin0) to low
         status = await self.dev.DO_writePins_async(self.DO_port, self.DO_index, [0])
         print("DO_writePins_async status: ", status)
  
-        ## Set SPI port and read bytes 
-        write_data = self.ui.lineEdit_write.text()
-        write_data_int = self.converStrtoIntList(write_data)
-        data = await self.dev.SPI_readAndWrite_async(port, write_data_int) 
+        ## Set SPI port and read bytes  
+        data = await self.dev.SPI_readAndWrite_async(self.port, self.write_data) 
         data = ['{:02x}'.format(value) for value in data]
         print("read data :", data) 
 
-        ## Update data in UI
+        ## Update data in GUI
         self.ui.lineEdit_read.setText(str(data))
 
         ## Set CS(pin0) to high
         status = await self.dev.DO_writePins_async(self.DO_port, self.DO_index, [1])
-        print("DO_writePins_async status: ", status)
-
-        ## Set SPI port and read bytes
-        data = await self.dev.SPI_readAndWrite_async(port, write_data_int) 
-
-        ## Update data in UI
-        self.ui.lineEdit_read.setText(str(data))
-
+        print("DO_writePins_async status: ", status) 
+ 
     @asyncSlot() 
     async def connectEvent(self):
         if self.connect_flag == 1:
             return
- 
-        try: 
-            ## Get serial_number from UI
-            serial_num = self.ui.lineEdit_SN.text()
+        
+        ## Select handle
+        self.selectHandle()
+         
+        ## Update Param
+        self.updateParam()
 
-            ## Connect to USB device
-            self.dev.connect(serial_num)
-
-            ## Change LED status
-            self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
-
-            ## Change connection flag
-            self.connect_flag = 1
-
-            ## Get port
-            port_index = self.ui.comboBox_port.currentIndex()
-            print("port_index", port_index)
-            port = port_index +1
-
-            ## Open pin0 with digital output
-            status = await self.dev.DO_openPins_async(self.DO_port, self.DO_index)
-            print("DO_openPins_async status: ", status)
- 
-            ## Open SPI
-            status = await self.dev.SPI_open_async(port)
-            print("SPI_open_async status: ", status)
-
-            ## Set CS(pin0) to high
-            status = await self.dev.DO_writePins_async(self.DO_port, self.DO_index, [1])
-            print("DO_writePins_async status: ", status)
-        except pywpc.Error as err:
+        ## Connect to device
+        try:  
+            self.dev.connect(self.ip) 
+        except pywpc.Error as err: 
             print("err: " + str(err))
+            return 
+        
+        ## Change LED status
+        self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
 
+        ## Change connection flag
+        self.connect_flag = 1
+  
+        ## Open pin0 with digital output
+        status = await self.dev.DO_openPins_async(self.DO_port, self.DO_index)
+        print("DO_openPins_async status: ", status)
+
+        ## Open SPI
+        status = await self.dev.SPI_open_async(self.port)
+        print("SPI_open_async status: ", status)
+
+        ## Set CS(pin0) to high
+        status = await self.dev.DO_writePins_async(self.DO_port, self.DO_index, [1])
+        print("DO_writePins_async status: ", status)
+    
     @asyncSlot()      
     async def disconnectEvent(self):
         if self.connect_flag == 0:
             return
-            
-        ## Get port
-        port_index = self.ui.comboBox_port.currentIndex() 
-        port = port_index +1
-
+        
+        ## Update Param
+        self.updateParam()
+ 
         ## Close SPI port
-        status = await self.dev.SPI_close_async(port)
+        status = await self.dev.SPI_close_async(self.port)
         print("SPI_close_async status: ", status)
        
         ## Close pin0 with digital output
         status = await self.dev.DO_closePins_async(self.DO_port, self.DO_index)
         print("DO_closePins_async status: ", status)
 
-        ## Disconnect network device
+        ## Disconnect device
         self.dev.disconnect()
 
         ## Change LED status
-        self.ui.lb_led.setPixmap(QtGui.QPixmap(self.gray_led_path))
+        self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
 
         ## Change connection flag
         self.connect_flag = 0
         
     def closeEvent(self, event):
-        ## Disconnect network device
-        self.dev.disconnect()
-        
-        ## Release device handle
-        self.dev.close()
+        if self.dev is not None:
+            ## Disconnect device
+            self.dev.disconnect()
+            
+            ## Release device handle
+            self.dev.close()
 
     def converStrtoIntList(self, str_):
         ## Split string by commas

@@ -1,6 +1,5 @@
-##  main.py
-##  Example_get_device_info
-##
+##  Example_get_device_info/ main.py
+##  This is an example for getting information with WPC DAQ Device.
 ##  Copyright (c) 2022 WPC Systems Ltd.
 ##  All rights reserved.
 
@@ -24,15 +23,15 @@ class MainWindow(QtWidgets.QMainWindow):
         ## UI initialize
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-
-        ## Create device handle
-        self.dev = pywpc.WifiDAQE3A()
-
+  
         ## Get Python driver version 
         print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
-
-        ## Initialize param
+ 
+        ## Connection flag
         self.connect_flag = 0
+
+        ## Handle declaration
+        self.dev = None
 
         ## Material path
         file_path = os.path.dirname(__file__)
@@ -51,45 +50,64 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.btn_disconnect.clicked.connect(self.disconnectEvent)
         self.ui.btn_deviceInfo.clicked.connect(self.getdeviceinfoEvent)
 
+    def selectHandle(self): 
+        handle_idx = int(self.ui.comboBox_handle.currentIndex()) 
+        if handle_idx == 0:
+            self.dev = pywpc.WifiDAQE3A()
+        elif handle_idx == 1:
+            self.dev = pywpc.EthanA()
+        elif handle_idx == 2:
+            self.dev = pywpc.EthanD()
+
+    def updateParam(self):
+        ## Get IP or serial_number from GUI
+        self.ip = self.ui.lineEdit_IP.text()
+ 
     @asyncSlot()      
     async def connectEvent(self):
         if self.connect_flag == 1:
             return
+    
+        ## Select handle
+        self.selectHandle()
+         
+        ## Update Param
+        self.updateParam()
 
-        # Get IP
-        ip = self.ui.lineEdit_ipConnect.text()
-        try: 
-            ## Connect to network device
-            self.dev.connect(ip)
-
-            ## Change LED status
-            self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
-           
-            ## Change connection flag
-            self.connect_flag = 1
-        except pywpc.Error as err:
+        ## Connect to device
+        try:  
+            self.dev.connect(self.ip) 
+        except pywpc.Error as err: 
             print("err: " + str(err))
+            return
+        
+        ## Change LED status
+        self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
+
+        ## Change connection flag
+        self.connect_flag = 1
 
     @asyncSlot()      
     async def disconnectEvent(self):
         if self.connect_flag == 0:
             return
 
-        ## Disconnect network device
-        self.dev.disconnect() 
-
+        ## Disconnect device
+        self.dev.disconnect()
+ 
         ## Change LED status
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
-       
+
         ## Change connection flag
         self.connect_flag = 0
 
     def closeEvent(self, event):
-        ## Disconnect network device
-        self.dev.disconnect()
-        
-        ## Release device handle
-        self.dev.close()
+        if self.dev is not None:
+            ## Disconnect device
+            self.dev.disconnect()
+            
+            ## Release device handle
+            self.dev.close()
 
     @asyncSlot()      
     async def getdeviceinfoEvent(self):
@@ -110,7 +128,7 @@ class MainWindow(QtWidgets.QMainWindow):
         ip, submask = await self.dev.Sys_getIPAddrAndSubmask_async() 
         mac = await self.dev.Sys_getMACAddr_async()
 
-        ## Update information in UI
+        ## Update information in GUI
         self.ui.lineEdit_ip.setText(ip)
         self.ui.lineEdit_sbk.setText(submask)
         self.ui.lineEdit_serialNum.setText(serial_number)

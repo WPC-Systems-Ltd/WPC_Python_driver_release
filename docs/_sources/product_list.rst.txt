@@ -24,8 +24,10 @@ Ethernet devices
 .. toctree::
    :maxdepth: 4
 
-   products/EthanD
    products/EthanA
+   products/EthanD
+   products/EthanL
+   products/EthanO
 
 USB devices
 -----------

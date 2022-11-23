@@ -1,6 +1,5 @@
-##  main.py
-##  Example_I2C
-##
+##  Example_I2C/ main.py
+##  This is example for I2C with WPC DAQ Device.
 ##  Copyright (c) 2022 WPC Systems Ltd.
 ##  All rights reserved.
 
@@ -23,16 +22,16 @@ class MainWindow(QtWidgets.QMainWindow):
         ## UI initialize
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-
-        ## Create device handle
-        self.dev = pywpc.USBDAQF1TD()
-
+ 
         ## Get Python driver version 
         print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
 
-        ## Initialize parameters
+        ## Connection flag
         self.connect_flag = 0
-        
+
+        ## Handle declaration
+        self.dev = None
+
         ## Material path
         file_path = os.path.dirname(__file__)
         self.trademark_path = file_path + "\Material\\trademark.jpg" 
@@ -47,62 +46,76 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Define callback events
         self.ui.btn_connect.clicked.connect(self.connectEvent)
-        self.ui.btn_disconnect.clicked.connect(self.disconnectEvent)
-
+        self.ui.btn_disconnect.clicked.connect(self.disconnectEvent) 
         self.ui.btn_write.clicked.connect(self.writeEvent)
         self.ui.btn_read.clicked.connect(self.readEvent)
-        self.ui.btn_set.clicked.connect(self.setEvent)
-        
-    @asyncSlot() 
-    async def setEvent(self):
-        ## Get port from UI
-        port_idx = self.ui.comboBox_port.currentIndex()
-        port = port_idx + 1
+        self.ui.btn_set.clicked.connect(self.setClockEvent)
+    
+    def selectHandle(self): 
+        handle_idx = int(self.ui.comboBox_handle.currentIndex()) 
+        if handle_idx == 0:
+            self.dev = pywpc.USBDAQF1D()
+        elif handle_idx == 1:
+            self.dev = pywpc.USBDAQF1AD()
+        elif handle_idx == 2:
+            self.dev = pywpc.USBDAQF1TD()
+        elif handle_idx == 3:
+            self.dev = pywpc.USBDAQF1RD()
+        elif handle_idx == 4:
+            self.dev = pywpc.USBDAQF1CD()
+        elif handle_idx == 5:
+            self.dev = pywpc.USBDAQF1AOD()
 
-        ## Get clock rate from UI
-        clock_mode = self.ui.comboBox_clockrate.currentIndex()
+    def updateParam(self):
+        ## Get IP or serial_number from GUI
+        self.ip = self.ui.lineEdit_IP.text()
+
+        ## Get port from GUI
+        self.port = int(self.ui.comboBox_port.currentIndex())+1 
+ 
+        ## Get clock rate from GUI
+        self.clock_mode = self.ui.comboBox_clockrate.currentIndex()
+
+        ## Get write address (Hex) from GUI
+        self.write_addr = int(self.ui.lineEdit_writeAddr.text(), 16)
+     
+        ## Get write (Hex) from GUI
+        data = self.ui.lineEdit_write.text()
+
+        ## Convert string to int list
+        self.write_data = self.converStrtoIntList(data)
+
+        ## Get byte to read from GUI 
+        self.byte_read = int(self.ui.lineEdit_byteread.text())
+
+        ## Get read address (Hex) from GUI 
+        self.read_addr = int(self.ui.lineEdit_readAddr.text(), 16)  
+
+    @asyncSlot() 
+    async def setClockEvent(self):
+        ## Update Param
+        self.updateParam()
 
         ## Set I2C port and clock rate
-        status = await self.dev.I2C_setClockRate_async(port, clock_mode)
+        status = await self.dev.I2C_setClockRate_async(self.port, self.clock_mode)
         print("I2C_setClockRate_async status: ", status)
 
     @asyncSlot() 
     async def writeEvent(self):
-        ## Get port from UI
-        port_idx = self.ui.comboBox_port.currentIndex()
-        port = port_idx + 1
-
-        ## Get write address (Hex) from UI
-        write_addr = self.ui.lineEdit_writeAddr.text()  
-        write_addr_int = int(write_addr, 16)
-        
-        ## Get write (Hex) from UI
-        write_data = self.ui.lineEdit_write.text()
-
-        ## Convert string to int list
-        write_data_int = self.converStrtoIntList(write_data)    
+        ## Update Param
+        self.updateParam()
 
         ## Set I2C port and write bytes
-        status = await self.dev.I2C_write_async(port, write_addr_int, write_data_int) 
-        print("I2C_write_async status: ", status)
-
+        status = await self.dev.I2C_write_async(self.port, self.write_addr, self.write_data) 
+        print("I2C_write_async status: ", status) 
 
     @asyncSlot() 
     async def readEvent(self):
-        ## Get port from UI
-        port_idx = self.ui.comboBox_port.currentIndex()
-        port = port_idx + 1
+        ## Update Param
+        self.updateParam()
 
-        ## Get byte to read from UI
-        byte_read = self.ui.lineEdit_byteread.text()
-        byte_read = int(byte_read)
-
-        ## Get read address (Hex) from UI
-        read_addr = self.ui.lineEdit_readAddr.text()
-        read_add_int = int(read_addr, 16)
-        
         ## Set I2C port and read bytes
-        data = await self.dev.I2C_read_async(port, read_add_int, byte_read) 
+        data = await self.dev.I2C_read_async(self.port, self.read_addr, self.byte_read) 
         self.ui.lineEdit_read.setText(str(data))
 
         ## Sleep
@@ -112,59 +125,58 @@ class MainWindow(QtWidgets.QMainWindow):
     async def connectEvent(self):
         if self.connect_flag == 1:
             return
+        
+        ## Select handle
+        self.selectHandle()
+         
+        ## Update Param
+        self.updateParam()
 
-        try: 
-            # Get serial_numbe 
-            serial_num = self.ui.lineEdit_SN.text()
-
-            ## Connect to USB device
-            self.dev.connect(serial_num)
-
-            ## Change LED status
-            self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
-
-            ## Change connection flag
-            self.connect_flag = 1
-
-            ## Get port
-            port_index = self.ui.comboBox_port.currentIndex()
-
-            port = port_index +1
-            ## Open I2C port
-            status = await self.dev.I2C_open_async(port)
-            print("I2C_open_async status: ", status)
-
-        except pywpc.Error as err:
+        ## Connect to device
+        try:  
+            self.dev.connect(self.ip) 
+        except pywpc.Error as err: 
             print("err: " + str(err))
+            return
+        
+        ## Change LED status
+        self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
 
+        ## Change connection flag
+        self.connect_flag = 1
+
+        ## Open I2C port
+        status = await self.dev.I2C_open_async(self.port)
+        print("I2C_open_async status: ", status)
+    
     @asyncSlot()      
     async def disconnectEvent(self):
         if self.connect_flag == 0:
             return
-            
-        ## Get port 
-        port_index = self.ui.comboBox_port.currentIndex()
-        port = port_index +1
         
+        ## Update Param
+        self.updateParam()
+
         ## Close I2C port   
-        status = await self.dev.I2C_close_async(port)
+        status = await self.dev.I2C_close_async(self.port)
         print("I2C_close_async status: ", status)
 
-        ## Disconnect network device
+        ## Disconnect device
         self.dev.disconnect()
 
         ## Change LED status
-        self.ui.lb_led.setPixmap(QtGui.QPixmap(self.gray_led_path))
+        self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
 
         ## Change connection flag
         self.connect_flag = 0
         
     def closeEvent(self, event):
-        ## Disconnect network device
-        self.dev.disconnect()
-        
-        ## Release device handle
-        self.dev.close()
+        if self.dev is not None:
+            ## Disconnect device
+            self.dev.disconnect()
+            
+            ## Release device handle
+            self.dev.close()
 
     def converStrtoIntList(self, str_):
         ## Split string by commas

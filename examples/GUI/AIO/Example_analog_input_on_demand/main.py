@@ -1,6 +1,5 @@
-##  main.py
-##  Example_analog_input_on_demand
-##
+##  Example_analog_input_on_demand/ main.py
+##  This is example for AI on demand with WPC DAQ Device.
 ##  Copyright (c) 2022 WPC Systems Ltd.
 ##  All rights reserved.
 
@@ -26,7 +25,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Material path
         file_path = os.path.dirname(__file__)
-        self.trademark_path = file_path + "\Material\\trademark.jpg" 
+        self.trademark_path = file_path + "\Material\\trademark.jpg"
         self.blue_led_path = file_path + "\Material\LED_blue.png"
         self.red_led_path = file_path + "\Material\LED_red.png"
         self.green_led_path = file_path + "\Material\LED_green.png"
@@ -35,52 +34,63 @@ class MainWindow(QtWidgets.QMainWindow):
         ## Set trademark & LED path
         self.ui.lb_trademark.setPixmap(QtGui.QPixmap(self.trademark_path))
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.gray_led_path))
-
-        ## Create device handle
-        self.dev = pywpc.WifiDAQE3A()
-
+ 
         ## Get Python driver version
         print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}') 
-
-        ## AI port
-        self.port = 1 
-
+ 
         ## Connection flag
         self.connect_flag = 0
+
+        ## Handle declaration
+        self.dev = None
 
         ## Define callback events
         self.ui.btn_connect.clicked.connect(self.connectEvent)
         self.ui.btn_disconnect.clicked.connect(self.disconnectEvent)
         self.ui.btn_onDemand.clicked.connect(self.onDemandEvent)
 
-        ## Open AI port
-        self.openPort()
+    def selectHandle(self): 
+        handle_idx = int(self.ui.comboBox_handle.currentIndex()) 
+        if handle_idx == 0:
+            self.dev = pywpc.WifiDAQE3A()
+        elif handle_idx == 1:
+            self.dev = pywpc.EthanA()
+        elif handle_idx == 2:
+            self.dev = pywpc.USBDAQF1AD()
+        elif handle_idx == 3:
+            self.dev = pywpc.USBDAQF1AOD()
 
-    def closeEvent(self, event):
-        ## Close AI port
-        self.closePort()
+    def updateParam(self):
+        ## Get IP or serial_number from GUI
+        self.ip = self.ui.lineEdit_IP.text()
 
-        ## Disconnect network device
-        self.dev.disconnect()
-        
-        ## Release device handle
-        self.dev.close()
-
+        ## Get port from GUI
+        self.port = int(self.ui.comboBox_port.currentIndex())
+  
     @asyncSlot()      
     async def openPort(self):
+        ## Update Param
+        self.updateParam()
+
         ## Open AI port
         status = await self.dev.AI_open_async(self.port)
         print("AI_open_async status: ", status)
 
     @asyncSlot()      
     async def closePort(self):
+        ## Update Param
+        self.updateParam()
+
         ## Close AI port
         status = await self.dev.AI_close_async(self.port)
         print("AI_close_async status: ", status)
 
     @asyncSlot()      
-    async def onDemandEvent(self):  
-        ## Set AI port to 1 and data acquisition
+    async def onDemandEvent(self):
+        ## Update Param
+        self.updateParam()
+
+        ## Set AI port and data acquisition
         data =  await self.dev.AI_readOnDemand_async(self.port)
         if len(data) > 0:
             for i in range(8):
@@ -89,23 +99,40 @@ class MainWindow(QtWidgets.QMainWindow):
 
     @asyncSlot()      
     async def connectEvent(self): 
-        # Get ip from UI
-        self.ip = self.ui.lineEdit_IP.text()
-        try: 
-            ## Connect to network device
-            self.dev.connect(self.ip)
+        if self.connect_flag == 1:
+            return
+ 
+        ## Select handle
+        self.selectHandle()
+         
+        ## Update Param
+        self.updateParam()
 
-            ## Change LED status
-            self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
-
-            ## Change connection flag
-            self.connect_flag = 1
+        ## Connect to device
+        try:  
+            self.dev.connect(self.ip) 
         except pywpc.Error as err: 
             print("err: " + str(err))
+            return
+
+        ## Change LED status
+        self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
+
+        ## Change connection flag
+        self.connect_flag = 1
+
+        ## Open AI port
+        self.openPort()
 
     @asyncSlot()      
-    async def disconnectEvent(self):
-        ## Disconnect network device
+    async def disconnectEvent(self): 
+        if self.connect_flag == 0:
+            return
+        
+        ## Close AI port
+        self.closePort()
+
+        ## Disconnect device
         self.dev.disconnect()
 
         ## Change LED status
@@ -113,6 +140,17 @@ class MainWindow(QtWidgets.QMainWindow):
         
         ## Change connection flag
         self.connect_flag = 0
+
+    def closeEvent(self, event):
+        ## Close AI port
+        self.closePort()
+
+        if self.dev is not None:
+            ## Disconnect device
+            self.dev.disconnect()
+            
+            ## Release device handle
+            self.dev.close()
 
 def main(): 
     app = QtWidgets.QApplication([])
