@@ -1,0 +1,19 @@
+Ethan-O
+=======
+
+
+Device pinout 
+-------------
+
+.. image:: ../images/Pinouts/pinout-EthanO.JPG
+   :width: 90%
+   :alt: EthanO
+
+
+API function description 
+------------------------
+
+.. autoclass:: pywpc.EthanO
+   :members:
+   :undoc-members:
+   :inherited-members:

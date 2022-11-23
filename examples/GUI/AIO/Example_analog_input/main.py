@@ -1,19 +1,18 @@
-##  main.py
-##  Example_analog_input
-##
+##  Example_analog_input/main.py
+##  This is example for AI streaming with WPC DAQ Device.
 ##  Copyright (c) 2022 WPC Systems Ltd.
 ##  All rights reserved.
 
 ## Python
 import asyncio
 import os
-from qasync import QEventLoop, asyncSlot
+from qasync import QEventLoop, asyncSlot 
 
 ## Third party
+import numpy as np 
 import matplotlib.animation as animation
-import numpy as np
 from PyQt5 import QtWidgets, QtGui
-from PyQt5.QtWidgets import QWidget, QMessageBox
+from PyQt5.QtWidgets import QWidget, QMessageBox 
 from UI_design.Ui_example_GUI_AI import Ui_MainWindow 
 
 ## WPC
@@ -45,23 +44,16 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Get Python driver version
         print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}') 
-
-        ## Create device handle
-        self.dev = pywpc.EthanA()
-        
-        ## AI port
-        self.port = 0 
-
+ 
         ## Connection flag
         self.connect_flag = 0
 
+        ## Handle declaration
+        self.dev = None
+        
         ## Plot parameter
         self.plot_y_min = -10
         self.plot_y_max = 10
-
-        ## AI parameter
-        self.ai_sampling_rate = 1000
-        self.ai_n_samples = 200
  
         ## List parameter
         self.channel_list = []
@@ -82,37 +74,71 @@ class MainWindow(QtWidgets.QMainWindow):
  
         ## Plotting
         self.plotInitial()
-        self.plotAnimation()
-
-        ## Function loop
-        self.loop_fct(self.port, 600, 0.005) ## delay [sec]
+        self.plotAnimation()  
 
     def closeEvent(self, event):
-        ## Disconnect network device
-        self.dev.disconnect()
-        
-        ## Release device handle
-        self.dev.close()
- 
+        if self.dev is not None:
+            ## Disconnect device
+            self.dev.disconnect()
+            
+            ## Release device handle
+            self.dev.close()
+    
+    def selectHandle(self): 
+        handle_idx = int(self.ui.comboBox_handle.currentIndex())
+        if handle_idx == 0:
+            self.dev = pywpc.WifiDAQE3A()
+        elif handle_idx == 1:
+            self.dev = pywpc.EthanA()
+        elif handle_idx == 2:
+            self.dev = pywpc.USBDAQF1AD()
+        elif handle_idx == 3:
+            self.dev = pywpc.USBDAQF1AOD()
+
+    def updateParam(self):
+        ## Get IP or serial_number from GUI
+        self.ip = self.ui.lineEdit_IP.text()
+
+        ## Get port from GUI
+        self.port = int(self.ui.comboBox_port.currentIndex())
+
+        ## Get AI mode from UI
+        self.mode = self.ui.comboBox_aiMode.currentIndex()
+
+        ## Get Sampling rate from UI
+        self.ai_sampling_rate = float(self.ui.lineEdit_samplingRate.text())
+
+        ## Get NumSamples from UI
+        self.ai_n_samples = int(self.ui.lineEdit_numSamples.text())
+
     @asyncSlot()      
     async def connectEvent(self): 
         if self.connect_flag == 1:
             return 
 
-        ## Get IP 
-        ip = self.ui.lineEdit_IP.text()
+        ## Select handle
+        self.selectHandle()
+         
+        ## Update Param
+        self.updateParam()
+
         try: 
             ## Connect to device
-            self.dev.connect(ip)
+            self.dev.connect(self.ip)
         except pywpc.Error as err:
-            print(str(err))
-
+            print("err: " + str(err))
+            return
+ 
         ## Open AI port
         status = await self.dev.AI_open_async(self.port)
         print("AI_open_async status: ", status)
-
+         
         ## Change LED status
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
+
+        ## loop start
+        self.killed = False
+        self.loop_fct()
 
         ## Change connection flag
         self.connect_flag = 1
@@ -121,28 +147,30 @@ class MainWindow(QtWidgets.QMainWindow):
     async def disconnectEvent(self):
         if self.connect_flag == 0:
             return 
-   
+     
         ## close AI port
         status = await self.dev.AI_close_async(self.port)
         print("AI_close_async status: ", status)
-
-        ## Disconnect network device
+ 
+        ## Disconnect device
         self.dev.disconnect()
 
         ## Change LED status
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
-        
+
+        self.killed = True
+
         ## Change connection flag
         self.connect_flag = 0
 
-    @asyncSlot() 
-    async def loop_fct(self, port, num_of_sample , delay): 
-        while True:
+    @asyncSlot()
+    async def loop_fct(self): 
+        while not self.killed:
             ## data acquisition
-            data = await self.dev.AI_readStreaming_async(port, num_of_sample, delay)## Get 600 points at a time 
+            data = await self.dev.AI_readStreaming_async(self.port, 600, 0.005)## Get 600 points at a time 
             if len(data) >0 :
                 self.setDisplayPlotNums(data, self.ai_n_samples)
-            await asyncio.sleep(delay) 
+            await asyncio.sleep(0.005)  
 
     @asyncSlot()      
     async def startAIEvent(self):
@@ -150,24 +178,27 @@ class MainWindow(QtWidgets.QMainWindow):
         if self.checkConnectionStatus() == False:
             return
 
-        ## Get AI mode from UI
-        mode = self.ui.comboBox_aiMode.currentIndex()
-        
+        ## Update Param
+        self.updateParam()
+
         ## On Demand
-        if mode == 0:
+        if self.mode == 0:
             data = await self.dev.AI_readOnDemand_async(self.port) 
             self.setDisplayPlotNums([data], self.ai_n_samples)
-        ## N-Samples/ Continuous 
+        ## N-Samples/Continuous 
         else:
             status = await self.dev.AI_start_async(self.port)
             print("AI_start_async status: ", status)
-    
+ 
     @asyncSlot()      
     async def stopAIEvent(self): 
         ## Check connection status
         if self.checkConnectionStatus() == False:
             return
-        
+
+        ## Update Param
+        self.updateParam()
+
         ## Send AI stop
         status = await self.dev.AI_stop_async(self.port)
         print("AI_stop_async status: ", status)
@@ -177,12 +208,12 @@ class MainWindow(QtWidgets.QMainWindow):
         ## Check connection status
         if self.checkConnectionStatus() == False:
             return
-            
-        ## Get AI mode from UI
-        mode = int(self.ui.comboBox_aiMode.currentIndex())
+
+        ## Update Param
+        self.updateParam() 
 
         ## Send AI mode
-        status = await self.dev.AI_setMode_async(self.port, mode)
+        status = await self.dev.AI_setMode_async(self.port, self.mode)
         print("AI_setMode_async status: ", status)
     
     @asyncSlot()
@@ -190,13 +221,12 @@ class MainWindow(QtWidgets.QMainWindow):
         ## Check connection status
         if self.checkConnectionStatus() == False:
             return
-
-        ## Get Sampling rate from UI
-        sampling_rate = float(self.ui.lineEdit_samplingRate.text())
-        self.ai_sampling_rate = sampling_rate
+ 
+        ## Update Param
+        self.updateParam()
         
         ## Send set sampling rate
-        status = await self.dev.AI_setSamplingRate_async(self.port, sampling_rate)
+        status = await self.dev.AI_setSamplingRate_async(self.port, self.ai_sampling_rate)
         print("AI_setSamplingRate_async status: ", status)
 
     @asyncSlot()
@@ -205,12 +235,11 @@ class MainWindow(QtWidgets.QMainWindow):
         if self.checkConnectionStatus() == False:
             return
 
-        ## Get NumSamples from UI
-        n_samples = int(self.ui.lineEdit_numSamples.text())
-        self.ai_n_samples = n_samples
+        ## Update Param
+        self.updateParam() 
         
         ## Send set number of samples
-        status = await self.dev.AI_setNumSamples_async(self.port, n_samples)
+        status = await self.dev.AI_setNumSamples_async(self.port, self.ai_n_samples)
         print("AI_setNumSamples_async status: ", status)
 
     def plotInitial(self):

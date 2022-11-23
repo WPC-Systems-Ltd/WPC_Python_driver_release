@@ -9,10 +9,13 @@ Some API functions in the `pywpc` package may not compatible with earlier versio
 To update device firmware to the latest version, please use WPC Device Manager and `LabVIEW Run-time engine <https://drive.google.com/file/d/1Uj6r65KhNxvuApiqrMkZp-NWyq-Eek-k/view>`_.
 You can download WPC Device Manager by `latest release <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/releases/tag/v1.0.9>`_ or visit `WPC Systems Ltd. official website <http://www.wpc.com.tw/36039260092584721462-daq1.html>`_.
 
+
 +-------------------+-----------------------------------------------------------------------------------+
 |                   | Link                                                                              |
 +===================+===================================================================================+
 | WPC official site | http://www.wpc.com.tw/                                                            |
++-------------------+-----------------------------------------------------------------------------------+
+| GitHub            | https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release                      |
 +-------------------+-----------------------------------------------------------------------------------+
 | User guide        | https://wpc-systems-ltd.github.io/WPC_Python_driver_release/                      |
 +-------------------+-----------------------------------------------------------------------------------+
@@ -59,9 +62,9 @@ Quick Start
    >>> pywpc.PKG_NAME
    pywpc
    >>> pywpc.__version__
-   1.0.9
+   1.1.0
    >>> pywpc.HANDLE_LIST
-   ['DeviceFinder', 'DataLogger', 'WifiDAQE3A', 'EthanD', 'EthanA', 'USBDAQF1D', 'USBDAQF1DSNK', 'USBDAQF1AD', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1RD', 'USBDAQF1CD']
+   ['DeviceFinder', 'DataLogger', 'WifiDAQE3A', 'EthanD', 'EthanA', 'EthanL', 'EthanO', 'USBDAQF1D', 'USBDAQF1DSNK', 'USBDAQF1AD', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1RD', 'USBDAQF1CD']
 
 Install and Upgrade
 -------------------
@@ -94,6 +97,10 @@ Ethernet based DAQ card
 
 - Ethan-D
 
+- Ethan-L
+
+- Ethan-O
+
 USB interface DAQ card
 
 - USB-DAQ-F1-D (Digital)
@@ -122,7 +129,11 @@ I/O Function Table
 +----------------+-----+-----+----------+----------+-----+-----+-----+-----+-----+-------------+
 | Ethan-A        |0    |     |          |          |     |     |     |     |     |             |
 +----------------+-----+-----+----------+----------+-----+-----+-----+-----+-----+-------------+
-| Ethan-D        |     |     |1         |1         |     |     |     |     |     |             |
+| Ethan-D        |     |     |1         |0         |     |     |     |     |     |             |
++----------------+-----+-----+----------+----------+-----+-----+-----+-----+-----+-------------+
+| Ethan-L        |     |     |1         |0         |     |     |     |     |     |             |
++----------------+-----+-----+----------+----------+-----+-----+-----+-----+-----+-------------+
+| Ethan-O        |     | 0   |          |          |     |     |     |     |     |             |
 +----------------+-----+-----+----------+----------+-----+-----+-----+-----+-----+-------------+
 | USB-DAQ-F1-D   |     |     |0, 1, 2, 3|0, 1, 2, 3|     |1, 2 |1, 2 |1, 2 |     |             |
 +----------------+-----+-----+----------+----------+-----+-----+-----+-----+-----+-------------+

@@ -42,6 +42,7 @@ Error code,Error message
 -8208,The specified AI acquisition mode is invalid.
 -8209,AO channel not avaliable or already occupied by other process.
 -8210,The specified AI sampling rate is invalid.
+-8211,The specified AO form is invalid.
 -8301,Thermal port not avaliable or already occupied by other process.
 -8304,Thermal channel not avaliable or already occupied by other process.
 -8305,The specified thermal filter mode is invalid.

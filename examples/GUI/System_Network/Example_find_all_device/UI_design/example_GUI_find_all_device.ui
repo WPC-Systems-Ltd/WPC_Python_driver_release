@@ -23,9 +23,9 @@
    <widget class="QLabel" name="lb_declare">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>60</x>
       <y>120</y>
-      <width>671</width>
+      <width>791</width>
       <height>31</height>
      </rect>
     </property>
@@ -36,7 +36,7 @@
      </font>
     </property>
     <property name="text">
-     <string>This is example for finding all available devices with WPC DAQ Device.</string>
+     <string>This is example for finding all available ethernet devices with WPC DAQ Device.</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_broadcast">

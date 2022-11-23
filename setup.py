@@ -17,7 +17,7 @@ class BinaryDistribution(sut.dist.Distribution):
     def has_ext_modules(x):
         return True
 
-with open("README.md", "r", encoding="utf-8") as fh:
+with open("README.rst", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 with open("requirements.txt", "r", encoding="utf-8") as fh:
@@ -29,7 +29,7 @@ sut.setup(
     version=pywpc.__version__,
     description='WPC Python driver APIs, the easiest way to Control & Data Acquisition (DAQ)',
     long_description=long_description,
-    long_description_content_type='text/markdown',
+    long_description_content_type='text/x-rst',
 
     author="chunglee_people, Chieh-An Lin",
     author_email="wu@wpc.com.tw",

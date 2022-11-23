@@ -68,6 +68,58 @@ Ethan-D
    examples/Console/EthanD/Tutorial/multiple_loops_async.rst
 
 
+Ethan-L
+-------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/EthanL/DIO/DIO_loopback_pins.rst
+
+   examples/Console/EthanL/DIO/DIO_loopback_port.rst
+
+   examples/Console/EthanL/DIO/DO_write_pins.rst
+
+   examples/Console/EthanL/DIO/DO_write_port.rst
+
+   examples/Console/EthanL/DIO/DO_blinky_pins.rst
+
+   examples/Console/EthanL/DIO/DO_blinky_port.rst
+
+   examples/Console/EthanL/System_ETH/get_network_info.rst
+
+   examples/Console/EthanL/Tutorial/single_loop_thread.rst
+
+   examples/Console/EthanL/Tutorial/single_loop_async.rst
+
+   examples/Console/EthanL/Tutorial/multiple_loops_thread.rst
+
+   examples/Console/EthanL/Tutorial/multiple_loops_async.rst
+
+
+Ethan-O
+-------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/EthanO/AO/AO_write_one_channel.rst
+
+   examples/Console/EthanO/AO/AO_write_all_channels.rst
+
+   examples/Console/EthanO/AO/AO_waveform_gen.rst
+
+   examples/Console/EthanO/System_ETH/get_network_info.rst
+
+   examples/Console/EthanO/Tutorial/single_loop_thread.rst
+
+   examples/Console/EthanO/Tutorial/single_loop_async.rst
+
+   examples/Console/EthanO/Tutorial/multiple_loops_thread.rst
+
+   examples/Console/EthanO/Tutorial/multiple_loops_async.rst
+
+
 USB-DAQ-F1-AD
 -------------
 
@@ -142,6 +194,8 @@ USB-DAQ-F1-AOD
    examples/Console/USBDAQF1AOD/AO/AO_write_one_channel.rst
 
    examples/Console/USBDAQF1AOD/AO/AO_write_all_channels.rst
+
+   examples/Console/USBDAQF1AOD/AO/AO_waveform_gen.rst
 
    examples/Console/USBDAQF1AOD/AIO/AIO_one_channel_loopback.rst
 
