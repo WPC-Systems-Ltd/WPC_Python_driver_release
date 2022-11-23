@@ -7,6 +7,7 @@ v1.1.0 Date: 2022/11/23, Developer: Chunglee_people
 ### Added
 - Add handle combobox in GUI example code
 - Add product `EthanL` & `EthanO` 
+- Add `AO_waveform_generation.py` example code
 
 ### Changed
 - Update `WPC_DAQ_Devices_User_Manual` from r19 to r20
