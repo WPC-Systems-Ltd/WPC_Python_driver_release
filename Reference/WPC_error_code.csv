@@ -2,6 +2,7 @@ Error code,Error message
 570002,Occurrence CAN queue overflow.
 560001,Occurrence UART queue overflow.
 520003,Occurrence AI queue overflow.
+519000,"External library ""libusb-1.0.dll"" not found at indicated path Will look at the default path instead"
 -7001,Functionality not enabled in firmware.
 -7002,Firmware pin mode index error.
 -7003,Firmware HAL handle index error.

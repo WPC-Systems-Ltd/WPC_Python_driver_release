@@ -1,6 +1,8 @@
 Error Code Table
 ================
 
+.. _error_code:
+
 .. list-table::
    :widths: 10 10 10
    :header-rows: 1
@@ -17,6 +19,9 @@ Error Code Table
    * - 520003
      - Warning
      - Occurrence AI queue overflow.
+   * - 519000
+     - Warning
+     - External library "libusb-1.0.dll" not found at indicated path Will look at the default path instead
    * - -7001
      - 
      - Functionality not enabled in firmware.

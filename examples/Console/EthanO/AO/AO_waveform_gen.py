@@ -52,8 +52,8 @@ async def main():
         form_mode = 2 
         amplitude = 1
         offset = 0.5
-        period_1 = 0.2
-        period_2 = 0.1
+        period_0 = 0.2
+        period_1 = 0.1
 
         ## Open AO
         status = await dev.AO_open_async(port)
@@ -63,16 +63,20 @@ async def main():
         status = await dev.AO_setEnableChannels_async(port, [0,0,0,0,0,0,1,1]) 
         print("AO_setEnableChannels_async status: ", status)
 
-        ## Set AO form
-        status = await dev.AO_setForm_async(port, [0,0,0,0,0,0,1,1], form_mode) 
-        print("AO_setForm_async status: ", status)
+        ## Set AO form in channel 0
+        status = await dev.AO_setForm_async(port, 0, form_mode) 
+        print("AO_setForm_async in channel 0 status : ", status)
+
+        ## Set AO form in channel 1
+        status = await dev.AO_setForm_async(port, 1, form_mode) 
+        print("AO_setForm_async in channel 1 status : ", status)
 
         ## Set Channel 0 form parameters
-        status = await dev.AO_setFormParam_async(port, 0, amplitude, offset, period_1) 
+        status = await dev.AO_setFormParam_async(port, 0, amplitude, offset, period_0) 
         print("AO_setForm_async in channel 0 status: ", status)
 
         ## Set Channel 1 form parameters
-        status = await dev.AO_setFormParam_async(port, 1, amplitude, offset, period_2) 
+        status = await dev.AO_setFormParam_async(port, 1, amplitude, offset, period_1) 
         print("AO_setForm_async in channel 1 status: ", status)
          
         ## Set AO port and generation mode
@@ -83,7 +87,7 @@ async def main():
         status = await dev.AO_setSamplingRate_async(port, sampling_rate)
         print("AO_setSamplingRate_async status: ", status)
                         
-        # Open AO streaming
+        ## Open AO streaming
         status = await dev.AO_openStreaming_async(port)
         print("AO_openStreaming_async status: ", status)
 
@@ -91,8 +95,8 @@ async def main():
         status = await dev.AO_startStreaming_async(port)
         print("AO_startStreaming_async status: ", status)
 
-        ## Sleep 1 second
-        await asyncio.sleep(1) ## delay(second) 
+        ## Wait for 5 seconds
+        await asyncio.sleep(5)  ## delay(second)
 
         ## Close AO streaming
         status = await dev.AO_closeStreaming_async(port)
