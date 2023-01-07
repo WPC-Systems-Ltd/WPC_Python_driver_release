@@ -64,7 +64,7 @@ Quick Start
    >>> pywpc.__version__
    1.1.2
    >>> pywpc.HANDLE_LIST
-   ['DeviceFinder', 'DataLogger', 'WifiDAQE3A', 'EthanD', 'EthanA', 'EthanL', 'EthanO', 'USBDAQF1D', 'USBDAQF1DSNK', 'USBDAQF1AD', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1RD', 'USBDAQF1CD']
+   ['DeviceFinder', 'DataLogger', 'WifiDAQE3A', 'EMotion', 'EthanA', 'EthanD', 'EthanL', 'EthanO', 'USBDAQF1D', 'USBDAQF1DSNK', 'USBDAQF1AD', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1RD', 'USBDAQF1CD']
 
 Install and Upgrade
 -------------------
@@ -92,7 +92,7 @@ Python 3.8 or later with all `requirements.txt <https://github.com/WPC-Systems-L
 Products
 --------
 Ethernet based motion card
-S
+
 - EMotion
 
 Ethernet based DAQ card
