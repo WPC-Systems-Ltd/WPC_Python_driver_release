@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Device finder &mdash; WPC Python driver 1.1.1 documentation</title>
+  <title>Device finder &mdash; WPC Python driver 1.1.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.1.1
+                1.1.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -71,7 +71,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../ref_port.html">I/O Function Table</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ref_error.html">Error Code Table</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ref_SPI.html">SPI Setting Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref_SPI.html">Setting Table</a></li>
 </ul>
 
         </div>
@@ -108,7 +108,7 @@
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="pywpc.DeviceFinder.Bcst_checkMACAndReboot_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Bcst_checkMACAndReboot_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mac_addr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.DeviceFinder.Bcst_checkMACAndReboot_async" title="Permalink to this definition"></a></dt>
-<dd><p>Reboot device with broadcast mode.</p>
+<dd><p>Reboot device with broadcast mode with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -129,7 +129,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.DeviceFinder.Bcst_checkMACAndSetIP_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Bcst_checkMACAndSetIP_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip_addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mac_addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subnet_mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'255.255.255.0'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.DeviceFinder.Bcst_checkMACAndSetIP_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set IP with broadcast mode.</p>
+<dd><p>Set IP with broadcast mode with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -152,7 +152,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.DeviceFinder.Bcst_enumerateNetworkDevices_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Bcst_enumerateNetworkDevices_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.DeviceFinder.Bcst_enumerateNetworkDevices_async" title="Permalink to this definition"></a></dt>
-<dd><p>Get all network device information from broadcasting.</p>
+<dd><p>Get all network device information from broadcasting with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
@@ -244,7 +244,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, WPC Systems Ltd..</p>
+    <p>&#169; Copyright 2023, WPC Systems Ltd..</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

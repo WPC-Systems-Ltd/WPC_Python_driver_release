@@ -28,6 +28,7 @@ Ethernet devices
    products/EthanD
    products/EthanL
    products/EthanO
+   products/EMotion
 
 USB devices
 -----------

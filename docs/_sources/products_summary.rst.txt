@@ -9,6 +9,69 @@ Products Feature
    * - Model
      - Photo
    * - 
+      **Emotion**
+         - Ethernet based motion controller modular inter-connection 
+         - board:Easy and quick connect to Servo amplifier (Yaskawa, Panasonic, Mitsubishi, Delta...etc)
+         - Pulse/Direction or CW/CCW output mode
+         - Differential output (Max: 8MPPS)
+         - Encoder ABZ input (Max: 12MHz)
+         - Break-point / Capture
+         - Linear / Circular / helical interpolation / Multi-axes sync move S-Curve
+         - Support Python, C# and LabVIEW
+     - 
+      .. image:: images/Products/product-Emotion.jpg
+         :width: 100%
+         :alt: product-Emotion.jpg  
+   * - 
+      **EthanA**
+         - 10/100 cable Ethernet
+         - 8ch simultaneous voltage input
+         - Max sampling rate: 20KHz 
+         - +/-10V voltage input range
+         - Support Python, C# and LabVIEW
+     - 
+      .. image:: images/Products/product-EthanA.jpg
+         :width: 100%
+         :alt: product-EthanA.jpg
+   * - 
+      **EthanD**
+         - 10/100 cable Ethernet
+         - 8ch 24V digital input (sourcing DI, NPN)
+         - 6ch 24V digital output (sinking DO, NPN)
+         - Support Python, C# and LabVIEW
+     - 
+      .. image:: images/Products/product-EthanD.jpg
+         :width: 100%
+         :alt: product-EthanD.jpg
+
+   * - 
+      **EthanL**
+         - 10/100 T-based Ethernet interface
+         - 6ch high quality mechanical relay
+         - 4ch Form-A (NO), 2ch Form-C (NO+NC) 
+         - Max current: 1A
+         - Operating time: 2ms (excluding bounce)
+         - Release time: 1ms (excluding bounce)
+         - Power input: 24VDC
+         - Support Python, C# and LabVIEW
+     - 
+      .. image:: images/Products/product-EthanA.jpg
+         :width: 100%
+         :alt: product-EthanL.jpg
+
+   * - 
+      **EthanO**
+         - 10/100 T-based Ethernet interface
+         - 8ch voltage output
+         - +/-10V voltage output range
+         - Max update rate: 1KHz
+         - Power input: 24VDC
+         - Support Python, C# and LabVIEW
+     - 
+      .. image:: images/Products/product-EthanA.jpg
+         :width: 100%
+         :alt: product-EthanO.jpg   
+   * - 
       **USBDAQF1D**
          - 26ch 3.3V DIO/I2C/SPI
          - I2C: 400KHz (max)
@@ -82,56 +145,7 @@ Products Feature
      - 
       .. image:: images/Products/product-USBDAQF1AOD.jpg
          :width: 100%
-         :alt: product-USBDAQAOD.jpg
-   * - 
-      **EthanA**
-         - 10/100 cable Ethernet
-         - 8ch simultaneous voltage input
-         - Max sampling rate: 20KHz 
-         - +/-10V voltage input range
-         - Support Python, C# and LabVIEW
-     - 
-      .. image:: images/Products/product-EthanA.jpg
-         :width: 100%
-         :alt: product-EthanA.jpg
-   * - 
-      **EthanD**
-         - 10/100 cable Ethernet
-         - 8ch 24V digital input (sourcing DI, NPN)
-         - 6ch 24V digital output (sinking DO, NPN)
-         - Support Python, C# and LabVIEW
-     - 
-      .. image:: images/Products/product-EthanD.jpg
-         :width: 100%
-         :alt: product-EthanD.jpg
-
-   * - 
-      **EthanL**
-         - 10/100 T-based Ethernet interface
-         - 6ch high quality mechanical relay
-         - 4ch Form-A (NO), 2ch Form-C (NO+NC) 
-         - Max current: 1A
-         - Operating time: 2ms (excluding bounce)
-         - Release time: 1ms (excluding bounce)
-         - Power input: 24VDC
-         - Support Python, C# and LabVIEW
-     - 
-      .. image:: images/Products/product-EthanA.jpg
-         :width: 100%
-         :alt: product-EthanL.jpg
-
-   * - 
-      **EthanO**
-         - 10/100 T-based Ethernet interface
-         - 8ch voltage output
-         - +/-10V voltage output range
-         - Max update rate: 1KHz
-         - Power input: 24VDC
-         - Support Python, C# and LabVIEW
-     - 
-      .. image:: images/Products/product-EthanA.jpg
-         :width: 100%
-         :alt: product-EthanO.jpg                  
+         :alt: product-USBDAQAOD.jpg 
    * - 
       **WifiDAQE3A**
          - 8ch 16-bit +/-10V analog input

@@ -22,6 +22,9 @@ Error Code Table
    * - 519000
      - Warning
      - External library "libusb-1.0.dll" not found at indicated path Will look at the default path instead
+   * - 8804
+     - Warning
+     - Motion port not avaliable or already occupied by other process.
    * - -7001
      - 
      - Functionality not enabled in firmware.

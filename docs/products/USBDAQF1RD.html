@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>USB-DAQ-F1-RD &mdash; WPC Python driver 1.1.1 documentation</title>
+  <title>USB-DAQ-F1-RD &mdash; WPC Python driver 1.1.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.1.1
+                1.1.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -77,7 +77,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../ref_port.html">I/O Function Table</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ref_error.html">Error Code Table</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ref_SPI.html">SPI Setting Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref_SPI.html">Setting Table</a></li>
 </ul>
 
         </div>
@@ -129,7 +129,7 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.DI_closePins_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DI_closePins_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.DI_closePins_async" title="Permalink to this definition"></a></dt>
-<dd><p>Close specific pin with digital intput.</p>
+<dd><p>Close specific pin with digital intput with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -152,7 +152,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.DI_closePort_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DI_closePort_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.DI_closePort_async" title="Permalink to this definition"></a></dt>
-<dd><p>Close all pins in specific port with digital input.</p>
+<dd><p>Close all pins in specific port with digital input with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -191,7 +191,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.DI_openPins_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DI_openPins_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.DI_openPins_async" title="Permalink to this definition"></a></dt>
-<dd><p>Open specific pin to digital intput.</p>
+<dd><p>Open specific pin to digital intput with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -214,7 +214,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.DI_openPort_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DI_openPort_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.DI_openPort_async" title="Permalink to this definition"></a></dt>
-<dd><p>Open all pins in specific port with digital input.</p>
+<dd><p>Open all pins in specific port with digital input with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -235,7 +235,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.DI_readPins_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DI_readPins_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.DI_readPins_async" title="Permalink to this definition"></a></dt>
-<dd><p>Read digital pin state in specific pin.</p>
+<dd><p>Read digital pin state in specific pin with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -257,7 +257,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.DI_readPort_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DI_readPort_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.DI_readPort_async" title="Permalink to this definition"></a></dt>
-<dd><p>Read all digital pins state in specific port.</p>
+<dd><p>Read all digital pins state in specific port with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -277,7 +277,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.DO_closePins_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DO_closePins_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.DO_closePins_async" title="Permalink to this definition"></a></dt>
-<dd><p>Close specific pin with digital output.</p>
+<dd><p>Close specific pin with digital output with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -304,7 +304,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.DO_closePort_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DO_closePort_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.DO_closePort_async" title="Permalink to this definition"></a></dt>
-<dd><p>Close all pins in specific port with digital output.</p>
+<dd><p>Close all pins in specific port with digital output with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -343,7 +343,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.DO_openPins_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DO_openPins_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.DO_openPins_async" title="Permalink to this definition"></a></dt>
-<dd><p>Open specific pin to digital output.</p>
+<dd><p>Open specific pin to digital output with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -370,7 +370,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.DO_openPort_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DO_openPort_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.DO_openPort_async" title="Permalink to this definition"></a></dt>
-<dd><p>Open all pins in specific port with digital output.</p>
+<dd><p>Open all pins in specific port with digital output with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -391,7 +391,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.DO_togglePins_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DO_togglePins_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.DO_togglePins_async" title="Permalink to this definition"></a></dt>
-<dd><p>Toggle digital pin state in specific pin.</p>
+<dd><p>Toggle digital pin state in specific pin with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -419,7 +419,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.DO_togglePort_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DO_togglePort_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.DO_togglePort_async" title="Permalink to this definition"></a></dt>
-<dd><p>Toggle all digital pins state in specific port.</p>
+<dd><p>Toggle all digital pins state in specific port with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -449,7 +449,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.DO_writePins_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DO_writePins_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.DO_writePins_async" title="Permalink to this definition"></a></dt>
-<dd><p>Write digital value to specific pin.</p>
+<dd><p>Write digital value to specific pin with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -483,7 +483,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.DO_writePort_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DO_writePort_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.DO_writePort_async" title="Permalink to this definition"></a></dt>
-<dd><p>Write all pins state in specific port with digital output.</p>
+<dd><p>Write all pins state in specific port with digital output with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -512,7 +512,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.I2C_close_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">I2C_close_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.I2C_close_async" title="Permalink to this definition"></a></dt>
-<dd><p>Close I2C port on WPC DAQ device.</p>
+<dd><p>Close I2C port on WPC DAQ device with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -551,7 +551,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.I2C_open_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">I2C_open_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.I2C_open_async" title="Permalink to this definition"></a></dt>
-<dd><p>Open I2C port on WPC DAQ device.</p>
+<dd><p>Open I2C port on WPC DAQ device with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -572,7 +572,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.I2C_read_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">I2C_read_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytes_to_read</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.I2C_read_async" title="Permalink to this definition"></a></dt>
-<dd><p>Read data from read address.</p>
+<dd><p>Read data from read address with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -596,7 +596,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.I2C_reset_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">I2C_reset_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.I2C_reset_async" title="Permalink to this definition"></a></dt>
-<dd><p>Reset I2C to default settings.</p>
+<dd><p>Reset I2C to default settings with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -617,7 +617,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.I2C_setAddressSize_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">I2C_setAddressSize_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.I2C_setAddressSize_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set I2C address size functionality.</p>
+<dd><p>Set I2C address size functionality with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -643,7 +643,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.I2C_setClockRate_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">I2C_setClockRate_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.I2C_setClockRate_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set the frequency mode of the desired communication clock.</p>
+<dd><p>Set the frequency mode of the desired communication clock with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -671,7 +671,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.I2C_write_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">I2C_write_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.I2C_write_async" title="Permalink to this definition"></a></dt>
-<dd><p>Write data to write address.</p>
+<dd><p>Write data to write address with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -696,7 +696,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.SPI_close_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_close_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.SPI_close_async" title="Permalink to this definition"></a></dt>
-<dd><p>Close SPI port on WPC DAQ device.</p>
+<dd><p>Close SPI port on WPC DAQ device with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -736,7 +736,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.SPI_open_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_open_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.SPI_open_async" title="Permalink to this definition"></a></dt>
-<dd><p>Open SPI port on WPC DAQ device.</p>
+<dd><p>Open SPI port on WPC DAQ device. with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -757,7 +757,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.SPI_readAndWrite_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_readAndWrite_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.SPI_readAndWrite_async" title="Permalink to this definition"></a></dt>
-<dd><p>Write and read data simultaneously to SPI port.</p>
+<dd><p>Write and read data simultaneously to SPI port with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -779,7 +779,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.SPI_read_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_read_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytes_to_read</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.SPI_read_async" title="Permalink to this definition"></a></dt>
-<dd><p>Read data from SPI port.</p>
+<dd><p>Read data from SPI port with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -801,7 +801,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.SPI_reset_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_reset_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.SPI_reset_async" title="Permalink to this definition"></a></dt>
-<dd><p>Reset SPI to default settings.</p>
+<dd><p>Reset SPI to default settings with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -822,8 +822,8 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.SPI_setDataSize_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setDataSize_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.SPI_setDataSize_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set data frame format.
-Please check <a class="reference internal" href="../ref_SPI.html#spi-param"><span class="std std-ref">SPI data size mode</span></a>.</p>
+<dd><p>Set data frame format with async mode.
+Please check <a class="reference internal" href="../ref_SPI.html#setting-param"><span class="std std-ref">SPI data size mode</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -849,8 +849,8 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.SPI_setFirstBit_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setFirstBit_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.SPI_setFirstBit_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set LSB first or MSB first.
-Please check <a class="reference internal" href="../ref_SPI.html#spi-param"><span class="std std-ref">SPI MSB/LSB mode</span></a>.</p>
+<dd><p>Set LSB first or MSB first with async mode.
+Please check <a class="reference internal" href="../ref_SPI.html#setting-param"><span class="std std-ref">SPI MSB/LSB mode</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -876,8 +876,8 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.SPI_setMode_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.SPI_setMode_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set clock phase and clock polarity.
-Please check <a class="reference internal" href="../ref_SPI.html#spi-param"><span class="std std-ref">SPI mode</span></a>.</p>
+<dd><p>Set clock phase and clock polarity with async mode.
+Please check <a class="reference internal" href="../ref_SPI.html#setting-param"><span class="std std-ref">SPI mode</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -905,8 +905,8 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.SPI_setPrescaler_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_setPrescaler_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prescaler</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.SPI_setPrescaler_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set the maximum speed of SPI communication.
-Please check <a class="reference internal" href="../ref_SPI.html#spi-param"><span class="std std-ref">SPI clock</span></a>.</p>
+<dd><p>Set the maximum speed of SPI communication with async mode.
+Please check <a class="reference internal" href="../ref_SPI.html#setting-param"><span class="std std-ref">SPI clock</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -929,7 +929,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.SPI_write_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPI_write_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.SPI_write_async" title="Permalink to this definition"></a></dt>
-<dd><p>Write data to SPI port.</p>
+<dd><p>Write data to SPI port with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -952,7 +952,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Sys_getDriverInfo_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getDriverInfo_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Sys_getDriverInfo_async" title="Permalink to this definition"></a></dt>
-<dd><p>Get device firmware information.</p>
+<dd><p>Get device firmware information with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
@@ -970,7 +970,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Sys_getPinModeInPort_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getPinModeInPort_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Sys_getPinModeInPort_async" title="Permalink to this definition"></a></dt>
-<dd><p>Get pin mode in specific port.</p>
+<dd><p>Get pin mode in specific port with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -995,7 +995,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Sys_getRTC_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getRTC_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Sys_getRTC_async" title="Permalink to this definition"></a></dt>
-<dd><p>Get date and time to connected WPC device.</p>
+<dd><p>Get date and time to connected WPC device with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1019,7 +1019,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Sys_getSerialNumber_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getSerialNumber_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Sys_getSerialNumber_async" title="Permalink to this definition"></a></dt>
-<dd><p>Get serial number from the connected WPC device.</p>
+<dd><p>Get serial number from the connected WPC device with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1033,7 +1033,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Sys_rebootOnBootloader_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_rebootOnBootloader_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Sys_rebootOnBootloader_async" title="Permalink to this definition"></a></dt>
-<dd><p>Reboot on bootloader from the connected WPC device.</p>
+<dd><p>Reboot on bootloader from the connected WPC device with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1048,7 +1048,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Sys_reboot_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_reboot_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Sys_reboot_async" title="Permalink to this definition"></a></dt>
-<dd><p>Reboot from the connected WPC device.</p>
+<dd><p>Reboot from the connected WPC device with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1063,7 +1063,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Sys_setPortDI_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setPortDI_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Sys_setPortDI_async" title="Permalink to this definition"></a></dt>
-<dd><p>Open port as DI.</p>
+<dd><p>Open port as DI with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1084,7 +1084,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Sys_setPortDO_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setPortDO_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Sys_setPortDO_async" title="Permalink to this definition"></a></dt>
-<dd><p>Open port as DO.</p>
+<dd><p>Open port as DO with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1105,7 +1105,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Sys_setPortIdle_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setPortIdle_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Sys_setPortIdle_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set all pins in specific port to IDLE state.</p>
+<dd><p>Set all pins in specific port to IDLE state with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1126,7 +1126,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Sys_setRTC_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setRTC_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hour</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minute</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Sys_setRTC_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set date and time to connected WPC device.</p>
+<dd><p>Set date and time to connected WPC device with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1156,7 +1156,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Thermal_close_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Thermal_close_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Thermal_close_async" title="Permalink to this definition"></a></dt>
-<dd><p>Close thermocouple or RTD port on WPC DAQ device.</p>
+<dd><p>Close thermocouple or RTD port on WPC DAQ device with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1195,7 +1195,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Thermal_getStatus_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Thermal_getStatus_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Thermal_getStatus_async" title="Permalink to this definition"></a></dt>
-<dd><p>Get thermocouple or RTD status from specific channel.</p>
+<dd><p>Get thermocouple or RTD status from specific channel with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1222,7 +1222,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Thermal_open_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Thermal_open_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Thermal_open_async" title="Permalink to this definition"></a></dt>
-<dd><p>Open thermocouple or RTD port on WPC DAQ device.</p>
+<dd><p>Open thermocouple or RTD port on WPC DAQ device with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1243,7 +1243,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Thermal_readSensor_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Thermal_readSensor_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Thermal_readSensor_async" title="Permalink to this definition"></a></dt>
-<dd><p>Read thermocouple or RTD sensor temperature from specific channel.</p>
+<dd><p>Read thermocouple or RTD sensor temperature from specific channel with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1267,7 +1267,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Thermal_setNoiseFilter_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Thermal_setNoiseFilter_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Thermal_setNoiseFilter_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set noise rejection filter on specific thermocouple or RTD channel.</p>
+<dd><p>Set noise rejection filter on specific thermocouple or RTD channel with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1295,7 +1295,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.Thermal_setType_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Thermal_setType_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.Thermal_setType_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set thermocouple type on specific thermocouple or RTD channel.</p>
+<dd><p>Set thermocouple type on specific thermocouple or RTD channel with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1326,7 +1326,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.UART_close_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_close_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.UART_close_async" title="Permalink to this definition"></a></dt>
-<dd><p>Close UART port on WPC DAQ device.</p>
+<dd><p>Close UART port on WPC DAQ device with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1365,7 +1365,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.UART_open_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_open_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.UART_open_async" title="Permalink to this definition"></a></dt>
-<dd><p>Open UART port on WPC DAQ device.</p>
+<dd><p>Open UART port on WPC DAQ device with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1386,7 +1386,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.UART_read_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_read_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytes_to_read</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.005</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.UART_read_async" title="Permalink to this definition"></a></dt>
-<dd><p>Read data from UART port.</p>
+<dd><p>Read data from UART port with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1410,7 +1410,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.UART_reset_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_reset_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.UART_reset_async" title="Permalink to this definition"></a></dt>
-<dd><p>Reset UART to default settings.</p>
+<dd><p>Reset UART to default settings with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1431,7 +1431,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.UART_setBaudRate_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_setBaudRate_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baud_rate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.UART_setBaudRate_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set the data rate in bits per second.</p>
+<dd><p>Set the data rate in bits per second with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1454,7 +1454,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.UART_setDataBit_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_setDataBit_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.UART_setDataBit_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set data size in mode.</p>
+<dd><p>Set data size in mode with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1480,7 +1480,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.UART_setNumStopBit_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_setNumStopBit_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.UART_setNumStopBit_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set number of stop bits in mode.</p>
+<dd><p>Set number of stop bits in mode with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1508,7 +1508,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.UART_setParity_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_setParity_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.UART_setParity_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set parity in mode.</p>
+<dd><p>Set parity in mode with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1536,7 +1536,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.UART_stopReading_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_stopReading_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.UART_stopReading_async" title="Permalink to this definition"></a></dt>
-<dd><p>Stop reading a stream via UART.</p>
+<dd><p>Stop reading a stream via UART with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1557,7 +1557,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1RD.UART_write_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UART_write_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1RD.UART_write_async" title="Permalink to this definition"></a></dt>
-<dd><p>Write data to UART port.</p>
+<dd><p>Write data to UART port with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1652,7 +1652,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, WPC Systems Ltd..</p>
+    <p>&#169; Copyright 2023, WPC Systems Ltd..</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

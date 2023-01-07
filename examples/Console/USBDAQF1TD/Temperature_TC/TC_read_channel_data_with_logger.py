@@ -11,7 +11,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022 WPC Systems Ltd.
+Copyright (c) 2023 WPC Systems Ltd.
 All rights reserved.
 '''
 
@@ -24,8 +24,6 @@ import asyncio
 from wpcsys import pywpc
 
 async def main():
-    print("Start example code...")
-
     ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
 
@@ -50,8 +48,8 @@ async def main():
     try:
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print("Model name:" + driver_info[0])
+        print("Firmware version:" + driver_info[-1])
 
         ## Parameters setting
         port = 1
@@ -61,22 +59,22 @@ async def main():
                                 ## 4:N type, 5:R type, 6:S type, 7:T type
 
         ## Open thermo
-        status = await dev.Thermal_open_async(port)
-        print("Thermal_open_async status: ", status)
+        err = await dev.Thermal_open_async(port)
+        print("Thermal_open_async:", err)
 
         ## Sleep
         await asyncio.sleep(0.1) ## delay(second)
 
         ## Set thermo port and set over-sampling mode to no over-sampling in channel 1
-        status = await dev.Thermal_setOverSampling_async(port, channel, over_sampling_mode)
-        print("Thermal_setOverSampling_async status: ", status)
+        err = await dev.Thermal_setOverSampling_async(port, channel, over_sampling_mode)
+        print("Thermal_setOverSampling_async:", err)
 
         ## Sleep
         await asyncio.sleep(0.1) ## delay(second)
 
         ## Set thermo port and set K type in channel 1
-        status = await dev.Thermal_setType_async(port, channel, thermo_type)
-        print("Thermal_setType_async status: ", status)
+        err = await dev.Thermal_setType_async(port, channel, thermo_type)
+        print("Thermal_setType_async:", err)
 
         ## Sleep
         await asyncio.sleep(0.1) ## delay(second)
@@ -89,8 +87,8 @@ async def main():
         dev_logger.Logger_writeValue(data)
 
         ## Close thermo
-        status = await dev.Thermal_close_async(port)
-        print("Thermal_close_async status: ", status)
+        err = await dev.Thermal_close_async(port)
+        print("Thermal_close_async:", err)
 
         ## Close File
         dev_logger.Logger_closeFile()
@@ -102,8 +100,7 @@ async def main():
 
     ## Release device handle
     dev.close()
-
-    print("End example code...")
+    
     return
 
 if __name__ == '__main__':

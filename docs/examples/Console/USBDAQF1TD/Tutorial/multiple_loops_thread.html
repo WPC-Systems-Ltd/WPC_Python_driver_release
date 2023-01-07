@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Multiple loops thread &mdash; WPC Python driver 1.1.1 documentation</title>
+  <title>Multiple loops thread &mdash; WPC Python driver 1.1.2 documentation</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.1.1
+                1.1.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
@@ -54,6 +54,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../examples_GUI.html">Example Codes - GUI</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../../examples_console.html">Example Codes - Console</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../../../examples_console.html#device-finder">Device finder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../examples_console.html#emotion">EMotion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../examples_console.html#ethan-a">Ethan-A</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../examples_console.html#ethan-d">Ethan-D</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../examples_console.html#ethan-l">Ethan-L</a></li>
@@ -65,12 +66,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../examples_console.html#usb-daq-f1-d-snk">USB-DAQ-F1-D-SNK</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../examples_console.html#usb-daq-f1-rd">USB-DAQ-F1-RD</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../../../examples_console.html#usb-daq-f1-td">USB-DAQ-F1-TD</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../DIO/DO_blinky_pins.html">DO blinky pins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../DIO/DO_blinky_port.html">DO blinky port</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../DIO/DIO_loopback_pins.html">DIO loopback pins</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../DIO/DIO_loopback_port.html">DIO loopback port</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../DIO/DO_write_pins.html">DO write pins</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../DIO/DO_write_port.html">DO write port</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../DIO/DO_blinky_pins.html">DO blinky pins</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../DIO/DO_blinky_port.html">DO blinky port</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../I2C/I2C_write_read.html">I2C write and read</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../SPI/SPI_read_and_write.html">SPI read and write</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../SPI/SPI_write.html">SPI write</a></li>
@@ -79,8 +80,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../Temperature_TC/TC_read_channel_data.html">TC read channel data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Temperature_TC/TC_read_channel_data_with_logger.html">TC read channel data with logger</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Temperature_TC/TC_read_channel_status.html">TC read channel status</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../System_USB/get_USB_info.html">Get USB info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../System_USB/get_pin_mode.html">Get pin mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../System_USB/get_USB_info.html">Get USB info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="single_loop_thread.html">Single loop thread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="single_loop_async.html">Single loop async</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Multiple loops thread</a></li>
@@ -95,7 +96,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../ref_port.html">I/O Function Table</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../ref_error.html">Error Code Table</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../ref_SPI.html">SPI Setting Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ref_SPI.html">Setting Table</a></li>
 </ul>
 
         </div>
@@ -133,7 +134,7 @@
 <span class="linenos"> 7</span><span class="sd">    https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples</span>
 <span class="linenos"> 8</span><span class="sd">See README.md file to get detailed usage of this example.</span>
 <span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="sd">Copyright (c) 2022 WPC Systems Ltd.</span>
+<span class="linenos">10</span><span class="sd">Copyright (c) 2023 WPC Systems Ltd.</span>
 <span class="linenos">11</span><span class="sd">All rights reserved.</span>
 <span class="linenos">12</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos">13</span>
@@ -149,7 +150,7 @@
 <span class="linenos">23</span>
 <span class="linenos">24</span><span class="k">async</span> <span class="k">def</span> <span class="nf">getRTC</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">delay</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
 <span class="linenos">25</span>    <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">handle</span><span class="o">.</span><span class="n">Sys_getRTC_async</span><span class="p">()</span>
-<span class="linenos">26</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RTC Time: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="linenos">26</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RTC Time:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 <span class="linenos">27</span>    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span>  <span class="c1">## delay(second)</span>
 <span class="linenos">28</span>
 <span class="linenos">29</span><span class="k">async</span> <span class="k">def</span> <span class="nf">printString</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">delay</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
@@ -167,49 +168,46 @@
 <span class="linenos">41</span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="linenos">42</span>
 <span class="linenos">43</span><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-<span class="linenos">44</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Start example code...&quot;</span><span class="p">)</span>
-<span class="linenos">45</span>
-<span class="linenos">46</span>    <span class="c1">## Get Python driver version</span>
-<span class="linenos">47</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_FULL_NAME</span><span class="si">}</span><span class="s1"> - Version </span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="linenos">48</span>
-<span class="linenos">49</span>    <span class="c1">## Create device handle</span>
-<span class="linenos">50</span>    <span class="n">dev</span> <span class="o">=</span> <span class="n">pywpc</span><span class="o">.</span><span class="n">USBDAQF1TD</span><span class="p">()</span>
-<span class="linenos">51</span>
-<span class="linenos">52</span>    <span class="c1">## Connect to device</span>
-<span class="linenos">53</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos">54</span>        <span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;21JA1239&quot;</span><span class="p">)</span>
-<span class="linenos">55</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos">56</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="linenos">57</span>
-<span class="linenos">58</span>    <span class="c1">## Perform two sync thread to query data</span>
-<span class="linenos">59</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos">60</span>        <span class="c1">## Get firmware model &amp; version</span>
-<span class="linenos">61</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo_async</span><span class="p">()</span>
-<span class="linenos">62</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="linenos">63</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="linenos">64</span>
-<span class="linenos">65</span>        <span class="n">_threadPrint</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span> <span class="o">=</span> <span class="n">Print_thread</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">dev</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="linenos">66</span>        <span class="n">_threadPrint</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<span class="linenos">67</span>
-<span class="linenos">68</span>        <span class="n">_threadRTC</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span> <span class="o">=</span> <span class="n">RTC_thread</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">dev</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="linenos">69</span>        <span class="n">_threadRTC</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<span class="linenos">70</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos">71</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="linenos">72</span>
-<span class="linenos">73</span>    <span class="c1">## This part will execute immediately because the sync thread is running in parallel.</span>
-<span class="linenos">74</span>    <span class="sd">&#39;&#39;&#39;</span>
-<span class="linenos">75</span><span class="sd">    # Disconnect device</span>
-<span class="linenos">76</span><span class="sd">    dev.disconnect()</span>
-<span class="linenos">77</span>
-<span class="linenos">78</span><span class="sd">    # Release device handle</span>
-<span class="linenos">79</span><span class="sd">    dev.close()</span>
-<span class="linenos">80</span><span class="sd">    &#39;&#39;&#39;</span>
+<span class="linenos">44</span>    <span class="c1">## Get Python driver version</span>
+<span class="linenos">45</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_FULL_NAME</span><span class="si">}</span><span class="s1"> - Version </span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="linenos">46</span>
+<span class="linenos">47</span>    <span class="c1">## Create device handle</span>
+<span class="linenos">48</span>    <span class="n">dev</span> <span class="o">=</span> <span class="n">pywpc</span><span class="o">.</span><span class="n">USBDAQF1TD</span><span class="p">()</span>
+<span class="linenos">49</span>
+<span class="linenos">50</span>    <span class="c1">## Connect to device</span>
+<span class="linenos">51</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos">52</span>        <span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;21JA1239&quot;</span><span class="p">)</span>
+<span class="linenos">53</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos">54</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">55</span>
+<span class="linenos">56</span>    <span class="c1">## Perform two sync thread to query data</span>
+<span class="linenos">57</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos">58</span>        <span class="c1">## Get firmware model &amp; version</span>
+<span class="linenos">59</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo_async</span><span class="p">()</span>
+<span class="linenos">60</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name:&quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="linenos">61</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version:&quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos">62</span>
+<span class="linenos">63</span>        <span class="n">_threadPrint</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span> <span class="o">=</span> <span class="n">Print_thread</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">dev</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="linenos">64</span>        <span class="n">_threadPrint</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="linenos">65</span>
+<span class="linenos">66</span>        <span class="n">_threadRTC</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span> <span class="o">=</span> <span class="n">RTC_thread</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">dev</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="linenos">67</span>        <span class="n">_threadRTC</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="linenos">68</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos">69</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">70</span>
+<span class="linenos">71</span>    <span class="c1">## This part will execute immediately because the sync thread is running in parallel.</span>
+<span class="linenos">72</span>    <span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos">73</span><span class="sd">    # Disconnect device</span>
+<span class="linenos">74</span><span class="sd">    dev.disconnect()</span>
+<span class="linenos">75</span>
+<span class="linenos">76</span><span class="sd">    # Release device handle</span>
+<span class="linenos">77</span><span class="sd">    dev.close()</span>
+<span class="linenos">78</span><span class="sd">    &#39;&#39;&#39;</span>
+<span class="linenos">79</span>    
+<span class="linenos">80</span>    <span class="k">return</span>
 <span class="linenos">81</span>
-<span class="linenos">82</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;End example code...&quot;</span><span class="p">)</span>
-<span class="linenos">83</span>    <span class="k">return</span>
-<span class="linenos">84</span>
-<span class="linenos">85</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">86</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+<span class="linenos">82</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">83</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </pre></div>
 </div>
 </section>
@@ -225,7 +223,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, WPC Systems Ltd..</p>
+    <p>&#169; Copyright 2023, WPC Systems Ltd..</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -1,0 +1,6 @@
+Motion 1axis move with Scurve
+=============================
+
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/EMotion/Motion/Motion_1axis_move_with_S_curve_acceleration.py
+   :language: python
+   :linenos:

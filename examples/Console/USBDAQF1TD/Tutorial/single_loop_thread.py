@@ -7,7 +7,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022 WPC Systems Ltd.
+Copyright (c) 2023 WPC Systems Ltd.
 All rights reserved.
 '''
 
@@ -23,7 +23,7 @@ from wpcsys import pywpc
 
 async def getRTC(handle, delay = 1):
     data = await handle.Sys_getRTC_async()
-    print("RTC Time: " + str(data))
+    print("RTC Time:" + str(data))
     await asyncio.sleep(delay)  ## delay(second)
 
 def RTC_thread(handle, delay = 1):
@@ -32,8 +32,6 @@ def RTC_thread(handle, delay = 1):
         time.sleep(delay)
 
 async def main():
-    print("Start example code...")
-
     ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
 
@@ -50,8 +48,8 @@ async def main():
     try:
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print("Model name:" + driver_info[0])
+        print("Firmware version:" + driver_info[-1])
 
         _threadRTC = threading.Thread(target = RTC_thread, args=[dev, 1])
         _threadRTC.start()
@@ -66,8 +64,7 @@ async def main():
     # Release device handle
     dev.close()
     '''
-
-    print("End example code...")
+    
     return
 
 if __name__ == '__main__':

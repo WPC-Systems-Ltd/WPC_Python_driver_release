@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Find all devices &mdash; WPC Python driver 1.1.1 documentation</title>
+  <title>Find all devices &mdash; WPC Python driver 1.1.2 documentation</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/custom_sphinx.css" type="text/css" />
@@ -21,7 +21,7 @@
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="AI continuous" href="../../EthanA/AI/AI_continuous.html" />
+    <link rel="next" title="Motion find home" href="../../EMotion/Motion/Motion_find_home.html" />
     <link rel="prev" title="Example Codes - Console" href="../../../../examples_console.html" /> 
 </head>
 
@@ -34,7 +34,7 @@
             <img src="../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.1.1
+                1.1.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
@@ -57,6 +57,7 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Find all devices</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../examples_console.html#emotion">EMotion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../examples_console.html#ethan-a">Ethan-A</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../examples_console.html#ethan-d">Ethan-D</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../examples_console.html#ethan-l">Ethan-L</a></li>
@@ -76,7 +77,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../ref_port.html">I/O Function Table</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../ref_error.html">Error Code Table</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../ref_SPI.html">SPI Setting Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ref_SPI.html">Setting Table</a></li>
 </ul>
 
         </div>
@@ -114,7 +115,7 @@
 <span class="linenos"> 7</span><span class="sd">    https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples</span>
 <span class="linenos"> 8</span><span class="sd">See README.md file to get detailed usage of this example.</span>
 <span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="sd">Copyright (c) 2022 WPC Systems Ltd.</span>
+<span class="linenos">10</span><span class="sd">Copyright (c) 2023 WPC Systems Ltd.</span>
 <span class="linenos">11</span><span class="sd">All rights reserved.</span>
 <span class="linenos">12</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos">13</span>
@@ -127,49 +128,46 @@
 <span class="linenos">20</span><span class="kn">from</span> <span class="nn">wpcsys</span> <span class="kn">import</span> <span class="n">pywpc</span>
 <span class="linenos">21</span>
 <span class="linenos">22</span><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-<span class="linenos">23</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Start example code...&quot;</span><span class="p">)</span>
-<span class="linenos">24</span>
-<span class="linenos">25</span>    <span class="c1">## Get Python driver version</span>
-<span class="linenos">26</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_FULL_NAME</span><span class="si">}</span><span class="s1"> - Version </span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="linenos">27</span>
-<span class="linenos">28</span>    <span class="c1">## Create device handle</span>
-<span class="linenos">29</span>    <span class="n">dev</span> <span class="o">=</span> <span class="n">pywpc</span><span class="o">.</span><span class="n">DeviceFinder</span><span class="p">()</span>
-<span class="linenos">30</span>
-<span class="linenos">31</span>    <span class="c1">## Connect to network device</span>
-<span class="linenos">32</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos">33</span>        <span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
-<span class="linenos">34</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos">35</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="linenos">36</span>
-<span class="linenos">37</span>    <span class="c1">## Perform USB device information</span>
-<span class="linenos">38</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Find all USB devices....&quot;</span><span class="p">)</span>
-<span class="linenos">39</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos">40</span>        <span class="n">dev_list</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Bcst_enumerateUSBDevices</span><span class="p">()</span>
-<span class="linenos">41</span>        <span class="k">for</span> <span class="n">device</span> <span class="ow">in</span> <span class="n">dev_list</span><span class="p">:</span>
-<span class="linenos">42</span>            <span class="nb">print</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-<span class="linenos">43</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos">44</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="linenos">45</span>
-<span class="linenos">46</span>    <span class="c1">## Perform network device information</span>
-<span class="linenos">47</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Find all network devices....&quot;</span><span class="p">)</span>
-<span class="linenos">48</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos">49</span>        <span class="n">dev_list</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Bcst_enumerateNetworkDevices_async</span><span class="p">()</span>
-<span class="linenos">50</span>        <span class="k">for</span> <span class="n">device</span> <span class="ow">in</span> <span class="n">dev_list</span><span class="p">:</span>
-<span class="linenos">51</span>            <span class="nb">print</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-<span class="linenos">52</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos">53</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="linenos">54</span> 
-<span class="linenos">55</span>    <span class="c1">## Disconnect device</span>
-<span class="linenos">56</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
-<span class="linenos">57</span>
-<span class="linenos">58</span>    <span class="c1">## Release device handle</span>
-<span class="linenos">59</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos">23</span>    <span class="c1">## Get Python driver version</span>
+<span class="linenos">24</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_FULL_NAME</span><span class="si">}</span><span class="s1"> - Version </span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span>    <span class="c1">## Create device handle</span>
+<span class="linenos">27</span>    <span class="n">dev</span> <span class="o">=</span> <span class="n">pywpc</span><span class="o">.</span><span class="n">DeviceFinder</span><span class="p">()</span>
+<span class="linenos">28</span>
+<span class="linenos">29</span>    <span class="c1">## Connect to network device</span>
+<span class="linenos">30</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos">31</span>        <span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="linenos">32</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos">33</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">34</span>
+<span class="linenos">35</span>    <span class="c1">## Perform USB device information</span>
+<span class="linenos">36</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Find all USB devices....&quot;</span><span class="p">)</span>
+<span class="linenos">37</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos">38</span>        <span class="n">dev_list</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Bcst_enumerateUSBDevices</span><span class="p">()</span>
+<span class="linenos">39</span>        <span class="k">for</span> <span class="n">device</span> <span class="ow">in</span> <span class="n">dev_list</span><span class="p">:</span>
+<span class="linenos">40</span>            <span class="nb">print</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="linenos">41</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos">42</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">43</span>
+<span class="linenos">44</span>    <span class="c1">## Perform network device information</span>
+<span class="linenos">45</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Find all network devices....&quot;</span><span class="p">)</span>
+<span class="linenos">46</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos">47</span>        <span class="n">dev_list</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Bcst_enumerateNetworkDevices_async</span><span class="p">()</span>
+<span class="linenos">48</span>        <span class="k">for</span> <span class="n">device</span> <span class="ow">in</span> <span class="n">dev_list</span><span class="p">:</span>
+<span class="linenos">49</span>            <span class="nb">print</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="linenos">50</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos">51</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">52</span> 
+<span class="linenos">53</span>    <span class="c1">## Disconnect device</span>
+<span class="linenos">54</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+<span class="linenos">55</span>
+<span class="linenos">56</span>    <span class="c1">## Release device handle</span>
+<span class="linenos">57</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos">58</span>
+<span class="linenos">59</span>    <span class="k">return</span>
 <span class="linenos">60</span>
-<span class="linenos">61</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;End example code...&quot;</span><span class="p">)</span>
-<span class="linenos">62</span>    <span class="k">return</span>
-<span class="linenos">63</span>
-<span class="linenos">64</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">65</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+<span class="linenos">61</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">62</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </pre></div>
 </div>
 </section>
@@ -179,13 +177,13 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../../../../examples_console.html" class="btn btn-neutral float-left" title="Example Codes - Console" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../../EthanA/AI/AI_continuous.html" class="btn btn-neutral float-right" title="AI continuous" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../../EMotion/Motion/Motion_find_home.html" class="btn btn-neutral float-right" title="Motion find home" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, WPC Systems Ltd..</p>
+    <p>&#169; Copyright 2023, WPC Systems Ltd..</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

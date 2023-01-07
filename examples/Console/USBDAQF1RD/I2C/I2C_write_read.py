@@ -13,7 +13,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022 WPC Systems Ltd.
+Copyright (c) 2023 WPC Systems Ltd.
 All rights reserved.
 '''
 
@@ -26,8 +26,6 @@ import asyncio
 from wpcsys import pywpc
 
 async def main():
-    print("Start example code...")
-
     ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
 
@@ -43,8 +41,8 @@ async def main():
     try:
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print("Model name:" + driver_info[0])
+        print("Firmware version:" + driver_info[-1])
 
         '''
         Take 24C08N for example
@@ -61,24 +59,24 @@ async def main():
         '''
 
         ## Open I2C
-        status = await dev.I2C_open_async(I2C_port)
-        print("I2C_open_async status: ", status)
+        err = await dev.I2C_open_async(I2C_port)
+        print("I2C_open_async:", err)
 
         '''
         Set I2C parameter
         '''
 
         ## Set I2C port and set clock rate to standard mode
-        status = await dev.I2C_setClockRate_async(I2C_port, mode)
-        print("I2C_setClockRate_async status: ", status)
+        err = await dev.I2C_setClockRate_async(I2C_port, mode)
+        print("I2C_setClockRate_async:", err)
 
         '''
         Write data via I2C
         '''
 
         ## Write WREN byte
-        status = await dev.I2C_write_async(I2C_port, device_address, [word_address, 0xAA, 0x55, 0xAA, 0x55])
-        print("I2C_write_async status: ", status)
+        err = await dev.I2C_write_async(I2C_port, device_address, [word_address, 0xAA, 0x55, 0xAA, 0x55])
+        print("I2C_write_async:", err)
 
         ## Sleep
         await asyncio.sleep(0.1) ## delay(second)
@@ -87,8 +85,8 @@ async def main():
         Read data via I2C
         '''
 
-        status = await dev.I2C_write_async(I2C_port, device_address, [word_address])
-        print("I2C_write_async status: ", status)
+        err = await dev.I2C_write_async(I2C_port, device_address, [word_address])
+        print("I2C_write_async:", err)
 
         ## Sleep
         await asyncio.sleep(0.1) ## delay(second)
@@ -101,8 +99,8 @@ async def main():
         '''
 
         ## Close I2C
-        status = await dev.I2C_close_async(I2C_port)
-        print("I2C_close_async status: ", status)
+        err = await dev.I2C_close_async(I2C_port)
+        print("I2C_close_async:", err)
     except Exception as err:
         pywpc.printGenericError(err)
 
@@ -111,8 +109,7 @@ async def main():
 
     ## Release device handle
     dev.close()
-
-    print("End example code...")
+    
     return
 
 if __name__ == '__main__':

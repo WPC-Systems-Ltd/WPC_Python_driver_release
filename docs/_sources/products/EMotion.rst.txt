@@ -1,0 +1,19 @@
+EMotion
+=======
+
+
+Device pinout 
+-------------
+
+.. image:: ../images/Pinouts/pinout-EMotion.JPG
+   :width: 90%
+   :alt: EMotion
+
+
+API function description 
+------------------------
+
+.. autoclass:: pywpc.EMotion
+   :members:
+   :undoc-members:
+   :inherited-members:
