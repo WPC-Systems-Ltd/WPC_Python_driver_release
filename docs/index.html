@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Overview &mdash; WPC Python driver 1.1.0 documentation</title>
+  <title>Overview &mdash; WPC Python driver 1.1.2 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/custom_sphinx.css" type="text/css" />
@@ -33,7 +33,7 @@
             <img src="_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.1.0
+                1.1.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -57,7 +57,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="ref_port.html">I/O Function Table</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ref_error.html">Error Code Table</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ref_SPI.html">SPI Setting Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ref_SPI.html">Setting Table</a></li>
 </ul>
 
         </div>
@@ -135,9 +135,9 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_NAME</span>
 <span class="go">pywpc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pywpc</span><span class="o">.</span><span class="n">__version__</span>
-<span class="go">1.1.0</span>
+<span class="go">1.1.2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pywpc</span><span class="o">.</span><span class="n">HANDLE_LIST</span>
-<span class="go">[&#39;DeviceFinder&#39;, &#39;DataLogger&#39;, &#39;WifiDAQE3A&#39;, &#39;EthanD&#39;, &#39;EthanA&#39;, &#39;EthanL&#39;, &#39;EthanO&#39;, &#39;USBDAQF1D&#39;, &#39;USBDAQF1DSNK&#39;, &#39;USBDAQF1AD&#39;, &#39;USBDAQF1AOD&#39;, &#39;USBDAQF1TD&#39;, &#39;USBDAQF1RD&#39;, &#39;USBDAQF1CD&#39;]</span>
+<span class="go">[&#39;DeviceFinder&#39;, &#39;DataLogger&#39;, &#39;WifiDAQE3A&#39;, &#39;EMotion&#39;, &#39;EthanA&#39;, &#39;EthanD&#39;, &#39;EthanL&#39;, &#39;EthanO&#39;, &#39;USBDAQF1D&#39;, &#39;USBDAQF1DSNK&#39;, &#39;USBDAQF1AD&#39;, &#39;USBDAQF1AOD&#39;, &#39;USBDAQF1TD&#39;, &#39;USBDAQF1RD&#39;, &#39;USBDAQF1CD&#39;]</span>
 </pre></div>
 </div>
 </section>
@@ -165,6 +165,10 @@ You can download WPC Device Manager by <a class="reference external" href="https
 </section>
 <section id="products">
 <h1>Products<a class="headerlink" href="#products" title="Permalink to this heading"></a></h1>
+<p>Ethernet based motion card</p>
+<ul class="simple">
+<li><p>EMotion</p></li>
+</ul>
 <p>Ethernet based DAQ card</p>
 <ul class="simple">
 <li><p>Ethan-A</p></li>
@@ -191,17 +195,18 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <h1>I/O Function Table<a class="headerlink" href="#i-o-function-table" title="Permalink to this heading"></a></h1>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 19%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 15%" />
+<col style="width: 22%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 5%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 5%" />
+<col style="width: 4%" />
+<col style="width: 8%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Model</p></td>
@@ -214,9 +219,23 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <td><p>SPI</p></td>
 <td><p>I2C</p></td>
 <td><p>RTD</p></td>
-<td><p>Thermocouple</p></td>
+<td><p>TC</p></td>
+<td><p>Motion</p></td>
 </tr>
-<tr class="row-even"><td><p>Ethan-A</p></td>
+<tr class="row-even"><td><p>Emotion</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ethan-A</p></td>
 <td><p>0</p></td>
 <td></td>
 <td></td>
@@ -227,8 +246,9 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td><p>Ethan-D</p></td>
+<tr class="row-even"><td><p>Ethan-D</p></td>
 <td></td>
 <td></td>
 <td><p>1</p></td>
@@ -239,8 +259,9 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
-<tr class="row-even"><td><p>Ethan-L</p></td>
+<tr class="row-odd"><td><p>Ethan-L</p></td>
 <td></td>
 <td></td>
 <td><p>1</p></td>
@@ -251,8 +272,9 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td><p>Ethan-O</p></td>
+<tr class="row-even"><td><p>Ethan-O</p></td>
 <td></td>
 <td><p>0</p></td>
 <td></td>
@@ -263,8 +285,9 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
-<tr class="row-even"><td><p>USB-DAQ-F1-D</p></td>
+<tr class="row-odd"><td><p>USB-DAQ-F1-D</p></td>
 <td></td>
 <td></td>
 <td><p>0, 1, 2, 3</p></td>
@@ -275,8 +298,9 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <td><p>1, 2</p></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td><p>USB-DAQ-F1-DSNK</p></td>
+<tr class="row-even"><td><p>USB-DAQ-F1-DSNK</p></td>
 <td></td>
 <td></td>
 <td><p>0, 1</p></td>
@@ -287,8 +311,9 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
-<tr class="row-even"><td><p>USB-DAQ-F1-AD</p></td>
+<tr class="row-odd"><td><p>USB-DAQ-F1-AD</p></td>
 <td><p>0</p></td>
 <td></td>
 <td><p>0, 1, 2, 3</p></td>
@@ -299,8 +324,9 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <td><p>1, 2</p></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td><p>USB-DAQ-F1-TD</p></td>
+<tr class="row-even"><td><p>USB-DAQ-F1-TD</p></td>
 <td></td>
 <td></td>
 <td><p>0, 1, 2, 3</p></td>
@@ -311,8 +337,9 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <td><p>1, 2</p></td>
 <td></td>
 <td><p>1</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td><p>USB-DAQ-F1-RD</p></td>
+<tr class="row-odd"><td><p>USB-DAQ-F1-RD</p></td>
 <td></td>
 <td></td>
 <td><p>0, 1, 2, 3</p></td>
@@ -323,8 +350,9 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <td><p>1, 2</p></td>
 <td><p>1</p></td>
 <td></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td><p>USB-DAQ-F1-CD</p></td>
+<tr class="row-even"><td><p>USB-DAQ-F1-CD</p></td>
 <td></td>
 <td></td>
 <td><p>0, 1, 2, 3</p></td>
@@ -335,8 +363,9 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <td><p>1, 2</p></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
-<tr class="row-even"><td><p>USB-DAQ-F1-AOD</p></td>
+<tr class="row-odd"><td><p>USB-DAQ-F1-AOD</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
 <td><p>0, 1, 2, 3</p></td>
@@ -347,9 +376,11 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <td><p>1, 2</p></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td><p>Wifi-DAQ-E3-A</p></td>
+<tr class="row-even"><td><p>Wifi-DAQ-E3-A</p></td>
 <td><p>1</p></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -362,6 +393,7 @@ You can download WPC Device Manager by <a class="reference external" href="https
 </tr>
 </tbody>
 </table>
+<p>Remark: <cite>TC</cite> stands for <cite>Thermocouple</cite></p>
 <p>Take <cite>USB-DAQ-F1-AOD</cite> for example:</p>
 <ul class="simple">
 <li><p>Port 0 is available for AI</p></li>
@@ -402,7 +434,7 @@ All licenses allow for non-commercial and commercial use.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, WPC Systems Ltd..</p>
+    <p>&#169; Copyright 2023, WPC Systems Ltd..</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

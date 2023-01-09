@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Error Code Table &mdash; WPC Python driver 1.1.0 documentation</title>
+  <title>Error Code Table &mdash; WPC Python driver 1.1.2 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/custom_sphinx.css" type="text/css" />
@@ -21,7 +21,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="SPI Setting Table" href="ref_SPI.html" />
+    <link rel="next" title="Setting Table" href="ref_SPI.html" />
     <link rel="prev" title="I/O Function Table" href="ref_port.html" /> 
 </head>
 
@@ -34,7 +34,7 @@
             <img src="_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.1.0
+                1.1.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -58,7 +58,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="ref_port.html">I/O Function Table</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Error Code Table</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ref_SPI.html">SPI Setting Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ref_SPI.html">Setting Table</a></li>
 </ul>
 
         </div>
@@ -86,7 +86,7 @@
              
   <section id="error-code-table">
 <h1>Error Code Table<a class="headerlink" href="#error-code-table" title="Permalink to this heading"></a></h1>
-<table class="colwidths-given docutils align-default">
+<table class="colwidths-given docutils align-default" id="error-code">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -110,6 +110,14 @@
 <tr class="row-even"><td><p>520003</p></td>
 <td><p>Warning</p></td>
 <td><p>Occurrence AI queue overflow.</p></td>
+</tr>
+<tr class="row-odd"><td><p>519000</p></td>
+<td><p>Warning</p></td>
+<td><p>External library “libusb-1.0.dll” not found at indicated path Will look at the default path instead</p></td>
+</tr>
+<tr class="row-even"><td><p>8804</p></td>
+<td><p>Warning</p></td>
+<td><p>Motion port not avaliable or already occupied by other process.</p></td>
 </tr>
 <tr class="row-odd"><td><p>-7001</p></td>
 <td></td>
@@ -380,13 +388,13 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="ref_port.html" class="btn btn-neutral float-left" title="I/O Function Table" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="ref_SPI.html" class="btn btn-neutral float-right" title="SPI Setting Table" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ref_SPI.html" class="btn btn-neutral float-right" title="Setting Table" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, WPC Systems Ltd..</p>
+    <p>&#169; Copyright 2023, WPC Systems Ltd..</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -9,80 +9,19 @@ Products Feature
    * - Model
      - Photo
    * - 
-      **USBDAQD**
-         - 26ch 3.3V DIO/I2C/SPI
-         - I2C: 400KHz (max)
-         - USB 2.0 full-speed bus powered
+      **Emotion**
+         - Ethernet based motion controller modular inter-connection 
+         - board:Easy and quick connect to Servo amplifier (Yaskawa, Panasonic, Mitsubishi, Delta...etc)
+         - Pulse/Direction or CW/CCW output mode
+         - Differential output (Max: 8MPPS)
+         - Encoder ABZ input (Max: 12MHz)
+         - Break-point / Capture
+         - Linear / Circular / helical interpolation / Multi-axes sync move S-Curve
          - Support Python, C# and LabVIEW
      - 
-      .. image:: images/Products/product-USBDAQD.jpg
+      .. image:: images/Products/product-Emotion.jpg
          :width: 100%
-         :alt: product-USBDAQD.jpg
-   * - 
-      **USBDAQAD**
-         - 20ch 3.3V DIO/I2C/SPI
-         - 8ch 16-bit analog input
-         - USB 2.0 full-speed bus powered
-         - Support Python, C# and LabVIEW
-     - 
-      .. image:: images/Products/product-USBDAQAD.jpg
-         :width: 100%
-         :alt: product-USBDAQAD.jpg 
-   * - 
-      **USBDAQDSNK**
-         - 24V 12ch DO / 14ch DI
-         - Industrial isolated DIO
-         - Sinking output / Sourcing input
-         - External 24VDC power required
-         - USB 2.0 full-speed bus powered
-         - Support Python, C# and LabVIEW
-     - 
-      .. image:: images/Products/product-USBDAQDSNK.jpg
-         :width: 100%
-         :alt: product-USBDAQADSNK.jpg
-   * - 
-      **USBDAQTD**
-         - 21ch 3.3V DIO/I2C/SPI
-         - 2ch thermocouple input
-         - Sensor type: (K, J, N, R, S, T, E, B)
-         - USB 2.0 full-speed bus powered
-         - Support Python, C# and LabVIEW
-     - 
-      .. image:: images/Products/product-USBDAQTD.jpg
-         :width: 100%
-         :alt: product-USBDAQTD.jpg
-   * - 
-      **USBDAQRD**
-         - 21ch 3.3V DIO/I2C/SPI
-         - 2ch thermocouple input
-         - PT-100 or PT-1000 (different model)
-         - USB 2.0 full-speed bus powered
-         - Support Python, C# and LabVIEW
-     - 
-      .. image:: images/Products/product-USBDAQRD.jpg
-         :width: 100%
-         :alt: product-USBDAQRD.jpg
-   * - 
-      **USBDAQCD**
-         - 20ch 3.3V DIO/I2C/SPI
-         - 1ch 1Mbps CAN V2.0B
-         - USB 2.0 full-speed bus powered
-         - Support Python, C# and LabVIEW
-     - 
-      .. image:: images/Products/product-USBDAQCD.jpg
-         :width: 100%
-         :alt: product-USBDAQCD.jpg
-   * - 
-      **USBDAQAOD**
-         - 16ch 3.3V DIO/I2C/SPI
-         - 8ch 16-bit analog input
-         - 8ch 16-bit analog output (on-demand)
-         - USB 2.0 full-speed bus powered
-         - Support Python, C# and LabVIEW
-     - 
-      .. image:: images/Products/product-USBDAQAOD.jpg
-         :width: 100%
-         :alt: product-USBDAQAOD.jpg
+         :alt: product-Emotion.jpg  
    * - 
       **EthanA**
          - 10/100 cable Ethernet
@@ -131,7 +70,82 @@ Products Feature
      - 
       .. image:: images/Products/product-EthanA.jpg
          :width: 100%
-         :alt: product-EthanO.jpg                  
+         :alt: product-EthanO.jpg   
+   * - 
+      **USBDAQF1D**
+         - 26ch 3.3V DIO/I2C/SPI
+         - I2C: 400KHz (max)
+         - USB 2.0 full-speed bus powered
+         - Support Python, C# and LabVIEW
+     - 
+      .. image:: images/Products/product-USBDAQF1D.jpg
+         :width: 100%
+         :alt: product-USBDAQD.jpg
+   * - 
+      **USBDAQF1AD**
+         - 20ch 3.3V DIO/I2C/SPI
+         - 8ch 16-bit analog input
+         - USB 2.0 full-speed bus powered
+         - Support Python, C# and LabVIEW
+     - 
+      .. image:: images/Products/product-USBDAQF1AD.jpg
+         :width: 100%
+         :alt: product-USBDAQAD.jpg 
+   * - 
+      **USBDAQF1DSNK**
+         - 24V 12ch DO / 14ch DI
+         - Industrial isolated DIO
+         - Sinking output / Sourcing input
+         - External 24VDC power required
+         - USB 2.0 full-speed bus powered
+         - Support Python, C# and LabVIEW
+     - 
+      .. image:: images/Products/product-USBDAQF1DSNK.jpg
+         :width: 100%
+         :alt: product-USBDAQADSNK.jpg
+   * - 
+      **USBDAQF1TD**
+         - 21ch 3.3V DIO/I2C/SPI
+         - 2ch thermocouple input
+         - Sensor type: (K, J, N, R, S, T, E, B)
+         - USB 2.0 full-speed bus powered
+         - Support Python, C# and LabVIEW
+     - 
+      .. image:: images/Products/product-USBDAQF1TD.jpg
+         :width: 100%
+         :alt: product-USBDAQTD.jpg
+   * - 
+      **USBDAQF1RD**
+         - 21ch 3.3V DIO/I2C/SPI
+         - 2ch thermocouple input
+         - PT-100 or PT-1000 (different model)
+         - USB 2.0 full-speed bus powered
+         - Support Python, C# and LabVIEW
+     - 
+      .. image:: images/Products/product-USBDAQF1RD.jpg
+         :width: 100%
+         :alt: product-USBDAQRD.jpg
+   * - 
+      **USBDAQF1CD**
+         - 20ch 3.3V DIO/I2C/SPI
+         - 1ch 1Mbps CAN V2.0B
+         - USB 2.0 full-speed bus powered
+         - Support Python, C# and LabVIEW
+     - 
+      .. image:: images/Products/product-USBDAQF1CD.jpg
+         :width: 100%
+         :alt: product-USBDAQCD.jpg
+   * - 
+      **USBDAQF1AOD**
+         - 16ch 3.3V DIO/I2C/SPI
+         - 8ch 16-bit analog input
+         - 8ch 16-bit analog output (on-demand)
+         - USB 2.0 full-speed bus powered
+         - Support Python, C# and LabVIEW
+     - 
+      .. image:: images/Products/product-USBDAQF1AOD.jpg
+         :width: 100%
+         :alt: product-USBDAQAOD.jpg 
    * - 
       **WifiDAQE3A**
          - 8ch 16-bit +/-10V analog input

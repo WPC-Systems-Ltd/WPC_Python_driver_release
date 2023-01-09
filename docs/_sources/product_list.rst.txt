@@ -24,6 +24,7 @@ Ethernet devices
 .. toctree::
    :maxdepth: 4
 
+   products/EMotion
    products/EthanA
    products/EthanD
    products/EthanL

@@ -1,0 +1,6 @@
+Motion find limit
+=================
+
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/EMotion/Motion/Motion_find_limit.py
+   :language: python
+   :linenos:
