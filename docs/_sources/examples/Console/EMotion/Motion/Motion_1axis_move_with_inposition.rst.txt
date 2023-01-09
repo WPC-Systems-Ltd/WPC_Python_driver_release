@@ -1,0 +1,6 @@
+Motion 1axis move with inposition
+=================================
+
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/EMotion/Motion/Motion_1axis_move_with_inposition.py
+   :language: python
+   :linenos:

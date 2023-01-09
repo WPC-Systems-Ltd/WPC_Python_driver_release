@@ -1,8 +1,29 @@
 WPC Python driver release changelog
 ===================================
- 
+
+v1.1.2 Date: 2023/01/07, Developer: Chunglee_people
+---------------------------------------------------
+
+### Added
+- Product:
+  - Emotion
+- Example codes : 
+  - Motion_find_home.py, Motion_find_limit.py and Motion_find_index.py,
+  - Motion_velocity_blending.py and Motion_velocity_blending_accerleration,
+  - Motion_load_configuration_file.py and Motion_set_configuration_file,
+  - Motion_1axis_move_with_alarm_in.py, Motion_1axis_move_with_inposition.py, Motion_1axis_move_with_breakpoint.py, 
+	  Motion_1axis_move_with_configuration_file.py, Motion_1axis_move_with_capture.py and Motion_1axis_move_with_S_curve_acceleration.py 
+  - Motion_2axis_circular_interpolation.py and Motion_2axis_linear_interpolation.py 
+  - Motion_3axis_linear_interpolation.py and Motion_3axis_helical_interpolation.py 
+  - Motion_3axis_synchronous_move.cs and Motion_3axis_asynchronous_move.cs
+- Reference : 
+  - WPC_MCX_H_Motion_Manual_r25
+
+### Changed
+- Update `WPC_DAQ_Devices_User_Manual` from r20 to r23
+
 v1.1.0 Date: 2022/11/23, Developer: Chunglee_people
-------------------------------------------------------
+---------------------------------------------------
 
 ### Added
 - Add handle combobox in GUI example code
@@ -14,7 +35,7 @@ v1.1.0 Date: 2022/11/23, Developer: Chunglee_people
 
 
 v1.0.9 Date: 2022/11/04, Developer: Chunglee_people
-------------------------------------------------------
+---------------------------------------------------
 ### Fixed
 - Fix example code website
  

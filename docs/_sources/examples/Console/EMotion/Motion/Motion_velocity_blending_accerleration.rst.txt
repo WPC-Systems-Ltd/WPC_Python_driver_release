@@ -1,0 +1,6 @@
+Motion accerleration blending 
+==============================
+
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/EMotion/Motion/Motion_velocity_blending_accerleration.py
+   :language: python
+   :linenos:

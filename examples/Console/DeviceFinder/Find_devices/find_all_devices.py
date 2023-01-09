@@ -7,7 +7,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022 WPC Systems Ltd.
+Copyright (c) 2023 WPC Systems Ltd.
 All rights reserved.
 '''
 
@@ -20,8 +20,6 @@ import asyncio
 from wpcsys import pywpc
 
 async def main():
-    print("Start example code...")
-
     ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
 
@@ -58,7 +56,6 @@ async def main():
     ## Release device handle
     dev.close()
 
-    print("End example code...")
     return
 
 if __name__ == '__main__':
