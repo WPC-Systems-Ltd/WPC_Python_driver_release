@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EMotion &mdash; WPC Python driver 1.1.2 documentation</title>
+  <title>EMotion &mdash; WPC Python driver 1.1.3 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.1.2
+                1.1.3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -115,7 +115,7 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pywpc.</span></span><span class="sig-name descname"><span class="pre">EMotion</span></span><a class="headerlink" href="#pywpc.EMotion" title="Permalink to this definition"></a></dt>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_cfg2AxisLinearInterpo_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfg2AxisLinearInterpo_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_posi1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_posi2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deceleration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfg2AxisLinearInterpo_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfg2AxisLinearInterpo_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_posi1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_posi2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfg2AxisLinearInterpo_async" title="Permalink to this definition"></a></dt>
 <dd><p>Configure two axis linear interpolation parameters with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -133,9 +133,9 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>speed</strong><span class="classifier">int</span></dt><dd><p>Speed vector of linear interpolation.</p>
 </dd>
-<dt><strong>acceleration</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
+<dt><strong>accel</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
 </dd>
-<dt><strong>deceleration</strong><span class="classifier">int</span></dt><dd><p>Deceleration value in counts/s2 or steps/s2.</p>
+<dt><strong>decel</strong><span class="classifier">int</span></dt><dd><p>Deceleration value in counts/s2 or steps/s2.</p>
 </dd>
 </dl>
 </dd>
@@ -151,7 +151,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_cfg3AxisLinearInterpo_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfg3AxisLinearInterpo_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_posi1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_posi2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_posi3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deceleration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfg3AxisLinearInterpo_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfg3AxisLinearInterpo_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_posi1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_posi2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_posi3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfg3AxisLinearInterpo_async" title="Permalink to this definition"></a></dt>
 <dd><p>Configure three axis linear interpolation parameters with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -173,9 +173,9 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>speed</strong><span class="classifier">int</span></dt><dd><p>Speed vector of linear interpolation.</p>
 </dd>
-<dt><strong>acceleration</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
+<dt><strong>accel</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
 </dd>
-<dt><strong>deceleration</strong><span class="classifier">int</span></dt><dd><p>Deceleration value in counts/s2 or steps/s2.</p>
+<dt><strong>decel</strong><span class="classifier">int</span></dt><dd><p>Deceleration value in counts/s2 or steps/s2.</p>
 </dd>
 </dl>
 </dd>
@@ -191,7 +191,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_cfg4AxisLinearInterpo_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfg4AxisLinearInterpo_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_posi1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_posi2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_posi3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_posi4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deceleration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfg4AxisLinearInterpo_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfg4AxisLinearInterpo_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_posi1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_posi2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_posi3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_posi4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfg4AxisLinearInterpo_async" title="Permalink to this definition"></a></dt>
 <dd><p>Configure four axis linear interpolation parameters with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -217,9 +217,9 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>speed</strong><span class="classifier">int</span></dt><dd><p>Speed vector of linear interpolation.</p>
 </dd>
-<dt><strong>acceleration</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
+<dt><strong>accel</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
 </dd>
-<dt><strong>deceleration</strong><span class="classifier">int</span></dt><dd><p>Deceleration value in counts/s2 or steps/s2.</p>
+<dt><strong>decel</strong><span class="classifier">int</span></dt><dd><p>Deceleration value in counts/s2 or steps/s2.</p>
 </dd>
 </dl>
 </dd>
@@ -235,7 +235,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_cfgAlarm_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgAlarm_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alarm_enable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alarm_polarity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgAlarm_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgAlarm_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_alarm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alarm_polarity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgAlarm_async" title="Permalink to this definition"></a></dt>
 <dd><p>Configure alarm parameters with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -245,7 +245,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
 </dd>
-<dt><strong>alarm_enable</strong><span class="classifier">{0, 1}</span></dt><dd><p>Alarm inputs.
+<dt><strong>en_alarm</strong><span class="classifier">{0, 1}</span></dt><dd><p>Enable alarm inputs.
 0: False, 1: True.</p>
 </dd>
 <dt><strong>alarm_polarity</strong><span class="classifier">{0, 1}</span></dt><dd><p>Set the polarity for alarm.
@@ -265,7 +265,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_cfgAxisMove_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgAxisMove_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation_mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deceleration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgAxisMove_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgAxisMove_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_posi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgAxisMove_async" title="Permalink to this definition"></a></dt>
 <dd><p>Configure motion operation mode, target position, velocity, acceleration and deceleration of a single axis move with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -275,16 +275,16 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
 </dd>
-<dt><strong>operation_mode</strong><span class="classifier">{0, 1, 2}</span></dt><dd><p>Home inputs.
+<dt><strong>mode</strong><span class="classifier">{0, 1, 2}</span></dt><dd><p>Operation mode.
 0: Absolute mode, 1: Relative mode, 2: Velocity mode.</p>
 </dd>
-<dt><strong>target_position</strong><span class="classifier">int</span></dt><dd><p>Target position in counts or steps.</p>
+<dt><strong>target_posi</strong><span class="classifier">int</span></dt><dd><p>Target position in counts or steps.</p>
 </dd>
-<dt><strong>velocity</strong><span class="classifier">int</span></dt><dd><p>Velocity in counts/s or steps/s.</p>
+<dt><strong>velo</strong><span class="classifier">int</span></dt><dd><p>Velocity in counts/s or steps/s.</p>
 </dd>
-<dt><strong>acceleration</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
+<dt><strong>accel</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
 </dd>
-<dt><strong>deceleration</strong><span class="classifier">int</span></dt><dd><p>Deceleration value in counts/s2 or steps/s2.</p>
+<dt><strong>decel</strong><span class="classifier">int</span></dt><dd><p>Deceleration value in counts/s2 or steps/s2.</p>
 </dd>
 </dl>
 </dd>
@@ -300,7 +300,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_cfgAxis_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgAxis_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stepper_output</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">servo_on_polarity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgAxis_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgAxis_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stepper_output</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">servo_on_polarity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgAxis_async" title="Permalink to this definition"></a></dt>
 <dd><p>Configure axis parameters with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -313,10 +313,10 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 <dt><strong>stepper_output</strong><span class="classifier">{0, 1}</span></dt><dd><p>It specifies the mode as Step and Direction (one pulse) or Clockwise/Counterclockwise.(two pulse)
 0: Step/Dir(One Pulse), 1: CW/CCW(Two Pulse).</p>
 </dd>
-<dt><strong>axis_direction</strong><span class="classifier">{0, 1}</span></dt><dd><p>Set axis direction to CW or CCW.
+<dt><strong>axis_dir</strong><span class="classifier">{0, 1}</span></dt><dd><p>Set axis direction to CW or CCW.
 0: CW, 1: CCW.</p>
 </dd>
-<dt><strong>encoder_direction</strong><span class="classifier">{0, 1}</span></dt><dd><p>Set encoder direction to CW or CCW.
+<dt><strong>encoder_dir</strong><span class="classifier">{0, 1}</span></dt><dd><p>Set encoder direction to CW or CCW.
 0: CW, 1: CCW.</p>
 </dd>
 <dt><strong>servo_on_polarity</strong><span class="classifier">{0, 1}</span></dt><dd><p>Set the polarity for servo on.
@@ -336,7 +336,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_cfgBreakPoint_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgBreakPoint_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">breakpoint_mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">breakpoint_polarity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pulse_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pulse_period</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pulse_number</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgBreakPoint_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgBreakPoint_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">breakpoint_polarity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_posi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pulse_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pulse_period</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pulse_number</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgBreakPoint_async" title="Permalink to this definition"></a></dt>
 <dd><p>Configure breakpoint parameters with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -346,12 +346,12 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
 </dd>
-<dt><strong>breakpoint_mode</strong><span class="classifier">{0, 1}</span></dt><dd><p>0: Absolute position, 1: Relative position.</p>
+<dt><strong>mode</strong><span class="classifier">{0, 1}</span></dt><dd><p>0: Absolute position, 1: Relative position.</p>
 </dd>
-<dt><strong>breakpoint_polarity</strong><span class="classifier">{0, 1}</span></dt><dd><p>Set the polarity for breahpoint.
+<dt><strong>breakpoint_polarity</strong><span class="classifier">{0, 1}</span></dt><dd><p>Set the polarity for breakpoint.
 0: Active Low, 1: Active High.</p>
 </dd>
-<dt><strong>start_position</strong><span class="classifier">int</span></dt><dd><p>The start position.</p>
+<dt><strong>start_posi</strong><span class="classifier">int</span></dt><dd><p>The start position.</p>
 </dd>
 <dt><strong>pulse_width</strong><span class="classifier">int</span></dt><dd><p>The pulse width.</p>
 </dd>
@@ -373,7 +373,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_cfgCapture_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgCapture_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capture_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capture_mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgCapture_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgCapture_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capture_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgCapture_async" title="Permalink to this definition"></a></dt>
 <dd><p>Configure capture parameters with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -385,7 +385,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>capture_type</strong><span class="classifier">{0, 1}</span></dt><dd><p>0: Rising edge, 1: Falling edge.</p>
 </dd>
-<dt><strong>capture_mode</strong><span class="classifier">{0, 1}</span></dt><dd><p>0: Logical position, 1: Encoder position.</p>
+<dt><strong>mode</strong><span class="classifier">{0, 1}</span></dt><dd><p>0: Logical position, 1: Encoder position.</p>
 </dd>
 </dl>
 </dd>
@@ -401,7 +401,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_cfgCircularInterpo_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgCircularInterpo_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_point_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_point_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">finish_point_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">finish_point_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deceleration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgCircularInterpo_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgCircularInterpo_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_point_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_point_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">finish_point_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">finish_point_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgCircularInterpo_async" title="Permalink to this definition"></a></dt>
 <dd><p>Configure circular interpolation parameters with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -421,14 +421,14 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>finish_point_y</strong><span class="classifier">int</span></dt><dd><p>Set the finish point of <cite>y</cite> by the relative value with respect to the current position.</p>
 </dd>
-<dt><strong>direction</strong><span class="classifier">{0, 1}</span></dt><dd><p>Set circular direction to CW or CCW.
+<dt><strong>dir</strong><span class="classifier">{0, 1}</span></dt><dd><p>Set circular direction to CW or CCW.
 0: CW, 1: CCW.</p>
 </dd>
 <dt><strong>speed</strong><span class="classifier">int</span></dt><dd><p>Speed vector of circular interpolation.</p>
 </dd>
-<dt><strong>acceleration</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
+<dt><strong>accel</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
 </dd>
-<dt><strong>deceleration</strong><span class="classifier">int</span></dt><dd><p>Deceleration value in counts/s2 or steps/s2.</p>
+<dt><strong>decel</strong><span class="classifier">int</span></dt><dd><p>Deceleration value in counts/s2 or steps/s2.</p>
 </dd>
 </dl>
 </dd>
@@ -471,7 +471,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_cfgFindRef_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgFindRef_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_velocity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">approach_velocity_percent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset_position_enable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset_position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgFindRef_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgFindRef_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_velo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_accle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">approach_velo_percent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_reset_posi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset_posi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgFindRef_async" title="Permalink to this definition"></a></dt>
 <dd><p>Configure find reference parameters with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -481,17 +481,22 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
 </dd>
-<dt><strong>search_type</strong><span class="classifier">int</span></dt><dd><p>Reference position to find.</p>
+<dt><strong>search_type</strong><span class="classifier">{0, 1, 2}</span></dt><dd><p>Reference position to find.
+0: Home, 1: Index, 2: Limit.</p>
 </dd>
-<dt><strong>search_direction</strong><span class="classifier">int</span></dt><dd><p>Set search direction to forward or reverse.</p>
+<dt><strong>search_dir</strong><span class="classifier">int</span></dt><dd><p>Set search direction to forward or reverse.
+0: Forward, 1: Reverse.</p>
 </dd>
-<dt><strong>search_velocity</strong><span class="classifier">int</span></dt><dd><p>Set velocity in counts/s or steps/s.</p>
+<dt><strong>search_velo</strong><span class="classifier">int</span></dt><dd><p>Set velocity in counts/s or steps/s.</p>
 </dd>
-<dt><strong>approach_velocity_percent</strong><span class="classifier">int or float</span></dt><dd><p>The percent of the loaded velocity that a given axis uses to perform final adjustments.</p>
+<dt><strong>search_accle</strong><span class="classifier">int</span></dt><dd><p>Set acceleration value in counts/s2 or steps/s2.</p>
 </dd>
-<dt><strong>reset_position_enable</strong><span class="classifier">int</span></dt><dd><p>If true, after successfully locating the given reference, it resets positions to values indicated by current position. If false, no reset is performed.</p>
+<dt><strong>approach_velo_percent</strong><span class="classifier">int or float</span></dt><dd><p>The percent of the loaded velocity that a given axis uses to perform final adjustments.</p>
 </dd>
-<dt><strong>offset_position</strong><span class="classifier">int</span></dt><dd><p>Performs an offset move of a given distance, in counts (steps), after successfully locating the given reference, but before resetting the position if a reset is requested.</p>
+<dt><strong>en_reset_posi</strong><span class="classifier">int</span></dt><dd><p>If true, after successfully locating the given reference, it resets positions to values indicated by current position. If false, no reset is performed.
+0: False, 1: True.</p>
+</dd>
+<dt><strong>offset_posi</strong><span class="classifier">int</span></dt><dd><p>Performs an offset move of a given distance, in counts (steps), after successfully locating the given reference, but before resetting the position if a reset is requested.</p>
 </dd>
 </dl>
 </dd>
@@ -507,7 +512,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_cfgHelicalInterpo_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgHelicalInterpo_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_point_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_point_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">finish_point_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">finish_point_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_axis3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pitch_axis3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_axis4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pitch_axis4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calculation_timeout</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgHelicalInterpo_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgHelicalInterpo_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_point_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_point_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">finish_point_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">finish_point_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_axis3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pitch_axis3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_axis4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pitch_axis4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calculation_timeout</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgHelicalInterpo_async" title="Permalink to this definition"></a></dt>
 <dd><p>Configure helical interpolation parameters with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -523,18 +528,18 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>finish_point_y</strong><span class="classifier">int</span></dt><dd><p>Set the finish point of <cite>y</cite> by the relative value with respect to the current position.</p>
 </dd>
-<dt><strong>enable_axis3</strong><span class="classifier">{0, 1}</span></dt><dd><p>0: False, 1: True.</p>
+<dt><strong>en_axis3</strong><span class="classifier">{0, 1}</span></dt><dd><p>0: False, 1: True.</p>
 </dd>
 <dt><strong>pitch_axis3</strong><span class="classifier">int</span></dt><dd><p>The axis3 pitch.</p>
 </dd>
-<dt><strong>enable_axis4</strong><span class="classifier">{0, 1}</span></dt><dd><p>0: False, 1: True.</p>
+<dt><strong>en_axis4</strong><span class="classifier">{0, 1}</span></dt><dd><p>0: False, 1: True.</p>
 </dd>
 <dt><strong>pitch_axis4</strong><span class="classifier">int</span></dt><dd><p>The axis4 pitch.</p>
 </dd>
 <dt><strong>rotation_number</strong><span class="classifier">int</span></dt><dd></dd>
 <dt><strong>speed</strong><span class="classifier">int</span></dt><dd><p>Speed vector of circular interpolation.</p>
 </dd>
-<dt><strong>direction</strong><span class="classifier">{0, 1}</span></dt><dd><p>Set circular direction to CW or CCW.
+<dt><strong>dir</strong><span class="classifier">{0, 1}</span></dt><dd><p>Set circular direction to CW or CCW.
 0: CW, 1: CCW.</p>
 </dd>
 <dt><strong>calculation_timeout</strong><span class="classifier">int</span></dt><dd><p>Helical calculation timeout.</p>
@@ -553,7 +558,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_cfgHome_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgHome_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">home_enable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">home_polarity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgHome_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgHome_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_home</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">home_polarity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgHome_async" title="Permalink to this definition"></a></dt>
 <dd><p>Configure home parameters with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -563,7 +568,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
 </dd>
-<dt><strong>home_enable</strong><span class="classifier">{0, 1}</span></dt><dd><p>Home inputs.
+<dt><strong>en_home</strong><span class="classifier">{0, 1}</span></dt><dd><p>enable home inputs.
 0: False, 1: True.</p>
 </dd>
 <dt><strong>home_polarity</strong><span class="classifier">{0, 1}</span></dt><dd><p>Set the polarity for home.
@@ -583,7 +588,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_cfgInposi_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgInposi_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inposition_enable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inposition_polarity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgInposi_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgInposi_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_inposi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inposi_polarity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgInposi_async" title="Permalink to this definition"></a></dt>
 <dd><p>Configure Inposition parameters with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -593,10 +598,10 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
 </dd>
-<dt><strong>inposition_enable</strong><span class="classifier">{0, 1}</span></dt><dd><p>Inposition inputs.
+<dt><strong>en_inposi</strong><span class="classifier">{0, 1}</span></dt><dd><p>Enable Inposition inputs.
 0: False, 1: True.</p>
 </dd>
-<dt><strong>inposition_polarity</strong><span class="classifier">{0, 1}</span></dt><dd><p>Set the polarity for inposition.
+<dt><strong>inposi_polarity</strong><span class="classifier">{0, 1}</span></dt><dd><p>Set the polarity for inposition.
 0: Active Low, 1: Active High.</p>
 </dd>
 </dl>
@@ -613,7 +618,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_cfgJerkAndAccelMode_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgJerkAndAccelMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jerk</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration_mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgJerkAndAccelMode_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgJerkAndAccelMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jerk</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accel_mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgJerkAndAccelMode_async" title="Permalink to this definition"></a></dt>
 <dd><p>Configure jerk and acceleration parameters with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -642,7 +647,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_cfgLimit_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgLimit_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forward_enable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reverse_enable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit_polarity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgLimit_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgLimit_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_forward</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_reverse</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit_polarity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfgLimit_async" title="Permalink to this definition"></a></dt>
 <dd><p>Configure limit enable and polarity with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -652,10 +657,10 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
 </dd>
-<dt><strong>forward_enable</strong><span class="classifier">{0, 1}</span></dt><dd><p>Forward limit inputs.
+<dt><strong>en_forward</strong><span class="classifier">{0, 1}</span></dt><dd><p>Enable forward limit inputs.
 0: False, 1: True.</p>
 </dd>
-<dt><strong>reverse_enable</strong><span class="classifier">{0, 1}</span></dt><dd><p>Reverse limit inputs.
+<dt><strong>en_reverse</strong><span class="classifier">{0, 1}</span></dt><dd><p>Enable reverse limit inputs.
 0: False, 1: True.</p>
 </dd>
 <dt><strong>limit_polarity</strong><span class="classifier">{0, 1}</span></dt><dd><p>Set the polarity for limit.
@@ -720,7 +725,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_enableBreakPoint_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_enableBreakPoint_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">break_enable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_enableBreakPoint_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_enableBreakPoint_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_break</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_enableBreakPoint_async" title="Permalink to this definition"></a></dt>
 <dd><p>Set the breakpoint singal of specific axis with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -730,7 +735,8 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
 </dd>
-<dt><strong>break_enable</strong><span class="classifier">{0, 1}</span></dt><dd><p>0: False, 1: True.</p>
+<dt><strong>en_break</strong><span class="classifier">{0, 1}</span></dt><dd><p>Enable breakpoint.
+0: False, 1: True.</p>
 </dd>
 </dl>
 </dd>
@@ -746,7 +752,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_enableCapture_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_enableCapture_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capture_enable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_enableCapture_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_enableCapture_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_capture</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_enableCapture_async" title="Permalink to this definition"></a></dt>
 <dd><p>Set the capture singal of specific axis with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -756,7 +762,8 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
 </dd>
-<dt><strong>capture_enable</strong><span class="classifier">{0, 1}</span></dt><dd><p>0: False, 1: True.</p>
+<dt><strong>en_capture</strong><span class="classifier">{0, 1}</span></dt><dd><p>Enable capture.
+0: False, 1: True.</p>
 </dd>
 </dl>
 </dd>
@@ -772,7 +779,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_enableServoOn_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_enableServoOn_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serve_on_enable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_enableServoOn_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_enableServoOn_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_servo_on</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_enableServoOn_async" title="Permalink to this definition"></a></dt>
 <dd><p>Set the servo on singal of specific axis with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -782,7 +789,8 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
 </dd>
-<dt><strong>serve_on_enable</strong><span class="classifier">{0, 1}</span></dt><dd><p>0: False, 1: True.</p>
+<dt><strong>en_servo_on</strong><span class="classifier">{0, 1}</span></dt><dd><p>Enable servo on
+0: False, 1: True.</p>
 </dd>
 </dl>
 </dd>
@@ -882,7 +890,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Logical position of the axis</p>
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Logical position of the axis.</p>
 </dd>
 </dl>
 </dd>
@@ -972,7 +980,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_overrideAxisAccel_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_overrideAxisAccel_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_acceleration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_deceleration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_overrideAxisAccel_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_overrideAxisAccel_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_accel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_decel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_overrideAxisAccel_async" title="Permalink to this definition"></a></dt>
 <dd><p>Override instantaneous accerleration / deceleration for an axis with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -980,9 +988,9 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>new_acceleration</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
+<dt><strong>new_accel</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
 </dd>
-<dt><strong>new_deceleration</strong><span class="classifier">int</span></dt><dd><p>Deceleration value in counts/s2 or steps/s2.</p>
+<dt><strong>new_decel</strong><span class="classifier">int</span></dt><dd><p>Deceleration value in counts/s2 or steps/s2.</p>
 </dd>
 </dl>
 </dd>
@@ -998,7 +1006,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_overrideAxisVelocity_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_overrideAxisVelocity_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_velocity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_overrideAxisVelocity_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_overrideAxisVelocity_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_velo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_overrideAxisVelocity_async" title="Permalink to this definition"></a></dt>
 <dd><p>Override instantaneous velocity for an axis with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1006,7 +1014,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>new_velocity</strong><span class="classifier">int</span></dt><dd><p>Velocity in counts/s or steps/s.</p>
+<dt><strong>new_velo</strong><span class="classifier">int</span></dt><dd><p>Velocity in counts/s or steps/s.</p>
 </dd>
 </dl>
 </dd>
@@ -1045,7 +1053,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_rstEncoderPosi_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_rstEncoderPosi_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_rstEncoderPosi_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_rstEncoderPosi_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_posi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_rstEncoderPosi_async" title="Permalink to this definition"></a></dt>
 <dd><p>Reset the position of an encoder with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1055,7 +1063,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
 </dd>
-<dt><strong>encoder_position</strong><span class="classifier">int</span></dt><dd><p>Reset value for axis.</p>
+<dt><strong>encoder_posi</strong><span class="classifier">int</span></dt><dd><p>Reset value for axis.</p>
 </dd>
 </dl>
 </dd>
@@ -1226,7 +1234,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_stop_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_stop_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop_mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_stop_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_stop_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_stop_async" title="Permalink to this definition"></a></dt>
 <dd><p>Stop motion of an axis with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1236,7 +1244,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
 </dd>
-<dt><strong>stop_mode</strong><span class="classifier">{0, 1}</span></dt><dd><p>Mode of stop to execute.
+<dt><strong>mode</strong><span class="classifier">{0, 1}</span></dt><dd><p>Mode of stop to execute.
 0: deceleration, 1: halt.</p>
 </dd>
 </dl>
@@ -1374,7 +1382,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt><strong>pins</strong><span class="classifier">int</span></dt><dd><p>How many pins in specific port.</p>
 </dd>
 <dt><strong>pin_mode</strong><span class="classifier">list of 8 string</span></dt><dd><ul class="simple">
-<li><p>[pin0, pin1 ,……pin7]</p></li>
+<li><p>[pin0, pin1,……pin7]</p></li>
 <li><p>pinmode : Disabled, Idle, DI, DO, UART, I2C, SPI, CAN, PWM and ADC.</p></li>
 </ul>
 </dd>

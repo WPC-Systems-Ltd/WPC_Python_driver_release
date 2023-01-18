@@ -30,7 +30,7 @@ EMotion
 
    examples/Console/EMotion/Motion/Motion_velocity_blending.rst
 
-   examples/Console/EMotion/Motion/Motion_velocity_blending_accerleration.rst
+   examples/Console/EMotion/Motion/Motion_velocity_blending_acceleration.rst
 
    examples/Console/EMotion/Motion/Motion_1axis_move.rst
 

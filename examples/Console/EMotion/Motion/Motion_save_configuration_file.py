@@ -40,25 +40,34 @@ async def main():
         port = 0
         axis = 0
         two_pulse_mode = 1
-        relative_position = 1
-        dir_cw = 0
+        rel_posi_mode = 1
+        ## Axis and encoder parameters
+        axis_dir_cw = 0
+        encoder_dir_cw = 0
+        ## Polarity and enable parameters
         active_low = 0
+        active_high = 1
 
+        ## Motion open
         err = await dev.Motion_open_async(port)
         print("open_async:", err)
  
-        err = await dev.Motion_opencfgFile_async('Emotion.ini')
+        ## Motion open configuration file
+        err = await dev.Motion_opencfgFile_async('3AxisStage_2P.ini')
         print("opencfgFile_async:", err)
  
-        err = await dev.Motion_cfgAxis_async(port, axis, two_pulse_mode, dir_cw, dir_cw, active_low)
+        ## Motion configure
+        err = await dev.Motion_cfgAxis_async(port, axis, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low)
         print("cfgAxis_async:", err)
 
-        err = await dev.Motion_cfgAxisMove_async(port, axis, relative_position, 5000)
+        err = await dev.Motion_cfgAxisMove_async(port, axis, rel_posi_mode, target_position = 5000)
         print("cfgAxisMove_async:", err)
 
+        ## Motion save configuration file
         err = await dev.Motion_saveCfgFile_async()
         print("saveCfgFile_async:", err)
-
+        
+        ## Motion close
         err = await dev.Motion_close_async(port)
         print("close_async:", err) 
          
@@ -73,5 +82,13 @@ async def main():
  
     return
 
+def main_for_spyder(*args):
+    if asyncio.get_event_loop().is_running():
+        return asyncio.create_task(main(*args)).result()
+    else:
+        return asyncio.run(main(*args))
+
 if __name__ == '__main__':
-    asyncio.run(main())
+    asyncio.run(main()) ## Use terminal
+    # await main() ## Use Jupyter or IPython(>=7.0)， 
+    # main_for_spyder ## Use Spyder
