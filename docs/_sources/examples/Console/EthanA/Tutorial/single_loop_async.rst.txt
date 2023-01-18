@@ -1,5 +1,5 @@
-Single loop async
-=================
+Tutorial single loop async
+==========================
 
 .. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/EthanA/Tutorial/single_loop_async.py
    :language: python

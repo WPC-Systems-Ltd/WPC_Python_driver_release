@@ -1,5 +1,5 @@
-Single loop thread
-==================
+Tutorial single loop thread
+===========================
 
 .. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/EthanA/Tutorial/single_loop_thread.py
    :language: python

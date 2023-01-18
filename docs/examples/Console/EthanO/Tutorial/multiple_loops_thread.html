@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Multiple loops thread &mdash; WPC Python driver 1.1.2 documentation</title>
+  <title>Tutorial multiple loops thread &mdash; WPC Python driver 1.1.3 documentation</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/custom_sphinx.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Multiple loops async" href="multiple_loops_async.html" />
-    <link rel="prev" title="Single loop async" href="single_loop_async.html" /> 
+    <link rel="next" title="Tutorial multiple loops async" href="multiple_loops_async.html" />
+    <link rel="prev" title="Tutorial single loop async" href="single_loop_async.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -34,7 +34,7 @@
             <img src="../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.1.2
+                1.1.3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
@@ -62,11 +62,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../AO/AO_write_all_channels.html">AO write all channels</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../AO/AO_write_one_channel.html">AO write one channel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../AO/AO_waveform_gen.html">AO waveform generation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../System_ETH/get_network_info.html">Get network info</a></li>
-<li class="toctree-l3"><a class="reference internal" href="single_loop_thread.html">Single loop thread</a></li>
-<li class="toctree-l3"><a class="reference internal" href="single_loop_async.html">Single loop async</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Multiple loops thread</a></li>
-<li class="toctree-l3"><a class="reference internal" href="multiple_loops_async.html">Multiple loops async</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../System_ETH/get_network_info.html">System get network info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="single_loop_thread.html">Tutorial single loop thread</a></li>
+<li class="toctree-l3"><a class="reference internal" href="single_loop_async.html">Tutorial single loop async</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Tutorial multiple loops thread</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multiple_loops_async.html">Tutorial multiple loops async</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../examples_console.html#usb-daq-f1-ad">USB-DAQ-F1-AD</a></li>
@@ -102,7 +102,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../../../examples_console.html">Example Codes - Console</a> &raquo;</li>
-      <li>Multiple loops thread</li>
+      <li>Tutorial multiple loops thread</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -111,8 +111,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="multiple-loops-thread">
-<h1>Multiple loops thread<a class="headerlink" href="#multiple-loops-thread" title="Permalink to this heading"></a></h1>
+  <section id="tutorial-multiple-loops-thread">
+<h1>Tutorial multiple loops thread<a class="headerlink" href="#tutorial-multiple-loops-thread" title="Permalink to this heading"></a></h1>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos"> 2</span><span class="sd">Tutorial - multiple_loops_thread.py</span>
 <span class="linenos"> 3</span>
@@ -194,8 +194,16 @@
 <span class="linenos">79</span>    
 <span class="linenos">80</span>    <span class="k">return</span>
 <span class="linenos">81</span>
-<span class="linenos">82</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">83</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+<span class="linenos">82</span><span class="k">def</span> <span class="nf">main_for_spyder</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="linenos">83</span>    <span class="k">if</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">is_running</span><span class="p">():</span>
+<span class="linenos">84</span>        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+<span class="linenos">85</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">86</span>        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span>
+<span class="linenos">87</span>
+<span class="linenos">88</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">89</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span> <span class="c1">## Use terminal</span>
+<span class="linenos">90</span>    <span class="c1"># await main() ## Use Jupyter or IPython(&gt;=7.0)， </span>
+<span class="linenos">91</span>    <span class="c1"># main_for_spyder ## Use Spyder</span>
 </pre></div>
 </div>
 </section>
@@ -204,8 +212,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="single_loop_async.html" class="btn btn-neutral float-left" title="Single loop async" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="multiple_loops_async.html" class="btn btn-neutral float-right" title="Multiple loops async" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="single_loop_async.html" class="btn btn-neutral float-left" title="Tutorial single loop async" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="multiple_loops_async.html" class="btn btn-neutral float-right" title="Tutorial multiple loops async" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

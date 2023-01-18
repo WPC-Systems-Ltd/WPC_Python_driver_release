@@ -23,16 +23,16 @@ import asyncio
 
 from wpcsys import pywpc
 
-async def loop_func(handle, port, num_of_samples = 600, delay = 0.005, timeout = 3):
-    t = 0
-    while t < timeout:
+async def loop_func(handle, port, num_of_samples = 600, delay = 0.005, exit_loop_time = 3):
+    time_cal = 0
+    while time_cal < exit_loop_time:
         ## data acquisition
         data = await handle.AI_readStreaming_async(port, num_of_samples, delay)
         if len(data) > 0:
             print(data)
             print("Get data points:" + str(len(data)))
         await asyncio.sleep(delay)
-        t += delay
+        time_cal += delay
 
 async def main():
     ## Get Python driver version
@@ -96,5 +96,13 @@ async def main():
  
     return
 
+def main_for_spyder(*args):
+    if asyncio.get_event_loop().is_running():
+        return asyncio.create_task(main(*args)).result()
+    else:
+        return asyncio.run(main(*args))
+
 if __name__ == '__main__':
-    asyncio.run(main())
+    asyncio.run(main()) ## Use terminal
+    # await main() ## Use Jupyter or IPython(>=7.0)， 
+    # main_for_spyder ## Use Spyder

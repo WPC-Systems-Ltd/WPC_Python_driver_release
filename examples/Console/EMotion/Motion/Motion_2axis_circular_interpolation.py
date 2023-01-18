@@ -39,36 +39,43 @@ async def main():
         ## Parameters setting
         port = 0
         axis = 0 
+        stop_decel = 0
+        rel_posi_mode = 1
+        ## Circular interpolation parameters
         x_axis = 0
         y_axis = 1
         center_point_x = 2000
         center_point_y = 2000
         finish_point_x = 0
         finish_point_y = 0
-        dir_cw = 0
-        relative_position = 1
-        stop_deceleration = 0 
+        circular_dir_cw = 0
+        ## jerk and acceletation mode parameters setting
         scurve = 1
+        jerk = 1 
 
+        ## Motion open
         err = await dev.Motion_open_async(port)
         print("open_async:", err)
         
+        ## Motion open configuration file
         err = await dev.Motion_opencfgFile_async('3AxisStage_2P.ini')
         print("opencfgFile_async:", err)
 
+        ## Motion load configuration file
         err = await dev.Motion_loadCfgFile_async()
         print("loadCfgFile_async:", err)
-
-        err = await dev.Motion_cfgCircularInterpo_async(port, x_axis, y_axis, center_point_x, center_point_y, finish_point_x, finish_point_y, dir_cw, speed = 1000)
+        
+        ## Motion configure
+        err = await dev.Motion_cfgCircularInterpo_async(port, x_axis, y_axis, center_point_x, center_point_y, finish_point_x, finish_point_y, circular_dir_cw, speed = 1000)
         print("cfgCircularInterpo_async:", err) 
 
         err = await dev.Motion_startCircularInterpo_async(port)
         print("startCircularInterpo_async:", err)
 
-        err = dev.Motion_cfgAxisMove_async(port, axis, relative_position, 5000)
+        err = dev.Motion_cfgAxisMove_async(port, axis, rel_posi_mode, target_position = 5000)
         print("cfgAxisMove_async:", err)
 
-        err = dev.Motion_cfgJerkAndAccelMode_async(port, axis, 1, scurve)
+        err = dev.Motion_cfgJerkAndAccelMode_async(port, axis, jerk, scurve)
         print("cfgJerkAndAccelMode_async:", err)
         
         err = await dev.Motion_rstEncoderPosi_async(port, axis)
@@ -77,7 +84,8 @@ async def main():
         for i in range(4):
             err = await dev.Motion_enableServoOn_async(port, i, int(True))
             print("enableServoOn_async:", err)
-
+            
+        ## Motion start
         err = await dev.Motion_startSingleAxisMove_async(port, axis)
         print("startSingleAxisMove_async:", err)
 
@@ -90,14 +98,16 @@ async def main():
                 print("Moving......") 
             else:
                 print("Move completed") 
- 
-        err = await dev.Motion_stop_async(port, axis, stop_deceleration)
+
+        ## Motion stop
+        err = await dev.Motion_stop_async(port, axis, stop_decel)
         print("stop_async:", err)
 
-         for i in range(4):
+        for i in range(4):
             err = await dev.Motion_enableServoOn_async(port, i, int(False))
             print("enableServoOn_async:", err)
-
+            
+        ## Motion close
         err = await dev.Motion_close_async(port)
         print("close_async:", err) 
          
@@ -112,5 +122,13 @@ async def main():
  
     return
 
+def main_for_spyder(*args):
+    if asyncio.get_event_loop().is_running():
+        return asyncio.create_task(main(*args)).result()
+    else:
+        return asyncio.run(main(*args))
+
 if __name__ == '__main__':
-    asyncio.run(main())
+    asyncio.run(main()) ## Use terminal
+    # await main() ## Use Jupyter or IPython(>=7.0)， 
+    # main_for_spyder ## Use Spyder

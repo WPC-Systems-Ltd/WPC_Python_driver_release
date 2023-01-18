@@ -1,5 +1,5 @@
-Get network info
-================
+System get network info
+=======================
 
 .. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/EthanD/System_ETH/get_network_info.py
    :language: python
