@@ -1,6 +1,15 @@
 WPC Python driver release changelog
 ===================================
 
+v1.1.3 Date: 2023/01/18, Developer: Chunglee_people
+---------------------------------------------------
+
+### Added
+- Add three scenario when run asyncio function
+  - asyncio.run(main()) ## Use terminal
+  - await main() ## Use Jupyter or IPython(>=7.0)， 
+  - main_for_spyder ## Use Spyder
+
 v1.1.2 Date: 2023/01/07, Developer: Chunglee_people
 ---------------------------------------------------
 
