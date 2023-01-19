@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DO blinky pins &mdash; WPC Python driver 1.1.2 documentation</title>
+  <title>DO blinky pins &mdash; WPC Python driver 1.1.3 documentation</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/custom_sphinx.css" type="text/css" />
@@ -18,11 +18,12 @@
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="DO blinky port" href="DO_blinky_port.html" />
-    <link rel="prev" title="Multiple loops async" href="../../EthanD/Tutorial/multiple_loops_async.html" /> 
+    <link rel="prev" title="Tutorial multiple loops async" href="../../EthanD/Tutorial/multiple_loops_async.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -34,7 +35,7 @@
             <img src="../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.1.2
+                1.1.3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
@@ -64,11 +65,11 @@
 <li class="toctree-l3"><a class="reference internal" href="DIO_loopback_port.html">DIO loopback port</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DO_write_pins.html">DO write pins</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DO_write_port.html">DO write port</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../System_ETH/get_network_info.html">Get network info</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Tutorial/single_loop_thread.html">Single loop thread</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Tutorial/single_loop_async.html">Single loop async</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Tutorial/multiple_loops_thread.html">Multiple loops thread</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Tutorial/multiple_loops_async.html">Multiple loops async</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../System_ETH/get_network_info.html">System get network info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial/multiple_loops_async.html">Tutorial multiple loops async</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../examples_console.html#ethan-o">Ethan-O</a></li>
@@ -196,8 +197,16 @@
 <span class="linenos">78</span>
 <span class="linenos">79</span>    <span class="k">return</span>
 <span class="linenos">80</span>
-<span class="linenos">81</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">82</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+<span class="linenos">81</span><span class="k">def</span> <span class="nf">main_for_spyder</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="linenos">82</span>    <span class="k">if</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">is_running</span><span class="p">():</span>
+<span class="linenos">83</span>        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+<span class="linenos">84</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">85</span>        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span>
+<span class="linenos">86</span> 
+<span class="linenos">87</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">88</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span> <span class="c1">## Use terminal</span>
+<span class="linenos">89</span>    <span class="c1"># await main() ## Use Jupyter or IPython(&gt;=7.0)</span>
+<span class="linenos">90</span>    <span class="c1"># main_for_spyder() ## Use Spyder</span>
 </pre></div>
 </div>
 </section>
@@ -206,7 +215,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../../EthanD/Tutorial/multiple_loops_async.html" class="btn btn-neutral float-left" title="Multiple loops async" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../EthanD/Tutorial/multiple_loops_async.html" class="btn btn-neutral float-left" title="Tutorial multiple loops async" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="DO_blinky_port.html" class="btn btn-neutral float-right" title="DO blinky port" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

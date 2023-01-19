@@ -22,9 +22,6 @@ Error Code Table
    * - 519000
      - Warning
      - External library "libusb-1.0.dll" not found at indicated path Will look at the default path instead
-   * - 8804
-     - Warning
-     - Motion port not avaliable or already occupied by other process.
    * - -7001
      - 
      - Functionality not enabled in firmware.
@@ -118,6 +115,12 @@ Error Code Table
    * - -8014
      - 
      - Input value not in range.
+   * - -8015
+     - 
+     - The Ini file extension name is not correct.
+   * - -8016
+     - 
+     - No such file or directory.
    * - -8101
      - 
      - DI port not avaliable or already occupied by other process.
@@ -148,6 +151,9 @@ Error Code Table
    * - -8211
      - 
      - The specified AO form is invalid.
+   * - -8212
+     - 
+     - The specified AO sampling rate is invalid.
    * - -8301
      - 
      - Thermal port not avaliable or already occupied by other process.
@@ -220,3 +226,45 @@ Error Code Table
    * - -8794
      - 
      - The specified CAN TX priority is invalid.
+   * - -8803
+     - 
+     - The specified motion axis is invalid
+   * - -8804
+     - 
+     - Motion port not avaliable or already occupied by other process.
+   * - -8805
+     - 
+     - The specified motion stop mode is invalid.
+   * - -8806
+     - 
+     - The specified motion search type is invalid.
+   * - -8807
+     - 
+     - The specified motion search direction is invalid.
+   * - -8808
+     - 
+     - The specified motion enable is invalid.
+   * - -8809
+     - 
+     - The specified motion stepper output is invalid.
+   * - -8810
+     - 
+     - The specified motion direction is invalid.
+   * - -8811
+     - 
+     - The specified motion polarity is invalid.
+   * - -8812
+     - 
+     - The specified motion capture type is invalid.
+   * - -8813
+     - 
+     - The specified motion capture mode is invalid.
+   * - -8814
+     - 
+     - The specified motion breakpoint mode is invalid.
+   * - -8815
+     - 
+     - The specified motion operation mode is invalid.
+   * - -8816
+     - 
+     - The specified motion acceleration mode is invalid.

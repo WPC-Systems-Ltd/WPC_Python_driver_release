@@ -1,5 +1,5 @@
-Multiple loops async
-====================
+Tutorial multiple loops async
+=============================
 
 .. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/EthanD/Tutorial/multiple_loops_async.py
    :language: python
