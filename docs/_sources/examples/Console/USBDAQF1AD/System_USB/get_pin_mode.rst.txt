@@ -1,5 +1,5 @@
-Get pin mode
-============
+System get pin mode
+===================
 
 .. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1AD/System_USB/get_pin_mode.py
    :language: python

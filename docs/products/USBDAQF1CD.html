@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>USB-DAQ-F1-CD &mdash; WPC Python driver 1.1.2 documentation</title>
+  <title>USB-DAQ-F1-CD &mdash; WPC Python driver 1.1.3 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -18,6 +18,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -34,7 +35,7 @@
             <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.1.2
+                1.1.3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -282,7 +283,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1CD.CAN_setSpeed_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CAN_setSpeed_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.CAN_setSpeed_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CAN_setSpeed_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed_mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1CD.CAN_setSpeed_async" title="Permalink to this definition"></a></dt>
 <dd><p>Set CAN speed with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -290,7 +291,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>mode</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>0: 125 kHz, 1: 250 kHz, 2: 500 kHz, 3: 1 MHz.</p>
+<dt><strong>speed_mode</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>0: 125 kHz, 1: 250 kHz, 2: 500 kHz, 3: 1 MHz.</p>
 </dd>
 </dl>
 </dd>
@@ -1239,7 +1240,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt><strong>pins</strong><span class="classifier">int</span></dt><dd><p>How many pins in specific port.</p>
 </dd>
 <dt><strong>pin_mode</strong><span class="classifier">list of 8 string</span></dt><dd><ul class="simple">
-<li><p>[pin0, pin1 ,……pin7]</p></li>
+<li><p>[pin0, pin1,……pin7]</p></li>
 <li><p>pinmode : Disabled, Idle, DI, DO, UART, I2C, SPI, CAN, PWM and ADC.</p></li>
 </ul>
 </dd>
