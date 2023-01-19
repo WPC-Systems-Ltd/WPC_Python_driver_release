@@ -62,8 +62,8 @@ def main_for_spyder(*args):
         return asyncio.create_task(main(*args)).result()
     else:
         return asyncio.run(main(*args))
-
+ 
 if __name__ == '__main__':
     asyncio.run(main()) ## Use terminal
-    # await main() ## Use Jupyter or IPython(>=7.0)， 
-    # main_for_spyder ## Use Spyder
+    # await main() ## Use Jupyter or IPython(>=7.0)
+    # main_for_spyder() ## Use Spyder

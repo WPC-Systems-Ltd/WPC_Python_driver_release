@@ -18,6 +18,7 @@
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -171,11 +172,11 @@
 <span class="linenos">63</span>        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
 <span class="linenos">64</span>    <span class="k">else</span><span class="p">:</span>
 <span class="linenos">65</span>        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span>
-<span class="linenos">66</span>
+<span class="linenos">66</span> 
 <span class="linenos">67</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
 <span class="linenos">68</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span> <span class="c1">## Use terminal</span>
-<span class="linenos">69</span>    <span class="c1"># await main() ## Use Jupyter or IPython(&gt;=7.0)， </span>
-<span class="linenos">70</span>    <span class="c1"># main_for_spyder ## Use Spyder</span>
+<span class="linenos">69</span>    <span class="c1"># await main() ## Use Jupyter or IPython(&gt;=7.0)</span>
+<span class="linenos">70</span>    <span class="c1"># main_for_spyder() ## Use Spyder</span>
 </pre></div>
 </div>
 </section>
