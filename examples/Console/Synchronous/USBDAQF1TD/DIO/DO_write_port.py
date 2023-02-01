@@ -38,7 +38,7 @@ def main():
 
     try:
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo_async()
+        driver_info = dev.Sys_getDriverInfo()
         print("Model name:" + driver_info[0])
         print("Firmware version:" + driver_info[-1])
 
@@ -58,10 +58,6 @@ def main():
 
         ## Set pin7 and pin6 to high, others to low (1100 0000 in binary) (0xC0 in hex).
         err = dev.DO_writePort(port, 0xC0)
-        print("DO_writePort:", err)
-
-        ## Wait for 1 second
-        time.sleep(1) ## delay(second) 
 
         ## Close all pins with digital output
         err = dev.DO_closePort(port)

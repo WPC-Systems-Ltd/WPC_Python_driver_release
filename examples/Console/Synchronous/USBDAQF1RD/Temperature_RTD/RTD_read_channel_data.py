@@ -51,9 +51,6 @@ def main():
         err = dev.Thermal_open(port)
         print("Thermal_open:", err)
 
-        ## Sleep
-        time.sleep(0.1) ## delay(second)
-
         ## Set RTD port and read RTD in channel 0
         data0 =  dev.Thermal_readSensor(port, channel_0)
         print("Read channel 0 data:", data0, "°C")

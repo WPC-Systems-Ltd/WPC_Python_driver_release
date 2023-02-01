@@ -50,9 +50,6 @@ async def main():
         err = await dev.DO_openPins_async(port, pin_index)
         print("DO_openPins_async:", err)
 
-        ## Wait for 1 second
-        await asyncio.sleep(1)  ## delay(second)
-
         ## Set pin0, pin1 to high, others to low.
         err = await dev.DO_writePins_async(port, pin_index, [1,1,0,0,0])
         print("DO_writePins_async:", err)
@@ -60,9 +57,6 @@ async def main():
         ## Open pin5, pin6 and pin7 with digital output (1110 0000 in binary) (0xE0 in hex).
         err = await dev.DO_openPins_async(port, 0xE0)
         print("DO_openPins_async:", err)
-
-        ## Wait for 1 second
-        await asyncio.sleep(1)  ## delay(second)
 
         ## Set pin7 and pin6 to high, others to low (1100 0000 in binary) (0xC0 in hex).
         err = await dev.DO_writePins_async(port, 0xE0, 0xC0)

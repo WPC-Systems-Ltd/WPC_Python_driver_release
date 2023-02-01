@@ -166,24 +166,21 @@
 <span class="linenos">53</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AO_writeAllChannels</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
 <span class="linenos">54</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AO_writeAllChannels:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
 <span class="linenos">55</span>
-<span class="linenos">56</span>        <span class="c1">## Sleep</span>
-<span class="linenos">57</span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">## delay(second) </span>
-<span class="linenos">58</span>
-<span class="linenos">59</span>        <span class="c1">## Close AO</span>
-<span class="linenos">60</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AO_close</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos">61</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AO_close:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
-<span class="linenos">62</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos">63</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">56</span>        <span class="c1">## Close AO</span>
+<span class="linenos">57</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AO_close</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+<span class="linenos">58</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AO_close:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+<span class="linenos">59</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos">60</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">61</span>
+<span class="linenos">62</span>    <span class="c1">## Disconnect device</span>
+<span class="linenos">63</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
 <span class="linenos">64</span>
-<span class="linenos">65</span>    <span class="c1">## Disconnect device</span>
-<span class="linenos">66</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
-<span class="linenos">67</span>
-<span class="linenos">68</span>    <span class="c1">## Release device handle</span>
-<span class="linenos">69</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="linenos">70</span>    
-<span class="linenos">71</span>    <span class="k">return</span>
-<span class="linenos">72</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">73</span>    <span class="n">main</span><span class="p">()</span>
+<span class="linenos">65</span>    <span class="c1">## Release device handle</span>
+<span class="linenos">66</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos">67</span>    
+<span class="linenos">68</span>    <span class="k">return</span>
+<span class="linenos">69</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">70</span>    <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>

@@ -70,9 +70,6 @@ def main():
         err = dev.AI_start(port)
         print("AI_start:", err)
 
-        ## Wait amount of time (sec)
-        time.sleep(1)
-        
         ## Set AI port and get 50 points
         data = dev.AI_readStreaming(port, read_points)
 

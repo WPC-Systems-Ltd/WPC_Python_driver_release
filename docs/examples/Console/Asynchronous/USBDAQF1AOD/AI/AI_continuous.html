@@ -205,16 +205,16 @@
 <span class="linenos"> 70</span>        <span class="c1">## Set AI port and sampling rate to 1k (Hz)</span>
 <span class="linenos"> 71</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_setSamplingRate_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">sampling_rate</span><span class="p">)</span>
 <span class="linenos"> 72</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AI_setSamplingRate_async:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
-<span class="linenos"> 73</span>
-<span class="linenos"> 74</span>        <span class="c1">## Wait amount of time (sec)</span>
-<span class="linenos"> 75</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="linenos"> 76</span>
-<span class="linenos"> 77</span>        <span class="c1">## Set AI port and start acquisition</span>
-<span class="linenos"> 78</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_start_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos"> 79</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AI_start_async:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
-<span class="linenos"> 80</span>
-<span class="linenos"> 81</span>        <span class="c1">## Start async thread</span>
-<span class="linenos"> 82</span>        <span class="k">await</span> <span class="n">loop_func</span><span class="p">(</span><span class="n">dev</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="linenos"> 73</span> 
+<span class="linenos"> 74</span>        <span class="c1">## Set AI port and start acquisition</span>
+<span class="linenos"> 75</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_start_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+<span class="linenos"> 76</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AI_start_async:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+<span class="linenos"> 77</span>
+<span class="linenos"> 78</span>        <span class="c1">## Start async thread</span>
+<span class="linenos"> 79</span>        <span class="n">num_of_samples</span> <span class="o">=</span> <span class="mi">600</span>
+<span class="linenos"> 80</span>        <span class="n">delay</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="linenos"> 81</span>        <span class="n">exit_loop_time</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="linenos"> 82</span>        <span class="k">await</span> <span class="n">loop_func</span><span class="p">(</span><span class="n">dev</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">num_of_samples</span><span class="p">,</span> <span class="n">delay</span><span class="p">,</span> <span class="n">exit_loop_time</span><span class="p">)</span>
 <span class="linenos"> 83</span>
 <span class="linenos"> 84</span>        <span class="c1">## Close port</span>
 <span class="linenos"> 85</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_close_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>

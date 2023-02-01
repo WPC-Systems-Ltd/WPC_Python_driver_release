@@ -70,16 +70,16 @@ async def main():
         ## Set AI port and sampling rate to 1k (Hz)
         err = await dev.AI_setSamplingRate_async(port, sampling_rate)
         print("AI_setSamplingRate_async:", err)
-
-        ## Wait amount of time (sec)
-        await asyncio.sleep(1)
-
+ 
         ## Set AI port and start acquisition
         err = await dev.AI_start_async(port)
         print("AI_start_async:", err)
 
         ## Start async thread
-        await loop_func(dev, port, 600, 0.05, 3)
+        num_of_samples = 600
+        delay = 0.05
+        exit_loop_time = 3
+        await loop_func(dev, port, num_of_samples, delay, exit_loop_time)
 
         ## Close port
         err = await dev.AI_close_async(port)

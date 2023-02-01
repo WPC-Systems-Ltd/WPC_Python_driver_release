@@ -2,7 +2,7 @@
 AI - AI_on_demand_in_loop.py
 
 This example demonstrates how to get AI data in on demand mode.
-Also, it uses async loop to get AI data with 3 seconds timeout with 8 channels USBDAQF1AD.
+Also, it uses loop to get AI data with 3 seconds timeout with 8 channels USBDAQF1AD.
 
 First, it shows how to open AI port and configure AI parameters.
 Second, read AI ondemand data.
@@ -66,8 +66,10 @@ def main():
         err = dev.AI_setMode(port, mode)
         print("AI_setMode:", err)
 
-        ## Set AI port and start async thread
-        loop_func(dev, port, 1, 3)
+        ## Set AI port and start thread
+        delay = 1
+        exit_loop_time = 3
+        loop_func(dev, port, delay, exit_loop_time)
 
         ## Close port
         err = dev.AI_close(port)

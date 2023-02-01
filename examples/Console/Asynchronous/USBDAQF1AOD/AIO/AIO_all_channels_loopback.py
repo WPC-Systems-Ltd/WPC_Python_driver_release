@@ -61,10 +61,7 @@ async def main():
         ## Set AO port and write data simultaneously
         err = await dev.AO_writeAllChannels_async(port, [0,1,2,3,4,5,4,3])
         print("AO_writeAllChannels_async:", err)
-
-        ## Sleep
-        await asyncio.sleep(1) ## delay(second)
-
+ 
         ## Set AI port and data acquisition
         data = await dev.AI_readOnDemand_async(port)
         print("data :" + str(data))

@@ -80,8 +80,11 @@ async def main():
         print("AI_start_async:", err)
 
         ## Start async thread
-        await loop_func(dev, port, 600, 0.05, 3)
-
+        num_of_samples = 600
+        delay = 0.05
+        exit_loop_time = 3
+        await loop_func(dev, port, num_of_samples, delay, exit_loop_time)
+        
         ## Close port
         err = await dev.AI_close_async(port)
         print("AI_close_async:", err)

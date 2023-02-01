@@ -51,15 +51,9 @@ def main():
         err = dev.Thermal_open(port)
         print("Thermal_open:", err)
 
-        ## Sleep
-        time.sleep(0.1) ## delay(second)
-
         ## Set thermo port and get status in channel 0
         status = dev.Thermal_getStatus(port, channel_0)
         print("Thermal_getStatus in chaannel 0:", status)
-
-        ## Sleep
-        time.sleep(0.1) ## delay(second)
 
         ## Set thermo port and get status in channel 1
         status = dev.Thermal_getStatus(port, channel_1)

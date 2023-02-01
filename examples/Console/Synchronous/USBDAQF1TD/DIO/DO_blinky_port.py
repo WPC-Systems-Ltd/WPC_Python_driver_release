@@ -23,7 +23,7 @@ import time
 
 from wpcsys import pywpc
 
-async def main():
+def main():
     ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
 
@@ -59,9 +59,6 @@ async def main():
             dev.DO_writePort(port, value)
             print(f'Port: {port}, digital state = {value}')
             time.sleep(0.5)  ## delay(second)
-
-        ## Wait for 3 seconds
-        time.sleep(3)  ## delay(second)
 
         ## Close all pins with digital output
         err = dev.DO_closePort(port)

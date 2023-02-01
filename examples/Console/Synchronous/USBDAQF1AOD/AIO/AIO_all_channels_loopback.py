@@ -61,10 +61,7 @@ def main():
         ## Set AO port and write data simultaneously
         err = dev.AO_writeAllChannels(port, [0,1,2,3,4,5,4,3])
         print("AO_writeAllChannels:", err)
-
-        ## Sleep
-        time.sleep(1) ## delay(second) 
-
+  
         ## Set AI port and data acquisition
         data = dev.AI_readOnDemand(port)
         print("data :" + str(data))

@@ -64,9 +64,6 @@ async def main():
         err = await dev.AO_writeOneChannel_async(port, 7, 4.5)
         print("AO_writeOneChannel_async:", err)
 
-        ## Sleep
-        await asyncio.sleep(1) ## delay(second)
-
         ## Close AO
         err = await dev.AO_close_async(port)
         print("AO_close_async:", err)

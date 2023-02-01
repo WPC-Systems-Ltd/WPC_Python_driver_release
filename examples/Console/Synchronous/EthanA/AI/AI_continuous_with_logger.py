@@ -2,7 +2,7 @@
 AI - AI_continuous_with_logger.py
 
 This example demonstrates how to get AI data in continuous mode and save data into csv file.
-Also, it uses async loop to get AI data with 3 seconds timeout with 8 channels from EthanA.
+Also, it uses loop to get AI data with 3 seconds timeout with 8 channels from EthanA.
 
 First, it shows how to open AI port and configure AI parameters.
 Second, read and save AI streaming data.
@@ -86,16 +86,16 @@ def main():
         err = dev.AI_setSamplingRate(port, sampling_rate)
         print("AI_setSamplingRate:", err)
 
-        ## Wait amount of time (sec)
-        time.sleep(0.1)
-
         ## Set AI port and start acquisition
         err = dev.AI_start(port)
         print("AI_start:", err)
 
-        ## Start async thread
-        loop_func(dev, dev_logger, port, 600, 0.05, 3)
-
+        ## Start thread
+        num_of_samples = 600
+        delay = 0.05
+        exit_loop_time = 3
+        loop_func(dev, port, num_of_samples, delay, exit_loop_time)
+ 
         ## Close port
         err = dev.AI_close(port)
         print("AI_close:", err)

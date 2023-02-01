@@ -177,24 +177,21 @@
 <span class="linenos">64</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AO_writeOneChannel</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">)</span>
 <span class="linenos">65</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AO_writeOneChannel:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
 <span class="linenos">66</span>
-<span class="linenos">67</span>        <span class="c1">## Sleep</span>
-<span class="linenos">68</span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">## delay(second) </span>
-<span class="linenos">69</span>
-<span class="linenos">70</span>        <span class="c1">## Close AO</span>
-<span class="linenos">71</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AO_close</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos">72</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AO_close:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
-<span class="linenos">73</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos">74</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">67</span>        <span class="c1">## Close AO</span>
+<span class="linenos">68</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AO_close</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+<span class="linenos">69</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AO_close:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+<span class="linenos">70</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos">71</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">72</span>
+<span class="linenos">73</span>    <span class="c1">## Disconnect device</span>
+<span class="linenos">74</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
 <span class="linenos">75</span>
-<span class="linenos">76</span>    <span class="c1">## Disconnect device</span>
-<span class="linenos">77</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
-<span class="linenos">78</span>
-<span class="linenos">79</span>    <span class="c1">## Release device handle</span>
-<span class="linenos">80</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="linenos">81</span>    
-<span class="linenos">82</span>    <span class="k">return</span>
-<span class="linenos">83</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">84</span>    <span class="n">main</span><span class="p">()</span>
+<span class="linenos">76</span>    <span class="c1">## Release device handle</span>
+<span class="linenos">77</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos">78</span>    
+<span class="linenos">79</span>    <span class="k">return</span>
+<span class="linenos">80</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">81</span>    <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>

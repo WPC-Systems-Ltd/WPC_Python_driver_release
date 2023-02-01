@@ -50,9 +50,6 @@ def main():
         err = dev.DO_openPins(port, pin_index)
         print("DO_openPins:", err)
 
-        ## Wait for 1 second
-        time.sleep(1) ## delay(second) 
-
         ## Set pin0, pin1 to high, others to low.
         err =  dev.DO_writePins(port, pin_index, [1,1,0,0,0])
         print("DO_writePins:", err)
@@ -60,9 +57,7 @@ def main():
         ## Open pin5, pin6 and pin7 with digital output (1110 0000 in binary) (0xE0 in hex).
         err = dev.DO_openPins(port, 0xE0)
         print("DO_openPins:", err)
-
-        ## Wait for 1 second
-        time.sleep(1) ## delay(second) 
+) 
 
         ## Set pin7 and pin6 to high, others to low (1100 0000 in binary) (0xC0 in hex).
         err = dev.DO_writePins(port, 0xE0, 0xC0)

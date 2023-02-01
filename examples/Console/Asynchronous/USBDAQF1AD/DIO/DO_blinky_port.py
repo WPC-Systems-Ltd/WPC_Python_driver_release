@@ -60,9 +60,6 @@ async def main():
             print(f'Port: {port}, digital state = {value}')
             await asyncio.sleep(0.5)  ## delay(second)
 
-        ## Wait for 3 seconds
-        await asyncio.sleep(3)  ## delay(second)
-
         ## Close all pins with digital output
         err = await dev.DO_closePort_async(port)
         print("DO_closePort_async:", err)

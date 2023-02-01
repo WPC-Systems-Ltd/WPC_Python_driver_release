@@ -64,9 +64,6 @@ def main():
         err = dev.AO_writeOneChannel(port, 7, 4.5)
         print("AO_writeOneChannel:", err)
 
-        ## Sleep
-        time.sleep(1) ## delay(second) 
-
         ## Close AO
         err = dev.AO_close(port)
         print("AO_close:", err)

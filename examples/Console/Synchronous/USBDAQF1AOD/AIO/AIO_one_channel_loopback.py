@@ -73,10 +73,7 @@ def main():
         ## Set AO port and write data 4.5(V) in channel 7
         err = dev.AO_writeOneChannel(port, 7, 4.5)
         print("AO_writeOneChannel:", err)
-
-        ## Sleep
-        time.sleep(1) ## delay(second)
-
+  
         ## Set AI port and data acquisition
         data = dev.AI_readOnDemand(port)
         print("data :" + str(data))

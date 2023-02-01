@@ -69,10 +69,7 @@ async def main():
         ## Set AI port and start acquisition
         err = await dev.AI_start_async(port)
         print("AI_start_async:", err)
-
-        ## Wait amount of time (sec)
-        await asyncio.sleep(1)
-
+ 
         ## Set AI port and get 50 points
         data = await dev.AI_readStreaming_async(port, read_points)
 

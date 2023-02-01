@@ -62,22 +62,13 @@ async def main():
         err = await dev.Thermal_open_async(port)
         print("Thermal_open_async:", err)
 
-        ## Sleep
-        await asyncio.sleep(0.1) ## delay(second)
-
         ## Set thermo port and set over-sampling mode to no over-sampling in channel 1
         err = await dev.Thermal_setOverSampling_async(port, channel, over_sampling_mode)
         print("Thermal_setOverSampling_async:", err)
 
-        ## Sleep
-        await asyncio.sleep(0.1) ## delay(second)
-
         ## Set thermo port and set K type in channel 1
         err = await dev.Thermal_setType_async(port, channel, thermo_type)
         print("Thermal_setType_async:", err)
-
-        ## Sleep
-        await asyncio.sleep(0.1) ## delay(second)
 
         ## Set thermo port and read thermo in channel 1
         data = await dev.Thermal_readSensor_async(port, channel)

@@ -2,7 +2,7 @@
 AI - AI_N_samples_in_loop.py
 
 This example demonstrates how to get AI data in N samples mode.
-Also, it uses async loop to get AI data with 3 seconds timeout with 8 channels WifiDAQE3A.
+Also, it uses loop to get AI data with 3 seconds timeout with 8 channels WifiDAQE3A.
 First, it shows how to open AI port and configure AI parameters.
 Second, read AI streaming data .
 Last, close AI port.
@@ -79,8 +79,11 @@ def main():
         err = dev.AI_start(port)
         print("AI_start:", err)
 
-        ## Start async thread
-        loop_func(dev, port, 600, 0.05, 3)
+        ## Start thread
+        num_of_samples = 600
+        delay = 0.05
+        exit_loop_time = 3
+        loop_func(dev, port, num_of_samples, delay, exit_loop_time)
 
         ## Close port
         err = dev.AI_close(port)

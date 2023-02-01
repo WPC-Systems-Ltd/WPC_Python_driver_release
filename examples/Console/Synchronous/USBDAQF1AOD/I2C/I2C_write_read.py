@@ -78,18 +78,12 @@ def main():
         err = dev.I2C_write(I2C_port, device_address, [word_address, 0xAA, 0x55, 0xAA, 0x55])
         print("I2C_write:", err)
 
-        ## Sleep
-        time.sleep(0.1) ## delay(second) 
-
         '''
         Read data via I2C
         '''
 
         err = dev.I2C_write(I2C_port, device_address, [word_address])
         print("I2C_write:", err)
-
-        ## Sleep
-        time.sleep(0.1) ## delay(second) 
 
         data_list = dev.I2C_read(I2C_port, device_address, 4)
         print("read data :", data_list)

@@ -59,10 +59,7 @@ async def main():
         ## Set pin7 and pin6 to high, others to low (1100 0000 in binary) (0xC0 in hex).
         err = await dev.DO_writePort_async(port, 0xC0)
         print("DO_writePort_async:", err)
-
-        ## Wait for 1 second
-        await asyncio.sleep(1)  ## delay(second)
-
+        
         ## Close all pins with digital output
         err = await dev.DO_closePort_async(port)
         print("DO_closePort_async:", err)

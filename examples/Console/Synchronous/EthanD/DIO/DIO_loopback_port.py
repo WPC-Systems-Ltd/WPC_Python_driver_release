@@ -62,9 +62,6 @@ def main():
         ## Read all pins state
         state_list = dev.DI_readPort(port_DI)
         print(state_list)
- 
-        ## Wait for 1 seconds
-        time.sleep(1) ## delay(second)
 
         ## Close all pins with digital output
         err = dev.DO_closePort(port_DO)

@@ -54,9 +54,6 @@ async def main():
         err = await dev.Thermal_open(port)
         print("Thermal_open:", err)
 
-        ## Wait for 0.1 seconds
-        time.sleep(0.1) ## delay(second)
-
         ## Set RTD port and get status in channel 0
         status = await dev.Thermal_getStatus(port, channel_0)
         print("Thermal_getStatus status in channel_0:", status)

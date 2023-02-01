@@ -67,8 +67,10 @@ async def main():
         print("AI_setMode_async:", err)
 
         ## Set AI port and start async thread
-        await loop_func(dev, port, 1, 3)
-
+        delay = 0.05
+        exit_loop_time = 3
+        await loop_func(dev, port, delay, exit_loop_time)
+ 
         ## Close port
         err = await dev.AI_close_async(port)
         print("AI_close_async:", err)

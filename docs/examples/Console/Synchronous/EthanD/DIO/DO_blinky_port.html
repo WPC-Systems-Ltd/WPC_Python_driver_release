@@ -139,7 +139,7 @@
 <span class="linenos">23</span>
 <span class="linenos">24</span><span class="kn">from</span> <span class="nn">wpcsys</span> <span class="kn">import</span> <span class="n">pywpc</span>
 <span class="linenos">25</span>
-<span class="linenos">26</span><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos">26</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
 <span class="linenos">27</span>    <span class="c1">## Get Python driver version</span>
 <span class="linenos">28</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_FULL_NAME</span><span class="si">}</span><span class="s1"> - Version </span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="linenos">29</span>
@@ -176,24 +176,21 @@
 <span class="linenos">60</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Port: </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s1">, digital state = </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="linenos">61</span>            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>  <span class="c1">## delay(second)</span>
 <span class="linenos">62</span>
-<span class="linenos">63</span>        <span class="c1">## Wait for 3 seconds</span>
-<span class="linenos">64</span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1">## delay(second)</span>
-<span class="linenos">65</span>
-<span class="linenos">66</span>        <span class="c1">## Close all pins with digital output</span>
-<span class="linenos">67</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_closePort</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos">68</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_closePort:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
-<span class="linenos">69</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos">70</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">63</span>        <span class="c1">## Close all pins with digital output</span>
+<span class="linenos">64</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_closePort</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+<span class="linenos">65</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_closePort:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+<span class="linenos">66</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos">67</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">68</span>
+<span class="linenos">69</span>    <span class="c1">## Disconnect device</span>
+<span class="linenos">70</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
 <span class="linenos">71</span>
-<span class="linenos">72</span>    <span class="c1">## Disconnect device</span>
-<span class="linenos">73</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+<span class="linenos">72</span>    <span class="c1">## Release device handle</span>
+<span class="linenos">73</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="linenos">74</span>
-<span class="linenos">75</span>    <span class="c1">## Release device handle</span>
-<span class="linenos">76</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="linenos">77</span>
-<span class="linenos">78</span>    <span class="k">return</span>
-<span class="linenos">79</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">80</span>    <span class="n">main</span><span class="p">()</span>
+<span class="linenos">75</span>    <span class="k">return</span>
+<span class="linenos">76</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">77</span>    <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>

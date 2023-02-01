@@ -23,7 +23,7 @@ import time
 
 from wpcsys import pywpc
 
-async def main():
+def main():
     ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
 
@@ -62,23 +62,14 @@ async def main():
         err = dev.Thermal_open(port)
         print("Thermal_open:", err)
 
-        ## Wait for 0.1 seconds
-        time.sleep(0.1) ## delay(second)
-
         ## Set thermo port and set over-sampling mode to no over-sampling in channel 1
         err = dev.Thermal_setOverSampling(port, channel, over_sampling_mode)
         print("Thermal_setOverSampling:", err)
 
-        ## Wait for 0.1 seconds
-        time.sleep(0.1) ## delay(second)
-
         ## Set thermo port and set K type in channel 1
         err = dev.Thermal_setType(port, channel, thermo_type)
         print("Thermal_setType:", err)
-
-        ## Wait for 0.1 seconds
-        time.sleep(0.1) ## delay(second)
-
+        
         ## Set thermo port and read thermo in channel 1
         data = dev.Thermal_readSensor(port, channel)
         print("Read channel 1 data:", data, "°C")

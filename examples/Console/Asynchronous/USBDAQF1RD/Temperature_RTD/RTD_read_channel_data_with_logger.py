@@ -60,9 +60,6 @@ async def main():
         err = await dev.Thermal_open_async(port)
         print("Thermal_open_async:", err)
 
-        ## Sleep
-        await asyncio.sleep(0.1) ## delay(second)
-
         ## Set RTD port and read RTD in channel 0
         data0 = await dev.Thermal_readSensor_async(port, channel_0)
         print("Read channel 0 data:", data0, "°C")
