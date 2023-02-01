@@ -1,6 +1,0 @@
-AI on demand once
-=================
-
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1AOD/AI/AI_on_demand_once.py
-   :language: python
-   :linenos:

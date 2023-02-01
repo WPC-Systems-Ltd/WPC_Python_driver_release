@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Overview &mdash; WPC Python driver 1.1.3 documentation</title>
+  <title>Overview &mdash; WPC Python driver 2.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.1.3
+                2.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -51,8 +51,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">EXAMPLE CODES</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="examples_console_Synchronous.html">Example Codes - Console (sync)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples_console_Asynchronous.html">Example Codes - Console (async)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples_GUI.html">Example Codes - GUI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples_console.html">Example Codes - Console</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">APPENDICES</span></p>
 <ul>
@@ -74,8 +75,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-      <li>Overview</li>
+      <li><a href="#" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Overview</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -136,7 +137,7 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_NAME</span>
 <span class="go">pywpc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pywpc</span><span class="o">.</span><span class="n">__version__</span>
-<span class="go">1.1.3</span>
+<span class="go">2.0.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pywpc</span><span class="o">.</span><span class="n">HANDLE_LIST</span>
 <span class="go">[&#39;DeviceFinder&#39;, &#39;DataLogger&#39;, &#39;WifiDAQE3A&#39;, &#39;EMotion&#39;, &#39;EthanA&#39;, &#39;EthanD&#39;, &#39;EthanL&#39;, &#39;EthanO&#39;, &#39;USBDAQF1D&#39;, &#39;USBDAQF1DSNK&#39;, &#39;USBDAQF1AD&#39;, &#39;USBDAQF1AOD&#39;, &#39;USBDAQF1TD&#39;, &#39;USBDAQF1RD&#39;, &#39;USBDAQF1CD&#39;]</span>
 </pre></div>
@@ -147,20 +148,20 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <ul class="simple">
 <li><p>Install</p></li>
 </ul>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install wpcsys
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>wpcsys
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Upgrade</p></li>
 </ul>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install --upgrade wpcsys
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>wpcsys
 </pre></div>
 </div>
 </section>
 <section id="requirements">
 <h1>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h1>
 <p>Python 3.8 or later with all <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/requirements.txt">requirements.txt</a> dependencies installed, including PyQt5, PyQt5Designer, qasync and so on.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install -r requirements.txt
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </pre></div>
 </div>
 </section>
@@ -265,7 +266,7 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <tr class="row-odd"><td><p>Ethan-L</p></td>
 <td></td>
 <td></td>
-<td><p>1</p></td>
+<td></td>
 <td><p>0</p></td>
 <td></td>
 <td></td>

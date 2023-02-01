@@ -14,10 +14,11 @@
    :hidden:
    :maxdepth: 2
    :caption: EXAMPLE CODES
-
+ 
+   examples_console_Synchronous
+   examples_console_Asynchronous
    examples_GUI
-   examples_console
-
+   
 .. toctree::
    :hidden:
    :maxdepth: 2

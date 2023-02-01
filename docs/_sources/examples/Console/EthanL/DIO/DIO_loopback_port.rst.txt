@@ -1,6 +1,0 @@
-DIO loopback port
-=================
-
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/EthanL/DIO/DIO_loopback_port.py
-   :language: python
-   :linenos:

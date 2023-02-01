@@ -1,0 +1,6 @@
+System get pin mode
+===================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/USBDAQF1DSNK/System_USB/get_pin_mode.py
+   :language: python
+   :linenos:

@@ -1,6 +1,0 @@
-AI continuous
-=============
-
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1AD/AI/AI_continuous.py
-   :language: python
-   :linenos:

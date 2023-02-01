@@ -1,0 +1,6 @@
+Motion 2axis circular interpo
+=============================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/EMotion/Motion/Motion_2axis_circular_interpolation.py
+   :language: python
+   :linenos:

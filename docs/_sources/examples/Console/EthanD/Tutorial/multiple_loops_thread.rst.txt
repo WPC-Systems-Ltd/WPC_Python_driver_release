@@ -1,6 +1,0 @@
-Tutorial multiple loops thread
-==============================
-
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/EthanD/Tutorial/multiple_loops_thread.py
-   :language: python
-   :linenos:

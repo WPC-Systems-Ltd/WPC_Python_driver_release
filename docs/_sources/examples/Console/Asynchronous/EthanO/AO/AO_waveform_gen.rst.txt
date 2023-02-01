@@ -1,0 +1,6 @@
+AO waveform generation
+======================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/EthanO/AO/AO_waveform_gen.py
+   :language: python
+   :linenos:

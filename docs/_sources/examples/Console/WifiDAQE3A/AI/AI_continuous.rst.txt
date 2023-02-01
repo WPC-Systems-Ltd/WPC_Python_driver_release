@@ -1,6 +1,0 @@
-AI continuous
-=============
-
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/WifiDAQE3A/AI/AI_continuous.py
-   :language: python
-   :linenos:
