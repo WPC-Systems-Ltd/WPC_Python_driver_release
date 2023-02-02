@@ -39,34 +39,35 @@ async def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    try:
-        ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo()
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
-
+    try: 
         ## Parameters setting
         port = 1
         channel_0 = 0
         channel_1 = 1
+        timeout = 3  ## second
 
+        ## Get firmware model & version
+        driver_info = await dev.Sys_getDriverInfo(timeout)
+        print("Model name:" + driver_info[0])
+        print("Firmware version:" + driver_info[-1])
+ 
         ## Open RTD
-        err = await dev.Thermal_open(port)
+        err = await dev.Thermal_open(port, timeout)
         print("Thermal_open:", err)
 
         ## Set RTD port and get status in channel 0
-        status = await dev.Thermal_getStatus(port, channel_0)
+        status = await dev.Thermal_getStatus(port, channel_0, timeout)
         print("Thermal_getStatus status in channel_0:", status)
 
         ## Wait for 0.1 seconds
         time.sleep(0.1) ## delay(second)
 
         ## Set RTD port and get status in channel 1
-        status = await dev.Thermal_getStatus(port, channel_1)
+        status = await dev.Thermal_getStatus(port, channel_1, timeout)
         print("Thermal_getStatus status in channel_1:", status)
 
         ## Close RTD
-        err = await dev.Thermal_close(port)
+        err = await dev.Thermal_close(port, timeout)
         print("Thermal_close:", err)
     except Exception as err:
         pywpc.printGenericError(err)

@@ -37,14 +37,17 @@ def main():
 
     ## Perform DAQ basic information
     try:
+        ## Parameters setting
+        timeout = 3  ## second
+
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo()
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name:" + driver_info[0])
         print("Firmware version:" + driver_info[-1])
 
         ## Get serial number & RTC Time
-        print(f'Serial number = ' + dev.Sys_getSerialNumber())
-        print(f'RTC data time = ' + dev.Sys_getRTC())
+        print(f'Serial number = ' + dev.Sys_getSerialNumber(timeout))
+        print(f'RTC data time = ' + dev.Sys_getRTC(timeout))
 
     except Exception as err:
         pywpc.printGenericError(err)

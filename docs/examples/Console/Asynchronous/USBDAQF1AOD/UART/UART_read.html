@@ -18,7 +18,6 @@
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
-        <script src="../../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -120,9 +119,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../../index.html" class="icon icon-home"></a></li>
-          <li class="breadcrumb-item"><a href="../../../../../examples_console_Asynchronous.html">Example Codes - Console (async)</a></li>
-      <li class="breadcrumb-item active">UART read</li>
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../../examples_console_Asynchronous.html">Example Codes - Console (async)</a> &raquo;</li>
+      <li>UART read</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -204,7 +203,7 @@
 <span class="linenos"> 69</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_setNumStopBit_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">stop_bit_mode</span><span class="p">)</span>
 <span class="linenos"> 70</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UART_setNumStopBit_async:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
 <span class="linenos"> 71</span>
-<span class="linenos"> 72</span>        <span class="c1">## Sleep</span>
+<span class="linenos"> 72</span>        <span class="c1">## Wait for 10 seconds to receive data from other devices</span>
 <span class="linenos"> 73</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1">## delay(second)</span>
 <span class="linenos"> 74</span>
 <span class="linenos"> 75</span>        <span class="c1">## Set UART port and read 20 bytes</span>

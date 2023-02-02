@@ -36,26 +36,27 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    try:
-        ## Get Firmware model & version
-        driver_info = dev.Sys_getDriverInfo()
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
-
+    try: 
         ## Parameters setting
         port  = 1
         speed = 0 ## 0 = 125 KHz, 1 = 250 kHz, 2 = 500 kHz, 3 = 1 MHz
+        timeout = 3  ## second
 
+        ## Get Firmware model & version
+        driver_info = dev.Sys_getDriverInfo(timeout)
+        print("Model name:" + driver_info[0])
+        print("Firmware version:" + driver_info[-1])
+        
         ## Open CAN
-        err = dev.CAN_open(port)
+        err = dev.CAN_open(port, timeout)
         print("CAN_open:", err)
 
         ## Set CAN port and set speed to 0
-        err = dev.CAN_setSpeed(port, speed)
+        err = dev.CAN_setSpeed(port, speed, timeout)
         print("CAN_setSpeed:", err)
 
         ## Set CAN port and start CAN
-        err = dev.CAN_start(port)
+        err = dev.CAN_start(port, timeout)
         print("CAN_start:", err)
 
         ## Read 5 frames for 1000 times
@@ -68,11 +69,11 @@ def main():
                 time.Sleep(0.01)
                 
         ## Set CAN port and stop CAN
-        err = dev.CAN_stop(port)
+        err = dev.CAN_stop(port, timeout)
         print("CAN_stop:", err)
 
         ## Close CAN
-        err = dev.CAN_close(port)
+        err = dev.CAN_close(port, timeout)
         print("CAN_close:", err)
     except Exception as err:
         pywpc.printGenericError(err)

@@ -18,7 +18,6 @@
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
-        <script src="../../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -110,9 +109,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../../index.html" class="icon icon-home"></a></li>
-          <li class="breadcrumb-item"><a href="../../../../../examples_console_Synchronous.html">Example Codes - Console (sync)</a></li>
-      <li class="breadcrumb-item active">TC read channel data</li>
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../../examples_console_Synchronous.html">Example Codes - Console (sync)</a> &raquo;</li>
+      <li>TC read channel data</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -162,49 +161,50 @@
 <span class="linenos">37</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="linenos">38</span>
 <span class="linenos">39</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos">40</span>        <span class="c1">## Get firmware model &amp; version</span>
-<span class="linenos">41</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo</span><span class="p">()</span>
-<span class="linenos">42</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name:&quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="linenos">43</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version:&quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="linenos">44</span>
-<span class="linenos">45</span>        <span class="c1">## Parameters setting</span>
-<span class="linenos">46</span>        <span class="n">port</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="linenos">47</span>        <span class="n">channel</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="linenos">48</span>        <span class="n">over_sampling_mode</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">## 0:1 sample, 1:2 samples, 2:4 sample, 3:8 samples, 4:16 samples</span>
-<span class="linenos">49</span>        <span class="n">thermo_type</span> <span class="o">=</span> <span class="mi">3</span>         <span class="c1">## 0:B type, 1:E type, 2:J type, 3:K type</span>
-<span class="linenos">50</span>                                <span class="c1">## 4:N type, 5:R type, 6:S type, 7:T type</span>
-<span class="linenos">51</span>
-<span class="linenos">52</span>        <span class="c1">## Open thermo</span>
-<span class="linenos">53</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_open</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos">54</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thermal_open:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
-<span class="linenos">55</span>
-<span class="linenos">56</span>        <span class="c1">## Set thermo port and set over-sampling mode to no over-sampling in channel 1</span>
-<span class="linenos">57</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_setOverSampling</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">over_sampling_mode</span><span class="p">)</span>
-<span class="linenos">58</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thermal_setOverSampling:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
-<span class="linenos">59</span>
-<span class="linenos">60</span>        <span class="c1">## Set thermo port and set K type in channel 1</span>
-<span class="linenos">61</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_setType</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">thermo_type</span><span class="p">)</span>
-<span class="linenos">62</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thermal_setType:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
-<span class="linenos">63</span>
-<span class="linenos">64</span>        <span class="c1">## Set thermo port and read thermo in channel 1</span>
-<span class="linenos">65</span>        <span class="n">data</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_readSensor</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">channel</span><span class="p">)</span>
-<span class="linenos">66</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Read channel 1 data:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="s2">&quot;°C&quot;</span><span class="p">)</span>
-<span class="linenos">67</span>
-<span class="linenos">68</span>        <span class="c1">## Close thermo</span>
-<span class="linenos">69</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_close</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos">70</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thermal_close:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
-<span class="linenos">71</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos">72</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="linenos">73</span>
-<span class="linenos">74</span>    <span class="c1">## Disconnect device</span>
-<span class="linenos">75</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
-<span class="linenos">76</span>
-<span class="linenos">77</span>    <span class="c1">## Release device handle</span>
-<span class="linenos">78</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="linenos">79</span>
-<span class="linenos">80</span>    <span class="k">return</span>
-<span class="linenos">81</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">82</span>    <span class="n">main</span><span class="p">()</span>
+<span class="linenos">40</span>        <span class="c1">## Parameters setting</span>
+<span class="linenos">41</span>        <span class="n">port</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">42</span>        <span class="n">channel</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">43</span>        <span class="n">over_sampling_mode</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">## 0:1 sample, 1:2 samples, 2:4 sample, 3:8 samples, 4:16 samples</span>
+<span class="linenos">44</span>        <span class="n">thermo_type</span> <span class="o">=</span> <span class="mi">3</span>         <span class="c1">## 0:B type, 1:E type, 2:J type, 3:K type</span>
+<span class="linenos">45</span>                                <span class="c1">## 4:N type, 5:R type, 6:S type, 7:T type</span>
+<span class="linenos">46</span>        <span class="n">timeout</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1">## second</span>
+<span class="linenos">47</span>
+<span class="linenos">48</span>        <span class="c1">## Get firmware model &amp; version</span>
+<span class="linenos">49</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">50</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name:&quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="linenos">51</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version:&quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos">52</span> 
+<span class="linenos">53</span>        <span class="c1">## Open thermo</span>
+<span class="linenos">54</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_open</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">55</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thermal_open:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+<span class="linenos">56</span>
+<span class="linenos">57</span>        <span class="c1">## Set thermo port and set over-sampling mode to no over-sampling in channel 1</span>
+<span class="linenos">58</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_setOverSampling</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">over_sampling_mode</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">59</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thermal_setOverSampling:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+<span class="linenos">60</span>
+<span class="linenos">61</span>        <span class="c1">## Set thermo port and set K type in channel 1</span>
+<span class="linenos">62</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_setType</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">thermo_type</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">63</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thermal_setType:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+<span class="linenos">64</span>
+<span class="linenos">65</span>        <span class="c1">## Set thermo port and read thermo in channel 1</span>
+<span class="linenos">66</span>        <span class="n">data</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_readSensor</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">67</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Read channel 1 data:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="s2">&quot;°C&quot;</span><span class="p">)</span>
+<span class="linenos">68</span>
+<span class="linenos">69</span>        <span class="c1">## Close thermo</span>
+<span class="linenos">70</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Thermal_close</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">71</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thermal_close:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+<span class="linenos">72</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos">73</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">74</span>
+<span class="linenos">75</span>    <span class="c1">## Disconnect device</span>
+<span class="linenos">76</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+<span class="linenos">77</span>
+<span class="linenos">78</span>    <span class="c1">## Release device handle</span>
+<span class="linenos">79</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos">80</span>
+<span class="linenos">81</span>    <span class="k">return</span>
+<span class="linenos">82</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">83</span>    <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>

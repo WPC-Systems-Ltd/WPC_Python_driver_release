@@ -18,7 +18,6 @@
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
-        <script src="../../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -114,9 +113,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../../index.html" class="icon icon-home"></a></li>
-          <li class="breadcrumb-item"><a href="../../../../../examples_console_Asynchronous.html">Example Codes - Console (async)</a></li>
-      <li class="breadcrumb-item active">SPI read and write</li>
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../../examples_console_Asynchronous.html">Example Codes - Console (async)</a> &raquo;</li>
+      <li>SPI read and write</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -171,7 +170,7 @@
 <span class="linenos"> 42</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name:&quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="linenos"> 43</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version:&quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 <span class="linenos"> 44</span>
-<span class="linenos"> 45</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos"> 45</span>        <span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos"> 46</span><span class="sd">        Take 25LC640 for example</span>
 <span class="linenos"> 47</span><span class="sd">        &#39;&#39;&#39;</span>
 <span class="linenos"> 48</span>
@@ -190,7 +189,7 @@
 <span class="linenos"> 61</span>        <span class="n">READ</span> <span class="o">=</span> <span class="mh">0x03</span>
 <span class="linenos"> 62</span>        <span class="n">WREN</span> <span class="o">=</span> <span class="mh">0x06</span>
 <span class="linenos"> 63</span>
-<span class="linenos"> 64</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos"> 64</span>        <span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos"> 65</span><span class="sd">        Open DO pins &amp; SPI port &amp; set CS(pin0) to high</span>
 <span class="linenos"> 66</span><span class="sd">        &#39;&#39;&#39;</span>
 <span class="linenos"> 67</span>
@@ -206,7 +205,7 @@
 <span class="linenos"> 77</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins_async</span><span class="p">(</span><span class="n">DO_port</span><span class="p">,</span> <span class="n">DO_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="linenos"> 78</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_writePins_async:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
 <span class="linenos"> 79</span>
-<span class="linenos"> 80</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos"> 80</span>        <span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos"> 81</span><span class="sd">        Set SPI parameter</span>
 <span class="linenos"> 82</span><span class="sd">        &#39;&#39;&#39;</span>
 <span class="linenos"> 83</span>
@@ -226,7 +225,7 @@
 <span class="linenos"> 97</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">SPI_setMode_async</span><span class="p">(</span><span class="n">SPI_port</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
 <span class="linenos"> 98</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SPI_setMode_async:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
 <span class="linenos"> 99</span>
-<span class="linenos">100</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos">100</span>        <span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos">101</span><span class="sd">        Write data via SPI</span>
 <span class="linenos">102</span><span class="sd">        &#39;&#39;&#39;</span>
 <span class="linenos">103</span>
@@ -242,7 +241,7 @@
 <span class="linenos">113</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins_async</span><span class="p">(</span><span class="n">DO_port</span><span class="p">,</span> <span class="n">DO_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="linenos">114</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_writePins_async:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
 <span class="linenos">115</span>
-<span class="linenos">116</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos">116</span>        <span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos">117</span><span class="sd">        Write data via SPI</span>
 <span class="linenos">118</span><span class="sd">        &#39;&#39;&#39;</span>
 <span class="linenos">119</span>
@@ -258,7 +257,7 @@
 <span class="linenos">129</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins_async</span><span class="p">(</span><span class="n">DO_port</span><span class="p">,</span> <span class="n">DO_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="linenos">130</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_writePins_async:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
 <span class="linenos">131</span>
-<span class="linenos">132</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos">132</span>        <span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos">133</span><span class="sd">        Read data via SPI</span>
 <span class="linenos">134</span><span class="sd">        &#39;&#39;&#39;</span>
 <span class="linenos">135</span>
@@ -275,7 +274,7 @@
 <span class="linenos">146</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins_async</span><span class="p">(</span><span class="n">DO_port</span><span class="p">,</span> <span class="n">DO_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="linenos">147</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_writePins_async:&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
 <span class="linenos">148</span>
-<span class="linenos">149</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos">149</span>        <span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos">150</span><span class="sd">        Close DO pins and SPI port</span>
 <span class="linenos">151</span><span class="sd">        &#39;&#39;&#39;</span>
 <span class="linenos">152</span>

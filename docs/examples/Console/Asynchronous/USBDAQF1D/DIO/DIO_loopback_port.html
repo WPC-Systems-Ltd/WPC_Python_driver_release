@@ -18,7 +18,6 @@
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
-        <script src="../../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -111,9 +110,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../../index.html" class="icon icon-home"></a></li>
-          <li class="breadcrumb-item"><a href="../../../../../examples_console_Asynchronous.html">Example Codes - Console (async)</a></li>
-      <li class="breadcrumb-item active">DIO loopback port</li>
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../../examples_console_Asynchronous.html">Example Codes - Console (async)</a> &raquo;</li>
+      <li>DIO loopback port</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -187,7 +186,7 @@
 <span class="linenos">61</span>
 <span class="linenos">62</span>        <span class="c1">## Read all pins state</span>
 <span class="linenos">63</span>        <span class="n">state_list</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DI_readPort_async</span><span class="p">(</span><span class="n">port_DI</span><span class="p">)</span>
-<span class="linenos">64</span>        <span class="nb">print</span><span class="p">(</span><span class="n">state_list</span><span class="p">)</span>
+<span class="linenos">64</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;state_list</span><span class="si">{</span><span class="n">state_list</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">65</span>
 <span class="linenos">66</span>        <span class="c1">## Close all pins with digital output</span>
 <span class="linenos">67</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_closePort_async</span><span class="p">(</span><span class="n">port_DO</span><span class="p">)</span>

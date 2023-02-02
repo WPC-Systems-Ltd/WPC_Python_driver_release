@@ -48,9 +48,6 @@ async def main():
             pin_mode = await dev.Sys_getPinModeInPort_async(i)
             print("pin_mode", pin_mode)
 
-            ## Wait for 0.5 seconds
-            await asyncio.sleep(0.5)  ## delay(second)
-            
     except Exception as err:
         pywpc.printGenericError(err)
 

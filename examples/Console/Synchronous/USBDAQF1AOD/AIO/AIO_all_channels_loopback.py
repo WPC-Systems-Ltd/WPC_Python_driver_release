@@ -37,41 +37,42 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    try:
-        ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo()
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
-
+    try: 
         ## Parameters setting
         port = 0
+        timeout = 3  ## second
 
+        ## Get firmware model & version
+        driver_info = dev.Sys_getDriverInfo(timeout)
+        print("Model name:" + driver_info[0])
+        print("Firmware version:" + driver_info[-1])
+        
         ## Open AI
-        err = dev.AI_open(port)
+        err = dev.AI_open(port, timeout)
         print("AI_open:", err)
 
         ## Open AO
-        err = dev.AO_open(port)
+        err = dev.AO_open(port, timeout)
         print("AO_open:", err)
 
         ## Set AI port and data acquisition
-        data = dev.AI_readOnDemand(port)
+        data = dev.AI_readOnDemand(port, timeout)
         print("data :" + str(data))
 
         ## Set AO port and write data simultaneously
-        err = dev.AO_writeAllChannels(port, [0,1,2,3,4,5,4,3])
+        err = dev.AO_writeAllChannels(port, [0,1,2,3,4,5,4,3], timeout)
         print("AO_writeAllChannels:", err)
   
         ## Set AI port and data acquisition
-        data = dev.AI_readOnDemand(port)
+        data = dev.AI_readOnDemand(port, timeout)
         print("data :" + str(data))
 
         ## Close AI
-        err = dev.AI_close(port)
+        err = dev.AI_close(port, timeout)
         print("AI_close:", err)
 
         ## Close AO
-        err = dev.AO_close(port)
+        err = dev.AO_close(port, timeout)
         print("AO_close:", err)
     except Exception as err:
         pywpc.printGenericError(err)

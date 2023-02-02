@@ -46,33 +46,34 @@ def main():
         pywpc.printGenericError(err)
 
     try:
-        ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo()
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
-
         ## Parameters setting
         port = 1
         channel_0 = 0
         channel_1 = 1
+        timeout = 3  ## second
 
+        ## Get firmware model & version
+        driver_info = dev.Sys_getDriverInfo(timeout)
+        print("Model name:" + driver_info[0])
+        print("Firmware version:" + driver_info[-1])
+ 
         ## Open RTD
-        err = dev.Thermal_open(port)
+        err = dev.Thermal_open(port, timeout)
         print("Thermal_open:", err)
 
         ## Set RTD port and read RTD in channel 0
-        data0 = dev.Thermal_readSensor(port, channel_0)
+        data0 = dev.Thermal_readSensor(port, channel_0, timeout)
         print("Read channel 0 data:", data0, "°C")
 
         ## Set RTD port and read RTD in channel 1
-        data1 = dev.Thermal_readSensor(port, channel_1)
+        data1 = dev.Thermal_readSensor(port, channel_1, timeout)
         print("Read channel 1 data:", data1, "°C")
 
         ## Write data into CSV file
         dev_logger.Logger_writeList([data0, data1])
 
         ## Close RTD
-        err = dev.Thermal_close(port)
+        err = dev.Thermal_close(port, timeout)
         print("Thermal_close:", err)
 
         ## Close File

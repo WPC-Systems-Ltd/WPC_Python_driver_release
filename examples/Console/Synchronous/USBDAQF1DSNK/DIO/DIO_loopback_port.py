@@ -37,38 +37,39 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    try:
-        ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo()
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
-
+    try: 
         ## Parameters setting
         port_DO = 0
         port_DI = 1
+        timeout = 3  ## second
+        
+        ## Get firmware model & version
+        driver_info = dev.Sys_getDriverInfo(timeout)
+        print("Model name:" + driver_info[0])
+        print("Firmware version:" + driver_info[-1])
 
         ## Open all pins with digital output
-        err = dev.DO_openPort(port_DO)
+        err = dev.DO_openPort(port_DO, timeout)
         print("DO_openPort:", err)
 
         ## Open all pins with digital input
-        err = dev.DI_openPort(port_DI)
+        err = dev.DI_openPort(port_DI, timeout)
         print("DI_openPort:", err)
 
         ## Set pin0, pin1 and pin2 to high, others to low
-        err = dev.DO_writePort(port_DO, [0,0,0,1,0,0,0,0])
+        err = dev.DO_writePort(port_DO, [0,0,0,1,0,0,0,0], timeout)
         print("DO_writePort:", err)
 
         ## Read all pins state
-        state_list = dev.DI_readPort(port_DI)
-        print(state_list)
+        state_list = dev.DI_readPort(port_DI, timeout)
+        print(f"state_list{state_list}")
 
         ## Close all pins with digital output
-        err = dev.DO_closePort(port_DO)
+        err = dev.DO_closePort(port_DO, timeout)
         print("DO_closePort:", err)
 
         ## Close all pins with digital input
-        err = dev.DI_closePort(port_DI)
+        err = dev.DI_closePort(port_DI, timeout)
         print("DI_closePort:", err)
     except Exception as err:
         pywpc.printGenericError(err)

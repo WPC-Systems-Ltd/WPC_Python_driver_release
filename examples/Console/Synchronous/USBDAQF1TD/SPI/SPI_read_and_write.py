@@ -36,16 +36,7 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    try:
-        ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo()
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
-
-        '''
-        Take 25LC640 for example
-        '''
-
+    try:  
         ## Parameters setting
         datasize = 0  ## Mode: 0 = 8-bit data, 1 = 16-bit data.
         first_bit = 0 ## Mode: 0 = MSB first, 1 = LSB first.
@@ -55,6 +46,7 @@ def main():
         SPI_port = 1
         DO_port = 0
         DO_index = [0] ## CS pin
+        timeout = 3  ## second
 
         WRITE = 0x02
         DUMMY = 0x01
@@ -62,11 +54,20 @@ def main():
         WREN = 0x06
 
         '''
+        Take 25LC640 for example
+        '''
+        
+        ## Get firmware model & version
+        driver_info = dev.Sys_getDriverInfo(timeout)
+        print("Model name:" + driver_info[0])
+        print("Firmware version:" + driver_info[-1])
+
+        '''
         Open DO pins & SPI port & set CS(pin0) to high
         '''
 
         ## Open pin0 with digital output
-        err = dev.DO_openPins(DO_port, DO_index)
+        err = dev.DO_openPins(DO_port, DO_index, timeout)
         print("DO_openPins:", err)
 
         ## Open SPI
@@ -74,7 +75,7 @@ def main():
         print("SPI_open:", err)
 
         ## Set CS(pin0) to high
-        err = dev.DO_writePins(DO_port, DO_index, [1])
+        err = dev.DO_writePins(DO_port, DO_index, [1], timeout)
         print("DO_writePins:", err)
 
         '''
@@ -82,19 +83,19 @@ def main():
         '''
 
         ## Set SPI port and set datasize to 8-bits data
-        err = dev.SPI_setDataSize(SPI_port, datasize)
+        err = dev.SPI_setDataSize(SPI_port, datasize, timeout)
         print("SPI_setDataSize:", err)
 
         ## Set SPI port and set first_bit to MSB first
-        err = dev.SPI_setFirstBit(SPI_port, first_bit)
+        err = dev.SPI_setFirstBit(SPI_port, first_bit, timeout)
         print("SPI_setFirstBit:", err)
 
         ## Set SPI port and set prescaler to 64
-        err = dev.SPI_setPrescaler(SPI_port, prescaler)
+        err = dev.SPI_setPrescaler(SPI_port, prescaler, timeout)
         print("SPI_setPrescaler:", err)
 
         ## Set SPI port and set CPOL and CPHA to 0 (mode 0)
-        err = dev.SPI_setMode(SPI_port, mode)
+        err = dev.SPI_setMode(SPI_port, mode, timeout)
         print("SPI_setMode:", err)
 
         '''
@@ -102,15 +103,15 @@ def main():
         '''
 
         ## Set CS(pin0) to low
-        err = dev.DO_writePins(DO_port, DO_index, [0])
+        err = dev.DO_writePins(DO_port, DO_index, [0], timeout)
         print("DO_writePins:", err)
 
         ## Write WREN byte
-        err = dev.SPI_write(SPI_port, [WREN])
+        err = dev.SPI_write(SPI_port, [WREN], timeout)
         print("SPI_write:", err)
 
         ## Set CS(pin0) to high
-        err = dev.DO_writePins(DO_port, DO_index, [1])
+        err = dev.DO_writePins(DO_port, DO_index, [1], timeout)
         print("DO_writePins:", err)
 
         '''
@@ -118,15 +119,15 @@ def main():
         '''
 
         ## Set CS(pin0) to low
-        err = dev.DO_writePins(DO_port, DO_index, [0])
+        err = dev.DO_writePins(DO_port, DO_index, [0], timeout)
         print("DO_writePins:", err)
 
         ## Write data byte 0x0A in to address 0x0001
-        err = dev.SPI_write(SPI_port, [WRITE, 0x00, 0x01, 0x0A])
+        err = dev.SPI_write(SPI_port, [WRITE, 0x00, 0x01, 0x0A], timeout)
         print("SPI_write:", err)
 
         ## Set CS(pin0) to high
-        err = dev.DO_writePins(DO_port, DO_index, [1])
+        err = dev.DO_writePins(DO_port, DO_index, [1], timeout)
         print("DO_writePins:", err)
 
         '''
@@ -134,16 +135,16 @@ def main():
         '''
 
         ## Set CS(pin0) to low
-        err = dev.DO_writePins(DO_port, DO_index, [0])
+        err = dev.DO_writePins(DO_port, DO_index, [0], timeout)
         print("DO_writePins:", err)
 
         ## Read data byte 0x0A from address 0x0001
-        data = dev.SPI_readAndWrite(SPI_port, [READ, 0x00, 0x01, DUMMY])
+        data = dev.SPI_readAndWrite(SPI_port, [READ, 0x00, 0x01, DUMMY], timeout)
         data = ['{:02x}'.format(value) for value in data]
         print("read data :", data)
 
         ## Set CS(pin0) to high
-        err = dev.DO_writePins(DO_port, DO_index, [1])
+        err = dev.DO_writePins(DO_port, DO_index, [1], timeout)
         print("DO_writePins:", err)
 
         '''
@@ -151,11 +152,11 @@ def main():
         '''
 
         ## Close SPI
-        err = dev.SPI_close(SPI_port)
+        err = dev.SPI_close(SPI_port, timeout)
         print("SPI_close:", err)
 
         ## Close pin0 with digital output
-        err = dev.DO_closePins(DO_port, DO_index)
+        err = dev.DO_closePins(DO_port, DO_index, timeout)
         print("DO_closePins:", err)
     except Exception as err:
         pywpc.printGenericError(err)

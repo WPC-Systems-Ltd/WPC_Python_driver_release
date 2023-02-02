@@ -37,30 +37,31 @@ def main():
         pywpc.printGenericError(err)
 
     try:
+        ## Parameters setting
+        port = 0
+        timeout = 3  ## second
+
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo()
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name:" + driver_info[0])
         print("Firmware version:" + driver_info[-1])
 
-        ## Parameters setting
-        port = 0
-
         ## Open all pins and set it to digital output
-        err = dev.DO_openPort(port)
+        err = dev.DO_openPort(port, timeout)
         print("DO_openPort:", err)
 
         ## Set pin0, pin3 and pin4 to high, others to low
-        err = dev.DO_writePort(port, [0,0,0,1,1,0,0,1])
+        err = dev.DO_writePort(port, [0,0,0,1,1,0,0,1], timeout)
         print("DO_writePort:", err)
 
-        ## Wait for 5 second
-        time.sleep(5) ## delay(second) 
+        ## Wait for 3 seconds to see led status
+        time.sleep(3) ## delay(second) 
 
         ## Set pin7 and pin6 to high, others to low (1100 0000 in binary) (0xC0 in hex).
-        err = dev.DO_writePort(port, 0xC0)
+        err = dev.DO_writePort(port, 0xC0, timeout)
 
         ## Close all pins with digital output
-        err = dev.DO_closePort(port)
+        err = dev.DO_closePort(port, timeout)
         print("DO_closePort:", err)
     except Exception as err:
         pywpc.printGenericError(err)

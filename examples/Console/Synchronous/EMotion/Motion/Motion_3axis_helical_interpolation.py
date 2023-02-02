@@ -31,16 +31,12 @@ def main():
         pywpc.printGenericError(err)
 
     try:
-        ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo()
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
-
         ## Parameters setting
         port = 0
         axis = 0
         stop_decel = 0
-        
+        timeout = 3  ## second
+
         ## Helical parameters
         center_x = 0
         center_y = 0
@@ -53,38 +49,43 @@ def main():
         cal_timeout = 1000 
         helical_dir_cw = 0
 
+        ## Get firmware model & version
+        driver_info = dev.Sys_getDriverInfo(timeout)
+        print("Model name:" + driver_info[0])
+        print("Firmware version:" + driver_info[-1])
+
         ## Motion open
-        err = dev.Motion_open(port)
+        err = dev.Motion_open(port, timeout)
         print("open:", err)
         
         ## Motion open configuration file
-        err = dev.Motion_opencfgFile('3AxisStage_2P.ini')
+        err = dev.Motion_opencfgFile('3AxisStage_2P.ini', timeout)
         print("Motion_opencfgFile:", err)
 
         ## Motion load configuration file
-        err = dev.Motion_loadCfgFile()
+        err = dev.Motion_loadCfgFile(timeout)
         print("Motion_loadCfgFile:", err)
 
         ## Motion configure
         err = dev.Motion_cfgHelicalInterpo(port, center_x, center_y, finish_x, finish_y, int(False), pitch_axis3, int(False), pitch_axis4, rotation_num,
-        speed, helical_dir_cw, cal_timeout)
+        speed, helical_dir_cw, cal_timeout, timeout)
         print("Motion_cfgHelicalInterpo:", err) 
 
         ## Motion start
-        err = dev.Motion_startHelicalInterpo(port)
+        err = dev.Motion_startHelicalInterpo(port, timeout)
         print("Motion_startHelicalInterpo:", err)
   
         move_status = 0; 
         while move_status == 0:
-            move_status = dev.Motion_getMoveStatus(port, axis) 
+            move_status = dev.Motion_getMoveStatus(port, axis, timeout) 
             print("Motion_getMoveStatus:", move_status)
 
         ## Motion stop 
-        err = dev.Motion_stop(port, axis, stop_decel)
+        err = dev.Motion_stop(port, axis, stop_decel, timeout)
         print("Motion_stop:", err)
 
         ## Motion close
-        err = dev.Motion_close(port)
+        err = dev.Motion_close(port, timeout)
         print("Motion_close:", err) 
          
     except Exception as err:

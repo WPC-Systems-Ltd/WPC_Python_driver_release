@@ -30,45 +30,47 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    try:
-        ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo()
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
-
+    try: 
         ## Parameters setting
         port = 0
         stop_decel = 0
+        timeout = 3  ## second     
+
         ## Linear interpolation parameters
         axis1 = 0
         dest_posi1 = 2000
         axis2 = 1
         dest_posi2 = 2000 
 
+        ## Get firmware model & version
+        driver_info = dev.Sys_getDriverInfo(timeout)
+        print("Model name:" + driver_info[0])
+        print("Firmware version:" + driver_info[-1])
+        
         ## Motion open
-        err = dev.Motion_open(port)
+        err = dev.Motion_open(port, timeout)
         print("Motion_open:", err)
         
         ## Motion open configuration file
-        err = dev.Motion_opencfgFile('3AxisStage_2P.ini')
+        err = dev.Motion_opencfgFile('3AxisStage_2P.ini', timeout)
         print("Motion_opencfgFile:", err)
 
         ## Motion load configuration file
-        err = dev.Motion_loadCfgFile()
+        err = dev.Motion_loadCfgFile(timeout)
         print("Motion_loadCfgFile:", err)
 
         ## Motion configure
-        err = dev.Motion_cfg2AxisLinearInterpo(port, axis1, dest_posi1, axis2, dest_posi2, speed = 2000)
+        err = dev.Motion_cfg2AxisLinearInterpo(port, axis1, dest_posi1, axis2, dest_posi2, speed = 2000, timeout=timeout)
         print("Motion_cfg2AxisLinearInterpo:", err) 
 
         ## Motion start
-        err = dev.Motion_startLinearInterpo(port)
+        err = dev.Motion_startLinearInterpo(port, timeout)
         print("Motion_startLinearInterpo:", err)
   
         move_status = 0; 
         while move_status == 0:
-            axis1_move_status = dev.Motion_getMoveStatus(port, axis1)
-            axis2_move_status = dev.Motion_getMoveStatus(port, axis2)
+            axis1_move_status = dev.Motion_getMoveStatus(port, axis1, timeout)
+            axis2_move_status = dev.Motion_getMoveStatus(port, axis2, timeout)
             move_status = axis1_move_status & axis2_move_status;  
             if move_status == 0: 
                 print("Moving......") 
@@ -77,11 +79,11 @@ def main():
 
         ## Motion stop
         for i in [axis1, axis2]:
-            err = dev.Motion_stop(port, i, stop_decel)
+            err = dev.Motion_stop(port, i, stop_decel, timeout)
             print(f"Motion_stop axis{i} :", err) 
          
         ## Motion close
-        err = dev.Motion_close(port)
+        err = dev.Motion_close(port, timeout)
         print("Motion_close:", err) 
          
     except Exception as err:

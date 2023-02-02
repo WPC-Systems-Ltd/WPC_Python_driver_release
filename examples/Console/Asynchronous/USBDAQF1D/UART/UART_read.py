@@ -69,7 +69,7 @@ async def main():
         err = await dev.UART_setNumStopBit_async(port, stop_bit_mode)
         print("UART_setNumStopBit_async:", err)
 
-        ## Sleep
+        ## Wait for 10 seconds to receive data from other devices
         await asyncio.sleep(10) ## delay(second)
 
         ## Set UART port and read 20 bytes

@@ -48,41 +48,43 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    try:
-        ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo()
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
-
+    try: 
         ## Parameters setting
         port = 1
         mode = 2  ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 1000
+        timeout = 3  ## second
 
+        ## Get firmware model & version
+        driver_info = dev.Sys_getDriverInfo(timeout)
+        print("Model name:" + driver_info[0])
+        print("Firmware version:" + driver_info[-1])
+        
         ## Open port
-        err = dev.AI_open(port)
+        err = dev.AI_open(port, timeout)
         print("AI_open:", err)
 
         ## Set AI port and acquisition mode to continuous mode (2)
-        err = dev.AI_setMode(port, mode)
+        err = dev.AI_setMode(port, mode, timeout)
         print("AI_setMode:", err)
 
         ## Set AI port and sampling rate to 1k (Hz)
-        err = dev.AI_setSamplingRate(port, sampling_rate)
+        err = dev.AI_setSamplingRate(port, sampling_rate, timeout)
         print("AI_setSamplingRate:", err)
         
         ## Set AI port and start acquisition
-        err = dev.AI_start(port)
+        err = dev.AI_start(port, timeout)
         print("AI_start:", err)
 
         ## Start thread
         num_of_samples = 600
         delay = 0.05
         exit_loop_time = 3
+        
         loop_func(dev, port, num_of_samples, delay, exit_loop_time)
 
         ## Close port
-        err = dev.AI_close(port)
+        err = dev.AI_close(port, timeout)
         print("AI_close:", err)
     except Exception as err:
         pywpc.printGenericError(err)

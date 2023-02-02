@@ -61,7 +61,7 @@ async def main():
 
         ## Read all pins state
         state_list = await dev.DI_readPort_async(port_DI)
-        print(state_list)
+        print(f"state_list{state_list}")
 
         ## Close all pins with digital output
         err = await dev.DO_closePort_async(port_DO)

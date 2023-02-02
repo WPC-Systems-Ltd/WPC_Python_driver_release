@@ -37,30 +37,31 @@ def main():
         pywpc.printGenericError(err)
 
     try:
-        ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo()
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
-
         ## Parameters setting
         port = 1
         channel_0 = 0
         channel_1 = 1
+        timeout = 3  ## second
 
+        ## Get firmware model & version
+        driver_info = dev.Sys_getDriverInfo(timeout)
+        print("Model name:" + driver_info[0])
+        print("Firmware version:" + driver_info[-1])
+ 
         ## Open thermo
-        err = dev.Thermal_open(port)
+        err = dev.Thermal_open(port, timeout)
         print("Thermal_open:", err)
 
         ## Set thermo port and get status in channel 0
-        status = dev.Thermal_getStatus(port, channel_0)
+        status = dev.Thermal_getStatus(port, channel_0, timeout)
         print("Thermal_getStatus in chaannel 0:", status)
 
         ## Set thermo port and get status in channel 1
-        status = dev.Thermal_getStatus(port, channel_1)
+        status = dev.Thermal_getStatus(port, channel_1, timeout)
         print("Thermal_getStatus in chaannel 1:", status)
 
         ## Close thermo
-        err = dev.Thermal_close(port)
+        err = dev.Thermal_close(port, timeout)
         print("Thermal_close:", err)
     except Exception as err:
         pywpc.printGenericError(err)

@@ -37,20 +37,20 @@ def main():
         pywpc.printGenericError(err)
 
     try:
+        ## Parameters setting
+        timeout = 3  ## second
+
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo()
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Firmware model:" + driver_info[0])
         print("Firmware version:" + driver_info[-1])
 
         ## Get pinmode from port 0 to port 3
         for i in range(4):
             ## Get pin mode
-            pin_mode = dev.Sys_getPinModeInPort(i)
+            pin_mode = dev.Sys_getPinModeInPort(i, timeout)
             print("pin_mode", pin_mode)
 
-            ## Wait for 0.5 seconds
-            time.sleep(0.5)
-            
     except Exception as err:
         pywpc.printGenericError(err)
 

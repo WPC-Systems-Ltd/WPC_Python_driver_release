@@ -30,29 +30,31 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    try:
-        ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo()
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
-
+    try: 
         ## Parameters setting
         port = 0
         axis = 0
-        stop_decel = 0 
+        stop_decel = 0
+        timeout = 3  ## second
+
+        ## Get firmware model & version
+        driver_info = dev.Sys_getDriverInfo(timeout)
+        print("Model name:" + driver_info[0])
+        print("Firmware version:" + driver_info[-1])
+        
         ## Motion open
-        err = dev.Motion_open(port)
+        err = dev.Motion_open(port, timeout)
         print("Motion_open:", err)
 
         for i in range(100):
-            err = dev.Motion_setLogicalPosi(port, axis, i)
+            err = dev.Motion_setLogicalPosi(port, axis, i, timeout)
             if err != 0:
                 print("Motion_setLogicalPosi ", err)
-            posi = dev.Motion_getLogicalPosi(port, axis)
+            posi = dev.Motion_getLogicalPosi(port, axis, timeout)
             print("Motion_getLogicalPosi ", posi)
             
         ## Motion close
-        err = dev.Motion_close(port)
+        err = dev.Motion_close(port, timeout)
         print("Motion_close:", err)
     except Exception as err:
         pywpc.printGenericError(err)

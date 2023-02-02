@@ -37,39 +37,43 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    try:
-        ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo()
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
-
+    try: 
         ## Parameters setting
         port = 0
         mode = 1  ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 1000
         samples = 50
         read_points = 50
+        timeout = 3  ## second
 
+        ## Get firmware model & version
+        driver_info = dev.Sys_getDriverInfo(timeout)
+        print("Model name:" + driver_info[0])
+        print("Firmware version:" + driver_info[-1])
+        
         ## Open port
-        err = dev.AI_open(port)
+        err = dev.AI_open(port, timeout)
         print("AI_open:", err)
 
         ## Set AI port and acquisition mode to N-samples mode (1)
-        err = dev.AI_setMode(port, mode)
+        err = dev.AI_setMode(port, mode, timeout)
         print("AI_setMode:", err)
 
         ## Set AI port and sampling rate to 1k (Hz)
-        err = dev.AI_setSamplingRate(port, sampling_rate)
+        err = dev.AI_setSamplingRate(port, sampling_rate, timeout)
         print("AI_setSamplingRate:", err)
 
         ## Set AI port and # of samples to 50 (pts)
-        err = dev.AI_setNumSamples(port, samples)
+        err = dev.AI_setNumSamples(port, samples, timeout)
         print("AI_setNumSamples:", err)
 
         ## Set AI port and start acquisition
-        err = dev.AI_start(port)
+        err = dev.AI_start(port, timeout)
         print("AI_start:", err)
 
+        ## Wait for acquisition
+        time.sleep(1)
+        
         ## Set AI port and get 50 points
         data = dev.AI_readStreaming(port, read_points)
 
@@ -78,7 +82,7 @@ def main():
         print("Get data:" + str(data))
 
         ## Close port
-        err = dev.AI_close(port)
+        err = dev.AI_close(port, timeout)
         print("AI_close:", err)
     except Exception as err:
         pywpc.printGenericError(err)

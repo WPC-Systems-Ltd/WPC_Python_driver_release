@@ -39,27 +39,28 @@ def main():
         pywpc.printGenericError(err)
 
     try:
-        ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo()
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
-
-        '''
-        Take 24C08N for example
-        '''
-
         ## Parameters setting
         I2C_port = 1
         mode = 0
         device_address = 0x50 ## 01010000
         word_address = 0x00
+        timeout = 3  ## second
+ 
+        '''
+        Take 24C08N for example
+        '''
 
+        ## Get firmware model & version
+        driver_info = dev.Sys_getDriverInfo(timeout)
+        print("Model name:" + driver_info[0])
+        print("Firmware version:" + driver_info[-1])
+            
         '''
         Open I2C port
         '''
 
         ## Open I2C
-        err = dev.I2C_open(I2C_port)
+        err = dev.I2C_open(I2C_port, timeout)
         print("I2C_open:", err)
 
         '''
@@ -67,7 +68,7 @@ def main():
         '''
 
         ## Set I2C port and set clock rate to standard mode
-        err = dev.I2C_setClockRate(I2C_port, mode)
+        err = dev.I2C_setClockRate(I2C_port, mode, timeout)
         print("I2C_setClockRate:", err)
 
         '''
@@ -75,17 +76,17 @@ def main():
         '''
 
         ## Write WREN byte
-        err = dev.I2C_write(I2C_port, device_address, [word_address, 0xAA, 0x55, 0xAA, 0x55])
+        err = dev.I2C_write(I2C_port, device_address, [word_address, 0xAA, 0x55, 0xAA, 0x55], timeout)
         print("I2C_write:", err)
 
         '''
         Read data via I2C
         '''
 
-        err = dev.I2C_write(I2C_port, device_address, [word_address])
+        err = dev.I2C_write(I2C_port, device_address, [word_address], timeout)
         print("I2C_write:", err)
 
-        data_list = dev.I2C_read(I2C_port, device_address, 4)
+        data_list = dev.I2C_read(I2C_port, device_address, 4, timeout)
         print("read data :", data_list)
 
         '''
@@ -93,7 +94,7 @@ def main():
         '''
 
         ## Close I2C
-        err = dev.I2C_close(I2C_port)
+        err = dev.I2C_close(I2C_port, timeout)
         print("I2C_close:", err)
     except Exception as err:
         pywpc.printGenericError(err)

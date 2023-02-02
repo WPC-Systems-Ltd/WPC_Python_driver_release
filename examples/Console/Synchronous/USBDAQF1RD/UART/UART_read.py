@@ -36,40 +36,41 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    try:
-        ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo()
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
-
+    try: 
         ## Parameters setting
         port = 2
         baudrate = 9600
         data_bit_mode = 0  ## 0 : 8-bit data, 1 : 9-bit data.
         parity_mode = 0    ## 0 : None, 2 : Even parity, 3 : Odd parity.
         stop_bit_mode = 0  ## 0 : 1 bit, 1 : 0.5 bits, 2 : 2 bits, 3 : 1.5 bits
+        timeout = 3  ## second
+
+        ## Get firmware model & version
+        driver_info = dev.Sys_getDriverInfo(timeout)
+        print("Model name:" + driver_info[0])
+        print("Firmware version:" + driver_info[-1])
 
         ## Open UART
-        err = dev.UART_open(port)
+        err = dev.UART_open(port, timeout)
         print("UART_open:", err)
 
         ## Set UART port and set baudrate to 9600
-        err = dev.UART_setBaudRate(port, baudrate)
+        err = dev.UART_setBaudRate(port, baudrate, timeout)
         print("UART_setBaudRate:", err)
 
         ## Set UART port and set data bit to 8-bit data
-        err = dev.UART_setDataBit(port, data_bit_mode)
+        err = dev.UART_setDataBit(port, data_bit_mode, timeout)
         print("UART_setDataBit:", err)
 
         ## Set UART port and set parity to None
-        err = dev.UART_setParity(port, parity_mode)
+        err = dev.UART_setParity(port, parity_mode, timeout)
         print("UART_setParity:", err)
 
         ## Set UART port and set stop bit to 8-bit data
-        err = dev.UART_setNumStopBit(port, stop_bit_mode)
+        err = dev.UART_setNumStopBit(port, stop_bit_mode, timeout)
         print("UART_setNumStopBit:", err)
 
-        ## Sleep
+        ## Wait for 10 seconds to receive data from other devices
         time.sleep(10) ## delay(second)
 
         ## Set UART port and read 20 bytes
@@ -77,7 +78,7 @@ def main():
         print("data:", data)
 
         ## Close UART
-        err = dev.UART_close(port)
+        err = dev.UART_close(port, timeout)
         print("UART_close:", err)
     except Exception as err:
         pywpc.printGenericError(err)

@@ -31,81 +31,85 @@ def main():
         pywpc.printGenericError(err)
 
     try:
-        ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo()
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
-
         ## Parameters setting
         port = 0
         axis = 0
         two_pulse_mode = 1
         stop_decel = 0
+        timeout = 3  ## second
+
         ## Axis and encoder parameters
         axis_dir_cw = 0
         encoder_dir_cw = 0
+
         ## Polarity and enable parameters
         active_low = 0
         active_high = 1
         forward_enable_true = 1
         reverse_enable_true = 1
+
         ## Find index parameters
         dir_reverse = 1
         find_index = 1
 
+        ## Get firmware model & version
+        driver_info = dev.Sys_getDriverInfo(timeout)
+        print("Model name:" + driver_info[0])
+        print("Firmware version:" + driver_info[-1])
+
         ## Motion open
-        err = dev.Motion_open(port)
+        err = dev.Motion_open(port, timeout)
         print("open:", err)
 
         ## Motion configure
-        err = dev.Motion_cfgAxis(port, axis, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low)
+        err = dev.Motion_cfgAxis(port, axis, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low, timeout)
         print("Motion_cfgAxis:", err)
             
-        err = dev.Motion_cfgLimit(port, axis, forward_enable_true, reverse_enable_true, active_high)
+        err = dev.Motion_cfgLimit(port, axis, forward_enable_true, reverse_enable_true, active_high, timeout)
         print("Motion_cfgLimit:", err)
 
-        err = dev.Motion_cfgFindRef(port, axis, find_index, dir_reverse)
+        err = dev.Motion_cfgFindRef(port, axis, find_index, dir_reverse, timeout)
         print("Motion_cfgFindRef:", err)
 
-        err = dev.Motion_cfgEncoder(port, axis, active_low)
+        err = dev.Motion_cfgEncoder(port, axis, active_low, timeout)
         print("Motion_cfgEncoder:", err)
 
-        err = dev.Motion_enableServoOn(port, axis, int(True))
+        err = dev.Motion_enableServoOn(port, axis, int(True), timeout)
         print("Motion_enableServoOn:", err)
         
-        err = dev.Motion_rstEncoderPosi(port, axis)
+        err = dev.Motion_rstEncoderPosi(port, axis, timeout)
         print("Motion_rstEncoderPosi:", err)
 
         ## Motion find reference
-        err = dev.Motion_findRef(port, axis)
+        err = dev.Motion_findRef(port, axis, timeout)
         print("Motion_findRef:", err)
 
         finding = 1
         found = 0
         while found == 0: 
             ## Read forward and reverse limit status
-            hit_status = dev.Motion_getLimitStatus(port, axis)
+            hit_status = dev.Motion_getLimitStatus(port, axis, timeout)
             forward_hit = hit_status[0]
             reverse_hit = hit_status[1]
             if forward_hit == 1 : print("Forward hit")
             if reverse_hit == 1 : print("Reverse hit")
  
             ## Check finding and found status
-            driving_status = dev.Motion_checkRef(port, axis)
+            driving_status = dev.Motion_checkRef(port, axis, timeout)
             finding = driving_status[0]
             found = driving_status[1]
             if found == 1 : print("Found reference")
             # if finding == 1 : print("Finding reference")
 
         ## Motion stop
-        err = dev.Motion_stop(port, axis, stop_decel)
+        err = dev.Motion_stop(port, axis, stop_decel, timeout)
         print("Motion_stop:", err)
 
-        err = dev.Motion_enableServoOn(port, axis, int(False))
+        err = dev.Motion_enableServoOn(port, axis, int(False), timeout)
         print("Motion_enableServoOn:", err)
         
         ## Motion close
-        err = dev.Motion_close(port)
+        err = dev.Motion_close(port, timeout)
         print("Motion_close:", err) 
          
     except Exception as err:

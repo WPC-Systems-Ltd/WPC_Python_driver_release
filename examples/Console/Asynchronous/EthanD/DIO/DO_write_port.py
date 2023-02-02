@@ -53,8 +53,8 @@ async def main():
         err = await dev.DO_writePort_async(port, [0,0,0,1,1,0,0,1])
         print("DO_writePort_async:", err)
 
-        ## Wait for 5 second
-        await asyncio.sleep(5)  ## delay(second)
+        ## Wait for 3 seconds to see led status
+        await asyncio.sleep(3)  ## delay(second)
 
         ## Set pin7 and pin6 to high, others to low (1100 0000 in binary) (0xC0 in hex).
         err = await dev.DO_writePort_async(port, 0xC0)

@@ -36,17 +36,18 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    try:
-        ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo()
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
-
+    try: 
         ## Parameters setting
         port = 0
+        timeout = 3  ## second
 
+        ## Get firmware model & version
+        driver_info = dev.Sys_getDriverInfo(timeout)
+        print("Model name:" + driver_info[0])
+        print("Firmware version:" + driver_info[-1])
+        
         ## Open all pins and set it to digital output.
-        err = dev.DO_openPort(port)
+        err = dev.DO_openPort(port, timeout)
         print("DO_openPort:", err)
 
         ## Toggle digital state for 10 times. Each times delay for 0.5 second
@@ -56,12 +57,12 @@ def main():
             else:
                 value = [1,0,1,0,1,0,1,0]
 
-            dev.DO_writePort(port, value)
+            dev.DO_writePort(port, value, timeout)
             print(f'Port: {port}, digital state = {value}')
             time.sleep(0.5)  ## delay(second)
 
         ## Close all pins with digital output
-        err = dev.DO_closePort(port)
+        err = dev.DO_closePort(port, timeout)
         print("DO_closePort:", err)
     except Exception as err:
         pywpc.printGenericError(err)

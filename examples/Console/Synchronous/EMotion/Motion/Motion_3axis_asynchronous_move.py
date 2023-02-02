@@ -60,12 +60,7 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    try:
-        ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo()
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
-
+    try: 
         ## Parameters setting
         port = 0
         axis1 = 0
@@ -74,9 +69,12 @@ def main():
         two_pulse_mode = 1
         rel_posi_mode = 1
         stop_decel = 0 
+        timeout = 3  ## second
+
         ## Axis and encoder parameters  
         axis_dir_cw = 0
         encoder_dir_cw = 0
+
         ## Polarity and enable parameters
         active_low = 0
         active_high = 1
@@ -93,68 +91,73 @@ def main():
         thread_2.start()
         thread_3.start()
 
+        ## Get firmware model & version
+        driver_info = dev.Sys_getDriverInfo(timeout)
+        print("Model name:" + driver_info[0])
+        print("Firmware version:" + driver_info[-1])
+        
         ## Motion open
-        err = dev.Motion_open(port)
+        err = dev.Motion_open(port, timeout)
         print("open:", err)
 
         ## Motion configure for axis1
-        err = dev.Motion_cfgAxis(port, axis1, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low)
+        err = dev.Motion_cfgAxis(port, axis1, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low, timeout)
         print("Motion_cfgAxis axis1:", err)
             
-        err = dev.Motion_cfgLimit(port, axis1, forward_enable_false, reverse_enable_false, active_low)
+        err = dev.Motion_cfgLimit(port, axis1, forward_enable_false, reverse_enable_false, active_low, timeout)
         print("Motion_cfgLimit axis1:", err)
 
-        err = dev.Motion_rstEncoderPosi(port, axis1)
+        err = dev.Motion_rstEncoderPosi(port, axis1, timeout)
         print("Motion_rstEncoderPosi axis1:", err)
 
-        err = dev.Motion_cfgAxisMove(port, axis1, rel_posi_mode, target_position = 1000)
+        err = dev.Motion_cfgAxisMove(port, axis1, rel_posi_mode, target_position = 1000, timeout=timeout)
         print("Motion_cfgAxisMove axis1:", err)
 
-        err = dev.Motion_enableServoOn(port, axis1, int(True))
+        err = dev.Motion_enableServoOn(port, axis1, int(True), timeout)
         print("Motion_enableServoOn axis1:", err)
 
         ## Motion start for axis1
-        err = dev.Motion_startSingleAxisMove(port, axis1)
+        err = dev.Motion_startSingleAxisMove(port, axis1, timeout)
         print("Motion_startSingleAxisMove axis1:", err)
 
         ## Motion configure for axis2
-        err = dev.Motion_cfgAxis(port, axis2, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low)
+        err = dev.Motion_cfgAxis(port, axis2, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low, timeout)
         print("Motion_cfgAxis axis2:", err)
             
-        err = dev.Motion_cfgLimit(port, axis2, forward_enable_false, reverse_enable_false, active_low)
+        err = dev.Motion_cfgLimit(port, axis2, forward_enable_false, reverse_enable_false, active_low, timeout)
         print("Motion_cfgLimit axis2:", err)
 
-        err = dev.Motion_rstEncoderPosi(port, axis2)
+        err = dev.Motion_rstEncoderPosi(port, axis2, timeout)
         print("Motion_rstEncoderPosi axis2:", err)
 
-        err = dev.Motion_cfgAxisMove(port, axis2, rel_posi_mode, target_position = 1000)
+        err = dev.Motion_cfgAxisMove(port, axis2, rel_posi_mode, target_position = 1000, timeout=timeout)
         print("Motion_cfgAxisMove axis2:", err)
 
-        err = dev.Motion_enableServoOn(port, axis2, int(True))
+        err = dev.Motion_enableServoOn(port, axis2, int(True), timeout)
         print("Motion_enableServoOn axis2:", err)
 
         ## Motion start for axis2
-        err = dev.Motion_startSingleAxisMove(port, axis2)
+        err = dev.Motion_startSingleAxisMove(port, axis2, timeout)
         print("Motion_startSingleAxisMove axis2:", err)
 
         ## Motion configure for axis3
-        err = dev.Motion_cfgAxis(port, axis3, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low)
+        err = dev.Motion_cfgAxis(port, axis3, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low, timeout)
         print("Motion_cfgAxis axis3:", err)
             
-        err = dev.Motion_cfgLimit(port, axis3, forward_enable_false, reverse_enable_false, active_low)
+        err = dev.Motion_cfgLimit(port, axis3, forward_enable_false, reverse_enable_false, active_low, timeout)
         print("Motion_cfgLimit axis3:", err)
 
-        err = dev.Motion_rstEncoderPosi(port, axis3)
+        err = dev.Motion_rstEncoderPosi(port, axis3, timeout)
         print("Motion_rstEncoderPosi axis3:", err)
 
-        err = dev.Motion_cfgAxisMove(port, axis3, rel_posi_mode, target_position = -5000)
+        err = dev.Motion_cfgAxisMove(port, axis3, rel_posi_mode, target_position = -5000, timeout=timeout)
         print("Motion_cfgAxisMove axis3:", err)
 
-        err = dev.Motion_enableServoOn(port, axis3, int(True))
+        err = dev.Motion_enableServoOn(port, axis3, int(True), timeout)
         print("Motion_enableServoOn axis3:", err)
 
         ## Motion start for axis3
-        err = dev.Motion_startSingleAxisMove(port, axis3)
+        err = dev.Motion_startSingleAxisMove(port, axis3, timeout)
         print("Motion_startSingleAxisMove axis3:", err)
         
         ## Wait for thread completion
@@ -168,16 +171,16 @@ def main():
         print("Axis3_Thread returned.")
     
         for i in [axis1, axis2, axis3]:
-            err = dev.Motion_enableServoOn(port, i, int(False))
+            err = dev.Motion_enableServoOn(port, i, int(False), timeout)
             print(f"Motion_enableServoOn axis{i} :", err) 
   
         ## Motion stop
         for i in [axis1, axis2, axis3]:
-            err = dev.Motion_stop(port, i, stop_decel)
+            err = dev.Motion_stop(port, i, stop_decel, timeout)
             print(f"Motion_stop axis{i} :", err) 
  
         ## Motion close
-        err = dev.Motion_close(port)
+        err = dev.Motion_close(port, timeout)
         print("Motion_close:", err) 
     except Exception as err:
         pywpc.printGenericError(err)

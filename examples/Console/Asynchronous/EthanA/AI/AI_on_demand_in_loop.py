@@ -69,6 +69,7 @@ async def main():
         ## Set AI port and start async thread
         delay = 0.05
         exit_loop_time = 3
+        
         await loop_func(dev, port, delay, exit_loop_time)
  
         ## Close port

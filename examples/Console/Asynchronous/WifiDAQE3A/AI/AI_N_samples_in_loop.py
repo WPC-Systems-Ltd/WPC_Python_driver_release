@@ -83,6 +83,7 @@ async def main():
         num_of_samples = 600
         delay = 0.05
         exit_loop_time = 3
+        
         await loop_func(dev, port, num_of_samples, delay, exit_loop_time)
         
         ## Close port

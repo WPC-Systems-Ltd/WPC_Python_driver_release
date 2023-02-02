@@ -30,45 +30,48 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    try:
-        ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo()
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
-
+    try: 
         ## Parameters setting
         port = 0
         axis = 0
         two_pulse_mode = 1
         rel_posi_mode = 1
+        timeout = 3  ## second
+
         ## Axis and encoder parameters
         axis_dir_cw = 0
         encoder_dir_cw = 0
+
         ## Polarity and enable parameters
         active_low = 0
         active_high = 1
 
+        ## Get firmware model & version
+        driver_info = dev.Sys_getDriverInfo(timeout)
+        print("Model name:" + driver_info[0])
+        print("Firmware version:" + driver_info[-1])
+        
         ## Motion open
-        err = dev.Motion_open(port)
+        err = dev.Motion_open(port, timeout)
         print("open:", err)
  
         ## Motion open configuration file
-        err = dev.Motion_opencfgFile('3AxisStage_2P.ini')
+        err = dev.Motion_opencfgFile('3AxisStage_2P.ini', timeout)
         print("Motion_opencfgFile:", err)
  
         ## Motion configure
-        err = dev.Motion_cfgAxis(port, axis, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low)
+        err = dev.Motion_cfgAxis(port, axis, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low, timeout)
         print("Motion_cfgAxis:", err)
 
-        err = dev.Motion_cfgAxisMove(port, axis, rel_posi_mode, target_position = 5000)
+        err = dev.Motion_cfgAxisMove(port, axis, rel_posi_mode, target_position = 5000, timeout=timeout)
         print("Motion_cfgAxisMove:", err)
 
         ## Motion save configuration file
-        err = dev.Motion_saveCfgFile()
+        err = dev.Motion_saveCfgFile(timeout)
         print("Motion_saveCfgFile:", err)
         
         ## Motion close
-        err = dev.Motion_close(port)
+        err = dev.Motion_close(port, timeout)
         print("Motion_close:", err) 
          
     except Exception as err:

@@ -34,15 +34,18 @@ def main():
 
     ## Perform to Get RSSI, Battery and Thermo
     try:
+        ## Parameters setting
+        timeout = 3  ## second
+
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo()
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Firmware model:" + driver_info[0])
         print("Firmware version:" + driver_info[-1])
 
         ## Get RSSI, battery and thermo
-        data1 = dev.Wifi_readRSSI()
-        data2 = dev.Wifi_readBattery()
-        data3 = dev.Wifi_readThermo()
+        data1 = dev.Wifi_readRSSI(timeout)
+        data2 = dev.Wifi_readBattery(timeout)
+        data3 = dev.Wifi_readThermo(timeout)
 
         print("RSSI:" + str(data1) + " dBm")
         print("Battery:"+ str(data2) + " mV")

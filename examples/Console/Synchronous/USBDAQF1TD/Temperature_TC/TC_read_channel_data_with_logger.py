@@ -46,39 +46,40 @@ def main():
         pywpc.printGenericError(err)
 
     try:
-        ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo()
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
-
         ## Parameters setting
         port = 1
         channel = 1
         over_sampling_mode = 0  ## 0:1 sample, 1:2 samples, 2:4 sample, 3:8 samples, 4:16 samples
         thermo_type = 3         ## 0:B type, 1:E type, 2:J type, 3:K type
                                 ## 4:N type, 5:R type, 6:S type, 7:T type
-
+        timeout = 3  ## second
+ 
+        ## Get firmware model & version
+        driver_info = dev.Sys_getDriverInfo(timeout)
+        print("Model name:" + driver_info[0])
+        print("Firmware version:" + driver_info[-1])
+ 
         ## Open thermo
-        err = dev.Thermal_open(port)
+        err = dev.Thermal_open(port, timeout)
         print("Thermal_open:", err)
 
         ## Set thermo port and set over-sampling mode to no over-sampling in channel 1
-        err = dev.Thermal_setOverSampling(port, channel, over_sampling_mode)
+        err = dev.Thermal_setOverSampling(port, channel, over_sampling_mode, timeout)
         print("Thermal_setOverSampling:", err)
 
         ## Set thermo port and set K type in channel 1
-        err = dev.Thermal_setType(port, channel, thermo_type)
+        err = dev.Thermal_setType(port, channel, thermo_type, timeout)
         print("Thermal_setType:", err)
         
         ## Set thermo port and read thermo in channel 1
-        data = dev.Thermal_readSensor(port, channel)
+        data = dev.Thermal_readSensor(port, channel, timeout)
         print("Read channel 1 data:", data, "°C")
 
         ## Write data into CSV file
         dev_logger.Logger_writeValue(data)
 
         ## Close thermo
-        err = dev.Thermal_close(port)
+        err = dev.Thermal_close(port, timeout)
         print("Thermal_close:", err)
 
         ## Close File

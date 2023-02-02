@@ -36,42 +36,42 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    try:
-        ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo()
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
-
+    try: 
         ## Parameters setting
         port = 0
         pin_index = [0,1,2,3,4]
+        timeout = 3  ## second
 
+        ## Get firmware model & version
+        driver_info = dev.Sys_getDriverInfo(timeout)
+        print("Model name:" + driver_info[0])
+        print("Firmware version:" + driver_info[-1])
+        
         ## Open pin0, pin1, pin2, pin3 and pin4 with digital output.
-        err = dev.DO_openPins(port, pin_index)
+        err = dev.DO_openPins(port, pin_index, timeout)
         print("DO_openPins:", err)
 
         ## Set pin0, pin1 to high, others to low.
-        err =  dev.DO_writePins(port, pin_index, [1,1,0,0,0])
-        print("DO_writePins:", err)
+        all_pin_state =  dev.DO_writePins(port, pin_index, [1,1,0,0,0], timeout)
+        print("DO_writePins:", all_pin_state)
 
         ## Open pin5, pin6 and pin7 with digital output (1110 0000 in binary) (0xE0 in hex).
-        err = dev.DO_openPins(port, 0xE0)
+        err = dev.DO_openPins(port, 0xE0, timeout)
         print("DO_openPins:", err)
-) 
 
         ## Set pin7 and pin6 to high, others to low (1100 0000 in binary) (0xC0 in hex).
-        err = dev.DO_writePins(port, 0xE0, 0xC0)
+        err = dev.DO_writePins(port, 0xE0, 0xC0, timeout)
         print("DO_writePins:", err)
 
-        ## Wait for 5 second
-        time.sleep(5) ## delay(second) 
+        ## Wait for 3 seconds to see led status
+        time.sleep(3) ## delay(second) 
 
         ## Close pin0, pin1, pin2, pin3 and pin4 with digital output.
-        err = dev.DO_closePins(port, pin_index)
+        err = dev.DO_closePins(port, pin_index, timeout)
         print("DO_closePins:", err)
 
         ## Close pin5, pin6 and pin7 with digital output.
-        err = dev.DO_closePins(port, 0xE0)
+        err = dev.DO_closePins(port, 0xE0, timeout)
         print("DO_closePins:", err)
     except Exception as err:
         pywpc.printGenericError(err)
