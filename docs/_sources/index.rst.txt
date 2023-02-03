@@ -4,7 +4,7 @@
    :title: WPC Python driver
    :description: The easiest way to Control & Data Acquisition (DAQ)
    :keywords: DAQ, USB, Ethernet, Wifi, driver   
-   :image: "https://wpc-systems-ltd.github.io/WPC_Python_driver_release/WPC_trademark.jpg"
+   :image: https://wpc-systems-ltd.github.io/WPC_Python_driver_release/WPC_logo.png
 
 .. automodule:: pywpc
 
