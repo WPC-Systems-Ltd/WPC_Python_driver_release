@@ -1,5 +1,5 @@
 '''
-CAN - CAN_write.py
+CAN - CAN_write.py with asynchronous mode.
 
 This example demonstrates how to write data to another device with CAN interface from USBDAQF1CD.
 

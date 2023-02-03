@@ -1,5 +1,5 @@
 '''
-Temperature_RTD - RTD_read_channel_data_with_logger.py
+Temperature_RTD - RTD_read_channel_data_with_logger.py with asynchronous mode.
 
 This example demonstrates how to read RTD data in two channels and save data into csv file from USBDAQF1RD.
 

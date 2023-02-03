@@ -1,5 +1,5 @@
 '''
-AO - AO_write_all_channels.py
+AO - AO_write_all_channels.py with asynchronous mode.
 
 This example demonstrates how to write AO in all channels from EthanO.
 

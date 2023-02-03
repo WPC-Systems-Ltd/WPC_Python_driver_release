@@ -1,5 +1,5 @@
 '''
-Tutorial - single_loop_async.py
+Tutorial - single_loop_async.py with asynchronous mode.
 
 This example project demonstrates how to use async thread to get RTC from USBDAQF1TD.
 

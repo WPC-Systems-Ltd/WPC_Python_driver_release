@@ -1,5 +1,5 @@
 '''
-Temperature_RTD - RTD_read_channel_data.py
+Temperature_RTD - RTD_read_channel_data.py with asynchronous mode.
 
 This example demonstrates how to read RTD data in two channels from USBDAQF1RD.
 

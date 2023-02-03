@@ -1,5 +1,5 @@
 '''
-AI - AI_continuous_with_logger.py
+AI - AI_continuous_with_logger.py with asynchronous mode.
 
 This example demonstrates how to get AI data in continuous mode and save data into csv file.
 Also, it uses async loop to get AI data with 3 seconds timeout with 8 channels from WifiDAQE3A.

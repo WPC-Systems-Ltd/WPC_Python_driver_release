@@ -1,5 +1,5 @@
 '''
-UART - UART_read.py
+UART - UART_read.py with synchronous mode.
 
 This example demonstrates how to read data from another device with UART interface from USBDAQF1AOD.
 
@@ -90,5 +90,6 @@ def main():
     dev.close()
     
     return
+    
 if __name__ == '__main__':
     main()

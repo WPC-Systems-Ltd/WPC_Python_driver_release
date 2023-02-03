@@ -1,5 +1,5 @@
 '''
-System_USB - get_USB_info.py
+System_USB - get_USB_info.py with asynchronous mode.
 
 This example demonstrates how to get hardware information from USBDAQF1CD.
 

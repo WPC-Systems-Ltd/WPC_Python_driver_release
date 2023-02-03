@@ -72,7 +72,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../examples_console_Synchronous.html">Example Codes - Console (sync)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples_console_Asynchronous.html">Example Codes - Console (async)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples_GUI.html">Example Codes - GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples_GUI_Synchronous.html">Example Codes - GUI (sync)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples_GUI_Asynchronous.html">Example Codes - GUI (async)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">APPENDICES</span></p>
 <ul>
@@ -137,7 +138,7 @@
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -202,7 +203,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -255,7 +256,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 <dt><strong>delay</strong><span class="classifier">float</span></dt><dd><p>Time in milliseconds to wait for the indicated amount of frames to arrive.
 This becomes ineffective if there are already <cite>num_frames</cite> frames in the queue.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -328,7 +329,7 @@ If True, <code class="docutils literal notranslate"><span class="pre">data</span
 If True, the identifier has 29 bits.
 If False, the identifier has 11 bits.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -388,7 +389,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>on_off</strong><span class="classifier">bool</span></dt><dd><p>True: on, False: off.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -438,7 +439,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>speed_mode</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>0: 125 kHz, 1: 250 kHz, 2: 500 kHz, 3: 1 MHz.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -486,7 +487,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -532,7 +533,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -590,7 +591,7 @@ If True, <code class="docutils literal notranslate"><span class="pre">data</span
 If True, the identifier has 29 bits.
 If False, the identifier has 11 bits.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -649,7 +650,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><p>Pin number you want to close.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -695,7 +696,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -758,7 +759,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.        pin : int or list
 Pin number you want to set to digital intput.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -804,7 +805,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -850,7 +851,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><p>Pin number you want to read.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -894,7 +895,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -942,7 +943,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <li><p>pin [0,1,5].</p></li>
 </ul>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -992,7 +993,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1060,7 +1061,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <li><p>pin [0,1,5].</p></li>
 </ul>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1110,7 +1111,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1158,7 +1159,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <li><p>Pin number you want to toggle</p></li>
 </ul>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1212,7 +1213,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1287,7 +1288,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <li><p>value = [1,1,0].</p></li>
 </ul>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1352,7 +1353,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <li><p>[1,0,1,0,0,0,0,0] in LSB.</p></li>
 </ul>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1404,7 +1405,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1466,7 +1467,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1514,7 +1515,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd>
 <dt><strong>bytes_to_read</strong><span class="classifier">int</span></dt><dd><p>The number of bytes to receive.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1560,7 +1561,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1609,7 +1610,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <li><p>1: 10-bit address.</p></li>
 </ul>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1665,7 +1666,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <li><p>3 : high speed (3400000).</p></li>
 </ul>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1720,7 +1721,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd>
 <dt><strong>write_data</strong><span class="classifier">list of bytes</span></dt><dd><p>The list of data to be transferred.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1768,7 +1769,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1831,7 +1832,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1877,7 +1878,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd>
 <dt><strong>bytes_to_read</strong><span class="classifier">int</span></dt><dd><p>The number of bytes to receive.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1901,7 +1902,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd>
 <dt><strong>write_data</strong><span class="classifier">list of bytes</span></dt><dd><p>The list of data to be transferred.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1967,7 +1968,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -2017,7 +2018,7 @@ Please check <a class="reference internal" href="../ref_SPI.html#setting-param">
 <li><p>1 : 16-bit data.</p></li>
 </ul>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -2073,7 +2074,7 @@ Please check <a class="reference internal" href="../ref_SPI.html#setting-param">
 <li><p>1 : LSB first.</p></li>
 </ul>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -2131,7 +2132,7 @@ Please check <a class="reference internal" href="../ref_SPI.html#setting-param">
 <li><p>3 : CPOL= 1, CPHA= 1</p></li>
 </ul>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -2186,7 +2187,7 @@ Please check <a class="reference internal" href="../ref_SPI.html#setting-param">
 </dd>
 <dt><strong>prescaler</strong><span class="classifier">int</span></dt><dd><p>Prescaler : 2, 4, 8, 16, 32, 64, 128, or 256.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -2235,7 +2236,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd>
 <dt><strong>write_data</strong><span class="classifier">list of bytes</span></dt><dd><p>The list of data to be transferred.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -2279,7 +2280,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -2323,7 +2324,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -2373,7 +2374,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -2427,7 +2428,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -2461,7 +2462,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -2482,7 +2483,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -2535,7 +2536,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -2579,7 +2580,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -2623,7 +2624,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -2677,7 +2678,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd>
 <dt><strong>second</strong><span class="classifier">int</span></dt><dd><p>second (0~59).</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -2729,7 +2730,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -2791,7 +2792,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -2839,7 +2840,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd>
 <dt><strong>delay</strong><span class="classifier">float</span></dt><dd><p>Time delay before getting data.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -2885,7 +2886,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -2931,7 +2932,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd>
 <dt><strong>baud_rate: int</strong></dt><dd><p>In bits per second (baud).</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -2982,7 +2983,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <li><p>1 : 9-bit data.</p></li>
 </ul>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -3038,7 +3039,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <li><p>3 : 1.5 bits</p></li>
 </ul>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -3096,7 +3097,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <li><p>3 : odd parity.</p></li>
 </ul>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -3147,7 +3148,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -3193,7 +3194,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd>
 <dt><strong>write_data</strong><span class="classifier">string or list of characters</span></dt><dd><p>Data to be transferred.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>

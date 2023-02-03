@@ -1,5 +1,5 @@
 '''
-AI - AI_on_demand_in_loop.py
+AI - AI_on_demand_in_loop.py with asynchronous mode.
 
 This example demonstrates how to get AI data in on demand mode.
 Also, it uses async loop to get AI data with 3 seconds timeout with 8 channels USBDAQF1AD.

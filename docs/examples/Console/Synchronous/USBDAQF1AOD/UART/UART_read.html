@@ -93,7 +93,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../examples_console_Asynchronous.html">Example Codes - Console (async)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../examples_GUI.html">Example Codes - GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../examples_GUI_Synchronous.html">Example Codes - GUI (sync)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../examples_GUI_Asynchronous.html">Example Codes - GUI (async)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">APPENDICES</span></p>
 <ul>
@@ -129,7 +130,7 @@
   <section id="uart-read">
 <h1>UART read<a class="headerlink" href="#uart-read" title="Permalink to this heading"></a></h1>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="sd">&#39;&#39;&#39;</span>
-<span class="linenos"> 2</span><span class="sd">UART - UART_read.py</span>
+<span class="linenos"> 2</span><span class="sd">UART - UART_read.py with synchronous mode.</span>
 <span class="linenos"> 3</span>
 <span class="linenos"> 4</span><span class="sd">This example demonstrates how to read data from another device with UART interface from USBDAQF1AOD.</span>
 <span class="linenos"> 5</span>
@@ -220,8 +221,9 @@
 <span class="linenos">90</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="linenos">91</span>    
 <span class="linenos">92</span>    <span class="k">return</span>
-<span class="linenos">93</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">94</span>    <span class="n">main</span><span class="p">()</span>
+<span class="linenos">93</span>    
+<span class="linenos">94</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">95</span>    <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>

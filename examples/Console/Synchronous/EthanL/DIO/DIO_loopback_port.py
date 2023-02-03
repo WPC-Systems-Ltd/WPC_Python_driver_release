@@ -1,5 +1,5 @@
 '''
-DIO - DIO_loopback_port.py
+DIO - DIO_loopback_port.py with synchronous mode.
 
 This example demonstrates how to write DIO loopback in port from EthanL.
 Use DO pins to send signals and use DI pins to receive signals on single device also called "loopback".
@@ -81,5 +81,6 @@ def main():
     dev.close()
     
     return
+    
 if __name__ == '__main__':
     main()

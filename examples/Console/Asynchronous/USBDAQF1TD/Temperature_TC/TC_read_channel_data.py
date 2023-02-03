@@ -1,5 +1,5 @@
 '''
-Temperature_TC - TC_read_channel_data.py
+Temperature_TC - TC_read_channel_data.py with asynchronous mode.
 
 This example demonstrates how to read thermocouple from USBDAQF1TD.
 

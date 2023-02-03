@@ -1,5 +1,5 @@
 '''
-CAN - CAN_read.py
+CAN - CAN_read.py with synchronous mode.
 
 This example demonstrates how to read data from another device with CAN interface from USBDAQF1CD.
 
@@ -85,5 +85,6 @@ def main():
     dev.close()
     
     return
+    
 if __name__ == '__main__':
     main()

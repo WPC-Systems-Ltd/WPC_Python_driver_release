@@ -1,5 +1,5 @@
 '''
-Find_devices - find_all_devices.py
+Find_devices - find_all_devices.py with asynchronous mode.
 
 This example demonstrates how to find all available USB and ethernet devices.
 

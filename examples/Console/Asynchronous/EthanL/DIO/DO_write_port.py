@@ -1,5 +1,5 @@
 '''
-DIO - DO_write_port.py
+DIO - DO_write_port.py with asynchronous mode.
 
 This example demonstrates how to write DO in port from EthanL.
 

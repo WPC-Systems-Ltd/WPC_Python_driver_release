@@ -1,5 +1,5 @@
 '''
-Find_devices - find_all_devices.py
+Find_devices - find_all_devices.py with synchronous mode.
 
 This example demonstrates how to find all available USB and ethernet devices.
 
@@ -57,5 +57,6 @@ def main():
     dev.close()
 
     return
+    
 if __name__ == '__main__':
     main()

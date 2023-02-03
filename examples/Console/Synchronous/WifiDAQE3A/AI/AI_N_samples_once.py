@@ -1,5 +1,5 @@
 '''
-AI - AI_N_samples_once.py
+AI - AI_N_samples_once.py with synchronous mode.
 
 This example demonstrates how to get AI data in N samples mode.
 Also, it gets AI data in once with 8 channels from WifiDAQE3A.
@@ -94,5 +94,6 @@ def main():
     dev.close()
  
     return
+    
 if __name__ == '__main__':
     main()

@@ -1,5 +1,5 @@
 '''
-AI - AI_continuous.py
+AI - AI_continuous.py with asynchronous mode.
 
 This example demonstrates how to get AI data in continuous mode.
 Also, it uses async loop to get AI data with 3 seconds timeout with 8 channels from USBDAQF1AOD.

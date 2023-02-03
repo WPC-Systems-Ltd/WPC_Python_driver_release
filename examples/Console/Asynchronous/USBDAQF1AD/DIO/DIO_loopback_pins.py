@@ -1,5 +1,5 @@
 '''
-DIO - DIO_loopback_pins.py
+DIO - DIO_loopback_pins.py with asynchronous mode.
 
 This example demonstrates how to write DIO loopback in pins from USBDAQF1AD.
 Use DO pins to send signals and use DI pins to receive signals on single device also called "loopback".

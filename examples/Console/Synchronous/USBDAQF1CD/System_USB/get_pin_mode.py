@@ -1,5 +1,5 @@
 '''
-System_USB - get_pin_mode.py
+System_USB - get_pin_mode.py with synchronous mode.
 
 This example demonstrates how to get pin mode from USBDAQF1CD.
 
@@ -61,5 +61,6 @@ def main():
     dev.close()
 
     return
+    
 if __name__ == '__main__':
     main()

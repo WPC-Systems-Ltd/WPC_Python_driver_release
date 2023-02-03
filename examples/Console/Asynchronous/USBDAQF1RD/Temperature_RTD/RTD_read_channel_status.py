@@ -1,5 +1,5 @@
 '''
-Temperature_RTD - RTD_read_channel_status.py
+Temperature_RTD - RTD_read_channel_status.py with asynchronous mode.
 
 This example demonstrates how to get status in two channels from USBDAQF1RD.
 

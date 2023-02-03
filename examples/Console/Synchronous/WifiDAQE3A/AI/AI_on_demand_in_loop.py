@@ -1,5 +1,5 @@
 '''
-AI - AI_on_demand_in_loop.py
+AI - AI_on_demand_in_loop.py with synchronous mode.
 
 This example demonstrates how to get AI data in on demand mode.
 Also, it uses loop to get AI data with 3 seconds timeout with 8 channels WifiDAQE3A.
@@ -86,5 +86,6 @@ def main():
     dev.close()
     
     return
+    
 if __name__ == '__main__':
     main()

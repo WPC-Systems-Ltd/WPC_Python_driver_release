@@ -1,5 +1,5 @@
 '''
-AO - AO_waveform_gen.py
+AO - AO_waveform_gen.py with asynchronous mode.
  
 This example demonstrates how to use AO waveform generation in specific channels from USBDAQF1AOD.
 

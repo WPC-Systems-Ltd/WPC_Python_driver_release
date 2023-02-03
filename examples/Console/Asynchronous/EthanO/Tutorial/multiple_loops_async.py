@@ -1,5 +1,5 @@
 '''
-Tutorial - multiple_loops_async.py
+Tutorial - multiple_loops_async.py with asynchronous mode.
 
 This example project demonstrates how to use two async thread to get RTC & print string from EthanO.
 

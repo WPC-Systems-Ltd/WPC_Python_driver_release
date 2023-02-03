@@ -1,5 +1,5 @@
 '''
-System_USB - get_pin_mode.py
+System_USB - get_pin_mode.py with asynchronous mode.
 
 This example demonstrates how to get pin mode from USBDAQF1AOD.
 

@@ -1,5 +1,5 @@
 '''
-Motion - Motion_velocity_blending_acceleration.py
+Motion - Motion_velocity_blending_acceleration.py with synchronous mode.
  
 For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
@@ -128,5 +128,6 @@ def main():
     dev.close()
  
     return
+    
 if __name__ == '__main__':
     main()

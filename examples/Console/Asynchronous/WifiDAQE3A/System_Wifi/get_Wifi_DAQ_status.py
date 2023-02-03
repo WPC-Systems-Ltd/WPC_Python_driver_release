@@ -1,5 +1,5 @@
 '''
-System_Wifi - get_Wifi_DAQ_status.py
+System_Wifi - get_Wifi_DAQ_status.py with asynchronous mode.
 
 This example demonstrates how to get basic information such as RSSI & battery & thermo from WifiDAQE3A.
 

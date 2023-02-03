@@ -1,5 +1,5 @@
 '''
-SPI - SPI_write.py
+SPI - SPI_write.py with synchronous mode.
 
 This example demonstrates how to communicate with USBDAQF1RD (master) and 25LC640 (slave) with SPI interface.
 
@@ -149,5 +149,6 @@ def main():
     dev.close()
 
     return
+    
 if __name__ == '__main__':
     main()

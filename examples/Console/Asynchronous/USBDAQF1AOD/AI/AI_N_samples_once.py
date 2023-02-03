@@ -1,5 +1,5 @@
 '''
-AI - AI_N_samples_once.py
+AI - AI_N_samples_once.py with asynchronous mode.
 
 This example demonstrates how to get AI data in N samples mode.
 Also, it gets AI data in once with 8 channels from USBDAQF1AOD.

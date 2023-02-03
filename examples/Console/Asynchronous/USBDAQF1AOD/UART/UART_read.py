@@ -1,5 +1,5 @@
 '''
-UART - UART_read.py
+UART - UART_read.py with asynchronous mode.
 
 This example demonstrates how to read data from another device with UART interface from USBDAQF1AOD.
 

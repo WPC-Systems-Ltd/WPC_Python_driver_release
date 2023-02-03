@@ -1,5 +1,5 @@
 '''
-System_Wifi - get_network_info.py
+System_Wifi - get_network_info.py with synchronous mode.
 
 This example demonstrates how to get hardware & network information from WifiDAQE3A.
 
@@ -63,5 +63,6 @@ def main():
     dev.close()
  
     return
+    
 if __name__ == '__main__':
     main()

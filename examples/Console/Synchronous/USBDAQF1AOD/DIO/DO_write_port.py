@@ -1,5 +1,5 @@
 '''
-DIO - DO_write_port.py
+DIO - DO_write_port.py with synchronous mode.
 
 This example demonstrates how to write DO in port from USBDAQF1AOD.
 
@@ -73,5 +73,6 @@ def main():
     dev.close()
 
     return
+    
 if __name__ == '__main__':
     main()

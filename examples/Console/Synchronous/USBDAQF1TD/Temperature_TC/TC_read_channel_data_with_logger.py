@@ -1,5 +1,5 @@
 '''
-Temperature_TC - TC_read_channel_data_with_logger.py
+Temperature_TC - TC_read_channel_data_with_logger.py with synchronous mode.
 
 This example demonstrates how to read thermocouple and save data into csv file from USBDAQF1TD.
 
@@ -94,5 +94,6 @@ def main():
     dev.close()
     
     return
+    
 if __name__ == '__main__':
     main()

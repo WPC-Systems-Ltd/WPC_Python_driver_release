@@ -1,5 +1,5 @@
 '''
-System_USB - get_USB_info.py
+System_USB - get_USB_info.py with synchronous mode.
 
 This example demonstrates how to get hardware information from USBDAQF1DSNK.
 
@@ -59,5 +59,6 @@ def main():
     dev.close()
     
     return
+    
 if __name__ == '__main__':
     main()

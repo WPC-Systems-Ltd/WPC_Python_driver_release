@@ -1,5 +1,5 @@
 '''
-AO - AO_write_one_channel.py
+AO - AO_write_one_channel.py with asynchronous mode.
 
 This example demonstrates how to write AO in specific channels from USBDAQF1AOD.
 

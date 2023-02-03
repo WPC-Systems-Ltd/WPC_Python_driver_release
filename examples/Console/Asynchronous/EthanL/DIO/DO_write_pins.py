@@ -1,5 +1,5 @@
 '''
-DIO - DO_write_pins.py
+DIO - DO_write_pins.py with asynchronous mode.
 
 This example demonstrates how to write DO in pins from EthanL.
 

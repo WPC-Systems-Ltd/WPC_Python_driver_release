@@ -1,5 +1,5 @@
 '''
-Motion - Motion_save_configuration_file.py
+Motion - Motion_save_configuration_file.py with asynchronous mode.
  
 For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples

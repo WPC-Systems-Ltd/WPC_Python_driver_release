@@ -1,5 +1,5 @@
 '''
-DIO - DO_blinky_port.py
+DIO - DO_blinky_port.py with synchronous mode.
 
 This example demonstrates how to write DO high or low in port from EthanL.
 
@@ -74,5 +74,6 @@ def main():
     dev.close()
 
     return
+    
 if __name__ == '__main__':
     main()

@@ -1,5 +1,5 @@
 '''
-CAN - CAN_write.py
+CAN - CAN_write.py with synchronous mode.
 
 This example demonstrates how to write data to another device with CAN interface from USBDAQF1CD.
 
@@ -90,5 +90,6 @@ def main():
     dev.close()
 
     return
+    
 if __name__ == '__main__':
     main()

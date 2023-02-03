@@ -1,5 +1,5 @@
 '''
-Temperature_TC - TC_read_channel_status.py
+Temperature_TC - TC_read_channel_status.py with asynchronous mode.
 
 This example demonstrates how to get status from USBDAQF1TD.
 

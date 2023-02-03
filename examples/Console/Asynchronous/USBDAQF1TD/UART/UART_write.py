@@ -1,5 +1,5 @@
 '''
-UART - UART_write.py
+UART - UART_write.py with asynchronous mode.
 
 This example demonstrates how to write data to another device with UART interface from USBDAQF1TD.
 

@@ -1,5 +1,5 @@
 '''
-SPI - SPI_read_and_write.py
+SPI - SPI_read_and_write.py with asynchronous mode.
 
 This example demonstrates how to communicate with USBDAQF1TD (master) and 25LC640 (slave) with SPI interface.
 

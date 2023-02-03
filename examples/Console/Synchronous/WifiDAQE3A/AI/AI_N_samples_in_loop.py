@@ -1,5 +1,5 @@
 '''
-AI - AI_N_samples_in_loop.py
+AI - AI_N_samples_in_loop.py with synchronous mode.
 
 This example demonstrates how to get AI data in N samples mode.
 Also, it uses loop to get AI data with 3 seconds timeout with 8 channels WifiDAQE3A.

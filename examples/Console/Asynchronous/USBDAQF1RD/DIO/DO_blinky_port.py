@@ -1,5 +1,5 @@
 '''
-DIO - DO_blinky_port.py
+DIO - DO_blinky_port.py with asynchronous mode.
 
 This example demonstrates how to write DO high or low in port from USBDAQF1RD.
 

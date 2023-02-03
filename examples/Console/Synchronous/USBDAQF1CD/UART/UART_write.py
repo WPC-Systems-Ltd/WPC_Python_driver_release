@@ -1,5 +1,5 @@
 '''
-UART - UART_write.py
+UART - UART_write.py with synchronous mode.
 
 This example demonstrates how to write data to another device with UART interface from USBDAQF1CD.
 
@@ -95,5 +95,6 @@ def main():
     dev.close()
 
     return
+    
 if __name__ == '__main__':
     main()

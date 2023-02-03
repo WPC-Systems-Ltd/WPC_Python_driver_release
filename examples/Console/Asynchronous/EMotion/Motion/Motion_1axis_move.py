@@ -1,5 +1,5 @@
 '''
-Motion - Motion_1axis_move.py
+Motion - Motion_1axis_move.py with asynchronous mode.
  
 For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples

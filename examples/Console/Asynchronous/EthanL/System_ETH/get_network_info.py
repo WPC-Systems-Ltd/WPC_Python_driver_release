@@ -1,5 +1,5 @@
 '''
-System_ETH - get_network_info.py
+System_ETH - get_network_info.py with asynchronous mode.
 
 This example demonstrates how to get hardware & network information from EthanL.
 

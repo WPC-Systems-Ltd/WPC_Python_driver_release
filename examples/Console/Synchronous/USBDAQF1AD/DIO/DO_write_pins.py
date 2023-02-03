@@ -1,5 +1,5 @@
 '''
-DIO - DO_write_pins.py
+DIO - DO_write_pins.py with synchronous mode.
 
 This example demonstrates how to write DO in pins from USBDAQF1AD.
 
@@ -83,5 +83,6 @@ def main():
     dev.close()
 
     return
+    
 if __name__ == '__main__':
     main()

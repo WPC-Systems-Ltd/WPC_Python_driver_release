@@ -1,5 +1,5 @@
 '''
-Motion - Motion_2axis_linear_interpolation.py
+Motion - Motion_2axis_linear_interpolation.py with asynchronous mode.
  
 For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples

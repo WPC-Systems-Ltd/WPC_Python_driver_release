@@ -1,5 +1,5 @@
 '''
-DIO - DO_blinky_pins.py
+DIO - DO_blinky_pins.py with synchronous mode.
 
 This example demonstrates how to write DO high or low in pins from USBDAQF1CD.
 
@@ -77,5 +77,6 @@ def main():
     dev.close()
 
     return
+    
 if __name__ == '__main__':
     main()

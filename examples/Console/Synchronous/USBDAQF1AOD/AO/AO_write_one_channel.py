@@ -1,5 +1,5 @@
 '''
-AO - AO_write_one_channel.py
+AO - AO_write_one_channel.py with synchronous mode.
 
 This example demonstrates how to write AO in specific channels from USBDAQF1AOD.
 
@@ -78,5 +78,6 @@ def main():
     dev.close()
     
     return
+    
 if __name__ == '__main__':
     main()

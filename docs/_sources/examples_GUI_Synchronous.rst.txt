@@ -1,0 +1,80 @@
+Example Codes - GUI (sync)
+===========================
+
+AIO/Analog Input
+----------------
+
+.. image:: images/GUI/Synchronous/AI_sync.PNG
+    :width: 80%
+    :alt: AI_sync.PNG
+
+
+AIO/Analog Input On Demand
+--------------------------
+
+.. image:: images/GUI/Synchronous/AI_ondemand_sync.PNG
+    :width: 80%
+    :alt: AI_ondemand_sync.PNG
+
+
+AIO/Analog Output
+-----------------
+.. image:: images/GUI/Synchronous/AO_sync.PNG
+    :width: 80%
+    :alt: AO_sync.PNG
+
+
+DIO/Digital Output
+------------------
+.. image:: images/GUI/Synchronous/DO_sync.PNG
+    :width: 80%
+    :alt: DO_sync.PNG
+
+
+System Network/Find All Device
+------------------------------
+.. image:: images/GUI/Synchronous/find_device_sync.PNG
+    :width: 80%
+    :alt: find_device_sync.PNG
+
+
+System Network/Get Device Info
+------------------------------
+.. image:: images/GUI/Synchronous/device_info_sync.PNG
+    :width: 80%
+    :alt: device_info_sync.PNG
+
+
+Temperature/RTD
+---------------
+.. image:: images/GUI/Synchronous/RTD_sync.PNG
+    :width: 80%
+    :alt: RTD_sync.PNG
+
+
+Temperature/Thermocouple
+------------------------
+.. image:: images/GUI/Synchronous/TC_sync.PNG
+    :width: 80%
+    :alt: TC_sync.PNG
+
+
+Interface/UART
+--------------
+.. image:: images/GUI/Synchronous/UART_sync.PNG
+    :width: 80%
+    :alt: UART_sync.PNG
+
+
+Interface/I2C
+-------------
+.. image:: images/GUI/Synchronous/I2c_sync.PNG
+    :width: 80%
+    :alt: I2c_sync.PNG
+
+
+Interface/SPI
+-------------
+.. image:: images/GUI/Synchronous/SPI_sync.PNG
+    :width: 80%
+    :alt: SPI_sync.PNG

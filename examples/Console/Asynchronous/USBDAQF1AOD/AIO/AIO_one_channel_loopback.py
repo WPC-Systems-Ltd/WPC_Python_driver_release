@@ -1,5 +1,5 @@
 '''
-AIO - AIO_one_channel_loopback.py
+AIO - AIO_one_channel_loopback.py with asynchronous mode.
 
 This example demonstrates how to write AIO loopback in specific channel from USBDAQF1AOD.
 Use AO pins to send signals and use AI pins to receive signals on single device also called "loopback".

@@ -70,7 +70,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../examples_console_Synchronous.html">Example Codes - Console (sync)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples_console_Asynchronous.html">Example Codes - Console (async)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples_GUI.html">Example Codes - GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples_GUI_Synchronous.html">Example Codes - GUI (sync)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples_GUI_Asynchronous.html">Example Codes - GUI (async)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">APPENDICES</span></p>
 <ul>
@@ -131,7 +132,7 @@
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -156,7 +157,7 @@ This parameter is only effective for the “N-samples” and “continuous” mo
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -244,7 +245,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -288,7 +289,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -313,7 +314,7 @@ This parameter is only effective for the “N-samples” and “continuous” mo
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -384,7 +385,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 <dt><strong>channel_list</strong><span class="classifier">list</span></dt><dd><p>List of channels to enable. 
 The channels that are not in the lists will be disabled accordingly.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -440,7 +441,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 <dt><strong>form</strong><span class="classifier">{1, 2, 3}</span></dt><dd><p>Form of the signal to generate.
 1: retangular, 2: triangular, 3: sine.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -473,7 +474,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>period</strong><span class="classifier">float</span></dt><dd><p>Signal period in seconds.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -559,7 +560,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 <dt><strong>mode</strong><span class="classifier">{0, 1, 2}</span></dt><dd><p>Generation mode.
 0: on demand, 1: N-samples, 2: continuous.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -613,7 +614,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 A sample is a list of values generated simultaneously on different channels.
 If N channels have been enabled, then a sample is made of N values.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -667,7 +668,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>sampling_rate</strong><span class="classifier">float</span></dt><dd><p>Sampling rate in Hz.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -717,7 +718,7 @@ This parameter is only effective for the “N-samples” and “continuous” mo
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -767,7 +768,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>value_list</strong><span class="classifier">list of float</span></dt><dd><p>List of voltages in volt where <code class="docutils literal notranslate"><span class="pre">value_list[i]</span></code> is written to Channel i.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -821,7 +822,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>value</strong><span class="classifier">float</span></dt><dd><p>Voltage in volt.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -869,7 +870,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -903,7 +904,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -943,7 +944,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -981,7 +982,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd>
 <dt><strong>subnet_mask</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>Subnet mask. (default: “255.255.255.0”)</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1025,7 +1026,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1111,7 +1112,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1161,7 +1162,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1215,7 +1216,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1249,7 +1250,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1270,7 +1271,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1347,7 +1348,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd>
 <dt><strong>second</strong><span class="classifier">int</span></dt><dd><p>second (0~59).</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time to set or get data.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>

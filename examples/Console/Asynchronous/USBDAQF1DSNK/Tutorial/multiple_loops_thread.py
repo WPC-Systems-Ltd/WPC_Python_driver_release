@@ -1,5 +1,5 @@
 '''
-Tutorial - multiple_loops_thread.py
+Tutorial - multiple_loops_thread.py with asynchronous mode.
 
 This example project demonstrates how to use two thread to get RTC & print string from USBDAQF1DSNK.
 

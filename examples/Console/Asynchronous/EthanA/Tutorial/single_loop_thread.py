@@ -1,5 +1,5 @@
 '''
-Tutorial - single_loop_thread.py
+Tutorial - single_loop_thread.py with asynchronous mode.
 
 This example project demonstrates how to use thread to get RTC from EthanA.
 

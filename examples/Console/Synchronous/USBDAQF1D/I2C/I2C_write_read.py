@@ -1,5 +1,5 @@
 '''
-I2C - I2C_write_read.py
+I2C - I2C_write_read.py with synchronous mode.
 
 This example demonstrates how to communicate with USBDAQF1D. (master) and 24C08C (slave) with I2C interface.
 
@@ -106,5 +106,6 @@ def main():
     dev.close()
     
     return
+    
 if __name__ == '__main__':
     main()

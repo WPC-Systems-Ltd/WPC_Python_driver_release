@@ -1,5 +1,5 @@
 '''
-AIO - AIO_all_channels_loopback.py
+AIO - AIO_all_channels_loopback.py with synchronous mode.
 
 This example demonstrates how to write AIO loopback in all channels from USBDAQF1AOD.
 Use AO pins to send signals and use AI pins to receive signals on single device also called "loopback".
@@ -84,5 +84,6 @@ def main():
     dev.close()
     
     return
+    
 if __name__ == '__main__':
     main()

@@ -1,5 +1,5 @@
 '''
-I2C - I2C_write_read.py
+I2C - I2C_write_read.py with asynchronous mode.
 
 This example demonstrates how to communicate with USBDAQF1CD. (master) and 24C08C (slave) with I2C interface.
 

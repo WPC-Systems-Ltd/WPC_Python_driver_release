@@ -1,5 +1,5 @@
 '''
-AI - AI_on_demand_once.py
+AI - AI_on_demand_once.py with synchronous mode.
 
 This example demonstrates how to get AI data in on demand mode.
 Also, it gets AI data in once with 8 channels from USBDAQF1AOD.
@@ -73,5 +73,6 @@ def main():
     dev.close()
     
     return
+    
 if __name__ == '__main__':
     main()
