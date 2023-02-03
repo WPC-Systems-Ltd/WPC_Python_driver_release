@@ -1,5 +1,10 @@
 .. include:: README.rst
 
+.. meta::
+   :title: WPC Python driver
+   :description: The easiest way to Control & Data Acquisition (DAQ)
+   :keywords: DAQ, USB, Ethernet, Wifi, driver   
+
 .. automodule:: pywpc
 
 .. toctree::
