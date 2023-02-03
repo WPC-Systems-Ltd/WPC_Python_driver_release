@@ -87,11 +87,14 @@
   <section id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h1>
 <p><strong>WPC Python driver</strong>, also known as <cite>pywpc</cite>, contains APIs for interacting with basically WPC DAQ cards or any other WPC USB, WiFi and Ethernet based devices.
-It supports Python version from 3.8 to 3.10 under Windows 10 operating systems.
-In order to optimize the performance of driver API, we adopt <a class="reference external" href="https://docs.python.org/3/library/asyncio.html">async/await</a> structure for driver implementation also known as non-blocking method.</p>
+It supports Python version from 3.8 to 3.10 under Windows 10 operating systems.</p>
+<p>Our APIs support synchronous and asynchronous modes for computer processes or threads.</p>
+<p>Synchronous mode means that two or more processes run in a step-by-step manner, one after the other.In this mode, the execution of a process is blocked until the previous process is completed.</p>
+<p>Asynchronous mode means that processes run independently of each other and don’t wait for the completion of the previous process. Instead, each process runs on its own, without blocking the execution of other processes.</p>
+<p>In general, synchronous mode is easier to understand and debug, while asynchronous mode is more scalable and allows for greater concurrency.</p>
 <p>Some API functions in the <cite>pywpc</cite> package may not compatible with earlier versions of WPC DAQ firmware.
 To update device firmware to the latest version, please use WPC Device Manager and <a class="reference external" href="https://drive.google.com/file/d/1Uj6r65KhNxvuApiqrMkZp-NWyq-Eek-k/view">LabVIEW Run-time engine</a>.
-You can download WPC Device Manager by <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/releases/tag/v1.0.9">latest release</a> or visit <a class="reference external" href="http://www.wpc.com.tw/36039260092584721462-daq1.html">WPC Systems Ltd. official website</a>.</p>
+You can download WPC Device Manager by <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/releases/tag/v2.0.0">latest release</a> or visit <a class="reference external" href="http://www.wpc.com.tw/">WPC Systems Ltd. official website</a>.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 19%" />
