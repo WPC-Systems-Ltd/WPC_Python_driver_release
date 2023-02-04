@@ -61,14 +61,14 @@ SPI
    examples/GUI/Synchronous/SPI/SPI_gui.rst
 
 
-System Wifi
------------
+System
+------
 
 .. toctree::
    :maxdepth: 4
 
 
-   examples/GUI/Synchronous/System_Wifi/get_device_info_gui.rst
+   examples/GUI/Synchronous/System/get_device_info_gui.rst
 
 
 Temperature-RTD

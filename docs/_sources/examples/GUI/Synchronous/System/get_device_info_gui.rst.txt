@@ -1,4 +1,4 @@
-Get device info test panel
+Device network info center
 ==========================
 
 .. image:: ../../../../images/GUI/Synchronous/get_device_info_gui.PNG
@@ -6,6 +6,6 @@ Get device info test panel
    :alt: get_device_info_gui.PNG
    :align: center
 |
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/GUI/Synchronous/System_Wifi/get_device_info_gui.py
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/GUI/Synchronous/System/get_device_info_gui.py
    :language: python
    :linenos:
