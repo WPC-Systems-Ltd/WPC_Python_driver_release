@@ -5,7 +5,9 @@ Network device finder
    :width: 50%
    :alt: find_all_devices_gui.PNG
    :align: center
+
 |
+
 .. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/GUI/Asynchronous/System/Device_finder/find_all_devices_gui.py
    :language: python
    :linenos:

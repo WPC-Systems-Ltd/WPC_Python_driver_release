@@ -5,7 +5,9 @@ UART test panel
    :width: 50%
    :alt: UART_gui.PNG
    :align: center
+
 |
+
 .. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/GUI/Asynchronous/UART/UART_gui.py
    :language: python
    :linenos:

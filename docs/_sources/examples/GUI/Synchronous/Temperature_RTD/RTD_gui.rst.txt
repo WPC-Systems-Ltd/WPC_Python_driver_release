@@ -5,7 +5,9 @@ RTD test panel
    :width: 50%
    :alt: RTD_gui.PNG
    :align: center
+
 |
+
 .. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/GUI/Synchronous/Temperature_RTD/RTD_gui.py
    :language: python
    :linenos:

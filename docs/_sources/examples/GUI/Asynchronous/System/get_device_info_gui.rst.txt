@@ -5,7 +5,9 @@ Device network info center
    :width: 50%
    :alt: get_device_info_gui.PNG
    :align: center
+
 |
+
 .. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/GUI/Asynchronous/System/Device_info_center/get_device_info_gui.py
    :language: python
    :linenos:
