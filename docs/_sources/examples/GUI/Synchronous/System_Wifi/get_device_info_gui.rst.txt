@@ -1,11 +1,11 @@
-Get device info with gui
-========================
+Get device info test panel
+==========================
 
 .. image:: ../../../../images/GUI/Synchronous/get_device_info_gui.PNG
-   :width: 80%
+   :width: 50%
    :alt: get_device_info_gui.PNG
    :align: center
-
+|
 .. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/GUI/Synchronous/System_Wifi/get_device_info_gui.py
    :language: python
    :linenos:

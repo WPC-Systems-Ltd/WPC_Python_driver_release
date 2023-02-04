@@ -1,11 +1,11 @@
-AI integrated with gui
-======================
+AI test panel
+=============
 
 .. image:: ../../../../images/GUI/Asynchronous/AI_integrated_gui.PNG
-   :width: 80%
+   :width: 50%
    :alt: AI_integrated_gui.PNG
    :align: center
-
+|
 .. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/GUI/Asynchronous/AI/AI_integrated_gui.py
    :language: python
    :linenos:
