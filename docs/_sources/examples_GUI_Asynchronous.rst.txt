@@ -31,16 +31,6 @@ DO
    examples/GUI/Asynchronous/DO/DO_gui.rst
 
 
-Find Devices
-------------
-
-.. toctree::
-   :maxdepth: 4
-
-
-   examples/GUI/Asynchronous/Find_devices/find_all_devices_gui.rst
-
-
 I2C
 ---
 
@@ -69,6 +59,9 @@ System
 
 
    examples/GUI/Asynchronous/System/get_device_info_gui.rst
+
+
+   examples/GUI/Asynchronous/System/find_all_devices_gui.rst
 
 
 Temperature-RTD
