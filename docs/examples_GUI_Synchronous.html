@@ -21,8 +21,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Example Codes - GUI (async)" href="examples_GUI_Asynchronous.html" />
-    <link rel="prev" title="Tutorial multiple loops async" href="examples/Console/Asynchronous/WifiDAQE3A/Tutorial/multiple_loops_async.html" /> 
+    <link rel="next" title="AI integrated with gui" href="examples/GUI/Synchronous/AI/AI_integrated_gui.html" />
+    <link rel="prev" title="UART with gui" href="examples/GUI/Asynchronous/UART/UART_gui.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -53,21 +53,50 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="examples_console_Synchronous.html">Example Codes - Console (sync)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples_console_Asynchronous.html">Example Codes - Console (async)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples_GUI_Asynchronous.html">Example Codes - GUI (async)</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Example Codes - GUI (sync)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#aio-analog-input">AIO/Analog Input</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#aio-analog-input-on-demand">AIO/Analog Input On Demand</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#aio-analog-output">AIO/Analog Output</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#dio-digital-output">DIO/Digital Output</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#system-network-find-all-device">System Network/Find All Device</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#system-network-get-device-info">System Network/Get Device Info</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#temperature-rtd">Temperature/RTD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#temperature-thermocouple">Temperature/Thermocouple</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#interface-uart">Interface/UART</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#interface-i2c">Interface/I2C</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#interface-spi">Interface/SPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ai">AI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/GUI/Synchronous/AI/AI_integrated_gui.html">AI integrated with gui</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="examples_GUI_Asynchronous.html">Example Codes - GUI (async)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ao">AO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/GUI/Synchronous/AO/AO_gui.html">AO with gui</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#do">DO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/GUI/Synchronous/DO/DO_gui.html">DO with gui</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#find-devices">Find Devices</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/GUI/Synchronous/Find_devices/find_all_devices_gui.html">Find all devices with gui</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#i2c">I2C</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/GUI/Synchronous/I2C/I2C_gui.html">I2C_with gui</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#spi">SPI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/GUI/Synchronous/SPI/SPI_gui.html">SPI_with gui</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#system-wifi">System Wifi</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/GUI/Synchronous/System_Wifi/get_device_info_gui.html">Get device info with gui</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#temperature-rtd">Temperature-RTD</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/GUI/Synchronous/Temperature_RTD/RTD_gui.html">RTD with gui</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#temperature-tc">Temperature-TC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/GUI/Synchronous/Temperature_TC/TC_gui.html">TC with gui</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#uart">UART</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/GUI/Synchronous/UART/UART_gui.html">UART with gui</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">APPENDICES</span></p>
 <ul>
@@ -101,49 +130,85 @@
              
   <section id="example-codes-gui-sync">
 <h1>Example Codes - GUI (sync)<a class="headerlink" href="#example-codes-gui-sync" title="Permalink to this heading"></a></h1>
-<section id="aio-analog-input">
-<h2>AIO/Analog Input<a class="headerlink" href="#aio-analog-input" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="_images/AI_sync.PNG"><img alt="AI_sync.PNG" src="_images/AI_sync.PNG" style="width: 80%;" /></a>
+<section id="ai">
+<h2>AI<a class="headerlink" href="#ai" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/GUI/Synchronous/AI/AI_integrated_gui.html">AI integrated with gui</a></li>
+</ul>
+</div>
 </section>
-<section id="aio-analog-input-on-demand">
-<h2>AIO/Analog Input On Demand<a class="headerlink" href="#aio-analog-input-on-demand" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="_images/AI_ondemand_sync.PNG"><img alt="AI_ondemand_sync.PNG" src="_images/AI_ondemand_sync.PNG" style="width: 80%;" /></a>
+<section id="ao">
+<h2>AO<a class="headerlink" href="#ao" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/GUI/Synchronous/AO/AO_gui.html">AO with gui</a></li>
+</ul>
+</div>
 </section>
-<section id="aio-analog-output">
-<h2>AIO/Analog Output<a class="headerlink" href="#aio-analog-output" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="_images/AO_sync.PNG"><img alt="AO_sync.PNG" src="_images/AO_sync.PNG" style="width: 80%;" /></a>
+<section id="do">
+<h2>DO<a class="headerlink" href="#do" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/GUI/Synchronous/DO/DO_gui.html">DO with gui</a></li>
+</ul>
+</div>
 </section>
-<section id="dio-digital-output">
-<h2>DIO/Digital Output<a class="headerlink" href="#dio-digital-output" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="_images/DO_sync.PNG"><img alt="DO_sync.PNG" src="_images/DO_sync.PNG" style="width: 80%;" /></a>
+<section id="find-devices">
+<h2>Find Devices<a class="headerlink" href="#find-devices" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/GUI/Synchronous/Find_devices/find_all_devices_gui.html">Find all devices with gui</a></li>
+</ul>
+</div>
 </section>
-<section id="system-network-find-all-device">
-<h2>System Network/Find All Device<a class="headerlink" href="#system-network-find-all-device" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="_images/find_device_sync.PNG"><img alt="find_device_sync.PNG" src="_images/find_device_sync.PNG" style="width: 80%;" /></a>
+<section id="i2c">
+<h2>I2C<a class="headerlink" href="#i2c" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/GUI/Synchronous/I2C/I2C_gui.html">I2C_with gui</a></li>
+</ul>
+</div>
 </section>
-<section id="system-network-get-device-info">
-<h2>System Network/Get Device Info<a class="headerlink" href="#system-network-get-device-info" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="_images/device_info_sync.PNG"><img alt="device_info_sync.PNG" src="_images/device_info_sync.PNG" style="width: 80%;" /></a>
+<section id="spi">
+<h2>SPI<a class="headerlink" href="#spi" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/GUI/Synchronous/SPI/SPI_gui.html">SPI_with gui</a></li>
+</ul>
+</div>
+</section>
+<section id="system-wifi">
+<h2>System Wifi<a class="headerlink" href="#system-wifi" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/GUI/Synchronous/System_Wifi/get_device_info_gui.html">Get device info with gui</a></li>
+</ul>
+</div>
 </section>
 <section id="temperature-rtd">
-<h2>Temperature/RTD<a class="headerlink" href="#temperature-rtd" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="_images/RTD_sync.PNG"><img alt="RTD_sync.PNG" src="_images/RTD_sync.PNG" style="width: 80%;" /></a>
+<h2>Temperature-RTD<a class="headerlink" href="#temperature-rtd" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/GUI/Synchronous/Temperature_RTD/RTD_gui.html">RTD with gui</a></li>
+</ul>
+</div>
 </section>
-<section id="temperature-thermocouple">
-<h2>Temperature/Thermocouple<a class="headerlink" href="#temperature-thermocouple" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="_images/TC_sync.PNG"><img alt="TC_sync.PNG" src="_images/TC_sync.PNG" style="width: 80%;" /></a>
+<section id="temperature-tc">
+<h2>Temperature-TC<a class="headerlink" href="#temperature-tc" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/GUI/Synchronous/Temperature_TC/TC_gui.html">TC with gui</a></li>
+</ul>
+</div>
 </section>
-<section id="interface-uart">
-<h2>Interface/UART<a class="headerlink" href="#interface-uart" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="_images/UART_sync.PNG"><img alt="UART_sync.PNG" src="_images/UART_sync.PNG" style="width: 80%;" /></a>
-</section>
-<section id="interface-i2c">
-<h2>Interface/I2C<a class="headerlink" href="#interface-i2c" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="_images/I2c_sync.PNG"><img alt="I2c_sync.PNG" src="_images/I2c_sync.PNG" style="width: 80%;" /></a>
-</section>
-<section id="interface-spi">
-<h2>Interface/SPI<a class="headerlink" href="#interface-spi" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="_images/SPI_sync.PNG"><img alt="SPI_sync.PNG" src="_images/SPI_sync.PNG" style="width: 80%;" /></a>
+<section id="uart">
+<h2>UART<a class="headerlink" href="#uart" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/GUI/Synchronous/UART/UART_gui.html">UART with gui</a></li>
+</ul>
+</div>
 </section>
 </section>
 
@@ -151,8 +216,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="examples/Console/Asynchronous/WifiDAQE3A/Tutorial/multiple_loops_async.html" class="btn btn-neutral float-left" title="Tutorial multiple loops async" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="examples_GUI_Asynchronous.html" class="btn btn-neutral float-right" title="Example Codes - GUI (async)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="examples/GUI/Asynchronous/UART/UART_gui.html" class="btn btn-neutral float-left" title="UART with gui" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="examples/GUI/Synchronous/AI/AI_integrated_gui.html" class="btn btn-neutral float-right" title="AI integrated with gui" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

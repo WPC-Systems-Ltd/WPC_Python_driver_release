@@ -1,0 +1,11 @@
+SPI_with gui
+============
+
+.. image:: ../../../../images/GUI/Synchronous/SPI_gui.PNG
+   :width: 80%
+   :alt: SPI_gui.PNG
+   :align: center
+
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/GUI/Synchronous/SPI/SPI_gui.py
+   :language: python
+   :linenos:

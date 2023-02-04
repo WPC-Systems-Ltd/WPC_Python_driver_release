@@ -34,8 +34,6 @@ EMotion
 
    examples/Console/Asynchronous/EMotion/Motion/Motion_1axis_move.rst
 
-   examples/Console/Asynchronous/EMotion/Motion/Motion_1axis_move_with_alarm_in.rst
-
    examples/Console/Asynchronous/EMotion/Motion/Motion_1axis_move_with_breakpoint.rst
 
    examples/Console/Asynchronous/EMotion/Motion/Motion_1axis_move_with_capture.rst

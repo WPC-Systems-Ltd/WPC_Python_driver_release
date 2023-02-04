@@ -1,0 +1,11 @@
+DO with gui
+===========
+
+.. image:: ../../../../images/GUI/Asynchronous/DO_gui.PNG
+   :width: 80%
+   :alt: DO_gui.PNG
+   :align: center
+
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/GUI/Asynchronous/DO/DO_gui.py
+   :language: python
+   :linenos:

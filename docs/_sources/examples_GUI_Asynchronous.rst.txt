@@ -1,80 +1,102 @@
 Example Codes - GUI (async)
 ===========================
 
-AIO/Analog Input
-----------------
+AI
+--
 
-.. image:: images/GUI/Asynchronous/AI_async.PNG
-    :width: 80%
-    :alt: AI_async.PNG
-
-
-AIO/Analog Input On Demand
---------------------------
-
-.. image:: images/GUI/Asynchronous/AI_ondemand_async.PNG
-    :width: 80%
-    :alt: AI_ondemand_async.PNG
+.. toctree::
+   :maxdepth: 4
 
 
-AIO/Analog Output
------------------
-.. image:: images/GUI/Asynchronous/AO_async.PNG
-    :width: 80%
-    :alt: AO_async.PNG
+   examples/GUI/Asynchronous/AI/AI_integrated_gui.rst
 
 
-DIO/Digital Output
-------------------
-.. image:: images/GUI/Asynchronous/DO_async.PNG
-    :width: 80%
-    :alt: DO_async.PNG
+AO
+--
+
+.. toctree::
+   :maxdepth: 4
 
 
-System Network/Find All Device
-------------------------------
-.. image:: images/GUI/Asynchronous/find_device_async.PNG
-    :width: 80%
-    :alt: find_device_async.PNG
+   examples/GUI/Asynchronous/AO/AO_gui.rst
 
 
-System Network/Get Device Info
-------------------------------
-.. image:: images/GUI/Asynchronous/device_info_async.PNG
-    :width: 80%
-    :alt: device_info_async.PNG
+DO
+--
+
+.. toctree::
+   :maxdepth: 4
 
 
-Temperature/RTD
+   examples/GUI/Asynchronous/DO/DO_gui.rst
+
+
+Find Devices
+------------
+
+.. toctree::
+   :maxdepth: 4
+
+
+   examples/GUI/Asynchronous/Find_devices/find_all_devices_gui.rst
+
+
+I2C
+---
+
+.. toctree::
+   :maxdepth: 4
+
+
+   examples/GUI/Asynchronous/I2C/I2C_gui.rst
+
+
+SPI
+---
+
+.. toctree::
+   :maxdepth: 4
+
+
+   examples/GUI/Asynchronous/SPI/SPI_gui.rst
+
+
+System Wifi
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+
+   examples/GUI/Asynchronous/System_Wifi/get_device_info_gui.rst
+
+
+Temperature-RTD
 ---------------
-.. image:: images/GUI/Asynchronous/RTD_async.PNG
-    :width: 80%
-    :alt: RTD_async.PNG
+
+.. toctree::
+   :maxdepth: 4
 
 
-Temperature/Thermocouple
-------------------------
-.. image:: images/GUI/Asynchronous/TC_async.PNG
-    :width: 80%
-    :alt: TC_async.PNG
+   examples/GUI/Asynchronous/Temperature_RTD/RTD_gui.rst
 
 
-Interface/UART
+Temperature-TC
 --------------
-.. image:: images/GUI/Asynchronous/UART_async.PNG
-    :width: 80%
-    :alt: UART_async.PNG
+
+.. toctree::
+   :maxdepth: 4
 
 
-Interface/I2C
--------------
-.. image:: images/GUI/Asynchronous/I2c_async.PNG
-    :width: 80%
-    :alt: I2c_async.PNG
+   examples/GUI/Asynchronous/Temperature_TC/TC_gui.rst
 
 
-Interface/SPI
--------------
-.. image:: images/GUI/Asynchronous/SPI_async.PNG
-    :width: 80%
-    :alt: SPI_async.PNG
+UART
+----
+
+.. toctree::
+   :maxdepth: 4
+
+
+   examples/GUI/Asynchronous/UART/UART_gui.rst
+

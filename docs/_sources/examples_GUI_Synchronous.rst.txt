@@ -1,80 +1,102 @@
 Example Codes - GUI (sync)
-===========================
+==========================
 
-AIO/Analog Input
-----------------
+AI
+--
 
-.. image:: images/GUI/Synchronous/AI_sync.PNG
-    :width: 80%
-    :alt: AI_sync.PNG
-
-
-AIO/Analog Input On Demand
---------------------------
-
-.. image:: images/GUI/Synchronous/AI_ondemand_sync.PNG
-    :width: 80%
-    :alt: AI_ondemand_sync.PNG
+.. toctree::
+   :maxdepth: 4
 
 
-AIO/Analog Output
------------------
-.. image:: images/GUI/Synchronous/AO_sync.PNG
-    :width: 80%
-    :alt: AO_sync.PNG
+   examples/GUI/Synchronous/AI/AI_integrated_gui.rst
 
 
-DIO/Digital Output
-------------------
-.. image:: images/GUI/Synchronous/DO_sync.PNG
-    :width: 80%
-    :alt: DO_sync.PNG
+AO
+--
+
+.. toctree::
+   :maxdepth: 4
 
 
-System Network/Find All Device
-------------------------------
-.. image:: images/GUI/Synchronous/find_device_sync.PNG
-    :width: 80%
-    :alt: find_device_sync.PNG
+   examples/GUI/Synchronous/AO/AO_gui.rst
 
 
-System Network/Get Device Info
-------------------------------
-.. image:: images/GUI/Synchronous/device_info_sync.PNG
-    :width: 80%
-    :alt: device_info_sync.PNG
+DO
+--
+
+.. toctree::
+   :maxdepth: 4
 
 
-Temperature/RTD
+   examples/GUI/Synchronous/DO/DO_gui.rst
+
+
+Find Devices
+------------
+
+.. toctree::
+   :maxdepth: 4
+
+
+   examples/GUI/Synchronous/Find_devices/find_all_devices_gui.rst
+
+
+I2C
+---
+
+.. toctree::
+   :maxdepth: 4
+
+
+   examples/GUI/Synchronous/I2C/I2C_gui.rst
+
+
+SPI
+---
+
+.. toctree::
+   :maxdepth: 4
+
+
+   examples/GUI/Synchronous/SPI/SPI_gui.rst
+
+
+System Wifi
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+
+   examples/GUI/Synchronous/System_Wifi/get_device_info_gui.rst
+
+
+Temperature-RTD
 ---------------
-.. image:: images/GUI/Synchronous/RTD_sync.PNG
-    :width: 80%
-    :alt: RTD_sync.PNG
+
+.. toctree::
+   :maxdepth: 4
 
 
-Temperature/Thermocouple
-------------------------
-.. image:: images/GUI/Synchronous/TC_sync.PNG
-    :width: 80%
-    :alt: TC_sync.PNG
+   examples/GUI/Synchronous/Temperature_RTD/RTD_gui.rst
 
 
-Interface/UART
+Temperature-TC
 --------------
-.. image:: images/GUI/Synchronous/UART_sync.PNG
-    :width: 80%
-    :alt: UART_sync.PNG
+
+.. toctree::
+   :maxdepth: 4
 
 
-Interface/I2C
--------------
-.. image:: images/GUI/Synchronous/I2c_sync.PNG
-    :width: 80%
-    :alt: I2c_sync.PNG
+   examples/GUI/Synchronous/Temperature_TC/TC_gui.rst
 
 
-Interface/SPI
--------------
-.. image:: images/GUI/Synchronous/SPI_sync.PNG
-    :width: 80%
-    :alt: SPI_sync.PNG
+UART
+----
+
+.. toctree::
+   :maxdepth: 4
+
+
+   examples/GUI/Synchronous/UART/UART_gui.rst
+
