@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wifi-DAQ-E3-A &mdash; WPC Python driver 1.1.3 documentation</title>
+  <title>Wifi-DAQ-E3-A &mdash; WPC Python driver 2.0.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -18,7 +18,6 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -35,7 +34,7 @@
             <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.1.3
+                2.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -65,8 +64,10 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">EXAMPLE CODES</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../examples_GUI.html">Example Codes - GUI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples_console.html">Example Codes - Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples_console_Synchronous.html">Example Codes - Console (sync)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples_console_Asynchronous.html">Example Codes - Console (async)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples_GUI_Synchronous.html">Example Codes - GUI (sync)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples_GUI_Asynchronous.html">Example Codes - GUI (async)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">APPENDICES</span></p>
 <ul>
@@ -118,6 +119,30 @@
 </dd>
 </dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AI_close">
+<span class="sig-name descname"><span class="pre">AI_close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AI_close" title="Permalink to this definition"></a></dt>
+<dd><p>Close AI module on a given port.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AI_close_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AI_close_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AI_close_async" title="Permalink to this definition"></a></dt>
 <dd><p>Close AI module on a given port with async mode.</p>
@@ -159,6 +184,30 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AI_open">
+<span class="sig-name descname"><span class="pre">AI_open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AI_open" title="Permalink to this definition"></a></dt>
+<dd><p>Open AI module on a given port.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AI_open_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AI_open_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AI_open_async" title="Permalink to this definition"></a></dt>
 <dd><p>Open AI module on a given port with async mode.</p>
@@ -181,6 +230,30 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AI_readOnDemand">
+<span class="sig-name descname"><span class="pre">AI_readOnDemand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AI_readOnDemand" title="Permalink to this definition"></a></dt>
+<dd><p>Read one sample from a given AI port.
+This should only be used in the “on demand” mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>sample</strong><span class="classifier">list of float</span></dt><dd><p>List of AI values in volt that are measured on enabled channels.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AI_readOnDemand_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AI_readOnDemand_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AI_readOnDemand_async" title="Permalink to this definition"></a></dt>
 <dd><p>Read one sample from a given AI port with async mode.
@@ -196,6 +269,41 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>sample</strong><span class="classifier">list of float</span></dt><dd><p>List of AI values in volt that are measured on enabled channels.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AI_readStreaming">
+<span class="sig-name descname"><span class="pre">AI_readStreaming</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.005</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AI_readStreaming" title="Permalink to this definition"></a></dt>
+<dd><p>Read AI streaming samples from a given port.</p>
+<p>After streaming starts, data are acquired by the DAQ with the rate indicated by configuration.
+The data are then streamed to the PC and are stocked in a queue in the WPC device handle.
+Users should call this function to retrieve them from the queue.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>num_samples</strong><span class="classifier">int</span></dt><dd><p>Number of samples to get out from the queue.
+A sample is a list of values measured simultaneously from different channels.
+If there are fewer samples than the expected number, 
+the function will return all available ones after <code class="docutils literal notranslate"><span class="pre">delay</span></code> seconds expire.</p>
+</dd>
+<dt><strong>delay</strong><span class="classifier">float</span></dt><dd><p>Time in seconds to wait for the indicated amount of data to arrive.
+This becomes ineffective if there are already <cite>num_samples</cite> samples in the queue.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>sample_list</strong><span class="classifier">list of list of float</span></dt><dd><p>AI data in volt.
+Each element of <code class="docutils literal notranslate"><span class="pre">sample_list</span></code> is a sample.
+A sample is a list of values measured simultaneously from different channels.
+For each <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">len(sample_list[i])</span></code> should be equal to the number of enabled channels.</p>
 </dd>
 </dl>
 </dd>
@@ -238,6 +346,33 @@ For each <code class="docutils literal notranslate"><span class="pre">i</span></
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AI_setMode">
+<span class="sig-name descname"><span class="pre">AI_setMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AI_setMode" title="Permalink to this definition"></a></dt>
+<dd><p>Set AI acquisition mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>mode</strong><span class="classifier">{0, 1, 2}</span></dt><dd><p>Acquisition mode.
+0: on demand, 1: N-samples, 2: continuous.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AI_setMode_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AI_setMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AI_setMode_async" title="Permalink to this definition"></a></dt>
 <dd><p>Set AI acquisition mode with async mode.</p>
@@ -249,6 +384,35 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>mode</strong><span class="classifier">{0, 1, 2}</span></dt><dd><p>Acquisition mode.
 0: on demand, 1: N-samples, 2: continuous.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AI_setNumSamples">
+<span class="sig-name descname"><span class="pre">AI_setNumSamples</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AI_setNumSamples" title="Permalink to this definition"></a></dt>
+<dd><p>Set number of AI samples to acquire.
+This parameter is only effective for the “N-samples” mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>num_samples</strong><span class="classifier">int</span></dt><dd><p>Number of samples.
+A sample is a list of values measured simultaneously from different channels.
+If N channels have been enabled, then a sample is made of N values.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -290,6 +454,33 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AI_setSamplingRate">
+<span class="sig-name descname"><span class="pre">AI_setSamplingRate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampling_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AI_setSamplingRate" title="Permalink to this definition"></a></dt>
+<dd><p>Set AI sampling rate.
+This parameter is only effective for the “N-samples” and “continuous” modes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>sampling_rate</strong><span class="classifier">float</span></dt><dd><p>Sampling rate in Hz.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AI_setSamplingRate_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AI_setSamplingRate_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampling_rate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AI_setSamplingRate_async" title="Permalink to this definition"></a></dt>
 <dd><p>Set AI sampling rate with async mode.
@@ -301,6 +492,31 @@ This parameter is only effective for the “N-samples” and “continuous” mo
 See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>sampling_rate</strong><span class="classifier">float</span></dt><dd><p>Sampling rate in Hz.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AI_start">
+<span class="sig-name descname"><span class="pre">AI_start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AI_start" title="Permalink to this definition"></a></dt>
+<dd><p>Start streaming acquisition on a given AI port.
+This parameter is only effective for the “N-samples” and “continuous” modes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -338,6 +554,31 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AI_stop">
+<span class="sig-name descname"><span class="pre">AI_stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AI_stop" title="Permalink to this definition"></a></dt>
+<dd><p>Stop streaming acquisition on a given AI port.
+This parameter is only effective for the “N-samples” and “continuous” modes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AI_stop_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AI_stop_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AI_stop_async" title="Permalink to this definition"></a></dt>
 <dd><p>Stop streaming acquisition on a given AI port with async mode.
@@ -361,6 +602,26 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Net_getGateway">
+<span class="sig-name descname"><span class="pre">Net_getGateway</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Net_getGateway" title="Permalink to this definition"></a></dt>
+<dd><p>Get geteway from the connected web device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>gateway</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>Network gateway.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Net_getGateway_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Net_getGateway_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Net_getGateway_async" title="Permalink to this definition"></a></dt>
 <dd><p>Get geteway from the connected web device with async mode.</p>
@@ -368,6 +629,29 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>gateway</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>Network gateway.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Net_getIPAddrAndSubmask">
+<span class="sig-name descname"><span class="pre">Net_getIPAddrAndSubmask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Net_getIPAddrAndSubmask" title="Permalink to this definition"></a></dt>
+<dd><p>Get IP address and subnet mask from the connected web device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>network_info</strong><span class="classifier">list of 2 str.</span></dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">network_info[0]</span></code>: IP address</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">network_info[1]</span></code>: subnet mask</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
@@ -392,6 +676,26 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Net_getMACAddr">
+<span class="sig-name descname"><span class="pre">Net_getMACAddr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Net_getMACAddr" title="Permalink to this definition"></a></dt>
+<dd><p>Get MAC address from the connected web device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>mac_addr</strong><span class="classifier">str of 6 int separated by colon.</span></dt><dd><p>MAC address.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Net_getMACAddr_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Net_getMACAddr_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Net_getMACAddr_async" title="Permalink to this definition"></a></dt>
 <dd><p>Get MAC address from the connected web device with async mode.</p>
@@ -399,6 +703,31 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>mac_addr</strong><span class="classifier">str of 6 int separated by colon.</span></dt><dd><p>MAC address.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Net_setIPAddrAndSubmask">
+<span class="sig-name descname"><span class="pre">Net_setIPAddrAndSubmask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip_addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subnet_mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'255.255.255.0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Net_setIPAddrAndSubmask" title="Permalink to this definition"></a></dt>
+<dd><p>Set IP address and subnet mask to the connected web device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ip_addr</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>IP network address.</p>
+</dd>
+<dt><strong>subnet_mask</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>Subnet mask. (default: “255.255.255.0”)</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
 </dd>
 </dl>
 </dd>
@@ -429,6 +758,30 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Sys_getDriverInfo">
+<span class="sig-name descname"><span class="pre">Sys_getDriverInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Sys_getDriverInfo" title="Permalink to this definition"></a></dt>
+<dd><p>Get device firmware information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>driver_info</strong><span class="classifier">list of three string</span></dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[0]</span></code>: Model name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[1]</span></code>: Mode.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[2]</span></code>: Firmware version.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Sys_getDriverInfo_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getDriverInfo_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Sys_getDriverInfo_async" title="Permalink to this definition"></a></dt>
 <dd><p>Get device firmware information with async mode.</p>
@@ -447,10 +800,24 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Sys_getGateway">
+<span class="sig-name descname"><span class="pre">Sys_getGateway</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Sys_getGateway" title="Permalink to this definition"></a></dt>
+<dd><p>Deprecated in v1.0.5. Will be removed in v1.2.0.</p>
+<p>See :ref:<code class="docutils literal notranslate"><span class="pre">Net_getGateway</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Sys_getGateway_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getGateway_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Sys_getGateway_async" title="Permalink to this definition"></a></dt>
 <dd><p>Deprecated in v1.0.5. Will be removed in v1.2.0.</p>
 <p>See :ref:<code class="docutils literal notranslate"><span class="pre">Net_getGateway_async</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Sys_getIPAddrAndSubmask">
+<span class="sig-name descname"><span class="pre">Sys_getIPAddrAndSubmask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Sys_getIPAddrAndSubmask" title="Permalink to this definition"></a></dt>
+<dd><p>Deprecated in v1.0.5. Will be removed in v1.2.0.</p>
+<p>See :ref:<code class="docutils literal notranslate"><span class="pre">Net_getIPAddrAndSubmask</span></code>.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -461,10 +828,44 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Sys_getMACAddr">
+<span class="sig-name descname"><span class="pre">Sys_getMACAddr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Sys_getMACAddr" title="Permalink to this definition"></a></dt>
+<dd><p>Deprecated in v1.0.5. Will be removed in v1.2.0.</p>
+<p>See :ref:<code class="docutils literal notranslate"><span class="pre">Net_getMACAddr</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Sys_getMACAddr_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getMACAddr_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Sys_getMACAddr_async" title="Permalink to this definition"></a></dt>
 <dd><p>Deprecated in v1.0.5. Will be removed in v1.2.0.</p>
 <p>See :ref:<code class="docutils literal notranslate"><span class="pre">Net_getMACAddr_async</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Sys_getPinModeInPort">
+<span class="sig-name descname"><span class="pre">Sys_getPinModeInPort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Sys_getPinModeInPort" title="Permalink to this definition"></a></dt>
+<dd><p>Get pin mode in specific port.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>pins</strong><span class="classifier">int</span></dt><dd><p>How many pins in specific port.</p>
+</dd>
+<dt><strong>pin_mode</strong><span class="classifier">list of 8 string</span></dt><dd><ul class="simple">
+<li><p>[pin0, pin1,……pin7]</p></li>
+<li><p>pinmode : Disabled, Idle, DI, DO, UART, I2C, SPI, CAN, PWM and ADC.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -486,6 +887,36 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <li><p>[pin0, pin1,……pin7]</p></li>
 <li><p>pinmode : Disabled, Idle, DI, DO, UART, I2C, SPI, CAN, PWM and ADC.</p></li>
 </ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Sys_getRTC">
+<span class="sig-name descname"><span class="pre">Sys_getRTC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Sys_getRTC" title="Permalink to this definition"></a></dt>
+<dd><p>Get date and time to connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><dl class="simple">
+<dt>Date and time represented by “A-B-C, D:E:F”.</dt><dd><ul class="simple">
+<li><p>“A” is year.</p></li>
+<li><p>“B” is month.</p></li>
+<li><p>“C” is day.</p></li>
+<li><p>“D” is hour.</p></li>
+<li><p>“E” is minute.</p></li>
+<li><p>“F” is second.</p></li>
+</ul>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd>
@@ -517,6 +948,26 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Sys_getSerialNumber">
+<span class="sig-name descname"><span class="pre">Sys_getSerialNumber</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Sys_getSerialNumber" title="Permalink to this definition"></a></dt>
+<dd><p>Get serial number from the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><p>Serial number represented by string of 8 characters.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Sys_getSerialNumber_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getSerialNumber_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Sys_getSerialNumber_async" title="Permalink to this definition"></a></dt>
 <dd><p>Get serial number from the connected WPC device with async mode.</p>
@@ -524,6 +975,48 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>str_</strong><span class="classifier">str</span></dt><dd><p>Serial number represented by string of 8 characters.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Sys_reboot">
+<span class="sig-name descname"><span class="pre">Sys_reboot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Sys_reboot" title="Permalink to this definition"></a></dt>
+<dd><p>Reboot from the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Sys_rebootOnBootloader">
+<span class="sig-name descname"><span class="pre">Sys_rebootOnBootloader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Sys_rebootOnBootloader" title="Permalink to this definition"></a></dt>
+<dd><p>Reboot on bootloader from the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
 </dd>
 </dl>
 </dd>
@@ -561,10 +1054,49 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Sys_setIPAddrAndSubmask">
+<span class="sig-name descname"><span class="pre">Sys_setIPAddrAndSubmask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip_addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subnet_mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'255.255.255.0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Sys_setIPAddrAndSubmask" title="Permalink to this definition"></a></dt>
+<dd><p>Deprecated in v1.0.5. Will be removed in v1.2.0.</p>
+<p>See :ref:<code class="docutils literal notranslate"><span class="pre">Net_setIPAddrAndSubmask</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Sys_setIPAddrAndSubmask_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setIPAddrAndSubmask_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip_addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subnet_mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'255.255.255.0'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Sys_setIPAddrAndSubmask_async" title="Permalink to this definition"></a></dt>
 <dd><p>Deprecated in v1.0.5. Will be removed in v1.2.0.</p>
 <p>See :ref:<code class="docutils literal notranslate"><span class="pre">Net_setIPAddrAndSubmask_async</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Sys_setRTC">
+<span class="sig-name descname"><span class="pre">Sys_setRTC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hour</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minute</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Sys_setRTC" title="Permalink to this definition"></a></dt>
+<dd><p>Set date and time to connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>year</strong><span class="classifier">int</span></dt><dd><p>year (CE).</p>
+</dd>
+<dt><strong>month</strong><span class="classifier">int</span></dt><dd><p>month (1~12).</p>
+</dd>
+<dt><strong>day</strong><span class="classifier">int</span></dt><dd><p>day (1~31).</p>
+</dd>
+<dt><strong>hour</strong><span class="classifier">int</span></dt><dd><p>hour (24-hour clock) (0~23).</p>
+</dd>
+<dt><strong>minute</strong><span class="classifier">int</span></dt><dd><p>minute (0~59).</p>
+</dd>
+<dt><strong>second</strong><span class="classifier">int</span></dt><dd><p>second (0~59).</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 : Success, Others : Error.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -598,6 +1130,29 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_getWifiBandwidth">
+<span class="sig-name descname"><span class="pre">Wifi_getWifiBandwidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_getWifiBandwidth" title="Permalink to this definition"></a></dt>
+<dd><p>Get bandwidth from Wifi device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>bandwidth</strong><span class="classifier">int</span></dt><dd><ul class="simple">
+<li><p>1 : bandwidth is HT20.</p></li>
+<li><p>2 : bandwidth is HT40.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_getWifiBandwidth_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_getWifiBandwidth_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_getWifiBandwidth_async" title="Permalink to this definition"></a></dt>
 <dd><p>Get bandwidth from Wifi device with async mode.</p>
@@ -607,6 +1162,29 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt><strong>bandwidth</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>1 : bandwidth is HT20.</p></li>
 <li><p>2 : bandwidth is HT40.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_getWifiConfiguration">
+<span class="sig-name descname"><span class="pre">Wifi_getWifiConfiguration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_getWifiConfiguration" title="Permalink to this definition"></a></dt>
+<dd><p>Get Wifi reconnection times and AP stay time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>wifi_configuration</strong><span class="classifier">list of 2 positive int.</span></dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">wifi_configuration[0]</span></code>: Wifi connection retry times</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wifi_configuration[1]</span></code>: Time of staying in AP mode in second</p></li>
 </ul>
 </dd>
 </dl>
@@ -632,6 +1210,26 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_readAccleration">
+<span class="sig-name descname"><span class="pre">Wifi_readAccleration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_readAccleration" title="Permalink to this definition"></a></dt>
+<dd><p>Get acceleration from sensor if the Wifi device has one.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>accleration_three_axis</strong><span class="classifier">list of 3 int</span></dt><dd><p>Accelerations in x-, y-, and z-axis.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_readAccleration_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_readAccleration_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_readAccleration_async" title="Permalink to this definition"></a></dt>
 <dd><p>Get acceleration from sensor if the Wifi device has one with async mode.</p>
@@ -639,6 +1237,26 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>accleration_three_axis</strong><span class="classifier">list of 3 int</span></dt><dd><p>Accelerations in x-, y-, and z-axis.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_readBattery">
+<span class="sig-name descname"><span class="pre">Wifi_readBattery</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_readBattery" title="Permalink to this definition"></a></dt>
+<dd><p>Get volatge status of battery if the Wifi device has one.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>battery</strong><span class="classifier">int</span></dt><dd><p>Battery level in mV.</p>
 </dd>
 </dl>
 </dd>
@@ -660,6 +1278,26 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_readRSSI">
+<span class="sig-name descname"><span class="pre">Wifi_readRSSI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_readRSSI" title="Permalink to this definition"></a></dt>
+<dd><p>Get Wifi RSSI signal of the connected Wifi device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>rssi</strong><span class="classifier">int</span></dt><dd><p>RSSI signal in dBm.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_readRSSI_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_readRSSI_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_readRSSI_async" title="Permalink to this definition"></a></dt>
 <dd><p>Get Wifi RSSI signal of the connected Wifi device with async mode.</p>
@@ -674,6 +1312,26 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_readThermo">
+<span class="sig-name descname"><span class="pre">Wifi_readThermo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_readThermo" title="Permalink to this definition"></a></dt>
+<dd><p>Get temperature from thermal sensor if the Wifi device has one.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>thermo</strong><span class="classifier">float</span></dt><dd><p>Temperature in Celsius.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_readThermo_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Wifi_readThermo_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_readThermo_async" title="Permalink to this definition"></a></dt>
 <dd><p>Get temperature from thermal sensor if the Wifi device has one with async mode.</p>
@@ -681,6 +1339,27 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>thermo</strong><span class="classifier">float</span></dt><dd><p>Temperature in Celsius.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.Wifi_setAP">
+<span class="sig-name descname"><span class="pre">Wifi_setAP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.Wifi_setAP" title="Permalink to this definition"></a></dt>
+<dd><p>Change from station mode to AP mode for Wifi device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
 </dd>
 </dl>
 </dd>

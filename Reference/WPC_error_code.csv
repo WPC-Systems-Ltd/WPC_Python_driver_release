@@ -29,6 +29,7 @@ Error code,Error message
 -8001,Failed to connect to WPC DAQ. Please check USB plugin status and serial number.
 -8002,Failed to connect to WPC DAQ. Please check network status and IP address.
 -8007,Network DAQ connection lost.
+-8008,Receive packet timeout.
 -8009,Invalid pin index.
 -8010,Inconsistency between the number of pins & the number of values.
 -8011,Inconsistency between the type of pins & the type of values.

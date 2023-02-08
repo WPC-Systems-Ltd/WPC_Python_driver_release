@@ -2,9 +2,12 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="WPC Python driver" name="title" />
+<meta content="The easiest way to Control &amp; Data Acquisition (DAQ)" name="description" />
+<meta content="DAQ, USB, Ethernet, Wifi, driver" name="keywords" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Overview &mdash; WPC Python driver 1.1.3 documentation</title>
+  <title>Overview &mdash; WPC Python driver 2.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/custom_sphinx.css" type="text/css" />
@@ -18,7 +21,6 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -34,7 +36,7 @@
             <img src="_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                1.1.3
+                2.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -51,8 +53,10 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">EXAMPLE CODES</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="examples_GUI.html">Example Codes - GUI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples_console.html">Example Codes - Console</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples_console_Synchronous.html">Example Codes - Console (sync)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples_console_Asynchronous.html">Example Codes - Console (async)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples_GUI_Synchronous.html">Example Codes - GUI (sync)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples_GUI_Asynchronous.html">Example Codes - GUI (async)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">APPENDICES</span></p>
 <ul>
@@ -87,11 +91,14 @@
   <section id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h1>
 <p><strong>WPC Python driver</strong>, also known as <cite>pywpc</cite>, contains APIs for interacting with basically WPC DAQ cards or any other WPC USB, WiFi and Ethernet based devices.
-It supports Python version from 3.8 to 3.10 under Windows 10 operating systems.
-In order to optimize the performance of driver API, we adopt <a class="reference external" href="https://docs.python.org/3/library/asyncio.html">async/await</a> structure for driver implementation also known as non-blocking method.</p>
+It supports Python version from 3.8 to 3.10 under Windows 10 operating systems.</p>
+<p>Our APIs support synchronous and asynchronous modes for computer processes or threads.</p>
+<p>Synchronous mode means that two or more processes run in a step-by-step manner, one after the other.In this mode, the execution of a process is blocked until the previous process is completed.</p>
+<p>Asynchronous mode means that processes run independently of each other and don’t wait for the completion of the previous process. Instead, each process runs on its own, without blocking the execution of other processes.</p>
+<p>In general, synchronous mode is easier to understand and debug, while asynchronous mode is more scalable and allows for greater concurrency.</p>
 <p>Some API functions in the <cite>pywpc</cite> package may not compatible with earlier versions of WPC DAQ firmware.
 To update device firmware to the latest version, please use WPC Device Manager and <a class="reference external" href="https://drive.google.com/file/d/1Uj6r65KhNxvuApiqrMkZp-NWyq-Eek-k/view">LabVIEW Run-time engine</a>.
-You can download WPC Device Manager by <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/releases/tag/v1.0.9">latest release</a> or visit <a class="reference external" href="http://www.wpc.com.tw/36039260092584721462-daq1.html">WPC Systems Ltd. official website</a>.</p>
+You can download WPC Device Manager by <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/releases/tag/v2.0.0">latest release</a> or visit <a class="reference external" href="http://www.wpc.com.tw/">WPC Systems Ltd. official website</a>.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 19%" />
@@ -136,7 +143,7 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_NAME</span>
 <span class="go">pywpc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pywpc</span><span class="o">.</span><span class="n">__version__</span>
-<span class="go">1.1.3</span>
+<span class="go">2.0.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pywpc</span><span class="o">.</span><span class="n">HANDLE_LIST</span>
 <span class="go">[&#39;DeviceFinder&#39;, &#39;DataLogger&#39;, &#39;WifiDAQE3A&#39;, &#39;EMotion&#39;, &#39;EthanA&#39;, &#39;EthanD&#39;, &#39;EthanL&#39;, &#39;EthanO&#39;, &#39;USBDAQF1D&#39;, &#39;USBDAQF1DSNK&#39;, &#39;USBDAQF1AD&#39;, &#39;USBDAQF1AOD&#39;, &#39;USBDAQF1TD&#39;, &#39;USBDAQF1RD&#39;, &#39;USBDAQF1CD&#39;]</span>
 </pre></div>
@@ -265,7 +272,7 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <tr class="row-odd"><td><p>Ethan-L</p></td>
 <td></td>
 <td></td>
-<td><p>1</p></td>
+<td></td>
 <td><p>0</p></td>
 <td></td>
 <td></td>

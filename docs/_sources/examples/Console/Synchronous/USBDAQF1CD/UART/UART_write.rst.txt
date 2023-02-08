@@ -1,0 +1,6 @@
+UART write
+==========
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/USBDAQF1CD/UART/UART_write.py
+   :language: python
+   :linenos:

@@ -1,0 +1,6 @@
+RTD read channel status
+=======================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/USBDAQF1RD/Temperature_RTD/RTD_read_channel_status.py
+   :language: python
+   :linenos:

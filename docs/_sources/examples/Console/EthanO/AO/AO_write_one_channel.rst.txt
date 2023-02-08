@@ -1,6 +1,0 @@
-AO write one channel
-====================
-
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/EthanO/AO/AO_write_one_channel.py
-   :language: python
-   :linenos:

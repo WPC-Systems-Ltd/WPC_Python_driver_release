@@ -1,6 +1,0 @@
-System get network info
-=======================
-
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/EMotion/System_ETH/get_network_info.py
-   :language: python
-   :linenos:

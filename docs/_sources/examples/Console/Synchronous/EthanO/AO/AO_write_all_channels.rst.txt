@@ -1,0 +1,6 @@
+AO write all channels
+=====================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/EthanO/AO/AO_write_all_channels.py
+   :language: python
+   :linenos:

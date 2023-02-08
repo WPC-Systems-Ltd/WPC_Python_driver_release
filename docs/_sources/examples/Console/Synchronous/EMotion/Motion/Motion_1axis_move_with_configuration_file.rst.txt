@@ -1,0 +1,6 @@
+Motion 1axis move with config file
+==================================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/EMotion/Motion/Motion_1axis_move_with_configuration_file.py
+   :language: python
+   :linenos:

@@ -1,6 +1,12 @@
 WPC Python driver release changelog
 ===================================
 
+v2.0.0 Date: 2023/02/03, Developer: Chunglee_people
+---------------------------------------------------
+### Added
+- Add synchronous console and GUI example code
+- Add asynchronous and synchronous mode description in readme.rst
+
 v1.1.3 Date: 2023/01/18, Developer: Chunglee_people
 ---------------------------------------------------
 

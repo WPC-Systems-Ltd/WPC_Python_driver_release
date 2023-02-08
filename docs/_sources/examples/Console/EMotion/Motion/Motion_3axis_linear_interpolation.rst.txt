@@ -1,6 +1,0 @@
-Motion 3axis linear interpo
-===========================
-
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/EMotion/Motion/Motion_3axis_linear_interpolation.py
-   :language: python
-   :linenos:
