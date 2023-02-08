@@ -1,0 +1,13 @@
+TC test panel
+=============
+
+.. image:: ../../../../images/GUI/Synchronous/TC_gui.PNG
+   :width: 50%
+   :alt: TC_gui.PNG
+   :align: center
+
+|
+
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/GUI/Synchronous/Temperature_TC/TC_gui.py
+   :language: python
+   :linenos:

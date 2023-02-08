@@ -1,0 +1,6 @@
+Motion find home
+================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/EMotion/Motion/Motion_find_home.py
+   :language: python
+   :linenos:

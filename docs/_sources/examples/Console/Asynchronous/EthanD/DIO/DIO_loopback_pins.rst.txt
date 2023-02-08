@@ -1,0 +1,6 @@
+DIO loopback pins
+=================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/EthanD/DIO/DIO_loopback_pins.py
+   :language: python
+   :linenos:

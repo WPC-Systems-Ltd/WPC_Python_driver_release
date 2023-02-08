@@ -1,6 +1,0 @@
-SPI read and write
-==================
-
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1D/SPI/SPI_read_and_write.py
-   :language: python
-   :linenos:

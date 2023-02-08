@@ -1,0 +1,6 @@
+Motion 1axis move with breakpoint
+=================================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/EMotion/Motion/Motion_1axis_move_with_breakpoint.py
+   :language: python
+   :linenos:

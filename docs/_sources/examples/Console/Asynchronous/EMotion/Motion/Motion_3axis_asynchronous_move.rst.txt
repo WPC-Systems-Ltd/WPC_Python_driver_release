@@ -1,0 +1,6 @@
+Motion 3axis async move
+=======================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/EMotion/Motion/Motion_3axis_asynchronous_move.py
+   :language: python
+   :linenos:

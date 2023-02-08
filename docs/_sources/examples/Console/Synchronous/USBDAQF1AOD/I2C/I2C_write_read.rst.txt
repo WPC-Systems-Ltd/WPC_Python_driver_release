@@ -1,0 +1,6 @@
+I2C write and read
+==================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/USBDAQF1AOD/I2C/I2C_write_read.py
+   :language: python
+   :linenos:

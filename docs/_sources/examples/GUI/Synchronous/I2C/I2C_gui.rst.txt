@@ -1,0 +1,13 @@
+I2C test panel
+==============
+
+.. image:: ../../../../images/GUI/Synchronous/I2C_gui.PNG
+   :width: 50%
+   :alt: I2C_gui.PNG
+   :align: center
+
+|
+
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/GUI/Synchronous/I2C/I2C_gui.py
+   :language: python
+   :linenos:

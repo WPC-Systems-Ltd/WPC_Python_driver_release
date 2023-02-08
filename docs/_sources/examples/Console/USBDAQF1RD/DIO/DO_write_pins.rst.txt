@@ -1,6 +1,0 @@
-DO write pins
-=============
-
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/Console/USBDAQF1RD/DIO/DO_write_pins.py
-   :language: python
-   :linenos:

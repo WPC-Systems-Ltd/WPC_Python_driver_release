@@ -1,0 +1,13 @@
+UART test panel
+===============
+
+.. image:: ../../../../images/GUI/Synchronous/UART_gui.PNG
+   :width: 50%
+   :alt: UART_gui.PNG
+   :align: center
+
+|
+
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/GUI/Synchronous/UART/UART_gui.py
+   :language: python
+   :linenos:

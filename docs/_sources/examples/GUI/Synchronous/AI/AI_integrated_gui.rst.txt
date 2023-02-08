@@ -1,0 +1,13 @@
+AI test panel
+=============
+
+.. image:: ../../../../images/GUI/Synchronous/AI_integrated_gui.PNG
+   :width: 50%
+   :alt: AI_integrated_gui.PNG
+   :align: center
+
+|
+
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/GUI/Synchronous/AI/AI_integrated_gui.py
+   :language: python
+   :linenos:

@@ -1,0 +1,13 @@
+DO test panel
+=============
+
+.. image:: ../../../../images/GUI/Synchronous/DO_gui.PNG
+   :width: 50%
+   :alt: DO_gui.PNG
+   :align: center
+
+|
+
+.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/GUI/Synchronous/DO/DO_gui.py
+   :language: python
+   :linenos:

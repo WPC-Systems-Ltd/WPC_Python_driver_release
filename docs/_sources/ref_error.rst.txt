@@ -100,6 +100,9 @@ Error Code Table
    * - -8007
      - 
      - Network DAQ connection lost.
+   * - -8008
+     - 
+     - Receive packet timeout.
    * - -8009
      - 
      - Invalid pin index.
