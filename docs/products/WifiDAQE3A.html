@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wifi-DAQ-E3-A &mdash; WPC Python driver 2.0.0 documentation</title>
+  <title>Wifi-DAQ-E3-A &mdash; WPC Python driver 2.0.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.0.0
+                2.0.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -290,7 +290,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>num_samples</strong><span class="classifier">int</span></dt><dd><p>Number of samples to get out from the queue.
 A sample is a list of values measured simultaneously from different channels.
-If there are fewer samples than the expected number, 
+If there are fewer samples than the expected number,
 the function will return all available ones after <code class="docutils literal notranslate"><span class="pre">delay</span></code> seconds expire.</p>
 </dd>
 <dt><strong>delay</strong><span class="classifier">float</span></dt><dd><p>Time in seconds to wait for the indicated amount of data to arrive.
@@ -325,7 +325,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>num_samples</strong><span class="classifier">int</span></dt><dd><p>Number of samples to get out from the queue.
 A sample is a list of values measured simultaneously from different channels.
-If there are fewer samples than the expected number, 
+If there are fewer samples than the expected number,
 the function will return all available ones after <code class="docutils literal notranslate"><span class="pre">delay</span></code> seconds expire.</p>
 </dd>
 <dt><strong>delay</strong><span class="classifier">float</span></dt><dd><p>Time in seconds to wait for the indicated amount of data to arrive.
@@ -1407,7 +1407,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>ip_addr</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>IP network address of the WPC device to connect to.</p>
+<dt><strong>ip</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>IP network address of the WPC device to connect to.</p>
 </dd>
 <dt><strong>port1</strong><span class="classifier">int, default: 7</span></dt><dd><p>TCP port for commands.</p>
 </dd>

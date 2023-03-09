@@ -8,12 +8,13 @@ First, it shows how to open AO and AI in port.
 Second, write digital signals to AO in specific channel and read AI ondemand data.
 Last, close AO and AI in port.
 
+Please change correct serial number or IP and port number BEFORE you run example code.
+
 For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd.
-All rights reserved.
+Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -33,59 +34,62 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("21JA1439")
+        dev.connect("default") ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
+        ## Release device handle
+        dev.close()
+        return
 
-    try: 
+    try:
         ## Parameters setting
-        port = 0
+        port = 0 ## Depend on your device
         timeout = 3  ## second
-        
+
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
-        
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
+
         ## Open AI
         err = dev.AI_open(port, timeout)
-        print("AI_open:", err)
+        print(f"AI_open in port{port}: {err}")
 
         ## Open AO
         err = dev.AO_open(port, timeout)
-        print("AO_open:", err)
+        print(f"AO_open in port{port}: {err}")
 
         ## Set AI port and data acquisition
         data = dev.AI_readOnDemand(port, timeout)
-        print("data :" + str(data))
+        print(f"AI data in port{port}: {data}")
 
         ## Set AO port and write data 1.5(V) in channel 4
         err = dev.AO_writeOneChannel(port, 4, 1.5, timeout)
-        print("AO_writeOneChannel:", err)
+        print(f"AO_writeOneChannel in ch4 in port{port}: {err}")
 
         ## Set AO port and write data 2.5(V) in channel 5
         err = dev.AO_writeOneChannel(port, 5, 2.5, timeout)
-        print("AO_writeOneChannel:", err)
+        print(f"AO_writeOneChannel in ch5 in port{port}: {err}")
 
         ## Set AO port and write data 3.5(V) in channel 6
         err = dev.AO_writeOneChannel(port, 6, 3.5, timeout)
-        print("AO_writeOneChannel:", err)
+        print(f"AO_writeOneChannel in ch6 in port{port}: {err}")
 
         ## Set AO port and write data 4.5(V) in channel 7
         err = dev.AO_writeOneChannel(port, 7, 4.5, timeout)
-        print("AO_writeOneChannel:", err)
-  
+        print(f"AO_writeOneChannel in ch7 in port{port}: {err}")
+
         ## Set AI port and data acquisition
         data = dev.AI_readOnDemand(port, timeout)
-        print("data :" + str(data))
+        print(f"AI data in port{port}: {data}")
 
         ## Close AI
         err = dev.AI_close(port, timeout)
-        print("AI_close:", err)
+        print(f"AI_close in port{port}: {err}")
 
         ## Close AO
         err = dev.AO_close(port, timeout)
-        print("AO_close:", err)
+        print(f"AO_close in port{port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 
@@ -94,8 +98,8 @@ def main():
 
     ## Release device handle
     dev.close()
-    
+
     return
-    
+
 if __name__ == '__main__':
     main()

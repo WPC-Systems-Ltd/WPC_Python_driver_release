@@ -5,7 +5,7 @@
 
 ## Python
 import sys
-import os 
+import os
 
 ## Third party
 from PyQt5 import QtWidgets, QtGui
@@ -21,8 +21,8 @@ class MainWindow(QtWidgets.QMainWindow):
         ## UI initialize
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
- 
-        ## Get Python driver version 
+
+        ## Get Python driver version
         print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
 
         ## Connection flag
@@ -33,7 +33,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Material path
         file_path = os.path.dirname(__file__)
-        self.trademark_path = file_path + "\Material\\trademark.jpg" 
+        self.trademark_path = file_path + "\Material\\trademark.jpg"
         self.blue_led_path = file_path + "\Material\LED_blue.png"
         self.red_led_path = file_path + "\Material\LED_red.png"
         self.green_led_path = file_path + "\Material\LED_green.png"
@@ -45,13 +45,13 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Define callback events
         self.ui.btn_connect.clicked.connect(self.connectEvent)
-        self.ui.btn_disconnect.clicked.connect(self.disconnectEvent) 
+        self.ui.btn_disconnect.clicked.connect(self.disconnectEvent)
         self.ui.btn_write.clicked.connect(self.writeEvent)
         self.ui.btn_read.clicked.connect(self.readEvent)
         self.ui.btn_set.clicked.connect(self.setClockEvent)
-    
-    def selectHandle(self): 
-        handle_idx = int(self.ui.comboBox_handle.currentIndex()) 
+
+    def selectHandle(self):
+        handle_idx = int(self.ui.comboBox_handle.currentIndex())
         if handle_idx == 0:
             self.dev = pywpc.USBDAQF1D()
         elif handle_idx == 1:
@@ -70,26 +70,26 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ip = self.ui.lineEdit_IP.text()
 
         ## Get port from GUI
-        self.port = int(self.ui.comboBox_port.currentIndex())+1 
- 
+        self.port = int(self.ui.comboBox_port.currentIndex())+1
+
         ## Get clock rate from GUI
         self.clock_mode = self.ui.comboBox_clockrate.currentIndex()
 
         ## Get write address (Hex) from GUI
         self.write_addr = int(self.ui.lineEdit_writeAddr.text(), 16)
-     
+
         ## Get write (Hex) from GUI
         data = self.ui.lineEdit_write.text()
 
         ## Convert string to int list
         self.write_data = self.converStrtoIntList(data)
 
-        ## Get byte to read from GUI 
+        ## Get byte to read from GUI
         self.byte_read = int(self.ui.lineEdit_byteread.text())
 
-        ## Get read address (Hex) from GUI 
-        self.read_addr = int(self.ui.lineEdit_readAddr.text(), 16)  
- 
+        ## Get read address (Hex) from GUI
+        self.read_addr = int(self.ui.lineEdit_readAddr.text(), 16)
+
     def setClockEvent(self):
         ## Update Param
         self.updateParam()
@@ -103,34 +103,34 @@ class MainWindow(QtWidgets.QMainWindow):
         self.updateParam()
 
         ## Set I2C port and write bytes
-        status = self.dev.I2C_write(self.port, self.write_addr, self.write_data) 
-        print("I2C_write status: ", status) 
- 
+        status = self.dev.I2C_write(self.port, self.write_addr, self.write_data)
+        print("I2C_write status: ", status)
+
     def readEvent(self):
         ## Update Param
         self.updateParam()
 
         ## Set I2C port and read bytes
-        data = self.dev.I2C_read(self.port, self.read_addr, self.byte_read) 
+        data = self.dev.I2C_read(self.port, self.read_addr, self.byte_read)
         self.ui.lineEdit_read.setText(str(data))
 
     def connectEvent(self):
         if self.connect_flag == 1:
             return
-        
+
         ## Select handle
         self.selectHandle()
-         
+
         ## Update Param
         self.updateParam()
 
         ## Connect to device
-        try:  
-            self.dev.connect(self.ip) 
-        except pywpc.Error as err: 
+        try:
+            self.dev.connect(self.ip)
+        except pywpc.Error as err:
             print("err: " + str(err))
             return
-        
+
         ## Change LED status
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
 
@@ -140,12 +140,12 @@ class MainWindow(QtWidgets.QMainWindow):
         ## Open I2C port
         status = self.dev.I2C_open(self.port)
         print("I2C_open status: ", status)
-    
+
     def disconnectEvent(self):
         if self.connect_flag == 0:
             return
 
-        ## Close I2C port   
+        ## Close I2C port
         status = self.dev.I2C_close(self.port)
         print("I2C_close status: ", status)
 
@@ -157,19 +157,19 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Change connection flag
         self.connect_flag = 0
-        
+
     def closeEvent(self, event):
         if self.dev is not None:
             ## Disconnect device
             self.dev.disconnect()
-            
+
             ## Release device handle
             self.dev.close()
 
     def converStrtoIntList(self, str_):
         ## Split string by commas
         write_data_strlist = str_.replace(' ','').split(',')
-        
+
         ## Convert string list to int list
         write_data_int = []
         for item in write_data_strlist:
@@ -177,7 +177,7 @@ class MainWindow(QtWidgets.QMainWindow):
         return write_data_int
 
 if __name__ == "__main__":
-    app = QtWidgets.QApplication([]) 
+    app = QtWidgets.QApplication([])
     WPC_main_ui = MainWindow()
-    WPC_main_ui.show() 
+    WPC_main_ui.show()
     sys.exit(app.exec_())

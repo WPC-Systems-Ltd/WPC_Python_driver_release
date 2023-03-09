@@ -41,7 +41,7 @@ For more information, please refer to datasheet of the [24C08C EEPROM](https://g
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/25C08C.JPG" alt="drawing" width="400"/>
 
-## I2C interfacing SOP 
+## I2C interfacing SOP
 
 Create device handle -> Connect to device -> Open I2C port -> Set I2C parameters -> Write data via I2C -> Read data via I2C -> Close I2C port -> Disconnect device -> Release device handle.
 

@@ -9,12 +9,13 @@ Last, close I2C port
 
 The sensor used in this example is a 24C08C expecially for Two-wore Serial EEPROM.
 
+Please change correct serial number or IP and port number BEFORE you run example code.
+
 For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd.
-All rights reserved.
+Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -34,59 +35,62 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("21JA1312")
+        dev.connect("default") ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
+        ## Release device handle
+        dev.close()
+        return
 
     try:
         ## Parameters setting
-        I2C_port = 1
+        port = 1 ## Depend on your device
         mode = 0
         device_address = 0x50 ## 01010000
         word_address = 0x00
         timeout = 3  ## second
- 
+
         '''
-        Take 24C08N for example
+        Take 24C08C for example
         '''
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
-            
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
+
         '''
         Open I2C port
         '''
 
         ## Open I2C
-        err = dev.I2C_open(I2C_port, timeout)
-        print("I2C_open:", err)
+        err = dev.I2C_open(port, timeout)
+        print(f"I2C_open in port{port}: {err}")
 
         '''
         Set I2C parameter
         '''
 
         ## Set I2C port and set clock rate to standard mode
-        err = dev.I2C_setClockRate(I2C_port, mode, timeout)
-        print("I2C_setClockRate:", err)
+        err = dev.I2C_setClockRate(port, mode, timeout)
+        print(f"I2C_setClockRate in port{port}: {err}")
 
         '''
         Write data via I2C
         '''
 
         ## Write WREN byte
-        err = dev.I2C_write(I2C_port, device_address, [word_address, 0xAA, 0x55, 0xAA, 0x55], timeout)
-        print("I2C_write:", err)
+        err = dev.I2C_write(port, device_address, [word_address, 0xAA, 0x55, 0xAA, 0x55], timeout)
+        print(f"I2C_write in port{port}: {err}")
 
         '''
         Read data via I2C
         '''
 
-        err = dev.I2C_write(I2C_port, device_address, [word_address], timeout)
-        print("I2C_write:", err)
+        err = dev.I2C_write(port, device_address, [word_address], timeout)
+        print(f"I2C_write in port{port}: {err}")
 
-        data_list = dev.I2C_read(I2C_port, device_address, 4, timeout)
+        data_list = dev.I2C_read(port, device_address, 4, timeout)
         print("read data :", data_list)
 
         '''
@@ -94,8 +98,8 @@ def main():
         '''
 
         ## Close I2C
-        err = dev.I2C_close(I2C_port, timeout)
-        print("I2C_close:", err)
+        err = dev.I2C_close(port, timeout)
+        print(f"I2C_close in port{port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 
@@ -104,8 +108,8 @@ def main():
 
     ## Release device handle
     dev.close()
-    
+
     return
-    
+
 if __name__ == '__main__':
     main()

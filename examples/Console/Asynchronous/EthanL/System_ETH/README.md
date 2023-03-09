@@ -15,7 +15,7 @@ If you want to build your own system application, try to use this as a basic tem
 
 ### Hardware Requirement
 
-In order to run this example, you should get EthanL product. 
+In order to run this example, you should get EthanL product.
 
 ## Troubleshooting
 

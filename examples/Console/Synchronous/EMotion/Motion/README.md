@@ -21,7 +21,6 @@ Then, we take `EMotion` for example.
 ### EMotion
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-EMotion.JPG" alt="drawing" width="600"/>
- 
 
 If function return value is 0, it represents communication with `EMotion` successfully.
 

@@ -1,12 +1,13 @@
 '''
 Motion - Motion_find_home.py with synchronous mode.
- 
+
+Please change correct serial number or IP and port number BEFORE you run example code.
+
 For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd.
-All rights reserved.
+Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -26,13 +27,16 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.1.110")
+        dev.connect("192.168.1.110") ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
+        ## Release device handle
+        dev.close()
+        return
 
-    try: 
+    try:
         ## Parameters setting
-        port = 0
+        port = 0 ## Depend on your device
         axis = 0
         two_pulse_mode = 1
         rel_posi_mode = 1
@@ -51,43 +55,43 @@ def main():
         home_enable_false = 0
 
         ## Find home parameters
-        find_home = 0 
+        find_home = 0
         search_dir_rev = 1
- 
+
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
-        
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
+
         ## Motion open
         err = dev.Motion_open(port, timeout)
-        print("open:", err)
+        print(f"Motion_open in port{port}: {err}")
 
         ## Motion configure
         err = dev.Motion_cfgAxis(port, axis, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low, timeout)
-        print("Motion_cfgAxis:", err)
-            
+        print(f"Motion_cfgAxis in port{port}: {err}")
+
         err = dev.Motion_cfgLimit(port, axis, forward_enable_true, reverse_enable_true, active_high, timeout)
-        print("Motion_cfgLimit:", err)
+        print(f"Motion_cfgLimit in port{port}: {err}")
 
         err = dev.Motion_cfgFindRef(port, axis, find_home, search_dir_rev, timeout)
-        print("Motion_cfgFindRef:", err)
+        print(f"Motion_cfgFindRef in port{port}: {err}")
 
         err = dev.Motion_cfgHome(port, axis, home_enable_false, active_high, timeout)
-        print("Motion_cfgHome:", err)
-        
+        print(f"Motion_cfgHome in port{port}: {err}")
+
         err = dev.Motion_enableServoOn(port, axis, int(True), timeout)
-        print("Motion_enableServoOn:", err)
+        print(f"Motion_enableServoOn in port{port}: {err}")
 
         err = dev.Motion_rstEncoderPosi(port, axis, timeout)
-        print("Motion_rstEncoderPosi:", err)
+        print(f"Motion_rstEncoderPosi in port{port}: {err}")
 
         ## Motion find reference
         err = dev.Motion_findRef(port, axis, timeout)
-        print("Motion_findRef:", err)
-        
-        home_status = 0 
-        while home_status == 0: 
+        print(f"Motion_findRef in port{port}: {err}")
+
+        home_status = 0
+        while home_status == 0:
             ## Read forward and reverse limit status
             hit_status = dev.Motion_getLimitStatus(port, axis, timeout)
             forward_hit = hit_status[0]
@@ -98,25 +102,25 @@ def main():
             ## Read home status
             home_status = dev.Motion_getHomeStatus(port, axis, timeout)
             if home_status == 1 : print("Home hit")
-            
+
             ## Check finding and found status
             driving_status = dev.Motion_checkRef(port, axis, timeout)
             finding = driving_status[0]
             found = driving_status[1]
             if found == 1 : print("Found reference")
             # if finding == 1 : print("Finding reference")
-         
+
         ## Motion stop
         err = dev.Motion_stop(port, axis, stop_decel, timeout)
-        print("Motion_stop:", err) 
- 
+        print(f"Motion_stop in port{port}: {err}")
+
         err = dev.Motion_enableServoOn(port, axis, int(False), timeout)
-        print("Motion_enableServoOn:", err)
+        print(f"Motion_enableServoOn in port{port}: {err}")
 
         ## Motion close
         err = dev.Motion_close(port, timeout)
-        print("Motion_close:", err)  
-         
+        print(f"Motion_close in port{port}: {err}")
+
     except Exception as err:
         pywpc.printGenericError(err)
 
@@ -125,8 +129,8 @@ def main():
 
     ## Release device handle
     dev.close()
- 
+
     return
-    
+
 if __name__ == '__main__':
     main()

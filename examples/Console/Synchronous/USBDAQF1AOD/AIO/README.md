@@ -24,7 +24,7 @@ Then, we take `USBDAQF1AOD` for example.
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-USBDAQF1AOD.JPG" alt="drawing" width="600"/>
 
-## AIO interfacing SOP 
+## AIO interfacing SOP
 
 Create device handle -> Connect to device -> Open AI & AO port -> Write AO signal -> Read AI signal -> Close AI & AO port -> Disconnect device -> Release device handle.
 
