@@ -1,4 +1,4 @@
-##  Example_UART/ main.py 
+##  Example_UART/ main.py
 ##  This is example for UART with WPC DAQ Device with asynchronous mode.
 ##  Copyright (c) 2023 WPC Systems Ltd.
 ##  All rights reserved.
@@ -10,7 +10,7 @@ from qasync import QEventLoop, asyncSlot
 
 ## Third party
 from PyQt5 import QtWidgets, QtGui
-from UI_design.Ui_example_GUI_UART import Ui_MainWindow 
+from UI_design.Ui_example_GUI_UART import Ui_MainWindow
 
 ## WPC
 from wpcsys import pywpc
@@ -23,10 +23,10 @@ class MainWindow(QtWidgets.QMainWindow):
         ## UI initialize
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
- 
-        ## Get Python driver version 
+
+        ## Get Python driver version
         print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
- 
+
         ## Connection flag
         self.connect_flag = 0
 
@@ -35,7 +35,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Material path
         file_path = os.path.dirname(__file__)
-        self.trademark_path = file_path + "\Material\\trademark.jpg" 
+        self.trademark_path = file_path + "\Material\\trademark.jpg"
         self.blue_led_path = file_path + "\Material\LED_blue.png"
         self.red_led_path = file_path + "\Material\LED_red.png"
         self.green_led_path = file_path + "\Material\LED_green.png"
@@ -56,8 +56,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.btn_write.clicked.connect(self.writeEvent)
         self.ui.btn_read.clicked.connect(self.readEvent)
 
-    def selectHandle(self): 
-        handle_idx = int(self.ui.comboBox_handle.currentIndex()) 
+    def selectHandle(self):
+        handle_idx = int(self.ui.comboBox_handle.currentIndex())
         if handle_idx == 0:
             self.dev = pywpc.USBDAQF1D()
         elif handle_idx == 1:
@@ -76,7 +76,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ip = self.ui.lineEdit_IP.text()
 
         ## Get port from GUI
-        self.port = int(self.ui.comboBox_port.currentIndex())+1 
+        self.port = int(self.ui.comboBox_port.currentIndex())+1
 
         # Get write data from GUI
         self.write_data = self.ui.lineEdit_write.text()
@@ -96,13 +96,13 @@ class MainWindow(QtWidgets.QMainWindow):
         ## Get stop bit from GUI
         self.stopbit = self.ui.comboBox_stopbit.currentIndex()
 
-    @asyncSlot() 
+    @asyncSlot()
     async def openPortEvent(self):
         ## Update Param
         self.updateParam()
 
         ## Open UART port
-        status = await self.dev.UART_open_async(self.port) 
+        status = await self.dev.UART_open_async(self.port)
         print("UART_open_async status: ", status)
 
         ## Set UART port and baudrate
@@ -123,9 +123,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Change port LED status
         self.ui.lb_ledport.setPixmap(QtGui.QPixmap(self.blue_led_path))
-   
-    @asyncSlot() 
-    async def writeEvent(self): 
+
+    @asyncSlot()
+    async def writeEvent(self):
         ## Update Param
         self.updateParam()
 
@@ -133,80 +133,80 @@ class MainWindow(QtWidgets.QMainWindow):
         status = await self.dev.UART_write_async(self.port, self.write_data)
         print("UART_write_async status: ", status)
 
-    @asyncSlot() 
+    @asyncSlot()
     async def readEvent(self):
         ## Update Param
         self.updateParam()
 
         ## Set UART port and read bytes
-        data = await self.dev.UART_read_async(self.port, int(self.read_bytes)) 
+        data = await self.dev.UART_read_async(self.port, int(self.read_bytes))
         self.ui.lineEdit_read.setText(str(data))
 
-    @asyncSlot() 
+    @asyncSlot()
     async def closePortEvent(self):
         ## Update Param
         self.updateParam()
- 
+
         ## Close UART port
         status = await self.dev.UART_close_async(self.port)
         print("UART_close_async status: ", status)
-        
+
         ## Change port LED status
         self.ui.lb_ledport.setPixmap(QtGui.QPixmap(self.green_led_path))
 
-    @asyncSlot() 
+    @asyncSlot()
     async def connectEvent(self):
         if self.connect_flag == 1:
             return
 
         ## Select handle
         self.selectHandle()
-         
+
         ## Update Param
         self.updateParam()
 
         ## Connect to device
-        try:  
-            self.dev.connect(self.ip) 
-        except pywpc.Error as err: 
+        try:
+            self.dev.connect(self.ip)
+        except pywpc.Error as err:
             print("err: " + str(err))
             return
-        
+
         ## Change LED status
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
 
         ## Change connection flag
         self.connect_flag = 1
 
-    @asyncSlot()      
-    async def disconnectEvent(self): 
+    @asyncSlot()
+    async def disconnectEvent(self):
         if self.connect_flag == 0:
             return
 
         ## Disconnect device
         self.dev.disconnect()
- 
+
         ## Change LED status
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
 
         ## Change connection flag
         self.connect_flag = 0
-        
+
     def closeEvent(self, event):
         if self.dev is not None:
             ## Disconnect device
             self.dev.disconnect()
-            
+
             ## Release device handle
             self.dev.close()
- 
-def main(): 
+
+def main():
     app = QtWidgets.QApplication([])
     loop = QEventLoop(app)
-    asyncio.set_event_loop(loop) 
+    asyncio.set_event_loop(loop)
     WPC_main_ui = MainWindow()
-    WPC_main_ui.show() 
-    with loop: 
+    WPC_main_ui.show()
+    with loop:
         loop.run_forever()
 
 if __name__ == "__main__":

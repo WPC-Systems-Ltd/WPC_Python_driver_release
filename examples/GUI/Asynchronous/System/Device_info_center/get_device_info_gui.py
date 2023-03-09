@@ -11,7 +11,7 @@ from qasync import QEventLoop, asyncSlot
 ## Third party
 from PyQt5 import QtWidgets, QtGui
 from PyQt5.QtWidgets import QMessageBox
-from UI_design.Ui_example_GUI_get_device_info import Ui_MainWindow 
+from UI_design.Ui_example_GUI_get_device_info import Ui_MainWindow
 
 ## WPC
 from wpcsys import pywpc
@@ -23,10 +23,10 @@ class MainWindow(QtWidgets.QMainWindow):
         ## UI initialize
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-  
-        ## Get Python driver version 
+
+        ## Get Python driver version
         print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
- 
+
         ## Connection flag
         self.connect_flag = 0
 
@@ -44,14 +44,14 @@ class MainWindow(QtWidgets.QMainWindow):
         ## Set trademark & LED path
         self.ui.lb_trademark.setPixmap(QtGui.QPixmap(self.trademark_path))
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.gray_led_path))
-        
+
         ## Define callback events
         self.ui.btn_connect.clicked.connect(self.connectEvent)
         self.ui.btn_disconnect.clicked.connect(self.disconnectEvent)
         self.ui.btn_deviceInfo.clicked.connect(self.getdeviceinfoEvent)
 
-    def selectHandle(self): 
-        handle_idx = int(self.ui.comboBox_handle.currentIndex()) 
+    def selectHandle(self):
+        handle_idx = int(self.ui.comboBox_handle.currentIndex())
         if handle_idx == 0:
             self.dev = pywpc.WifiDAQE3A()
         elif handle_idx == 1:
@@ -62,39 +62,39 @@ class MainWindow(QtWidgets.QMainWindow):
     def updateParam(self):
         ## Get IP or serial_number from GUI
         self.ip = self.ui.lineEdit_IP.text()
- 
-    @asyncSlot()      
+
+    @asyncSlot()
     async def connectEvent(self):
         if self.connect_flag == 1:
             return
-    
+
         ## Select handle
         self.selectHandle()
-         
+
         ## Update Param
         self.updateParam()
 
         ## Connect to device
-        try:  
-            self.dev.connect(self.ip) 
-        except pywpc.Error as err: 
+        try:
+            self.dev.connect(self.ip)
+        except pywpc.Error as err:
             print("err: " + str(err))
             return
-        
+
         ## Change LED status
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
 
         ## Change connection flag
         self.connect_flag = 1
 
-    @asyncSlot()      
+    @asyncSlot()
     async def disconnectEvent(self):
         if self.connect_flag == 0:
             return
 
         ## Disconnect device
         self.dev.disconnect()
- 
+
         ## Change LED status
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
 
@@ -105,11 +105,11 @@ class MainWindow(QtWidgets.QMainWindow):
         if self.dev is not None:
             ## Disconnect device
             self.dev.disconnect()
-            
+
             ## Release device handle
             self.dev.close()
 
-    @asyncSlot()      
+    @asyncSlot()
     async def getdeviceinfoEvent(self):
         ## Check connection status
         if self.checkConnectionStatus() == False:
@@ -119,7 +119,7 @@ class MainWindow(QtWidgets.QMainWindow):
         driver_info = await self.dev.Sys_getDriverInfo_async()
         model = driver_info[0]
         version = driver_info[-1]
-        
+
         ## Get serial number & RTC Time
         serial_number = await self.dev.Sys_getSerialNumber_async()
         rtc = await self.dev.Sys_getRTC_async()
@@ -145,13 +145,13 @@ class MainWindow(QtWidgets.QMainWindow):
         else:
             return True
 
-def main(): 
+def main():
     app = QtWidgets.QApplication([])
     loop = QEventLoop(app)
-    asyncio.set_event_loop(loop) 
+    asyncio.set_event_loop(loop)
     WPC_main_ui = MainWindow()
-    WPC_main_ui.show() 
-    with loop: 
+    WPC_main_ui.show()
+    with loop:
         loop.run_forever()
 
 if __name__ == "__main__":

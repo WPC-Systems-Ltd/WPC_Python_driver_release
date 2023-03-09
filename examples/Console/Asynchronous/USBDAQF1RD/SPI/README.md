@@ -39,7 +39,7 @@ For more information, please refer to datasheet of the [25LC640 EEPROM](https://
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/25LC640.JPG" alt="drawing" width="400"/>
 
-## SPI interfacing SOP 
+## SPI interfacing SOP
 
 Create device handle -> Connect to device -> Open DO pins -> Open SPI port -> Set SPI parameters -> Write data via SPI -> Read data via SPI -> Close DO pins -> Close SPI port -> Disconnect device -> Release device handle.
 

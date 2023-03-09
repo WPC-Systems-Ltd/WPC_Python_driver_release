@@ -22,7 +22,7 @@ Then, we take `USBDAQF1TD` for example.
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-USBDAQF1TD.JPG" alt="drawing" width="600"/>
 
-## Thermocouple interfacing SOP 
+## Thermocouple interfacing SOP
 
 Create device handle -> Connect to device -> Open Thermal port -> Set Thermal parameters ->  Read thermocouple data -> Close Thermal port -> Disconnect device -> Release device handle.
 

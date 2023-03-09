@@ -12,7 +12,7 @@ If you want to build your own DeviceFinder application, try to use this as a bas
 
 ### Hardware Requirement
 
-In order to run this example, you should get one of WPC product. 
+In order to run this example, you should get one of WPC product.
 
 ## Troubleshooting
 

@@ -7,12 +7,13 @@ First, it shows how to open thermal port
 Second, get status from channel 0 and channel 1
 Last, close thermal port.
 
+Please change correct serial number or IP and port number BEFORE you run example code.
+
 For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd.
-All rights reserved.
+Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -32,37 +33,40 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("21JA1239")
+        dev.connect("default") ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
+        ## Release device handle
+        dev.close()
+        return
 
     try:
         ## Parameters setting
-        port = 1
-        channel_0 = 0
-        channel_1 = 1
+        port = 1 ## Depend on your device
+        ch0 = 0
+        ch1 = 1
         timeout = 3  ## second
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
- 
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
+
         ## Open thermo
         err = dev.Thermal_open(port, timeout)
-        print("Thermal_open:", err)
+        print(f"Thermal_open:", err)
 
         ## Set thermo port and get status in channel 0
-        status = dev.Thermal_getStatus(port, channel_0, timeout)
-        print("Thermal_getStatus in chaannel 0:", status)
+        status = dev.Thermal_getStatus(port, ch0, timeout)
+        print(f"Thermal_getStatus in channel {ch0}: {status}")
 
         ## Set thermo port and get status in channel 1
-        status = dev.Thermal_getStatus(port, channel_1, timeout)
-        print("Thermal_getStatus in chaannel 1:", status)
+        status = dev.Thermal_getStatus(port, ch1, timeout)
+        print(f"Thermal_getStatus in channel {ch1}: {status}")
 
         ## Close thermo
         err = dev.Thermal_close(port, timeout)
-        print("Thermal_close:", err)
+        print(f"Thermal_close:", err)
     except Exception as err:
         pywpc.printGenericError(err)
 
@@ -71,8 +75,8 @@ def main():
 
     ## Release device handle
     dev.close()
-    
+
     return
-    
+
 if __name__ == '__main__':
     main()

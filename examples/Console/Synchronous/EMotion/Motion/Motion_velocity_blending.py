@@ -1,12 +1,13 @@
 '''
 Motion - Motion_velocity_blending.py with synchronous mode.
- 
+
+Please change correct serial number or IP and port number BEFORE you run example code.
+
 For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd.
-All rights reserved.
+Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -26,18 +27,21 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.1.110")
+        dev.connect("192.168.1.110") ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
+        ## Release device handle
+        dev.close()
+        return
 
     try:
         ## Parameters setting
-        port = 0
+        port = 0 ## Depend on your device
         axis = 0
         two_pulse_mode = 1
         velocity_mode = 2
         stop_decel = 0
-        timeout = 3  ## second 
+        timeout = 3  ## second
 
         ## Axis and encoder parameters
         axis_dir_cw = 0
@@ -51,63 +55,66 @@ def main():
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo()
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
 
         ## Motion open
         err = dev.Motion_open(port, timeout)
-        print("Motion_open:", err)
+        print(f"Motion_open in port{port}: {err}")
 
         ## Motion configure
         err = dev.Motion_cfgAxis(port, axis, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low, timeout)
-        print("Motion_cfgAxis:", err)
+        print(f"Motion_cfgAxis in port{port}: {err}")
 
         err = dev.Motion_cfgLimit(port, axis, forward_enable_true, reverse_enable_true, active_high, timeout)
-        print("Motion_cfgLimit:", err)
+        print(f"Motion_cfgLimit in port{port}: {err}")
 
         err = dev.Motion_cfgEncoder(port, axis, active_low, timeout)
-        print("Motion_cfgEncoder:", err)
+        print(f"Motion_cfgEncoder in port{port}: {err}")
 
         err = dev.Motion_rstEncoderPosi(port, axis, timeout)
-        print("Motion_rstEncoderPosi:", err)
+        print(f"Motion_rstEncoderPosi in port{port}: {err}")
 
         err = dev.Motion_cfgAxisMove(port, axis, velocity_mode, velocity = 1000, timeout=timeout)
-        print("Motion_cfgAxisMove:", err)
+        print(f"Motion_cfgAxisMove in port{port}: {err}")
 
         err = dev.Motion_enableServoOn(port, axis, int(True), timeout)
-        print("Motion_enableServoOn:", err)
+        print(f"Motion_enableServoOn in port{port}: {err}")
 
         ## Motion start
         err = dev.Motion_startSingleAxisMove(port, axis, timeout)
-        print("Motion_startSingleAxisMove:", err)
-        
-        time.sleep(3)
+        print(f"Motion_startSingleAxisMove in port{port}: {err}")
+
+        ## Wait for 3 seconds for moving
+        time.sleep(3) ## delay [s]
 
         ## Motion override velocity
         new_velo = 5000
         err = dev.Motion_overrideAxisVelocity(port, axis, new_velo, timeout)
-        print("Motion_overrideAxisVelocity:", err)
-        
-        time.sleep(3)
+        print(f"Motion_overrideAxisVelocity in port{port}: {err}")
+
+        ## Wait for 3 seconds for moving
+        time.sleep(3) ## delay [s]
 
         ## Motion override velocity
         new_velo = -3000
         err = dev.Motion_overrideAxisVelocity(port, axis, new_velo, timeout)
-        print("Motion_overrideAxisVelocity:", err)
+        print(f"Motion_overrideAxisVelocity in port{port}: {err}")
 
-        time.sleep(3)
+        ## Wait for 3 seconds for moving
+        time.sleep(3) ## delay [s]
 
         ## Motion stop
         err = dev.Motion_stop(port, axis, stop_decel, timeout)
-        print("Motion_stop:", err)
+        print(f"Motion_stop in port{port}: {err}")
 
         err = dev.Motion_enableServoOn(port, axis, int(False), timeout)
-        print("Motion_enableServoOn:", err)
-        
+        print(f"Motion_enableServoOn in port{port}: {err}")
+
         ## Motion close
         err = dev.Motion_close(port, timeout)
-        print("Motion_close:", err) 
-         
+        print(f"Motion_close in port{port}: {err}")
+
     except Exception as err:
         pywpc.printGenericError(err)
 
@@ -116,8 +123,8 @@ def main():
 
     ## Release device handle
     dev.close()
- 
+
     return
-    
+
 if __name__ == '__main__':
     main()

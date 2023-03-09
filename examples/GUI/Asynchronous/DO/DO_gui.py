@@ -1,4 +1,4 @@
-##  Example_digital_output/ main.py 
+##  Example_digital_output/ main.py
 ##  This is example for digital output with WPC DAQ Device with asynchronous mode.
 ##  Copyright (c) 2023 WPC Systems Ltd.
 ##  All rights reserved.
@@ -11,7 +11,7 @@ from qasync import QEventLoop, asyncSlot
 ## Third party
 from PyQt5 import QtWidgets, QtGui
 from PyQt5.QtWidgets import QMessageBox
-from UI_design.Ui_example_GUI_DO import Ui_MainWindow 
+from UI_design.Ui_example_GUI_DO import Ui_MainWindow
 
 ## WPC
 from wpcsys import pywpc
@@ -23,13 +23,13 @@ class MainWindow(QtWidgets.QMainWindow):
         ## UI initialize
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
- 
-        ## Get Python driver version 
+
+        ## Get Python driver version
         print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
 
         ## Initialize parameters
         self.state_cal = 255
-        
+
         ## Connection flag
         self.connect_flag = 0
 
@@ -38,7 +38,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Material path
         file_path = os.path.dirname(__file__)
-        self.trademark_path = file_path + "\Material\\trademark.jpg" 
+        self.trademark_path = file_path + "\Material\\trademark.jpg"
         self.blue_led_path = file_path + "\Material\LED_blue.png"
         self.red_led_path = file_path + "\Material\LED_red.png"
         self.green_led_path = file_path + "\Material\LED_green.png"
@@ -49,11 +49,11 @@ class MainWindow(QtWidgets.QMainWindow):
         ## Convert backward slash to forward slash
         self.switch_blue_path = self.switch_blue_path.replace('\\', '/')
         self.switch_gray_path = self.switch_gray_path.replace('\\', '/')
- 
+
         ## Set trademark & LED path
         self.ui.lb_trademark.setPixmap(QtGui.QPixmap(self.trademark_path))
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.gray_led_path))
-        
+
         ## Define callback events
         self.ui.btn_connect.clicked.connect(self.connectEvent)
         self.ui.btn_disconnect.clicked.connect(self.disconnectEvent)
@@ -61,8 +61,8 @@ class MainWindow(QtWidgets.QMainWindow):
             obj_chbox_state = getattr(self.ui, 'checkbox_state%d' %i)
             obj_chbox_state.stateChanged.connect(self.stateDOEvent)
             obj_chbox_state.setStyleSheet("QCheckBox::indicator{ width: 60px;height: 60px;} QCheckBox::indicator:unchecked {image: url("+self.switch_gray_path+");} QCheckBox::indicator:checked {image: url("+self.switch_blue_path+");}")
-  
-    def selectHandle(self): 
+
+    def selectHandle(self):
         handle_idx = int(self.ui.comboBox_handle.currentIndex()) 
         if handle_idx == 0:
             self.dev = pywpc.EthanD()
@@ -80,7 +80,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.dev = pywpc.USBDAQF1CD()
         elif handle_idx == 7:
             self.dev = pywpc.USBDAQF1AOD()
- 
+
     def updateParam(self):
         ## Get IP or serial_number from GUI
         self.ip = self.ui.lineEdit_IP.text()
@@ -109,24 +109,24 @@ class MainWindow(QtWidgets.QMainWindow):
         ## Write DO state to MCU
         await self.dev.DO_writePort_async(self.port, self.state_cal)
 
-    @asyncSlot() 
+    @asyncSlot()
     async def connectEvent(self):
         if self.connect_flag == 1:
             return
- 
+
         ## Select handle
         self.selectHandle()
-         
+
         ## Update Param
         self.updateParam()
 
         ## Connect to device
-        try:  
-            self.dev.connect(self.ip) 
-        except pywpc.Error as err: 
+        try:
+            self.dev.connect(self.ip)
+        except pywpc.Error as err:
             print("err: " + str(err))
             return
-        
+
         ## Change LED status
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
 
@@ -134,28 +134,28 @@ class MainWindow(QtWidgets.QMainWindow):
         self.connect_flag = 1
 
         ## Open all DO port
-        for i in range(4): 
-            status = await self.dev.DO_openPort_async(i) 
+        for i in range(4):
+            status = await self.dev.DO_openPort_async(i)
             print("DO_openPort_async status: ", status)
             await asyncio.sleep(0.1) ## delay(second)
-  
-    @asyncSlot()      
+
+    @asyncSlot()
     async def disconnectEvent(self):
         if self.connect_flag == 0:
             return
 
         ## Close DO port
-        for i in range(4): 
-            status = await self.dev.DO_closePort_async(i) 
+        for i in range(4):
+            status = await self.dev.DO_closePort_async(i)
             print("DO_closePort_async status: ", status)
             await asyncio.sleep(0.1) ## delay(second)
- 
+
         ## Disconnect device
-        self.dev.disconnect() 
-        
+        self.dev.disconnect()
+
         ## Change LED status
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.gray_led_path))
-        
+
         ## Change connection flag
         self.connect_flag = 0
 
@@ -163,7 +163,7 @@ class MainWindow(QtWidgets.QMainWindow):
         if self.dev is not None:
             ## Disconnect device
             self.dev.disconnect()
-            
+
             ## Release device handle
             self.dev.close()
 
@@ -174,13 +174,13 @@ class MainWindow(QtWidgets.QMainWindow):
         else:
             return True
 
-def main(): 
+def main():
     app = QtWidgets.QApplication([])
     loop = QEventLoop(app)
-    asyncio.set_event_loop(loop) 
+    asyncio.set_event_loop(loop)
     WPC_main_ui = MainWindow()
-    WPC_main_ui.show() 
-    with loop: 
+    WPC_main_ui.show()
+    with loop:
         loop.run_forever()
 
 if __name__ == "__main__":

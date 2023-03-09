@@ -4,7 +4,7 @@
 
 ## Overview
 
-This example project demonstrates how to use WPC python driver to control DIO with whole port or assign pins 
+This example project demonstrates how to use WPC python driver to control DIO with whole port or assign pins
 
 In order to use API correctly, please refer [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
@@ -22,7 +22,7 @@ Then, we take `EthanL` for example.
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-EthanL.JPG" alt="drawing" width="600"/>
 
-## DIO interfacing SOP 
+## DIO interfacing SOP
 
 # DO
 Create device handle -> Connect to device -> Open DO port / pins -> Write high or low to digital output -> Close DO port / pins -> Disconnect device -> Release device handle.

@@ -3,12 +3,13 @@ Find_devices - find_all_devices.py with asynchronous mode.
 
 This example demonstrates how to find all available USB and ethernet devices.
 
+Please change correct serial number or IP and port number BEFORE you run example code.
+
 For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd.
-All rights reserved.
+Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -25,12 +26,6 @@ async def main():
 
     ## Create device handle
     dev = pywpc.DeviceFinder()
-
-    ## Connect to network device
-    try:
-        dev.connect()
-    except Exception as err:
-        pywpc.printGenericError(err)
 
     ## Perform USB device information
     print("Find all USB devices....")
@@ -49,9 +44,6 @@ async def main():
             print(device)
     except Exception as err:
         pywpc.printGenericError(err)
- 
-    ## Disconnect device
-    dev.disconnect()
 
     ## Release device handle
     dev.close()
@@ -63,7 +55,7 @@ def main_for_spyder(*args):
         return asyncio.create_task(main(*args)).result()
     else:
         return asyncio.run(main(*args))
- 
+
 if __name__ == '__main__':
     asyncio.run(main()) ## Use terminal
     # await main() ## Use Jupyter or IPython(>=7.0)
