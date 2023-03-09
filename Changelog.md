@@ -1,8 +1,22 @@
 WPC Python driver release changelog
 ===================================
 
+
+
+v2.0.1 Date: 2023/03/09, Developer: Chunglee_people
+---------------------------------------------------
+
+### Added
+- Add `serial_num ='default'` in USB series product
+- Add `ip= '192.168.5.79'` in Wifi series product
+- Add `ip= '192.168.1.110'` in Ethan series product
+
+### Changed
+- Sync C# & python in example code
+
 v2.0.0 Date: 2023/02/03, Developer: Chunglee_people
 ---------------------------------------------------
+
 ### Added
 - Add synchronous console and GUI example code
 - Add asynchronous and synchronous mode description in readme.rst
@@ -13,7 +27,7 @@ v1.1.3 Date: 2023/01/18, Developer: Chunglee_people
 ### Added
 - Add three scenario when run asyncio function
   - asyncio.run(main()) ## Use terminal
-  - await main() ## Use Jupyter or IPython(>=7.0)， 
+  - await main() ## Use Jupyter or IPython(>=7.0)，
   - main_for_spyder ## Use Spyder
 
 v1.1.2 Date: 2023/01/07, Developer: Chunglee_people
@@ -22,16 +36,16 @@ v1.1.2 Date: 2023/01/07, Developer: Chunglee_people
 ### Added
 - Product:
   - Emotion
-- Example codes : 
+- Example codes :
   - Motion_find_home.py, Motion_find_limit.py and Motion_find_index.py,
   - Motion_velocity_blending.py and Motion_velocity_blending_accerleration,
   - Motion_load_configuration_file.py and Motion_set_configuration_file,
-  - Motion_1axis_move_with_alarm_in.py, Motion_1axis_move_with_inposition.py, Motion_1axis_move_with_breakpoint.py, 
-	  Motion_1axis_move_with_configuration_file.py, Motion_1axis_move_with_capture.py and Motion_1axis_move_with_S_curve_acceleration.py 
-  - Motion_2axis_circular_interpolation.py and Motion_2axis_linear_interpolation.py 
-  - Motion_3axis_linear_interpolation.py and Motion_3axis_helical_interpolation.py 
+  - Motion_1axis_move_with_alarm_in.py, Motion_1axis_move_with_inposition.py, Motion_1axis_move_with_breakpoint.py,
+	  Motion_1axis_move_with_configuration_file.py, Motion_1axis_move_with_capture.py and Motion_1axis_move_with_S_curve_acceleration.py
+  - Motion_2axis_circular_interpolation.py and Motion_2axis_linear_interpolation.py
+  - Motion_3axis_linear_interpolation.py and Motion_3axis_helical_interpolation.py
   - Motion_3axis_synchronous_move.cs and Motion_3axis_asynchronous_move.cs
-- Reference : 
+- Reference :
   - WPC_MCX_H_Motion_Manual_r25
 
 ### Changed
@@ -42,7 +56,7 @@ v1.1.0 Date: 2022/11/23, Developer: Chunglee_people
 
 ### Added
 - Add handle combobox in GUI example code
-- Add product `EthanL` & `EthanO` 
+- Add product `EthanL` & `EthanO`
 - Add `AO_waveform_generation.py` example code
 
 ### Changed
@@ -53,7 +67,7 @@ v1.0.9 Date: 2022/11/04, Developer: Chunglee_people
 ---------------------------------------------------
 ### Fixed
 - Fix example code website
- 
+
 v1.0.8.1 Date: 2022/11/04, Developer: Chunglee_people
 ------------------------------------------------------
 
@@ -64,7 +78,7 @@ v1.0.8 Date: 2022/11/04, Developer: Chunglee_people
 ---------------------------------------------------
 
 ### Added
-- Each product has its own example codes 
+- Each product has its own example codes
 - Add README.md in console - AI folder
 - Add firmware error code
 - Add `libusb-1.0.dll`
@@ -266,7 +280,7 @@ v0.0.12 Date: 2022/08/23, Developer: Chunglee_people
 - Add GUI example code : Example_analog_output, Example_UART
 
 ### Changed
-- Change WPC Python Version from `pywpc-0.1.19` to `pywpc-0.2.0`  
+- Change WPC Python Version from `pywpc-0.1.19` to `pywpc-0.2.0`
 - Change folder name `Example_AI_streaming` to `Example_analog_input`
 - Change folder name `System` to `System_Network`
 
@@ -287,7 +301,7 @@ v0.0.10 Date: 2022/08/17, Developer: Chunglee_people
 ### Changed
 - Change `Port funtionality compatibility` to `Port funtion table` in Readme.md
 - Change `Board` to `Model` in Readme.md
-- Change WPC Python Version from `pywpc-0.1.18` to  `pywpc-0.1.19`  
+- Change WPC Python Version from `pywpc-0.1.18` to  `pywpc-0.1.19`
 
 v0.0.9 Date: 2022/08/12, Developer: Chunglee_people
 ---------------------------------------------------
@@ -303,7 +317,7 @@ v0.0.8 Date: 2022/08/11, Developer: Chunglee_people
 - Add WPC_DAQ_Devices_User_Manual_r16.pdf and WPC_Wifi_Configuration_r1.pdf  in `Reference/Manuals`
 
 ### Changed
-- Change WPC Python Version from `pywpc-0.1.17` to  `pywpc-0.1.18`  
+- Change WPC Python Version from `pywpc-0.1.17` to  `pywpc-0.1.18`
 
 ### Fixed
 - Fix print information when DO_closePort in example_DO_blinky_port.py
@@ -321,7 +335,7 @@ v0.0.7 Date: 2022/08/08, Developer: Chunglee_people
   - `Thermo/example_RTD_read_channel_status.py`
 
 ### Changed
-- Change WPC Python Version from `pywpc-0.1.16` to  `pywpc-0.1.17`  
+- Change WPC Python Version from `pywpc-0.1.16` to  `pywpc-0.1.17`
 - Change example code name from
   - `example_Thermo_read_channel_status` to `example_TC_read_channel_status`
   - `example_Thermo_read_channel_data` to `example_TC_read_channel_data`
@@ -354,7 +368,7 @@ v0.0.5 Date: 2022/07/29, Developer: Chunglee_people
   - `CAN/example_CAN_write.py`
 
 ### Changed
-- Change WPC Python Version from `pywpc-0.1.14` to  `pywpc-0.1.15`  
+- Change WPC Python Version from `pywpc-0.1.14` to  `pywpc-0.1.15`
 
 v0.0.4 Date: 2022/07/20, Developer: Chunglee_people
 ---------------------------------------------------
@@ -368,7 +382,7 @@ v0.0.4 Date: 2022/07/20, Developer: Chunglee_people
   - `UART/example_UART_write.py`
 
 ### Changed
-- Change WPC Python Version from `pywpc-0.1.13` to  `pywpc-0.1.14`  
+- Change WPC Python Version from `pywpc-0.1.13` to  `pywpc-0.1.14`
 - Change folder name `General` to `System` in console and gui folder
 - Change `wireless device` to `WIFI` in document
 
