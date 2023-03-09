@@ -6,12 +6,13 @@ This example demonstrates how to get hardware information from USBDAQF1AOD.
 First, get hardware information such as firmware model & version.
 Last, get serial number and RTC.
 
+Please change correct serial number or IP and port number BEFORE you run example code.
+
 For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd.
-All rights reserved.
+Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -31,19 +32,23 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("21JA1439")
+        dev.connect("default") ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
+        ## Release device handle
+        dev.close()
+        return
 
     ## Perform DAQ basic information
     try:
         ## Parameters setting
+        port = None ## Depend on your device
         timeout = 3  ## second
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
 
         ## Get serial number & RTC Time
         print(f'Serial number = ' + dev.Sys_getSerialNumber(timeout))
@@ -57,8 +62,8 @@ def main():
 
     ## Release device handle
     dev.close()
-    
+
     return
-    
+
 if __name__ == '__main__':
     main()

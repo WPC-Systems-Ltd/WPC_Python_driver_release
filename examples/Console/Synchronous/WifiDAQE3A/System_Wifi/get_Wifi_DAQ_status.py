@@ -3,12 +3,13 @@ System_Wifi - get_Wifi_DAQ_status.py with synchronous mode.
 
 This example demonstrates how to get basic information such as RSSI & battery & thermo from WifiDAQE3A.
 
+Please change correct serial number or IP and port number BEFORE you run example code.
+
 For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd.
-All rights reserved.
+Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -26,15 +27,19 @@ def main():
     ## Create device handle
     dev = pywpc.WifiDAQE3A()
 
-    ## Connect to device
+    ## Connect to device    ## Connect to device
     try:
-        dev.connect("192.168.5.79")
+        dev.connect("192.168.5.79") ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
+        ## Release device handle
+        dev.close()
+        return
 
     ## Perform to Get RSSI, Battery and Thermo
     try:
         ## Parameters setting
+        port = None ## Depend on your device
         timeout = 3  ## second
 
         ## Get firmware model & version
@@ -58,8 +63,8 @@ def main():
 
     ## Release device handle
     dev.close()
- 
+
     return
-    
+
 if __name__ == '__main__':
     main()

@@ -157,6 +157,9 @@ Error Code Table
    * - -8212
      - 
      - The specified AO sampling rate is invalid.
+   * - -8213
+     - 
+     - Numbers of AO value must lower than 13.
    * - -8301
      - 
      - Thermal port not avaliable or already occupied by other process.

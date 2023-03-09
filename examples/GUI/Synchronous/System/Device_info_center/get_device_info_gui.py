@@ -5,12 +5,12 @@
 
 ## Python
 import sys
-import os 
+import os
 
 ## Third party
 from PyQt5 import QtWidgets, QtGui
 from PyQt5.QtWidgets import QMessageBox
-from UI_design.Ui_example_GUI_get_device_info import Ui_MainWindow 
+from UI_design.Ui_example_GUI_get_device_info import Ui_MainWindow
 
 ## WPC
 from wpcsys import pywpc
@@ -22,10 +22,10 @@ class MainWindow(QtWidgets.QMainWindow):
         ## UI initialize
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-  
+
         ## Get Python driver version 
         print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
- 
+
         ## Connection flag
         self.connect_flag = 0
 
@@ -34,7 +34,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Material path
         file_path = os.path.dirname(__file__)
-        self.trademark_path = file_path + "\Material\\trademark.jpg" 
+        self.trademark_path = file_path + "\Material\\trademark.jpg"
         self.blue_led_path = file_path + "\Material\LED_blue.png"
         self.red_led_path = file_path + "\Material\LED_red.png"
         self.green_led_path = file_path + "\Material\LED_green.png"
@@ -43,14 +43,14 @@ class MainWindow(QtWidgets.QMainWindow):
         ## Set trademark & LED path
         self.ui.lb_trademark.setPixmap(QtGui.QPixmap(self.trademark_path))
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.gray_led_path))
-        
+
         ## Define callback events
         self.ui.btn_connect.clicked.connect(self.connectEvent)
         self.ui.btn_disconnect.clicked.connect(self.disconnectEvent)
         self.ui.btn_deviceInfo.clicked.connect(self.getdeviceinfoEvent)
 
-    def selectHandle(self): 
-        handle_idx = int(self.ui.comboBox_handle.currentIndex()) 
+    def selectHandle(self):
+        handle_idx = int(self.ui.comboBox_handle.currentIndex())
         if handle_idx == 0:
             self.dev = pywpc.WifiDAQE3A()
         elif handle_idx == 1:
@@ -61,37 +61,37 @@ class MainWindow(QtWidgets.QMainWindow):
     def updateParam(self):
         ## Get IP or serial_number from GUI
         self.ip = self.ui.lineEdit_IP.text()
-   
+
     def connectEvent(self):
         if self.connect_flag == 1:
             return
-    
+
         ## Select handle
         self.selectHandle()
-         
+
         ## Update Param
         self.updateParam()
 
         ## Connect to device
-        try:  
-            self.dev.connect(self.ip) 
-        except pywpc.Error as err: 
+        try:
+            self.dev.connect(self.ip)
+        except pywpc.Error as err:
             print("err: " + str(err))
             return
-        
+
         ## Change LED status
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
 
         ## Change connection flag
         self.connect_flag = 1
-    
+
     def disconnectEvent(self):
         if self.connect_flag == 0:
             return
 
         ## Disconnect device
         self.dev.disconnect()
- 
+
         ## Change LED status
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.green_led_path))
 
@@ -102,10 +102,10 @@ class MainWindow(QtWidgets.QMainWindow):
         if self.dev is not None:
             ## Disconnect device
             self.dev.disconnect()
-            
+
             ## Release device handle
             self.dev.close()
-    
+
     def getdeviceinfoEvent(self):
         ## Check connection status
         if self.checkConnectionStatus() == False:
@@ -115,13 +115,13 @@ class MainWindow(QtWidgets.QMainWindow):
         driver_info = self.dev.Sys_getDriverInfo()
         model = driver_info[0]
         version = driver_info[-1]
-        
+
         ## Get serial number & RTC Time
         serial_number = self.dev.Sys_getSerialNumber()
         rtc = self.dev.Sys_getRTC()
 
         ## Get IP & submask & MAC
-        ip, submask = self.dev.Sys_getIPAddrAndSubmask() 
+        ip, submask = self.dev.Sys_getIPAddrAndSubmask()
         mac = self.dev.Sys_getMACAddr()
 
         ## Update information in GUI
@@ -142,7 +142,7 @@ class MainWindow(QtWidgets.QMainWindow):
             return True
 
 if __name__ == "__main__":
-    app = QtWidgets.QApplication([]) 
+    app = QtWidgets.QApplication([])
     WPC_main_ui = MainWindow()
-    WPC_main_ui.show() 
+    WPC_main_ui.show()
     sys.exit(app.exec_())

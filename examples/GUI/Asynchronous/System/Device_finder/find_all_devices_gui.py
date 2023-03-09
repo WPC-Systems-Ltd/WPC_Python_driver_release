@@ -17,13 +17,13 @@ from UI_design.Ui_example_GUI_find_all_device import Ui_MainWindow
 ## WPC
 from wpcsys import pywpc
 
-COLUMN_WIDTH = 160  
+COLUMN_WIDTH = 160
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
-        super(MainWindow, self).__init__()  
+        super(MainWindow, self).__init__()
         QTableWidget.__init__(self)
- 
+
         ## UI initialize
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
@@ -32,19 +32,19 @@ class MainWindow(QtWidgets.QMainWindow):
         trademark_path = os.getcwd() + "\Material\\trademark.jpg" 
         self.ui.lb_trademark.setPixmap(QtGui.QPixmap(trademark_path))
 
-        ## Initialize table 
+        ## Initialize table
         self.initiBroadcastTable()
 
         ## Define button callback events
         self.ui.btn_broadcast.clicked.connect(self.broadcastNetworkEvent)
-        
+
         ## Create handle
         self.dev = pywpc.DeviceFinder()
 
         ## Connect to device
-        self.dev.connect() 
- 
-        ## Get Python driver version 
+        self.dev.connect()
+
+        ## Get Python driver version
         print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
 
         ## Initialize list
@@ -55,7 +55,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.ui.tableWidget_brst.setColumnWidth(i, COLUMN_WIDTH)
         self.ui.tableWidget_brst.setStyleSheet("selection-background-color: #217536;")
 
-    def loaddata(self): 
+    def loaddata(self):
         row = 0
         self.ui.tableWidget_brst.setRowCount(len(self.broadcast_list))
         for i in self.broadcast_list:
@@ -66,8 +66,8 @@ class MainWindow(QtWidgets.QMainWindow):
             self.ui.tableWidget_brst.setItem(row, 4, QtWidgets.QTableWidgetItem(i["firmware_ver"]))
             row = row + 1
         QApplication.restoreOverrideCursor()
-        
-    @asyncSlot()      
+
+    @asyncSlot()
     async def broadcastNetworkEvent(self):
 
         ## Add WaitCursor
@@ -75,14 +75,14 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## Clear Broadcast table
         self.broadcast_list.clear()
-        self.ui.tableWidget_brst.setRowCount(0) 
+        self.ui.tableWidget_brst.setRowCount(0)
 
         ## Perform device information
         broadcast_info = await self.dev.Bcst_enumerateNetworkDevices_async()
         print(broadcast_info)
 
         ## Return information length
-        device_amount = len(broadcast_info) 
+        device_amount = len(broadcast_info)
         for i in range (device_amount):
             ip = broadcast_info[i][0]
             submask = broadcast_info[i][1]
@@ -90,27 +90,26 @@ class MainWindow(QtWidgets.QMainWindow):
             model_version = broadcast_info[i][3]
             str_list = model_version.split('_')
             model = str_list[0]
-            version = str_list[-1] 
-            self.broadcast_list.append({'ip': ip , 'submask': submask, 'mac':mac, 'model': model, 'firmware_ver': version}) 
+            version = str_list[-1]
+            self.broadcast_list.append({'ip': ip , 'submask': submask, 'mac':mac, 'model': model, 'firmware_ver': version})
         self.loaddata()
 
     def closeEvent(self, event):
         if self.dev is not None:
             ## Disconnect device
             self.dev.disconnect()
-            
+
             ## Release device handle
             self.dev.close()
-            
-def main(): 
+
+def main():
     app = QtWidgets.QApplication([])
     loop = QEventLoop(app)
-    asyncio.set_event_loop(loop) 
+    asyncio.set_event_loop(loop)
     WPC_main_ui = MainWindow()
-    WPC_main_ui.show() 
-    with loop: 
+    WPC_main_ui.show()
+    with loop:
         loop.run_forever()
 
-if __name__ == "__main__": 
+if __name__ == "__main__":
     main()
- 

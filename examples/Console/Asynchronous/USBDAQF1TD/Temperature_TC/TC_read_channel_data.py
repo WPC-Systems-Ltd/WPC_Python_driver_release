@@ -7,12 +7,13 @@ First, it shows how to open thermal port and configure thermal parameters.
 Second, read channel 1 thermocouple data.
 Last, close thermal port.
 
+Please change correct serial number or IP and port number BEFORE you run example code.
+
 For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd.
-All rights reserved.
+Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -32,42 +33,48 @@ async def main():
 
     ## Connect to device
     try:
-        dev.connect("21JA1239")
+        dev.connect("default") ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
+        ## Release device handle
+        dev.close()
+        return
 
     try:
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name:" + driver_info[0])
-        print("Firmware version:" + driver_info[-1])
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
 
         ## Parameters setting
-        port = 1
-        channel = 1
+        port = 1 ## Depend on your device
+        ch = 1
         over_sampling_mode = 0  ## 0:1 sample, 1:2 samples, 2:4 sample, 3:8 samples, 4:16 samples
         thermo_type = 3         ## 0:B type, 1:E type, 2:J type, 3:K type
                                 ## 4:N type, 5:R type, 6:S type, 7:T type
 
         ## Open thermo
         err = await dev.Thermal_open_async(port)
-        print("Thermal_open_async:", err)
+        print(f"Thermal_open_async in port{port}: {err}")
 
         ## Set thermo port and set over-sampling mode to no over-sampling in channel 1
-        err = await dev.Thermal_setOverSampling_async(port, channel, over_sampling_mode)
-        print("Thermal_setOverSampling_async:", err)
+        err = await dev.Thermal_setOverSampling_async(port, ch, over_sampling_mode)
+        print(f"Thermal_setOverSampling_async in port{port}: {err}")
 
         ## Set thermo port and set K type in channel 1
-        err = await dev.Thermal_setType_async(port, channel, thermo_type)
-        print("Thermal_setType_async:", err)
+        err = await dev.Thermal_setType_async(port, ch, thermo_type)
+        print(f"Thermal_setType_async in port{port}: {err}")
+
+        ## Wait for at least 100 ms after setting type or oversampling
+        await asyncio.sleep(0.1) ## delay [s]
 
         ## Set thermo port and read thermo in channel 1
-        data = await dev.Thermal_readSensor_async(port, channel)
-        print("Read channel 1 data:", data, "°C")
+        data = await dev.Thermal_readSensor_async(port, ch)
+        print(f"Read sensor in channel {ch} in port{port}: {data}°C")
 
         ## Close thermo
         err = await dev.Thermal_close_async(port)
-        print("Thermal_close_async:", err)
+        print(f"Thermal_close_async in port{port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 
@@ -84,7 +91,7 @@ def main_for_spyder(*args):
         return asyncio.create_task(main(*args)).result()
     else:
         return asyncio.run(main(*args))
- 
+
 if __name__ == '__main__':
     asyncio.run(main()) ## Use terminal
     # await main() ## Use Jupyter or IPython(>=7.0)

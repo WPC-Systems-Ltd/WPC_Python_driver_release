@@ -22,12 +22,11 @@ Then, we take `USBDAQF1CD` for example.
 ### USBDAQF1CD
 
 Both connect CAN_H to CAN_H and CAN_L to CAN_L then short pin35, pin36 together for enabling termination resistor.
- 
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-USBDAQF1CD.JPG" alt="drawing" width="600"/>
 
 
-## CAN interfacing SOP 
+## CAN interfacing SOP
 
 Create device handle -> Connect to device -> Open CAN port -> Set CAN parameters -> Write data via CAN -> Read data via CAN -> Close CAN port -> Disconnect device -> Release device handle.
 

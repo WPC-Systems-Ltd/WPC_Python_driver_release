@@ -5,7 +5,7 @@
 ## Overview
 
 This example project demonstrates how to use WPC python driver to get basic USB information and pinmode from USBDAQF1CD.
- 
+
 In order to use API correctly, please refer [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
 If you want to build your own system application, try to use this as a basic template, then add your own code.
@@ -14,7 +14,7 @@ If you want to build your own system application, try to use this as a basic tem
 
 ### Hardware Requirement
 
-In order to run this example, you should get USBDAQF1CD product. 
+In order to run this example, you should get USBDAQF1CD product.
 
 ## Troubleshooting
 

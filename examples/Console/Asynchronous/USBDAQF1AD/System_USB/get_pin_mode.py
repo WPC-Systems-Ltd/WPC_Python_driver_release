@@ -7,12 +7,13 @@ First, get idle pin mode and show how to open DO and DI in pins.
 Second, get idle pin mode and set port idle mode. Again, get pin mode.
 Last, close DO and DI in port.
 
+Please change correct serial number or IP and port number BEFORE you run example code.
+
 For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd.
-All rights reserved.
+Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -32,9 +33,12 @@ async def main():
 
     ## Connect to device
     try:
-        dev.connect("21JA1245")
+        dev.connect("default") ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
+        ## Release device handle
+        dev.close()
+        return
 
     try:
         ## Get firmware model & version
@@ -64,7 +68,7 @@ def main_for_spyder(*args):
         return asyncio.create_task(main(*args)).result()
     else:
         return asyncio.run(main(*args))
- 
+
 if __name__ == '__main__':
     asyncio.run(main()) ## Use terminal
     # await main() ## Use Jupyter or IPython(>=7.0)

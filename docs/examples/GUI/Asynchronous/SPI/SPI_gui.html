@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SPI test panel &mdash; WPC Python driver 2.0.0 documentation</title>
+  <title>SPI test panel &mdash; WPC Python driver 2.0.1 documentation</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.0.0
+                2.0.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
@@ -134,19 +134,19 @@
 <span class="linenos"> 25</span>        <span class="c1">## UI initialize</span>
 <span class="linenos"> 26</span>        <span class="bp">self</span><span class="o">.</span><span class="n">ui</span> <span class="o">=</span> <span class="n">Ui_MainWindow</span><span class="p">()</span>
 <span class="linenos"> 27</span>        <span class="bp">self</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">setupUi</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="linenos"> 28</span> 
-<span class="linenos"> 29</span>        <span class="c1">## Get Python driver version </span>
+<span class="linenos"> 28</span>
+<span class="linenos"> 29</span>        <span class="c1">## Get Python driver version</span>
 <span class="linenos"> 30</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_FULL_NAME</span><span class="si">}</span><span class="s1"> - Version </span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="linenos"> 31</span> 
+<span class="linenos"> 31</span>
 <span class="linenos"> 32</span>        <span class="c1">## Connection flag</span>
 <span class="linenos"> 33</span>        <span class="bp">self</span><span class="o">.</span><span class="n">connect_flag</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="linenos"> 34</span>
 <span class="linenos"> 35</span>        <span class="c1">## Handle declaration</span>
 <span class="linenos"> 36</span>        <span class="bp">self</span><span class="o">.</span><span class="n">dev</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="linenos"> 37</span> 
+<span class="linenos"> 37</span>
 <span class="linenos"> 38</span>        <span class="c1">## Material path</span>
 <span class="linenos"> 39</span>        <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span>
-<span class="linenos"> 40</span>        <span class="bp">self</span><span class="o">.</span><span class="n">trademark_path</span> <span class="o">=</span> <span class="n">file_path</span> <span class="o">+</span> <span class="s2">&quot;\Material</span><span class="se">\\</span><span class="s2">trademark.jpg&quot;</span> 
+<span class="linenos"> 40</span>        <span class="bp">self</span><span class="o">.</span><span class="n">trademark_path</span> <span class="o">=</span> <span class="n">file_path</span> <span class="o">+</span> <span class="s2">&quot;\Material</span><span class="se">\\</span><span class="s2">trademark.jpg&quot;</span>
 <span class="linenos"> 41</span>        <span class="bp">self</span><span class="o">.</span><span class="n">blue_led_path</span> <span class="o">=</span> <span class="n">file_path</span> <span class="o">+</span> <span class="s2">&quot;\Material\LED_blue.png&quot;</span>
 <span class="linenos"> 42</span>        <span class="bp">self</span><span class="o">.</span><span class="n">red_led_path</span> <span class="o">=</span> <span class="n">file_path</span> <span class="o">+</span> <span class="s2">&quot;\Material\LED_red.png&quot;</span>
 <span class="linenos"> 43</span>        <span class="bp">self</span><span class="o">.</span><span class="n">green_led_path</span> <span class="o">=</span> <span class="n">file_path</span> <span class="o">+</span> <span class="s2">&quot;\Material\LED_green.png&quot;</span>
@@ -162,9 +162,9 @@
 <span class="linenos"> 53</span>        <span class="bp">self</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">btn_write</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">writeEvent</span><span class="p">)</span>
 <span class="linenos"> 54</span>        <span class="bp">self</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">btn_read</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">readEvent</span><span class="p">)</span>
 <span class="linenos"> 55</span>        <span class="bp">self</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">btn_set</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">setEvent</span><span class="p">)</span>
-<span class="linenos"> 56</span>        
-<span class="linenos"> 57</span>    <span class="k">def</span> <span class="nf">selectHandle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
-<span class="linenos"> 58</span>        <span class="n">handle_idx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">comboBox_handle</span><span class="o">.</span><span class="n">currentIndex</span><span class="p">())</span> 
+<span class="linenos"> 56</span>
+<span class="linenos"> 57</span>    <span class="k">def</span> <span class="nf">selectHandle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 58</span>        <span class="n">handle_idx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">comboBox_handle</span><span class="o">.</span><span class="n">currentIndex</span><span class="p">())</span>
 <span class="linenos"> 59</span>        <span class="k">if</span> <span class="n">handle_idx</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
 <span class="linenos"> 60</span>            <span class="bp">self</span><span class="o">.</span><span class="n">dev</span> <span class="o">=</span> <span class="n">pywpc</span><span class="o">.</span><span class="n">USBDAQF1D</span><span class="p">()</span>
 <span class="linenos"> 61</span>        <span class="k">elif</span> <span class="n">handle_idx</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
@@ -179,7 +179,7 @@
 <span class="linenos"> 70</span>            <span class="bp">self</span><span class="o">.</span><span class="n">dev</span> <span class="o">=</span> <span class="n">pywpc</span><span class="o">.</span><span class="n">USBDAQF1AOD</span><span class="p">()</span>
 <span class="linenos"> 71</span>
 <span class="linenos"> 72</span>    <span class="k">def</span> <span class="nf">updateParam</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="linenos"> 73</span>        <span class="c1">## DO port and pin </span>
+<span class="linenos"> 73</span>        <span class="c1">## DO port and pin</span>
 <span class="linenos"> 74</span>        <span class="bp">self</span><span class="o">.</span><span class="n">DO_port</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="linenos"> 75</span>        <span class="bp">self</span><span class="o">.</span><span class="n">DO_index</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">## CS pin</span>
 <span class="linenos"> 76</span>
@@ -187,7 +187,7 @@
 <span class="linenos"> 78</span>        <span class="bp">self</span><span class="o">.</span><span class="n">ip</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">lineEdit_IP</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
 <span class="linenos"> 79</span>
 <span class="linenos"> 80</span>        <span class="c1">## Get port from GUI</span>
-<span class="linenos"> 81</span>        <span class="bp">self</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">comboBox_port</span><span class="o">.</span><span class="n">currentIndex</span><span class="p">())</span><span class="o">+</span><span class="mi">1</span> 
+<span class="linenos"> 81</span>        <span class="bp">self</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">comboBox_port</span><span class="o">.</span><span class="n">currentIndex</span><span class="p">())</span><span class="o">+</span><span class="mi">1</span>
 <span class="linenos"> 82</span>
 <span class="linenos"> 83</span>        <span class="c1">## Get mode from GUI</span>
 <span class="linenos"> 84</span>        <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">comboBox_mode</span><span class="o">.</span><span class="n">currentIndex</span><span class="p">()</span>
@@ -200,25 +200,25 @@
 <span class="linenos"> 91</span>
 <span class="linenos"> 92</span>        <span class="c1">## Convert string to int list</span>
 <span class="linenos"> 93</span>        <span class="bp">self</span><span class="o">.</span><span class="n">write_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">converStrtoIntList</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="linenos"> 94</span>    
-<span class="linenos"> 95</span>    <span class="nd">@asyncSlot</span><span class="p">()</span> 
-<span class="linenos"> 96</span>    <span class="k">async</span> <span class="k">def</span> <span class="nf">setEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  
+<span class="linenos"> 94</span>
+<span class="linenos"> 95</span>    <span class="nd">@asyncSlot</span><span class="p">()</span>
+<span class="linenos"> 96</span>    <span class="k">async</span> <span class="k">def</span> <span class="nf">setEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="linenos"> 97</span>        <span class="c1">## Update Param</span>
 <span class="linenos"> 98</span>        <span class="bp">self</span><span class="o">.</span><span class="n">updateParam</span><span class="p">()</span>
-<span class="linenos"> 99</span> 
+<span class="linenos"> 99</span>
 <span class="linenos">100</span>        <span class="c1">## Set SPI port and prescaler</span>
 <span class="linenos">101</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">SPI_setPrescaler_async</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">prescaler</span><span class="p">)</span>
 <span class="linenos">102</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SPI_setPrescaler_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
-<span class="linenos">103</span>       
+<span class="linenos">103</span>
 <span class="linenos">104</span>        <span class="c1">## Set SPI port and mode</span>
-<span class="linenos">105</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">SPI_setMode_async</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span> 
+<span class="linenos">105</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">SPI_setMode_async</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
 <span class="linenos">106</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SPI_setMode_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
 <span class="linenos">107</span>
-<span class="linenos">108</span>    <span class="nd">@asyncSlot</span><span class="p">()</span> 
+<span class="linenos">108</span>    <span class="nd">@asyncSlot</span><span class="p">()</span>
 <span class="linenos">109</span>    <span class="k">async</span> <span class="k">def</span> <span class="nf">writeEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="linenos">110</span>        <span class="c1">## Update Param</span>
-<span class="linenos">111</span>        <span class="bp">self</span><span class="o">.</span><span class="n">updateParam</span><span class="p">()</span> 
-<span class="linenos">112</span> 
+<span class="linenos">111</span>        <span class="bp">self</span><span class="o">.</span><span class="n">updateParam</span><span class="p">()</span>
+<span class="linenos">112</span>
 <span class="linenos">113</span>        <span class="c1">## Set CS(pin0) to low</span>
 <span class="linenos">114</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins_async</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">DO_port</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DO_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="linenos">115</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_writePins_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
@@ -230,7 +230,7 @@
 <span class="linenos">121</span>        <span class="c1">## Set CS(pin0) to high</span>
 <span class="linenos">122</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins_async</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">DO_port</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DO_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="linenos">123</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_writePins_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
-<span class="linenos">124</span>  
+<span class="linenos">124</span>
 <span class="linenos">125</span>        <span class="c1">## Set CS(pin0) to low</span>
 <span class="linenos">126</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins_async</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">DO_port</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DO_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="linenos">127</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_writePins_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
@@ -238,56 +238,56 @@
 <span class="linenos">129</span>        <span class="c1">## Set SPI port and write bytes</span>
 <span class="linenos">130</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">SPI_write_async</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">write_data</span><span class="p">)</span>
 <span class="linenos">131</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SPI_write_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
-<span class="linenos">132</span> 
+<span class="linenos">132</span>
 <span class="linenos">133</span>        <span class="c1">## Set CS(pin0) to high</span>
 <span class="linenos">134</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins_async</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">DO_port</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DO_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="linenos">135</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_writePins_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
-<span class="linenos">136</span> 
-<span class="linenos">137</span>    <span class="nd">@asyncSlot</span><span class="p">()</span> 
+<span class="linenos">136</span>
+<span class="linenos">137</span>    <span class="nd">@asyncSlot</span><span class="p">()</span>
 <span class="linenos">138</span>    <span class="k">async</span> <span class="k">def</span> <span class="nf">readEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="linenos">139</span>        <span class="c1">## Update Param</span>
-<span class="linenos">140</span>        <span class="bp">self</span><span class="o">.</span><span class="n">updateParam</span><span class="p">()</span> 
-<span class="linenos">141</span>         
+<span class="linenos">140</span>        <span class="bp">self</span><span class="o">.</span><span class="n">updateParam</span><span class="p">()</span>
+<span class="linenos">141</span>
 <span class="linenos">142</span>        <span class="c1">## Set CS(pin0) to low</span>
 <span class="linenos">143</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins_async</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">DO_port</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DO_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="linenos">144</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_writePins_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
-<span class="linenos">145</span> 
-<span class="linenos">146</span>        <span class="c1">## Set SPI port and read bytes  </span>
-<span class="linenos">147</span>        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">SPI_readAndWrite_async</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">write_data</span><span class="p">)</span> 
+<span class="linenos">145</span>
+<span class="linenos">146</span>        <span class="c1">## Set SPI port and read bytes</span>
+<span class="linenos">147</span>        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">SPI_readAndWrite_async</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">write_data</span><span class="p">)</span>
 <span class="linenos">148</span>        <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="si">{:02x}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
-<span class="linenos">149</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;read data :&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> 
+<span class="linenos">149</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;read data :&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 <span class="linenos">150</span>
 <span class="linenos">151</span>        <span class="c1">## Update data in GUI</span>
 <span class="linenos">152</span>        <span class="bp">self</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">lineEdit_read</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 <span class="linenos">153</span>
 <span class="linenos">154</span>        <span class="c1">## Set CS(pin0) to high</span>
 <span class="linenos">155</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins_async</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">DO_port</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DO_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="linenos">156</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_writePins_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span> 
-<span class="linenos">157</span> 
-<span class="linenos">158</span>    <span class="nd">@asyncSlot</span><span class="p">()</span> 
+<span class="linenos">156</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_writePins_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
+<span class="linenos">157</span>
+<span class="linenos">158</span>    <span class="nd">@asyncSlot</span><span class="p">()</span>
 <span class="linenos">159</span>    <span class="k">async</span> <span class="k">def</span> <span class="nf">connectEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="linenos">160</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect_flag</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
 <span class="linenos">161</span>            <span class="k">return</span>
-<span class="linenos">162</span>        
+<span class="linenos">162</span>
 <span class="linenos">163</span>        <span class="c1">## Select handle</span>
 <span class="linenos">164</span>        <span class="bp">self</span><span class="o">.</span><span class="n">selectHandle</span><span class="p">()</span>
-<span class="linenos">165</span>         
+<span class="linenos">165</span>
 <span class="linenos">166</span>        <span class="c1">## Update Param</span>
 <span class="linenos">167</span>        <span class="bp">self</span><span class="o">.</span><span class="n">updateParam</span><span class="p">()</span>
 <span class="linenos">168</span>
 <span class="linenos">169</span>        <span class="c1">## Connect to device</span>
-<span class="linenos">170</span>        <span class="k">try</span><span class="p">:</span>  
-<span class="linenos">171</span>            <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ip</span><span class="p">)</span> 
-<span class="linenos">172</span>        <span class="k">except</span> <span class="n">pywpc</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span> 
+<span class="linenos">170</span>        <span class="k">try</span><span class="p">:</span>
+<span class="linenos">171</span>            <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ip</span><span class="p">)</span>
+<span class="linenos">172</span>        <span class="k">except</span> <span class="n">pywpc</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos">173</span>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;err: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
-<span class="linenos">174</span>            <span class="k">return</span> 
-<span class="linenos">175</span>        
+<span class="linenos">174</span>            <span class="k">return</span>
+<span class="linenos">175</span>
 <span class="linenos">176</span>        <span class="c1">## Change LED status</span>
 <span class="linenos">177</span>        <span class="bp">self</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">lb_led</span><span class="o">.</span><span class="n">setPixmap</span><span class="p">(</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QPixmap</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">blue_led_path</span><span class="p">))</span>
 <span class="linenos">178</span>
 <span class="linenos">179</span>        <span class="c1">## Change connection flag</span>
 <span class="linenos">180</span>        <span class="bp">self</span><span class="o">.</span><span class="n">connect_flag</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="linenos">181</span>  
+<span class="linenos">181</span>
 <span class="linenos">182</span>        <span class="c1">## Open pin0 with digital output</span>
 <span class="linenos">183</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">DO_openPins_async</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">DO_port</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DO_index</span><span class="p">)</span>
 <span class="linenos">184</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_openPins_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
@@ -299,19 +299,19 @@
 <span class="linenos">190</span>        <span class="c1">## Set CS(pin0) to high</span>
 <span class="linenos">191</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins_async</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">DO_port</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DO_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="linenos">192</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_writePins_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
-<span class="linenos">193</span>    
-<span class="linenos">194</span>    <span class="nd">@asyncSlot</span><span class="p">()</span>      
+<span class="linenos">193</span>
+<span class="linenos">194</span>    <span class="nd">@asyncSlot</span><span class="p">()</span>
 <span class="linenos">195</span>    <span class="k">async</span> <span class="k">def</span> <span class="nf">disconnectEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="linenos">196</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect_flag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
 <span class="linenos">197</span>            <span class="k">return</span>
-<span class="linenos">198</span>        
+<span class="linenos">198</span>
 <span class="linenos">199</span>        <span class="c1">## Update Param</span>
 <span class="linenos">200</span>        <span class="bp">self</span><span class="o">.</span><span class="n">updateParam</span><span class="p">()</span>
-<span class="linenos">201</span> 
+<span class="linenos">201</span>
 <span class="linenos">202</span>        <span class="c1">## Close SPI port</span>
 <span class="linenos">203</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">SPI_close_async</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">)</span>
 <span class="linenos">204</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SPI_close_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
-<span class="linenos">205</span>       
+<span class="linenos">205</span>
 <span class="linenos">206</span>        <span class="c1">## Close pin0 with digital output</span>
 <span class="linenos">207</span>        <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">DO_closePins_async</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">DO_port</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">DO_index</span><span class="p">)</span>
 <span class="linenos">208</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DO_closePins_async status: &quot;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
@@ -324,32 +324,32 @@
 <span class="linenos">215</span>
 <span class="linenos">216</span>        <span class="c1">## Change connection flag</span>
 <span class="linenos">217</span>        <span class="bp">self</span><span class="o">.</span><span class="n">connect_flag</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">218</span>        
+<span class="linenos">218</span>
 <span class="linenos">219</span>    <span class="k">def</span> <span class="nf">closeEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
 <span class="linenos">220</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dev</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 <span class="linenos">221</span>            <span class="c1">## Disconnect device</span>
 <span class="linenos">222</span>            <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
-<span class="linenos">223</span>            
+<span class="linenos">223</span>
 <span class="linenos">224</span>            <span class="c1">## Release device handle</span>
 <span class="linenos">225</span>            <span class="bp">self</span><span class="o">.</span><span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="linenos">226</span>
 <span class="linenos">227</span>    <span class="k">def</span> <span class="nf">converStrtoIntList</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">str_</span><span class="p">):</span>
 <span class="linenos">228</span>        <span class="c1">## Split string by commas</span>
 <span class="linenos">229</span>        <span class="n">write_data_strlist</span> <span class="o">=</span> <span class="n">str_</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
-<span class="linenos">230</span>        
+<span class="linenos">230</span>
 <span class="linenos">231</span>        <span class="c1">## Convert string list to int list</span>
 <span class="linenos">232</span>        <span class="n">write_data_int</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="linenos">233</span>        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">write_data_strlist</span><span class="p">:</span>
 <span class="linenos">234</span>            <span class="n">write_data_int</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span>
-<span class="linenos">235</span>        <span class="k">return</span> <span class="n">write_data_int</span>    
+<span class="linenos">235</span>        <span class="k">return</span> <span class="n">write_data_int</span>
 <span class="linenos">236</span>
-<span class="linenos">237</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span> 
+<span class="linenos">237</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
 <span class="linenos">238</span>    <span class="n">app</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QApplication</span><span class="p">([])</span>
 <span class="linenos">239</span>    <span class="n">loop</span> <span class="o">=</span> <span class="n">QEventLoop</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-<span class="linenos">240</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">set_event_loop</span><span class="p">(</span><span class="n">loop</span><span class="p">)</span> 
+<span class="linenos">240</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">set_event_loop</span><span class="p">(</span><span class="n">loop</span><span class="p">)</span>
 <span class="linenos">241</span>    <span class="n">WPC_main_ui</span> <span class="o">=</span> <span class="n">MainWindow</span><span class="p">()</span>
-<span class="linenos">242</span>    <span class="n">WPC_main_ui</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> 
-<span class="linenos">243</span>    <span class="k">with</span> <span class="n">loop</span><span class="p">:</span> 
+<span class="linenos">242</span>    <span class="n">WPC_main_ui</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="linenos">243</span>    <span class="k">with</span> <span class="n">loop</span><span class="p">:</span>
 <span class="linenos">244</span>        <span class="n">loop</span><span class="o">.</span><span class="n">run_forever</span><span class="p">()</span>
 <span class="linenos">245</span>
 <span class="linenos">246</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>

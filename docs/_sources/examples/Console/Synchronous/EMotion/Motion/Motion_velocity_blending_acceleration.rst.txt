@@ -1,5 +1,5 @@
-Motion acceleration blending 
-=============================
+Motion acceleration blending
+============================
 
 .. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/EMotion/Motion/Motion_velocity_blending_acceleration.py
    :language: python
