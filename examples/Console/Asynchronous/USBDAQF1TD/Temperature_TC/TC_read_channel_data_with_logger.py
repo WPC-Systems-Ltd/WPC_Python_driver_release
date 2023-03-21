@@ -32,10 +32,11 @@ async def main():
     dev_logger = pywpc.DataLogger()
 
     ## Open file with WPC_test.csv
-    dev_logger.Logger_openFile("WPC_test.csv")
+    err = dev_logger.Logger_openFile("WPC_test.csv")
 
     ## Write header into CSV file
-    dev_logger.Logger_writeHeader(["Thermo CH1"])
+    err = dev_logger.Logger_writeHeader(["Thermo CH1"])
+    print(f"Logger_writeHeader: {err}")
 
     ## Create device handle
     dev = pywpc.USBDAQF1TD()
@@ -50,17 +51,17 @@ async def main():
         return
 
     try:
-        ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
-
         ## Parameters setting
         port = 1 ## Depend on your device
         ch = 1
         over_sampling_mode = 0  ## 0:1 sample, 1:2 samples, 2:4 sample, 3:8 samples, 4:16 samples
         thermo_type = 3         ## 0:B type, 1:E type, 2:J type, 3:K type
                                 ## 4:N type, 5:R type, 6:S type, 7:T type
+
+        ## Get firmware model & version
+        driver_info = await dev.Sys_getDriverInfo_async()
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
 
         ## Open thermo
         err = await dev.Thermal_open_async(port)
@@ -74,27 +75,28 @@ async def main():
         err = await dev.Thermal_setType_async(port, ch, thermo_type)
         print(f"Thermal_setType_async in port{port}: {err}")
 
-        ## Wait for at least 100 ms after setting type or oversampling
-        await asyncio.sleep(0.1) ## delay [s]
+        ## Wait for at least 250 ms after setting type or oversampling
+        await asyncio.sleep(0.25) ## delay [s]
 
         ## Set thermo port and read thermo in channel 1
         data = await dev.Thermal_readSensor_async(port, ch)
         print(f"Read sensor in channel {ch} in port{port}: {data}°C")
 
         ## Write data into CSV file
-        dev_logger.Logger_writeValue(data)
+        err = dev_logger.Logger_writeValue(data)
+        print(f"Logger_writeValue: {err}")
 
         ## Close thermo
         err = await dev.Thermal_close_async(port)
         print(f"Thermal_close_async in port{port}: {err}")
-
-        ## Close File
-        dev_logger.Logger_closeFile()
     except Exception as err:
         pywpc.printGenericError(err)
 
     ## Disconnect device
     dev.disconnect()
+
+    ## Close File
+    dev_logger.Logger_closeFile()
 
     ## Release device handle
     dev.close()

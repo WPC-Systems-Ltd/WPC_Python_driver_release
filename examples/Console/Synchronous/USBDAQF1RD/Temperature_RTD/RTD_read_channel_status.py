@@ -56,19 +56,19 @@ async def main():
         print("Firmware version: " + driver_info[-1])
 
         ## Open RTD
-        err = await dev.Thermal_open(port, timeout)
+        err = await dev.Thermal_open(port, timeout=timeout)
         print(f"Thermal_open in port{port}: {err}")
 
         ## Set RTD port and get status in channel 0
-        status = await dev.Thermal_getStatus(port, ch0, timeout)
+        status = await dev.Thermal_getStatus(port, ch0, timeout=timeout)
         print("Thermal_getStatus in channel {ch0} status: {status}")
 
         ## Set RTD port and get status in channel 1
-        status = await dev.Thermal_getStatus(port, ch1, timeout)
+        status = await dev.Thermal_getStatus(port, ch1, timeout=timeout)
         print("Thermal_getStatus in channel {ch1} status: {status}")
 
         ## Close RTD
-        err = await dev.Thermal_close(port, timeout)
+        err = await dev.Thermal_close(port, timeout=timeout)
         print(f"Thermal_close in port{port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

@@ -35,11 +35,6 @@ async def main():
         return
 
     try:
-        ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
-
         ## Parameters setting
         port = 0 ## Depend on your device
         stop_decel = 0
@@ -52,27 +47,32 @@ async def main():
         axis3 = 2
         dest_posi3 = 2000
 
+        ## Get firmware model & version
+        driver_info = await dev.Sys_getDriverInfo_async()
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
+
         ## Motion open
         err = await dev.Motion_open_async(port)
         print(f"open_async in port{port}: {err}")
 
         ## Motion open configuration file
-        err = await dev.Motion_opencfgFile_async('3AxisStage_2P.ini')
-        print(f"opencfgFile_async in port{port}: {err}")
+        err = await dev.Motion_openCfgFile_async('C:/Users/user/Desktop/3AxisStage_2P.ini')
+        print(f"openCfgFile_async: {err}")
 
         ## Motion load configuration file
         err = await dev.Motion_loadCfgFile_async()
-        print(f"loadCfgFile_async in port{port}: {err}")
+        print(f"loadCfgFile_async: {err}")
 
         ## Motion configure
-        err = await dev.Motion_cfg3AxisLinearInterpo_async(port, axis1, dest_posi1, axis2, dest_posi2, axis3, dest_posi3, speed = 2000)
+        err = await dev.Motion_cfg3AxisLinearInterpo_async(port, axis1, dest_posi1, axis2, dest_posi2, axis3, dest_posi3, speed=2000)
         print(f"cfg3AxisLinearInterpo_async in port{port}: {err}")
 
         ## Motion start
         err = await dev.Motion_startLinearInterpo_async(port)
         print(f"startLinearInterpo_async in port{port}: {err}")
 
-        move_status = 0;
+        move_status = 0
         while move_status == 0:
             axis1_move_status = await dev.Motion_getMoveStatus_async(port, axis1)
             axis2_move_status = await dev.Motion_getMoveStatus_async(port, axis2)
@@ -91,7 +91,6 @@ async def main():
         ## Motion close
         err = await dev.Motion_close_async(port)
         print(f"close_async in port{port}: {err}")
-
     except Exception as err:
         pywpc.printGenericError(err)
 

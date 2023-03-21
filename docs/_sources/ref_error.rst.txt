@@ -91,6 +91,9 @@ Error Code Table
    * - -7023
      - 
      - Firmware commands error.
+   * - -7901
+     - 
+     - Relay counter index error, it must be in 0~5 or -1.
    * - -8001
      - 
      - Failed to connect to WPC DAQ. Please check USB plugin status and serial number.

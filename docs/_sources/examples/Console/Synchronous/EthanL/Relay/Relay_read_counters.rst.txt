@@ -1,0 +1,6 @@
+Relay read counters
+===================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/EthanL/Relay/Relay_read_counters.py
+   :language: python
+   :linenos:

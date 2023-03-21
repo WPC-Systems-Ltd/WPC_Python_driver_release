@@ -35,15 +35,16 @@ async def main():
         return
 
     try:
+        ## Parameters setting
+        port = 0 ## Depend on your device
+        axis = 0
+        stop_decel = 0
+
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## Parameters setting
-        port = 0 ## Depend on your device
-        axis = 0
-        stop_decel = 0
         ## Motion open
         err = await dev.Motion_open_async(port)
         print(f"open_async in port{port}: {err}")

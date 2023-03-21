@@ -42,13 +42,12 @@ def main():
 
     try:
         ## Parameters setting
-        port = 1 ## Depend on your device
+        port = 2 ## Depend on your device
         datasize = 0  ## Mode: 0 = 8-bit data, 1 = 16-bit data.
         first_bit = 0 ## Mode: 0 = MSB first, 1 = LSB first.
         prescaler = 64
         mode = 0    ## 0 : CPOL = 0 CPHA = 0 ## 1 : CPOL = 0 CPHA = 1
                     ## 2 : CPOL = 1 CPHA = 0 ## 3 : CPOL = 1 CPHA = 1
-        port = 1 ## Depend on your device
         DO_port = 0
         DO_index = [0] ## CS pin
         timeout = 3  ## second
@@ -61,7 +60,7 @@ def main():
         '''
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
@@ -70,15 +69,15 @@ def main():
         '''
 
         ## Open pin0 with digital output
-        err = dev.DO_openPins(DO_port, DO_index, timeout)
+        err = dev.DO_openPins(DO_port, DO_index, timeout=timeout)
         print(f"DO_openPins in port {DO_port}: {err}")
 
         ## Open SPI
-        err = dev.SPI_open(port, timeout)
+        err = dev.SPI_open(port, timeout=timeout)
         print(f"SPI_open in port{port}: {err}")
 
         ## Set CS(pin0) to high
-        err = dev.DO_writePins(DO_port, DO_index, [1], timeout)
+        err = dev.DO_writePins(DO_port, DO_index, [1], timeout=timeout)
         print(f"DO_writePins in port {DO_port}: {err}")
 
         '''
@@ -86,19 +85,19 @@ def main():
         '''
 
         ## Set SPI port and set datasize to 8-bits data
-        err = dev.SPI_setDataSize(port, datasize, timeout)
+        err = dev.SPI_setDataSize(port, datasize, timeout=timeout)
         print(f"SPI_setDataSize in port{port}: {err}")
 
         ## Set SPI port and set first_bit to MSB first
-        err = dev.SPI_setFirstBit(port, first_bit, timeout)
+        err = dev.SPI_setFirstBit(port, first_bit, timeout=timeout)
         print(f"SPI_setFirstBit in port{port}: {err}")
 
         ## Set SPI port and set prescaler to 64
-        err = dev.SPI_setPrescaler(port, prescaler, timeout)
+        err = dev.SPI_setPrescaler(port, prescaler, timeout=timeout)
         print(f"SPI_setPrescaler in port{port}: {err}")
 
         ## Set SPI port and set CPOL and CPHA to 0 (mode 0)
-        err = dev.SPI_setMode(port, mode, timeout)
+        err = dev.SPI_setMode(port, mode, timeout=timeout)
         print(f"SPI_setMode in port{port}: {err}")
 
         '''
@@ -106,15 +105,15 @@ def main():
         '''
 
         ## Set CS(pin0) to low
-        err = dev.DO_writePins(DO_port, DO_index, [0], timeout)
+        err = dev.DO_writePins(DO_port, DO_index, [0], timeout=timeout)
         print(f"DO_writePins in port {DO_port}: {err}")
 
         ## Write WREN byte
-        err = dev.SPI_write(port, [WREN], timeout)
+        err = dev.SPI_write(port, [WREN], timeout=timeout)
         print(f"SPI_write in port{port}: {err}")
 
         ## Set CS(pin0) to high
-        err = dev.DO_writePins(DO_port, DO_index, [1], timeout)
+        err = dev.DO_writePins(DO_port, DO_index, [1], timeout=timeout)
         print(f"DO_writePins in port {DO_port}: {err}")
 
         '''
@@ -122,15 +121,15 @@ def main():
         '''
 
         ## Set CS(pin0) to low
-        err = dev.DO_writePins(DO_port, DO_index, [0], timeout)
+        err = dev.DO_writePins(DO_port, DO_index, [0], timeout=timeout)
         print(f"DO_writePins in port {DO_port}: {err}")
 
         ## Write data byte 0x55 in to address 0x0002
-        err = dev.SPI_write(port, [WRITE, 0x00, 0x02, 0x55], timeout)
+        err = dev.SPI_write(port, [WRITE, 0x00, 0x02, 0x55], timeout=timeout)
         print(f"SPI_write in port{port}: {err}")
 
         ## Set CS(pin0) to high
-        err = dev.DO_writePins(DO_port, DO_index, [1], timeout)
+        err = dev.DO_writePins(DO_port, DO_index, [1], timeout=timeout)
         print(f"DO_writePins in port {DO_port}: {err}")
 
         '''

@@ -20,13 +20,13 @@ import asyncio
 
 from wpcsys import pywpc
 
-async def readRTC_loop(handle, delay = 1):
+async def readRTC_loop(handle, delay=1):
     while True:
-        data = await handle.Sys_getRTC_async()
-        print("RTC Time:" + str(data))
+        rtc = await handle.Sys_getRTC_async()
+        print(f"RTC Time: {rtc}")
         await asyncio.sleep(delay)  ## delay(second)
 
-async def printString_loop(handle, delay= 1):
+async def printString_loop(handle, delay=1):
     while True:
         print("WPC Systems Ltd")
         await asyncio.sleep(delay)  # delay(second)
@@ -47,14 +47,13 @@ async def main():
         dev.close()
         return
 
-    ## Perform two async thread to get data
     try:
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        await asyncio.gather(readRTC_loop(dev, 1), printString_loop(dev, 2)) ## delay (second)
+        await asyncio.gather(readRTC_loop(dev, delay=1), printString_loop(dev, delay=2)) ## delay (second)
     except Exception as err:
         pywpc.printGenericError(err)
 

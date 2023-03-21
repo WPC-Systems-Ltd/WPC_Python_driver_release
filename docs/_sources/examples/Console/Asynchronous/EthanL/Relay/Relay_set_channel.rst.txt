@@ -1,0 +1,6 @@
+Relay set channel
+=================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/EthanL/Relay/Relay_set_channel.py
+   :language: python
+   :linenos:

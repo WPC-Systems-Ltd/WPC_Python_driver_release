@@ -32,10 +32,12 @@ async def main():
     dev_logger = pywpc.DataLogger()
 
     ## Open file with WPC_test.csv
-    dev_logger.Logger_openFile("WPC_test.csv")
+    err = dev_logger.Logger_openFile("WPC_test.csv")
+    print(f"Logger_openFile: {err}")
 
     ## Write header into CSV file
-    dev_logger.Logger_writeHeader(["RTD CH0","RTD CH1"])
+    err = dev_logger.Logger_writeHeader(["RTD CH0","RTD CH1"])
+    print(f"Logger_writeHeader: {err}")
 
     ## Create device handle
     dev = pywpc.USBDAQF1RD()
@@ -50,15 +52,15 @@ async def main():
         return
 
     try:
-        ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
-
         ## Parameters setting
         port = 1 ## Depend on your device
         ch0 = 0
         ch1 = 1
+
+        ## Get firmware model & version
+        driver_info = await dev.Sys_getDriverInfo_async()
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
 
         ## Open RTD
         err = await dev.Thermal_open_async(port)
@@ -76,19 +78,21 @@ async def main():
         print(f"Read sensor in channel {ch1} in port{port}: {data}°C")
 
         ## Write data into CSV file
-        dev_logger.Logger_writeList([data0, data1])
+        err = dev_logger.Logger_writeList([data0, data1])
+        print(f"Logger_writeList: {err}")
 
         ## Close RTD
         err = await dev.Thermal_close_async(port)
         print(f"Thermal_close_async in port{port}: {err}")
 
-        ## Close File
-        dev_logger.Logger_closeFile()
     except Exception as err:
         pywpc.printGenericError(err)
 
     ## Disconnect device
     dev.disconnect()
+
+    ## Close File
+    dev_logger.Logger_closeFile()
 
     ## Release device handle
     dev.close()

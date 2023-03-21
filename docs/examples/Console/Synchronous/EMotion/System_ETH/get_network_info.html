@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>System get network info &mdash; WPC Python driver 2.0.1 documentation</title>
+  <title>System get network info &mdash; WPC Python driver 2.0.2 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.0.1
+                2.0.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -54,6 +54,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../../../../examples_console_Synchronous.html">Example Codes - Console (sync)</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../../../../examples_console_Synchronous.html#device-finder">Device finder</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../../../../examples_console_Synchronous.html#emotion">EMotion</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_servo_on.html">Motion servo on</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_find_home.html">Motion find home</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_find_index.html">Motion find index</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_find_limit.html">Motion find limit</a></li>
@@ -177,18 +178,18 @@
 <span class="linenos">46</span>        <span class="n">timeout</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1">## second</span>
 <span class="linenos">47</span>
 <span class="linenos">48</span>        <span class="c1">## Get firmware model &amp; version</span>
-<span class="linenos">49</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">49</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
 <span class="linenos">50</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="linenos">51</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 <span class="linenos">52</span>
 <span class="linenos">53</span>        <span class="c1">## Get IP &amp; submask</span>
-<span class="linenos">54</span>        <span class="n">ip_addr</span><span class="p">,</span> <span class="n">submask</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Net_getIPAddrAndSubmask</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">55</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;IP = &#39;</span> <span class="o">+</span> <span class="n">ip_addr</span><span class="p">)</span>
-<span class="linenos">56</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Submask = &#39;</span><span class="o">+</span> <span class="n">submask</span><span class="p">)</span>
+<span class="linenos">54</span>        <span class="n">ip_addr</span><span class="p">,</span> <span class="n">submask</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Net_getIPAddrAndSubmask</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">55</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;IP: </span><span class="si">{</span><span class="n">ip_addr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">56</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Submask: </span><span class="si">{</span><span class="n">submask</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">57</span>
 <span class="linenos">58</span>        <span class="c1">## Get MAC</span>
-<span class="linenos">59</span>        <span class="n">MAC</span><span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Net_getMACAddr</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">60</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;MAC = &#39;</span> <span class="o">+</span> <span class="n">MAC</span><span class="p">)</span>
+<span class="linenos">59</span>        <span class="n">mac</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Net_getMACAddr</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">60</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MAC: </span><span class="si">{</span><span class="n">mac</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">61</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos">62</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="linenos">63</span>

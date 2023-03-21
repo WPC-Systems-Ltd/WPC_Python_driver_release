@@ -39,7 +39,6 @@ async def main():
         dev.close()
         return
 
-    ## Perform DAQ basic information
     try:
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -48,12 +47,12 @@ async def main():
 
         ## Get IP & submask
         ip_addr, submask = await dev.Net_getIPAddrAndSubmask_async()
-        print(f'IP = ' + ip_addr)
-        print(f'Submask = '+ submask)
+        print(f"IP: {ip_addr}")
+        print(f"Submask: {submask}")
 
         ## Get MAC
-        MAC= await dev.Net_getMACAddr_async()
-        print(f'MAC = ' + MAC)
+        mac = await dev.Net_getMACAddr_async()
+        print(f"MAC: {mac}")
     except Exception as err:
         pywpc.printGenericError(err)
 

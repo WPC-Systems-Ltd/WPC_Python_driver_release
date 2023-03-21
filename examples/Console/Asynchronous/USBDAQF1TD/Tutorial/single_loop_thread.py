@@ -22,12 +22,12 @@ import time
 
 from wpcsys import pywpc
 
-async def getRTC(handle, delay = 1):
+async def getRTC(handle, delay=1):
     data = await handle.Sys_getRTC_async()
     print("RTC Time:" + str(data))
     await asyncio.sleep(delay)  ## delay(second)
 
-def RTC_thread(handle, delay = 1):
+def RTC_thread(handle, delay=1):
     while True:
         asyncio.run(getRTC(handle, delay))
         time.sleep(delay)
@@ -55,7 +55,7 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        _threadRTC = threading.Thread(target = RTC_thread, args=[dev, 1])
+        _threadRTC = threading.Thread(target = RTC_thread, args = [dev, 1])
         _threadRTC.start()
     except Exception as err:
         pywpc.printGenericError(err)

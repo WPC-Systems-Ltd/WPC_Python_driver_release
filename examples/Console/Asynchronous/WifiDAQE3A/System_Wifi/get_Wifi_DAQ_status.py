@@ -36,7 +36,6 @@ async def main():
         dev.close()
         return
 
-    ## Perform to Get RSSI, Battery and Thermo
     try:
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -44,13 +43,13 @@ async def main():
         print("Firmware version:" + driver_info[-1])
 
         ## Get RSSI, battery and thermo
-        data1 = await dev.Wifi_readRSSI_async()
-        data2 = await dev.Wifi_readBattery_async()
-        data3 = await dev.Wifi_readThermo_async()
+        rssi = await dev.Wifi_readRSSI_async()
+        battery = await dev.Wifi_readBattery_async()
+        thermo = await dev.Wifi_readThermo_async()
 
-        print("RSSI:" + str(data1) + " dBm")
-        print("Battery:"+ str(data2) + " mV")
-        print("Thermo:"+ str(data3) + " °C")
+        print(f"RSSI: {rssi} dBm")
+        print(f"Battery: {battery} mV")
+        print(f"Thermo: {thermo} °C")
     except Exception as err:
         pywpc.printGenericError(err)
 

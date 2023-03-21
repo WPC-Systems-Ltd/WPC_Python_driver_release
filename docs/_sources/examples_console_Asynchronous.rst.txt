@@ -16,6 +16,8 @@ EMotion
 .. toctree::
    :maxdepth: 4
 
+   examples/Console/Asynchronous/EMotion/Motion/Motion_servo_on.rst
+
    examples/Console/Asynchronous/EMotion/Motion/Motion_find_home.rst
 
    examples/Console/Asynchronous/EMotion/Motion/Motion_find_index.rst
@@ -154,6 +156,10 @@ Ethan-L
    examples/Console/Asynchronous/EthanL/Tutorial/multiple_loops_thread.rst
 
    examples/Console/Asynchronous/EthanL/Tutorial/multiple_loops_async.rst
+
+   examples/Console/Asynchronous/EthanL/Relay/Relay_set_channel.rst
+
+   examples/Console/Asynchronous/EthanL/Relay/Relay_read_counters.rst
 
 
 Ethan-O

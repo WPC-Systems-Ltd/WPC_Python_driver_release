@@ -41,13 +41,13 @@ async def main():
         return
 
     try:
+        ## Parameters setting
+        port = 0 ## Depend on your device
+
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-
-        ## Parameters setting
-        port = 0 ## Depend on your device
 
         ## Open all pins and set it to digital output.
         err = await dev.DO_openPort_async(port)
@@ -61,7 +61,7 @@ async def main():
                 value = [1,0,1,0,1,0,1,0]
 
             await dev.DO_writePort_async(port, value)
-            print(f'Port: {port}, digital state = {value}')
+            print(f'Port: {port}, digital state= {value}')
 
             ## Wait for 0.5 second to see led status
             await asyncio.sleep(0.5)  ## delay [s]

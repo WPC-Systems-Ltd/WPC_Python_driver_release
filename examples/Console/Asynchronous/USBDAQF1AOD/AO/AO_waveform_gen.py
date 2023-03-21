@@ -42,11 +42,6 @@ async def main():
         return
 
     try:
-        ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
-
         ## Parameters setting
         port = 0 ## Depend on your device
         mode = 2
@@ -56,6 +51,11 @@ async def main():
         offset = 0.5
         period_0 = 0.2
         period_1 = 0.1
+
+        ## Get firmware model & version
+        driver_info = await dev.Sys_getDriverInfo_async()
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
 
         ## Open AO
         err = await dev.AO_open_async(port)
@@ -90,7 +90,7 @@ async def main():
         print(f"AO_setSamplingRate_async in port{port}: {err}")
 
         ## Open AO streaming
-        info = await dev.AO_openStreaming(port, timeout)
+        info = await dev.AO_openStreaming(port)
         print(f"mode {info[0]}, sampling rate {info[1]}")
 
         ## Start AO streaming

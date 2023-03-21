@@ -42,14 +42,14 @@ async def main():
         return
 
     try:
+        ## Parameters setting
+        port = 0 ## Depend on your device
+        mode = 0
+
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-
-        ## Parameters setting
-        port = 0 ## Depend on your device
-        mode = 0
 
         ## Open port
         err = await dev.AI_open_async(port)
@@ -57,7 +57,7 @@ async def main():
 
         ## Set AI port and acquisition mode to on demand mode (0)
         err = await dev.AI_setMode_async(port, mode)
-        print(f"AI_setMode_async in port{port}: {err}")
+        print(f"AI_setMode_async {mode} in port{port}: {err}")
 
         ## Set AI port and data acquisition
         data =  await dev.AI_readOnDemand_async(port)

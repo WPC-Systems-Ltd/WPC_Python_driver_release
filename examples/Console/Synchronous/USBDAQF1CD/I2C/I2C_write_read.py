@@ -55,7 +55,7 @@ def main():
         '''
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
@@ -64,7 +64,7 @@ def main():
         '''
 
         ## Open I2C
-        err = dev.I2C_open(port, timeout)
+        err = dev.I2C_open(port, timeout=timeout)
         print(f"I2C_open in port{port}: {err}")
 
         '''
@@ -72,7 +72,7 @@ def main():
         '''
 
         ## Set I2C port and set clock rate to standard mode
-        err = dev.I2C_setClockRate(port, mode, timeout)
+        err = dev.I2C_setClockRate(port, mode, timeout=timeout)
         print(f"I2C_setClockRate in port{port}: {err}")
 
         '''
@@ -80,17 +80,17 @@ def main():
         '''
 
         ## Write WREN byte
-        err = dev.I2C_write(port, device_address, [word_address, 0xAA, 0x55, 0xAA, 0x55], timeout)
+        err = dev.I2C_write(port, device_address, [word_address, 0xAA, 0x55, 0xAA, 0x55], timeout=timeout)
         print(f"I2C_write in port{port}: {err}")
 
         '''
         Read data via I2C
         '''
 
-        err = dev.I2C_write(port, device_address, [word_address], timeout)
+        err = dev.I2C_write(port, device_address, [word_address], timeout=timeout)
         print(f"I2C_write in port{port}: {err}")
 
-        data_list = dev.I2C_read(port, device_address, 4, timeout)
+        data_list = dev.I2C_read(port, device_address, 4, timeout=timeout)
         print("read data :", data_list)
 
         '''
@@ -98,7 +98,7 @@ def main():
         '''
 
         ## Close I2C
-        err = dev.I2C_close(port, timeout)
+        err = dev.I2C_close(port, timeout=timeout)
         print(f"I2C_close in port{port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

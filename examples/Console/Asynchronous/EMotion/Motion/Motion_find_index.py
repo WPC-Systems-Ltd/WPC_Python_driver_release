@@ -35,54 +35,68 @@ async def main():
         return
 
     try:
-        ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
-
         ## Parameters setting
         port = 0 ## Depend on your device
         axis = 0
         two_pulse_mode = 1
         stop_decel = 0
+
         ## Axis and encoder parameters
         axis_dir_cw = 0
         encoder_dir_cw = 0
+
         ## Polarity and enable parameters
         active_low = 0
         active_high = 1
         forward_enable_true = 1
         reverse_enable_true = 1
+
         ## Find index parameters
         dir_reverse = 1
         find_index = 1
+
+        ## Get firmware model & version
+        driver_info = await dev.Sys_getDriverInfo_async()
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
 
         ## Motion open
         err = await dev.Motion_open_async(port)
         print(f"open_async in port{port}: {err}")
 
+        '''
+        ## Motion open configuration file
+        err = await dev.Motion_openCfgFile_async('C:/Users/user/Desktop/3AxisStage_2P.ini')
+        print(f"openCfgFile_async: {err}")
+
+        ## Motion load configuration file
+        err = await dev.Motion_loadCfgFile_async()
+        print(f"loadCfgFile_async: {err}")
+        '''
+
         ## Motion configure
         err = await dev.Motion_cfgAxis_async(port, axis, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low)
-        print(f"cfgAxis_async in port{port}: {err}")
+        print(f"cfgAxis_async in axis{axis}: {err}")
 
         err = await dev.Motion_cfgLimit_async(port, axis, forward_enable_true, reverse_enable_true, active_high)
-        print(f"cfgLimit_async in port{port}: {err}")
+        print(f"cfgLimit_async in axis{axis}: {err}")
 
         err = await dev.Motion_cfgFindRef_async(port, axis, find_index, dir_reverse)
-        print(f"cfgFindRef_async in port{port}: {err}")
+        print(f"cfgFindRef_async in axis{axis}: {err}")
 
         err = await dev.Motion_cfgEncoder_async(port, axis, active_low)
-        print(f"cfgEncoder_async in port{port}: {err}")
+        print(f"cfgEncoder_async in axis{axis}: {err}")
 
-        err = await dev.Motion_enableServoOn_async(port, axis, int(True))
-        print(f"enableServoOn_async in port{port}: {err}")
+        ## Servo on
+        err = await dev.Motion_enableServoOn_async(port, axis)
+        print(f"enableServoOn_async in axis{axis}: {err}")
 
         err = await dev.Motion_rstEncoderPosi_async(port, axis)
-        print(f"rstEncoderPosi_async in port{port}: {err}")
+        print(f"rstEncoderPosi_async in axis{axis}: {err}")
 
         ## Motion find reference
         err = await dev.Motion_findRef_async(port, axis)
-        print(f"findRef_async in port{port}: {err}")
+        print(f"findRef_async in axis{axis}: {err}")
 
         finding = 1
         found = 0
@@ -103,10 +117,11 @@ async def main():
 
         ## Motion stop
         err = await dev.Motion_stop_async(port, axis, stop_decel)
-        print(f"stop_async in port{port}: {err}")
+        print(f"stop_async in axis{axis}: {err}")
 
-        err = await dev.Motion_enableServoOn_async(port, axis, int(False))
-        print(f"enableServoOn_async in port{port}: {err}")
+        ## Servo off
+        err = await dev.Motion_enableServoOff_async(port, axis)
+        print(f"enableServoOff_async in axis{axis}: {err}")
 
         ## Motion close
         err = await dev.Motion_close_async(port)

@@ -54,55 +54,55 @@ def main():
         period_1 = 0.1
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Open AO
-        err = dev.AO_open(port, timeout)
+        err = dev.AO_open(port, timeout=timeout)
         print(f"AO_open in port{port}: {err}")
 
         ## Set AO enabled channels
-        err = dev.AO_setEnableChannels(port, [0,1], timeout)
+        err = dev.AO_setEnableChannels(port, [0,1], timeout=timeout)
         print(f"AO_setEnableChannels in port{port}: {err}")
 
         ## Set AO form in channel 0
-        err = dev.AO_setForm(port, 0, form_mode, timeout)
+        err = dev.AO_setForm(port, 0, form_mode, timeout=timeout)
         print(f"AO_setForm in channel 0 in port{port}: {err}")
 
         ## Set AO form in channel 1
-        err = dev.AO_setForm(port, 1, form_mode, timeout)
+        err = dev.AO_setForm(port, 1, form_mode, timeout=timeout)
         print(f"AO_setForm in channel 1 in port{port}: {err}")
 
         ## Set Channel 0 form parameters
-        err = dev.AO_setFormParam(port, 0, amplitude, offset, period_0, timeout)
+        err = dev.AO_setFormParam(port, 0, amplitude, offset, period_0, timeout=timeout)
         print(f"AO_setFormParam in channel 0 in port{port}: {err}")
 
         ## Set Channel 1 form parameters
-        err = dev.AO_setFormParam(port, 1, amplitude, offset, period_1, timeout)
+        err = dev.AO_setFormParam(port, 1, amplitude, offset, period_1, timeout=timeout)
         print(f"AO_setFormParam in channel 1 in port{port}: {err}")
 
         ## Set AO port and generation mode
-        err = dev.AO_setMode(port, mode, timeout)
+        err = dev.AO_setMode(port, mode, timeout=timeout)
         print(f"AO_setMode in port{port}: {err}")
 
         ## Set AO port and sampling rate to 1k (Hz)
-        err = dev.AO_setSamplingRate(port, sampling_rate, timeout)
+        err = dev.AO_setSamplingRate(port, sampling_rate, timeout=timeout)
         print(f"AO_setSamplingRate in port{port}: {err}")
 
         ## Open AO streaming
-        info = dev.AO_openStreaming(port, timeout)
+        info = dev.AO_openStreaming(port, timeout=timeout)
         print(f"mode {info[0]}, sampling rate {info[1]}")
 
         ## Start AO streaming
-        err = dev.AO_startStreaming(port, timeout)
+        err = dev.AO_startStreaming(port)
         print(f"AO_startStreaming in port{port}: {err}")
 
         ## Wait for 5 seconds
         time.sleep(5) ## delay [s]
 
         ## Close AO streaming
-        err = dev.AO_closeStreaming(port, timeout)
+        err = dev.AO_closeStreaming(port, timeout=timeout)
         print(f"AO_closeStreaming in port{port}: {err}")
 
         ## Close AO

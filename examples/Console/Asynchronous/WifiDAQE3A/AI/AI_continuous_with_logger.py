@@ -25,7 +25,7 @@ import asyncio
 
 from wpcsys import pywpc
 
-async def loop_func(handle, logger_handle, port, num_of_samples = 600, delay = 0.05, exit_loop_time = 3):
+async def loop_func(handle, logger_handle, port, num_of_samples=600, delay=0.05, exit_loop_time=3):
     time_cal = 0
     while time_cal < exit_loop_time:
         ## Data acquisition
@@ -49,10 +49,12 @@ async def main():
     dev_logger = pywpc.DataLogger()
 
     ## Open file with WPC_test.csv
-    dev_logger.Logger_openFile("WPC_test.csv")
+    err = dev_logger.Logger_openFile("WPC_test.csv")
+    print(f"Logger_openFile: {err}")
 
     ## Write header into CSV file
-    dev_logger.Logger_writeList(["CH0","CH1","CH2","CH3","CH4","CH5","CH6","CH7"])
+    err = dev_logger.Logger_writeHeader(["CH0","CH1","CH2","CH3","CH4","CH5","CH6","CH7"])
+    print(f"Logger_writeHeader: {err}")
 
     ## Create device handle
     dev = pywpc.WifiDAQE3A()
@@ -67,15 +69,15 @@ async def main():
         return
 
     try:
-        ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
-
         ## Parameters setting
         port = 1 ## Depend on your device
         mode = 2  ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 1000
+
+        ## Get firmware model & version
+        driver_info = await dev.Sys_getDriverInfo_async()
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
 
         ## Open port
         err = await dev.AI_open_async(port)
@@ -83,34 +85,35 @@ async def main():
 
         ## Set AI port and acquisition mode to continuous mode (2)
         err = await dev.AI_setMode_async(port, mode)
-        print(f"AI_setMode_async in port{port}: {err}")
+        print(f"AI_setMode_async {mode} in port{port}: {err}")
 
         ## Set AI port and sampling rate to 1k (Hz)
         err = await dev.AI_setSamplingRate_async(port, sampling_rate)
-        print(f"AI_setSamplingRate_async in port{port}: {err}")
+        print(f"AI_setSamplingRate_async {sampling_rate} in port{port}: {err}")
 
         ## Set AI port and start acquisition
         err = await dev.AI_start_async(port)
         print(f"AI_start_async in port{port}: {err}")
 
-        ## Start async thread
+        ## Set loop parameters
         num_of_samples = 600
         delay = 0.05
         exit_loop_time = 3
 
-        await loop_func(dev, dev_logger, port, num_of_samples, delay, exit_loop_time)
+        ## Start loop
+        await loop_func(dev, dev_logger, port, num_of_samples=num_of_samples, delay=delay, exit_loop_time=exit_loop_time)
 
         ## Close port
         err = await dev.AI_close_async(port)
         print(f"AI_close_async in port{port}: {err}")
-
-        ## Close File
-        dev_logger.Logger_closeFile()
     except Exception as err:
         pywpc.printGenericError(err)
 
     ## Disconnect device
     dev.disconnect()
+
+    ## Close File
+    dev_logger.Logger_closeFile()
 
     ## Release device handle
     dev.close()

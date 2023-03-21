@@ -25,7 +25,7 @@ import time
 
 from wpcsys import pywpc
 
-def loop_func(handle, port, num_of_samples = 600, delay = 0.05, exit_loop_time = 3):
+def loop_func(handle, port, num_of_samples=600, delay=0.05, exit_loop_time=3):
     time_cal = 0
     while time_cal < exit_loop_time:
         ## data acquisition
@@ -61,35 +61,36 @@ def main():
         timeout = 3  ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Open port
-        err = dev.AI_open(port, timeout)
+        err = dev.AI_open(port, timeout=timeout)
         print(f"AI_open in port{port}: {err}")
 
         ## Set AI port and acquisition mode to continuous mode (2)
-        err = dev.AI_setMode(port, mode, timeout)
-        print(f"AI_setMode in port{port}: {err}")
+        err = dev.AI_setMode(port, mode, timeout=timeout)
+        print(f"AI_setMode {mode} in port{port}: {err}")
 
         ## Set AI port and sampling rate to 1k (Hz)
-        err = dev.AI_setSamplingRate(port, sampling_rate, timeout)
-        print(f"AI_setSamplingRate in port{port}: {err}")
+        err = dev.AI_setSamplingRate(port, sampling_rate, timeout=timeout)
+        print(f"AI_setSamplingRate {sampling_rate} in port{port}: {err}")
 
         ## Set AI port and start acquisition
-        err = dev.AI_start(port, timeout)
+        err = dev.AI_start(port, timeout=timeout)
         print(f"AI_start in port{port}: {err}")
 
-        ## Start thread
+        ## Set loop parameters
         num_of_samples = 600
         delay = 0.05
         exit_loop_time = 3
 
-        loop_func(dev, port, num_of_samples, delay, exit_loop_time)
+        ## Start loop
+        loop_func(dev, port, num_of_samples=num_of_samples, delay=delay, exit_loop_time=exit_loop_time)
 
         ## Close port
-        err = dev.AI_close(port, timeout)
+        err = dev.AI_close(port, timeout=timeout)
         print(f"AI_close in port{port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

@@ -25,7 +25,7 @@ import asyncio
 
 from wpcsys import pywpc
 
-async def loop_func(handle, port, delay, exit_loop_time = 3):
+async def loop_func(handle, port, delay=0.05, exit_loop_time=3):
     time_cal = 0
     while time_cal < exit_loop_time:
         ## data acquisition
@@ -34,7 +34,7 @@ async def loop_func(handle, port, delay, exit_loop_time = 3):
             print("data: " + str(data))
 
         ## Wait
-        time.sleep(delay) ## delay [s]
+        await asyncio.sleep(delay)  ## delay [s]
         time_cal += delay
 
 async def main():
@@ -54,14 +54,14 @@ async def main():
         return
 
     try:
+        ## Parameters setting
+        port = 1 ## Depend on your device
+        mode = 0
+
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-
-        ## Parameters setting
-        port = 1 ## Depend on your device
-        mode = 0
 
         ## Open port
         err = await dev.AI_open_async(port)
@@ -69,13 +69,14 @@ async def main():
 
         ## Set AI port and acquisition mode to on demand mode (0)
         err = await dev.AI_setMode_async(port, mode)
-        print(f"AI_setMode_async in port{port}: {err}")
+        print(f"AI_setMode_async {mode} in port{port}: {err}")
 
-        ## Set AI port and start async thread
-        delay = 0.01
+        ## Set loop parameters
+        delay = 0.05
         exit_loop_time = 3
 
-        await loop_func(dev, port, delay, exit_loop_time)
+        ## Start loop
+        await loop_func(dev, port, delay=delay, exit_loop_time=exit_loop_time)
 
         ## Close port
         err = await dev.AI_close_async(port)
