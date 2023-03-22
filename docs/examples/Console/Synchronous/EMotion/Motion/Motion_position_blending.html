@@ -233,35 +233,37 @@
 <span class="linenos">100</span>
 <span class="linenos">101</span>        <span class="n">move_status</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="linenos">102</span>        <span class="k">while</span> <span class="n">move_status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="linenos">103</span>            <span class="n">move_status</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_getMoveStatus</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">104</span>            <span class="n">logical_posi</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_getLogicalPosi</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">105</span>            <span class="n">encoder_posi</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_getEncoderPosi</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">106</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;logical_posi: </span><span class="si">{</span><span class="n">logical_posi</span><span class="si">}</span><span class="s2">, encoder_posi: </span><span class="si">{</span><span class="n">encoder_posi</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">107</span>
-<span class="linenos">108</span>        <span class="c1">## Motion stop</span>
-<span class="linenos">109</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_stop</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">stop_decel</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">110</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_stop in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">111</span>
-<span class="linenos">112</span>        <span class="c1">## Servo off</span>
-<span class="linenos">113</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_enableServoOff</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">114</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_enableServoOff in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">115</span>
-<span class="linenos">116</span>        <span class="c1">## Motion close</span>
-<span class="linenos">117</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_close</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">118</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_close in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">119</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos">120</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="linenos">121</span>
-<span class="linenos">122</span>    <span class="c1">## Disconnect device</span>
-<span class="linenos">123</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
-<span class="linenos">124</span>
-<span class="linenos">125</span>    <span class="c1">## Release device handle</span>
-<span class="linenos">126</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="linenos">127</span>
-<span class="linenos">128</span>    <span class="k">return</span>
+<span class="linenos">103</span>            <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_overrideAxisPosi</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">new_position</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">104</span>            <span class="c1"># print(f&quot;Motion_overrideAxisPosi in axis{axis}: {err}&quot;)</span>
+<span class="linenos">105</span>            <span class="n">move_status</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_getMoveStatus</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">106</span>            <span class="n">logical_posi</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_getLogicalPosi</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">107</span>            <span class="n">encoder_posi</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_getEncoderPosi</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">108</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;logical_posi: </span><span class="si">{</span><span class="n">logical_posi</span><span class="si">}</span><span class="s2">, encoder_posi: </span><span class="si">{</span><span class="n">encoder_posi</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">109</span>
+<span class="linenos">110</span>        <span class="c1">## Motion stop</span>
+<span class="linenos">111</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_stop</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">stop_decel</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">112</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_stop in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">113</span>
+<span class="linenos">114</span>        <span class="c1">## Servo off</span>
+<span class="linenos">115</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_enableServoOff</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">116</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_enableServoOff in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">117</span>
+<span class="linenos">118</span>        <span class="c1">## Motion close</span>
+<span class="linenos">119</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_close</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">120</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_close in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">121</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos">122</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">123</span>
+<span class="linenos">124</span>    <span class="c1">## Disconnect device</span>
+<span class="linenos">125</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+<span class="linenos">126</span>
+<span class="linenos">127</span>    <span class="c1">## Release device handle</span>
+<span class="linenos">128</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="linenos">129</span>
-<span class="linenos">130</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">131</span>    <span class="n">main</span><span class="p">()</span>
+<span class="linenos">130</span>    <span class="k">return</span>
+<span class="linenos">131</span>
+<span class="linenos">132</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">133</span>    <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>

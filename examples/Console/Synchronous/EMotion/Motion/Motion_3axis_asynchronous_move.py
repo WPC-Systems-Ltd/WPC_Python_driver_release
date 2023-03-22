@@ -120,63 +120,63 @@ def main():
 
         ## Motion configure for axis1
         err = dev.Motion_cfgAxis(port, axis1, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low, timeout=timeout)
-        print(f"Motion_cfgAxis in axis{axis}: {err}")
+        print(f"Motion_cfgAxis in axis{axis1}: {err}")
 
         err = dev.Motion_cfgLimit(port, axis1, forward_enable_false, reverse_enable_false, active_low, timeout=timeout)
-        print(f"Motion_cfgLimit in axis{axis}: {err}")
+        print(f"Motion_cfgLimit in axis{axis1}: {err}")
 
         err = dev.Motion_rstEncoderPosi(port, axis1, timeout=timeout)
-        print(f"Motion_rstEncoderPosi in axis{axis}: {err}")
+        print(f"Motion_rstEncoderPosi in axis{axis1}: {err}")
 
         err = dev.Motion_cfgAxisMove(port, axis1, rel_posi_mode, target_posi=1000, timeout=timeout)
-        print(f"Motion_cfgAxisMove in axis{axis}: {err}")
+        print(f"Motion_cfgAxisMove in axis{axis1}: {err}")
 
-        err = dev.Motion_enableServoOn(port, axis1, int(True), timeout=timeout)
-        print(f"Motion_enableServoOn in axis{axis}: {err}")
+        err = dev.Motion_enableServoOn(port, axis1, timeout=timeout)
+        print(f"Motion_enableServoOn in axis{axis1}: {err}")
 
         ## Motion start for axis1
         err = dev.Motion_startSingleAxisMove(port, axis1, timeout=timeout)
-        print(f"Motion_startSingleAxisMove in axis{axis}: {err}")
+        print(f"Motion_startSingleAxisMove in axis{axis1}: {err}")
 
         ## Motion configure for axis2
         err = dev.Motion_cfgAxis(port, axis2, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low, timeout=timeout)
-        print(f"Motion_cfgAxis in axis{axis}: {err}")
+        print(f"Motion_cfgAxis in axis{axis2}: {err}")
 
         err = dev.Motion_cfgLimit(port, axis2, forward_enable_false, reverse_enable_false, active_low, timeout=timeout)
-        print(f"Motion_cfgLimit in axis{axis}: {err}")
+        print(f"Motion_cfgLimit in axis{axis2}: {err}")
 
         err = dev.Motion_rstEncoderPosi(port, axis2, timeout=timeout)
-        print(f"Motion_rstEncoderPosi in axis{axis}: {err}")
+        print(f"Motion_rstEncoderPosi in axis{axis2}: {err}")
 
         err = dev.Motion_cfgAxisMove(port, axis2, rel_posi_mode, target_posi=1000, timeout=timeout)
-        print(f"Motion_cfgAxisMove in axis{axis}: {err}")
+        print(f"Motion_cfgAxisMove in axis{axis2}: {err}")
 
-        err = dev.Motion_enableServoOn(port, axis2, int(True), timeout=timeout)
-        print(f"Motion_enableServoOn in axis{axis}: {err}")
+        err = dev.Motion_enableServoOn(port, axis2, timeout=timeout)
+        print(f"Motion_enableServoOn in axis{axis2}: {err}")
 
         ## Motion start for axis2
         err = dev.Motion_startSingleAxisMove(port, axis2, timeout=timeout)
-        print(f"Motion_startSingleAxisMove in axis{axis}: {err}")
+        print(f"Motion_startSingleAxisMove in axis{axis2}: {err}")
 
         ## Motion configure for axis3
         err = dev.Motion_cfgAxis(port, axis3, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low, timeout=timeout)
-        print(f"Motion_cfgAxis in axis{axis}: {err}")
+        print(f"Motion_cfgAxis in axis{axis3}: {err}")
 
         err = dev.Motion_cfgLimit(port, axis3, forward_enable_false, reverse_enable_false, active_low, timeout=timeout)
-        print(f"Motion_cfgLimit in axis{axis}: {err}")
+        print(f"Motion_cfgLimit in axis{axis3}: {err}")
 
         err = dev.Motion_rstEncoderPosi(port, axis3, timeout=timeout)
-        print(f"Motion_rstEncoderPosi in axis{axis}: {err}")
+        print(f"Motion_rstEncoderPosi in axis{axis3}: {err}")
 
         err = dev.Motion_cfgAxisMove(port, axis3, rel_posi_mode, target_posi=-5000, timeout=timeout)
-        print(f"Motion_cfgAxisMove in axis{axis}: {err}")
+        print(f"Motion_cfgAxisMove in axis{axis3}: {err}")
 
-        err = dev.Motion_enableServoOn(port, axis3, int(True), timeout=timeout)
-        print(f"Motion_enableServoOn in axis{axis}: {err}")
+        err = dev.Motion_enableServoOn(port, axis3, timeout=timeout)
+        print(f"Motion_enableServoOn in axis{axis3}: {err}")
 
         ## Motion start for axis3
         err = dev.Motion_startSingleAxisMove(port, axis3, timeout=timeout)
-        print(f"Motion_startSingleAxisMove  in axis{axis}: {err}")
+        print(f"Motion_startSingleAxisMove  in axis{axis3}: {err}")
 
         ## Wait for thread completion
         thread_1.join()
@@ -189,8 +189,8 @@ def main():
         print("Axis3_Thread returned.")
 
         for i in [axis1, axis2, axis3]:
-            err = dev.Motion_enableServoOn(port, i, int(False), timeout=timeout)
-            print(f"Motion_enableServoOn in axis{i}: {err}")
+            err = dev.Motion_enableServoOff(port, i, timeout=timeout)
+            print(f"Motion_enableServoOff in axis{i}: {err}")
 
         ## Motion stop
         for i in [axis1, axis2, axis3]:

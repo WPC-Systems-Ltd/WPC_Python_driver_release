@@ -73,7 +73,7 @@ async def main():
 
         ## Motion configure
         err = await dev.Motion_cfgCircularInterpo_async(port, x_axis, y_axis, center_point_x, center_point_y, finish_point_x, finish_point_y, circular_dir_cw, speed=1000)
-        print(f"cfgCircularInterpo_async in axis{axis}: {err}")
+        print(f"cfgCircularInterpo_async in port{port}: {err}")
 
         err = await dev.Motion_startCircularInterpo_async(port)
         print(f"startCircularInterpo_async in axis{axis}: {err}")
@@ -88,8 +88,8 @@ async def main():
         print(f"rstEncoderPosi_async in axis{axis}: {err}")
 
         for i in range(4):
-            err = await dev.Motion_enableServoOn_async(port, i, int(True))
-            print(f"enableServoOn_async in axis{axis}: {err}")
+            err = await dev.Motion_enableServoOn_async(port, i)
+            print(f"enableServoOn_async in axis{i}: {err}")
 
         ## Motion start
         err = await dev.Motion_startSingleAxisMove_async(port, axis)
@@ -110,8 +110,8 @@ async def main():
         print(f"stop_async in axis{axis}: {err}")
 
         for i in range(4):
-            err = await dev.Motion_enableServoOn_async(port, i, int(False))
-            print(f"enableServoOn_async in axis{axis}: {err}")
+            err = await dev.Motion_enableServoOff_async(port, i)
+            print(f"enableServoOff_async in axis{i}: {err}")
 
         ## Motion close
         err = await dev.Motion_close_async(port)

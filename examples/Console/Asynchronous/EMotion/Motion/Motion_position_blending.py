@@ -99,6 +99,8 @@ async def main():
 
         move_status = 0
         while move_status == 0:
+            err = await dev.Motion_overrideAxisPosi_async(port, axis, new_position)
+            # print(f"overrideAxisPosi_async in axis{axis}: {err}")
             move_status = await dev.Motion_getMoveStatus_async(port, axis)
             logical_posi = await dev.Motion_getLogicalPosi_async(port, axis)
             encoder_posi = await dev.Motion_getEncoderPosi_async(port, axis)

@@ -74,7 +74,7 @@ def main():
 
         ## Motion configure
         err = dev.Motion_cfgCircularInterpo(port, x_axis, y_axis, center_point_x, center_point_y, finish_point_x, finish_point_y, circular_dir_cw, speed=1000, timeout=timeout)
-        print(f"Motion_cfgCircularInterpo in axis{axis}: {err}")
+        print(f"Motion_cfgCircularInterpo in port{port}: {err}")
 
         err = dev.Motion_startCircularInterpo(port, timeout=timeout)
         print(f"Motion_startCircularInterpo in axis{axis}: {err}")
@@ -89,7 +89,7 @@ def main():
         print(f"Motion_rstEncoderPosi in axis{axis}: {err}")
 
         for i in range(4):
-            err = dev.Motion_enableServoOn(port, i, int(True), timeout=timeout)
+            err = dev.Motion_enableServoOn(port, i, timeout=timeout)
             print(f"Motion_enableServoOn in axis{i}: {err}")
 
         ## Motion start
@@ -111,8 +111,8 @@ def main():
         print(f"Motion_stop in axis{axis}: {err}")
 
         for i in range(4):
-            err = dev.Motion_enableServoOn(port, i, int(False), timeout=timeout)
-            print(f"Motion_enableServoOn in axis{i}: {err}")
+            err = dev.Motion_enableServoOff(port, i, timeout=timeout)
+            print(f"Motion_enableServoOff in axis{i}: {err}")
 
         ## Motion close
         err = dev.Motion_close(port, timeout=timeout)

@@ -65,11 +65,11 @@ def main():
 
         ## Motion configure
         err = dev.Motion_cfg2AxisLinearInterpo(port, axis1, dest_posi1, axis2, dest_posi2, speed=2000, timeout=timeout)
-        print(f"Motion_cfg2AxisLinearInterpo in axis{axis}: {err}")
+        print(f"Motion_cfg2AxisLinearInterpo in axis{axis1} and {axis2}: {err}")
 
         ## Motion start
         err = dev.Motion_startLinearInterpo(port, timeout=timeout)
-        print("Motion_startLinearInterpo in axis{axis}: {err}")
+        print(f"Motion_startLinearInterpo in port{port}: {err}")
 
         move_status = 0
         while move_status == 0:

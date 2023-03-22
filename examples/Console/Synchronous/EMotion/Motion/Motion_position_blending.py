@@ -100,6 +100,8 @@ def main():
 
         move_status = 0
         while move_status == 0:
+            err = dev.Motion_overrideAxisPosi(port, axis, new_position, timeout=timeout)
+            # print(f"Motion_overrideAxisPosi in axis{axis}: {err}")
             move_status = dev.Motion_getMoveStatus(port, axis, timeout=timeout)
             logical_posi = dev.Motion_getLogicalPosi(port, axis, timeout=timeout)
             encoder_posi = dev.Motion_getEncoderPosi(port, axis, timeout=timeout)
