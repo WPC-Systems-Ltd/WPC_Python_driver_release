@@ -51,7 +51,6 @@ async def main():
             ## Get pin mode
             pin_mode = await dev.Sys_getPinModeInPort_async(i)
             print("pin_mode", pin_mode)
-
     except Exception as err:
         pywpc.printGenericError(err)
 

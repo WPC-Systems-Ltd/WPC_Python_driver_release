@@ -41,15 +41,15 @@ async def main():
         return
 
     try:
-        ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
-
         ## Parameters setting
         port = 1 ## Depend on your device
         ch0 = 0
         ch1 = 1
+
+        ## Get firmware model & version
+        driver_info = await dev.Sys_getDriverInfo_async()
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
 
         ## Open RTD
         err = await dev.Thermal_open_async(port)
@@ -59,12 +59,12 @@ async def main():
         await asyncio.sleep(0.1) ## delay [s]
 
         ## Set RTD port and read RTD in channel 0
-        data = await dev.Thermal_readSensor_async(port, ch0)
-        print(f"Read sensor in channel {ch0} in port{port}: {data}°C")
+        data0 = await dev.Thermal_readSensor_async(port, ch0)
+        print(f"Read sensor in channel {ch0} in port{port}: {data0}°C")
 
         ## Set RTD port and read RTD in channel 1
-        data = await dev.Thermal_readSensor_async(port, ch1)
-        print(f"Read sensor in channel {ch0} in port{port}: {data}°C")
+        data1 = await dev.Thermal_readSensor_async(port, ch1)
+        print(f"Read sensor in channel {ch1} in port{port}: {data1}°C")
 
         ## Close RTD
         err = await dev.Thermal_close_async(port)

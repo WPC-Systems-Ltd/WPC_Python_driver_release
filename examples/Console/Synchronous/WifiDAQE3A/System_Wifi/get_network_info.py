@@ -39,25 +39,24 @@ def main():
         dev.close()
         return
 
-    ## Perform DAQ basic information
     try:
         ## Parameters setting
         port = None ## Depend on your device
         timeout = 3  ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Get IP & submask
-        ip_addr, submask = dev.Net_getIPAddrAndSubmask(timeout)
-        print(f'IP = ' + ip_addr)
-        print(f'Submask = '+ submask)
+        ip_addr, submask = dev.Net_getIPAddrAndSubmask(timeout=timeout)
+        print(f"IP: {ip_addr}")
+        print(f"Submask: {submask}")
 
         ## Get MAC
-        MAC= dev.Net_getMACAddr(timeout)
-        print(f'MAC = ' + MAC)
+        mac = dev.Net_getMACAddr(timeout=timeout)
+        print(f"MAC: {mac}")
     except Exception as err:
         pywpc.printGenericError(err)
 

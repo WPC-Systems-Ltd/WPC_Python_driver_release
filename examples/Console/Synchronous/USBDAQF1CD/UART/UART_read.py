@@ -48,30 +48,32 @@ def main():
         parity_mode = 0    ## 0 : None, 2 : Even parity, 3 : Odd parity.
         stop_bit_mode = 0  ## 0 : 1 bit, 1 : 0.5 bits, 2 : 2 bits, 3 : 1.5 bits
         timeout = 3  ## second
+        read_bytes = 20
+        delay = 0.005 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Open UART
-        err = dev.UART_open(port, timeout)
+        err = dev.UART_open(port, timeout=timeout)
         print(f"UART_open in port{port}: {err}")
 
         ## Set UART port and set baudrate to 9600
-        err = dev.UART_setBaudRate(port, baudrate, timeout)
+        err = dev.UART_setBaudRate(port, baudrate, timeout=timeout)
         print(f"UART_setBaudRate in port{port}: {err}")
 
         ## Set UART port and set data bit to 8-bit data
-        err = dev.UART_setDataBit(port, data_bit_mode, timeout)
+        err = dev.UART_setDataBit(port, data_bit_mode, timeout=timeout)
         print(f"UART_setDataBit in port{port}: {err}")
 
         ## Set UART port and set parity to None
-        err = dev.UART_setParity(port, parity_mode, timeout)
+        err = dev.UART_setParity(port, parity_mode, timeout=timeout)
         print(f"UART_setParity in port{port}: {err}")
 
         ## Set UART port and set stop bit to 8-bit data
-        err = dev.UART_setNumStopBit(port, stop_bit_mode, timeout)
+        err = dev.UART_setNumStopBit(port, stop_bit_mode, timeout=timeout)
         print(f"UART_setNumStopBit in port{port}: {err}")
 
         ## Print informaion
@@ -81,11 +83,11 @@ def main():
         time.sleep(10) ## delay [s]
 
         ## Set UART port and read 20 bytes
-        data = dev.UART_read(port, 20)
+        data = dev.UART_read(port, read_bytes, delay=delay)
         print(f"data in port{port}: {data}")
 
         ## Close UART
-        err = dev.UART_close(port, timeout)
+        err = dev.UART_close(port, timeout=timeout)
         print(f"UART_close in port{port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

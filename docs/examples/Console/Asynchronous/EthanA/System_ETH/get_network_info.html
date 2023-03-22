@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>System get network info &mdash; WPC Python driver 2.0.1 documentation</title>
+  <title>System get network info &mdash; WPC Python driver 2.0.2 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.0.1
+                2.0.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -159,42 +159,41 @@
 <span class="linenos">39</span>        <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="linenos">40</span>        <span class="k">return</span>
 <span class="linenos">41</span>
-<span class="linenos">42</span>    <span class="c1">## Perform DAQ basic information</span>
-<span class="linenos">43</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos">44</span>        <span class="c1">## Get firmware model &amp; version</span>
-<span class="linenos">45</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo_async</span><span class="p">()</span>
-<span class="linenos">46</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="linenos">47</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="linenos">48</span>
-<span class="linenos">49</span>        <span class="c1">## Get IP &amp; submask</span>
-<span class="linenos">50</span>        <span class="n">ip_addr</span><span class="p">,</span> <span class="n">submask</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Net_getIPAddrAndSubmask_async</span><span class="p">()</span>
-<span class="linenos">51</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;IP = &#39;</span> <span class="o">+</span> <span class="n">ip_addr</span><span class="p">)</span>
-<span class="linenos">52</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Submask = &#39;</span><span class="o">+</span> <span class="n">submask</span><span class="p">)</span>
-<span class="linenos">53</span>
-<span class="linenos">54</span>        <span class="c1">## Get MAC</span>
-<span class="linenos">55</span>        <span class="n">MAC</span><span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Net_getMACAddr_async</span><span class="p">()</span>
-<span class="linenos">56</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;MAC = &#39;</span> <span class="o">+</span> <span class="n">MAC</span><span class="p">)</span>
-<span class="linenos">57</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos">58</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="linenos">59</span>
-<span class="linenos">60</span>    <span class="c1">## Disconnect network device</span>
-<span class="linenos">61</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
-<span class="linenos">62</span>
-<span class="linenos">63</span>    <span class="c1">## Release device handle</span>
-<span class="linenos">64</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="linenos">65</span>
-<span class="linenos">66</span>    <span class="k">return</span>
-<span class="linenos">67</span>
-<span class="linenos">68</span><span class="k">def</span> <span class="nf">main_for_spyder</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<span class="linenos">69</span>    <span class="k">if</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">is_running</span><span class="p">():</span>
-<span class="linenos">70</span>        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
-<span class="linenos">71</span>    <span class="k">else</span><span class="p">:</span>
-<span class="linenos">72</span>        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span>
-<span class="linenos">73</span>
-<span class="linenos">74</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">75</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span> <span class="c1">## Use terminal</span>
-<span class="linenos">76</span>    <span class="c1"># await main() ## Use Jupyter or IPython(&gt;=7.0)</span>
-<span class="linenos">77</span>    <span class="c1"># main_for_spyder() ## Use Spyder</span>
+<span class="linenos">42</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos">43</span>        <span class="c1">## Get firmware model &amp; version</span>
+<span class="linenos">44</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo_async</span><span class="p">()</span>
+<span class="linenos">45</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="linenos">46</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos">47</span>
+<span class="linenos">48</span>        <span class="c1">## Get IP &amp; submask</span>
+<span class="linenos">49</span>        <span class="n">ip_addr</span><span class="p">,</span> <span class="n">submask</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Net_getIPAddrAndSubmask_async</span><span class="p">()</span>
+<span class="linenos">50</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;IP: </span><span class="si">{</span><span class="n">ip_addr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">51</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Submask: </span><span class="si">{</span><span class="n">submask</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">52</span>
+<span class="linenos">53</span>        <span class="c1">## Get MAC</span>
+<span class="linenos">54</span>        <span class="n">mac</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Net_getMACAddr_async</span><span class="p">()</span>
+<span class="linenos">55</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MAC: </span><span class="si">{</span><span class="n">mac</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">56</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos">57</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">58</span>
+<span class="linenos">59</span>    <span class="c1">## Disconnect network device</span>
+<span class="linenos">60</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+<span class="linenos">61</span>
+<span class="linenos">62</span>    <span class="c1">## Release device handle</span>
+<span class="linenos">63</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos">64</span>
+<span class="linenos">65</span>    <span class="k">return</span>
+<span class="linenos">66</span>
+<span class="linenos">67</span><span class="k">def</span> <span class="nf">main_for_spyder</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="linenos">68</span>    <span class="k">if</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">is_running</span><span class="p">():</span>
+<span class="linenos">69</span>        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+<span class="linenos">70</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">71</span>        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span>
+<span class="linenos">72</span>
+<span class="linenos">73</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">74</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span> <span class="c1">## Use terminal</span>
+<span class="linenos">75</span>    <span class="c1"># await main() ## Use Jupyter or IPython(&gt;=7.0)</span>
+<span class="linenos">76</span>    <span class="c1"># main_for_spyder() ## Use Spyder</span>
 </pre></div>
 </div>
 </section>

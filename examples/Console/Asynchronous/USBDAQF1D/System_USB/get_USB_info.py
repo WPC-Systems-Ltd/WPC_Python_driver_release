@@ -39,7 +39,6 @@ async def main():
         dev.close()
         return
 
-    ## Perform DAQ basic information
     try:
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -47,9 +46,10 @@ async def main():
         print("Firmware version: " + driver_info[-1])
 
         ## Get serial number & RTC Time
-        print(f'Serial number = ' + await dev.Sys_getSerialNumber_async())
-        print(f'RTC data time = ' + await dev.Sys_getRTC_async())
-
+        serial_num = await dev.Sys_getSerialNumber_async()
+        rtc = await dev.Sys_getRTC_async()
+        print(f"Serial number: {serial_num}")
+        print(f"RTC data time: {rtc}")
     except Exception as err:
         pywpc.printGenericError(err)
 

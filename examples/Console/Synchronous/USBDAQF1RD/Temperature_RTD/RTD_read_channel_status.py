@@ -24,7 +24,7 @@ import time
 
 from wpcsys import pywpc
 
-async def main():
+def main():
     ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
 
@@ -51,24 +51,24 @@ async def main():
         timeout = 3  ## second
 
         ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Open RTD
-        err = await dev.Thermal_open(port, timeout)
+        err = dev.Thermal_open(port, timeout=timeout)
         print(f"Thermal_open in port{port}: {err}")
 
         ## Set RTD port and get status in channel 0
-        status = await dev.Thermal_getStatus(port, ch0, timeout)
-        print("Thermal_getStatus in channel {ch0} status: {status}")
+        status = dev.Thermal_getStatus(port, ch0, timeout=timeout)
+        print(f"Thermal_getStatus in channel {ch0} status: {status}")
 
         ## Set RTD port and get status in channel 1
-        status = await dev.Thermal_getStatus(port, ch1, timeout)
-        print("Thermal_getStatus in channel {ch1} status: {status}")
+        status = dev.Thermal_getStatus(port, ch1, timeout=timeout)
+        print(f"Thermal_getStatus in channel {ch1} status: {status}")
 
         ## Close RTD
-        err = await dev.Thermal_close(port, timeout)
+        err = dev.Thermal_close(port, timeout=timeout)
         print(f"Thermal_close in port{port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

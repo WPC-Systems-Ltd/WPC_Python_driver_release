@@ -41,13 +41,13 @@ async def main():
         return
 
     try:
+        ## Parameters setting
+        port = 0 ## Depend on your device
+
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-
-        ## Parameters setting
-        port = 0 ## Depend on your device
 
         ## Open AO
         err = await dev.AO_open_async(port)

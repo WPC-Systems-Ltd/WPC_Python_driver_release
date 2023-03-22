@@ -36,25 +36,24 @@ def main():
         dev.close()
         return
 
-    ## Perform to Get RSSI, Battery and Thermo
     try:
         ## Parameters setting
         port = None ## Depend on your device
         timeout = 3  ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Firmware model:" + driver_info[0])
         print("Firmware version:" + driver_info[-1])
 
         ## Get RSSI, battery and thermo
-        data1 = dev.Wifi_readRSSI(timeout)
-        data2 = dev.Wifi_readBattery(timeout)
-        data3 = dev.Wifi_readThermo(timeout)
+        rssi = dev.Wifi_readRSSI(timeout=timeout)
+        battery = dev.Wifi_readBattery(timeout=timeout)
+        thermo = dev.Wifi_readThermo(timeout=timeout)
 
-        print("RSSI:" + str(data1) + " dBm")
-        print("Battery:"+ str(data2) + " mV")
-        print("Thermo:"+ str(data3) + " °C")
+        print(f"RSSI: {rssi} dBm")
+        print(f"Battery: {battery} mV")
+        print(f"Thermo: {thermo} °C")
     except Exception as err:
         pywpc.printGenericError(err)
 

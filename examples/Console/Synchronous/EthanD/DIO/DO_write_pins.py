@@ -47,35 +47,35 @@ def main():
         timeout = 3  ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Open pin0, pin1, pin2, pin3 and pin4 with digital output.
-        err = dev.DO_openPins(port, pin_index, timeout)
+        err = dev.DO_openPins(port, pin_index, timeout=timeout)
         print(f"DO_openPins in port{port}: {err}")
 
         ## Set pin0, pin1 to high, others to low.
-        all_pin_state =  dev.DO_writePins(port, pin_index, [1,1,0,0,0], timeout)
+        all_pin_state =  dev.DO_writePins(port, pin_index, [1,1,0,0,0], timeout=timeout)
         print(f"DO_writePins in port{port}: {all_pin_state}")
 
         ## Open pin5, pin6 and pin7 with digital output (1110 0000 in binary) (0xE0 in hex).
-        err = dev.DO_openPins(port, 0xE0, timeout)
+        err = dev.DO_openPins(port, 0xE0, timeout=timeout)
         print(f"DO_openPins in port{port}: {err}")
 
         ## Set pin7 and pin6 to high, others to low (1100 0000 in binary) (0xC0 in hex).
-        err = dev.DO_writePins(port, 0xE0, 0xC0, timeout)
+        err = dev.DO_writePins(port, 0xE0, 0xC0, timeout=timeout)
         print(f"DO_writePins in port{port}: {err}")
 
         ## Wait for 1 seconds to see led status
         time.sleep(1) ## delay [s]
 
         ## Close pin0, pin1, pin2, pin3 and pin4 with digital output.
-        err = dev.DO_closePins(port, pin_index, timeout)
+        err = dev.DO_closePins(port, pin_index, timeout=timeout)
         print(f"DO_closePins in port{port}: {err}")
 
         ## Close pin5, pin6 and pin7 with digital output.
-        err = dev.DO_closePins(port, 0xE0, timeout)
+        err = dev.DO_closePins(port, 0xE0, timeout=timeout)
         print(f"DO_closePins in port{port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

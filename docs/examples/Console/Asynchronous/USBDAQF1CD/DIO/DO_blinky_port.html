@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DO blinky port &mdash; WPC Python driver 2.0.1 documentation</title>
+  <title>DO blinky port &mdash; WPC Python driver 2.0.2 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.0.1
+                2.0.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -169,13 +169,13 @@
 <span class="linenos">41</span>        <span class="k">return</span>
 <span class="linenos">42</span>
 <span class="linenos">43</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos">44</span>        <span class="c1">## Get firmware model &amp; version</span>
-<span class="linenos">45</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo_async</span><span class="p">()</span>
-<span class="linenos">46</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="linenos">47</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="linenos">48</span>
-<span class="linenos">49</span>        <span class="c1">## Parameters setting</span>
-<span class="linenos">50</span>        <span class="n">port</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">## Depend on your device</span>
+<span class="linenos">44</span>        <span class="c1">## Parameters setting</span>
+<span class="linenos">45</span>        <span class="n">port</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">## Depend on your device</span>
+<span class="linenos">46</span>
+<span class="linenos">47</span>        <span class="c1">## Get firmware model &amp; version</span>
+<span class="linenos">48</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo_async</span><span class="p">()</span>
+<span class="linenos">49</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="linenos">50</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 <span class="linenos">51</span>
 <span class="linenos">52</span>        <span class="c1">## Open all pins and set it to digital output.</span>
 <span class="linenos">53</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_openPort_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
@@ -189,7 +189,7 @@
 <span class="linenos">61</span>                <span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
 <span class="linenos">62</span>
 <span class="linenos">63</span>            <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writePort_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-<span class="linenos">64</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Port: </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s1">, digital state = </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="linenos">64</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Port: </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s1">, digital state= </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="linenos">65</span>
 <span class="linenos">66</span>            <span class="c1">## Wait for 0.5 second to see led status</span>
 <span class="linenos">67</span>            <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>  <span class="c1">## delay [s]</span>

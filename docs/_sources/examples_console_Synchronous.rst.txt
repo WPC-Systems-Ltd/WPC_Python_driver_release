@@ -16,6 +16,8 @@ EMotion
 .. toctree::
    :maxdepth: 4
 
+   examples/Console/Synchronous/EMotion/Motion/Motion_servo_on.rst
+
    examples/Console/Synchronous/EMotion/Motion/Motion_find_home.rst
 
    examples/Console/Synchronous/EMotion/Motion/Motion_find_index.rst
@@ -27,6 +29,8 @@ EMotion
    examples/Console/Synchronous/EMotion/Motion/Motion_load_configuration_file.rst
 
    examples/Console/Synchronous/EMotion/Motion/Motion_save_configuration_file.rst
+
+   examples/Console/Synchronous/EMotion/Motion/Motion_position_blending.rst
 
    examples/Console/Synchronous/EMotion/Motion/Motion_velocity_blending.rst
 
@@ -122,6 +126,10 @@ Ethan-L
    examples/Console/Synchronous/EthanL/DIO/DO_write_port.rst
 
    examples/Console/Synchronous/EthanL/System_ETH/get_network_info.rst
+
+   examples/Console/Synchronous/EthanL/Relay/Relay_set_channel.rst
+
+   examples/Console/Synchronous/EthanL/Relay/Relay_read_counters.rst
 
 
 Ethan-O
