@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EMotion &mdash; WPC Python driver 2.0.1 documentation</title>
+  <title>EMotion &mdash; WPC Python driver 2.0.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.0.1
+                2.0.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -116,6 +116,115 @@
 <dt class="sig sig-object py" id="pywpc.EMotion">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pywpc.</span></span><span class="sig-name descname"><span class="pre">EMotion</span></span><a class="headerlink" href="#pywpc.EMotion" title="Permalink to this definition"></a></dt>
 <dd><dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EMotion.Logger_openFile">
+<span class="sig-name descname"><span class="pre">Logger_openFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear_old</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Logger_openFile" title="Permalink to this definition"></a></dt>
+<dd><p>Open CSV file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>filename</strong><span class="classifier">str</span></dt><dd><p>The file name.</p>
+</dd>
+<dt><strong>clear_old</strong><span class="classifier">bool, default: True</span></dt><dd><p>Whether to clear old data (if the file alread exists) or not.</p>
+</dd>
+<dt><strong>verbose</strong><span class="classifier">bool, default: True</span></dt><dd><p>Whether to print message out.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EMotion.Logger_write2DList">
+<span class="sig-name descname"><span class="pre">Logger_write2DList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value_mat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Logger_write2DList" title="Permalink to this definition"></a></dt>
+<dd><p>Write list of list into file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>value_mat</strong><span class="classifier">list of list</span></dt><dd><p>The list of list of data to be written.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EMotion.Logger_writeHeader">
+<span class="sig-name descname"><span class="pre">Logger_writeHeader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">header</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Logger_writeHeader" title="Permalink to this definition"></a></dt>
+<dd><p>Write header into file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>header</strong><span class="classifier">list of str</span></dt><dd><p>Header to be written.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EMotion.Logger_writeList">
+<span class="sig-name descname"><span class="pre">Logger_writeList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Logger_writeList" title="Permalink to this definition"></a></dt>
+<dd><p>Write list into file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>value_list</strong><span class="classifier">list</span></dt><dd><p>The list of data to be written.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EMotion.Logger_writeValue">
+<span class="sig-name descname"><span class="pre">Logger_writeValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Logger_writeValue" title="Permalink to this definition"></a></dt>
+<dd><p>Write value into file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>value</strong><span class="classifier">object</span></dt><dd><p>The data to be written.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_cfg2AxisLinearInterpo">
 <span class="sig-name descname"><span class="pre">Motion_cfg2AxisLinearInterpo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_posi1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_posi2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_cfg2AxisLinearInterpo" title="Permalink to this definition"></a></dt>
 <dd><p>Configure two axis linear interpolation parameters.</p>
@@ -1484,9 +1593,9 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EMotion.Motion_enableServoOn">
-<span class="sig-name descname"><span class="pre">Motion_enableServoOn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_servo_on</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_enableServoOn" title="Permalink to this definition"></a></dt>
-<dd><p>Set the servo on singal of specific axis.</p>
+<dt class="sig sig-object py" id="pywpc.EMotion.Motion_enableServoOff">
+<span class="sig-name descname"><span class="pre">Motion_enableServoOff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_enableServoOff" title="Permalink to this definition"></a></dt>
+<dd><p>Servo off singal of specific axis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1495,8 +1604,55 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 </dd>
 <dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
 </dd>
-<dt><strong>en_servo_on</strong><span class="classifier">{0, 1}</span></dt><dd><p>Enable servo on
-0: False, 1: True.</p>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EMotion.Motion_enableServoOff_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_enableServoOff_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_enableServoOff_async" title="Permalink to this definition"></a></dt>
+<dd><p>Servo off singal of specific axis with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EMotion.Motion_enableServoOn">
+<span class="sig-name descname"><span class="pre">Motion_enableServoOn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_enableServoOn" title="Permalink to this definition"></a></dt>
+<dd><p>Servo on singal of specific axis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -1514,8 +1670,8 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_enableServoOn_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_enableServoOn_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_servo_on</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_enableServoOn_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set the servo on singal of specific axis with async mode.</p>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_enableServoOn_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_enableServoOn_async" title="Permalink to this definition"></a></dt>
+<dd><p>Servo on singal of specific axis with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1523,9 +1679,6 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
-</dd>
-<dt><strong>en_servo_on</strong><span class="classifier">{0, 1}</span></dt><dd><p>Enable servo on
-0: False, 1: True.</p>
 </dd>
 </dl>
 </dd>
@@ -1583,6 +1736,52 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
 See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EMotion.Motion_getEncoderPosi">
+<span class="sig-name descname"><span class="pre">Motion_getEncoderPosi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_getEncoderPosi" title="Permalink to this definition"></a></dt>
+<dd><p>Get emcoder position for an axis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Encoder position of the axis.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EMotion.Motion_getEncoderPosi_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_getEncoderPosi_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_getEncoderPosi_async" title="Permalink to this definition"></a></dt>
+<dd><p>Get Encoder position for an axis with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Encoder position of the axis.</p>
 </dd>
 </dl>
 </dd>
@@ -1840,6 +2039,48 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EMotion.Motion_openCfgFile">
+<span class="sig-name descname"><span class="pre">Motion_openCfgFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'test.ini'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_openCfgFile" title="Permalink to this definition"></a></dt>
+<dd><p>Open configuration file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>filename</strong><span class="classifier">str</span></dt><dd><p>The file name.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EMotion.Motion_openCfgFile_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_openCfgFile_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'test.ini'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_openCfgFile_async" title="Permalink to this definition"></a></dt>
+<dd><p>Open configuration file with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>filename</strong><span class="classifier">str</span></dt><dd><p>The file name.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_open_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_open_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_open_async" title="Permalink to this definition"></a></dt>
 <dd><p>Open motion module on a given port with async mode.</p>
@@ -1862,48 +2103,6 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EMotion.Motion_opencfgFile">
-<span class="sig-name descname"><span class="pre">Motion_opencfgFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'test.ini'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_opencfgFile" title="Permalink to this definition"></a></dt>
-<dd><p>Open configuration file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>filename</strong><span class="classifier">str</span></dt><dd><p>The file name.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
-See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EMotion.Motion_opencfgFile_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_opencfgFile_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'test.ini'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_opencfgFile_async" title="Permalink to this definition"></a></dt>
-<dd><p>Open configuration file with async mode.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>filename</strong><span class="classifier">str</span></dt><dd><p>The file name.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
-See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.Motion_overrideAxisAccel">
 <span class="sig-name descname"><span class="pre">Motion_overrideAxisAccel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_accel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_decel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_overrideAxisAccel" title="Permalink to this definition"></a></dt>
 <dd><p>Override instantaneous accerleration / deceleration for an axis.</p>
@@ -1912,6 +2111,8 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
 </dd>
 <dt><strong>new_accel</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
 </dd>
@@ -1941,9 +2142,65 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
+<dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
+</dd>
 <dt><strong>new_accel</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
 </dd>
 <dt><strong>new_decel</strong><span class="classifier">int</span></dt><dd><p>Deceleration value in counts/s2 or steps/s2.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EMotion.Motion_overrideAxisPosi">
+<span class="sig-name descname"><span class="pre">Motion_overrideAxisPosi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_overrideAxisPosi" title="Permalink to this definition"></a></dt>
+<dd><p>Override new position for an axis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
+</dd>
+<dt><strong>new_position</strong><span class="classifier">int</span></dt><dd><p>New position for an axis.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EMotion.Motion_overrideAxisPosi_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_overrideAxisPosi_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.Motion_overrideAxisPosi_async" title="Permalink to this definition"></a></dt>
+<dd><p>Override new position for an axis with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
+</dd>
+<dt><strong>new_position</strong><span class="classifier">int</span></dt><dd><p>New position for an axis.</p>
 </dd>
 </dl>
 </dd>
@@ -1966,6 +2223,8 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
 </dd>
 <dt><strong>new_velo</strong><span class="classifier">int</span></dt><dd><p>Velocity in counts/s or steps/s.</p>
 </dd>
@@ -1992,6 +2251,8 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>axis</strong><span class="classifier">{0, 1, 2, 3}</span></dt><dd><p>Axis selector.</p>
 </dd>
 <dt><strong>new_velo</strong><span class="classifier">int</span></dt><dd><p>Velocity in counts/s or steps/s.</p>
 </dd>
@@ -3015,7 +3276,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EMotion.close">
-<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.close" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EMotion.close" title="Permalink to this definition"></a></dt>
 <dd><p>Close web device handle.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>

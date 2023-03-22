@@ -35,30 +35,29 @@ async def main():
         return
 
     try:
+        ## Parameters setting
+        port = 0 ## Depend on your device
+
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-
-        ## Parameters setting
-        port = 0 ## Depend on your device
 
         ## Motion open
         err = await dev.Motion_open_async(port)
         print(f"open_async in port{port}: {err}")
 
         ## Motion open configuration file
-        err = await dev.Motion_opencfgFile_async('3AxisStage_2P.ini')
-        print(f"opencfgFile_async in port{port}: {err}")
+        err = await dev.Motion_openCfgFile_async('C:/Users/user/Desktop/3AxisStage_2P.ini')
+        print(f"openCfgFile_async: {err}")
 
         ## Motion load configuration file
         err = await dev.Motion_loadCfgFile_async()
-        print(f"loadCfgFile_async in port{port}: {err}")
+        print(f"loadCfgFile_async: {err}")
 
         ## Motion close
         err = await dev.Motion_close_async(port)
         print(f"close_async in port{port}: {err}")
-
     except Exception as err:
         pywpc.printGenericError(err)
 

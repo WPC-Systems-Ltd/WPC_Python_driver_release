@@ -27,6 +27,9 @@ def main():
     ## Create device handle
     dev = pywpc.DeviceFinder()
 
+    ## Connect to device
+    dev.connect()
+
     ## Perform USB device information
     print("Find all USB devices....")
     try:
@@ -44,6 +47,9 @@ def main():
             print(device)
     except Exception as err:
         pywpc.printGenericError(err)
+
+    ## Disconnect to device
+    dev.disconnect()
 
     ## Release device handle
     dev.close()

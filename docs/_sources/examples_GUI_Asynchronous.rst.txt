@@ -7,9 +7,7 @@ AI
 .. toctree::
    :maxdepth: 4
 
-
    examples/GUI/Asynchronous/AI/AI_integrated_gui.rst
-
 
 AO
 --
@@ -17,9 +15,7 @@ AO
 .. toctree::
    :maxdepth: 4
 
-
    examples/GUI/Asynchronous/AO/AO_gui.rst
-
 
 DO
 --
@@ -27,9 +23,7 @@ DO
 .. toctree::
    :maxdepth: 4
 
-
    examples/GUI/Asynchronous/DO/DO_gui.rst
-
 
 I2C
 ---
@@ -37,9 +31,7 @@ I2C
 .. toctree::
    :maxdepth: 4
 
-
    examples/GUI/Asynchronous/I2C/I2C_gui.rst
-
 
 SPI
 ---
@@ -47,9 +39,7 @@ SPI
 .. toctree::
    :maxdepth: 4
 
-
    examples/GUI/Asynchronous/SPI/SPI_gui.rst
-
 
 System
 ------
@@ -57,12 +47,8 @@ System
 .. toctree::
    :maxdepth: 4
 
-
    examples/GUI/Asynchronous/System/get_device_info_gui.rst
-
-
    examples/GUI/Asynchronous/System/find_all_devices_gui.rst
-
 
 Temperature-RTD
 ---------------
@@ -70,9 +56,7 @@ Temperature-RTD
 .. toctree::
    :maxdepth: 4
 
-
    examples/GUI/Asynchronous/Temperature_RTD/RTD_gui.rst
-
 
 Temperature-TC
 --------------
@@ -80,9 +64,7 @@ Temperature-TC
 .. toctree::
    :maxdepth: 4
 
-
    examples/GUI/Asynchronous/Temperature_TC/TC_gui.rst
-
 
 UART
 ----
@@ -90,6 +72,4 @@ UART
 .. toctree::
    :maxdepth: 4
 
-
    examples/GUI/Asynchronous/UART/UART_gui.rst
-

@@ -24,14 +24,13 @@ import asyncio
 
 from wpcsys import pywpc
 
-async def loop_func(handle, port, num_of_samples = 600, delay = 0.005, exit_loop_time = 3):
+async def loop_func(handle, port, num_of_samples=600, delay=0.005, exit_loop_time=3):
     time_cal = 0
     while time_cal < exit_loop_time:
         ## data acquisition
         data = await handle.AI_readStreaming_async(port, num_of_samples, delay)
         if len(data) > 0:
-            print(data)
-            print("Get data points: " + str(len(data)))
+            print(f"data in port {port}: {data}")
 
         ## Wait
         await asyncio.sleep(delay)  ## delay [s]
@@ -54,16 +53,16 @@ async def main():
         return
 
     try:
-        ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
-
         ## Parameters setting
         port = 0 ## Depend on your device
         mode = 1  ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 5000
         samples = 3000
+
+        ## Get firmware model & version
+        driver_info = await dev.Sys_getDriverInfo_async()
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
 
         ## Open port
         err = await dev.AI_open_async(port)
@@ -71,26 +70,27 @@ async def main():
 
         ## Set AI port and acquisition mode to N-samples mode (1)
         err = await dev.AI_setMode_async(port, mode)
-        print(f"AI_setMode_async in port{port}: {err}")
+        print(f"AI_setMode_async {mode} in port{port}: {err}")
 
         ## Set AI port and set sampling rate to 5k (Hz)
         err = await dev.AI_setSamplingRate_async(port, sampling_rate)
-        print(f"AI_setSamplingRate_async in port{port}: {err}")
+        print(f"AI_setSamplingRate_async {sampling_rate} in port{port}: {err}")
 
         ## Set AI port and # of samples to 3000 (pts)
         err = await dev.AI_setNumSamples_async(port, samples)
-        print(f"AI_setNumSamples_async in port{port}: {err}")
+        print(f"AI_setNumSamples_async {samples} in port{port}: {err}")
 
         ## Set AI port and start acquisition
         err = await dev.AI_start_async(port)
         print(f"AI_start_async in port{port}: {err}")
 
-        ## Start async thread
+        ## Set loop parameters
         num_of_samples = 600
         delay = 0.05
         exit_loop_time = 3
 
-        await loop_func(dev, port, num_of_samples, delay, exit_loop_time)
+        ## Start loop
+        await loop_func(dev, port, num_of_samples=num_of_samples, delay=delay, exit_loop_time=exit_loop_time)
 
         ## Close port
         err = await dev.AI_close_async(port)

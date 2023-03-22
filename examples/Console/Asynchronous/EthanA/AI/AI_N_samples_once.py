@@ -42,11 +42,6 @@ async def main():
         return
 
     try:
-        ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
-
         ## Parameters setting
         port = 0 ## Depend on your device
         mode = 1  ## 0 : On demand, 1 : N-samples, 2 : Continuous.
@@ -54,21 +49,26 @@ async def main():
         samples = 50
         read_points = 50
 
+        ## Get firmware model & version
+        driver_info = await dev.Sys_getDriverInfo_async()
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
+
         ## Open port
         err = await dev.AI_open_async(port)
         print(f"AI_open_async in port{port}: {err}")
 
         ## Set AI port and acquisition mode to N-samples mode (1)
         err = await dev.AI_setMode_async(port, mode)
-        print(f"AI_setMode_async in port{port}: {err}")
+        print(f"AI_setMode_async {mode} in port{port}: {err}")
 
         ## Set AI port and sampling rate to 1k (Hz)
         err = await dev.AI_setSamplingRate_async(port, sampling_rate)
-        print(f"AI_setSamplingRate_async in port{port}: {err}")
+        print(f"AI_setSamplingRate_async {sampling_rate} in port{port}: {err}")
 
         ## Set AI port and # of samples to 50 (pts)
         err = await dev.AI_setNumSamples_async(port, samples)
-        print(f"AI_setNumSamples_async in port{port}: {err}")
+        print(f"AI_setNumSamples_async {samples} in port{port}: {err}")
 
         ## Set AI port and start acquisition
         err = await dev.AI_start_async(port)
@@ -81,8 +81,7 @@ async def main():
         data = await dev.AI_readStreaming_async(port, read_points)
 
         ## Read acquisition data 50 points
-        print("Get data points: " + str(len(data)))
-        print("Get data: " + str(data))
+        print(f"data in port {port}: {data}")
 
         ## Close port
         err = await dev.AI_close_async(port)

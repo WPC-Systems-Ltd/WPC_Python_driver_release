@@ -24,7 +24,7 @@ For more information, please refer to datasheet of the [25LC640 EEPROM](https://
 
 |   Model name     | port | MOSI | MISO | SCK  |  CS  |
 | -----------------|:----:|:----:|:----:|:----:|:----:|
-| USBDAQF1TD   | SPI1 | P2.3 | P2.2 | P2.1 | P2.0 |
+| USBDAQF1TD       | SPI1 | P2.3 | P2.2 | P2.1 | P2.0 |
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-USBDAQF1TD.JPG" alt="drawing" width="600"/>
 

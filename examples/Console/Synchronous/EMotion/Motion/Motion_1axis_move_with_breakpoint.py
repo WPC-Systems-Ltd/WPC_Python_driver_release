@@ -53,58 +53,59 @@ def main():
         pulse_number = 100
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Motion open
-        err = dev.Motion_open(port, timeout)
+        err = dev.Motion_open(port, timeout=timeout)
         print(f"Motion_open in port{port}: {err}")
 
         ## Motion open configuration file
-        err = dev.Motion_opencfgFile('3AxisStage_2P.ini', timeout)
-        print(f"Motion_opencfgFile in port{port}: {err}")
+        err = dev.Motion_openCfgFile('C:/Users/user/Desktop/3AxisStage_2P.ini')
+        print(f"Motion_openCfgFile: {err}")
 
         ## Motion load configuration file
-        err = dev.Motion_loadCfgFile(timeout)
-        print(f"Motion_loadCfgFile in port{port}: {err}")
+        err = dev.Motion_loadCfgFile(timeout=timeout)
+        print(f"Motion_loadCfgFile: {err}")
 
         ## Motion configure
-        err = dev.Motion_cfgBreakPoint(port, axis, rel_posi_mode, active_high, start_position, pulse_width, pulse_period, pulse_number, timeout)
-        print(f"Motion_cfgBreakPoint in port{port}: {err}")
+        err = dev.Motion_cfgBreakPoint(port, axis, rel_posi_mode, active_high, start_position, pulse_width, pulse_period, pulse_number, timeout=timeout)
+        print(f"Motion_cfgBreakPoint in axis{axis}: {err}")
 
-        err = dev.Motion_enableBreakPoint(port, axis, int(True), timeout)
-        print(f"Motion_enableBreakPoint in port{port}: {err}")
+        err = dev.Motion_enableBreakPoint(port, axis, int(True), timeout=timeout)
+        print(f"Motion_enableBreakPoint in axis{axis}: {err}")
 
-        err = dev.Motion_cfgAxisMove(port, axis, rel_posi_mode, target_position = 5000, timeout=timeout)
-        print(f"Motion_cfgAxisMove in port{port}: {err}")
+        err = dev.Motion_cfgAxisMove(port, axis, rel_posi_mode, target_posi=5000, timeout=timeout)
+        print(f"Motion_cfgAxisMove in axis{axis}: {err}")
 
-        err = dev.Motion_rstEncoderPosi(port, axis, timeout)
-        print(f"Motion_rstEncoderPosi in port{port}: {err}")
+        err = dev.Motion_rstEncoderPosi(port, axis, timeout=timeout)
+        print(f"Motion_rstEncoderPosi in axis{axis}: {err}")
 
-        err = dev.Motion_enableServoOn(port, axis, int(True), timeout)
-        print(f"Motion_enableServoOn in port{port}: {err}")
+        ## Servo on
+        err = dev.Motion_enableServoOn(port, axis, timeout=timeout)
+        print(f"Motion_enableServoOn in axis{axis}: {err}")
 
         ## Motion start
-        err = dev.Motion_startSingleAxisMove(port, axis, timeout)
-        print(f"Motion_startSingleAxisMove in port{port}: {err}")
+        err = dev.Motion_startSingleAxisMove(port, axis, timeout=timeout)
+        print(f"Motion_startSingleAxisMove in axis{axis}: {err}")
 
-        move_status = 0;
+        move_status = 0
         while move_status == 0:
-            move_status = dev.Motion_getMoveStatus(port, axis, timeout)
-            print("Motion_getMoveStatus:", move_status)
+            move_status = dev.Motion_getMoveStatus(port, axis, timeout=timeout)
+            print(f"Motion_getMoveStatus in axis{axis}: {move_status}")
 
         ## Motion stop
-        err = dev.Motion_stop(port, axis, stop_decel, timeout)
-        print(f"Motion_stop in port{port}: {err}")
+        err = dev.Motion_stop(port, axis, stop_decel, timeout=timeout)
+        print(f"Motion_stop in axis{axis}: {err}")
 
-        err = dev.Motion_enableServoOn(port, axis, int(False), timeout)
-        print(f"Motion_enableServoOn in port{port}: {err}")
+        ## Servo off
+        err = dev.Motion_enableServoOff(port, axis, timeout=timeout)
+        print(f"Motion_enableServoOff in axis{axis}: {err}")
 
         ## Motion close
-        err = dev.Motion_close(port, timeout)
+        err = dev.Motion_close(port, timeout=timeout)
         print(f"Motion_close in port{port}: {err}")
-
     except Exception as err:
         pywpc.printGenericError(err)
 

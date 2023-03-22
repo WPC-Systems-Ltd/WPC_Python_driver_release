@@ -38,27 +38,26 @@ def main():
         ## Parameters setting
         port = 0 ## Depend on your device
         axis = 0
-        stop_decel = 0
         timeout = 3  ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Motion open
-        err = dev.Motion_open(port, timeout)
+        err = dev.Motion_open(port, timeout=timeout)
         print(f"Motion_open in port{port}: {err}")
 
         for i in range(100):
-            err = dev.Motion_setLogicalPosi(port, axis, i, timeout)
+            err = dev.Motion_setLogicalPosi(port, axis, i, timeout=timeout)
             if err != 0:
-                print("Motion_setLogicalPosi ", err)
-            posi = dev.Motion_getLogicalPosi(port, axis, timeout)
-            print("Motion_getLogicalPosi ", posi)
+                print(f"Motion_setLogicalPosi in axis{axis}: {err}")
+            posi = dev.Motion_getLogicalPosi(port, axis, timeout=timeout)
+            print(f"Motion_getLogicalPosi in axis{axis}: {posi}")
 
         ## Motion close
-        err = dev.Motion_close(port, timeout)
+        err = dev.Motion_close(port, timeout=timeout)
         print(f"Motion_close in port{port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

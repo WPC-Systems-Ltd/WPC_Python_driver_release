@@ -41,14 +41,14 @@ async def main():
         return
 
     try:
+        ## Parameters setting
+        port = 0 ## Depend on your device
+        pin_index = [0,1,2,3,4]
+
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-
-        ## Parameters setting
-        port = 0 ## Depend on your device
-        pin_index = [0,1,2,3,4]
 
         ## Open pin0, pin1, pin2, pin3 and pin4 with digital output.
         err = await dev.DO_openPins_async(port, pin_index)

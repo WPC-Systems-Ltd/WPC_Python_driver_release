@@ -41,23 +41,17 @@ async def main():
         return
 
     try:
-        ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
-
         '''
         Take 25LC640 for example
         '''
 
         ## Parameters setting
-        port = 1 ## Depend on your device
+        port = 2 ## Depend on your device
         datasize = 0  ## Mode: 0 = 8-bit data, 1 = 16-bit data.
         first_bit = 0 ## Mode: 0 = MSB first, 1 = LSB first.
         prescaler = 64
         mode = 0    ## 0 : CPOL = 0 CPHA = 0 ## 1 : CPOL = 0 CPHA = 1
                     ## 2 : CPOL = 1 CPHA = 0 ## 3 : CPOL = 1 CPHA = 1
-        port = 1 ## Depend on your device
         DO_port = 0
         DO_index = [0] ## CS pin
 
@@ -65,6 +59,11 @@ async def main():
         DUMMY = 0x01
         READ = 0x03
         WREN = 0x06
+
+        ## Get firmware model & version
+        driver_info = await dev.Sys_getDriverInfo_async()
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
 
         '''
         Open DO pins & SPI port & set CS(pin0) to high

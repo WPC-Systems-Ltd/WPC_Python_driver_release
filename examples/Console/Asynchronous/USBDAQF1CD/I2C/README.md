@@ -24,7 +24,7 @@ For more information, please refer to datasheet of the [24C08C EEPROM](https://g
 
 |  Model name      | port | Serial clock (SCL) | Serial data (SDA)|
 | -----------------|:----:|:------------------:|:----------------:|
-| USBDAQF1CD   | I2C1 |        P2.6        |   P2.7           |
+| USBDAQF1CD       | I2C1 |        P2.6        |   P2.7           |
 
 **Note:** External pull-up resistors (3.3 kΩ) are required for SDA/SCL pin.
 

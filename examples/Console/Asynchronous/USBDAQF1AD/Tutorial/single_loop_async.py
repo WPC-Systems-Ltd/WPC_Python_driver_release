@@ -20,12 +20,12 @@ import asyncio
 
 from wpcsys import pywpc
 
-async def loop_func(handle, timeout = 3, delay = 1):
+async def loop_func(handle, timeout=3, delay=1):
     t = 0
-    while t < timeout: ## timeout(second)
+    while t < timeout:
         data = await handle.Sys_getRTC_async()
         print("RTC Time:" + str(data))
-        await asyncio.sleep(delay)  ## delay(second)
+        await asyncio.sleep(delay)  ## delay(sec)
         t += delay
 
 async def main():
@@ -51,7 +51,7 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        await loop_func(dev, 3, 1) ## timeout, delay(second)
+        await loop_func(dev, timeout=3, delay= 1)
     except Exception as err:
         pywpc.printGenericError(err)
 

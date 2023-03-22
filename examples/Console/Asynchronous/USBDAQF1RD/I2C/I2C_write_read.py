@@ -43,11 +43,6 @@ async def main():
         return
 
     try:
-        ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
-
         '''
         Take 24C08C for example
         '''
@@ -58,6 +53,11 @@ async def main():
         mode = 0
         device_address = 0x50 ## 01010000
         word_address = 0x00
+
+        ## Get firmware model & version
+        driver_info = await dev.Sys_getDriverInfo_async()
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
 
         '''
         Open I2C port
@@ -82,7 +82,6 @@ async def main():
         ## Write WREN byte
         err = await dev.I2C_write_async(port, device_address, [word_address, 0xAA, 0x55, 0xAA, 0x55])
         print(f"I2C_write_async in port{port}: {err}")
-
 
         '''
         Read data via I2C

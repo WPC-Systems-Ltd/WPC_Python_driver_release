@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Example Codes - Console (async) &mdash; WPC Python driver 2.0.1 documentation</title>
+  <title>Example Codes - Console (async) &mdash; WPC Python driver 2.0.2 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.0.1
+                2.0.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -58,12 +58,14 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#emotion">EMotion</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_servo_on.html">Motion servo on</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_find_home.html">Motion find home</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_find_index.html">Motion find index</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_find_limit.html">Motion find limit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_get_logical_position.html">Motion get logical position</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_load_configuration_file.html">Motion load config file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_save_configuration_file.html">Motion save config file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_position_blending.html">Motion position blending</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_velocity_blending.html">Motion velocity blending</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_velocity_blending_acceleration.html">Motion acceleration blending</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_1axis_move.html">Motion 1axis move</a></li>
@@ -126,6 +128,8 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/Tutorial/multiple_loops_async.html">Tutorial multiple loops async</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/Relay/Relay_set_channel.html">Relay set channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/Relay/Relay_read_counters.html">Relay read counters</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ethan-o">Ethan-O</a><ul>
@@ -361,12 +365,14 @@
 <h2>EMotion<a class="headerlink" href="#emotion" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_servo_on.html">Motion servo on</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_find_home.html">Motion find home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_find_index.html">Motion find index</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_find_limit.html">Motion find limit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_get_logical_position.html">Motion get logical position</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_load_configuration_file.html">Motion load config file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_save_configuration_file.html">Motion save config file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_position_blending.html">Motion position blending</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_velocity_blending.html">Motion velocity blending</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_velocity_blending_acceleration.html">Motion acceleration blending</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_1axis_move.html">Motion 1axis move</a></li>
@@ -441,6 +447,8 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/Tutorial/multiple_loops_async.html">Tutorial multiple loops async</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/Relay/Relay_set_channel.html">Relay set channel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/Relay/Relay_read_counters.html">Relay read counters</a></li>
 </ul>
 </div>
 </section>

@@ -41,15 +41,15 @@ async def main():
         return
 
     try:
-        ## Get Firmware model & version
-        driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
-
         ## Parameters setting
         port = 1 ## Depend on your device
         port  = 1
         speed = 0 ## 0 = 125 KHz, 1 = 250 kHz, 2 = 500 kHz, 3 = 1 MHz
+
+        ## Get Firmware model & version
+        driver_info = await dev.Sys_getDriverInfo_async()
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
 
         ## Open CAN
         err = await dev.CAN_open_async(port)
