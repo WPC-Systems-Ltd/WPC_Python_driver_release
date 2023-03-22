@@ -1,0 +1,6 @@
+Motion position blending
+========================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/EMotion/Motion/Motion_position_blending.py
+   :language: python
+   :linenos:

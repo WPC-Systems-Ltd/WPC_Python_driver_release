@@ -31,7 +31,7 @@ async def loop_func(handle, port, delay=0.05, exit_loop_time=3):
         ## data acquisition
         data =  await handle.AI_readOnDemand_async(port)
         if len(data) > 0:
-            print("data: " + str(data))
+            print(f"data in port {port}: {data}")
 
         ## Wait
         await asyncio.sleep(delay)  ## delay [s]

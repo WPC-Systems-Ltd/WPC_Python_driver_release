@@ -81,13 +81,13 @@ def main():
         err = dev.Motion_cfgAxis(port, axis, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low, timeout=timeout)
         print(f"Motion_cfgAxis in axis{axis}: {err}")
 
-        err = dev.Motion_cfgLimit(port, axis, forward_enable_true, reverse_enable_true, active_high, timeout=timeout)
+        err = dev.Motion_cfgLimit(port, axis, forward_enable_true, reverse_enable_true, active_low, timeout=timeout)
         print(f"Motion_cfgLimit in axis{axis}: {err}")
 
         err = dev.Motion_cfgFindRef(port, axis, find_home, search_dir_rev, timeout=timeout)
         print(f"Motion_cfgFindRef in axis{axis}: {err}")
 
-        err = dev.Motion_cfgHome(port, axis, home_enable_false, active_high, timeout=timeout)
+        err = dev.Motion_cfgHome(port, axis, home_enable_false, active_low, timeout=timeout)
         print(f"Motion_cfgHome in axis{axis}: {err}")
 
         ## Servo on

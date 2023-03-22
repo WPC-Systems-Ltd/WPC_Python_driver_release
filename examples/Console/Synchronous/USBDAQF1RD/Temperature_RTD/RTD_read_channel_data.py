@@ -60,12 +60,12 @@ def main():
         time.sleep(0.1) ## delay [s]
 
         ## Set RTD port and read RTD in channel 0
-        data = dev.Thermal_readSensor(port, ch0, timeout=timeout)
-        print(f"Read sensor in channel {ch0} in port{port}: {data}°C")
+        data0 = dev.Thermal_readSensor(port, ch0, timeout=timeout)
+        print(f"Read sensor in channel {ch0} in port{port}: {data0}°C")
 
         ## Set RTD port and read RTD in channel 1
-        data = dev.Thermal_readSensor(port, ch1, timeout=timeout)
-        print(f"Read sensor in channel {ch1} in port{port}: {data}°C")
+        data1 = dev.Thermal_readSensor(port, ch1, timeout=timeout)
+        print(f"Read sensor in channel {ch1} in port{port}: {data1}°C")
 
         ## Close RTD
         err = dev.Thermal_close(port, timeout=timeout)

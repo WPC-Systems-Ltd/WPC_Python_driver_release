@@ -28,17 +28,6 @@ async def main():
     ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
 
-    ## Create datalogger handle
-    dev_logger = pywpc.DataLogger()
-
-    ## Open file with WPC_test.csv
-    err = dev_logger.Logger_openFile("WPC_test.csv")
-    print(f"Logger_openFile: {err}")
-
-    ## Write header into CSV file
-    err = dev_logger.Logger_writeHeader(["RTD CH0","RTD CH1"])
-    print(f"Logger_writeHeader: {err}")
-
     ## Create device handle
     dev = pywpc.USBDAQF1RD()
 
@@ -62,6 +51,14 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
+        ## Open file with WPC_test.csv
+        err = dev.Logger_openFile("WPC_test.csv")
+        print(f"Logger_openFile: {err}")
+
+        ## Write header into CSV file
+        err = dev.Logger_writeHeader(["RTD CH0","RTD CH1"])
+        print(f"Logger_writeHeader: {err}")
+
         ## Open RTD
         err = await dev.Thermal_open_async(port)
         print(f"Thermal_open_async in port{port}: {err}")
@@ -70,15 +67,15 @@ async def main():
         await asyncio.sleep(0.1) ## delay [s]
 
         ## Set RTD port and read RTD in channel 0
-        data = await dev.Thermal_readSensor_async(port, ch0)
-        print(f"Read sensor in channel {ch0} in port{port}: {data}°C")
+        data0 = await dev.Thermal_readSensor_async(port, ch0)
+        print(f"Read sensor in channel {ch0} in port{port}: {data0}°C")
 
         ## Set RTD port and read RTD in channel 1
-        data = await dev.Thermal_readSensor_async(port, ch1)
-        print(f"Read sensor in channel {ch1} in port{port}: {data}°C")
+        data1 = await dev.Thermal_readSensor_async(port, ch1)
+        print(f"Read sensor in channel {ch1} in port{port}: {data1}°C")
 
         ## Write data into CSV file
-        err = dev_logger.Logger_writeList([data0, data1])
+        err = dev.Logger_writeList([data0, data1])
         print(f"Logger_writeList: {err}")
 
         ## Close RTD
@@ -90,9 +87,6 @@ async def main():
 
     ## Disconnect device
     dev.disconnect()
-
-    ## Close File
-    dev_logger.Logger_closeFile()
 
     ## Release device handle
     dev.close()

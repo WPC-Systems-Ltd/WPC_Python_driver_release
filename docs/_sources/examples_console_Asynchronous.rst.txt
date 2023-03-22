@@ -30,6 +30,8 @@ EMotion
 
    examples/Console/Asynchronous/EMotion/Motion/Motion_save_configuration_file.rst
 
+   examples/Console/Asynchronous/EMotion/Motion/Motion_position_blending.rst
+
    examples/Console/Asynchronous/EMotion/Motion/Motion_velocity_blending.rst
 
    examples/Console/Asynchronous/EMotion/Motion/Motion_velocity_blending_acceleration.rst

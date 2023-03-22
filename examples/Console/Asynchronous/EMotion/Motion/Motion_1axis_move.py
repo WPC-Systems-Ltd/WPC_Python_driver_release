@@ -76,7 +76,7 @@ async def main():
         err = await dev.Motion_cfgAxis_async(port, axis, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low)
         print(f"cfgAxis_async in axis{axis}: {err}")
 
-        err = await dev.Motion_cfgLimit_async(port, axis, forward_enable_true, reverse_enable_true, active_high)
+        err = await dev.Motion_cfgLimit_async(port, axis, forward_enable_true, reverse_enable_true, active_low)
         print(f"cfgLimit_async in axis{axis}: {err}")
 
         err = await dev.Motion_cfgHome_async(port, axis, home_enable_false, active_low)
@@ -99,8 +99,9 @@ async def main():
         move_status = 0
         while move_status == 0:
             move_status = await dev.Motion_getMoveStatus_async(port, axis)
-            if move_status == 0:
-                print("Moving...")
+            logical_posi = await dev.Motion_getLogicalPosi_async(port, axis)
+            encoder_posi = await dev.Motion_getEncoderPosi_async(port, axis)
+            print(f"logical_posi: {logical_posi}, encoder_posi: {encoder_posi}")
 
         ## Motion stop
         err = await dev.Motion_stop_async(port, axis, stop_decel)

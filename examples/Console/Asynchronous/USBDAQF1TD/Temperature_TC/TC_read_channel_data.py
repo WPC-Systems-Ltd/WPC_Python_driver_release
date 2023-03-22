@@ -65,8 +65,8 @@ async def main():
         err = await dev.Thermal_setType_async(port, ch, thermo_type)
         print(f"Thermal_setType_async in port{port}: {err}")
 
-        ## Wait for at least 250 ms after setting type or oversampling
-        await asyncio.sleep(0.25) ## delay [s]
+        ## Wait for at least 500 ms after setting type or oversampling
+        await asyncio.sleep(0.5) ## delay [s]
 
         ## Set thermo port and read thermo in channel 1
         data = await dev.Thermal_readSensor_async(port, ch)

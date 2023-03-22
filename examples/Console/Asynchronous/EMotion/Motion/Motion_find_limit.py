@@ -79,13 +79,13 @@ async def main():
         err = await dev.Motion_cfgAxis_async(port, axis, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low)
         print(f"cfgAxis_async in axis{axis}: {err}")
 
-        err = await dev.Motion_cfgLimit_async(port, axis, forward_enable_true, reverse_enable_true, active_high)
+        err = await dev.Motion_cfgLimit_async(port, axis, forward_enable_true, reverse_enable_true, active_low)
         print(f"cfgLimit_async in axis{axis}: {err}")
 
         err = await dev.Motion_cfgFindRef_async(port, axis, find_limit, dir_reverse)
         print(f"cfgFindRef_async in axis{axis}: {err}")
 
-        err = await dev.Motion_cfgHome_async(port, axis, home_enable_false, active_high)
+        err = await dev.Motion_cfgHome_async(port, axis, home_enable_false, active_low)
         print(f"cfgHome_async in axis{axis}: {err}")
 
         ## Servo on

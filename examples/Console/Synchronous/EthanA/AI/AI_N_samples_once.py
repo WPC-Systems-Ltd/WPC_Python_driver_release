@@ -82,8 +82,7 @@ def main():
         data = dev.AI_readStreaming(port, read_points)
 
         ## Read acquisition data 50 points
-        print("Get data points: " + str(len(data)))
-        print("Get data: " + str(data))
+        print(f"data in port {port}: {data}")
 
         ## Close port
         err = dev.AI_close(port, timeout=timeout)

@@ -1,7 +1,33 @@
 WPC Python driver release changelog
 ===================================
 
+v2.0.2 Date: 2023/03/22, Developer: Chunglee_people
+---------------------------------------------------
 
+### Added
+- Example codes:
+  - Relay_read_counters, Relay_set_channel, Motion_servo_on, Motion_position_blending
+- Error class:
+  - RelayCounterIndexError
+- Release new API(sync and async):
+  - Motion_enableServoOff, Motion_enableServoOn, Motion_overrideAxisPosi, Motion_getLogicalPosi, Motion_getEncoderPosi
+- Add Datalogger in each product
+
+### Changed
+- WifiDAQE3A product image
+- API & argument name
+  - Motion_opencfgFile -> Motion_openCfgFile
+  - Motion_opencfgFile_async -> Motion_openCfgFile_async
+  - target_position -> target_posi
+  - veloctity -> velo
+
+### Fixed
+- Bug of missing connect and disconnect in find all device example code
+- Delay 500ms before reading `Thermal_readSensor` in example code
+
+### Removed
+- API:
+  - Motion_enableServoOn_async & Motion_enableServoOn
 
 v2.0.1 Date: 2023/03/09, Developer: Chunglee_people
 ---------------------------------------------------

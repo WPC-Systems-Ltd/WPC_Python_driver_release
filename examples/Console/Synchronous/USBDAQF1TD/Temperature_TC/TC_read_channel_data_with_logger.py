@@ -28,16 +28,6 @@ def main():
     ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
 
-    ## Create datalogger handle
-    dev_logger = pywpc.DataLogger()
-
-    ## Open file with WPC_test.csv
-    err = dev_logger.Logger_openFile("WPC_test.csv")
-
-    ## Write header into CSV file
-    err = dev_logger.Logger_writeHeader(["Thermo CH1"])
-    print(f"Logger_writeHeader: {err}")
-
     ## Create device handle
     dev = pywpc.USBDAQF1TD()
 
@@ -64,6 +54,13 @@ def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
+        ## Open file with WPC_test.csv
+        err = dev.Logger_openFile("WPC_test.csv")
+
+        ## Write header into CSV file
+        err = dev.Logger_writeHeader(["Thermo CH1"])
+        print(f"Logger_writeHeader: {err}")
+
         ## Open thermo
         err = dev.Thermal_open(port, timeout=timeout)
         print(f"Thermal_open in port{port}: {err}")
@@ -76,15 +73,15 @@ def main():
         err = dev.Thermal_setType(port, ch, thermo_type, timeout=timeout)
         print(f"Thermal_setType in channel {ch} in port{port}: {err}")
 
-        ## Wait for at least 250 ms after setting type or oversampling
-        time.sleep(0.25) ## delay [s]
+        ## Wait for at least 500 ms after setting type or oversampling
+        time.sleep(0.5) ## delay [s]
 
         ## Set thermo port and read thermo in channel 1
         data = dev.Thermal_readSensor(port, ch, timeout=timeout)
         print(f"Read sensor in channel {ch} in port{port}: {data}°C")
 
         ## Write data into CSV file
-        err = dev_logger.Logger_writeValue(data)
+        err = dev.Logger_writeValue(data)
         print(f"Logger_writeValue: {err}")
 
         ## Close thermo
@@ -95,9 +92,6 @@ def main():
 
     ## Disconnect device
     dev.disconnect()
-
-    ## Close File
-    dev_logger.Logger_closeFile()
 
     ## Release device handle
     dev.close()

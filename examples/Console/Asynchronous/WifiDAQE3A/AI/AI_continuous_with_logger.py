@@ -25,17 +25,17 @@ import asyncio
 
 from wpcsys import pywpc
 
-async def loop_func(handle, logger_handle, port, num_of_samples=600, delay=0.05, exit_loop_time=3):
+async def loop_func(handle, port, num_of_samples=600, delay=0.05, exit_loop_time=3):
     time_cal = 0
     while time_cal < exit_loop_time:
         ## Data acquisition
         data = await handle.AI_readStreaming_async(port, num_of_samples, delay) ## Get 600 points at a time
 
         if len(data) > 0:
-            print("data: " + str(data))
+            print(f"data in port {port}: {data}")
 
             ## Write data into CSV file
-            logger_handle.Logger_write2DList(data)
+            handle.Logger_write2DList(data)
 
         ## Wait
         await asyncio.sleep(delay)  ## delay [s]
@@ -44,17 +44,6 @@ async def loop_func(handle, logger_handle, port, num_of_samples=600, delay=0.05,
 async def main():
     ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
-
-    ## Create datalogger handle
-    dev_logger = pywpc.DataLogger()
-
-    ## Open file with WPC_test.csv
-    err = dev_logger.Logger_openFile("WPC_test.csv")
-    print(f"Logger_openFile: {err}")
-
-    ## Write header into CSV file
-    err = dev_logger.Logger_writeHeader(["CH0","CH1","CH2","CH3","CH4","CH5","CH6","CH7"])
-    print(f"Logger_writeHeader: {err}")
 
     ## Create device handle
     dev = pywpc.WifiDAQE3A()
@@ -79,6 +68,14 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
+        ## Open file with WPC_test.csv
+        err = dev.Logger_openFile("WPC_test.csv")
+        print(f"Logger_openFile: {err}")
+
+        ## Write header into CSV file
+        err = dev.Logger_writeHeader(["CH0","CH1","CH2","CH3","CH4","CH5","CH6","CH7"])
+        print(f"Logger_writeHeader: {err}")
+
         ## Open port
         err = await dev.AI_open_async(port)
         print(f"AI_open_async in port{port}: {err}")
@@ -101,7 +98,7 @@ async def main():
         exit_loop_time = 3
 
         ## Start loop
-        await loop_func(dev, dev_logger, port, num_of_samples=num_of_samples, delay=delay, exit_loop_time=exit_loop_time)
+        await loop_func(dev, port, num_of_samples=num_of_samples, delay=delay, exit_loop_time=exit_loop_time)
 
         ## Close port
         err = await dev.AI_close_async(port)
@@ -111,9 +108,6 @@ async def main():
 
     ## Disconnect device
     dev.disconnect()
-
-    ## Close File
-    dev_logger.Logger_closeFile()
 
     ## Release device handle
     dev.close()

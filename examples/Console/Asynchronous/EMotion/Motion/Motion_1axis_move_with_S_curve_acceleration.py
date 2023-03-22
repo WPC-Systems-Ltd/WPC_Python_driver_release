@@ -69,7 +69,7 @@ async def main():
         print(f"loadCfgFile_async: {err}")
 
         ## Motion configure
-        err = await dev.Motion_cfgLimit_async(port, axis, forward_enable_true, reverse_enable_true, active_high)
+        err = await dev.Motion_cfgLimit_async(port, axis, forward_enable_true, reverse_enable_true, active_low)
         print(f"cfgLimit_async in axis{axis}: {err}")
 
         err = await dev.Motion_cfgAxisMove_async(port, axis, rel_posi_mode, target_posi=5000)

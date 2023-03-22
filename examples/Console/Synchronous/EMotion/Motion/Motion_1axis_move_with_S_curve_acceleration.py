@@ -70,7 +70,7 @@ def main():
         print(f"Motion_loadCfgFile: {err}")
 
         ## Motion configure
-        err = dev.Motion_cfgLimit(port, axis, forward_enable_true, reverse_enable_true, active_high, timeout=timeout)
+        err = dev.Motion_cfgLimit(port, axis, forward_enable_true, reverse_enable_true, active_low, timeout=timeout)
         print(f"Motion_cfgLimit in axis{axis}: {err}")
 
         err = dev.Motion_cfgAxisMove(port, axis, rel_posi_mode, target_posi=5000, timeout=timeout)

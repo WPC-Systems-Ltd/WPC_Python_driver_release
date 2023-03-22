@@ -82,7 +82,7 @@ async def main():
         err = await dev.Motion_enableServoOn_async(port, axis)
         print(f"enableServoOn_async in axis{axis}: {err}")
 
-        err = await dev.Motion_cfgLimit_async(port, axis, forward_enable_true, reverse_enable_true, active_high)
+        err = await dev.Motion_cfgLimit_async(port, axis, forward_enable_true, reverse_enable_true, active_low)
         print(f"cfgLimit_async in axis{axis}: {err}")
 
         err = await dev.Motion_cfgEncoder_async(port, axis, active_low)

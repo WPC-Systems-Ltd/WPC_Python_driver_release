@@ -62,6 +62,7 @@
 <li class="toctree-l3"><a class="reference internal" href="Motion_get_logical_position.html">Motion get logical position</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Motion_load_configuration_file.html">Motion load config file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Motion_save_configuration_file.html">Motion save config file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Motion_position_blending.html">Motion position blending</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Motion_velocity_blending.html">Motion velocity blending</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Motion_velocity_blending_acceleration.html">Motion acceleration blending</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Motion_1axis_move.html">Motion 1axis move</a></li>
@@ -205,7 +206,7 @@
 <span class="linenos"> 69</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;loadCfgFile_async: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 70</span>
 <span class="linenos"> 71</span>        <span class="c1">## Motion configure</span>
-<span class="linenos"> 72</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_cfgLimit_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">forward_enable_true</span><span class="p">,</span> <span class="n">reverse_enable_true</span><span class="p">,</span> <span class="n">active_high</span><span class="p">)</span>
+<span class="linenos"> 72</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_cfgLimit_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">forward_enable_true</span><span class="p">,</span> <span class="n">reverse_enable_true</span><span class="p">,</span> <span class="n">active_low</span><span class="p">)</span>
 <span class="linenos"> 73</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cfgLimit_async in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 74</span>
 <span class="linenos"> 75</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_cfgAxisMove_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">rel_posi_mode</span><span class="p">,</span> <span class="n">target_posi</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>

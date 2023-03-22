@@ -66,8 +66,8 @@ def main():
         err = dev.Thermal_setType(port, ch, thermo_type, timeout=timeout)
         print(f"Thermal_setType in channel {ch} in port{port}: {err}")
 
-        ## Wait for at least 250 ms after setting type or oversampling
-        time.sleep(0.25) ## delay [s]
+        ## Wait for at least 500 ms after setting type or oversampling
+        time.sleep(0.5) ## delay [s]
 
         ## Set thermo port and read thermo in channel 1
         data = dev.Thermal_readSensor(port, ch, timeout=timeout)

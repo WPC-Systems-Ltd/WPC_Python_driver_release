@@ -30,8 +30,7 @@ async def loop_func(handle, port, num_of_samples=600, delay=0.005, exit_loop_tim
         ## data acquisition
         data = await handle.AI_readStreaming_async(port, num_of_samples, delay)
         if len(data) > 0:
-            print(data)
-            print("Get data points: " + str(len(data)))
+            print(f"data in port {port}: {data}")
 
         ## Wait
         await asyncio.sleep(delay)  ## delay [s]

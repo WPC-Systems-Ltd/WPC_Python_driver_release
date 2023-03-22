@@ -77,7 +77,7 @@ def main():
         err = dev.Motion_cfgAxis(port, axis, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low, timeout=timeout)
         print(f"Motion_cfgAxis in axis{axis}: {err}")
 
-        err = dev.Motion_cfgLimit(port, axis, forward_enable_true, reverse_enable_true, active_high, timeout=timeout)
+        err = dev.Motion_cfgLimit(port, axis, forward_enable_true, reverse_enable_true, active_low, timeout=timeout)
         print(f"Motion_cfgLimit in axis{axis}: {err}")
 
         err = dev.Motion_cfgHome(port, axis, home_enable_false, active_low, timeout=timeout)
@@ -100,8 +100,9 @@ def main():
         move_status = 0
         while move_status == 0:
             move_status = dev.Motion_getMoveStatus(port, axis, timeout=timeout)
-            if move_status == 0:
-                print("Moving...")
+            logical_posi = dev.Motion_getLogicalPosi(port, axis, timeout=timeout)
+            encoder_posi = dev.Motion_getEncoderPosi(port, axis, timeout=timeout)
+            print(f"logical_posi: {logical_posi}, encoder_posi: {encoder_posi}")
 
         ## Motion stop
         err = dev.Motion_stop(port, axis, stop_decel, timeout=timeout)

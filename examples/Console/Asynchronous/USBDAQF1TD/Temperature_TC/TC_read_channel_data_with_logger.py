@@ -28,16 +28,6 @@ async def main():
     ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
 
-    ## Create datalogger handle
-    dev_logger = pywpc.DataLogger()
-
-    ## Open file with WPC_test.csv
-    err = dev_logger.Logger_openFile("WPC_test.csv")
-
-    ## Write header into CSV file
-    err = dev_logger.Logger_writeHeader(["Thermo CH1"])
-    print(f"Logger_writeHeader: {err}")
-
     ## Create device handle
     dev = pywpc.USBDAQF1TD()
 
@@ -63,6 +53,13 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
+        ## Open file with WPC_test.csv
+        err = dev.Logger_openFile("WPC_test.csv")
+
+        ## Write header into CSV file
+        err = dev.Logger_writeHeader(["Thermo CH1"])
+        print(f"Logger_writeHeader: {err}")
+
         ## Open thermo
         err = await dev.Thermal_open_async(port)
         print(f"Thermal_open_async in port{port}: {err}")
@@ -75,15 +72,15 @@ async def main():
         err = await dev.Thermal_setType_async(port, ch, thermo_type)
         print(f"Thermal_setType_async in port{port}: {err}")
 
-        ## Wait for at least 250 ms after setting type or oversampling
-        await asyncio.sleep(0.25) ## delay [s]
+        ## Wait for at least 500 ms after setting type or oversampling
+        await asyncio.sleep(0.5) ## delay [s]
 
         ## Set thermo port and read thermo in channel 1
         data = await dev.Thermal_readSensor_async(port, ch)
         print(f"Read sensor in channel {ch} in port{port}: {data}°C")
 
         ## Write data into CSV file
-        err = dev_logger.Logger_writeValue(data)
+        err = dev.Logger_writeValue(data)
         print(f"Logger_writeValue: {err}")
 
         ## Close thermo
@@ -94,9 +91,6 @@ async def main():
 
     ## Disconnect device
     dev.disconnect()
-
-    ## Close File
-    dev_logger.Logger_closeFile()
 
     ## Release device handle
     dev.close()

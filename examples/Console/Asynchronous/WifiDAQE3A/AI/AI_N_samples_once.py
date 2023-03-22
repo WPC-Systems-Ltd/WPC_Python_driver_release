@@ -81,8 +81,7 @@ async def main():
         data = await dev.AI_readStreaming_async(port, read_points)
 
         ## Read acquisition data 50 points
-        print("Get data points: " + str(len(data)))
-        print("Get data: " + str(data))
+        print(f"data in port {port}: {data}")
 
         ## Close port
         err = await dev.AI_close_async(port)
