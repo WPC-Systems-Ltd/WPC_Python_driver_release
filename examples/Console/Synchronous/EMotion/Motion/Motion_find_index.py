@@ -38,6 +38,7 @@ def main():
         ## Parameters setting
         port = 0 ## Depend on your device
         axis = 0
+        one_pulse_mode = 0
         two_pulse_mode = 1
         stop_decel = 0
         timeout = 3  ## second
@@ -75,18 +76,18 @@ def main():
         print(f"loadCfgFile: {err}")
         '''
 
-        ## Motion configure
-        err = dev.Motion_cfgAxis(port, axis, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low, timeout=timeout)
+        # Motion configure
+        err = dev.Motion_cfgAxis(port, axis, one_pulse_mode, axis_dir_cw, encoder_dir_cw, active_high, timeout=timeout)
         print(f"Motion_cfgAxis in axis{axis}: {err}")
 
-        err = dev.Motion_cfgLimit(port, axis, forward_enable_true, reverse_enable_true, active_low, timeout=timeout)
+        err = dev.Motion_cfgLimit(port, axis, forward_enable_true, reverse_enable_true, active_high, timeout=timeout)
         print(f"Motion_cfgLimit in axis{axis}: {err}")
 
-        err = dev.Motion_cfgFindRef(port, axis, find_index, dir_reverse, timeout=timeout)
-        print(f"Motion_cfgFindRef in axis{axis}: {err}")
-
-        err = dev.Motion_cfgEncoder(port, axis, active_low, timeout=timeout)
+        err = dev.Motion_cfgEncoder(port, axis, active_high, timeout=timeout)
         print(f"Motion_cfgEncoder in axis{axis}: {err}")
+
+        err = dev.Motion_cfgFindRef(port, axis, find_index, dir_reverse, search_velo=10000, search_accle=10000, approach_velo_percent=20, en_reset_posi=0, offset_posi=1500, timeout=timeout)
+        print(f"Motion_cfgFindRef in axis{axis}: {err}")
 
         ## Servo on
         err = dev.Motion_enableServoOn(port, axis, timeout=timeout)
@@ -99,22 +100,11 @@ def main():
         err = dev.Motion_findRef(port, axis, timeout=timeout)
         print(f"Motion_findRef in axis{axis}: {err}")
 
-        finding = 1
-        found = 0
-        while found == 0:
-            ## Read forward and reverse limit status
-            hit_status = dev.Motion_getLimitStatus(port, axis, timeout=timeout)
-            forward_hit = hit_status[0]
-            reverse_hit = hit_status[1]
-            if forward_hit == 1 : print("Forward hit")
-            if reverse_hit == 1 : print("Reverse hit")
-
-            ## Check finding and found status
+        driving_status = 0
+        while driving_status == 0:
+            ## Check driving_status
             driving_status = dev.Motion_checkRef(port, axis, timeout=timeout)
-            finding = driving_status[0]
-            found = driving_status[1]
-            if found == 1 : print("Found reference")
-            # if finding == 1 : print("Finding reference")
+            print(f"driving_status: {driving_status}")
 
         ## Motion stop
         err = dev.Motion_stop(port, axis, stop_decel, timeout=timeout)

@@ -38,6 +38,7 @@ async def main():
         ## Parameters setting
         port = 0 ## Depend on your device
         axis = 0
+        one_pulse_mode = 0
         two_pulse_mode = 1
         stop_decel = 0
 
@@ -75,17 +76,17 @@ async def main():
         '''
 
         ## Motion configure
-        err = await dev.Motion_cfgAxis_async(port, axis, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low)
+        err = await dev.Motion_cfgAxis_async(port, axis, one_pulse_mode, axis_dir_cw, encoder_dir_cw, active_high)
         print(f"cfgAxis_async in axis{axis}: {err}")
 
-        err = await dev.Motion_cfgLimit_async(port, axis, forward_enable_true, reverse_enable_true, active_low)
+        err = await dev.Motion_cfgLimit_async(port, axis, forward_enable_true, reverse_enable_true, active_high)
         print(f"cfgLimit_async in axis{axis}: {err}")
 
-        err = await dev.Motion_cfgFindRef_async(port, axis, find_index, dir_reverse)
-        print(f"cfgFindRef_async in axis{axis}: {err}")
-
-        err = await dev.Motion_cfgEncoder_async(port, axis, active_low)
+        err = await dev.Motion_cfgEncoder_async(port, axis, active_high)
         print(f"cfgEncoder_async in axis{axis}: {err}")
+
+        err = await dev.Motion_cfgFindRef_async(port, axis, find_index, dir_reverse, search_velo=10000, search_accle=10000, approach_velo_percent=20, en_reset_posi=0, offset_posi=1500)
+        print(f"cfgFindRef_async in axis{axis}: {err}")
 
         ## Servo on
         err = await dev.Motion_enableServoOn_async(port, axis)
@@ -98,22 +99,11 @@ async def main():
         err = await dev.Motion_findRef_async(port, axis)
         print(f"findRef_async in axis{axis}: {err}")
 
-        finding = 1
-        found = 0
-        while found == 0:
-            ## Read forward and reverse limit status
-            hit_status = await dev.Motion_getLimitStatus_async(port, axis)
-            forward_hit = hit_status[0]
-            reverse_hit = hit_status[1]
-            if forward_hit == 1 : print("Forward hit")
-            if reverse_hit == 1 : print("Reverse hit")
-
-            ## Check finding and found status
+        driving_status = 0
+        while driving_status == 0:
+            ## Check driving_status
             driving_status = await dev.Motion_checkRef_async(port, axis)
-            finding = driving_status[0]
-            found = driving_status[1]
-            if found == 1 : print("Found reference")
-            # if finding == 1 : print("Finding reference")
+            print(f"driving_status: {driving_status}")
 
         ## Motion stop
         err = await dev.Motion_stop_async(port, axis, stop_decel)

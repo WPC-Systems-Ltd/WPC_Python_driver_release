@@ -8,7 +8,6 @@ Utilities
    :maxdepth: 4
 
    products/DeviceFinder
-   products/DataLogger
 
 Wifi devices
 ------------

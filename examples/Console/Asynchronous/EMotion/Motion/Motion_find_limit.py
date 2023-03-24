@@ -82,7 +82,7 @@ async def main():
         err = await dev.Motion_cfgLimit_async(port, axis, forward_enable_true, reverse_enable_true, active_low)
         print(f"cfgLimit_async in axis{axis}: {err}")
 
-        err = await dev.Motion_cfgFindRef_async(port, axis, find_limit, dir_reverse)
+        err = await dev.Motion_cfgFindRef_async(port, axis, find_limit, dir_reverse, search_velo=10000, search_accle=10000, approach_velo_percent=20, en_reset_posi=0, offset_posi=1500)
         print(f"cfgFindRef_async in axis{axis}: {err}")
 
         err = await dev.Motion_cfgHome_async(port, axis, home_enable_false, active_low)
@@ -99,31 +99,26 @@ async def main():
         err = await dev.Motion_findRef_async(port, axis)
         print(f"findRef_async in axis{axis}: {err}")
 
-        finding = 1
-        found = 0
-        while found == 0:
+        driving_status = 0
+        while driving_status == 0:
             ## Read forward and reverse limit status
             hit_status = await dev.Motion_getLimitStatus_async(port, axis)
             forward_hit = hit_status[0]
             reverse_hit = hit_status[1]
 
-            if forward_hit == 1 :
+            if forward_hit == 1:
                 print("Forward hit")
-            if reverse_hit == 1 :
+            if reverse_hit == 1:
                 print("Reverse hit")
 
             ## Read home status
             home_status = await dev.Motion_getHomeStatus_async(port, axis)
-            if home_status == 1 :
+            if home_status == 1:
                 print("Home hit")
 
             ## Check finding and found status
             driving_status = await dev.Motion_checkRef_async(port, axis)
-            finding = driving_status[0]
-            found = driving_status[1]
-            if found == 1 :
-                print("Found reference")
-            # if finding == 1 : print("Finding reference")
+            print(f"driving_status: {driving_status}")
 
         ## Motion stop
         err = await dev.Motion_stop_async(port, axis, stop_decel)
