@@ -44,6 +44,7 @@ def main():
         ## Parameters setting
         port = 1 ## Depend on your device
         speed = 0 ## 0 = 125 KHz, 1 = 250 kHz, 2 = 500 kHz, 3 = 1 MHz
+        delay = 0.005 ## second
         timeout = 3  ## second
 
         ## Get Firmware model & version
@@ -65,7 +66,7 @@ def main():
 
         ## Read 5 frames for 1000 times
         for i in range(1000):
-            frame_list = dev.CAN_read(port, 5)
+            frame_list = dev.CAN_read(port, 5, delay=delay)
             if len(frame_list) > 0 :
                 for frame in frame_list:
                     print(frame)

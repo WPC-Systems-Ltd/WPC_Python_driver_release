@@ -82,10 +82,10 @@ def main():
         err = dev.Motion_cfgEncoder(port, axis, active_low, timeout=timeout)
         print(f"Motion_cfgEncoder in axis{axis}: {err}")
 
-        err = dev.Motion_rstEncoderPosi(port, axis, timeout=timeout)
+        err = dev.Motion_rstEncoderPosi(port, axis, encoder_posi=0, timeout=timeout)
         print(f"Motion_rstEncoderPosi in axis{axis}: {err}")
 
-        err = dev.Motion_cfgAxisMove(port, axis, velocity_mode, velo=1000, timeout=timeout)
+        err = dev.Motion_cfgAxisMove(port, axis, velocity_mode, target_posi=5000, velo=1000, accel=100000, decel=100000, timeout=timeout)
         print(f"Motion_cfgAxisMove in axis{axis}: {err}")
 
         ## Servo on

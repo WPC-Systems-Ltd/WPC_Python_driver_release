@@ -81,10 +81,10 @@ async def main():
         err = await dev.Motion_cfgEncoder_async(port, axis, active_low)
         print(f"cfgEncoder_async in axis{axis}: {err}")
 
-        err = await dev.Motion_rstEncoderPosi_async(port, axis)
+        err = await dev.Motion_rstEncoderPosi_async(port, axis, encoder_posi=0)
         print(f"rstEncoderPosi_async in axis{axis}: {err}")
 
-        err = await dev.Motion_cfgAxisMove_async(port, axis, velocity_mode, velo=1000)
+        err = await dev.Motion_cfgAxisMove_async(port, axis, velocity_mode, target_posi=5000, velo=1000, accel=100000, decel=100000)
         print(f"cfgAxisMove_async in axis{axis}: {err}")
 
         ## Servo on

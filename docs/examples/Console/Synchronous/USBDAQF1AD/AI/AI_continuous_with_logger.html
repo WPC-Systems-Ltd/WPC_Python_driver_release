@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI continuous with logger &mdash; WPC Python driver 2.0.2 documentation</title>
+  <title>AI continuous with logger &mdash; WPC Python driver 2.0.3 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.0.2
+                2.0.3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -157,7 +157,7 @@
 <span class="linenos"> 29</span>    <span class="n">time_cal</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="linenos"> 30</span>    <span class="k">while</span> <span class="n">time_cal</span> <span class="o">&lt;</span> <span class="n">exit_loop_time</span><span class="p">:</span>
 <span class="linenos"> 31</span>        <span class="c1">## Data acquisition</span>
-<span class="linenos"> 32</span>        <span class="n">data</span> <span class="o">=</span> <span class="n">handle</span><span class="o">.</span><span class="n">AI_readStreaming</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">num_of_samples</span><span class="p">,</span> <span class="n">delay</span><span class="p">)</span> <span class="c1">## Get 600 points at a time</span>
+<span class="linenos"> 32</span>        <span class="n">data</span> <span class="o">=</span> <span class="n">handle</span><span class="o">.</span><span class="n">AI_readStreaming</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">num_of_samples</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="n">delay</span><span class="p">)</span> <span class="c1">## Get 600 points at a time</span>
 <span class="linenos"> 33</span>
 <span class="linenos"> 34</span>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
 <span class="linenos"> 35</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;data in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>

@@ -125,10 +125,10 @@ def main():
         err = dev.Motion_cfgLimit(port, axis1, forward_enable_false, reverse_enable_false, active_low, timeout=timeout)
         print(f"Motion_cfgLimit in axis{axis1}: {err}")
 
-        err = dev.Motion_rstEncoderPosi(port, axis1, timeout=timeout)
+        err = dev.Motion_rstEncoderPosi(port, axis1, encoder_posi=0, timeout=timeout)
         print(f"Motion_rstEncoderPosi in axis{axis1}: {err}")
 
-        err = dev.Motion_cfgAxisMove(port, axis1, rel_posi_mode, target_posi=1000, timeout=timeout)
+        err = dev.Motion_cfgAxisMove(port, axis1, rel_posi_mode, target_posi=1000, velo=10000, accel=100000, decel=100000, timeout=timeout)
         print(f"Motion_cfgAxisMove in axis{axis1}: {err}")
 
         err = dev.Motion_enableServoOn(port, axis1, timeout=timeout)
@@ -141,10 +141,10 @@ def main():
         err = dev.Motion_cfgLimit(port, axis2, forward_enable_false, reverse_enable_false, active_low, timeout=timeout)
         print(f"cfgLimit in axis{axis2}: {err}")
 
-        err = dev.Motion_rstEncoderPosi(port, axis2, timeout=timeout)
+        err = dev.Motion_rstEncoderPosi(port, axis2, encoder_posi=0, timeout=timeout)
         print(f"Motion_rstEncoderPosi in axis{axis2}: {err}")
 
-        err = dev.Motion_cfgAxisMove(port, axis2, rel_posi_mode, target_posi=1000, timeout=timeout)
+        err = dev.Motion_cfgAxisMove(port, axis2, rel_posi_mode, target_posi=1000, velo=10000, accel=100000, decel=100000, timeout=timeout)
         print(f"Motion_cfgAxisMove in axis{axis2}: {err}")
 
         err = dev.Motion_enableServoOn(port, axis2, timeout=timeout)
@@ -157,10 +157,10 @@ def main():
         err = dev.Motion_cfgLimit(port, axis3, forward_enable_false, reverse_enable_false, active_low, timeout=timeout)
         print(f"Motion_cfgLimit in axis{axis3}: {err}")
 
-        err = dev.Motion_rstEncoderPosi(port, axis3, timeout=timeout)
+        err = dev.Motion_rstEncoderPosi(port, axis3, encoder_posi=0, timeout=timeout)
         print(f"Motion_rstEncoderPosi in axis{axis3}: {err}")
 
-        err = dev.Motion_cfgAxisMove(port, axis3, rel_posi_mode, target_posi=-5000, timeout=timeout)
+        err = dev.Motion_cfgAxisMove(port, axis3, rel_posi_mode, target_posi=-5000, velo=10000, accel=100000, decel=100000, timeout=timeout)
         print(f"Motion_cfgAxisMove in axis{axis3}: {err}")
 
         err = dev.Motion_enableServoOn(port, axis3, timeout=timeout)

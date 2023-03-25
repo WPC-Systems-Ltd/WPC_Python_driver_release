@@ -63,7 +63,7 @@ async def main():
         print(f"loadCfgFile_async: {err}")
 
         ## Motion configure
-        err = await dev.Motion_cfg2AxisLinearInterpo_async(port, axis1, dest_posi1, axis2, dest_posi2, speed=2000)
+        err = await dev.Motion_cfg2AxisLinearInterpo_async(port, axis1, dest_posi1, axis2, dest_posi2, speed=2000, accel=100000, decel=100000)
         print(f"cfg2AxisLinearInterpo_async in axis{axis1} and {axis2}: {err}")
 
         ## Motion start

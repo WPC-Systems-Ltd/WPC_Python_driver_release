@@ -66,7 +66,7 @@ async def main():
         err = await dev.Motion_cfgAxis_async(port, axis, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low)
         print(f"cfgAxis_async in axis{axis}: {err}")
 
-        err = await dev.Motion_cfgAxisMove_async(port, axis, rel_posi_mode, target_posi=5000)
+        err = await dev.Motion_cfgAxisMove_async(port, axis, rel_posi_mode, target_posi=5000, velo=10000, accel=100000, decel=100000)
         print(f"cfgAxisMove_async in axis{axis}: {err}")
 
         ## Motion save configuration file

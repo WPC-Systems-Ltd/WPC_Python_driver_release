@@ -137,17 +137,9 @@ Ethan-L
 .. toctree::
    :maxdepth: 4
 
-   examples/Console/Asynchronous/EthanL/DIO/DO_blinky_pins.rst
+   examples/Console/Asynchronous/EthanL/Relay/Relay_set_channel.rst
 
-   examples/Console/Asynchronous/EthanL/DIO/DO_blinky_port.rst
-
-   examples/Console/Asynchronous/EthanL/DIO/DIO_loopback_pins.rst
-
-   examples/Console/Asynchronous/EthanL/DIO/DIO_loopback_port.rst
-
-   examples/Console/Asynchronous/EthanL/DIO/DO_write_pins.rst
-
-   examples/Console/Asynchronous/EthanL/DIO/DO_write_port.rst
+   examples/Console/Asynchronous/EthanL/Relay/Relay_read_counters.rst
 
    examples/Console/Asynchronous/EthanL/System_ETH/get_network_info.rst
 
@@ -158,10 +150,6 @@ Ethan-L
    examples/Console/Asynchronous/EthanL/Tutorial/multiple_loops_thread.rst
 
    examples/Console/Asynchronous/EthanL/Tutorial/multiple_loops_async.rst
-
-   examples/Console/Asynchronous/EthanL/Relay/Relay_set_channel.rst
-
-   examples/Console/Asynchronous/EthanL/Relay/Relay_read_counters.rst
 
 
 Ethan-O
