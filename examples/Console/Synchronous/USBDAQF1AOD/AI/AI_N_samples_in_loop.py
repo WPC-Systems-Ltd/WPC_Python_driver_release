@@ -24,11 +24,11 @@ import time
 
 from wpcsys import pywpc
 
-def loop_func(handle, port, num_of_samples=600, delay=0.005, exit_loop_time=3):
+def loop_func(handle, port, num_of_samples=600, delay=0.05, exit_loop_time=3):
     time_cal = 0
     while time_cal < exit_loop_time:
         ## data acquisition
-        data = handle.AI_readStreaming(port, num_of_samples, delay)
+        data = handle.AI_readStreaming(port, num_of_samples, delay=delay)
         if len(data) > 0:
             print(f"data in port {port}: {data}")
 

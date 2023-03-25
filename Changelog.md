@@ -1,6 +1,17 @@
 WPC Python driver release changelog
 ===================================
 
+
+v2.0.3 Date: 2023/03/25, Developer: Chunglee_people
+---------------------------------------------------
+### Added
+- Add default value in example code and API
+
+### Removed
+- DIO series example code in EthanL
+- DataLogger in HANDLE_LIST
+- Return type of Motion_checkRef
+
 v2.0.2 Date: 2023/03/22, Developer: Chunglee_people
 ---------------------------------------------------
 

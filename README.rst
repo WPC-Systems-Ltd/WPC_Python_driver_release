@@ -68,9 +68,9 @@ Quick Start
    >>> pywpc.PKG_NAME
    pywpc
    >>> pywpc.__version__
-   2.0.2
+   2.0.3
    >>> pywpc.HANDLE_LIST
-   ['DeviceFinder', 'DataLogger', 'WifiDAQE3A', 'EMotion', 'EthanA', 'EthanD', 'EthanL', 'EthanO', 'USBDAQF1D', 'USBDAQF1DSNK', 'USBDAQF1AD', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1RD', 'USBDAQF1CD']
+   ['DeviceFinder', 'WifiDAQE3A', 'EMotion', 'EthanA', 'EthanD', 'EthanL', 'EthanO', 'USBDAQF1D', 'USBDAQF1DSNK', 'USBDAQF1AD', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1RD', 'USBDAQF1CD']
 
 Install and Upgrade
 -------------------

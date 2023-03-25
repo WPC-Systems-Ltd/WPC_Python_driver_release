@@ -78,7 +78,7 @@ async def main():
         await asyncio.sleep(1) ## delay [s]
 
         ## Set AI port and get 50 points
-        data = await dev.AI_readStreaming_async(port, read_points)
+        data = await dev.AI_readStreaming_async(port, read_points, delay=0.005)
 
         ## Read acquisition data 50 points
         print(f"data in port {port}: {data}")

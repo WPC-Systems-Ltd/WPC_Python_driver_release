@@ -66,7 +66,7 @@ def main():
         print(f"Motion_loadCfgFile: {err}")
 
         ## Motion configure
-        err = dev.Motion_cfg3AxisLinearInterpo(port, axis1, dest_posi1, axis2, dest_posi2, axis3, dest_posi3, speed=2000, timeout=timeout)
+        err = dev.Motion_cfg3AxisLinearInterpo(port, axis1, dest_posi1, axis2, dest_posi2, axis3, dest_posi3, speed=2000, accel=100000, decel=100000, timeout=timeout)
         print(f"Motion_cfg3AxisLinearInterpo in port{port}: {err}")
 
         ## Motion start

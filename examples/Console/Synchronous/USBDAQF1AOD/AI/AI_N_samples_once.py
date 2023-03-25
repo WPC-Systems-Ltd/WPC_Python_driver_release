@@ -48,6 +48,7 @@ def main():
         sampling_rate = 1000
         samples = 50
         read_points = 50
+        delay = 0.05 ## second
         timeout = 3  ## second
 
         ## Get firmware model & version
@@ -79,7 +80,7 @@ def main():
         time.sleep(1) ## delay [s]
 
         ## Set AI port and get 50 points
-        data = dev.AI_readStreaming(port, read_points)
+        data = dev.AI_readStreaming(port, read_points, delay=delay)
 
         ## Read acquisition data 50 points
         print(f"data in port {port}: {data}")

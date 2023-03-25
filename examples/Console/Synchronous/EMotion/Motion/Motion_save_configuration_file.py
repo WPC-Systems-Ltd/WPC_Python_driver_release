@@ -67,7 +67,7 @@ def main():
         err = dev.Motion_cfgAxis(port, axis, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low, timeout=timeout)
         print(f"Motion_cfgAxis in axis{axis}: {err}")
 
-        err = dev.Motion_cfgAxisMove(port, axis, rel_posi_mode, target_posi=5000, timeout=timeout)
+        err = dev.Motion_cfgAxisMove(port, axis, rel_posi_mode, target_posi=5000, velo=10000, accel=100000, decel=100000, timeout=timeout)
         print(f"Motion_cfgAxisMove in axis{axis}: {err}")
 
         ## Motion save configuration file
