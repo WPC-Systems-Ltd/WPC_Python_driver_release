@@ -76,10 +76,10 @@ def main():
         err = dev.Motion_enableBreakPoint(port, axis, int(True), timeout=timeout)
         print(f"Motion_enableBreakPoint in axis{axis}: {err}")
 
-        err = dev.Motion_cfgAxisMove(port, axis, rel_posi_mode, target_posi=5000, timeout=timeout)
+        err = dev.Motion_cfgAxisMove(port, axis, rel_posi_mode, target_posi=5000, velo=10000, accel=100000, decel=100000, timeout=timeout)
         print(f"Motion_cfgAxisMove in axis{axis}: {err}")
 
-        err = dev.Motion_rstEncoderPosi(port, axis, timeout=timeout)
+        err = dev.Motion_rstEncoderPosi(port, axis, encoder_posi=0, timeout=timeout)
         print(f"Motion_rstEncoderPosi in axis{axis}: {err}")
 
         ## Servo on

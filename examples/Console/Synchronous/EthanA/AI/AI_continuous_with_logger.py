@@ -29,7 +29,7 @@ def loop_func(handle, port, num_of_samples=600, delay=0.05, exit_loop_time=3):
     time_cal = 0
     while time_cal < exit_loop_time:
         ## Data acquisition
-        data = handle.AI_readStreaming(port, num_of_samples, delay) ## Get 600 points at a time
+        data = handle.AI_readStreaming(port, num_of_samples, delay=delay) ## Get 600 points at a time
 
         if len(data) > 0:
             print(f"data in port {port}: {data}")

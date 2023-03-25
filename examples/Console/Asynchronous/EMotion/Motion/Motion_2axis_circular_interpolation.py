@@ -72,19 +72,19 @@ async def main():
         print(f"loadCfgFile_async: {err}")
 
         ## Motion configure
-        err = await dev.Motion_cfgCircularInterpo_async(port, x_axis, y_axis, center_point_x, center_point_y, finish_point_x, finish_point_y, circular_dir_cw, speed=1000)
+        err = await dev.Motion_cfgCircularInterpo_async(port, x_axis, y_axis, center_point_x, center_point_y, finish_point_x, finish_point_y, circular_dir_cw, speed=1000, accel=100000, decel=100000)
         print(f"cfgCircularInterpo_async in port{port}: {err}")
 
         err = await dev.Motion_startCircularInterpo_async(port)
         print(f"startCircularInterpo_async in axis{axis}: {err}")
 
-        err = await dev.Motion_cfgAxisMove_async(port, axis, rel_posi_mode, target_posi=5000)
+        err = await dev.Motion_cfgAxisMove_async(port, axis, rel_posi_mode, target_posi=5000, velo=10000, accel=100000, decel=100000)
         print(f"cfgAxisMove_async in axis{axis}: {err}")
 
         err = await dev.Motion_cfgJerkAndAccelMode_async(port, axis, jerk, scurve)
         print(f"cfgJerkAndAccelMode_async in axis{axis}: {err}")
 
-        err = await dev.Motion_rstEncoderPosi_async(port, axis)
+        err = await dev.Motion_rstEncoderPosi_async(port, axis, encoder_posi=0)
         print(f"rstEncoderPosi_async in axis{axis}: {err}")
 
         for i in range(4):

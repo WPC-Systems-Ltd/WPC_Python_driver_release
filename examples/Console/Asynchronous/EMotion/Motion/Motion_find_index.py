@@ -85,14 +85,14 @@ async def main():
         err = await dev.Motion_cfgEncoder_async(port, axis, active_high)
         print(f"cfgEncoder_async in axis{axis}: {err}")
 
-        err = await dev.Motion_cfgFindRef_async(port, axis, find_index, dir_reverse, search_velo=10000, search_accle=10000, approach_velo_percent=20, en_reset_posi=0, offset_posi=1500)
+        err = await dev.Motion_cfgFindRef_async(port, axis, find_index, dir_reverse, search_velo=10000, search_accle=100000, approach_velo_percent=20, en_reset_posi=0, offset_posi=1500)
         print(f"cfgFindRef_async in axis{axis}: {err}")
 
         ## Servo on
         err = await dev.Motion_enableServoOn_async(port, axis)
         print(f"enableServoOn_async in axis{axis}: {err}")
 
-        err = await dev.Motion_rstEncoderPosi_async(port, axis)
+        err = await dev.Motion_rstEncoderPosi_async(port, axis, encoder_posi=0)
         print(f"rstEncoderPosi_async in axis{axis}: {err}")
 
         ## Motion find reference

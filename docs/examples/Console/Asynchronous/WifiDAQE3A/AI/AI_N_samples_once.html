@@ -199,7 +199,7 @@
 <span class="linenos"> 78</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">## delay [s]</span>
 <span class="linenos"> 79</span>
 <span class="linenos"> 80</span>        <span class="c1">## Set AI port and get 50 points</span>
-<span class="linenos"> 81</span>        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_readStreaming_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">read_points</span><span class="p">)</span>
+<span class="linenos"> 81</span>        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_readStreaming_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">read_points</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">0.005</span><span class="p">)</span>
 <span class="linenos"> 82</span>
 <span class="linenos"> 83</span>        <span class="c1">## Read acquisition data 50 points</span>
 <span class="linenos"> 84</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;data in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>

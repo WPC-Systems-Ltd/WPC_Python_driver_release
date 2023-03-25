@@ -72,13 +72,13 @@ async def main():
         err = await dev.Motion_cfgLimit_async(port, axis, forward_enable_true, reverse_enable_true, active_low)
         print(f"cfgLimit_async in axis{axis}: {err}")
 
-        err = await dev.Motion_cfgAxisMove_async(port, axis, rel_posi_mode, target_posi=5000)
+        err = await dev.Motion_cfgAxisMove_async(port, axis, rel_posi_mode, target_posi=5000, velo=10000, accel=100000, decel=100000)
         print(f"cfgAxisMove_async in axis{axis}: {err}")
 
         err = await dev.Motion_cfgJerkAndAccelMode_async(port, axis, jerk, scurve)
         print(f"cfgJerkAndAccelMode_async in axis{axis}: {err}")
 
-        err = await dev.Motion_rstEncoderPosi_async(port, axis)
+        err = await dev.Motion_rstEncoderPosi_async(port, axis, encoder_posi=0)
         print(f"rstEncoderPosi_async in axis{axis}: {err}")
 
         ## Servo on

@@ -83,7 +83,7 @@ def main():
         err = dev.Motion_cfgLimit(port, axis, forward_enable_true, reverse_enable_true, active_low, timeout=timeout)
         print(f"Motion_cfgLimit in axis{axis}: {err}")
 
-        err = dev.Motion_cfgFindRef(port, axis, find_limit, dir_reverse, search_velo=10000, search_accle=10000, approach_velo_percent=20, en_reset_posi=0, offset_posi=1500, timeout=timeout)
+        err = dev.Motion_cfgFindRef(port, axis, find_limit, dir_reverse, search_velo=10000, search_accle=100000, approach_velo_percent=20, en_reset_posi=0, offset_posi=1500, timeout=timeout)
         print(f"Motion_cfgFindRef in axis{axis}: {err}")
 
         err = dev.Motion_cfgHome(port, axis, home_enable_false, active_low, timeout=timeout)
@@ -93,7 +93,7 @@ def main():
         err = dev.Motion_enableServoOn(port, axis, timeout=timeout)
         print(f"Motion_enableServoOn in axis{axis}: {err}")
 
-        err = dev.Motion_rstEncoderPosi(port, axis, timeout=timeout)
+        err = dev.Motion_rstEncoderPosi(port, axis, encoder_posi=0, timeout=timeout)
         print(f"Motion_rstEncoderPosi in axis{axis}: {err}")
 
         ## Motion find reference

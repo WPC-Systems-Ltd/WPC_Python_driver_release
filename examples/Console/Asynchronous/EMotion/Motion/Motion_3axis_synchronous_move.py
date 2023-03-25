@@ -125,10 +125,10 @@ async def main():
         err = await dev.Motion_cfgLimit_async(port, axis1, forward_enable_false, reverse_enable_false, active_low)
         print(f"cfgLimit_async in axis{axis1}: {err}")
 
-        err = await dev.Motion_rstEncoderPosi_async(port, axis1)
+        err = await dev.Motion_rstEncoderPosi_async(port, axis1, encoder_posi=0)
         print(f"rstEncoderPosi_async in axis{axis1}: {err}")
 
-        err = await dev.Motion_cfgAxisMove_async(port, axis1, rel_posi_mode, target_posi=1000)
+        err = await dev.Motion_cfgAxisMove_async(port, axis1, rel_posi_mode, target_posi=1000, velo=10000, accel=100000, decel=100000)
         print(f"cfgAxisMove_async in axis{axis1}: {err}")
 
         ## Servo on
@@ -142,10 +142,10 @@ async def main():
         err = await dev.Motion_cfgLimit_async(port, axis2, forward_enable_false, reverse_enable_false, active_low)
         print(f"cfgLimit_async in axis{axis2}: {err}")
 
-        err = await dev.Motion_rstEncoderPosi_async(port, axis2)
+        err = await dev.Motion_rstEncoderPosi_async(port, axis2, encoder_posi=0)
         print(f"rstEncoderPosi_async in axis{axis2}: {err}")
 
-        err = await dev.Motion_cfgAxisMove_async(port, axis2, rel_posi_mode, target_posi=1000)
+        err = await dev.Motion_cfgAxisMove_async(port, axis2, rel_posi_mode, target_posi=1000, velo=10000, accel=100000, decel=100000)
         print(f"cfgAxisMove_async in axis{axis2}: {err}")
 
         ## Servo on
@@ -159,10 +159,10 @@ async def main():
         err = await dev.Motion_cfgLimit_async(port, axis3, forward_enable_false, reverse_enable_false, active_low)
         print(f"cfgLimit_async in axis{axis3}: {err}")
 
-        err = await dev.Motion_rstEncoderPosi_async(port, axis3)
+        err = await dev.Motion_rstEncoderPosi_async(port, axis3, encoder_posi=0)
         print(f"rstEncoderPosi_async in axis{axis3}: {err}")
 
-        err = await dev.Motion_cfgAxisMove_async(port, axis3, rel_posi_mode, target_posi=-5000)
+        err = await dev.Motion_cfgAxisMove_async(port, axis3, rel_posi_mode, target_posi=-5000, velo=10000, accel=100000, decel=100000)
         print(f"cfgAxisMove_async in axis{axis3}: {err}")
 
         ## Servo on

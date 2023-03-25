@@ -24,11 +24,11 @@ import asyncio
 
 from wpcsys import pywpc
 
-async def loop_func(handle, port, num_of_samples=600, delay=0.005, exit_loop_time=3):
+async def loop_func(handle, port, num_of_samples=600, delay=0.05, exit_loop_time=3):
     time_cal = 0
     while time_cal < exit_loop_time:
         ## data acquisition
-        data = await handle.AI_readStreaming_async(port, num_of_samples, delay)
+        data = await handle.AI_readStreaming_async(port, num_of_samples, delay=delay)
         if len(data) > 0:
             print(f"data in port {port}: {data}")
 
