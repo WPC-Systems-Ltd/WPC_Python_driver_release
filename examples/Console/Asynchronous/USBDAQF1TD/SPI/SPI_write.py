@@ -52,8 +52,15 @@ async def main():
         prescaler = 64
         mode = 0    ## 0 : CPOL = 0 CPHA = 0 ## 1 : CPOL = 0 CPHA = 1
                     ## 2 : CPOL = 1 CPHA = 0 ## 3 : CPOL = 1 CPHA = 1
-        DO_port = 0
-        DO_index = [0] ## CS pin
+
+        if (port == 1){
+            DO_port = 2
+            DO_index = [0] ## CS pin
+        }
+        else if (port == 2){
+            DO_port = 3
+            DO_index = [2] ## CS pin
+        }
 
         WRITE = 0x02
         WREN = 0x06

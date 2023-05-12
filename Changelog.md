@@ -1,6 +1,10 @@
 WPC Python driver release changelog
 ===================================
 
+v2.0.4 Date: 2023/05/12, Developer: Chunglee_people
+---------------------------------------------------
+### Changed
+- Select cs pin based on the SPI port.
 
 v2.0.3 Date: 2023/03/25, Developer: Chunglee_people
 ---------------------------------------------------

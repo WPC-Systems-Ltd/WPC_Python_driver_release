@@ -45,6 +45,13 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
+        ## Set RTC
+        status = await dev.Sys_setRTC(2023, 5, 8, 15, 8, 7)
+        print(f"Set RTC status: {status}")
+
+        ## Get RTC
+        print(f"Get RTC: {await dev.Sys_getRTC()}")
+
         ## Get IP & submask
         ip_addr, submask = await dev.Net_getIPAddrAndSubmask_async()
         print(f"IP: {ip_addr}")
