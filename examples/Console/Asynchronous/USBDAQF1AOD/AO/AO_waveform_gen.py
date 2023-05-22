@@ -57,9 +57,11 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
+        
         ## Open AO
         err = await dev.AO_open_async(port)
         print(f"AO_open_async in port{port}: {err}")
+        
 
         ## Set AO enabled channels
         err = await dev.AO_setEnableChannels_async(port, [0, 1])
@@ -104,9 +106,11 @@ async def main():
         err = await dev.AO_closeStreaming_async(port)
         print(f"AO_closeStreaming_async in port{port}: {err}")
 
+        
         ## Close AO
         err = await dev.AO_close_async(port)
         print(f"AO_close_async in port{port}: {err}")
+        
     except Exception as err:
         pywpc.printGenericError(err)
 

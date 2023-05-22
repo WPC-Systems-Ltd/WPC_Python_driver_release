@@ -56,9 +56,11 @@ def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
+        
         ## Open port
         err = dev.AI_open(port, timeout=timeout)
         print(f"AI_open in port{port}: {err}")
+        
 
         ## Set AI port and acquisition mode to N-samples mode (1)
         err = dev.AI_setMode(port, mode, timeout=timeout)
@@ -85,9 +87,11 @@ def main():
         ## Read acquisition data 50 points
         print(f"data in port {port}: {data}")
 
+        
         ## Close port
         err = dev.AI_close(port, timeout=timeout)
         print(f"AI_close in port{port}: {err}")
+        
     except Exception as err:
         pywpc.printGenericError(err)
 

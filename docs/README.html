@@ -139,9 +139,9 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_NAME</span>
 <span class="go">pywpc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pywpc</span><span class="o">.</span><span class="n">__version__</span>
-<span class="go">2.0.3</span>
+<span class="go">2.0.4</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pywpc</span><span class="o">.</span><span class="n">HANDLE_LIST</span>
-<span class="go">[&#39;DeviceFinder&#39;, &#39;WifiDAQE3A&#39;, &#39;EMotion&#39;, &#39;EthanA&#39;, &#39;EthanD&#39;, &#39;EthanL&#39;, &#39;EthanO&#39;, &#39;USBDAQF1D&#39;, &#39;USBDAQF1DSNK&#39;, &#39;USBDAQF1AD&#39;, &#39;USBDAQF1AOD&#39;, &#39;USBDAQF1TD&#39;, &#39;USBDAQF1RD&#39;, &#39;USBDAQF1CD&#39;]</span>
+<span class="go">[&#39;DeviceFinder&#39;, &#39;WifiDAQE3A&#39;, &#39;STEM&#39;, &#39;EMotion&#39;, &#39;EthanA&#39;, &#39;EthanD&#39;, &#39;EthanL&#39;, &#39;EthanO&#39;, &#39;USBDAQF1D&#39;, &#39;USBDAQF1DSNK&#39;, &#39;USBDAQF1AD&#39;, &#39;USBDAQF1AOD&#39;, &#39;USBDAQF1TD&#39;, &#39;USBDAQF1RD&#39;, &#39;USBDAQF1CD&#39;]</span>
 </pre></div>
 </div>
 </section>
@@ -173,7 +173,8 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <ul class="simple">
 <li><p>EMotion</p></li>
 </ul>
-<p>Ethernet based DAQ card</p>
+<p>Ethernet based DAQ card
+- STEM</p>
 <ul class="simple">
 <li><p>Ethan-A</p></li>
 <li><p>Ethan-D</p></li>
@@ -197,206 +198,6 @@ You can download WPC Device Manager by <a class="reference external" href="https
 </section>
 <section id="i-o-function-table">
 <h1>I/O Function Table<a class="headerlink" href="#i-o-function-table" title="Permalink to this heading"></a></h1>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 22%" />
-<col style="width: 4%" />
-<col style="width: 4%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 5%" />
-<col style="width: 7%" />
-<col style="width: 7%" />
-<col style="width: 7%" />
-<col style="width: 5%" />
-<col style="width: 4%" />
-<col style="width: 8%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p>Model</p></td>
-<td><p>AI</p></td>
-<td><p>AO</p></td>
-<td><p>DI</p></td>
-<td><p>DO</p></td>
-<td><p>CAN</p></td>
-<td><p>UART</p></td>
-<td><p>SPI</p></td>
-<td><p>I2C</p></td>
-<td><p>RTD</p></td>
-<td><p>TC</p></td>
-<td><p>Motion</p></td>
-</tr>
-<tr class="row-even"><td><p>Emotion</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>Ethan-A</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Ethan-D</p></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Ethan-L</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Ethan-O</p></td>
-<td></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>USB-DAQ-F1-D</p></td>
-<td></td>
-<td></td>
-<td><p>0, 1, 2, 3</p></td>
-<td><p>0, 1, 2, 3</p></td>
-<td></td>
-<td><p>1, 2</p></td>
-<td><p>1, 2</p></td>
-<td><p>1, 2</p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>USB-DAQ-F1-DSNK</p></td>
-<td></td>
-<td></td>
-<td><p>0, 1</p></td>
-<td><p>2, 3</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>USB-DAQ-F1-AD</p></td>
-<td><p>0</p></td>
-<td></td>
-<td><p>0, 1, 2, 3</p></td>
-<td><p>0, 1, 2, 3</p></td>
-<td></td>
-<td><p>1, 2</p></td>
-<td><p>2</p></td>
-<td><p>1, 2</p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>USB-DAQ-F1-TD</p></td>
-<td></td>
-<td></td>
-<td><p>0, 1, 2, 3</p></td>
-<td><p>0, 1, 2, 3</p></td>
-<td></td>
-<td><p>1, 2</p></td>
-<td><p>2</p></td>
-<td><p>1, 2</p></td>
-<td></td>
-<td><p>1</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>USB-DAQ-F1-RD</p></td>
-<td></td>
-<td></td>
-<td><p>0, 1, 2, 3</p></td>
-<td><p>0, 1, 2, 3</p></td>
-<td></td>
-<td><p>1, 2</p></td>
-<td><p>2</p></td>
-<td><p>1, 2</p></td>
-<td><p>1</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>USB-DAQ-F1-CD</p></td>
-<td></td>
-<td></td>
-<td><p>0, 1, 2, 3</p></td>
-<td><p>0, 1, 2, 3</p></td>
-<td><p>1</p></td>
-<td><p>1, 2</p></td>
-<td><p>2</p></td>
-<td><p>1, 2</p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>USB-DAQ-F1-AOD</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>0, 1, 2, 3</p></td>
-<td><p>0, 1, 2, 3</p></td>
-<td></td>
-<td><p>1, 2</p></td>
-<td></td>
-<td><p>1, 2</p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Wifi-DAQ-E3-A</p></td>
-<td><p>1</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
 <p>Remark: <cite>TC</cite> stands for <cite>Thermocouple</cite></p>
 <p>Take <cite>USB-DAQ-F1-AOD</cite> for example:</p>
 <ul class="simple">

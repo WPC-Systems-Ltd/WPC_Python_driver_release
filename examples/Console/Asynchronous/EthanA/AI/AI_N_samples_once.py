@@ -54,9 +54,11 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
+        
         ## Open port
         err = await dev.AI_open_async(port)
         print(f"AI_open_async in port{port}: {err}")
+        
 
         ## Set AI port and acquisition mode to N-samples mode (1)
         err = await dev.AI_setMode_async(port, mode)
@@ -83,9 +85,11 @@ async def main():
         ## Read acquisition data 50 points
         print(f"data in port {port}: {data}")
 
+        
         ## Close port
         err = await dev.AI_close_async(port)
         print(f"AI_close_async in port{port}: {err}")
+        
     except Exception as err:
         pywpc.printGenericError(err)
 

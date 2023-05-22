@@ -50,6 +50,7 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
+        
         ## Open AI
         err = await dev.AI_open_async(port)
         print(f"AI_open_async in port{port}: {err}")
@@ -57,6 +58,7 @@ async def main():
         ## Open AO
         err = await dev.AO_open_async(port)
         print(f"AO_open_async in port{port}: {err}")
+        
 
         ## Set AI port and data acquisition
         data = await dev.AI_readOnDemand_async(port)
@@ -82,6 +84,7 @@ async def main():
         data = await dev.AI_readOnDemand_async(port)
         print(f"AI data in port{port}: {data}")
 
+        
         ## Close AI
         err = await dev.AI_close_async(port)
         print(f"AI_close_async in port{port}: {err}")
@@ -89,6 +92,7 @@ async def main():
         ## Close AO
         err = await dev.AO_close_async(port)
         print(f"AO_close_async in port{port}: {err}")
+        
     except Exception as err:
         pywpc.printGenericError(err)
 

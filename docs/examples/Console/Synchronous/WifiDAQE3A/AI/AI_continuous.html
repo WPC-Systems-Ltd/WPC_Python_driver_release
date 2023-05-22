@@ -53,6 +53,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../../../examples_console_Synchronous.html">Example Codes - Console (sync)</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../../../../examples_console_Synchronous.html#device-finder">Device finder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../examples_console_Synchronous.html#stem">STEM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../examples_console_Synchronous.html#emotion">EMotion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../examples_console_Synchronous.html#ethan-a">Ethan-A</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../examples_console_Synchronous.html#ethan-d">Ethan-D</a></li>
@@ -182,46 +183,50 @@
 <span class="linenos"> 65</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="linenos"> 66</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 <span class="linenos"> 67</span>
-<span class="linenos"> 68</span>        <span class="c1">## Open port</span>
-<span class="linenos"> 69</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_open</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 70</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_open in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 71</span>
-<span class="linenos"> 72</span>        <span class="c1">## Set AI port and acquisition mode to continuous mode (2)</span>
-<span class="linenos"> 73</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_setMode</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 74</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_setMode </span><span class="si">{</span><span class="n">mode</span><span class="si">}</span><span class="s2"> in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 75</span>
-<span class="linenos"> 76</span>        <span class="c1">## Set AI port and sampling rate to 1k (Hz)</span>
-<span class="linenos"> 77</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_setSamplingRate</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">sampling_rate</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 78</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_setSamplingRate </span><span class="si">{</span><span class="n">sampling_rate</span><span class="si">}</span><span class="s2"> in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 79</span>
-<span class="linenos"> 80</span>        <span class="c1">## Set AI port and start acquisition</span>
-<span class="linenos"> 81</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_start</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 82</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_start in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 83</span>
-<span class="linenos"> 84</span>        <span class="c1">## Set loop parameters</span>
-<span class="linenos"> 85</span>        <span class="n">num_of_samples</span> <span class="o">=</span> <span class="mi">600</span>
-<span class="linenos"> 86</span>        <span class="n">delay</span> <span class="o">=</span> <span class="mf">0.05</span>
-<span class="linenos"> 87</span>        <span class="n">exit_loop_time</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="linenos"> 88</span>
-<span class="linenos"> 89</span>        <span class="c1">## Start loop</span>
-<span class="linenos"> 90</span>        <span class="n">loop_func</span><span class="p">(</span><span class="n">dev</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">num_of_samples</span><span class="o">=</span><span class="n">num_of_samples</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="n">delay</span><span class="p">,</span> <span class="n">exit_loop_time</span><span class="o">=</span><span class="n">exit_loop_time</span><span class="p">)</span>
-<span class="linenos"> 91</span>
-<span class="linenos"> 92</span>        <span class="c1">## Close port</span>
-<span class="linenos"> 93</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_close</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 94</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_close in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 95</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos"> 96</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="linenos"> 97</span>
-<span class="linenos"> 98</span>    <span class="c1">## Disconnect device</span>
-<span class="linenos"> 99</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
-<span class="linenos">100</span>
-<span class="linenos">101</span>    <span class="c1">## Release device handle</span>
-<span class="linenos">102</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="linenos">103</span>
-<span class="linenos">104</span>    <span class="k">return</span>
-<span class="linenos">105</span>
-<span class="linenos">106</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">107</span>    <span class="n">main</span><span class="p">()</span>
+<span class="linenos"> 68</span>        
+<span class="linenos"> 69</span>        <span class="c1">## Open port</span>
+<span class="linenos"> 70</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_open</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 71</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_open in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 72</span>        
+<span class="linenos"> 73</span>
+<span class="linenos"> 74</span>        <span class="c1">## Set AI port and acquisition mode to continuous mode (2)</span>
+<span class="linenos"> 75</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_setMode</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 76</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_setMode </span><span class="si">{</span><span class="n">mode</span><span class="si">}</span><span class="s2"> in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 77</span>
+<span class="linenos"> 78</span>        <span class="c1">## Set AI port and sampling rate to 1k (Hz)</span>
+<span class="linenos"> 79</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_setSamplingRate</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">sampling_rate</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 80</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_setSamplingRate </span><span class="si">{</span><span class="n">sampling_rate</span><span class="si">}</span><span class="s2"> in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 81</span>
+<span class="linenos"> 82</span>        <span class="c1">## Set AI port and start acquisition</span>
+<span class="linenos"> 83</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_start</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 84</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_start in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 85</span>
+<span class="linenos"> 86</span>        <span class="c1">## Set loop parameters</span>
+<span class="linenos"> 87</span>        <span class="n">num_of_samples</span> <span class="o">=</span> <span class="mi">600</span>
+<span class="linenos"> 88</span>        <span class="n">delay</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="linenos"> 89</span>        <span class="n">exit_loop_time</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="linenos"> 90</span>
+<span class="linenos"> 91</span>        <span class="c1">## Start loop</span>
+<span class="linenos"> 92</span>        <span class="n">loop_func</span><span class="p">(</span><span class="n">dev</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">num_of_samples</span><span class="o">=</span><span class="n">num_of_samples</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="n">delay</span><span class="p">,</span> <span class="n">exit_loop_time</span><span class="o">=</span><span class="n">exit_loop_time</span><span class="p">)</span>
+<span class="linenos"> 93</span>
+<span class="linenos"> 94</span>        
+<span class="linenos"> 95</span>        <span class="c1">## Close port</span>
+<span class="linenos"> 96</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_close</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 97</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_close in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 98</span>        
+<span class="linenos"> 99</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos">100</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">101</span>
+<span class="linenos">102</span>    <span class="c1">## Disconnect device</span>
+<span class="linenos">103</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+<span class="linenos">104</span>
+<span class="linenos">105</span>    <span class="c1">## Release device handle</span>
+<span class="linenos">106</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos">107</span>
+<span class="linenos">108</span>    <span class="k">return</span>
+<span class="linenos">109</span>
+<span class="linenos">110</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">111</span>    <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>

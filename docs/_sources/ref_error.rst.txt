@@ -21,79 +21,82 @@ Error Code Table
      - Occurrence AI queue overflow.
    * - 519000
      - Warning
-     - External library "libusb-1.0.dll" not found at indicated path Will look at the default path instead
+     - External library "libusb-1.0.dll" not found at indicated path will look at the default path instead
    * - -7001
      - 
-     - Functionality not enabled in firmware.
+     - The functionality is not enabled in the firmware
    * - -7002
      - 
-     - Firmware pin mode index error.
+     - The pin mode index error in the firmware.
    * - -7003
      - 
-     - Firmware HAL handle index error.
+     - The HAL handle index error in the firmware.
    * - -7004
      - 
-     - Firmware HAL error.
+     - The HAL error in the firmware.
    * - -7005
      - 
-     - Firmware I2C error.
+     - The I2C error in the firmware.
    * - -7006
      - 
-     - Firmware SPI error.
+     - The SPI error in the firmware.
    * - -7007
      - 
-     - Firmware UART error.
+     - The UART error in the firmware.
    * - -7008
      - 
-     - Firmware error placeholder.
+     - The placeholder error in the firmware.
    * - -7009
      - 
-     - Firmware EEPROM error.
+     - The EEPROM error in the firmware.
    * - -7010
      - 
-     - Firmware OLED error.
+     - The OLED error in the firmware.
    * - -7011
      - 
-     - Firmware system error.
+     - The system error in the firmware.
    * - -7012
      - 
-     - Firmware error placeholder.
+     - The placeholder error in the firmware.
    * - -7013
      - 
-     - Firmware DIO error.
+     - The DIO error in the firmware.
    * - -7014
      - 
-     - Firmware motion error.
+     - The motion error in the firmware.
    * - -7015
      - 
-     - Firmware AI error.
+     - The AI error in the firmware.
    * - -7016
      - 
-     - Firmware AO error.
+     - The AO error in the firmware.
    * - -7017
      - 
-     - Firmware thermal error.
+     - The thermal error in the firmware.
    * - -7018
      - 
-     - Firmware CAN error.
+     - The CAN error in the firmware.
    * - -7019
      - 
-     - Firmware USB read/write error.
+     - The USB read/write error in the firmware.
    * - -7020
      - 
-     - Firmware TCP read/write error.
+     - The TCP read/write error in the firmware.
    * - -7021
      - 
-     - Firmware UDP read/write error.
+     - The UDP read/write error in the firmware.
    * - -7022
      - 
-     - Firmware bootloader error.
+     - The bootloader error in the firmware.
    * - -7023
      - 
-     - Firmware commands error.
+     - The commands error in the firmware.
+   * - -7801
+     - 
+     - Please ensure that the motion slot is restricted to the range of 1 to 4.
    * - -7901
      - 
-     - Relay counter index error, it must be in 0~5 or -1.
+     - Please ensure that the relay counter index is restricted to the range of 0 to 5 or -1.
    * - -8001
      - 
      - Failed to connect to WPC DAQ. Please check USB plugin status and serial number.
@@ -108,19 +111,19 @@ Error Code Table
      - Receive packet timeout.
    * - -8009
      - 
-     - Invalid pin index.
+     - The pin index is invalid
    * - -8010
      - 
      - Inconsistency between the number of pins & the number of values.
    * - -8011
      - 
-     - Inconsistency between the type of pins & the type of values.
+     - There is a discrepancy in the data types between the pins and the corresponding values
    * - -8012
      - 
-     - Unsupported data type.
+     - The data type is incompatible or not supported.
    * - -8014
      - 
-     - Input value not in range.
+     - The input value is not the acceptable range.
    * - -8015
      - 
      - The Ini file extension name is not correct.

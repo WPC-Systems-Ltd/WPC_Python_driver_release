@@ -58,9 +58,11 @@ def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
+        
         ## Open AO
         err = dev.AO_open(port, timeout=timeout)
         print(f"AO_open in port{port}: {err}")
+        
 
         ## Set AO enabled channels
         err = dev.AO_setEnableChannels(port, [0,1], timeout=timeout)
@@ -105,9 +107,11 @@ def main():
         err = dev.AO_closeStreaming(port, timeout=timeout)
         print(f"AO_closeStreaming in port{port}: {err}")
 
+        
         ## Close AO
         err = dev.AO_close(port)
         print(f"AO_close in port{port}: {err}")
+        
     except Exception as err:
         pywpc.printGenericError(err)
 

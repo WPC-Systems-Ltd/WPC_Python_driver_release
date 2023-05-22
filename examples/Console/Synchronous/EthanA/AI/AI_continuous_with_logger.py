@@ -80,9 +80,11 @@ def main():
         err = dev.Logger_writeHeader(["CH0","CH1","CH2","CH3","CH4","CH5","CH6","CH7"])
         print(f"Logger_writeHeader: {err}")
 
+        
         ## Open port
         err = dev.AI_open(port, timeout=timeout)
         print(f"AI_open in port{port}: {err}")
+        
 
         ## Set AI port and acquisition mode to continuous mode (2)
         err = dev.AI_setMode(port, mode, timeout=timeout)
@@ -104,9 +106,11 @@ def main():
         ## Start loop
         loop_func(dev, port, num_of_samples=num_of_samples, delay=delay, exit_loop_time=exit_loop_time)
 
+        
         ## Close port
         err = dev.AI_close(port, timeout=timeout)
         print(f"AI_close in port{port}: {err}")
+        
     except Exception as err:
         pywpc.printGenericError(err)
 

@@ -64,9 +64,11 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
+        
         ## Open port
         err = await dev.AI_open_async(port)
         print(f"AI_open_async in port{port}: {err}")
+        
 
         ## Set AI port and acquisition mode to continuous mode (2)
         err = await dev.AI_setMode_async(port, mode)
@@ -88,9 +90,11 @@ async def main():
         ## Start loop
         await loop_func(dev, port, num_of_samples=num_of_samples, delay=delay, exit_loop_time=exit_loop_time)
 
+        
         ## Close port
         err = await dev.AI_close_async(port)
         print(f"AI_close_async in port{port}: {err}")
+        
     except Exception as err:
         pywpc.printGenericError(err)
 
