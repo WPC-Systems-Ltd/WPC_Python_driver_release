@@ -48,6 +48,7 @@ async def main():
         sampling_rate = 1000
         samples = 50
         read_points = 50
+        chip_select = [0, 1]
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -55,29 +56,43 @@ async def main():
         print("Firmware version: " + driver_info[-1])
 
         
-        ## Set Slot to AIO mode
-        err = await dev.Sys_setSlotAIOMode_async(port)
-        print(f"Sys_setSlotAIOMode_async in port{port}: {err}")
+        ## Get port mode
+        port_mode = await dev.Sys_getPortMode_async(port)
+        print("Slot mode: ", port_mode)
 
-        ## Get Slot mode
-        print(await dev.Sys_getSlotMode_async(port))
+        if port_mode != "AIO":
+            ## Set port to AIO mode
+            err = await dev.Sys_setPortAIOMode_async(port)
+            print(f"Sys_setPortAIOMode_async in port {port}: {err}")
+
+        ## Get port mode
+        port_mode = await dev.Sys_getPortMode_async(port)
+        print("Slot mode: ", port_mode)
+
+        ## Open port
+        err = await dev.AI_open_async(port)
+        print(f"AI_open_async in port {port}: {err}")
+
+        ## Enable CS
+        err = await dev.AI_enableCS_async(port, chip_select)
+        print(f"AI_enableCS_async in port {port}: {err}")
         
 
         ## Set AI port and acquisition mode to N-samples mode (1)
         err = await dev.AI_setMode_async(port, mode)
-        print(f"AI_setMode_async {mode} in port{port}: {err}")
+        print(f"AI_setMode_async {mode} in port {port}: {err}")
 
         ## Set AI port and sampling rate to 1k (Hz)
         err = await dev.AI_setSamplingRate_async(port, sampling_rate)
-        print(f"AI_setSamplingRate_async {sampling_rate} in port{port}: {err}")
+        print(f"AI_setSamplingRate_async {sampling_rate} in port {port}: {err}")
 
         ## Set AI port and # of samples to 50 (pts)
         err = await dev.AI_setNumSamples_async(port, samples)
-        print(f"AI_setNumSamples_async {samples} in port{port}: {err}")
+        print(f"AI_setNumSamples_async {samples} in port {port}: {err}")
 
         ## Set AI port and start acquisition
         err = await dev.AI_start_async(port)
-        print(f"AI_start_async in port{port}: {err}")
+        print(f"AI_start_async in port {port}: {err}")
 
         ## Wait 1 seconds for acquisition
         await asyncio.sleep(1) ## delay [s]
@@ -86,9 +101,11 @@ async def main():
         data = await dev.AI_readStreaming_async(port, read_points, delay=0.005)
 
         ## Read acquisition data 50 points
-        print(f"data in port {port}: {data}")
+        print(f"data in port {port}: {data[0]}")
 
-        
+        ## Close port
+        err = await dev.AI_close_async(port)
+        print(f"AI_close_async in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

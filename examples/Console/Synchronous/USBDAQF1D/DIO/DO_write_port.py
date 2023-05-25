@@ -52,22 +52,22 @@ def main():
 
         ## Open all pins and set it to digital output
         err = dev.DO_openPort(port, timeout=timeout)
-        print(f"DO_openPort in port{port}: {err}")
+        print(f"DO_openPort in port {port}: {err}")
 
         ## Set pin0, pin3 and pin4 to high, others to low
         err = dev.DO_writePort(port, [0,0,0,1,1,0,0,1], timeout=timeout)
-        print(f"DO_writePort in port{port}: {err}")
+        print(f"DO_writePort in port {port}: {err}")
 
         ## Wait for 1 seconds to see led status
         time.sleep(1) ## delay [s]
 
         ## Set pin7 and pin6 to high, others to low (1100 0000 in binary) (0xC0 in hex)
         err = dev.DO_writePort(port, 0xC0, timeout=timeout)
-        print(f"DO_writePort in port{port}: {err}")
+        print(f"DO_writePort in port {port}: {err}")
 
         ## Close all pins with digital output
         err = dev.DO_closePort(port, timeout=timeout)
-        print(f"DO_closePort in port{port}: {err}")
+        print(f"DO_closePort in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

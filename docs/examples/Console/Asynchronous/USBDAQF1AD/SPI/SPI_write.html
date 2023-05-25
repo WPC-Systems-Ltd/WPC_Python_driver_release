@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SPI write &mdash; WPC Python driver 2.0.4 documentation</title>
+  <title>SPI write &mdash; WPC Python driver 2.1.1 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.0.4
+                2.1.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -213,7 +213,7 @@
 <span class="linenos"> 80</span>
 <span class="linenos"> 81</span>        <span class="c1">## Open SPI</span>
 <span class="linenos"> 82</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">SPI_open_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos"> 83</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SPI_open_async in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 83</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SPI_open_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 84</span>
 <span class="linenos"> 85</span>        <span class="c1">## Set CS(pin0) to high</span>
 <span class="linenos"> 86</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins_async</span><span class="p">(</span><span class="n">DO_port</span><span class="p">,</span> <span class="n">DO_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
@@ -225,19 +225,19 @@
 <span class="linenos"> 92</span>
 <span class="linenos"> 93</span>        <span class="c1">## Set SPI port and set datasize to 8-bits data</span>
 <span class="linenos"> 94</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">SPI_setDataSize_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">datasize</span><span class="p">)</span>
-<span class="linenos"> 95</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SPI_setDataSize_async in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 95</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SPI_setDataSize_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 96</span>
 <span class="linenos"> 97</span>        <span class="c1">## Set SPI port and set first_bit to MSB first</span>
 <span class="linenos"> 98</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">SPI_setFirstBit_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">first_bit</span><span class="p">)</span>
-<span class="linenos"> 99</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SPI_setFirstBit_async in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 99</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SPI_setFirstBit_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">100</span>
 <span class="linenos">101</span>        <span class="c1">## Set SPI port and set prescaler to 64</span>
 <span class="linenos">102</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">SPI_setPrescaler_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">prescaler</span><span class="p">)</span>
-<span class="linenos">103</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SPI_setPrescaler_async in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">103</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SPI_setPrescaler_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">104</span>
 <span class="linenos">105</span>        <span class="c1">## Set SPI port and set CPOL and CPHA to 0 (mode 0)</span>
 <span class="linenos">106</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">SPI_setMode_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
-<span class="linenos">107</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SPI_setMode_async in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">107</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SPI_setMode_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">108</span>
 <span class="linenos">109</span>        <span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos">110</span><span class="sd">        Write data via SPI</span>
@@ -249,7 +249,7 @@
 <span class="linenos">116</span>
 <span class="linenos">117</span>        <span class="c1">## Write WREN byte</span>
 <span class="linenos">118</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">SPI_write_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="p">[</span><span class="n">WREN</span><span class="p">])</span>
-<span class="linenos">119</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SPI_write_async in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">119</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SPI_write_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">120</span>
 <span class="linenos">121</span>        <span class="c1">## Set CS(pin0) to high</span>
 <span class="linenos">122</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins_async</span><span class="p">(</span><span class="n">DO_port</span><span class="p">,</span> <span class="n">DO_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
@@ -265,7 +265,7 @@
 <span class="linenos">132</span>
 <span class="linenos">133</span>        <span class="c1">## Write data byte 0x55 in to address 0x0002</span>
 <span class="linenos">134</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">SPI_write_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="p">[</span><span class="n">WRITE</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x02</span><span class="p">,</span> <span class="mh">0x55</span><span class="p">])</span>
-<span class="linenos">135</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SPI_write_async in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">135</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SPI_write_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">136</span>
 <span class="linenos">137</span>        <span class="c1">## Set CS(pin0) to high</span>
 <span class="linenos">138</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins_async</span><span class="p">(</span><span class="n">DO_port</span><span class="p">,</span> <span class="n">DO_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
@@ -277,7 +277,7 @@
 <span class="linenos">144</span>
 <span class="linenos">145</span>        <span class="c1">## Close SPI</span>
 <span class="linenos">146</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">SPI_close_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos">147</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SPI_close_async in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">147</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SPI_close_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">148</span>
 <span class="linenos">149</span>        <span class="c1">## Close pin0 with digital output</span>
 <span class="linenos">150</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_closePins_async</span><span class="p">(</span><span class="n">DO_port</span><span class="p">,</span> <span class="n">DO_index</span><span class="p">)</span>

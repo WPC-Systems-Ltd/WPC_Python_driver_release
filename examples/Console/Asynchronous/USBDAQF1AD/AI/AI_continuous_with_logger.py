@@ -32,10 +32,10 @@ async def loop_func(handle, port, num_of_samples=600, delay=0.05, exit_loop_time
         data = await handle.AI_readStreaming_async(port, num_of_samples, delay=delay) ## Get 600 points at a time
 
         if len(data) > 0:
-            print(f"data in port {port}: {data}")
+            print(f"data in port {port}: {data[0]}")
 
             ## Write data into CSV file
-            handle.Logger_write2DList(data)
+            handle.Logger_write2DList(data[0])
 
         ## Wait
         await asyncio.sleep(delay)  ## delay [s]
@@ -62,6 +62,7 @@ async def main():
         port = 0 ## Depend on your device
         mode = 2  ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 1000
+        chip_select = [0, 1]
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -79,20 +80,20 @@ async def main():
         
         ## Open port
         err = await dev.AI_open_async(port)
-        print(f"AI_open_async in port{port}: {err}")
+        print(f"AI_open_async in port {port}: {err}")
         
 
         ## Set AI port and acquisition mode to continuous mode (2)
         err = await dev.AI_setMode_async(port, mode)
-        print(f"AI_setMode_async {mode} in port{port}: {err}")
+        print(f"AI_setMode_async {mode} in port {port}: {err}")
 
         ## Set AI port and sampling rate to 1k (Hz)
         err = await dev.AI_setSamplingRate_async(port, sampling_rate)
-        print(f"AI_setSamplingRate_async {sampling_rate} in port{port}: {err}")
+        print(f"AI_setSamplingRate_async {sampling_rate} in port {port}: {err}")
 
         ## Set AI port and start acquisition
         err = await dev.AI_start_async(port)
-        print(f"AI_start_async in port{port}: {err}")
+        print(f"AI_start_async in port {port}: {err}")
 
         ## Set loop parameters
         num_of_samples = 600
@@ -102,11 +103,9 @@ async def main():
         ## Start loop
         await loop_func(dev, port, num_of_samples=num_of_samples, delay=delay, exit_loop_time=exit_loop_time)
 
-        
         ## Close port
         err = await dev.AI_close_async(port)
-        print(f"AI_close_async in port{port}: {err}")
-        
+        print(f"AI_close_async in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

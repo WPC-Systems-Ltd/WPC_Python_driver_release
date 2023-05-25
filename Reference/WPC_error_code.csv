@@ -26,7 +26,7 @@ Error code,Error message
 -7021,The UDP read/write error in the firmware.
 -7022,The bootloader error in the firmware.
 -7023,The commands error in the firmware.
--7801,Please ensure that the motion slot is restricted to the range of 1 to 4.
+-7801,STEM port not available or already occupied by other process.
 -7901,Please ensure that the relay counter index is restricted to the range of 0 to 5 or -1.
 -8001,Failed to connect to WPC DAQ. Please check USB plugin status and serial number.
 -8002,Failed to connect to WPC DAQ. Please check network status and IP address.
@@ -42,6 +42,7 @@ Error code,Error message
 -8101,DI port not avaliable or already occupied by other process.
 -8102,DO port not available or already occupied by other process.
 -8201,AI port not available or already occupied by other process.
+-8202,The specified AI chip select is invalid.
 -8204,AO port not available or already occupied by other process.
 -8206,The specified AO generation mode is invalid.
 -8207,The specified AO span mode is invalid.

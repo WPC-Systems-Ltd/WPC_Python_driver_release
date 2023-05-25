@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DIO loopback pins &mdash; WPC Python driver 2.0.4 documentation</title>
+  <title>DIO loopback pins &mdash; WPC Python driver 2.1.1 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.0.4
+                2.1.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -63,13 +63,37 @@
 <li class="toctree-l3"><a class="reference internal" href="../AO/AO_write_all_channels.html">AO write all channels</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../AO/AO_write_one_channel.html">AO write one channel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../AO/AO_waveform_gen.html">AO waveform generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../AIO/AIO_one_channel_loopback.html">AIO one channel loopback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../AIO/AIO_all_channels_loopback.html">AIO all channels loopback</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DO_blinky_pins.html">DO blinky pins</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DO_blinky_port.html">DO blinky port</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">DIO loopback pins</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DIO_loopback_port.html">DIO loopback port</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DO_write_pins.html">DO write pins</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DO_write_port.html">DO write port</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../I2C/I2C_write_read.html">I2C write and read</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_servo_on.html">Motion servo on</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_find_home.html">Motion find home</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_find_index.html">Motion find index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_find_limit.html">Motion find limit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_get_logical_position.html">Motion get logical position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_load_configuration_file.html">Motion load config file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_save_configuration_file.html">Motion save config file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_position_blending.html">Motion position blending</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_velocity_blending.html">Motion velocity blending</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_velocity_blending_acceleration.html">Motion acceleration blending</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_1axis_move.html">Motion 1axis move</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_1axis_move_with_alarm_in.html">Motion 1axis move with alarm in</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_1axis_move_with_breakpoint.html">Motion 1axis move with breakpoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_1axis_move_with_capture.html">Motion 1axis move with capture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_1axis_move_with_configuration_file.html">Motion 1axis move with config file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_1axis_move_with_inposition.html">Motion 1axis move with inposition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_1axis_move_with_S_curve_acceleration.html">Motion 1axis move with Scurve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_2axis_circular_interpolation.html">Motion 2axis circular interpo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_2axis_linear_interpolation.html">Motion 2axis linear interpo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_3axis_helical_interpolation.html">Motion 3axis helical interpo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_3axis_linear_interpolation.html">Motion 3axis linear interpo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_3axis_asynchronous_move.html">Motion 3axis async move</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_3axis_synchronous_move.html">Motion 3axis sync move</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../System_ETH/get_network_info.html">System get network info</a></li>
 </ul>
 </li>
@@ -180,7 +204,7 @@
 <span class="linenos">53</span>
 <span class="linenos">54</span>        <span class="c1">## Open pin0, pin1, pin2, pin3 and pin4 with digital output</span>
 <span class="linenos">55</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_openPins</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">56</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DO_openPins in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">56</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DO_openPins in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">57</span>
 <span class="linenos">58</span>        <span class="c1">## Set pin0 and pin1 to high, others to low</span>
 <span class="linenos">59</span>        <span class="n">all_pin_state</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
@@ -188,19 +212,19 @@
 <span class="linenos">61</span>
 <span class="linenos">62</span>        <span class="c1">## Open pin5, pin6 and pin7 with digital output</span>
 <span class="linenos">63</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">DI_openPins</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">64</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DI_openPins in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">64</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DI_openPins in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">65</span>
 <span class="linenos">66</span>        <span class="c1">## Read pin5, pin6 and pin7 state</span>
 <span class="linenos">67</span>        <span class="n">state_list</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">DI_readPins</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">68</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;state_list in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">state_list</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">68</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;state_list in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">state_list</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">69</span>
 <span class="linenos">70</span>        <span class="c1">## Close pin0, pin1, pin2, pin3 and pin4 with digital output</span>
 <span class="linenos">71</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_closePins</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">72</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DO_closePins in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">72</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DO_closePins in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">73</span>
 <span class="linenos">74</span>        <span class="c1">## Close pin5, pin6 and pin7 with digital input</span>
 <span class="linenos">75</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">DI_closePins</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">76</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DI_closePins in port</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">76</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DI_closePins in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">77</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos">78</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="linenos">79</span>

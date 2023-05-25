@@ -52,15 +52,15 @@ async def main():
 
         ## Open pin0, pin1, pin2, pin3 and pin4 with digital output
         err = await dev.DO_openPins_async(port, [0,1,2,3,4])
-        print(f"DO_openPins_async in port{port}: {err}")
+        print(f"DO_openPins_async in port {port}: {err}")
 
         ## Set pin0 and pin1 to high, others to low
         err = await dev.DO_writePins_async(port, [0,1,2,3,4], [1,1,0,0,0])
-        print(f"DO_writePins_async in port{port}: {err}")
+        print(f"DO_writePins_async in port {port}: {err}")
 
         ## Open pin5, pin6 and pin7 with digital output
         err = await dev.DI_openPins_async(port, [5,6,7])
-        print(f"DI_openPins_async in port{port}: {err}")
+        print(f"DI_openPins_async in port {port}: {err}")
 
         ## Read pin5, pin6 and pin7 state
         state_list = await dev.DI_readPins_async(port, [7,5,6])
@@ -68,11 +68,11 @@ async def main():
 
         ## Close pin0, pin1, pin2, pin3 and pin4 with digital output
         err = await dev.DO_closePins_async(port, [0,1,2,3,4])
-        print(f"DO_closePins_async in port{port}: {err}")
+        print(f"DO_closePins_async in port {port}: {err}")
 
         ## Close pin5, pin6 and pin7 with digital input
         err = await dev.DI_closePins_async(port, [5,6,7])
-        print(f"DI_closePins_async in port{port}: {err}")
+        print(f"DI_closePins_async in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

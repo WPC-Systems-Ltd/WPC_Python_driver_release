@@ -29,7 +29,7 @@ async def loop_func(handle, port, delay=0.05, exit_loop_time=3):
     time_cal = 0
     while time_cal < exit_loop_time:
         ## data acquisition
-        data =  await handle.AI_readOnDemand_async(port)
+        data = await handle.AI_readOnDemand_async(port)
         if len(data) > 0:
             print(f"data in port {port}: {data}")
 
@@ -57,6 +57,7 @@ async def main():
         ## Parameters setting
         port = 0 ## Depend on your device
         mode = 0
+        chip_select = [0, 1]
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -66,12 +67,12 @@ async def main():
         
         ## Open port
         err = await dev.AI_open_async(port)
-        print(f"AI_open_async in port{port}: {err}")
+        print(f"AI_open_async in port {port}: {err}")
         
 
         ## Set AI port and acquisition mode to on demand mode (0)
         err = await dev.AI_setMode_async(port, mode)
-        print(f"AI_setMode_async {mode} in port{port}: {err}")
+        print(f"AI_setMode_async {mode} in port {port}: {err}")
 
         ## Set loop parameters
         delay = 0.05
@@ -80,11 +81,9 @@ async def main():
         ## Start loop
         await loop_func(dev, port, delay=delay, exit_loop_time=exit_loop_time)
 
-        
         ## Close port
         err = await dev.AI_close_async(port)
-        print(f"AI_close_async in port{port}: {err}")
-        
+        print(f"AI_close_async in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

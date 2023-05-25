@@ -54,15 +54,15 @@ def main():
 
         ## Open CAN
         err = dev.CAN_open(port, timeout=timeout)
-        print(f"CAN_open in port{port}: {err}")
+        print(f"CAN_open in port {port}: {err}")
 
         ## Set CAN port and set speed to 0
         err = dev.CAN_setSpeed(port, speed, timeout=timeout)
-        print(f"CAN_setSpeed in port{port}: {err}")
+        print(f"CAN_setSpeed in port {port}: {err}")
 
         ## Set CAN port and start CAN
         err = dev.CAN_start(port, timeout=timeout)
-        print(f"CAN_start in port{port}: {err}")
+        print(f"CAN_start in port {port}: {err}")
 
         ## Read 5 frames for 1000 times
         for i in range(1000):
@@ -76,11 +76,11 @@ def main():
 
         ## Set CAN port and stop CAN
         err = dev.CAN_stop(port, timeout=timeout)
-        print(f"CAN_stop in port{port}: {err}")
+        print(f"CAN_stop in port {port}: {err}")
 
         ## Close CAN
         err = dev.CAN_close(port, timeout=timeout)
-        print(f"CAN_close in port{port}: {err}")
+        print(f"CAN_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

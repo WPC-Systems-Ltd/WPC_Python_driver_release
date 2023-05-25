@@ -93,7 +93,7 @@ Error Code Table
      - The commands error in the firmware.
    * - -7801
      - 
-     - Please ensure that the motion slot is restricted to the range of 1 to 4.
+     - STEM port not available or already occupied by other process.
    * - -7901
      - 
      - Please ensure that the relay counter index is restricted to the range of 0 to 5 or -1.
@@ -139,6 +139,9 @@ Error Code Table
    * - -8201
      - 
      - AI port not available or already occupied by other process.
+   * - -8202
+     - 
+     - The specified AI chip select is invalid.
    * - -8204
      - 
      - AO port not available or already occupied by other process.

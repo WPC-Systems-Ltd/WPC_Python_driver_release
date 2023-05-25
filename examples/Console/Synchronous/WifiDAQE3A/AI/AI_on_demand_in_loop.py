@@ -55,9 +55,10 @@ def main():
 
     try:
         ## Parameters setting
-        port = 1 ## Depend on your device
+        port = 0 ## Depend on your device
         mode = 0
         timeout = 3  ## second
+        chip_select = [0, 1]
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
@@ -67,12 +68,12 @@ def main():
         
         ## Open port
         err = dev.AI_open(port, timeout=timeout)
-        print(f"AI_open in port{port}: {err}")
+        print(f"AI_open in port {port}: {err}")
         
 
         ## Set AI port and acquisition mode to on demand mode (0)
         err = dev.AI_setMode(port, mode, timeout=timeout)
-        print(f"AI_setMode {mode} in port{port}: {err}")
+        print(f"AI_setMode {mode} in port {port}: {err}")
 
         ## Set loop parameters
         delay = 0.05
@@ -81,11 +82,9 @@ def main():
         ## Start loop
         loop_func(dev, port, delay=delay, exit_loop_time=exit_loop_time)
 
-        
         ## Close port
         err = dev.AI_close(port, timeout=timeout)
-        print(f"AI_close in port{port}: {err}")
-        
+        print(f"AI_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

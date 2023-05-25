@@ -43,8 +43,9 @@ async def main():
 
     try:
         ## Parameters setting
-        port = 1 ## Depend on your device
+        port = 0 ## Depend on your device
         mode = 0
+        chip_select = [0, 1]
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -54,22 +55,20 @@ async def main():
         
         ## Open port
         err = await dev.AI_open_async(port)
-        print(f"AI_open_async in port{port}: {err}")
+        print(f"AI_open_async in port {port}: {err}")
         
 
         ## Set AI port and acquisition mode to on demand mode (0)
         err = await dev.AI_setMode_async(port, mode)
-        print(f"AI_setMode_async {mode} in port{port}: {err}")
+        print(f"AI_setMode_async {mode} in port {port}: {err}")
 
         ## Set AI port and data acquisition
-        data =  await dev.AI_readOnDemand_async(port)
-        print(f"AI data in port{port}: {data}")
+        data = await dev.AI_readOnDemand_async(port)
+        print(f"AI data in port {port}: {data}")
 
-        
         ## Close port
         err = await dev.AI_close_async(port)
-        print(f"AI_close_async in port{port}: {err}")
-        
+        print(f"AI_close_async in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

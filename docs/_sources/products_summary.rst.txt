@@ -23,6 +23,13 @@ Products Feature
          :width: 100%
          :alt: product-Emotion.jpg
    * -
+      **STEM**
+         - Support Python, C# and LabVIEW
+     -
+      .. image:: images/Products/product-STEM.jpg
+         :width: 100%
+         :alt: product-STEM.jpg
+   * -
       **EthanA**
          - 10/100 cable Ethernet
          - 8ch simultaneous voltage input

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>System get network info &mdash; WPC Python driver 2.0.4 documentation</title>
+  <title>System get network info &mdash; WPC Python driver 2.1.1 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -22,7 +22,7 @@
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
     <link rel="next" title="Tutorial single loop thread" href="../Tutorial/single_loop_thread.html" />
-    <link rel="prev" title="I2C write and read" href="../I2C/I2C_write_read.html" /> 
+    <link rel="prev" title="Motion 3axis sync move" href="../Motion/Motion_3axis_synchronous_move.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -34,7 +34,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.0.4
+                2.1.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -64,13 +64,37 @@
 <li class="toctree-l3"><a class="reference internal" href="../AO/AO_write_all_channels.html">AO write all channels</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../AO/AO_write_one_channel.html">AO write one channel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../AO/AO_waveform_gen.html">AO waveform generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../AIO/AIO_one_channel_loopback.html">AIO one channel loopback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../AIO/AIO_all_channels_loopback.html">AIO all channels loopback</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../DIO/DO_blinky_pins.html">DO blinky pins</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../DIO/DO_blinky_port.html">DO blinky port</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../DIO/DIO_loopback_pins.html">DIO loopback pins</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../DIO/DIO_loopback_port.html">DIO loopback port</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../DIO/DO_write_pins.html">DO write pins</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../DIO/DO_write_port.html">DO write port</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../I2C/I2C_write_read.html">I2C write and read</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_servo_on.html">Motion servo on</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_find_home.html">Motion find home</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_find_index.html">Motion find index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_find_limit.html">Motion find limit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_get_logical_position.html">Motion get logical position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_load_configuration_file.html">Motion load config file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_save_configuration_file.html">Motion save config file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_position_blending.html">Motion position blending</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_velocity_blending.html">Motion velocity blending</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_velocity_blending_acceleration.html">Motion acceleration blending</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_1axis_move.html">Motion 1axis move</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_1axis_move_with_alarm_in.html">Motion 1axis move with alarm in</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_1axis_move_with_breakpoint.html">Motion 1axis move with breakpoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_1axis_move_with_capture.html">Motion 1axis move with capture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_1axis_move_with_configuration_file.html">Motion 1axis move with config file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_1axis_move_with_inposition.html">Motion 1axis move with inposition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_1axis_move_with_S_curve_acceleration.html">Motion 1axis move with Scurve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_2axis_circular_interpolation.html">Motion 2axis circular interpo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_2axis_linear_interpolation.html">Motion 2axis linear interpo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_3axis_helical_interpolation.html">Motion 3axis helical interpo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_3axis_linear_interpolation.html">Motion 3axis linear interpo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_3axis_asynchronous_move.html">Motion 3axis async move</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_3axis_synchronous_move.html">Motion 3axis sync move</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">System get network info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
@@ -213,7 +237,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../I2C/I2C_write_read.html" class="btn btn-neutral float-left" title="I2C write and read" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Motion/Motion_3axis_synchronous_move.html" class="btn btn-neutral float-left" title="Motion 3axis sync move" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="../Tutorial/single_loop_thread.html" class="btn btn-neutral float-right" title="Tutorial single loop thread" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

@@ -51,7 +51,7 @@ async def main():
 
         ## Open all pins and set it to digital output.
         err = await dev.DO_openPort_async(port)
-        print(f"DO_openPort_async in port{port}: {err}")
+        print(f"DO_openPort_async in port {port}: {err}")
 
         ## Toggle digital state for 10 times. Each times delay for 0.5 second
         for i in range(10):
@@ -68,7 +68,7 @@ async def main():
 
         ## Close all pins with digital output
         err = await dev.DO_closePort_async(port)
-        print(f"DO_closePort_async in port{port}: {err}")
+        print(f"DO_closePort_async in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

@@ -64,7 +64,7 @@ def main():
 
         ## Motion open
         err = dev.Motion_open(port, timeout=timeout)
-        print(f"Motion_open in port{port}: {err}")
+        print(f"Motion_open in port {port}: {err}")
 
         '''
         ## Motion open configuration file
@@ -131,7 +131,7 @@ def main():
 
         ## Motion close
         err = dev.Motion_close(port, timeout=timeout)
-        print(f"Motion_close in port{port}: {err}")
+        print(f"Motion_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

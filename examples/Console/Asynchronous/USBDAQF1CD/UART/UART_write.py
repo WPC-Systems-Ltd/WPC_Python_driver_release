@@ -55,39 +55,39 @@ async def main():
 
         ## Open UART
         err = await dev.UART_open_async(port)
-        print(f"UART_open_async in port{port}: {err}")
+        print(f"UART_open_async in port {port}: {err}")
 
         ## Set UART port and set baudrate to 9600
         err = await dev.UART_setBaudRate_async(port, baudrate)
-        print(f"UART_setBaudRate_async in port{port}: {err}")
+        print(f"UART_setBaudRate_async in port {port}: {err}")
 
         ## Set UART port and set data bit to 8-bit data
         err = await dev.UART_setDataBit_async(port, data_bit_mode)
-        print(f"UART_setDataBit_async in port{port}: {err}")
+        print(f"UART_setDataBit_async in port {port}: {err}")
 
         ## Set UART port and set parity to None
         err = await dev.UART_setParity_async(port, parity_mode)
-        print(f"UART_setParity_async in port{port}: {err}")
+        print(f"UART_setParity_async in port {port}: {err}")
 
         ## Set UART port and set stop bit to 1 bit
         err = await dev.UART_setNumStopBit_async(port, stop_bit_mode)
-        print(f"UART_setNumStopBit_async in port{port}: {err}")
+        print(f"UART_setNumStopBit_async in port {port}: {err}")
 
         ## Set UART port and and write "12345" to device in string format
         err = await dev.UART_write_async(port, "12345")
-        print(f"UART_write_async in port{port}: {err}")
+        print(f"UART_write_async in port {port}: {err}")
 
         ## Set UART port and and write "chunglee people" to device
         err = await dev.UART_write_async(port, "chunglee people")
-        print(f"UART_write_async in port{port}: {err}")
+        print(f"UART_write_async in port {port}: {err}")
 
         ## Set UART port and and write "12345" to device in list format
         err = await dev.UART_write_async(port, ["1","2","3","4","5"])
-        print(f"UART_write_async in port{port}: {err}")
+        print(f"UART_write_async in port {port}: {err}")
 
         ## Close UART
         err = await dev.UART_close_async(port)
-        print(f"UART_close_async in port{port}: {err}")
+        print(f"UART_close_async in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

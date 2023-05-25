@@ -47,8 +47,12 @@ def main():
         port = 1 ## Depend on your device
         mode = 0
         device_address = 0x50 ## 01010000
-        word_address = 0x00
         timeout = 3  ## second
+
+        ## Generate random data
+        import numpy as np
+        word_address = np.random.randint(8) ## Generate a random address
+        value = np.random.randint(256) ## Generate a random value
 
         '''
         Take 24C08C for example
@@ -65,7 +69,7 @@ def main():
 
         ## Open I2C
         err = dev.I2C_open(port, timeout=timeout)
-        print(f"I2C_open in port{port}: {err}")
+        print(f"I2C_open in port {port}: {err}")
 
         '''
         Set I2C parameter
@@ -73,25 +77,29 @@ def main():
 
         ## Set I2C port and set clock rate to standard mode
         err = dev.I2C_setClockRate(port, mode, timeout=timeout)
-        print(f"I2C_setClockRate in port{port}: {err}")
+        print(f"I2C_setClockRate in port {port}: {err}")
 
         '''
         Write data via I2C
         '''
 
-        ## Write WREN byte
-        err = dev.I2C_write(port, device_address, [word_address, 0xAA, 0x55, 0xAA, 0x55], timeout=timeout)
-        print(f"I2C_write in port{port}: {err}")
+        ## Write data to device
+        err = dev.I2C_write(port, device_address, [word_address, value], timeout=timeout)
+        print(f"I2C_write in port {port}: {err}")
+        print(f"write data: 0x{value:02X}")
+        time.sleep(0.05)
 
         '''
         Read data via I2C
         '''
 
+        ## Write to set pointer for reading
         err = dev.I2C_write(port, device_address, [word_address], timeout=timeout)
-        print(f"I2C_write in port{port}: {err}")
+        print(f"I2C_write in port {port}: {err}")
 
-        data_list = dev.I2C_read(port, device_address, 4, timeout=timeout)
-        print("read data :", data_list)
+        ## Read data from device
+        data = dev.I2C_read(port, device_address, 1, timeout=timeout)
+        print(f"read data: 0x{data[0]:02X}")
 
         '''
         Close I2C port
@@ -99,7 +107,7 @@ def main():
 
         ## Close I2C
         err = dev.I2C_close(port, timeout=timeout)
-        print(f"I2C_close in port{port}: {err}")
+        print(f"I2C_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

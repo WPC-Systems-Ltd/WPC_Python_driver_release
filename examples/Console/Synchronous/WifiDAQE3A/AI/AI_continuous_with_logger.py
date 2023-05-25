@@ -32,10 +32,10 @@ def loop_func(handle, port, num_of_samples=600, delay=0.05, exit_loop_time=3):
         data = handle.AI_readStreaming(port, num_of_samples, delay=delay) ## Get 600 points at a time
 
         if len(data) > 0:
-            print(f"data in port {port}: {data}")
+            print(f"data in port {port}: {data[0]}")
 
             ## Write data into CSV file
-            handle.Logger_write2DList(data)
+            handle.Logger_write2DList(data[0])
 
         ## Wait
         time.sleep(delay) ## delay [s]
@@ -48,9 +48,6 @@ def main():
     ## Create device handle
     dev = pywpc.WifiDAQE3A()
 
-    ## Default Setting
-    port = 1 ## Depend on your device
-
     ## Connect to device
     try:
         dev.connect("192.168.5.79") ## Depend on your device
@@ -62,10 +59,11 @@ def main():
 
     try:
         ## Parameters setting
-        port = 1 ## Depend on your device
+        port = 0 ## Depend on your device
         mode = 2  ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 1000
         timeout = 3  ## second
+        chip_select = [0, 1]
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
@@ -83,20 +81,20 @@ def main():
         
         ## Open port
         err = dev.AI_open(port, timeout=timeout)
-        print(f"AI_open in port{port}: {err}")
+        print(f"AI_open in port {port}: {err}")
         
 
         ## Set AI port and acquisition mode to continuous mode (2)
         err = dev.AI_setMode(port, mode, timeout=timeout)
-        print(f"AI_setMode {mode} in port{port}: {err}")
+        print(f"AI_setMode {mode} in port {port}: {err}")
 
         ## Set AI port and sampling rate to 1k (Hz)
         err = dev.AI_setSamplingRate(port, sampling_rate, timeout=timeout)
-        print(f"AI_setSamplingRate {sampling_rate} in port{port}: {err}")
+        print(f"AI_setSamplingRate {sampling_rate} in port {port}: {err}")
 
         ## Set AI port and start acquisition
         err = dev.AI_start(port, timeout=timeout)
-        print(f"AI_start in port{port}: {err}")
+        print(f"AI_start in port {port}: {err}")
 
         ## Set loop parameters
         num_of_samples = 600
@@ -106,11 +104,9 @@ def main():
         ## Start loop
         loop_func(dev, port, num_of_samples=num_of_samples, delay=delay, exit_loop_time=exit_loop_time)
 
-        
         ## Close port
         err = dev.AI_close(port, timeout=timeout)
-        print(f"AI_close in port{port}: {err}")
-        
+        print(f"AI_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

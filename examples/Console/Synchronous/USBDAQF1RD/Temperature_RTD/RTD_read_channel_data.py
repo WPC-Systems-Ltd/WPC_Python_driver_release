@@ -54,22 +54,22 @@ def main():
 
         ## Open RTD
         err = dev.Thermal_open(port, timeout=timeout)
-        print(f"Thermal_open in port{port}: {err}")
+        print(f"Thermal_open in port {port}: {err}")
 
         ## Wait for at least 100 ms
         time.sleep(0.1) ## delay [s]
 
         ## Set RTD port and read RTD in channel 0
         data0 = dev.Thermal_readSensor(port, ch0, timeout=timeout)
-        print(f"Read sensor in channel {ch0} in port{port}: {data0}°C")
+        print(f"Read sensor in channel {ch0} in port {port}: {data0}°C")
 
         ## Set RTD port and read RTD in channel 1
         data1 = dev.Thermal_readSensor(port, ch1, timeout=timeout)
-        print(f"Read sensor in channel {ch1} in port{port}: {data1}°C")
+        print(f"Read sensor in channel {ch1} in port {port}: {data1}°C")
 
         ## Close RTD
         err = dev.Thermal_close(port, timeout=timeout)
-        print(f"Thermal_close in port{port}: {err}")
+        print(f"Thermal_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

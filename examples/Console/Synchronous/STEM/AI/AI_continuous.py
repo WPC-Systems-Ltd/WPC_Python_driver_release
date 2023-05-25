@@ -31,7 +31,7 @@ def loop_func(handle, port, num_of_samples=600, delay=0.05, exit_loop_time=3):
         ## data acquisition
         data = handle.AI_readStreaming(port, num_of_samples, delay=delay) ## Get 600 points at a time
         if len(data) > 0:
-            print(f"data in port {port}: {data}")
+            print(f"data in port {port}: {data[0]}")
 
         ## Wait
         time.sleep(delay) ## delay [s]
@@ -59,6 +59,7 @@ def main():
         mode = 2  ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 1000
         timeout = 3  ## second
+        chip_select = [0, 1]
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
@@ -66,25 +67,39 @@ def main():
         print("Firmware version: " + driver_info[-1])
 
         
-        ## Set Slot to AIO mode
-        err = dev.Sys_setSlotAIOMode(port, timeout=timeout)
-        print(f"Sys_setSlotAIOMode in port{port}: {err}")
+        ## Get port mode
+        port_mode = dev.Sys_getPortMode(port, timeout=timeout)
+        print("Slot mode: ", port_mode)
 
-        ## Get Slot mode
-        print(dev.Sys_getSlotMode(port, timeout=timeout))
+        if port_mode != "AIO":
+            ## Set port to AIO mode
+            err = dev.Sys_setPortAIOMode(port, timeout=timeout)
+            print(f"Sys_setPortAIOMode in port {port}: {err}")
+
+        ## Get port mode
+        port_mode = dev.Sys_getPortMode(port, timeout=timeout)
+        print("Slot mode: ", port_mode)
+
+        ## Open port
+        err = dev.AI_open(port, timeout=timeout)
+        print(f"AI_open in port {port}: {err}")
+
+        ## Enable CS
+        err = dev.AI_enableCS(port, chip_select, timeout=timeout)
+        print(f"AI_enableCS in port {port}: {err}")
         
 
         ## Set AI port and acquisition mode to continuous mode (2)
         err = dev.AI_setMode(port, mode, timeout=timeout)
-        print(f"AI_setMode {mode} in port{port}: {err}")
+        print(f"AI_setMode {mode} in port {port}: {err}")
 
         ## Set AI port and sampling rate to 1k (Hz)
         err = dev.AI_setSamplingRate(port, sampling_rate, timeout=timeout)
-        print(f"AI_setSamplingRate {sampling_rate} in port{port}: {err}")
+        print(f"AI_setSamplingRate {sampling_rate} in port {port}: {err}")
 
         ## Set AI port and start acquisition
         err = dev.AI_start(port, timeout=timeout)
-        print(f"AI_start in port{port}: {err}")
+        print(f"AI_start in port {port}: {err}")
 
         ## Set loop parameters
         num_of_samples = 600
@@ -94,7 +109,9 @@ def main():
         ## Start loop
         loop_func(dev, port, num_of_samples=num_of_samples, delay=delay, exit_loop_time=exit_loop_time)
 
-        
+        ## Close port
+        err = dev.AI_close(port, timeout=timeout)
+        print(f"AI_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

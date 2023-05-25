@@ -49,31 +49,43 @@ async def main():
         print("Firmware version: " + driver_info[-1])
 
         
-        ## Set Slot to AIO mode
-        err = await dev.Sys_setSlotAIOMode_async(port)
-        print(f"Sys_setSlotAIOMode_async in port{port}: {err}")
+        ## Get port mode
+        port_mode = await dev.Sys_getPortMode_async(port)
+        print("Slot mode: ", port_mode)
 
-        ## Get Slot mode
-        print(await dev.Sys_getSlotMode_async(port))
+        if port_mode != "AIO":
+            ## Set port to AIO mode
+            err = await dev.Sys_setPortAIOMode_async(port)
+            print(f"Sys_setPortAIOMode_async in port {port}: {err}")
+
+        ## Get port mode
+        port_mode = await dev.Sys_getPortMode_async(port)
+        print("Slot mode: ", port_mode)
         
 
-        ## Set AO port and write data 1.5(V) in channel 4
-        err = await dev.AO_writeOneChannel_async(port, 4, 1.5)
-        print(f"AO_writeOneChannel_async in ch4 in port{port}: {err}")
+        ## Open AO
+        err = await dev.AO_open_async(port)
+        print(f"AO_open_async in port {port}: {err}")
 
-        ## Set AO port and write data 2.5(V) in channel 5
-        err = await dev.AO_writeOneChannel_async(port, 5, 2.5)
-        print(f"AO_writeOneChannel_async in ch5 in port{port}: {err}")
+        ## Set AO port and write data 1.5(V) in channel 0
+        err = await dev.AO_writeOneChannel_async(port, 0, 1.5)
+        print(f"AO_writeOneChannel_async in ch0 in port {port}: {err}")
 
-        ## Set AO port and write data 3.5(V) in channel 6
-        err = await dev.AO_writeOneChannel_async(port, 6, 3.5)
-        print(f"AO_writeOneChannel_async in ch6 in port{port}: {err}")
+        ## Set AO port and write data 2.5(V) in channel 1
+        err = await dev.AO_writeOneChannel_async(port, 1, 2.5)
+        print(f"AO_writeOneChannel_async in ch1 in port {port}: {err}")
 
-        ## Set AO port and write data 4.5(V) in channel 7
-        err = await dev.AO_writeOneChannel_async(port, 7, 4.5)
-        print(f"AO_writeOneChannel_async in ch7 in port{port}: {err}")
+        ## Set AO port and write data 3.5(V) in channel 2
+        err = await dev.AO_writeOneChannel_async(port, 2, 3.5)
+        print(f"AO_writeOneChannel_async in ch2 in port {port}: {err}")
 
-        
+        ## Set AO port and write data 4.5(V) in channel 3
+        err = await dev.AO_writeOneChannel_async(port, 3, 4.5)
+        print(f"AO_writeOneChannel_async in ch3 in port {port}: {err}")
+
+        ## Close AO
+        err = await dev.AO_close_async(port)
+        print(f"AO_close_async in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

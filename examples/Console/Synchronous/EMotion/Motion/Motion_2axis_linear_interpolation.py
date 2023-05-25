@@ -53,7 +53,7 @@ def main():
 
         ## Motion open
         err = dev.Motion_open(port, timeout=timeout)
-        print(f"Motion_open in port{port}: {err}")
+        print(f"Motion_open in port {port}: {err}")
 
         ## Motion open configuration file
         err = dev.Motion_openCfgFile('C:/Users/user/Desktop/3AxisStage_2P.ini')
@@ -69,7 +69,7 @@ def main():
 
         ## Motion start
         err = dev.Motion_startLinearInterpo(port, timeout=timeout)
-        print(f"Motion_startLinearInterpo in port{port}: {err}")
+        print(f"Motion_startLinearInterpo in port {port}: {err}")
 
         move_status = 0
         while move_status == 0:
@@ -88,7 +88,7 @@ def main():
 
         ## Motion close
         err = dev.Motion_close(port, timeout=timeout)
-        print(f"Motion_close in port{port}: {err}")
+        print(f"Motion_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

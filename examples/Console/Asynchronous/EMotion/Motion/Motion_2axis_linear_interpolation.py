@@ -52,7 +52,7 @@ async def main():
 
         ## Motion open
         err = await dev.Motion_open_async(port)
-        print(f"open_async in port{port}: {err}")
+        print(f"open_async in port {port}: {err}")
 
         ## Motion open configuration file
         err = await dev.Motion_openCfgFile_async('C:/Users/user/Desktop/3AxisStage_2P.ini')
@@ -68,7 +68,7 @@ async def main():
 
         ## Motion start
         err = await dev.Motion_startLinearInterpo_async(port)
-        print(f"startLinearInterpo_async in port{port}: {err}")
+        print(f"startLinearInterpo_async in port {port}: {err}")
 
         move_status = 0
         while move_status == 0:
@@ -87,7 +87,7 @@ async def main():
 
         ## Motion close
         err = await dev.Motion_close_async(port)
-        print(f"close_async in port{port}: {err}")
+        print(f"close_async in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

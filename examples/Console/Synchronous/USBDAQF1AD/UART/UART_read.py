@@ -58,23 +58,23 @@ def main():
 
         ## Open UART
         err = dev.UART_open(port, timeout=timeout)
-        print(f"UART_open in port{port}: {err}")
+        print(f"UART_open in port {port}: {err}")
 
         ## Set UART port and set baudrate to 9600
         err = dev.UART_setBaudRate(port, baudrate, timeout=timeout)
-        print(f"UART_setBaudRate in port{port}: {err}")
+        print(f"UART_setBaudRate in port {port}: {err}")
 
         ## Set UART port and set data bit to 8-bit data
         err = dev.UART_setDataBit(port, data_bit_mode, timeout=timeout)
-        print(f"UART_setDataBit in port{port}: {err}")
+        print(f"UART_setDataBit in port {port}: {err}")
 
         ## Set UART port and set parity to None
         err = dev.UART_setParity(port, parity_mode, timeout=timeout)
-        print(f"UART_setParity in port{port}: {err}")
+        print(f"UART_setParity in port {port}: {err}")
 
         ## Set UART port and set stop bit to 8-bit data
         err = dev.UART_setNumStopBit(port, stop_bit_mode, timeout=timeout)
-        print(f"UART_setNumStopBit in port{port}: {err}")
+        print(f"UART_setNumStopBit in port {port}: {err}")
 
         ## Print informaion
         print("Wait for 10 seconds to receive data from other devices")
@@ -84,11 +84,11 @@ def main():
 
         ## Set UART port and read 20 bytes
         data = dev.UART_read(port, read_bytes, delay=delay)
-        print(f"data in port{port}: {data}")
+        print(f"data in port {port}: {data}")
 
         ## Close UART
         err = dev.UART_close(port, timeout=timeout)
-        print(f"UART_close in port{port}: {err}")
+        print(f"UART_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

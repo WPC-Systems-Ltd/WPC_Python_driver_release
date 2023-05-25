@@ -1,0 +1,6 @@
+AIO one channel loopback
+========================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/STEM/AIO/AIO_one_channel_loopback.py
+   :language: python
+   :linenos:
