@@ -1,6 +1,0 @@
-Motion 1axis move with alarm in
-===============================
-
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/STEM/Motion/Motion_1axis_move_with_alarm_in.py
-   :language: python
-   :linenos:

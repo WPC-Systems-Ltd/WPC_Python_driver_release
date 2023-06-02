@@ -7,6 +7,7 @@ First, it shows how to open CAN port and configure CAN parameters.
 Second, write bytes to another device.
 Last, stop and close CAN port.
 
+--------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:

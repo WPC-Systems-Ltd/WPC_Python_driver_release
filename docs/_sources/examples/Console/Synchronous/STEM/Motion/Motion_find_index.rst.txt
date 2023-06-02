@@ -1,6 +1,0 @@
-Motion find index
-=================
-
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/STEM/Motion/Motion_find_index.py
-   :language: python
-   :linenos:

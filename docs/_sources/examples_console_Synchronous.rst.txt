@@ -50,52 +50,6 @@ STEM
 
    examples/Console/Synchronous/STEM/DIO/DO_write_port.rst
 
-   examples/Console/Synchronous/STEM/Motion/Motion_servo_on.rst
-
-   examples/Console/Synchronous/STEM/Motion/Motion_find_home.rst
-
-   examples/Console/Synchronous/STEM/Motion/Motion_find_index.rst
-
-   examples/Console/Synchronous/STEM/Motion/Motion_find_limit.rst
-
-   examples/Console/Synchronous/STEM/Motion/Motion_get_logical_position.rst
-
-   examples/Console/Synchronous/STEM/Motion/Motion_load_configuration_file.rst
-
-   examples/Console/Synchronous/STEM/Motion/Motion_save_configuration_file.rst
-
-   examples/Console/Synchronous/STEM/Motion/Motion_position_blending.rst
-
-   examples/Console/Synchronous/STEM/Motion/Motion_velocity_blending.rst
-
-   examples/Console/Synchronous/STEM/Motion/Motion_velocity_blending_acceleration.rst
-
-   examples/Console/Synchronous/STEM/Motion/Motion_1axis_move.rst
-
-   examples/Console/Synchronous/STEM/Motion/Motion_1axis_move_with_alarm_in.rst
-
-   examples/Console/Synchronous/STEM/Motion/Motion_1axis_move_with_breakpoint.rst
-
-   examples/Console/Synchronous/STEM/Motion/Motion_1axis_move_with_capture.rst
-
-   examples/Console/Synchronous/STEM/Motion/Motion_1axis_move_with_configuration_file.rst
-
-   examples/Console/Synchronous/STEM/Motion/Motion_1axis_move_with_inposition.rst
-
-   examples/Console/Synchronous/STEM/Motion/Motion_1axis_move_with_S_curve_acceleration.rst
-
-   examples/Console/Synchronous/STEM/Motion/Motion_2axis_circular_interpolation.rst
-
-   examples/Console/Synchronous/STEM/Motion/Motion_2axis_linear_interpolation.rst
-
-   examples/Console/Synchronous/STEM/Motion/Motion_3axis_helical_interpolation.rst
-
-   examples/Console/Synchronous/STEM/Motion/Motion_3axis_linear_interpolation.rst
-
-   examples/Console/Synchronous/STEM/Motion/Motion_3axis_asynchronous_move.rst
-
-   examples/Console/Synchronous/STEM/Motion/Motion_3axis_synchronous_move.rst
-
    examples/Console/Synchronous/STEM/System_ETH/get_network_info.rst
 
 

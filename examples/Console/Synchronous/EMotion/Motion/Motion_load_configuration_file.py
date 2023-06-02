@@ -1,6 +1,7 @@
 '''
 Motion - Motion_load_configuration_file.py with synchronous mode.
 
+--------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:

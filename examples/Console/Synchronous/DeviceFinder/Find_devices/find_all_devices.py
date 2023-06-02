@@ -3,6 +3,7 @@ Find_devices - find_all_devices.py with synchronous mode.
 
 This example demonstrates how to find all available USB and ethernet devices.
 
+--------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:

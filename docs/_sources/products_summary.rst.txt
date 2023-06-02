@@ -24,6 +24,7 @@ Products Feature
          :alt: product-Emotion.jpg
    * -
       **STEM**
+         - AI/AO/DIO
          - Support Python, C# and LabVIEW
      -
       .. image:: images/Products/product-STEM.jpg

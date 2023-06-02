@@ -71,29 +71,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../DIO/DIO_loopback_port.html">DIO loopback port</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../DIO/DO_write_pins.html">DO write pins</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../DIO/DO_write_port.html">DO write port</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_servo_on.html">Motion servo on</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_find_home.html">Motion find home</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_find_index.html">Motion find index</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_find_limit.html">Motion find limit</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_get_logical_position.html">Motion get logical position</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_load_configuration_file.html">Motion load config file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_save_configuration_file.html">Motion save config file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_position_blending.html">Motion position blending</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_velocity_blending.html">Motion velocity blending</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_velocity_blending_acceleration.html">Motion acceleration blending</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_1axis_move.html">Motion 1axis move</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_1axis_move_with_alarm_in.html">Motion 1axis move with alarm in</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_1axis_move_with_breakpoint.html">Motion 1axis move with breakpoint</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_1axis_move_with_capture.html">Motion 1axis move with capture</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_1axis_move_with_configuration_file.html">Motion 1axis move with config file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_1axis_move_with_inposition.html">Motion 1axis move with inposition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_1axis_move_with_S_curve_acceleration.html">Motion 1axis move with Scurve</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_2axis_circular_interpolation.html">Motion 2axis circular interpo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_2axis_linear_interpolation.html">Motion 2axis linear interpo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_3axis_helical_interpolation.html">Motion 3axis helical interpo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_3axis_linear_interpolation.html">Motion 3axis linear interpo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_3axis_asynchronous_move.html">Motion 3axis async move</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Motion/Motion_3axis_synchronous_move.html">Motion 3axis sync move</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../System_ETH/get_network_info.html">System get network info</a></li>
 </ul>
 </li>
@@ -152,120 +129,133 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos">  2</span><span class="sd">AI - AI_on_demand_in_loop.py with synchronous mode.</span>
 <span class="linenos">  3</span>
-<span class="linenos">  4</span><span class="sd">This example demonstrates how to get AI data in on demand mode.</span>
-<span class="linenos">  5</span><span class="sd">Also, it uses loop to get AI data with 3 seconds timeout with 8 channels STEM.</span>
+<span class="linenos">  4</span><span class="sd">This example demonstrates the process of obtaining AI data in on demand mode.</span>
+<span class="linenos">  5</span><span class="sd">Additionally, it utilizes a loop to retrieve AI data with 5 times from STEM.</span>
 <span class="linenos">  6</span>
-<span class="linenos">  7</span><span class="sd">First, it shows how to open AI port and configure AI parameters.</span>
-<span class="linenos">  8</span><span class="sd">Second, read AI ondemand data.</span>
-<span class="linenos">  9</span><span class="sd">Last, close AI port.</span>
+<span class="linenos">  7</span><span class="sd">To begin with, it demonstrates the steps to open the AI port and configure the AI parameters.</span>
+<span class="linenos">  8</span><span class="sd">Next, it outlines the procedure for reading the AI on demand data.</span>
+<span class="linenos">  9</span><span class="sd">Finally, it concludes by explaining how to close the AI port.</span>
 <span class="linenos"> 10</span>
-<span class="linenos"> 11</span><span class="sd">Please change correct serial number or IP and port number BEFORE you run example code.</span>
-<span class="linenos"> 12</span>
-<span class="linenos"> 13</span><span class="sd">For other examples please check:</span>
-<span class="linenos"> 14</span><span class="sd">    https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples</span>
-<span class="linenos"> 15</span><span class="sd">See README.md file to get detailed usage of this example.</span>
-<span class="linenos"> 16</span>
-<span class="linenos"> 17</span><span class="sd">Copyright (c) 2023 WPC Systems Ltd. All rights reserved.</span>
-<span class="linenos"> 18</span><span class="sd">&#39;&#39;&#39;</span>
-<span class="linenos"> 19</span>
-<span class="linenos"> 20</span><span class="c1">## Python</span>
-<span class="linenos"> 21</span>
-<span class="linenos"> 22</span><span class="kn">import</span> <span class="nn">time</span>
-<span class="linenos"> 23</span>
-<span class="linenos"> 24</span><span class="c1">## WPC</span>
-<span class="linenos"> 25</span>
-<span class="linenos"> 26</span><span class="kn">from</span> <span class="nn">wpcsys</span> <span class="kn">import</span> <span class="n">pywpc</span>
+<span class="linenos"> 11</span><span class="sd">If your product is &quot;STEM&quot;, please invoke the function `Sys_setPortAIOMode`and `AI_enableCS`.</span>
+<span class="linenos"> 12</span><span class="sd">Example: AI_enableCS is {0, 2}</span>
+<span class="linenos"> 13</span><span class="sd">Subsequently, the returned value of AI_readOnDemand and AI_readStreaming will be displayed as follows.</span>
+<span class="linenos"> 14</span><span class="sd">data:</span>
+<span class="linenos"> 15</span><span class="sd">          CH0, CH1, CH2, CH3, CH4, CH5, CH6, CH7, CH0, CH1, CH2, CH3, CH4, CH5, CH6, CH7</span>
+<span class="linenos"> 16</span><span class="sd">          |                                     |                                      |</span>
+<span class="linenos"> 17</span><span class="sd">          |---------------- CS0-----------------|---------------- CS2------------------|</span>
+<span class="linenos"> 18</span><span class="sd">[sample0]</span>
+<span class="linenos"> 19</span><span class="sd">[sample1]</span>
+<span class="linenos"> 20</span><span class="sd">   .</span>
+<span class="linenos"> 21</span><span class="sd">   .</span>
+<span class="linenos"> 22</span><span class="sd">   .</span>
+<span class="linenos"> 23</span><span class="sd">[sampleN]</span>
+<span class="linenos"> 24</span>
+<span class="linenos"> 25</span><span class="sd">--------------------------------------------------------------------------------------</span>
+<span class="linenos"> 26</span><span class="sd">Please change correct serial number or IP and port number BEFORE you run example code.</span>
 <span class="linenos"> 27</span>
-<span class="linenos"> 28</span><span class="k">def</span> <span class="nf">loop_func</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">exit_loop_time</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
-<span class="linenos"> 29</span>    <span class="n">time_cal</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 30</span>    <span class="k">while</span> <span class="n">time_cal</span> <span class="o">&lt;</span> <span class="n">exit_loop_time</span><span class="p">:</span>
-<span class="linenos"> 31</span>        <span class="c1">## data acquisition</span>
-<span class="linenos"> 32</span>        <span class="n">data</span> <span class="o">=</span> <span class="n">handle</span><span class="o">.</span><span class="n">AI_readOnDemand</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos"> 33</span>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-<span class="linenos"> 34</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;data in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 35</span>
-<span class="linenos"> 36</span>        <span class="c1">## Wait</span>
-<span class="linenos"> 37</span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span> <span class="c1">## delay [s]</span>
-<span class="linenos"> 38</span>        <span class="n">time_cal</span> <span class="o">+=</span> <span class="n">delay</span>
-<span class="linenos"> 39</span>
-<span class="linenos"> 40</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-<span class="linenos"> 41</span>    <span class="c1">## Get Python driver version</span>
-<span class="linenos"> 42</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_FULL_NAME</span><span class="si">}</span><span class="s1"> - Version </span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="linenos"> 43</span>
-<span class="linenos"> 44</span>    <span class="c1">## Create device handle</span>
-<span class="linenos"> 45</span>    <span class="n">dev</span> <span class="o">=</span> <span class="n">pywpc</span><span class="o">.</span><span class="n">STEM</span><span class="p">()</span>
-<span class="linenos"> 46</span>
-<span class="linenos"> 47</span>    <span class="c1">## Connect to device</span>
-<span class="linenos"> 48</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos"> 49</span>        <span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;192.168.1.110&quot;</span><span class="p">)</span> <span class="c1">## Depend on your device</span>
-<span class="linenos"> 50</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos"> 51</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="linenos"> 52</span>        <span class="c1">## Release device handle</span>
-<span class="linenos"> 53</span>        <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="linenos"> 54</span>        <span class="k">return</span>
-<span class="linenos"> 55</span>
-<span class="linenos"> 56</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos"> 57</span>        <span class="c1">## Parameters setting</span>
-<span class="linenos"> 58</span>        <span class="n">port</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">## Depend on your device</span>
-<span class="linenos"> 59</span>        <span class="n">mode</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 60</span>        <span class="n">timeout</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1">## second</span>
-<span class="linenos"> 61</span>        <span class="n">chip_select</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="linenos"> 62</span>
-<span class="linenos"> 63</span>        <span class="c1">## Get firmware model &amp; version</span>
-<span class="linenos"> 64</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 65</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="linenos"> 66</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="linenos"> 67</span>
-<span class="linenos"> 68</span>        
-<span class="linenos"> 69</span>        <span class="c1">## Get port mode</span>
-<span class="linenos"> 70</span>        <span class="n">port_mode</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getPortMode</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 71</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Slot mode: &quot;</span><span class="p">,</span> <span class="n">port_mode</span><span class="p">)</span>
-<span class="linenos"> 72</span>
-<span class="linenos"> 73</span>        <span class="k">if</span> <span class="n">port_mode</span> <span class="o">!=</span> <span class="s2">&quot;AIO&quot;</span><span class="p">:</span>
-<span class="linenos"> 74</span>            <span class="c1">## Set port to AIO mode</span>
-<span class="linenos"> 75</span>            <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_setPortAIOMode</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 76</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sys_setPortAIOMode in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 28</span><span class="sd">For other examples please check:</span>
+<span class="linenos"> 29</span><span class="sd">    https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples</span>
+<span class="linenos"> 30</span><span class="sd">See README.md file to get detailed usage of this example.</span>
+<span class="linenos"> 31</span>
+<span class="linenos"> 32</span><span class="sd">Copyright (c) 2023 WPC Systems Ltd. All rights reserved.</span>
+<span class="linenos"> 33</span><span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos"> 34</span>
+<span class="linenos"> 35</span><span class="c1">## Python</span>
+<span class="linenos"> 36</span>
+<span class="linenos"> 37</span><span class="kn">import</span> <span class="nn">time</span>
+<span class="linenos"> 38</span>
+<span class="linenos"> 39</span><span class="c1">## WPC</span>
+<span class="linenos"> 40</span>
+<span class="linenos"> 41</span><span class="kn">from</span> <span class="nn">wpcsys</span> <span class="kn">import</span> <span class="n">pywpc</span>
+<span class="linenos"> 42</span>
+<span class="linenos"> 43</span><span class="k">def</span> <span class="nf">loop_func</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">exit_loop_time</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<span class="linenos"> 44</span>    <span class="n">time_cal</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 45</span>    <span class="k">while</span> <span class="n">time_cal</span> <span class="o">&lt;</span> <span class="n">exit_loop_time</span><span class="p">:</span>
+<span class="linenos"> 46</span>        <span class="c1">## data acquisition</span>
+<span class="linenos"> 47</span>        <span class="n">data</span> <span class="o">=</span> <span class="n">handle</span><span class="o">.</span><span class="n">AI_readOnDemand</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+<span class="linenos"> 48</span>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos"> 49</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;data in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 50</span>
+<span class="linenos"> 51</span>        <span class="c1">## Wait</span>
+<span class="linenos"> 52</span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span> <span class="c1">## delay [s]</span>
+<span class="linenos"> 53</span>        <span class="n">time_cal</span> <span class="o">+=</span> <span class="n">delay</span>
+<span class="linenos"> 54</span>
+<span class="linenos"> 55</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos"> 56</span>    <span class="c1">## Get Python driver version</span>
+<span class="linenos"> 57</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_FULL_NAME</span><span class="si">}</span><span class="s1"> - Version </span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="linenos"> 58</span>
+<span class="linenos"> 59</span>    <span class="c1">## Create device handle</span>
+<span class="linenos"> 60</span>    <span class="n">dev</span> <span class="o">=</span> <span class="n">pywpc</span><span class="o">.</span><span class="n">STEM</span><span class="p">()</span>
+<span class="linenos"> 61</span>
+<span class="linenos"> 62</span>    <span class="c1">## Connect to device</span>
+<span class="linenos"> 63</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos"> 64</span>        <span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;192.168.1.110&quot;</span><span class="p">)</span> <span class="c1">## Depend on your device</span>
+<span class="linenos"> 65</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos"> 66</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos"> 67</span>        <span class="c1">## Release device handle</span>
+<span class="linenos"> 68</span>        <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos"> 69</span>        <span class="k">return</span>
+<span class="linenos"> 70</span>
+<span class="linenos"> 71</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos"> 72</span>        <span class="c1">## Parameters setting</span>
+<span class="linenos"> 73</span>        <span class="n">port</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">## Depend on your device</span>
+<span class="linenos"> 74</span>        <span class="n">mode</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 75</span>        <span class="n">timeout</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1">## second</span>
+<span class="linenos"> 76</span>        <span class="n">chip_select</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="linenos"> 77</span>
-<span class="linenos"> 78</span>        <span class="c1">## Get port mode</span>
-<span class="linenos"> 79</span>        <span class="n">port_mode</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getPortMode</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 80</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Slot mode: &quot;</span><span class="p">,</span> <span class="n">port_mode</span><span class="p">)</span>
-<span class="linenos"> 81</span>
-<span class="linenos"> 82</span>        <span class="c1">## Open port</span>
-<span class="linenos"> 83</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_open</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 84</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_open in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 85</span>
-<span class="linenos"> 86</span>        <span class="c1">## Enable CS</span>
-<span class="linenos"> 87</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_enableCS</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">chip_select</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 88</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_enableCS in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 89</span>        
-<span class="linenos"> 90</span>
-<span class="linenos"> 91</span>        <span class="c1">## Set AI port and acquisition mode to on demand mode (0)</span>
-<span class="linenos"> 92</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_setMode</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 93</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_setMode </span><span class="si">{</span><span class="n">mode</span><span class="si">}</span><span class="s2"> in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 94</span>
-<span class="linenos"> 95</span>        <span class="c1">## Set loop parameters</span>
-<span class="linenos"> 96</span>        <span class="n">delay</span> <span class="o">=</span> <span class="mf">0.05</span>
-<span class="linenos"> 97</span>        <span class="n">exit_loop_time</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="linenos"> 98</span>
-<span class="linenos"> 99</span>        <span class="c1">## Start loop</span>
-<span class="linenos">100</span>        <span class="n">loop_func</span><span class="p">(</span><span class="n">dev</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="n">delay</span><span class="p">,</span> <span class="n">exit_loop_time</span><span class="o">=</span><span class="n">exit_loop_time</span><span class="p">)</span>
-<span class="linenos">101</span>
-<span class="linenos">102</span>        <span class="c1">## Close port</span>
-<span class="linenos">103</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_close</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">104</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_close in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">105</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos">106</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos"> 78</span>        <span class="c1">## Get firmware model &amp; version</span>
+<span class="linenos"> 79</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 80</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="linenos"> 81</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos"> 82</span>        
+<span class="linenos"> 83</span>        <span class="c1">## Get port mode</span>
+<span class="linenos"> 84</span>        <span class="n">port_mode</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getPortMode</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 85</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Slot mode:&quot;</span><span class="p">,</span> <span class="n">port_mode</span><span class="p">)</span>
+<span class="linenos"> 86</span>
+<span class="linenos"> 87</span>        <span class="c1">## If the port mode is not set to &quot;AIO&quot;, set the port mode to &quot;AIO&quot;</span>
+<span class="linenos"> 88</span>        <span class="k">if</span> <span class="n">port_mode</span> <span class="o">!=</span> <span class="s2">&quot;AIO&quot;</span><span class="p">:</span>
+<span class="linenos"> 89</span>            <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_setPortAIOMode</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 90</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sys_setPortAIOMode in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 91</span>
+<span class="linenos"> 92</span>        <span class="c1">## Get port mode</span>
+<span class="linenos"> 93</span>        <span class="n">port_mode</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getPortMode</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 94</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Slot mode:&quot;</span><span class="p">,</span> <span class="n">port_mode</span><span class="p">)</span>
+<span class="linenos"> 95</span>
+<span class="linenos"> 96</span>        <span class="c1">## Open port</span>
+<span class="linenos"> 97</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_open</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 98</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_open in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 99</span>
+<span class="linenos">100</span>        <span class="c1">## Enable CS</span>
+<span class="linenos">101</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_enableCS</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">chip_select</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">102</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_enableCS in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">103</span>        
+<span class="linenos">104</span>        <span class="c1">## Set AI acquisition mode to on demand mode (0)</span>
+<span class="linenos">105</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_setMode</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">106</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_setMode </span><span class="si">{</span><span class="n">mode</span><span class="si">}</span><span class="s2"> in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">107</span>
-<span class="linenos">108</span>    <span class="c1">## Disconnect device</span>
-<span class="linenos">109</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
-<span class="linenos">110</span>
-<span class="linenos">111</span>    <span class="c1">## Release device handle</span>
-<span class="linenos">112</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="linenos">113</span>
-<span class="linenos">114</span>    <span class="k">return</span>
-<span class="linenos">115</span>
-<span class="linenos">116</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">117</span>    <span class="n">main</span><span class="p">()</span>
+<span class="linenos">108</span>        <span class="c1">## Read AI data with 5 times</span>
+<span class="linenos">109</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;data in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: &quot;</span><span class="p">)</span>
+<span class="linenos">110</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+<span class="linenos">111</span>            <span class="c1">## data acquisition</span>
+<span class="linenos">112</span>            <span class="n">data</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_readOnDemand</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+<span class="linenos">113</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">114</span>
+<span class="linenos">115</span>        <span class="c1">## Close port</span>
+<span class="linenos">116</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_close</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">117</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_close in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">118</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos">119</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">120</span>
+<span class="linenos">121</span>    <span class="c1">## Disconnect device</span>
+<span class="linenos">122</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+<span class="linenos">123</span>
+<span class="linenos">124</span>    <span class="c1">## Release device handle</span>
+<span class="linenos">125</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos">126</span>
+<span class="linenos">127</span>    <span class="k">return</span>
+<span class="linenos">128</span>
+<span class="linenos">129</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">130</span>    <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>

@@ -1,6 +1,0 @@
-Motion servo on
-===============
-
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/STEM/Motion/Motion_servo_on.py
-   :language: python
-   :linenos:

@@ -1,13 +1,28 @@
 '''
 AI - AI_on_demand_in_loop.py with asynchronous mode.
 
-This example demonstrates how to get AI data in on demand mode.
-Also, it uses async loop to get AI data with 3 seconds timeout with 8 channels STEM.
+This example demonstrates the process of obtaining AI data in on demand mode.
+Additionally, it utilizes a loop to retrieve AI data with 5 times from STEM.
 
-First, it shows how to open AI port and configure AI parameters.
-Second, read AI ondemand data.
-Last, close AI port.
+To begin with, it demonstrates the steps to open the AI port and configure the AI parameters.
+Next, it outlines the procedure for reading the AI on demand data.
+Finally, it concludes by explaining how to close the AI port.
 
+If your product is "STEM", please invoke the function `Sys_setPortAIOMode_async`and `AI_enableCS_async`.
+Example: AI_enableCS_async is {0, 2}
+Subsequently, the returned value of AI_readOnDemand_async and AI_readStreaming_async will be displayed as follows.
+data:
+          CH0, CH1, CH2, CH3, CH4, CH5, CH6, CH7, CH0, CH1, CH2, CH3, CH4, CH5, CH6, CH7
+          |                                     |                                      |
+          |---------------- CS0-----------------|---------------- CS2------------------|
+[sample0]
+[sample1]
+   .
+   .
+   .
+[sampleN]
+
+--------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -24,18 +39,6 @@ import asyncio
 ## WPC
 
 from wpcsys import pywpc
-
-async def loop_func(handle, port, delay=0.05, exit_loop_time=3):
-    time_cal = 0
-    while time_cal < exit_loop_time:
-        ## data acquisition
-        data = await handle.AI_readOnDemand_async(port)
-        if len(data) > 0:
-            print(f"data in port {port}: {data}")
-
-        ## Wait
-        await asyncio.sleep(delay)  ## delay [s]
-        time_cal += delay
 
 async def main():
     ## Get Python driver version
@@ -63,20 +66,19 @@ async def main():
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-
         
         ## Get port mode
         port_mode = await dev.Sys_getPortMode_async(port)
-        print("Slot mode: ", port_mode)
+        print("Slot mode:", port_mode)
 
+        ## If the port mode is not set to "AIO", set the port mode to "AIO"
         if port_mode != "AIO":
-            ## Set port to AIO mode
             err = await dev.Sys_setPortAIOMode_async(port)
             print(f"Sys_setPortAIOMode_async in port {port}: {err}")
 
         ## Get port mode
         port_mode = await dev.Sys_getPortMode_async(port)
-        print("Slot mode: ", port_mode)
+        print("Slot mode:", port_mode)
 
         ## Open port
         err = await dev.AI_open_async(port)
@@ -86,17 +88,16 @@ async def main():
         err = await dev.AI_enableCS_async(port, chip_select)
         print(f"AI_enableCS_async in port {port}: {err}")
         
-
-        ## Set AI port and acquisition mode to on demand mode (0)
+        ## Set AI acquisition mode to on demand mode (0)
         err = await dev.AI_setMode_async(port, mode)
         print(f"AI_setMode_async {mode} in port {port}: {err}")
 
-        ## Set loop parameters
-        delay = 0.05
-        exit_loop_time = 3
-
-        ## Start loop
-        await loop_func(dev, port, delay=delay, exit_loop_time=exit_loop_time)
+        ## Read AI data with 5 times
+        print(f"data in port {port}: ")
+        for i in range(5):
+            ## data acquisition
+            data = await dev.AI_readOnDemand_async(port)
+            print(f"{data}")
 
         ## Close port
         err = await dev.AI_close_async(port)

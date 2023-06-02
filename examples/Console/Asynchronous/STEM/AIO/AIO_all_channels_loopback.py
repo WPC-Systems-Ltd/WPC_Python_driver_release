@@ -1,13 +1,30 @@
 '''
 AIO - AIO_all_channels_loopback.py with asynchronous mode.
 
-This example demonstrates how to write AIO loopback in all channels from STEM.
-Use AO pins to send signals and use AI pins to receive signals on single device also called "loopback".
+This example demonstrates the process of AIO loopback across all channels of STEM.
+It involves using AO pins to send signals and AI pins to receive signals on a single device, commonly referred to as "loopback".
+The AI and AO pins are connected using a wire.
 
-First, it shows how to open AO and AI in port.
-Second, write all digital signals to AO and read AI ondemand data.
-Last, close AO and AI in port.
+Initially, the example demonstrates the steps required to open the AI and AO port
+Next, it reads AI data and displays its corresponding values.
+Following that, it writes digital signals to the AO pins and reads AI on-demand data once again.
+Lastly, it closes the AO and AI ports.
 
+If your product is "STEM", please invoke the function `Sys_setPortAIOMode_async` and `AI_enableCS_async`.
+Example: AI_enableCS_async is {0, 2}
+Subsequently, the returned value of AI_readOnDemand_async and AI_readStreaming_async will be displayed as follows.
+data:
+          CH0, CH1, CH2, CH3, CH4, CH5, CH6, CH7, CH0, CH1, CH2, CH3, CH4, CH5, CH6, CH7
+          |                                     |                                      |
+          |---------------- CS0-----------------|---------------- CS2------------------|
+[sample0]
+[sample1]
+   .
+   .
+   .
+[sampleN]
+
+--------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -50,20 +67,19 @@ async def main():
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-
         
         ## Get port mode
         port_mode = await dev.Sys_getPortMode_async(port)
-        print("Slot mode: ", port_mode)
+        print("Slot mode:", port_mode)
 
+        ## If the port mode is not set to "AIO", set the port mode to "AIO"
         if port_mode != "AIO":
-            ## Set port to AIO mode
             err = await dev.Sys_setPortAIOMode_async(port)
             print(f"Sys_setPortAIOMode_async in port {port}: {err}")
 
         ## Get port mode
         port_mode = await dev.Sys_getPortMode_async(port)
-        print("Slot mode: ", port_mode)
+        print("Slot mode:", port_mode)
 
         ## Open port
         err = await dev.AI_open_async(port)
@@ -73,7 +89,6 @@ async def main():
         err = await dev.AI_enableCS_async(port, chip_select)
         print(f"AI_enableCS_async in port {port}: {err}")
         
-
         ## Open AO
         err = await dev.AO_open_async(port)
         print(f"AO_open_async in port {port}: {err}")

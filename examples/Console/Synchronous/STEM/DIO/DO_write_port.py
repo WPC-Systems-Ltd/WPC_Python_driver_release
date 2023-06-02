@@ -7,6 +7,7 @@ First, it shows how to open DO in port.
 Second, write DO pins in two different types (hex or list) but it should be consistency.
 Last, close DO in port.
 
+--------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -41,8 +42,10 @@ def main():
         return
 
     try:
+        
         ## Parameters setting
         port = 1 ## Depend on your device
+        DO_port = 1
         timeout = 3  ## second
 
         ## Get firmware model & version
@@ -50,24 +53,29 @@ def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## Open all pins and set it to digital output
-        err = dev.DO_openPort(port, timeout=timeout)
-        print(f"DO_openPort in port {port}: {err}")
+        ## Get port mode
+        port_mode = dev.Sys_getPortMode(port, timeout=timeout)
+        print("Slot mode:", port_mode)
 
-        ## Set pin0, pin3 and pin4 to high, others to low
-        err = dev.DO_writePort(port, [0,0,0,1,1,0,0,1], timeout=timeout)
-        print(f"DO_writePort in port {port}: {err}")
+        ## If the port mode is not set to "DIO", set the port mode to "DIO"
+        if port_mode != "DIO":
+            err = dev.Sys_setPortDIOMode(port, timeout=timeout)
+            print(f"Sys_setPortDIOMode in port {port}: {err}")
 
-        ## Wait for 1 seconds to see led status
-        time.sleep(1) ## delay [s]
+        ## Get port mode
+        port_mode = dev.Sys_getPortMode(port, timeout=timeout)
+        print("Slot mode:", port_mode)
 
-        ## Set pin7 and pin6 to high, others to low (1100 0000 in binary) (0xC0 in hex)
-        err = dev.DO_writePort(port, 0xC0, timeout=timeout)
-        print(f"DO_writePort in port {port}: {err}")
+        ## Get port DIO start up information
+        info = dev.DIO_loadStartup(DO_port, timeout=timeout)
+        print("Enable:   ", info[0])
+        print("Direction:", info[1])
+        print("State:    ", info[2])
 
-        ## Close all pins with digital output
-        err = dev.DO_closePort(port, timeout=timeout)
-        print(f"DO_closePort in port {port}: {err}")
+        ## Write port to high or low
+        err = dev.DO_writePort(DO_port, [1, 1, 0, 0], timeout=timeout)
+        print(f"DO_writePort in port {DO_port}: {err}")
+        
     except Exception as err:
         pywpc.printGenericError(err)
 

@@ -8,6 +8,7 @@ First, it shows how to open DO and DI in port.
 Second, write DO in port and read DI in port
 Last, close DO and DI in port.
 
+--------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -44,8 +45,8 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        port_DO = 0
-        port_DI = 1
+        DO_port = 0
+        DI_port = 1
         timeout = 3  ## second
 
         ## Get firmware model & version
@@ -53,29 +54,35 @@ def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## Open all pins with digital output
-        err = dev.DO_openPort(port_DO, timeout=timeout)
-        print(f"DO_openPort in port {port_DO}: {err}")
+        
+        ## Get port mode
+        port_mode = dev.Sys_getPortMode(port, timeout=timeout)
+        print("Slot mode:", port_mode)
 
-        ## Open all pins with digital input
-        err = dev.DI_openPort(port_DI, timeout=timeout)
-        print(f"DI_openPort in port {port_DI}: {err}")
+        ## If the port mode is not set to "DIO", set the port mode to "DIO"
+        if port_mode != "DIO":
+            err = dev.Sys_setPortDIOMode(port, timeout=timeout)
+            print(f"Sys_setPortDIOMode in port {port}: {err}")
 
-        ## Set pin0, pin1 and pin2 to high, others to low
-        err = dev.DO_writePort(port_DO, [0,0,0,1,0,0,0,0], timeout=timeout)
-        print(f"DO_writePort in port {port_DO}: {err}")
+        ## Get port mode
+        port_mode = dev.Sys_getPortMode(port, timeout=timeout)
+        print("Slot mode:", port_mode)
 
-        ## Read all pins state
-        state_list = dev.DI_readPort(port_DI, timeout=timeout)
-        print(f"state_list in port {port_DI}: {state_list}")
+        ## Get port DIO start up information
+        info = dev.DIO_loadStartup(DO_port, timeout=timeout)
+        print("Enable:   ", info[0])
+        print("Direction:", info[1])
+        print("State:    ", info[2])
 
-        ## Close all pins with digital output
-        err = dev.DO_closePort(port_DO, timeout=timeout)
-        print(f"DO_closePort in port {port_DO}: {err}")
+        ## Write DO port to high or low
+        err = dev.DO_writePort(DO_port, [1, 0, 1, 0], timeout=timeout)
+        print(f"DO_writePort in port {DO_port}: {err}")
 
-        ## Close all pins with digital input
-        err = dev.DI_closePort(port_DI, timeout=timeout)
-        print(f"DI_closePort in port {port_DI}: {err}")
+        ## Read DI port state
+        state_list = dev.DI_readPort(DI_port, timeout=timeout)
+        print(f"state_list in port {DI_port}: {state_list}")
+
+        
     except Exception as err:
         pywpc.printGenericError(err)
 

@@ -8,6 +8,7 @@ First, it shows how to open DO and DI in port.
 Second, write DO in port and read DI in port
 Last, close DO and DI in port.
 
+--------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -44,8 +45,8 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        port_DO = 0
-        port_DI = 1
+        DO_port = 0
+        DI_port = 1
         timeout = 3  ## second
 
         ## Get firmware model & version
@@ -53,29 +54,31 @@ def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## Open all pins with digital output
-        err = dev.DO_openPort(port_DO, timeout=timeout)
-        print(f"DO_openPort in port {port_DO}: {err}")
+        
+        ## Open DO port with digital output
+        err = dev.DO_openPort(DO_port, timeout=timeout)
+        print(f"DO_openPort in port {DO_port}: {err}")
 
-        ## Open all pins with digital input
-        err = dev.DI_openPort(port_DI, timeout=timeout)
-        print(f"DI_openPort in port {port_DI}: {err}")
+        ## Open DI port with digital input
+        err = dev.DI_openPort(DI_port, timeout=timeout)
+        print(f"DI_openPort in port {DI_port}: {err}")
 
-        ## Set pin0, pin1 and pin2 to high, others to low
-        err = dev.DO_writePort(port_DO, [0,0,0,1,0,0,0,0], timeout=timeout)
-        print(f"DO_writePort in port {port_DO}: {err}")
+        ## Write DO port to high or low
+        err = dev.DO_writePort(DO_port, [1, 0, 1, 0], timeout=timeout)
+        print(f"DO_writePort in port {DO_port}: {err}")
 
-        ## Read all pins state
-        state_list = dev.DI_readPort(port_DI, timeout=timeout)
-        print(f"state_list in port {port_DI}: {state_list}")
+        ## Read DI port state
+        state_list = dev.DI_readPort(DI_port, timeout=timeout)
+        print(f"state_list in port {DI_port}: {state_list}")
 
-        ## Close all pins with digital output
-        err = dev.DO_closePort(port_DO, timeout=timeout)
-        print(f"DO_closePort in port {port_DO}: {err}")
+        ## Close DO port with digital output
+        err = dev.DO_closePort(DO_port, timeout=timeout)
+        print(f"DO_closePort in port {DO_port}: {err}")
 
-        ## Close all pins with digital input
-        err = dev.DI_closePort(port_DI, timeout=timeout)
-        print(f"DI_closePort in port {port_DI}: {err}")
+        ## Close DI port with digital input
+        err = dev.DI_closePort(DI_port, timeout=timeout)
+        print(f"DI_closePort in port {DI_port}: {err}")
+        
     except Exception as err:
         pywpc.printGenericError(err)
 

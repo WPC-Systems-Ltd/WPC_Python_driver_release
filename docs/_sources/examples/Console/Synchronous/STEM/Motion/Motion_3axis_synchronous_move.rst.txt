@@ -1,6 +1,0 @@
-Motion 3axis sync move
-======================
-
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/STEM/Motion/Motion_3axis_synchronous_move.py
-   :language: python
-   :linenos:

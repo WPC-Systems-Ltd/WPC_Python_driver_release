@@ -1,13 +1,14 @@
 '''
 AI - AI_on_demand_in_loop.py with synchronous mode.
 
-This example demonstrates how to get AI data in on demand mode.
-Also, it uses loop to get AI data with 3 seconds timeout with 8 channels USBDAQF1AD.
+This example demonstrates the process of obtaining AI data in on demand mode.
+Additionally, it utilizes a loop to retrieve AI data with 5 times from USBDAQF1AD.
 
-First, it shows how to open AI port and configure AI parameters.
-Second, read AI ondemand data.
-Last, close AI port.
+To begin with, it demonstrates the steps to open the AI port and configure the AI parameters.
+Next, it outlines the procedure for reading the AI on demand data.
+Finally, it concludes by explaining how to close the AI port.
 
+--------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -64,23 +65,21 @@ def main():
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-
         
         ## Open port
         err = dev.AI_open(port, timeout=timeout)
         print(f"AI_open in port {port}: {err}")
         
-
-        ## Set AI port and acquisition mode to on demand mode (0)
+        ## Set AI acquisition mode to on demand mode (0)
         err = dev.AI_setMode(port, mode, timeout=timeout)
         print(f"AI_setMode {mode} in port {port}: {err}")
 
-        ## Set loop parameters
-        delay = 0.05
-        exit_loop_time = 3
-
-        ## Start loop
-        loop_func(dev, port, delay=delay, exit_loop_time=exit_loop_time)
+        ## Read AI data with 5 times
+        print(f"data in port {port}: ")
+        for i in range(5):
+            ## data acquisition
+            data = dev.AI_readOnDemand(port)
+            print(f"{data}")
 
         ## Close port
         err = dev.AI_close(port, timeout=timeout)

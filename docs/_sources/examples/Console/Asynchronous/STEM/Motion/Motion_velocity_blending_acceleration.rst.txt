@@ -1,6 +1,0 @@
-Motion acceleration blending
-============================
-
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/STEM/Motion/Motion_velocity_blending_acceleration.py
-   :language: python
-   :linenos:

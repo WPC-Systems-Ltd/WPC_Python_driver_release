@@ -1,6 +1,0 @@
-Motion get logical position
-===========================
-
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/STEM/Motion/Motion_get_logical_position.py
-   :language: python
-   :linenos:

@@ -3,6 +3,7 @@ System_Wifi - get_Wifi_DAQ_status.py with asynchronous mode.
 
 This example demonstrates how to get basic information such as RSSI & battery & thermo from WifiDAQE3A.
 
+--------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:

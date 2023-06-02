@@ -1,6 +1,7 @@
 '''
 Motion - Motion_find_limit.py with asynchronous mode.
 
+--------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:

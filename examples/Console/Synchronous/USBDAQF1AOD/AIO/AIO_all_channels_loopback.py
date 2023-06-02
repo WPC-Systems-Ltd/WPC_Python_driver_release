@@ -1,13 +1,16 @@
 '''
 AIO - AIO_all_channels_loopback.py with synchronous mode.
 
-This example demonstrates how to write AIO loopback in all channels from USBDAQF1AOD.
-Use AO pins to send signals and use AI pins to receive signals on single device also called "loopback".
+This example demonstrates the process of AIO loopback across all channels of USBDAQF1AOD.
+It involves using AO pins to send signals and AI pins to receive signals on a single device, commonly referred to as "loopback".
+The AI and AO pins are connected using a wire.
 
-First, it shows how to open AO and AI in port.
-Second, write all digital signals to AO and read AI ondemand data.
-Last, close AO and AI in port.
+Initially, the example demonstrates the steps required to open the AI and AO port
+Next, it reads AI data and displays its corresponding values.
+Following that, it writes digital signals to the AO pins and reads AI on-demand data once again.
+Lastly, it closes the AO and AI ports.
 
+--------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -51,9 +54,7 @@ def main():
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-
         
-
         ## Open AI
         err = dev.AI_open(port, timeout=timeout)
         print(f"AI_open in port {port}: {err}")
@@ -63,16 +64,16 @@ def main():
         err = dev.AO_open(port, timeout=timeout)
         print(f"AO_open in port {port}: {err}")
 
-        ## Set AI port and data acquisition
+        ## Read data acquisition
         data = dev.AI_readOnDemand(port, timeout=timeout)
         print(f"AI data in port {port}: {data}")
 
-        ## Set AO port and write data simultaneously
+        ## Write AO value simultaneously
         ## CH0~CH1 5V, CH2~CH3 3V, CH4~CH5 2V, CH6~CH7 0V
         err = dev.AO_writeAllChannels(port, [5,5,3,3,2,2,0,0], timeout=timeout)
         print(f"AO_writeAllChannels in port {port}: {err}")
 
-        ## Set AI port and data acquisition
+        ## Read data acquisition
         data = dev.AI_readOnDemand(port, timeout=timeout)
         print(f"AI data in port {port}: {data}")
 

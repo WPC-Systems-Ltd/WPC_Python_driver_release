@@ -7,6 +7,7 @@ First, it shows how to open DO in pins.
 Second, each loop has different voltage output so it will look like blinking.
 Last, close DO in pins.
 
+--------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -41,35 +42,39 @@ async def main():
         return
 
     try:
+        
         ## Parameters setting
         port = 1 ## Depend on your device
-        pinindex = [0,1]
+        DO_port = 1
+        pinindex = [1, 3, 5, 7]
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## Open pin0 and pin1 with digital output
-        err = await dev.DO_openPins_async(port, pinindex)
-        print(f"DO_openPins_async in port {port}: {err}")
+        ## If the port mode is not set to "DIO", set the port mode to "DIO"
+        if port_mode != "DIO":
+            err = await dev.Sys_setPortDIOMode_async(port)
+            print(f"Sys_setPortDIOMode_async in port {port}: {err}")
 
-        ## Toggle digital state for 10 times. Each times delay for 0.5 second
+        ## Get port mode
+        port_mode = await dev.Sys_getPortMode_async(port)
+        print("Slot mode:", port_mode)
+
+        ## Get port DIO start up information
+        info = await dev.DIO_loadStartup_async(DO_port)
+        print("Enable:   ", info[0])
+        print("Direction:", info[1])
+        print("State:    ", info[2])
+
         for i in range(10):
-            if i%2 == 0:
-                value = [0,1]
-            else:
-                value = [1,0]
-
-            await dev.DO_writePins_async(port, pinindex, value)
-            print(f'Port: {port}, pinindex= {pinindex}, digital state= {value}')
+            state = await dev.DO_togglePins_async(DO_port, pinindex)
+            print(state)
 
             ## Wait for 0.5 second to see led status
             await asyncio.sleep(0.5)  ## delay [s]
-
-        ## Close pin0 and pin1 with digital output
-        err = await dev.DO_closePins_async(port, pinindex)
-        print(f"DO_closePins_async in port {port}: {err}")
+        
     except Exception as err:
         pywpc.printGenericError(err)
 

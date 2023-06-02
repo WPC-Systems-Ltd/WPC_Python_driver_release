@@ -1,12 +1,14 @@
 '''
 AO - AO_write_one_channel.py with asynchronous mode.
 
-This example demonstrates how to write AO in specific channels from STEM.
+This example demonstrates the process of writing AO signal of STEM.
+To begin with, it demonstrates the steps to open the AO port.
+Next, it outlines the procedure for writing digital signals with channel to the AO pins.
+Finally, it concludes by explaining how to close the AO port.
 
-First, it shows how to open AO in port.
-Second, write digital signals in specific channels.
-Last, close AO in port.
+If your product is "STEM", please invoke the function `Sys_setPortAIOMode_async`.
 
+--------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -47,22 +49,20 @@ async def main():
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-
         
         ## Get port mode
         port_mode = await dev.Sys_getPortMode_async(port)
-        print("Slot mode: ", port_mode)
+        print("Slot mode:", port_mode)
 
+        ## If the port mode is not set to "AIO", set the port mode to "AIO"
         if port_mode != "AIO":
-            ## Set port to AIO mode
             err = await dev.Sys_setPortAIOMode_async(port)
             print(f"Sys_setPortAIOMode_async in port {port}: {err}")
 
         ## Get port mode
         port_mode = await dev.Sys_getPortMode_async(port)
-        print("Slot mode: ", port_mode)
+        print("Slot mode:", port_mode)
         
-
         ## Open AO
         err = await dev.AO_open_async(port)
         print(f"AO_open_async in port {port}: {err}")

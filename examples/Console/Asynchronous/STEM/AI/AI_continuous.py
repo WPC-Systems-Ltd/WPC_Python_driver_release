@@ -1,13 +1,28 @@
 '''
 AI - AI_continuous.py with asynchronous mode.
 
-This example demonstrates how to get AI data in continuous mode.
-Also, it uses async loop to get AI data with 3 seconds timeout with 8 channels from STEM.
+This example demonstrates the process of obtaining AI data in continuous mode.
+Additionally, it utilizes a loop to retrieve AI data with 8 channels from STEM with a timeout of 100 ms.
 
-First, it shows how to open AI port and configure AI parameters.
-Second, read AI streaming data.
-Last, close AI port.
+To begin with, it demonstrates the steps to open the AI port and configure the AI parameters.
+Next, it outlines the procedure for reading the streaming AI data.
+Finally, it concludes by explaining how to close the AI port.
 
+If your product is "STEM", please invoke the function `Sys_setPortAIOMode_async`and `AI_enableCS_async`.
+Example: AI_enableCS_async is {0, 2}
+Subsequently, the returned value of AI_readOnDemand_async and AI_readStreaming_async will be displayed as follows.
+data:
+          CH0, CH1, CH2, CH3, CH4, CH5, CH6, CH7, CH0, CH1, CH2, CH3, CH4, CH5, CH6, CH7
+          |                                     |                                      |
+          |---------------- CS0-----------------|---------------- CS2------------------|
+[sample0]
+[sample1]
+   .
+   .
+   .
+[sampleN]
+
+--------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -28,10 +43,12 @@ from wpcsys import pywpc
 async def loop_func(handle, port, num_of_samples=600, delay=0.05, exit_loop_time=3):
     time_cal = 0
     while time_cal < exit_loop_time:
-        ## data acquisition
+        ## Read data acquisition
         data = await handle.AI_readStreaming_async(port, num_of_samples, delay=delay) ## Get 600 points at a time
-        if len(data) > 0:
-            print(f"data in port {port}: {data[0]}")
+
+        ## Print data
+        for i in range(len(data)):
+            print(f"{data[i]}")
 
         ## Wait
         await asyncio.sleep(delay)  ## delay [s]
@@ -64,20 +81,19 @@ async def main():
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-
         
         ## Get port mode
         port_mode = await dev.Sys_getPortMode_async(port)
-        print("Slot mode: ", port_mode)
+        print("Slot mode:", port_mode)
 
+        ## If the port mode is not set to "AIO", set the port mode to "AIO"
         if port_mode != "AIO":
-            ## Set port to AIO mode
             err = await dev.Sys_setPortAIOMode_async(port)
             print(f"Sys_setPortAIOMode_async in port {port}: {err}")
 
         ## Get port mode
         port_mode = await dev.Sys_getPortMode_async(port)
-        print("Slot mode: ", port_mode)
+        print("Slot mode:", port_mode)
 
         ## Open port
         err = await dev.AI_open_async(port)
@@ -88,22 +104,25 @@ async def main():
         print(f"AI_enableCS_async in port {port}: {err}")
         
 
-        ## Set AI port and acquisition mode to continuous mode (2)
+        ## Set AI acquisition mode to continuous mode (2)
         err = await dev.AI_setMode_async(port, mode)
         print(f"AI_setMode_async {mode} in port {port}: {err}")
 
-        ## Set AI port and sampling rate to 1k (Hz)
+        ## Set AI sampling rate to 1k (Hz)
         err = await dev.AI_setSamplingRate_async(port, sampling_rate)
         print(f"AI_setSamplingRate_async {sampling_rate} in port {port}: {err}")
 
-        ## Set AI port and start acquisition
+        ## Start AI acquisition
         err = await dev.AI_start_async(port)
         print(f"AI_start_async in port {port}: {err}")
 
+        ## Wait 1 seconds for acquisition
+        await asyncio.sleep(1) ## delay [s]
+
         ## Set loop parameters
-        num_of_samples = 600
+        num_of_samples = 100
         delay = 0.05
-        exit_loop_time = 3
+        exit_loop_time = 0.1
 
         ## Start loop
         await loop_func(dev, port, num_of_samples=num_of_samples, delay=delay, exit_loop_time=exit_loop_time)

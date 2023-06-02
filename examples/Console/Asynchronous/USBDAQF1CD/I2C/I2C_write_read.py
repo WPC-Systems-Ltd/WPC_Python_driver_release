@@ -9,6 +9,7 @@ Last, close I2C port
 
 The sensor used in this example is a 24C08C expecially for Two-wore Serial EEPROM.
 
+--------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:

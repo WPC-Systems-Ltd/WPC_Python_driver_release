@@ -1,13 +1,30 @@
 '''
 AIO - AIO_one_channel_loopback.py with synchronous mode.
 
-This example demonstrates how to write AIO loopback in specific channel from STEM.
-Use AO pins to send signals and use AI pins to receive signals on single device also called "loopback".
+This example demonstrates the process of AIO loopback with specific channels of STEM.
+It involves using AO pins to send signals and AI pins to receive signals on a single device, commonly referred to as "loopback".
+The AI and AO pins are connected using a wire.
 
-First, it shows how to open AO and AI in port.
-Second, write digital signals to AO in specific channel and read AI ondemand data.
-Last, close AO and AI in port.
+Initially, the example demonstrates the steps required to open the AI and AO port
+Next, it reads AI data and displays its corresponding values.
+Following that, it writes digital signals to the AO pins and reads AI on-demand data once again.
+Lastly, it closes the AO and AI ports.
 
+If your product is "STEM", please invoke the function `Sys_setPortAIOMode` and `AI_enableCS`.
+Example: AI_enableCS is {0, 2}
+Subsequently, the returned value of AI_readOnDemand and AI_readStreaming will be displayed as follows.
+data:
+          CH0, CH1, CH2, CH3, CH4, CH5, CH6, CH7, CH0, CH1, CH2, CH3, CH4, CH5, CH6, CH7
+          |                                     |                                      |
+          |---------------- CS0-----------------|---------------- CS2------------------|
+[sample0]
+[sample1]
+   .
+   .
+   .
+[sampleN]
+
+--------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -51,20 +68,19 @@ def main():
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-
         
         ## Get port mode
         port_mode = dev.Sys_getPortMode(port, timeout=timeout)
-        print("Slot mode: ", port_mode)
+        print("Slot mode:", port_mode)
 
+        ## If the port mode is not set to "AIO", set the port mode to "AIO"
         if port_mode != "AIO":
-            ## Set port to AIO mode
             err = dev.Sys_setPortAIOMode(port, timeout=timeout)
             print(f"Sys_setPortAIOMode in port {port}: {err}")
 
         ## Get port mode
         port_mode = dev.Sys_getPortMode(port, timeout=timeout)
-        print("Slot mode: ", port_mode)
+        print("Slot mode:", port_mode)
 
         ## Open port
         err = dev.AI_open(port, timeout=timeout)
@@ -74,32 +90,31 @@ def main():
         err = dev.AI_enableCS(port, chip_select, timeout=timeout)
         print(f"AI_enableCS in port {port}: {err}")
         
-
         ## Open AO
         err = dev.AO_open(port, timeout=timeout)
         print(f"AO_open in port {port}: {err}")
 
-        ## Set AI port and data acquisition
+        ## Read data acquisition
         data = dev.AI_readOnDemand(port, timeout=timeout)
         print(f"AI data in port {port}: {data}")
 
-        ## Set AO port and write data 1.5(V) in channel 0
+        ## Write AO vaule 1.5(V) in channel 0
         err = dev.AO_writeOneChannel(port, 0, 1.5, timeout=timeout)
         print(f"AO_writeOneChannel in ch0 in port {port}: {err}")
 
-        ## Set AO port and write data 2.5(V) in channel 1
+        ## Write AO vaule 2.5(V) in channel 1
         err = dev.AO_writeOneChannel(port, 1, 2.5, timeout=timeout)
         print(f"AO_writeOneChannel in ch1 in port {port}: {err}")
 
-        ## Set AO port and write data 3.5(V) in channel 2
+        ## Write AO vaule 3.5(V) in channel 2
         err = dev.AO_writeOneChannel(port, 2, 3.5, timeout=timeout)
         print(f"AO_writeOneChannel in ch2 in port {port}: {err}")
 
-        ## Set AO port and write data 4.5(V) in channel 3
+        ## Write AO vaule 4.5(V) in channel 3
         err = dev.AO_writeOneChannel(port, 3, 4.5, timeout=timeout)
         print(f"AO_writeOneChannel in ch3 in port {port}: {err}")
 
-        ## Set AI port and data acquisition
+        ## Read data acquisition
         data = dev.AI_readOnDemand(port, timeout=timeout)
         print(f"AI data in port {port}: {data}")
 

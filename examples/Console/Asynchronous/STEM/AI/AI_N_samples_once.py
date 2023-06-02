@@ -1,13 +1,28 @@
 '''
 AI - AI_N_samples_once.py with asynchronous mode.
 
-This example demonstrates how to get AI data in N samples mode.
-Also, it gets AI data in once with 8 channels from STEM.
+This example demonstrates the process of obtaining AI data in N-sample mode.
+Additionally, it gets AI data with 50 points in once from STEM.
 
-First, it shows how to open AI port and configure AI parameters.
-Second, read AI streaming data .
-Last, close AI port.
+To begin with, it demonstrates the steps to open the AI port and configure the AI parameters.
+Next, it outlines the procedure for reading the streaming AI data.
+Finally, it concludes by explaining how to close the AI port.
 
+If your product is "STEM", please invoke the function `Sys_setPortAIOMode_async`and `AI_enableCS_async`.
+Example: AI_enableCS_async is {0, 2}
+Subsequently, the returned value of AI_readOnDemand_async and AI_readStreaming_async will be displayed as follows.
+data:
+          CH0, CH1, CH2, CH3, CH4, CH5, CH6, CH7, CH0, CH1, CH2, CH3, CH4, CH5, CH6, CH7
+          |                                     |                                      |
+          |---------------- CS0-----------------|---------------- CS2------------------|
+[sample0]
+[sample1]
+   .
+   .
+   .
+[sampleN]
+
+--------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -48,26 +63,26 @@ async def main():
         sampling_rate = 1000
         samples = 50
         read_points = 50
+        delay = 0.05 ## second
         chip_select = [0, 1]
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-
         
         ## Get port mode
         port_mode = await dev.Sys_getPortMode_async(port)
-        print("Slot mode: ", port_mode)
+        print("Slot mode:", port_mode)
 
+        ## If the port mode is not set to "AIO", set the port mode to "AIO"
         if port_mode != "AIO":
-            ## Set port to AIO mode
             err = await dev.Sys_setPortAIOMode_async(port)
             print(f"Sys_setPortAIOMode_async in port {port}: {err}")
 
         ## Get port mode
         port_mode = await dev.Sys_getPortMode_async(port)
-        print("Slot mode: ", port_mode)
+        print("Slot mode:", port_mode)
 
         ## Open port
         err = await dev.AI_open_async(port)
@@ -77,31 +92,32 @@ async def main():
         err = await dev.AI_enableCS_async(port, chip_select)
         print(f"AI_enableCS_async in port {port}: {err}")
         
-
-        ## Set AI port and acquisition mode to N-samples mode (1)
+        ## Set AI acquisition mode to N-samples mode (1)
         err = await dev.AI_setMode_async(port, mode)
         print(f"AI_setMode_async {mode} in port {port}: {err}")
 
-        ## Set AI port and sampling rate to 1k (Hz)
+        ## Set AI sampling rate to 1k (Hz)
         err = await dev.AI_setSamplingRate_async(port, sampling_rate)
         print(f"AI_setSamplingRate_async {sampling_rate} in port {port}: {err}")
 
-        ## Set AI port and # of samples to 50 (pts)
+        ## Set AI # of samples to 50 (pts)
         err = await dev.AI_setNumSamples_async(port, samples)
         print(f"AI_setNumSamples_async {samples} in port {port}: {err}")
 
-        ## Set AI port and start acquisition
+        ## Start AI acquisition
         err = await dev.AI_start_async(port)
         print(f"AI_start_async in port {port}: {err}")
 
         ## Wait 1 seconds for acquisition
         await asyncio.sleep(1) ## delay [s]
 
-        ## Set AI port and get 50 points
-        data = await dev.AI_readStreaming_async(port, read_points, delay=0.005)
+        ## Data acquisition
+        data = await dev.AI_readStreaming_async(port, read_points, delay=delay)
 
         ## Read acquisition data 50 points
-        print(f"data in port {port}: {data[0]}")
+        print(f"data in port {port}: ")
+        for i in range(len(data)):
+            print(f"{data[i]}")
 
         ## Close port
         err = await dev.AI_close_async(port)

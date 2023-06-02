@@ -1,6 +1,0 @@
-Motion 1axis move with capture
-==============================
-
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/STEM/Motion/Motion_1axis_move_with_capture.py
-   :language: python
-   :linenos:

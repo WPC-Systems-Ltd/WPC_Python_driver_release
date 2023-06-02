@@ -8,6 +8,7 @@ First, it shows how to open DO and DI in port.
 Second, write DO in port and read DI in port
 Last, close DO and DI in port.
 
+--------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -44,37 +45,38 @@ async def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        port_DO = 0
-        port_DI = 1
+        DO_port = 0
+        DI_port = 1
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
+        
+        ## Open DO port with digital output
+        err = await dev.DO_openPort_async(DO_port)
+        print(f"DO_openPort_async in port {DO_port}: {err}")
 
-        ## Open all pins with digital output
-        err = await dev.DO_openPort_async(port_DO)
-        print(f"DO_openPort_async in port {port_DO}: {err}")
+        ## Open DI port with digital input
+        err = await dev.DI_openPort_async(DI_port)
+        print(f"DI_openPort_async in port {DI_port}: {err}")
 
-        ## Open all pins with digital input
-        err = await dev.DI_openPort_async(port_DI)
-        print(f"DI_openPort_async in port {port_DI}: {err}")
+        ## Write DO port to high or low
+        err = await dev.DO_writePort_async(DO_port, [1, 0, 1, 0])
+        print(f"DO_writePort_async in port {DO_port}: {err}")
 
-        ## Set pin0, pin1 and pin2 to high, others to low
-        err = await dev.DO_writePort_async(port_DO, [0,0,0,1,0,0,0,0])
-        print(f"DO_writePort_async in port {port_DO}: {err}")
-
-        ## Read all pins state
-        state_list = await dev.DI_readPort_async(port_DI)
+        ## Read DI port state
+        state_list = await dev.DI_readPort_async(DI_port)
         print(f"state_list{state_list}")
 
-        ## Close all pins with digital output
-        err = await dev.DO_closePort_async(port_DO)
-        print(f"DO_closePort_async in port {port_DO}: {err}")
+        ## Close DO port with digital output
+        err = await dev.DO_closePort_async(DO_port)
+        print(f"DO_closePort_async in port {DO_port}: {err}")
 
-        ## Close all pins with digital input
-        err = await dev.DI_closePort_async(port_DI)
-        print(f"DI_closePort_async in port {port_DI}: {err}")
+        ## Close DI port with digital input
+        err = await dev.DI_closePort_async(DI_port)
+        print(f"DI_closePort_async in port {DI_port}: {err}")
+        
     except Exception as err:
         pywpc.printGenericError(err)
 

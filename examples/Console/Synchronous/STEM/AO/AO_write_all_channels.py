@@ -1,12 +1,14 @@
 '''
 AO - AO_write_all_channels.py with synchronous mode.
 
-This example demonstrates how to write AO in all channels from STEM.
+This example demonstrates the process of writing AO signal of STEM.
+To begin with, it demonstrates the steps to open the AO port.
+Next, it outlines the procedure for writing digital signals simultaneously to the AO pins.
+Finally, it concludes by explaining how to close the AO port.
 
-First, it shows how to open AO in port.
-Second, write all digital signals
-Last, close AO in port.
+If your product is "STEM", please invoke the function `Sys_setPortAIOMode`.
 
+--------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -49,22 +51,20 @@ def main():
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-
         
         ## Get port mode
         port_mode = dev.Sys_getPortMode(port, timeout=timeout)
-        print("Slot mode: ", port_mode)
+        print("Slot mode:", port_mode)
 
+        ## If the port mode is not set to "AIO", set the port mode to "AIO"
         if port_mode != "AIO":
-            ## Set port to AIO mode
             err = dev.Sys_setPortAIOMode(port, timeout=timeout)
             print(f"Sys_setPortAIOMode in port {port}: {err}")
 
         ## Get port mode
         port_mode = dev.Sys_getPortMode(port, timeout=timeout)
-        print("Slot mode: ", port_mode)
+        print("Slot mode:", port_mode)
         
-
         ## Open AO
         err = dev.AO_open(port, timeout=timeout)
         print(f"AO_open in port {port}: {err}")

@@ -1,13 +1,12 @@
 '''
 AO - AO_waveform_gen.py with synchronous mode.
 
-This example demonstrates how to use AO waveform generation in specific channels from EthanO.
+This example demonstrates the process of writing AO signal of EthanO.
+To begin with, it demonstrates the steps to open the AO port and configure the AO parameters.
+Next, it outlines the procedure for AO streaming.
+Finally, it concludes by explaining how to close the AO port.
 
-First, it shows how to open AO in port.
-Second, set AO streaming parameters
-Last, close AO in port.
-This example demonstrates how to write AO in all channels from EthanO.
-
+--------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -57,9 +56,7 @@ def main():
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-
         
-
         ## Open AO
         err = dev.AO_open(port, timeout=timeout)
         print(f"AO_open in port {port}: {err}")

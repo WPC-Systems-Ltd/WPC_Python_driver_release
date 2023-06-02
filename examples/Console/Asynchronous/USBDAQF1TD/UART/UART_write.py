@@ -7,6 +7,7 @@ First, it shows how to open UART port and configure UART parameters.
 Second, write bytes to another device.
 Last, close UART port.
 
+--------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:

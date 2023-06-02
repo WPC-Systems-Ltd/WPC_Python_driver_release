@@ -98,13 +98,15 @@ Python 3.8 or later with all `requirements.txt <https://github.com/WPC-Systems-L
 Products
 --------
 
+Controller
+
+- STEM
+
 Ethernet based motion card
 
 - EMotion
 
 Ethernet based DAQ card
-
-- STEM
 
 - Ethan-A
 
@@ -140,7 +142,7 @@ I/O Function Table
 +----------------+-----+-----+----+----+----+-----+-----+-----+----+---+------+
 | Model          |AI   |AO   |DI  |DO  |CAN |UART |SPI  |I2C  |RTD |TC |Motion|
 +----------------+-----+-----+----+----+----+-----+-----+-----+----+---+------+
-| STEM           |1,3,4|1,3,4|0~7 |0~7 |    |     |     |     |    |   |1,3,4 |
+| STEM           |1,3,4|1,3,4|0~7 |0~7 |    |     |     |     |    |   |      |
 +----------------+-----+-----+----+----+----+-----+-----+-----+----+---+------+
 | Emotion        |     |     |    |    |    |     |     |     |    |   |0     |
 +----------------+-----+-----+----+----+----+-----+-----+-----+----+---+------+
