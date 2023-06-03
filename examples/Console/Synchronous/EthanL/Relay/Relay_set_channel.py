@@ -3,6 +3,7 @@ Relay - Relay_set_channel.py with synchronous mode.
 
 This example demonstrates how to write channel from EthanL.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:

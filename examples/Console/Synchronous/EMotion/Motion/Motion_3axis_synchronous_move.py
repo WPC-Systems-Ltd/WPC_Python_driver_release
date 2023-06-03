@@ -1,6 +1,7 @@
 '''
 Motion - Motion_3axis_synchronous_move.py with synchronous mode.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -106,7 +107,7 @@ def main():
 
         ## Motion open
         err = dev.Motion_open(port, timeout=timeout)
-        print(f"Motion_open in port{port}: {err}")
+        print(f"Motion_open in port {port}: {err}")
 
         '''
         ## Motion open configuration file
@@ -168,7 +169,7 @@ def main():
 
         ## Motion start
         err = dev.Motion_startMultiAxisMove(port, [axis1, axis2, axis3], timeout=timeout)
-        print(f"Motion_startMultiAxisMove in port{port}: {err}")
+        print(f"Motion_startMultiAxisMove in port {port}: {err}")
 
         ## Wait for thread completion
         thread_1.join()
@@ -191,7 +192,7 @@ def main():
 
         ## Motion close
         err = dev.Motion_close(port, timeout=timeout)
-        print(f"Motion_close in port{port}: {err}")
+        print(f"Motion_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

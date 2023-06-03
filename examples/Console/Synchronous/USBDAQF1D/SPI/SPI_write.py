@@ -7,6 +7,7 @@ First, it shows how to open SPI port & DIO pins and configure SPI parameters.
 Second, write some bytes with address into EEPROM (25LC640).
 Last, close SPI port & DIO pins.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -48,8 +49,16 @@ def main():
         prescaler = 64
         mode = 0    ## 0 : CPOL = 0 CPHA = 0 ## 1 : CPOL = 0 CPHA = 1
                     ## 2 : CPOL = 1 CPHA = 0 ## 3 : CPOL = 1 CPHA = 1
-        DO_port = 0
-        DO_index = [0] ## CS pin
+
+        if (port == 1){
+            DO_port = 2
+            DO_index = [0] ## CS pin
+        }
+        else if (port == 2){
+            DO_port = 3
+            DO_index = [2] ## CS pin
+        }
+
         timeout = 3  ## second
 
         WRITE = 0x02
@@ -74,7 +83,7 @@ def main():
 
         ## Open SPI
         err = dev.SPI_open(port, timeout=timeout)
-        print(f"SPI_open in port{port}: {err}")
+        print(f"SPI_open in port {port}: {err}")
 
         ## Set CS(pin0) to high
         err = dev.DO_writePins(DO_port, DO_index, [1], timeout=timeout)
@@ -86,19 +95,19 @@ def main():
 
         ## Set SPI port and set datasize to 8-bits data
         err = dev.SPI_setDataSize(port, datasize, timeout=timeout)
-        print(f"SPI_setDataSize in port{port}: {err}")
+        print(f"SPI_setDataSize in port {port}: {err}")
 
         ## Set SPI port and set first_bit to MSB first
         err = dev.SPI_setFirstBit(port, first_bit, timeout=timeout)
-        print(f"SPI_setFirstBit in port{port}: {err}")
+        print(f"SPI_setFirstBit in port {port}: {err}")
 
         ## Set SPI port and set prescaler to 64
         err = dev.SPI_setPrescaler(port, prescaler, timeout=timeout)
-        print(f"SPI_setPrescaler in port{port}: {err}")
+        print(f"SPI_setPrescaler in port {port}: {err}")
 
         ## Set SPI port and set CPOL and CPHA to 0 (mode 0)
         err = dev.SPI_setMode(port, mode, timeout=timeout)
-        print(f"SPI_setMode in port{port}: {err}")
+        print(f"SPI_setMode in port {port}: {err}")
 
         '''
         Write data via SPI
@@ -107,14 +116,17 @@ def main():
         ## Set CS(pin0) to low
         err = dev.DO_writePins(DO_port, DO_index, [0], timeout=timeout)
         print(f"DO_writePins in port {DO_port}: {err}")
+        time.sleep(0.01)
 
         ## Write WREN byte
         err = dev.SPI_write(port, [WREN], timeout=timeout)
-        print(f"SPI_write in port{port}: {err}")
+        print(f"SPI_write in port {port}: {err}")
+        time.sleep(0.01)
 
         ## Set CS(pin0) to high
         err = dev.DO_writePins(DO_port, DO_index, [1], timeout=timeout)
         print(f"DO_writePins in port {DO_port}: {err}")
+        time.sleep(0.05)
 
         '''
         Write data via SPI
@@ -123,10 +135,12 @@ def main():
         ## Set CS(pin0) to low
         err = dev.DO_writePins(DO_port, DO_index, [0], timeout=timeout)
         print(f"DO_writePins in port {DO_port}: {err}")
+        time.sleep(0.01)
 
         ## Write data byte 0x55 in to address 0x0002
         err = dev.SPI_write(port, [WRITE, 0x00, 0x02, 0x55], timeout=timeout)
-        print(f"SPI_write in port{port}: {err}")
+        print(f"SPI_write in port {port}: {err}")
+        time.sleep(0.01)
 
         ## Set CS(pin0) to high
         err = dev.DO_writePins(DO_port, DO_index, [1], timeout=timeout)
@@ -138,7 +152,7 @@ def main():
 
         ## Close SPI
         err = dev.SPI_close(port)
-        print(f"SPI_close in port{port}: {err}")
+        print(f"SPI_close in port {port}: {err}")
 
         ## Close pin0 with digital output
         err = dev.DO_closePins(DO_port, DO_index)

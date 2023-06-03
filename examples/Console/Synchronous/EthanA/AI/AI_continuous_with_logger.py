@@ -1,13 +1,14 @@
 '''
 AI - AI_continuous_with_logger.py with synchronous mode.
 
-This example demonstrates how to get AI data in continuous mode and save data into csv file.
-Also, it uses loop to get AI data with 3 seconds timeout with 8 channels from EthanA.
+This example demonstrates the process of obtaining AI data in continuous mode and saving it into a CSV file.
+Additionally, it utilizes a loop to retrieve AI data with 8 channels from EthanA with a timeout of 100 ms.
 
-First, it shows how to open AI port and configure AI parameters.
-Second, read and save AI streaming data.
-Last, close AI port.
+To begin with, it demonstrates the steps to open the AI port and configure the AI parameters.
+Next, it outlines the procedure for reading and saving the streaming AI data.
+Finally, it concludes by explaining how to close the AI port.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -28,14 +29,15 @@ from wpcsys import pywpc
 def loop_func(handle, port, num_of_samples=600, delay=0.05, exit_loop_time=3):
     time_cal = 0
     while time_cal < exit_loop_time:
-        ## Data acquisition
+        ## Read data acquisition
         data = handle.AI_readStreaming(port, num_of_samples, delay=delay) ## Get 600 points at a time
 
-        if len(data) > 0:
-            print(f"data in port {port}: {data}")
+        ## Write data into CSV file
+        handle.Logger_write2DList(data)
 
-            ## Write data into CSV file
-            handle.Logger_write2DList(data)
+        ## Print data
+        for i in range(len(data)):
+            print(f"{data[i]}")
 
         ## Wait
         time.sleep(delay) ## delay [s]
@@ -47,9 +49,6 @@ def main():
 
     ## Create device handle
     dev = pywpc.EthanA()
-
-    ## Default Setting
-    port = 0 ## Depend on your device
 
     ## Connect to device
     try:
@@ -66,6 +65,7 @@ def main():
         mode = 2  ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 1000
         timeout = 3  ## second
+        chip_select = [0, 1]
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
@@ -79,34 +79,34 @@ def main():
         ## Write header into CSV file
         err = dev.Logger_writeHeader(["CH0","CH1","CH2","CH3","CH4","CH5","CH6","CH7"])
         print(f"Logger_writeHeader: {err}")
-
+        
         ## Open port
         err = dev.AI_open(port, timeout=timeout)
-        print(f"AI_open in port{port}: {err}")
-
-        ## Set AI port and acquisition mode to continuous mode (2)
+        print(f"AI_open in port {port}: {err}")
+        
+        ## Set AI acquisition mode to continuous mode (2)
         err = dev.AI_setMode(port, mode, timeout=timeout)
-        print(f"AI_setMode {mode} in port{port}: {err}")
+        print(f"AI_setMode {mode} in port {port}: {err}")
 
-        ## Set AI port and sampling rate to 1k (Hz)
+        ## Set AI sampling rate to 1k (Hz)
         err = dev.AI_setSamplingRate(port, sampling_rate, timeout=timeout)
-        print(f"AI_setSamplingRate {sampling_rate} in port{port}: {err}")
+        print(f"AI_setSamplingRate {sampling_rate} in port {port}: {err}")
 
-        ## Set AI port and start acquisition
+        ## Start AI acquisition
         err = dev.AI_start(port, timeout=timeout)
-        print(f"AI_start in port{port}: {err}")
+        print(f"AI_start in port {port}: {err}")
 
         ## Set loop parameters
-        num_of_samples = 600
+        num_of_samples = 200
         delay = 0.05
-        exit_loop_time = 3
+        exit_loop_time = 0.1
 
         ## Start loop
         loop_func(dev, port, num_of_samples=num_of_samples, delay=delay, exit_loop_time=exit_loop_time)
 
         ## Close port
         err = dev.AI_close(port, timeout=timeout)
-        print(f"AI_close in port{port}: {err}")
+        print(f"AI_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

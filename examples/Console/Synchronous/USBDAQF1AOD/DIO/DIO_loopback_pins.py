@@ -1,13 +1,14 @@
 '''
 DIO - DIO_loopback_pins.py with synchronous mode.
 
-This example demonstrates how to write DIO loopback in pins from USBDAQF1AOD.
-Use DO pins to send signals and use DI pins to receive signals on single device also called "loopback".
+This example demonstrates the process of DIO loopback using pins from USBDAQF1AOD.
+It involves using DO pins to send signals and DI pins to receive signals on a single device, commonly known as "loopback".
 
-First, it shows how to open DO and DI in pins.
-Second, write DO pin and read DI pin
-Last, close DO and DI in pins.
+To begin with, it illustrates the steps required to open the DO and DI pins.
+Next, it performs the operation of writing to a DO pin and reading from a DI pin.
+Lastly, it concludes by closing the DO and DI pins.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -42,38 +43,42 @@ def main():
         return
 
     try:
+        
         ## Parameters setting
         port = 0 ## Depend on your device
         timeout = 3  ## second
+        DO_pins = [0, 1, 2, 3]
+        DI_pins = [4, 5, 6, 7]
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## Open pin0, pin1, pin2, pin3 and pin4 with digital output
-        err = dev.DO_openPins(port, [0,1,2,3,4], timeout=timeout)
-        print(f"DO_openPins in port{port}: {err}")
+        ## Open pins with digital output
+        err = dev.DO_openPins(port, DO_pins, timeout=timeout)
+        print(f"DO_openPins in port {port}: {err}")
 
-        ## Set pin0 and pin1 to high, others to low
-        all_pin_state = dev.DO_writePins(port, [0,1,2,3,4], [1,1,0,0,0], timeout=timeout)
-        print(f"DO_writePins in {[port]}: {all_pin_state}")
+        ## Write pins to high or low
+        err = dev.DO_writePins(port, DO_pins, [1, 1, 0, 0], timeout=timeout)
+        print(f"DO_writePins in {[port]}: {err}")
 
-        ## Open pin5, pin6 and pin7 with digital output
-        err = dev.DI_openPins(port, [5,6,7], timeout=timeout)
-        print(f"DI_openPins in port{port}: {err}")
+        ## Open pins with digital iutput
+        err = dev.DI_openPins(port, DI_pins, timeout=timeout)
+        print(f"DI_openPins in port {port}: {err}")
 
-        ## Read pin5, pin6 and pin7 state
-        state_list = dev.DI_readPins(port, [7,5,6], timeout=timeout)
-        print(f"state_list in port{port}: {state_list}")
+        ## Read pins state
+        state_list = dev.DI_readPins(port, DI_pins, timeout=timeout)
+        print(f"state_list in port {port}: {state_list}")
 
-        ## Close pin0, pin1, pin2, pin3 and pin4 with digital output
-        err = dev.DO_closePins(port, [0,1,2,3,4], timeout=timeout)
-        print(f"DO_closePins in port{port}: {err}")
+        ## Close pins with digital output
+        err = dev.DO_closePins(port, DO_pins, timeout=timeout)
+        print(f"DO_closePins in port {port}: {err}")
 
-        ## Close pin5, pin6 and pin7 with digital input
-        err = dev.DI_closePins(port, [5,6,7], timeout=timeout)
-        print(f"DI_closePins in port{port}: {err}")
+        ## Close pins with digital input
+        err = dev.DI_closePins(port, DI_pins, timeout=timeout)
+        print(f"DI_closePins in port {port}: {err}")
+        
     except Exception as err:
         pywpc.printGenericError(err)
 

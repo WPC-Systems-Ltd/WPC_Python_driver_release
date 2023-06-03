@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Example Codes - Console (async) &mdash; WPC Python driver 2.0.3 documentation</title>
+  <title>Example Codes - Console (async) &mdash; WPC Python driver 2.1.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.0.3
+                2.1.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -55,6 +55,31 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Example Codes - Console (async)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#device-finder">Device finder</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/DeviceFinder/Find_devices/find_all_devices.html">Find all devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#stem">STEM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AI/AI_continuous.html">AI continuous</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AI/AI_continuous_with_logger.html">AI continuous with logger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AI/AI_N_samples_once.html">AI N samples once</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AI/AI_N_samples_in_loop.html">AI N samples in loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AI/AI_on_demand_in_loop.html">AI on demand in loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AI/AI_on_demand_once.html">AI on demand once</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AO/AO_write_all_channels.html">AO write all channels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AO/AO_write_one_channel.html">AO write one channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AO/AO_waveform_gen.html">AO waveform generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AIO/AIO_one_channel_loopback.html">AIO one channel loopback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AIO/AIO_all_channels_loopback.html">AIO all channels loopback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/DIO/DO_blinky_pins.html">DO blinky pins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/DIO/DO_blinky_port.html">DO blinky port</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/DIO/DIO_loopback_pins.html">DIO loopback pins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/DIO/DIO_loopback_port.html">DIO loopback port</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/DIO/DO_write_pins.html">DO write pins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/DIO/DO_write_port.html">DO write port</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/System_ETH/get_network_info.html">System get network info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/Tutorial/multiple_loops_async.html">Tutorial multiple loops async</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#emotion">EMotion</a><ul>
@@ -352,6 +377,35 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/DeviceFinder/Find_devices/find_all_devices.html">Find all devices</a></li>
+</ul>
+</div>
+</section>
+<section id="stem">
+<h2>STEM<a class="headerlink" href="#stem" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AI/AI_continuous.html">AI continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AI/AI_continuous_with_logger.html">AI continuous with logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AI/AI_N_samples_once.html">AI N samples once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AI/AI_N_samples_in_loop.html">AI N samples in loop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AI/AI_on_demand_in_loop.html">AI on demand in loop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AI/AI_on_demand_once.html">AI on demand once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AO/AO_write_all_channels.html">AO write all channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AO/AO_write_one_channel.html">AO write one channel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AO/AO_waveform_gen.html">AO waveform generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AIO/AIO_one_channel_loopback.html">AIO one channel loopback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AIO/AIO_all_channels_loopback.html">AIO all channels loopback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/DIO/DO_blinky_pins.html">DO blinky pins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/DIO/DO_blinky_port.html">DO blinky port</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/DIO/DIO_loopback_pins.html">DIO loopback pins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/DIO/DIO_loopback_port.html">DIO loopback port</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/DIO/DO_write_pins.html">DO write pins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/DIO/DO_write_port.html">DO write port</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/System_ETH/get_network_info.html">System get network info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/Tutorial/multiple_loops_async.html">Tutorial multiple loops async</a></li>
 </ul>
 </div>
 </section>

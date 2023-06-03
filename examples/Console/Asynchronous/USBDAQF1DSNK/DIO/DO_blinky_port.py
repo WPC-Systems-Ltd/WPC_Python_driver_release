@@ -1,12 +1,13 @@
 '''
 DIO - DO_blinky_port.py with asynchronous mode.
 
-This example demonstrates how to write DO high or low in port from USBDAQF1DSNK.
+This example illustrates the process of writing a high or low signal to a DO port from USBDAQF1DSNK.
 
-First, it shows how to open DO in port.
-Second, each loop has different voltage output so it will look like blinking.
-Last, close DO in port.
+To begin with, it demonstrates the steps required to open the DO port.
+Next, in each loop, a different voltage output is applied, resulting in a blinking effect.
+Lastly, it concludes by closing the DO port.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -41,34 +42,43 @@ async def main():
         return
 
     try:
+        
         ## Parameters setting
         port = 0 ## Depend on your device
+        DO_port = 1
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## Open all pins and set it to digital output.
-        err = await dev.DO_openPort_async(port)
-        print(f"DO_openPort_async in port{port}: {err}")
+        ## Get port mode
+        port_mode = await dev.Sys_getPortMode_async(port)
+        print("Slot mode:", port_mode)
+
+        ## If the port mode is not set to "DIO", set the port mode to "DIO"
+        if port_mode != "DIO":
+            err = await dev.Sys_setPortDIOMode_async(port)
+            print(f"Sys_setPortDIOMode_async in port {port}: {err}")
+
+        ## Get port mode
+        port_mode = await dev.Sys_getPortMode_async(port)
+        print("Slot mode:", port_mode)
+
+        ## Get port DIO start up information
+        info = await dev.DIO_loadStartup_async(DO_port)
+        print("Enable:   ", info[0])
+        print("Direction:", info[1])
+        print("State:    ", info[2])
 
         ## Toggle digital state for 10 times. Each times delay for 0.5 second
         for i in range(10):
-            if i%2 == 0:
-                value = [0,1,0,1,0,1,0,1]
-            else:
-                value = [1,0,1,0,1,0,1,0]
-
-            await dev.DO_writePort_async(port, value)
-            print(f'Port: {port}, digital state= {value}')
+            state = await dev.DO_togglePort_async(DO_port)
+            print(state)
 
             ## Wait for 0.5 second to see led status
             await asyncio.sleep(0.5)  ## delay [s]
-
-        ## Close all pins with digital output
-        err = await dev.DO_closePort_async(port)
-        print(f"DO_closePort_async in port{port}: {err}")
+        
     except Exception as err:
         pywpc.printGenericError(err)
 

@@ -1,6 +1,7 @@
 '''
 Motion - Motion_2axis_circular_interpolation.py with synchronous mode.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -62,7 +63,7 @@ def main():
 
         ## Motion open
         err = dev.Motion_open(port, timeout=timeout)
-        print(f"Motion_open in port{port}: {err}")
+        print(f"Motion_open in port {port}: {err}")
 
         ## Motion open configuration file
         err = dev.Motion_openCfgFile('C:/Users/user/Desktop/3AxisStage_2P.ini')
@@ -74,7 +75,7 @@ def main():
 
         ## Motion configure
         err = dev.Motion_cfgCircularInterpo(port, x_axis, y_axis, center_point_x, center_point_y, finish_point_x, finish_point_y, circular_dir_cw, speed=1000, accel=100000, decel=100000, timeout=timeout)
-        print(f"Motion_cfgCircularInterpo in port{port}: {err}")
+        print(f"Motion_cfgCircularInterpo in port {port}: {err}")
 
         err = dev.Motion_startCircularInterpo(port, timeout=timeout)
         print(f"Motion_startCircularInterpo in axis{axis}: {err}")
@@ -116,7 +117,7 @@ def main():
 
         ## Motion close
         err = dev.Motion_close(port, timeout=timeout)
-        print(f"Motion_close in port{port}: {err}")
+        print(f"Motion_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

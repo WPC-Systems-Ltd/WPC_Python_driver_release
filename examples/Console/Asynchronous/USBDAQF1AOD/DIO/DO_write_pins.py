@@ -1,12 +1,13 @@
 '''
 DIO - DO_write_pins.py with asynchronous mode.
 
-This example demonstrates how to write DO in pins from USBDAQF1AOD.
+This example illustrates the process of writing a high or low signal to a DO pin from USBDAQF1AOD.
 
-First, it shows how to open DO in pins.
-Second, write DO pin in two different types (hex or list) but it should be consistency.
-Last, close DO in pins.
+To begin with, it demonstrates the steps required to open the DO pin.
+Next, voltage output is written to the DO pin.
+Lastly, it concludes by closing the DO pin.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -41,41 +42,31 @@ async def main():
         return
 
     try:
+        
         ## Parameters setting
         port = 0 ## Depend on your device
-        pin_index = [0,1,2,3,4]
+        pin_index = [0, 1, 2, 3]
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## Open pin0, pin1, pin2, pin3 and pin4 with digital output.
+        ## Open pins with digital output
         err = await dev.DO_openPins_async(port, pin_index)
-        print(f"DO_openPins_async in port{port}: {err}")
+        print(f"DO_openPins_async in port {port}: {err}")
 
-        ## Set pin0, pin1 to high, others to low.
-        all_pin_state =  dev.DO_writePins(port, pin_index, [1,1,0,0,0])
-        print(f"DO_writePins:", all_pin_state)
-
-        ## Open pin5, pin6 and pin7 with digital output (1110 0000 in binary) (0xE0 in hex).
-        err = await dev.DO_openPins_async(port, 0xE0)
-        print(f"DO_openPins_async in port{port}: {err}")
-
-        ## Set pin7 and pin6 to high, others to low (1100 0000 in binary) (0xC0 in hex).
-        err = await dev.DO_writePins_async(port, 0xE0, 0xC0)
-        print(f"DO_writePins_async in port{port}: {err}")
+        ## Write pins to high or low
+        err = await dev.DO_writePins_async(DO_port, pin_index, [1, 1, 0, 0]).
+        print(f"DO_writePins_async in port {port}: {err}")
 
         ## Wait for 1 seconds to see led status
         await asyncio.sleep(1) ## delay [s]
 
-        ## Close pin0, pin1, pin2, pin3 and pin4 with digital output.
+        ## Close pins with digital output
         err = await dev.DO_closePins_async(port, pin_index)
-        print(f"DO_closePins_async in port{port}: {err}")
-
-        ## Close pin5, pin6 and pin7 with digital output.
-        err = await dev.DO_closePins_async(port, 0xE0)
-        print(f"DO_closePins_async in port{port}: {err}")
+        print(f"DO_closePins_async in port {port}: {err}")
+        
     except Exception as err:
         pywpc.printGenericError(err)
 

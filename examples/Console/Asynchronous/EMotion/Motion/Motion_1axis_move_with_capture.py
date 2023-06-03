@@ -1,6 +1,7 @@
 '''
 Motion - Motion_1axis_move_with_capture.py with asynchronous mode.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -52,7 +53,7 @@ async def main():
 
         ## Motion open
         err = await dev.Motion_open_async(port)
-        print(f"open_async in port{port}: {err}")
+        print(f"open_async in port {port}: {err}")
 
         ## Motion open configuration file
         err = await dev.Motion_openCfgFile_async('C:/Users/user/Desktop/3AxisStage_2P.ini')
@@ -101,7 +102,7 @@ async def main():
 
         ## Motion close
         err = await dev.Motion_close_async(port)
-        print(f"close_async in port{port}: {err}")
+        print(f"close_async in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

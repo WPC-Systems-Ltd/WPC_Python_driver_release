@@ -7,6 +7,7 @@ First, it shows how to open thermal port
 Second, get status from channel 0 and channel 1
 Last, close thermal port.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -53,19 +54,19 @@ async def main():
 
         ## Open thermo
         err = await dev.Thermal_open_async(port)
-        print(f"Thermal_open_async in port{port}: {err}")
+        print(f"Thermal_open_async in port {port}: {err}")
 
         ## Set thermo port and get status in channel 0
         status = await dev.Thermal_getStatus_async(port, ch0)
-        print(f"Thermal_getStatus_async in channel {ch0} in port{port}: {status}")
+        print(f"Thermal_getStatus_async in channel {ch0} in port {port}: {status}")
 
         ## Set thermo port and get status in channel 1
         status = await dev.Thermal_getStatus_async(port, ch1)
-        print(f"Thermal_getStatus_async in channel {ch1} in port{port}: {status}")
+        print(f"Thermal_getStatus_async in channel {ch1} in port {port}: {status}")
 
         ## Close thermo
         err = await dev.Thermal_close_async(port)
-        print(f"Thermal_close_async in port{port}: {err}")
+        print(f"Thermal_close_async in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

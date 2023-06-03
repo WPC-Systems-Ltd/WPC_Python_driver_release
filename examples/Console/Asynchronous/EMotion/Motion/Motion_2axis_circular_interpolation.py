@@ -1,6 +1,7 @@
 '''
 Motion - Motion_2axis_circular_interpolation.py with asynchronous mode.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -61,7 +62,7 @@ async def main():
 
         ## Motion open
         err = await dev.Motion_open_async(port)
-        print(f"open_async in port{port}: {err}")
+        print(f"open_async in port {port}: {err}")
 
         ## Motion open configuration file
         err = await dev.Motion_openCfgFile_async('C:/Users/user/Desktop/3AxisStage_2P.ini')
@@ -73,7 +74,7 @@ async def main():
 
         ## Motion configure
         err = await dev.Motion_cfgCircularInterpo_async(port, x_axis, y_axis, center_point_x, center_point_y, finish_point_x, finish_point_y, circular_dir_cw, speed=1000, accel=100000, decel=100000)
-        print(f"cfgCircularInterpo_async in port{port}: {err}")
+        print(f"cfgCircularInterpo_async in port {port}: {err}")
 
         err = await dev.Motion_startCircularInterpo_async(port)
         print(f"startCircularInterpo_async in axis{axis}: {err}")
@@ -115,7 +116,7 @@ async def main():
 
         ## Motion close
         err = await dev.Motion_close_async(port)
-        print(f"close_async in port{port}: {err}")
+        print(f"close_async in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

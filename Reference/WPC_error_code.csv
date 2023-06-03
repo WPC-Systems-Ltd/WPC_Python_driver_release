@@ -2,45 +2,47 @@ Error code,Error message
 570002,Occurrence CAN queue overflow.
 560001,Occurrence UART queue overflow.
 520003,Occurrence AI queue overflow.
-519000,"External library ""libusb-1.0.dll"" not found at indicated path Will look at the default path instead"
--7001,Functionality not enabled in firmware.
--7002,Firmware pin mode index error.
--7003,Firmware HAL handle index error.
--7004,Firmware HAL error.
--7005,Firmware I2C error.
--7006,Firmware SPI error.
--7007,Firmware UART error.
--7008,Firmware error placeholder.
--7009,Firmware EEPROM error.
--7010,Firmware OLED error.
--7011,Firmware system error.
--7012,Firmware error placeholder.
--7013,Firmware DIO error.
--7014,Firmware motion error.
--7015,Firmware AI error.
--7016,Firmware AO error.
--7017,Firmware thermal error.
--7018,Firmware CAN error.
--7019,Firmware USB read/write error.
--7020,Firmware TCP read/write error.
--7021,Firmware UDP read/write error.
--7022,Firmware bootloader error.
--7023,Firmware commands error.
--7901,"Relay counter index error, it must be in 0~5 or -1."
+519000,"External library ""libusb-1.0.dll"" not found at indicated path will look at the default path instead"
+-7001,The functionality is not enabled in the firmware
+-7002,The pin mode index error in the firmware.
+-7003,The HAL handle index error in the firmware.
+-7004,The HAL error in the firmware.
+-7005,The I2C error in the firmware.
+-7006,The SPI error in the firmware.
+-7007,The UART error in the firmware.
+-7008,The placeholder error in the firmware.
+-7009,The EEPROM error in the firmware.
+-7010,The OLED error in the firmware.
+-7011,The system error in the firmware.
+-7012,The placeholder error in the firmware.
+-7013,The DIO error in the firmware.
+-7014,The motion error in the firmware.
+-7015,The AI error in the firmware.
+-7016,The AO error in the firmware.
+-7017,The thermal error in the firmware.
+-7018,The CAN error in the firmware.
+-7019,The USB read/write error in the firmware.
+-7020,The TCP read/write error in the firmware.
+-7021,The UDP read/write error in the firmware.
+-7022,The bootloader error in the firmware.
+-7023,The commands error in the firmware.
+-7801,STEM port not available or already occupied by other process.
+-7901,Please ensure that the relay counter index is restricted to the range of 0 to 5 or -1.
 -8001,Failed to connect to WPC DAQ. Please check USB plugin status and serial number.
 -8002,Failed to connect to WPC DAQ. Please check network status and IP address.
 -8007,Network DAQ connection lost.
 -8008,Receive packet timeout.
--8009,Invalid pin index.
+-8009,The pin index is invalid
 -8010,Inconsistency between the number of pins & the number of values.
--8011,Inconsistency between the type of pins & the type of values.
--8012,Unsupported data type.
--8014,Input value not in range.
+-8011,There is a discrepancy in the data types between the pins and the corresponding values
+-8012,The data type is incompatible or not supported.
+-8014,The input value is not the acceptable range.
 -8015,The Ini file extension name is not correct.
 -8016,No such file or directory.
 -8101,DI port not avaliable or already occupied by other process.
 -8102,DO port not available or already occupied by other process.
 -8201,AI port not available or already occupied by other process.
+-8202,The specified AI chip select is invalid.
 -8204,AO port not available or already occupied by other process.
 -8206,The specified AO generation mode is invalid.
 -8207,The specified AO span mode is invalid.

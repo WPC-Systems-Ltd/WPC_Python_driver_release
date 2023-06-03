@@ -1,12 +1,13 @@
 '''
 DIO - DO_blinky_port.py with synchronous mode.
 
-This example demonstrates how to write DO high or low in port from USBDAQF1TD.
+This example illustrates the process of writing a high or low signal to a DO port from USBDAQF1TD.
 
-First, it shows how to open DO in port.
-Second, each loop has different voltage output so it will look like blinking.
-Last, close DO in port.
+To begin with, it demonstrates the steps required to open the DO port.
+Next, in each loop, a different voltage output is applied, resulting in a blinking effect.
+Lastly, it concludes by closing the DO port.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -41,6 +42,7 @@ def main():
         return
 
     try:
+        
         ## Parameters setting
         port = 0 ## Depend on your device
         timeout = 3  ## second
@@ -50,26 +52,22 @@ def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## Open all pins and set it to digital output.
+        ## Open port and set it to digital output.
         err = dev.DO_openPort(port, timeout=timeout)
-        print(f"DO_openPort in port{port}: {err}")
+        print(f"DO_openPort in port {port}: {err}")
 
         ## Toggle digital state for 10 times. Each times delay for 0.5 second
         for i in range(10):
-            if i%2 == 0:
-                value = [0,1,0,1,0,1,0,1]
-            else:
-                value = [1,0,1,0,1,0,1,0]
+            state = dev.DO_togglePort(port, timeout=timeout)
+            print(state)
 
-            dev.DO_writePort(port, value, timeout=timeout)
-            print(f'Port: {port}, digital state = {value}')
-
-            ## Wait for 0.5 second
+            ## Wait for 0.5 second to see led status
             time.sleep(0.5) ## delay [s]
 
-        ## Close all pins with digital output
+        ## Close port with digital output
         err = dev.DO_closePort(port, timeout=timeout)
-        print(f"DO_closePort in port{port}: {err}")
+        print(f"DO_closePort in port {port}: {err}")
+        
     except Exception as err:
         pywpc.printGenericError(err)
 

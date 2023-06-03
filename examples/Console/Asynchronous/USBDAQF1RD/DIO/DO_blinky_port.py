@@ -1,12 +1,13 @@
 '''
 DIO - DO_blinky_port.py with asynchronous mode.
 
-This example demonstrates how to write DO high or low in port from USBDAQF1RD.
+This example illustrates the process of writing a high or low signal to a DO port from USBDAQF1RD.
 
-First, it shows how to open DO in port.
-Second, each loop has different voltage output so it will look like blinking.
-Last, close DO in port.
+To begin with, it demonstrates the steps required to open the DO port.
+Next, in each loop, a different voltage output is applied, resulting in a blinking effect.
+Lastly, it concludes by closing the DO port.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -41,6 +42,7 @@ async def main():
         return
 
     try:
+        
         ## Parameters setting
         port = 0 ## Depend on your device
 
@@ -49,26 +51,22 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## Open all pins and set it to digital output.
+        ## Open port and set it to digital output.
         err = await dev.DO_openPort_async(port)
-        print(f"DO_openPort_async in port{port}: {err}")
+        print(f"DO_openPort_async in port {port}: {err}")
 
         ## Toggle digital state for 10 times. Each times delay for 0.5 second
         for i in range(10):
-            if i%2 == 0:
-                value = [0,1,0,1,0,1,0,1]
-            else:
-                value = [1,0,1,0,1,0,1,0]
-
-            await dev.DO_writePort_async(port, value)
-            print(f'Port: {port}, digital state= {value}')
+            state = await dev.DO_togglePort_async(port)
+            print(state)
 
             ## Wait for 0.5 second to see led status
             await asyncio.sleep(0.5)  ## delay [s]
 
-        ## Close all pins with digital output
+        ## Close port with digital output
         err = await dev.DO_closePort_async(port)
-        print(f"DO_closePort_async in port{port}: {err}")
+        print(f"DO_closePort_async in port {port}: {err}")
+        
     except Exception as err:
         pywpc.printGenericError(err)
 

@@ -1,6 +1,7 @@
 '''
 Motion - Motion_1axis_move_with_inposition.py with synchronous mode.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -61,7 +62,7 @@ def main():
 
         ## Motion open
         err = dev.Motion_open(port, timeout=timeout)
-        print(f"Motion_open in port{port}: {err}")
+        print(f"Motion_open in port {port}: {err}")
 
 
         '''
@@ -113,7 +114,7 @@ def main():
 
         ## Motion close
         err = dev.Motion_close(port, timeout=timeout)
-        print(f"Motion_close in port{port}: {err}")
+        print(f"Motion_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

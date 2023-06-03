@@ -6,6 +6,7 @@ This example demonstrates how to get hardware & network information from WifiDAQ
 First, get hardware information such as firmware model & version.
 Last, get network information such as IP & submask & MAC.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -44,6 +45,13 @@ async def main():
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
+
+        ## Set RTC
+        status = await dev.Sys_setRTC_async(2023, 5, 8, 15, 8, 7)
+        print(f"Set RTC status: {status}")
+
+        ## Get RTC
+        print(f"Get RTC: {await dev.Sys_getRTC_async()}")
 
         ## Get IP & submask
         ip_addr, submask = await dev.Net_getIPAddrAndSubmask_async()
