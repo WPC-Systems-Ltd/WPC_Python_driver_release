@@ -1,8 +1,11 @@
 WPC Python driver release changelog
 ===================================
 
-v2.0.4 Date: 2023/05/12, Developer: Chunglee_people
+v2.1.1 Date: 2023/06/03, Developer: Chunglee_people
 ---------------------------------------------------
+### Added
+- Add STEM product
+
 ### Changed
 - Select cs pin based on the SPI port.
 
@@ -18,7 +21,6 @@ v2.0.3 Date: 2023/03/25, Developer: Chunglee_people
 
 v2.0.2 Date: 2023/03/22, Developer: Chunglee_people
 ---------------------------------------------------
-
 ### Added
 - Example codes:
   - Relay_read_counters, Relay_set_channel, Motion_servo_on, Motion_position_blending
@@ -46,7 +48,6 @@ v2.0.2 Date: 2023/03/22, Developer: Chunglee_people
 
 v2.0.1 Date: 2023/03/09, Developer: Chunglee_people
 ---------------------------------------------------
-
 ### Added
 - Add `serial_num ='default'` in USB series product
 - Add `ip= '192.168.5.79'` in Wifi series product
@@ -57,14 +58,12 @@ v2.0.1 Date: 2023/03/09, Developer: Chunglee_people
 
 v2.0.0 Date: 2023/02/03, Developer: Chunglee_people
 ---------------------------------------------------
-
 ### Added
 - Add synchronous console and GUI example code
 - Add asynchronous and synchronous mode description in readme.rst
 
 v1.1.3 Date: 2023/01/18, Developer: Chunglee_people
 ---------------------------------------------------
-
 ### Added
 - Add three scenario when run asyncio function
   - asyncio.run(main()) ## Use terminal
@@ -73,7 +72,6 @@ v1.1.3 Date: 2023/01/18, Developer: Chunglee_people
 
 v1.1.2 Date: 2023/01/07, Developer: Chunglee_people
 ---------------------------------------------------
-
 ### Added
 - Product:
   - Emotion
@@ -94,7 +92,6 @@ v1.1.2 Date: 2023/01/07, Developer: Chunglee_people
 
 v1.1.0 Date: 2022/11/23, Developer: Chunglee_people
 ---------------------------------------------------
-
 ### Added
 - Add handle combobox in GUI example code
 - Add product `EthanL` & `EthanO`
@@ -111,13 +108,11 @@ v1.0.9 Date: 2022/11/04, Developer: Chunglee_people
 
 v1.0.8.1 Date: 2022/11/04, Developer: Chunglee_people
 ------------------------------------------------------
-
 ### Removed
 - Remove old `Examples` folder
 
 v1.0.8 Date: 2022/11/04, Developer: Chunglee_people
 ---------------------------------------------------
-
 ### Added
 - Each product has its own example codes
 - Add README.md in console - AI folder
@@ -133,7 +128,6 @@ v1.0.8 Date: 2022/11/04, Developer: Chunglee_people
 
 v1.0.3 Date: 2022/10/20, Developer: Chunglee_people
 ---------------------------------------------------
-
 ### Added
 - Add `AI_setMode_async` in AI_ondemand example code
 - Add logger example code `example_AI_continuous_with_logger` & `example_RTD_read_channel_data_with_logger` & `example_TC_read_channel_data with_logger`
@@ -144,14 +138,12 @@ v1.0.3 Date: 2022/10/20, Developer: Chunglee_people
 
 v1.0.2.1 Date: 2022/10/14, Developer: Chunglee_people
 ------------------------------------------------------
-
 ### Added
 - Add .nojekyll
 - Add `WPC_7steps_Of_Python_Project_Workflow_r6.pdf` in Reference/Manuals
 
 v1.0.2 Date: 2022/10/13, Developer: Linc
 ----------------------------------------
-
 ### Added
 - `distclass` option in `setup`
 
@@ -168,7 +160,6 @@ v1.0.2 Date: 2022/10/13, Developer: Linc
 
 v1.0.1 Date: 2022/10/12, Developer: Chunglee_people
 ----------------------------------------------------
-
 ### Added
 - Update wpcsys in PyPI depended on conda environment version
 - Add get release version and get python version in setup.py
@@ -192,7 +183,6 @@ v1.0.1 Date: 2022/10/12, Developer: Chunglee_people
 
 v1.0.0 Date: 2022/10/04, Developer: Chunglee_people
 ----------------------------------------------------
-
 ### Added
 - From this version, we will release pywpc.pyd for python3.8, python3.9 and python3.10 in PyPI
 - Add `PyQt5Designer` in requirements.txt and setup.py
@@ -214,7 +204,6 @@ v0.0.20 Date: 2022/10/04, Developer: Chunglee_people
 
 v0.0.19 Date: 2022/10/03, Developer: Chunglee_people
 ----------------------------------------------------
-
 ### Changed
 - Change WPC_DAQ_Devices_User_Manual to R18
 - Change WPC Python Version from `pywpc-0.2.5` to `pywpc-0.2.6`
@@ -225,7 +214,6 @@ v0.0.19 Date: 2022/10/03, Developer: Chunglee_people
 
 v0.0.18 Date: 2022/09/30, Developer: Chunglee_people
 ----------------------------------------------------
-
 ### Changed
 - Update `wpcsys` in 0.2.5
 - Change WPC Python Version from `pywpc-0.2.4` to `pywpc-0.2.5`
@@ -235,7 +223,6 @@ v0.0.18 Date: 2022/09/30, Developer: Chunglee_people
 
 v0.0.17 Date: 2022/09/27, Developer: Chunglee_people
 ----------------------------------------------------
-
 ### Added
 - Update `wpcsys` in 0.2.4
 
@@ -245,7 +232,6 @@ v0.0.17 Date: 2022/09/27, Developer: Chunglee_people
 
 v0.0.16 Date: 2022/09/26, Developer: Chunglee_people
 ----------------------------------------------------
-
 ### Added
 - Add mode 1 (Reserved) in `UART_setParity`
 
@@ -260,7 +246,6 @@ v0.0.16 Date: 2022/09/26, Developer: Chunglee_people
 
 v0.0.15 Date: 2022/09/05, Developer: Chunglee_people
 ----------------------------------------------------
-
 ### Added
 - Add `Material` folder in GUI example code
 - Add package `wpcEXEbuild` requirement in `wpcsys`
@@ -272,7 +257,6 @@ v0.0.15 Date: 2022/09/05, Developer: Chunglee_people
 
 v0.0.14 Date: 2022/09/01, Developer: Chunglee_people
 ----------------------------------------------------
-
 ### Added
 - Add LICENSE, MANIFEST.in and setup.py in order to deliver `wpcsys` in PyPI
 - Add `about` , `Quick Start`, `Requirements` and `License` in Readme.md
@@ -295,7 +279,6 @@ v0.0.14 Date: 2022/09/01, Developer: Chunglee_people
 
 v0.0.13 Date: 2022/08/30, Developer: Chunglee_people
 ----------------------------------------------------
-
 ### Added
 - Add GUI example code : Example_thermocouple, Example_RTD, Example_analog_input_on_demand, Example_I2C, Example_SPI
 - Add WPC_DAQ_Devices_User_Manual_r17
@@ -315,7 +298,6 @@ v0.0.13 Date: 2022/08/30, Developer: Chunglee_people
 
 v0.0.12 Date: 2022/08/23, Developer: Chunglee_people
 ----------------------------------------------------
-
 ### Added
 - Add example code packet classification
 - Add GUI example code : Example_analog_output, Example_UART
@@ -351,7 +333,6 @@ v0.0.9 Date: 2022/08/12, Developer: Chunglee_people
 
 v0.0.8 Date: 2022/08/11, Developer: Chunglee_people
 ---------------------------------------------------
-
 ### Added
 - Add product description and picture in Sphinx home page
 - Check pinstate when open function modules
@@ -369,7 +350,6 @@ v0.0.8 Date: 2022/08/11, Developer: Chunglee_people
 
 v0.0.7 Date: 2022/08/08, Developer: Chunglee_people
 ---------------------------------------------------
-
 ### Added
 - Add Thermo example code
   - `Thermo/example_RTD_read_channel_data.py`
@@ -384,7 +364,6 @@ v0.0.7 Date: 2022/08/08, Developer: Chunglee_people
 
 v0.0.6 Date: 2022/08/02, Developer: Chunglee_people
 ---------------------------------------------------
-
 ### Added
 - Add AO example code
   - `AIO/example_AO_write_all_channels.py`
@@ -402,7 +381,6 @@ v0.0.6 Date: 2022/08/02, Developer: Chunglee_people
 
 v0.0.5 Date: 2022/07/29, Developer: Chunglee_people
 ---------------------------------------------------
-
 ### Added
 - Add CAN example code
   - `CAN/example_CAN_read.py`
@@ -413,7 +391,6 @@ v0.0.5 Date: 2022/07/29, Developer: Chunglee_people
 
 v0.0.4 Date: 2022/07/20, Developer: Chunglee_people
 ---------------------------------------------------
-
 ### Added
 - Add Thermo example code
   - `Thermo/example_Thermo_read_channel_data.py`
@@ -429,7 +406,6 @@ v0.0.4 Date: 2022/07/20, Developer: Chunglee_people
 
 v0.0.3 Date: 2022/07/07, Developer: Chunglee_people
 ---------------------------------------------------
-
 ### Added
 - Add DIO example code in console
 - Add `Waiting cursor` when broadcasting
@@ -450,7 +426,6 @@ v0.0.3 Date: 2022/07/07, Developer: Chunglee_people
 
 v0.0.2 Date: 2022/07/01, Developer: Chunglee_people
 ---------------------------------------------------
-
 ### Added
 - Add trademark file path.
 - Add pyd path.
@@ -470,6 +445,5 @@ v0.0.2 Date: 2022/07/01, Developer: Chunglee_people
 
 v0.0.1 Date: 2022/06/29, Developer: Chunglee_people
 ---------------------------------------------------
-
 ### Added
 -  example GUI `UIexample_AIStreaming` & `UIexample_Broadcasts` & `UIexample_get_device_info`.
