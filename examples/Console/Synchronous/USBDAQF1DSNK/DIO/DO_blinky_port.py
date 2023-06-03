@@ -1,13 +1,13 @@
 '''
 DIO - DO_blinky_port.py with synchronous mode.
 
-This example demonstrates how to write DO high or low in port from USBDAQF1DSNK.
+This example illustrates the process of writing a high or low signal to a DO port from USBDAQF1DSNK.
 
-First, it shows how to open DO in port.
-Second, each loop has different voltage output so it will look like blinking.
-Last, close DO in port.
+To begin with, it demonstrates the steps required to open the DO port.
+Next, in each loop, a different voltage output is applied, resulting in a blinking effect.
+Lastly, it concludes by closing the DO port.
 
---------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -45,7 +45,7 @@ def main():
         
         ## Parameters setting
         port = 0 ## Depend on your device
-        DO_port = 0
+        DO_port = 1
         timeout = 3  ## second
 
         ## Get firmware model & version

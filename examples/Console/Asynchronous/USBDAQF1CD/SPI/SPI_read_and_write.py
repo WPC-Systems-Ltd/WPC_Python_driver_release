@@ -7,7 +7,7 @@ First, it shows how to open SPI port & DIO pins and configure SPI parameters.
 Second, write some bytes with address into EEPROM (25LC640). We have to make sure that bytes written in address is correct however read address from EEPROM (25LC640).
 Last, close SPI port & DIO pins.
 
---------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:

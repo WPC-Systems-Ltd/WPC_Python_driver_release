@@ -1,13 +1,13 @@
 '''
 DIO - DO_write_port.py with asynchronous mode.
 
-This example demonstrates how to write DO in port from USBDAQF1D.
+This example illustrates the process of writing a high or low signal to a DO port from USBDAQF1D.
 
-First, it shows how to open DO in port.
-Second, write DO pins in two different types (hex or list) but it should be consistency.
-Last, close DO in port.
+To begin with, it demonstrates the steps required to open the DO port.
+Next, voltage output is written to the DO port.
+Lastly, it concludes by closing the DO port.
 
---------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:

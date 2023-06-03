@@ -131,13 +131,13 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos"> 2</span><span class="sd">DIO - DO_write_pins.py with asynchronous mode.</span>
 <span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="sd">This example demonstrates how to write DO in pins from USBDAQF1TD.</span>
+<span class="linenos"> 4</span><span class="sd">This example illustrates the process of writing a high or low signal to a DO pin from USBDAQF1TD.</span>
 <span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="sd">First, it shows how to open DO in pins.</span>
-<span class="linenos"> 7</span><span class="sd">Second, write DO pin in two different types (hex or list) but it should be consistency.</span>
-<span class="linenos"> 8</span><span class="sd">Last, close DO in pins.</span>
+<span class="linenos"> 6</span><span class="sd">To begin with, it demonstrates the steps required to open the DO pin.</span>
+<span class="linenos"> 7</span><span class="sd">Next, voltage output is written to the DO pin.</span>
+<span class="linenos"> 8</span><span class="sd">Lastly, it concludes by closing the DO pin.</span>
 <span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="sd">--------------------------------------------------------------------------------------</span>
+<span class="linenos">10</span><span class="sd">-------------------------------------------------------------------------------------</span>
 <span class="linenos">11</span><span class="sd">Please change correct serial number or IP and port number BEFORE you run example code.</span>
 <span class="linenos">12</span>
 <span class="linenos">13</span><span class="sd">For other examples please check:</span>
@@ -187,8 +187,8 @@
 <span class="linenos">57</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DO_openPins_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">58</span>
 <span class="linenos">59</span>        <span class="c1">## Write pins to high or low</span>
-<span class="linenos">60</span>        <span class="n">all_pin_state</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">pin_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-<span class="linenos">61</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DO_writePins:&quot;</span><span class="p">,</span> <span class="n">all_pin_state</span><span class="p">)</span>
+<span class="linenos">60</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins_async</span><span class="p">(</span><span class="n">DO_port</span><span class="p">,</span> <span class="n">pin_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span><span class="o">.</span>
+<span class="linenos">61</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DO_writePins_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">62</span>
 <span class="linenos">63</span>        <span class="c1">## Wait for 1 seconds to see led status</span>
 <span class="linenos">64</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">## delay [s]</span>

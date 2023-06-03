@@ -8,7 +8,7 @@ To begin with, it demonstrates the steps to open the AI port and configure the A
 Next, it outlines the procedure for reading the streaming AI data.
 Finally, it concludes by explaining how to close the AI port.
 
---------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:

@@ -10,7 +10,7 @@ Next, it reads AI data and displays its corresponding values.
 Following that, it writes digital signals to the AO pins and reads AI on-demand data once again.
 Lastly, it closes the AO and AI ports.
 
---------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:

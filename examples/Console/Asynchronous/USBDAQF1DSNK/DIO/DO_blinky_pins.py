@@ -1,13 +1,13 @@
 '''
 DIO - DO_blinky_pins.py with asynchronous mode.
 
-This example demonstrates how to write DO high or low in pins from USBDAQF1DSNK.
+This example illustrates the process of writing a high or low signal to a DO pin from USBDAQF1DSNK.
 
-First, it shows how to open DO in pins.
-Second, each loop has different voltage output so it will look like blinking.
-Last, close DO in pins.
+To begin with, it demonstrates the steps required to open the DO pin.
+Next, in each loop, a different voltage output is applied, resulting in a blinking effect.
+Lastly, it concludes by closing the DO pin.
 
---------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -52,6 +52,10 @@ async def main():
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
+
+        ## Get port mode
+        port_mode = await dev.Sys_getPortMode_async(port)
+        print("Slot mode:", port_mode)
 
         ## If the port mode is not set to "DIO", set the port mode to "DIO"
         if port_mode != "DIO":

@@ -6,7 +6,7 @@ To begin with, it demonstrates the steps to open the AO port.
 Next, it outlines the procedure for writing digital signals simultaneously to the AO pins.
 Finally, it concludes by explaining how to close the AO port.
 
---------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:

@@ -6,7 +6,7 @@ This example demonstrates how to get hardware information from USBDAQF1DSNK.
 First, get hardware information such as firmware model & version.
 Last, get serial number and RTC.
 
---------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:

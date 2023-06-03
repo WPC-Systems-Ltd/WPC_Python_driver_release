@@ -1,13 +1,13 @@
 '''
 DIO - DO_write_pins.py with asynchronous mode.
 
-This example demonstrates how to write DO in pins from USBDAQF1TD.
+This example illustrates the process of writing a high or low signal to a DO pin from USBDAQF1TD.
 
-First, it shows how to open DO in pins.
-Second, write DO pin in two different types (hex or list) but it should be consistency.
-Last, close DO in pins.
+To begin with, it demonstrates the steps required to open the DO pin.
+Next, voltage output is written to the DO pin.
+Lastly, it concludes by closing the DO pin.
 
---------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -57,8 +57,8 @@ async def main():
         print(f"DO_openPins_async in port {port}: {err}")
 
         ## Write pins to high or low
-        all_pin_state = await dev.DO_writePins_async(port, pin_index, [1, 1, 0, 0])
-        print(f"DO_writePins:", all_pin_state)
+        err = await dev.DO_writePins_async(DO_port, pin_index, [1, 1, 0, 0]).
+        print(f"DO_writePins_async in port {port}: {err}")
 
         ## Wait for 1 seconds to see led status
         await asyncio.sleep(1) ## delay [s]

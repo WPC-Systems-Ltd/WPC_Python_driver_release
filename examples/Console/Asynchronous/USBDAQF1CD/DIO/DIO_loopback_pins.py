@@ -1,14 +1,14 @@
 '''
 DIO - DIO_loopback_pins.py with asynchronous mode.
 
-This example demonstrates how to write DIO loopback in pins from USBDAQF1CD.
-Use DO pins to send signals and use DI pins to receive signals on single device also called "loopback".
+This example demonstrates the process of DIO loopback using pins from USBDAQF1CD.
+It involves using DO pins to send signals and DI pins to receive signals on a single device, commonly known as "loopback".
 
-First, it shows how to open DO and DI in pins.
-Second, write DO pin and read DI pin
-Last, close DO and DI in pins.
+To begin with, it illustrates the steps required to open the DO and DI pins.
+Next, it performs the operation of writing to a DO pin and reading from a DI pin.
+Lastly, it concludes by closing the DO and DI pins.
 
---------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:

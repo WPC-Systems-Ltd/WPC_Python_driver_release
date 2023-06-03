@@ -3,7 +3,7 @@ Tutorial - single_loop_async.py with asynchronous mode.
 
 This example project demonstrates how to use async thread to get RTC from USBDAQF1AOD.
 
---------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:

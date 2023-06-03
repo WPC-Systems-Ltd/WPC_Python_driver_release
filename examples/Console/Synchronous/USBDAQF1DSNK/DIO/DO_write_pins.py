@@ -1,13 +1,13 @@
 '''
 DIO - DO_write_pins.py with synchronous mode.
 
-This example demonstrates how to write DO in pins from USBDAQF1DSNK.
+This example illustrates the process of writing a high or low signal to a DO pin from USBDAQF1DSNK.
 
-First, it shows how to open DO in pins.
-Second, write DO pin in two different types (hex or list) but it should be consistency.
-Last, close DO in pins.
+To begin with, it demonstrates the steps required to open the DO pin.
+Next, voltage output is written to the DO pin.
+Lastly, it concludes by closing the DO pin.
 
---------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -74,8 +74,8 @@ def main():
         print("State:    ", info[2])
 
         ## Write pins to high or low
-        all_pin_state = dev.DO_writePins(DO_port, pin_index, [1, 1, 0, 0], timeout=timeout)
-        print(f"DO_writePins in port {DO_port}: {all_pin_state}")
+        err = dev.DO_writePins(DO_port, pin_index, [1, 1, 0, 0], timeout=timeout)
+        print(f"DO_writePins in port {DO_port}: {err}")
         
     except Exception as err:
         pywpc.printGenericError(err)

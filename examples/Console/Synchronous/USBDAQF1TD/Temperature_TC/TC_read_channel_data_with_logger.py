@@ -7,7 +7,7 @@ First, it shows how to open thermal port and configure thermal parameters.
 Second, read channel 1 thermocouple data and save them.
 Last, close thermal port.
 
---------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:

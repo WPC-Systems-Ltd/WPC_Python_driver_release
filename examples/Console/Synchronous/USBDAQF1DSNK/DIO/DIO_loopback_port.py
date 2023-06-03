@@ -1,14 +1,14 @@
 '''
 DIO - DIO_loopback_port.py with synchronous mode.
 
-This example demonstrates how to write DIO loopback in port from USBDAQF1DSNK.
-Use DO pins to send signals and use DI pins to receive signals on single device also called "loopback".
+This example demonstrates the process of DIO loopback using port from USBDAQF1DSNK.
+It involves using DO port to send signals and DI port to receive signals on a single device, commonly known as "loopback".
 
-First, it shows how to open DO and DI in port.
-Second, write DO in port and read DI in port
-Last, close DO and DI in port.
+To begin with, it illustrates the steps required to open the DO and DI port.
+Next, it performs the operation of writing to a DO pin and reading from a DI pin.
+Lastly, it concludes by closing the DO and DI port.
 
---------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:

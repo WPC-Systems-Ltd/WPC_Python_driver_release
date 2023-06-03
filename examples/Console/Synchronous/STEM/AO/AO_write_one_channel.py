@@ -8,7 +8,7 @@ Finally, it concludes by explaining how to close the AO port.
 
 If your product is "STEM", please invoke the function `Sys_setPortAIOMode`.
 
---------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
