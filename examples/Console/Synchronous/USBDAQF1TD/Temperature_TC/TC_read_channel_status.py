@@ -7,6 +7,7 @@ First, it shows how to open thermal port
 Second, get status from channel 0 and channel 1
 Last, close thermal port.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:

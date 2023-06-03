@@ -1,6 +1,7 @@
 '''
 Motion - Motion_3axis_linear_interpolation.py with synchronous mode.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -55,7 +56,7 @@ def main():
 
         ## Motion open
         err = dev.Motion_open(port, timeout=timeout)
-        print(f"Motion_open in port{port}: {err}")
+        print(f"Motion_open in port {port}: {err}")
 
         ## Motion open configuration file
         err = dev.Motion_openCfgFile('C:/Users/user/Desktop/3AxisStage_2P.ini')
@@ -67,11 +68,11 @@ def main():
 
         ## Motion configure
         err = dev.Motion_cfg3AxisLinearInterpo(port, axis1, dest_posi1, axis2, dest_posi2, axis3, dest_posi3, speed=2000, accel=100000, decel=100000, timeout=timeout)
-        print(f"Motion_cfg3AxisLinearInterpo in port{port}: {err}")
+        print(f"Motion_cfg3AxisLinearInterpo in port {port}: {err}")
 
         ## Motion start
         err = dev.Motion_startLinearInterpo(port, timeout=timeout)
-        print(f"Motion_startLinearInterpo in port{port}: {err}")
+        print(f"Motion_startLinearInterpo in port {port}: {err}")
 
         move_status = 0
         while move_status == 0:
@@ -91,7 +92,7 @@ def main():
 
         ## Motion close
         err = dev.Motion_close(port, timeout=timeout)
-        print(f"Motion_close in port{port}: {err}")
+        print(f"Motion_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

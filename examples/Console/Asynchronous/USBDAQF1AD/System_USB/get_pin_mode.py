@@ -7,6 +7,7 @@ First, get idle pin mode and show how to open DO and DI in pins.
 Second, get idle pin mode and set port idle mode. Again, get pin mode.
 Last, close DO and DI in port.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:

@@ -10,6 +10,57 @@ Device finder
    examples/Console/Asynchronous/DeviceFinder/Find_devices/find_all_devices.rst
 
 
+STEM
+----
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/Asynchronous/STEM/AI/AI_continuous.rst
+
+   examples/Console/Asynchronous/STEM/AI/AI_continuous_with_logger.rst
+
+   examples/Console/Asynchronous/STEM/AI/AI_N_samples_once.rst
+
+   examples/Console/Asynchronous/STEM/AI/AI_N_samples_in_loop.rst
+
+   examples/Console/Asynchronous/STEM/AI/AI_on_demand_in_loop.rst
+
+   examples/Console/Asynchronous/STEM/AI/AI_on_demand_once.rst
+
+   examples/Console/Asynchronous/STEM/AO/AO_write_all_channels.rst
+
+   examples/Console/Asynchronous/STEM/AO/AO_write_one_channel.rst
+
+   examples/Console/Asynchronous/STEM/AO/AO_waveform_gen.rst
+
+   examples/Console/Asynchronous/STEM/AIO/AIO_one_channel_loopback.rst
+
+   examples/Console/Asynchronous/STEM/AIO/AIO_all_channels_loopback.rst
+
+   examples/Console/Asynchronous/STEM/DIO/DO_blinky_pins.rst
+
+   examples/Console/Asynchronous/STEM/DIO/DO_blinky_port.rst
+
+   examples/Console/Asynchronous/STEM/DIO/DIO_loopback_pins.rst
+
+   examples/Console/Asynchronous/STEM/DIO/DIO_loopback_port.rst
+
+   examples/Console/Asynchronous/STEM/DIO/DO_write_pins.rst
+
+   examples/Console/Asynchronous/STEM/DIO/DO_write_port.rst
+
+   examples/Console/Asynchronous/STEM/System_ETH/get_network_info.rst
+
+   examples/Console/Asynchronous/STEM/Tutorial/single_loop_thread.rst
+
+   examples/Console/Asynchronous/STEM/Tutorial/single_loop_async.rst
+
+   examples/Console/Asynchronous/STEM/Tutorial/multiple_loops_thread.rst
+
+   examples/Console/Asynchronous/STEM/Tutorial/multiple_loops_async.rst
+
+
 EMotion
 -------
 

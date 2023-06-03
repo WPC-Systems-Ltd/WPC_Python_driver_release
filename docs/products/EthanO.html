@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ethan-O &mdash; WPC Python driver 2.0.3 documentation</title>
+  <title>Ethan-O &mdash; WPC Python driver 2.1.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.0.3
+                2.1.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -52,6 +52,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../product_list.html#wifi-devices">Wifi devices</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../product_list.html#ethernet-devices">Ethernet devices</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="EMotion.html">EMotion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="STEM.html">STEM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="EthanA.html">Ethan-A</a></li>
 <li class="toctree-l3"><a class="reference internal" href="EthanD.html">Ethan-D</a></li>
 <li class="toctree-l3"><a class="reference internal" href="EthanL.html">Ethan-L</a></li>
@@ -1386,6 +1387,31 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanO.Sys_getPortMode">
+<span class="sig-name descname"><span class="pre">Sys_getPortMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanO.Sys_getPortMode" title="Permalink to this definition"></a></dt>
+<dd><p>Get mode from the port of the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><p>Mode of port.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanO.Sys_getPortMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getPortMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanO.Sys_getPortMode_async" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EthanO.Sys_getRTC">
 <span class="sig-name descname"><span class="pre">Sys_getRTC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanO.Sys_getRTC" title="Permalink to this definition"></a></dt>
 <dd><p>Get date and time to connected WPC device.</p>
@@ -1558,6 +1584,198 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dd><p>Deprecated in v1.0.5. Will be removed in v1.2.0.</p>
 <p>See :ref:<code class="docutils literal notranslate"><span class="pre">Net_setIPAddrAndSubmask_async</span></code>.</p>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanO.Sys_setPortAIOMode">
+<span class="sig-name descname"><span class="pre">Sys_setPortAIOMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanO.Sys_setPortAIOMode" title="Permalink to this definition"></a></dt>
+<dd><p>Set AIO state to port in the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanO.Sys_setPortAIOMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setPortAIOMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanO.Sys_setPortAIOMode_async" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanO.Sys_setPortDIMode">
+<span class="sig-name descname"><span class="pre">Sys_setPortDIMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanO.Sys_setPortDIMode" title="Permalink to this definition"></a></dt>
+<dd><p>Set DI state to port in the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanO.Sys_setPortDIMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setPortDIMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanO.Sys_setPortDIMode_async" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanO.Sys_setPortDIOMode">
+<span class="sig-name descname"><span class="pre">Sys_setPortDIOMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanO.Sys_setPortDIOMode" title="Permalink to this definition"></a></dt>
+<dd><p>Set DIO state to port in the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanO.Sys_setPortDIOMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setPortDIOMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanO.Sys_setPortDIOMode_async" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanO.Sys_setPortDOMode">
+<span class="sig-name descname"><span class="pre">Sys_setPortDOMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanO.Sys_setPortDOMode" title="Permalink to this definition"></a></dt>
+<dd><p>Set DO state to port in the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanO.Sys_setPortDOMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setPortDOMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanO.Sys_setPortDOMode_async" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanO.Sys_setPortIdleMode">
+<span class="sig-name descname"><span class="pre">Sys_setPortIdleMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanO.Sys_setPortIdleMode" title="Permalink to this definition"></a></dt>
+<dd><p>Set IDLE state to port in the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanO.Sys_setPortIdleMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setPortIdleMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanO.Sys_setPortIdleMode_async" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanO.Sys_setPortMode">
+<span class="sig-name descname"><span class="pre">Sys_setPortMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanO.Sys_setPortMode" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanO.Sys_setPortMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setPortMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanO.Sys_setPortMode_async" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanO.Sys_setPortMotionMode">
+<span class="sig-name descname"><span class="pre">Sys_setPortMotionMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanO.Sys_setPortMotionMode" title="Permalink to this definition"></a></dt>
+<dd><p>Set motion state to port in the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanO.Sys_setPortMotionMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setPortMotionMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanO.Sys_setPortMotionMode_async" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanO.Sys_setPortSwitchMode">
+<span class="sig-name descname"><span class="pre">Sys_setPortSwitchMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanO.Sys_setPortSwitchMode" title="Permalink to this definition"></a></dt>
+<dd><p>Set switch state to port in the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanO.Sys_setPortSwitchMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setPortSwitchMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanO.Sys_setPortSwitchMode_async" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EthanO.Sys_setRTC">

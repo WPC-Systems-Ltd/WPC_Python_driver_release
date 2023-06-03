@@ -7,6 +7,7 @@ First, it shows how to open thermal port
 Second, get status from channel 0 and channel 1
 Last, close thermal port.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -56,7 +57,7 @@ async def main():
 
         ## Open RTD
         err = await dev.Thermal_open_async(port)
-        print(f"Thermal_open_async in port{port}: {err}")
+        print(f"Thermal_open_async in port {port}: {err}")
 
         ## Set RTD port and get status in channel 0
         status = await dev.Thermal_getStatus_async(port, ch0)
@@ -68,7 +69,7 @@ async def main():
 
         ## Close RTD
         err = await dev.Thermal_close_async(port)
-        print(f"Thermal_close_async in port{port}: {err}")
+        print(f"Thermal_close_async in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

@@ -1,0 +1,19 @@
+STEM
+====
+
+
+Device pinout 
+-------------
+
+.. image:: ../images/Pinouts/pinout-STEM.JPG
+   :width: 90%
+   :alt: STEM
+
+
+API function description 
+------------------------
+
+.. autoclass:: pywpc.STEM
+   :members:
+   :undoc-members:
+   :inherited-members:

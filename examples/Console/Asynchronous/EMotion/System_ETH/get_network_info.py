@@ -6,6 +6,7 @@ This example demonstrates how to get hardware & network information from EMotion
 First, get hardware information such as firmware model & version.
 Last, get network information such as IP & submask & MAC.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:

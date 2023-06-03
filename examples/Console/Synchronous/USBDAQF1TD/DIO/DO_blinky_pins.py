@@ -1,12 +1,13 @@
 '''
 DIO - DO_blinky_pins.py with synchronous mode.
 
-This example demonstrates how to write DO high or low in pins from USBDAQF1TD.
+This example illustrates the process of writing a high or low signal to a DO pin from USBDAQF1TD.
 
-First, it shows how to open DO in pins.
-Second, each loop has different voltage output so it will look like blinking.
-Last, close DO in pins.
+To begin with, it demonstrates the steps required to open the DO pin.
+Next, in each loop, a different voltage output is applied, resulting in a blinking effect.
+Lastly, it concludes by closing the DO pin.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -41,9 +42,10 @@ def main():
         return
 
     try:
+        
         ## Parameters setting
         port = 0 ## Depend on your device
-        pinindex = [0,1]
+        pinindex = [1, 3, 5, 7]
         timeout = 3  ## second
 
         ## Get firmware model & version
@@ -51,26 +53,22 @@ def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## Open pin0 and pin1 with digital output
+        ## Open pins with digital output
         err = dev.DO_openPins(port, pinindex, timeout=timeout)
-        print(f"DO_openPins in port{port}: {err}")
+        print(f"DO_openPins in port {port}: {err}")
 
         ## Toggle digital state for 10 times. Each times delay for 0.5 second
         for i in range(10):
-            if i%2 == 0:
-                value = [0,1]
-            else:
-                value = [1,0]
-
-            dev.DO_writePins(port, pinindex, value, timeout=timeout)
-            print(f'Port: {port}, pinindex = {pinindex}, digital state = {value}')
+            state = dev.DO_togglePins(port, pinindex, timeout=timeout)
+            print(state)
 
             ## Wait for 0.5 second to see led status
             time.sleep(0.5) ## delay [s]
 
-        ## Close pin0 and pin1 with digital output
+        ## Close pins with digital output
         err = dev.DO_closePins(port, pinindex, timeout=timeout)
-        print(f"DO_closePins in port{port}: {err}")
+        print(f"DO_closePins in port {port}: {err}")
+        
     except Exception as err:
         pywpc.printGenericError(err)
 

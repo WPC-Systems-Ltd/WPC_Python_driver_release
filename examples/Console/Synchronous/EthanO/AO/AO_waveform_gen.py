@@ -1,13 +1,12 @@
 '''
 AO - AO_waveform_gen.py with synchronous mode.
 
-This example demonstrates how to use AO waveform generation in specific channels from EthanO.
+This example demonstrates the process of writing AO signal of EthanO.
+To begin with, it demonstrates the steps to open the AO port and configure the AO parameters.
+Next, it outlines the procedure for AO streaming.
+Finally, it concludes by explaining how to close the AO port.
 
-First, it shows how to open AO in port.
-Second, set AO streaming parameters
-Last, close AO in port.
-This example demonstrates how to write AO in all channels from EthanO.
-
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -57,38 +56,38 @@ def main():
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-
+        
         ## Open AO
         err = dev.AO_open(port, timeout=timeout)
-        print(f"AO_open in port{port}: {err}")
+        print(f"AO_open in port {port}: {err}")
 
         ## Set AO enabled channels
         err = dev.AO_setEnableChannels(port, [0,1], timeout=timeout)
-        print(f"AO_setEnableChannels in port{port}: {err}")
+        print(f"AO_setEnableChannels in port {port}: {err}")
 
         ## Set AO form in channel 0
         err = dev.AO_setForm(port, 0, form_mode, timeout=timeout)
-        print(f"AO_setForm in channel 0 in port{port}: {err}")
+        print(f"AO_setForm in channel 0 in port {port}: {err}")
 
         ## Set AO form in channel 1
         err = dev.AO_setForm(port, 1, form_mode, timeout=timeout)
-        print(f"AO_setForm in channel 1 in port{port}: {err}")
+        print(f"AO_setForm in channel 1 in port {port}: {err}")
 
         ## Set Channel 0 form parameters
         err = dev.AO_setFormParam(port, 0, amplitude, offset, period_0, timeout=timeout)
-        print(f"AO_setFormParam in channel 0 in port{port}: {err}")
+        print(f"AO_setFormParam in channel 0 in port {port}: {err}")
 
         ## Set Channel 1 form parameters
         err = dev.AO_setFormParam(port, 1, amplitude, offset, period_1, timeout=timeout)
-        print(f"AO_setFormParam in channel 1 in port{port}: {err}")
+        print(f"AO_setFormParam in channel 1 in port {port}: {err}")
 
         ## Set AO port and generation mode
         err = dev.AO_setMode(port, mode, timeout=timeout)
-        print(f"AO_setMode in port{port}: {err}")
+        print(f"AO_setMode in port {port}: {err}")
 
         ## Set AO port and sampling rate to 1k (Hz)
         err = dev.AO_setSamplingRate(port, sampling_rate, timeout=timeout)
-        print(f"AO_setSamplingRate in port{port}: {err}")
+        print(f"AO_setSamplingRate in port {port}: {err}")
 
         ## Open AO streaming
         info = dev.AO_openStreaming(port, timeout=timeout)
@@ -96,18 +95,18 @@ def main():
 
         ## Start AO streaming
         err = dev.AO_startStreaming(port)
-        print(f"AO_startStreaming in port{port}: {err}")
+        print(f"AO_startStreaming in port {port}: {err}")
 
         ## Wait for 5 seconds
         time.sleep(5) ## delay [s]
 
         ## Close AO streaming
         err = dev.AO_closeStreaming(port, timeout=timeout)
-        print(f"AO_closeStreaming in port{port}: {err}")
+        print(f"AO_closeStreaming in port {port}: {err}")
 
         ## Close AO
         err = dev.AO_close(port)
-        print(f"AO_close in port{port}: {err}")
+        print(f"AO_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

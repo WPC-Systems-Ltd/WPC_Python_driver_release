@@ -7,6 +7,7 @@ First, it shows how to open CAN port and configure CAN parameters.
 Second, read bytes from another device.
 Last, stop and close CAN port.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -54,15 +55,15 @@ async def main():
 
         ## Open CAN
         err = await dev.CAN_open_async(port)
-        print(f"CAN_open_async in port{port}: {err}")
+        print(f"CAN_open_async in port {port}: {err}")
 
         ## Set CAN port and set speed to 0
         err = await dev.CAN_setSpeed_async(port, speed)
-        print(f"CAN_setSpeed_async in port{port}: {err}")
+        print(f"CAN_setSpeed_async in port {port}: {err}")
 
         ## Set CAN port and start CAN
         err = await dev.CAN_start_async(port)
-        print(f"CAN_start_async in port{port}: {err}")
+        print(f"CAN_start_async in port {port}: {err}")
 
         ## Read 5 frames for 1000 times
         for i in range(1000):
@@ -76,11 +77,11 @@ async def main():
 
         ## Set CAN port and stop CAN
         err = await dev.CAN_stop_async(port)
-        print(f"CAN_stop_async in port{port}: {err}")
+        print(f"CAN_stop_async in port {port}: {err}")
 
         ## Close CAN
         err = await dev.CAN_close_async(port)
-        print(f"CAN_close_async in port{port}: {err}")
+        print(f"CAN_close_async in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

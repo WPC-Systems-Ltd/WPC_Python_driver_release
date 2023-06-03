@@ -1,12 +1,13 @@
 '''
 DIO - DO_write_port.py with asynchronous mode.
 
-This example demonstrates how to write DO in port from USBDAQF1DSNK.
+This example illustrates the process of writing a high or low signal to a DO port from USBDAQF1DSNK.
 
-First, it shows how to open DO in port.
-Second, write DO pins in two different types (hex or list) but it should be consistency.
-Last, close DO in port.
+To begin with, it demonstrates the steps required to open the DO port.
+Next, voltage output is written to the DO port.
+Lastly, it concludes by closing the DO port.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
@@ -41,32 +42,39 @@ async def main():
         return
 
     try:
+        
         ## Parameters setting
         port = 0 ## Depend on your device
+        DO_port = 1
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## Open all pins and set it to digital output
-        err = await dev.DO_openPort_async(port)
-        print(f"DO_openPort_async in port{port}: {err}")
+        ## Get port mode
+        port_mode = await dev.Sys_getPortMode_async(port)
+        print("Slot mode:", port_mode)
 
-        ## Set pin0, pin3 and pin4 to high, others to low
-        err = await dev.DO_writePort_async(port, [0,0,0,1,1,0,0,1])
-        print(f"DO_writePort_async in port{port}: {err}")
+        ## If the port mode is not set to "DIO", set the port mode to "DIO"
+        if port_mode != "DIO":
+            err = await dev.Sys_setPortDIOMode_async(port)
+            print(f"Sys_setPortDIOMode_async in port {port}: {err}")
 
-        ## Wait for 1 seconds to see led status
-        await asyncio.sleep(1)  ## delay [s]
+        ## Get port mode
+        port_mode = await dev.Sys_getPortMode_async(port)
+        print("Slot mode:", port_mode)
 
-        ## Set pin7 and pin6 to high, others to low (1100 0000 in binary) (0xC0 in hex).
-        err = await dev.DO_writePort_async(port, 0xC0)
-        print(f"DO_writePort_async in port{port}: {err}")
+        ## Get port DIO start up information
+        info = await dev.DIO_loadStartup_async(DO_port)
+        print("Enable:   ", info[0])
+        print("Direction:", info[1])
+        print("State:    ", info[2])
 
-        ## Close all pins with digital output
-        err = await dev.DO_closePort_async(port)
-        print(f"DO_closePort_async in port{port}: {err}")
+        ## Write port to high or low
+        err = await dev.DO_writePort_async(DO_port, [1, 1, 0, 0])
+        print(f"DO_writePort_async in port {DO_port}: {err}")
+        
     except Exception as err:
         pywpc.printGenericError(err)
 

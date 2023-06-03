@@ -3,6 +3,7 @@ Tutorial - multiple_loops_thread.py with asynchronous mode.
 
 This example project demonstrates how to use two thread to get RTC & print string from EthanD.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:

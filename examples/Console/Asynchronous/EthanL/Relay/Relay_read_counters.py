@@ -3,6 +3,7 @@ Relay - Relay_read_counters.py with asynchronous mode.
 
 This example demonstrates how to read counters from EthanL.
 
+-------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
 
 For other examples please check:
