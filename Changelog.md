@@ -1,6 +1,23 @@
 WPC Python driver release changelog
 ===================================
 
+v2.1.2 Date: 2023/06/05, Developer: Chunglee_people
+---------------------------------------------------
+### Added
+- STEM product introduction
+
+### Changed
+- STEM product images
+- API name:
+  - Wifi_readAccleration -> Wifi_readAcceleration
+
+### Fixed
+- AIO & DIO example code's description
+- Firmware error code
+
+### Removed
+- Remove pywpc.__version__ in README.rst
+
 v2.1.1 Date: 2023/06/03, Developer: Chunglee_people
 ---------------------------------------------------
 ### Added
