@@ -24,7 +24,10 @@ Products Feature
          :alt: product-Emotion.jpg
    * -
       **STEM**
-         - AI/AO/DIO
+         - 4-slot IDC-50P 3.3V DIO
+         - Support modules: 24ch-24V-DI/ 24ch-24V-DO/ 12-12ch-24V-DIO/ 24ch-5V-TTL/ 24ch-AIO
+         - 24ch-2-wire-Multiplexer/ 4x6-Matrix switch
+         - 10/100M Ethernet/ TCP command sets
          - Support Python, C# and LabVIEW
      -
       .. image:: images/Products/product-STEM.jpg

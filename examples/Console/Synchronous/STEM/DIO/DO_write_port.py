@@ -7,7 +7,7 @@ To begin with, it demonstrates the steps required to open the DO port.
 Next, voltage output is written to the DO port.
 Lastly, it concludes by closing the DO port.
 
-/// If your product is "STEM", please invoke the function `Sys_setPortDIOMode`.
+If your product is "STEM", please invoke the function `Sys_setPortDIOMode`.
 
 -------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
