@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>USB-DAQ-F1-AD &mdash; WPC Python driver 2.1.2 documentation</title>
+  <title>USB-DAQ-F1-AD &mdash; WPC Python driver 2.1.3 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.1.2
+                2.1.3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -77,7 +77,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">APPENDICES</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../ref_port.html">I/O Function Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref_port.html">I/O port function table</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ref_error.html">Error Code Table</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ref_SPI.html">Setting Table</a></li>
 </ul>
@@ -2680,6 +2680,50 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_getMode">
+<span class="sig-name descname"><span class="pre">Sys_getMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_getMode" title="Permalink to this definition"></a></dt>
+<dd><p>Get the mode of the slot from the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><p>Mode of slot.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_getMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_getMode_async" title="Permalink to this definition"></a></dt>
+<dd><p>Get the mode of the slot from the connected WPC device with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><p>Mode of slot.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_getPinModeInPort">
 <span class="sig-name descname"><span class="pre">Sys_getPinModeInPort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_getPinModeInPort" title="Permalink to this definition"></a></dt>
 <dd><p>Get pin mode in specific port.</p>
@@ -2730,31 +2774,6 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_getPortMode">
-<span class="sig-name descname"><span class="pre">Sys_getPortMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_getPortMode" title="Permalink to this definition"></a></dt>
-<dd><p>Get mode from the port of the connected WPC device.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><p>Mode of port.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_getPortMode_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getPortMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_getPortMode_async" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_getRTC">
@@ -2917,12 +2936,15 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setPortAIOMode">
-<span class="sig-name descname"><span class="pre">Sys_setPortAIOMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setPortAIOMode" title="Permalink to this definition"></a></dt>
-<dd><p>Set AIO state to port in the connected WPC device.</p>
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setAIOMode">
+<span class="sig-name descname"><span class="pre">Sys_setAIOMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setAIOMode" title="Permalink to this definition"></a></dt>
+<dd><p>Set the AIO state for the slot in the connected WPC device.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
@@ -2938,17 +2960,37 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setPortAIOMode_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setPortAIOMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setPortAIOMode_async" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setPortDIMode">
-<span class="sig-name descname"><span class="pre">Sys_setPortDIMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setPortDIMode" title="Permalink to this definition"></a></dt>
-<dd><p>Set DI state to port in the connected WPC device.</p>
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setAIOMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setAIOMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setAIOMode_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set the AIO state for the slot in the connected WPC device with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setDIMode">
+<span class="sig-name descname"><span class="pre">Sys_setDIMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setDIMode" title="Permalink to this definition"></a></dt>
+<dd><p>Set the DI state for the slot in the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
@@ -2964,17 +3006,37 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setPortDIMode_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setPortDIMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setPortDIMode_async" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setPortDIOMode">
-<span class="sig-name descname"><span class="pre">Sys_setPortDIOMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setPortDIOMode" title="Permalink to this definition"></a></dt>
-<dd><p>Set DIO state to port in the connected WPC device.</p>
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setDIMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setDIMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setDIMode_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set the DI state for the slot in the connected WPC device with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setDIOMode">
+<span class="sig-name descname"><span class="pre">Sys_setDIOMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setDIOMode" title="Permalink to this definition"></a></dt>
+<dd><p>Set the DIO state for the slot in the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
@@ -2990,17 +3052,37 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setPortDIOMode_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setPortDIOMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setPortDIOMode_async" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setPortDOMode">
-<span class="sig-name descname"><span class="pre">Sys_setPortDOMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setPortDOMode" title="Permalink to this definition"></a></dt>
-<dd><p>Set DO state to port in the connected WPC device.</p>
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setDIOMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setDIOMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setDIOMode_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set the DIO state for the slot in the connected WPC device with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setDOMode">
+<span class="sig-name descname"><span class="pre">Sys_setDOMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setDOMode" title="Permalink to this definition"></a></dt>
+<dd><p>Set the DO state for the slot in the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
@@ -3016,17 +3098,37 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setPortDOMode_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setPortDOMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setPortDOMode_async" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setPortIdleMode">
-<span class="sig-name descname"><span class="pre">Sys_setPortIdleMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setPortIdleMode" title="Permalink to this definition"></a></dt>
-<dd><p>Set IDLE state to port in the connected WPC device.</p>
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setDOMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setDOMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setDOMode_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set the DO state for the slot in the connected WPC device with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setIdleMode">
+<span class="sig-name descname"><span class="pre">Sys_setIdleMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setIdleMode" title="Permalink to this definition"></a></dt>
+<dd><p>Set the IDLE state for the slot in the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
@@ -3042,27 +3144,37 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setPortIdleMode_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setPortIdleMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setPortIdleMode_async" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setPortMode">
-<span class="sig-name descname"><span class="pre">Sys_setPortMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setPortMode" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setPortMode_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setPortMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setPortMode_async" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setPortMotionMode">
-<span class="sig-name descname"><span class="pre">Sys_setPortMotionMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setPortMotionMode" title="Permalink to this definition"></a></dt>
-<dd><p>Set motion state to port in the connected WPC device.</p>
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setIdleMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setIdleMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setIdleMode_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set the IDLE state for the slot in the connected WPC device with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setMotionMode">
+<span class="sig-name descname"><span class="pre">Sys_setMotionMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setMotionMode" title="Permalink to this definition"></a></dt>
+<dd><p>Set the motion state for the slot in the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
@@ -3078,18 +3190,14 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setPortMotionMode_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setPortMotionMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setPortMotionMode_async" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setPortSwitchMode">
-<span class="sig-name descname"><span class="pre">Sys_setPortSwitchMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setPortSwitchMode" title="Permalink to this definition"></a></dt>
-<dd><p>Set switch state to port in the connected WPC device.</p>
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setMotionMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setMotionMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setMotionMode_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set the motion state for the slot in the connected WPC device with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
 </dd>
 </dl>
 </dd>
@@ -3102,11 +3210,6 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setPortSwitchMode_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setPortSwitchMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setPortSwitchMode_async" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setRTC">
@@ -3164,6 +3267,62 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 : Success, Others : Error.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setSlotMode">
+<span class="sig-name descname"><span class="pre">Sys_setSlotMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setSlotMode" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setSlotMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setSlotMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setSlotMode_async" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setSwitchMode">
+<span class="sig-name descname"><span class="pre">Sys_setSwitchMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setSwitchMode" title="Permalink to this definition"></a></dt>
+<dd><p>Set the switch state for the slot in the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AD.Sys_setSwitchMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setSwitchMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AD.Sys_setSwitchMode_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set the switch state for the slot in the connected WPC device with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
 </dd>
 </dl>
 </dd>

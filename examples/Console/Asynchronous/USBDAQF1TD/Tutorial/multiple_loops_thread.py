@@ -14,11 +14,9 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import asyncio
 import threading
 import time
-
 ## WPC
 
 from wpcsys import pywpc

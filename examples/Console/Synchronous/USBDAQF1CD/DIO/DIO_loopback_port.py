@@ -19,12 +19,12 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import time
 
 ## WPC
 
 from wpcsys import pywpc
+
 
 def main():
     ## Get Python driver version
@@ -54,31 +54,29 @@ def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        
         ## Open DO port with digital output
         err = dev.DO_openPort(DO_port, timeout=timeout)
-        print(f"DO_openPort in port {DO_port}: {err}")
+        print(f"DO_openPort in DO_port {DO_port}: {err}")
 
         ## Open DI port with digital input
         err = dev.DI_openPort(DI_port, timeout=timeout)
-        print(f"DI_openPort in port {DI_port}: {err}")
+        print(f"DI_openPort in DI_port {DI_port}: {err}")
 
         ## Write DO port to high or low
         err = dev.DO_writePort(DO_port, [1, 0, 1, 0], timeout=timeout)
-        print(f"DO_writePort in port {DO_port}: {err}")
+        print(f"DO_writePort in DO_port {DO_port}: {err}")
 
         ## Read DI port state
         state_list = dev.DI_readPort(DI_port, timeout=timeout)
-        print(f"state_list in port {DI_port}: {state_list}")
+        print(f"state_list in DI_port {DI_port}: {state_list}")
 
         ## Close DO port with digital output
         err = dev.DO_closePort(DO_port, timeout=timeout)
-        print(f"DO_closePort in port {DO_port}: {err}")
+        print(f"DO_closePort in DO_port {DO_port}: {err}")
 
         ## Close DI port with digital input
         err = dev.DI_closePort(DI_port, timeout=timeout)
-        print(f"DI_closePort in port {DI_port}: {err}")
-        
+        print(f"DI_closePort in DI_port {DI_port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

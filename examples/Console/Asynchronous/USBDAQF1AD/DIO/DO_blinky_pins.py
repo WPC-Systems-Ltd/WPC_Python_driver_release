@@ -18,12 +18,12 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import asyncio
 
 ## WPC
 
 from wpcsys import pywpc
+
 
 async def main():
     ## Get Python driver version
@@ -42,7 +42,6 @@ async def main():
         return
 
     try:
-        
         ## Parameters setting
         port = 0 ## Depend on your device
         pinindex = [1, 3, 5, 7]
@@ -67,7 +66,6 @@ async def main():
         ## Close pins with digital output
         err = await dev.DO_closePins_async(port, pinindex)
         print(f"DO_closePins_async in port {port}: {err}")
-        
     except Exception as err:
         pywpc.printGenericError(err)
 
@@ -84,7 +82,6 @@ def main_for_spyder(*args):
         return asyncio.create_task(main(*args)).result()
     else:
         return asyncio.run(main(*args))
-
 if __name__ == '__main__':
     asyncio.run(main()) ## Use terminal
     # await main() ## Use Jupyter or IPython(>=7.0)

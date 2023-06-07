@@ -18,12 +18,12 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import time
 
 ## WPC
 
 from wpcsys import pywpc
+
 
 def main():
     ## Get Python driver version
@@ -42,10 +42,8 @@ def main():
         return
 
     try:
-        
         ## Parameters setting
         port = 0 ## Depend on your device
-        DO_port = 1
         timeout = 3  ## second
 
         ## Get firmware model & version
@@ -53,33 +51,21 @@ def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## Get port mode
-        port_mode = dev.Sys_getPortMode(port, timeout=timeout)
-        print("Slot mode:", port_mode)
-
-        ## If the port mode is not set to "DIO", set the port mode to "DIO"
-        if port_mode != "DIO":
-            err = dev.Sys_setPortDIOMode(port, timeout=timeout)
-            print(f"Sys_setPortDIOMode in port {port}: {err}")
-
-        ## Get port mode
-        port_mode = dev.Sys_getPortMode(port, timeout=timeout)
-        print("Slot mode:", port_mode)
-
-        ## Get port DIO start up information
-        info = dev.DIO_loadStartup(DO_port, timeout=timeout)
-        print("Enable:   ", info[0])
-        print("Direction:", info[1])
-        print("State:    ", info[2])
+        ## Open port with digital output
+        err = dev.DO_openPort(port, timeout=timeout)
+        print(f"DO_openPort in port {port}: {err}")
 
         ## Toggle digital state for 10 times. Each times delay for 0.5 second
         for i in range(10):
-            state = dev.DO_togglePort(DO_port, timeout=timeout)
+            state = dev.DO_togglePort(port, timeout=timeout)
             print(state)
 
             ## Wait for 0.5 second to see led status
             time.sleep(0.5) ## delay [s]
-        
+
+        ## Close port with digital output
+        err = dev.DO_closePort(port, timeout=timeout)
+        print(f"DO_closePort in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

@@ -8,7 +8,15 @@ To begin with, it illustrates the steps required to open the DO and DI port.
 Next, it performs the operation of writing to a DO pin and reading from a DI pin.
 Lastly, it concludes by closing the DO and DI port.
 
-If your product is "STEM", please invoke the function `Sys_setPortDIOMode`.
+If your product is "STEM", please invoke the function `Sys_setDIOMode`.
+
+The DIO ports 0 to 1 are assigned to slot 1, while ports 2 to 3 are assigned to slot 2.
+---------------------------
+|  Slot 1    port 1 & 0   |
+|  Slot 2    port 3 & 2   |
+|  Slot 3    port 5 & 4   |
+|  Slot 4    port 7 & 6   |
+---------------------------
 
 -------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
@@ -21,12 +29,12 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import time
 
 ## WPC
 
 from wpcsys import pywpc
+
 
 def main():
     ## Get Python driver version
@@ -46,7 +54,7 @@ def main():
 
     try:
         ## Parameters setting
-        port = 1 ## Depend on your device
+        slot = 1 ## Connect DIO module to slot
         DO_port = 0
         DI_port = 1
         timeout = 3  ## second
@@ -56,21 +64,20 @@ def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        
-        ## Get port mode
-        port_mode = dev.Sys_getPortMode(port, timeout=timeout)
-        print("Slot mode:", port_mode)
+        ## Get slot mode
+        slot_mode = dev.Sys_getMode(slot, timeout=timeout)
+        print("Slot mode:", slot_mode)
 
-        ## If the port mode is not set to "DIO", set the port mode to "DIO"
-        if port_mode != "DIO":
-            err = dev.Sys_setPortDIOMode(port, timeout=timeout)
-            print(f"Sys_setPortDIOMode in port {port}: {err}")
+        ## If the slot mode is not set to "DIO", set the slot mode to "DIO"
+        if slot_mode != "DIO":
+            err = dev.Sys_setDIOMode(slot, timeout=timeout)
+            print(f"Sys_setDIOMode in slot {slot}: {err}")
 
-        ## Get port mode
-        port_mode = dev.Sys_getPortMode(port, timeout=timeout)
-        print("Slot mode:", port_mode)
+        ## Get slot mode
+        slot_mode = dev.Sys_getMode(slot, timeout=timeout)
+        print("Slot mode:", slot_mode)
 
-        ## Get port DIO start up information
+        ## Get DIO start up information
         info = dev.DIO_loadStartup(DO_port, timeout=timeout)
         print("Enable:   ", info[0])
         print("Direction:", info[1])
@@ -78,13 +85,11 @@ def main():
 
         ## Write DO port to high or low
         err = dev.DO_writePort(DO_port, [1, 0, 1, 0], timeout=timeout)
-        print(f"DO_writePort in port {DO_port}: {err}")
+        print(f"DO_writePort in DO_port {DO_port}: {err}")
 
         ## Read DI port state
         state_list = dev.DI_readPort(DI_port, timeout=timeout)
-        print(f"state_list in port {DI_port}: {state_list}")
-
-        
+        print(f"state_list in DI_port {DI_port}: {state_list}")
     except Exception as err:
         pywpc.printGenericError(err)
 

@@ -19,12 +19,12 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import time
 
 ## WPC
 
 from wpcsys import pywpc
+
 
 def main():
     ## Get Python driver version
@@ -43,10 +43,11 @@ def main():
         return
 
     try:
-        
         ## Parameters setting
         port = 0 ## Depend on your device
         timeout = 3  ## second
+        DO_port = 0
+        DI_port = 1
         DO_pins = [0, 1, 2, 3]
         DI_pins = [4, 5, 6, 7]
 
@@ -56,29 +57,28 @@ def main():
         print("Firmware version: " + driver_info[-1])
 
         ## Open pins with digital output
-        err = dev.DO_openPins(port, DO_pins, timeout=timeout)
-        print(f"DO_openPins in port {port}: {err}")
+        err = dev.DO_openPins(DO_port, DO_pins, timeout=timeout)
+        print(f"DO_openPins in DO_port {DO_port}: {err}")
 
         ## Write pins to high or low
-        err = dev.DO_writePins(port, DO_pins, [1, 1, 0, 0], timeout=timeout)
-        print(f"DO_writePins in {[port]}: {err}")
+        err = dev.DO_writePins(DO_port, DO_pins, [1, 1, 0, 0], timeout=timeout)
+        print(f"DO_writePins in {DO_port}: {err}")
 
         ## Open pins with digital iutput
-        err = dev.DI_openPins(port, DI_pins, timeout=timeout)
-        print(f"DI_openPins in port {port}: {err}")
+        err = dev.DI_openPins(DI_port, DI_pins, timeout=timeout)
+        print(f"DI_openPins in DI_port {DI_port}: {err}")
 
         ## Read pins state
-        state_list = dev.DI_readPins(port, DI_pins, timeout=timeout)
-        print(f"state_list in port {port}: {state_list}")
+        state_list = dev.DI_readPins(DI_port, DI_pins, timeout=timeout)
+        print(f"state_list in DI_port {DI_port}: {state_list}")
 
         ## Close pins with digital output
-        err = dev.DO_closePins(port, DO_pins, timeout=timeout)
-        print(f"DO_closePins in port {port}: {err}")
+        err = dev.DO_closePins(DO_port, DO_pins, timeout=timeout)
+        print(f"DO_closePins in DO_port {DO_port}: {err}")
 
         ## Close pins with digital input
-        err = dev.DI_closePins(port, DI_pins, timeout=timeout)
-        print(f"DI_closePins in port {port}: {err}")
-        
+        err = dev.DI_closePins(DI_port, DI_pins, timeout=timeout)
+        print(f"DI_closePins in DI_port {DI_port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

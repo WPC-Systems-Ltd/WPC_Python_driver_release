@@ -4,9 +4,9 @@ AI - AI_N_samples_once.py with synchronous mode.
 This example demonstrates the process of obtaining AI data in N-sample mode.
 Additionally, it gets AI data with 50 points in once from EthanA.
 
-To begin with, it demonstrates the steps to open the AI port and configure the AI parameters.
+To begin with, it demonstrates the steps to open the AI and configure the AI parameters.
 Next, it outlines the procedure for reading the streaming AI data.
-Finally, it concludes by explaining how to close the AI port.
+Finally, it concludes by explaining how to close the AI.
 
 -------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
@@ -19,12 +19,13 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import time
 
 ## WPC
 
 from wpcsys import pywpc
+
+
 
 def main():
     ## Get Python driver version
@@ -45,23 +46,22 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        mode = 1  ## 0 : On demand, 1 : N-samples, 2 : Continuous.
+        mode = 1 ## 0 : On demand, 1 : N-samples, 2 : Continuous
         sampling_rate = 1000
         samples = 50
         read_points = 50
         delay = 0.05 ## second
         timeout = 3  ## second
-        chip_select = [0, 1]
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-        
+
         ## Open port
         err = dev.AI_open(port, timeout=timeout)
         print(f"AI_open in port {port}: {err}")
-        
+
         ## Set AI acquisition mode to N-samples mode (1)
         err = dev.AI_setMode(port, mode, timeout=timeout)
         print(f"AI_setMode {mode} in port {port}: {err}")
@@ -87,7 +87,11 @@ def main():
         for i in range(len(data)):
             print(f"{data[i]}")
 
-        ## Close port
+        ## Stop AI acquisition
+        err = dev.AI_stop(port, timeout=timeout)
+        print(f"AI_stop in port {port}: {err}")
+
+        ## Close AI
         err = dev.AI_close(port, timeout=timeout)
         print(f"AI_close in port {port}: {err}")
     except Exception as err:
@@ -100,6 +104,8 @@ def main():
     dev.close()
 
     return
+
+
 
 if __name__ == '__main__':
     main()

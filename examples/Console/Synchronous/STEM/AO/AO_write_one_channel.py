@@ -2,11 +2,11 @@
 AO - AO_write_one_channel.py with synchronous mode.
 
 This example demonstrates the process of writing AO signal of STEM.
-To begin with, it demonstrates the steps to open the AO port.
+To begin with, it demonstrates the steps to open AO.
 Next, it outlines the procedure for writing digital signals with channel to the AO pins.
-Finally, it concludes by explaining how to close the AO port.
+Finally, it concludes by explaining how to close AO.
 
-If your product is "STEM", please invoke the function `Sys_setPortAIOMode`.
+If your product is "STEM", please invoke the function `Sys_setAIOMode`.
 
 -------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
@@ -24,6 +24,8 @@ import time
 ## WPC
 
 from wpcsys import pywpc
+
+
 
 def main():
     ## Get Python driver version
@@ -43,7 +45,7 @@ def main():
 
     try:
         ## Parameters setting
-        port = 1 ## Depend on your device
+        slot = 1 ## Connect AIO module to slot
         timeout = 3  ## second
 
         ## Get firmware model & version
@@ -51,42 +53,42 @@ def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
         
-        ## Get port mode
-        port_mode = dev.Sys_getPortMode(port, timeout=timeout)
-        print("Slot mode:", port_mode)
+        ## Get slot mode
+        slot_mode = dev.Sys_getMode(slot, timeout=timeout)
+        print("Slot mode:", slot_mode)
 
-        ## If the port mode is not set to "AIO", set the port mode to "AIO"
-        if port_mode != "AIO":
-            err = dev.Sys_setPortAIOMode(port, timeout=timeout)
-            print(f"Sys_setPortAIOMode in port {port}: {err}")
+        ## If the slot mode is not set to "AIO", set the slot mode to "AIO"
+        if slot_mode != "AIO":
+            err = dev.Sys_setAIOMode(slot, timeout=timeout)
+            print(f"Sys_setAIOMode in slot {slot}: {err}")
 
-        ## Get port mode
-        port_mode = dev.Sys_getPortMode(port, timeout=timeout)
-        print("Slot mode:", port_mode)
+        ## Get slot mode
+        slot_mode = dev.Sys_getMode(slot, timeout=timeout)
+        print("Slot mode:", slot_mode)
         
         ## Open AO
-        err = dev.AO_open(port, timeout=timeout)
-        print(f"AO_open in port {port}: {err}")
+        err = dev.AO_open(slot, timeout=timeout)
+        print(f"AO_open in slot {slot}: {err}")
 
-        ## Set AO port and write data 1.5(V) in channel 0
-        err = dev.AO_writeOneChannel(port, 0, 1.5, timeout=timeout)
-        print(f"AO_writeOneChannel in ch0 in port {port}: {err}")
+        ## Write AO 1.5(V) in channel 0
+        err = dev.AO_writeOneChannel(slot, 0, 1.5, timeout=timeout)
+        print(f"AO_writeOneChannel in ch0 in slot {slot}: {err}")
 
-        ## Set AO port and write data 2.5(V) in channel 1
-        err = dev.AO_writeOneChannel(port, 1, 2.5, timeout=timeout)
-        print(f"AO_writeOneChannel in ch1 in port {port}: {err}")
+        ## Write AO 2.5(V) in channel 1
+        err = dev.AO_writeOneChannel(slot, 1, 2.5, timeout=timeout)
+        print(f"AO_writeOneChannel in ch1 in slot {slot}: {err}")
 
-        ## Set AO port and write data 3.5(V) in channel 2
-        err = dev.AO_writeOneChannel(port, 2, 3.5, timeout=timeout)
-        print(f"AO_writeOneChannel in ch2 in port {port}: {err}")
+        ## Write AO 3.5(V) in channel 2
+        err = dev.AO_writeOneChannel(slot, 2, 3.5, timeout=timeout)
+        print(f"AO_writeOneChannel in ch2 in slot {slot}: {err}")
 
-        ## Set AO port and write data 4.5(V) in channel 3
-        err = dev.AO_writeOneChannel(port, 3, 4.5, timeout=timeout)
-        print(f"AO_writeOneChannel in ch3 in port {port}: {err}")
+        ## Write AO 4.5(V) in channel 3
+        err = dev.AO_writeOneChannel(slot, 3, 4.5, timeout=timeout)
+        print(f"AO_writeOneChannel in ch3 in slot {slot}: {err}")
 
         ## Close AO
-        err = dev.AO_close(port)
-        print(f"AO_close in port {port}: {err}")
+        err = dev.AO_close(slot)
+        print(f"AO_close in slot {slot}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

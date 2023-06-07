@@ -5,7 +5,7 @@ This example demonstrates the process of AIO loopback with specific channels of 
 It involves using AO pins to send signals and AI pins to receive signals on a single device, commonly referred to as "loopback".
 The AI and AO pins are connected using a wire.
 
-Initially, the example demonstrates the steps required to open the AI and AO port
+Initially, the example demonstrates the steps required to open the AI and AO.
 Next, it reads AI data and displays its corresponding values.
 Following that, it writes digital signals to the AO pins and reads AI on-demand data once again.
 Lastly, it closes the AO and AI ports.
@@ -21,12 +21,12 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import asyncio
 
 ## WPC
 
 from wpcsys import pywpc
+
 
 async def main():
     ## Get Python driver version
@@ -53,36 +53,36 @@ async def main():
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-        
+
         ## Open AI
         err = await dev.AI_open_async(port)
         print(f"AI_open_async in port {port}: {err}")
-        
+
         ## Open AO
         err = await dev.AO_open_async(port)
         print(f"AO_open_async in port {port}: {err}")
 
-        ## Set AI port and data acquisition
+        ## Read data acquisition
         data = await dev.AI_readOnDemand_async(port)
         print(f"AI data in port {port}: {data}")
 
-        ## Set AO port and write data 1.5(V) in channel 0
+        ## Write AO vaule 1.5(V) in channel 0
         err = await dev.AO_writeOneChannel_async(port, 0, 1.5)
         print(f"AO_writeOneChannel_async in ch0 in port {port}: {err}")
 
-        ## Set AO port and write data 2.5(V) in channel 1
+        ## Write AO vaule 2.5(V) in channel 1
         err = await dev.AO_writeOneChannel_async(port, 1, 2.5)
         print(f"AO_writeOneChannel_async in ch1 in port {port}: {err}")
 
-        ## Set AO port and write data 3.5(V) in channel 2
+        ## Write AO vaule 3.5(V) in channel 2
         err = await dev.AO_writeOneChannel_async(port, 2, 3.5)
         print(f"AO_writeOneChannel_async in ch2 in port {port}: {err}")
 
-        ## Set AO port and write data 4.5(V) in channel 3
+        ## Write AO vaule 4.5(V) in channel 3
         err = await dev.AO_writeOneChannel_async(port, 3, 4.5)
         print(f"AO_writeOneChannel_async in ch3 in port {port}: {err}")
 
-        ## Set AI port and data acquisition
+        ## Read data acquisition
         data = await dev.AI_readOnDemand_async(port)
         print(f"AI data in port {port}: {data}")
 
@@ -109,7 +109,6 @@ def main_for_spyder(*args):
         return asyncio.create_task(main(*args)).result()
     else:
         return asyncio.run(main(*args))
-
 if __name__ == '__main__':
     asyncio.run(main()) ## Use terminal
     # await main() ## Use Jupyter or IPython(>=7.0)

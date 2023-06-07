@@ -14,11 +14,9 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import asyncio
 import threading
 import time
-
 ## WPC
 
 from wpcsys import pywpc
@@ -42,7 +40,7 @@ async def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.5.79") ## Depend on your device
+        dev.connect("192.168.5.35") ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle

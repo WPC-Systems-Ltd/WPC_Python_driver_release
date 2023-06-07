@@ -8,7 +8,15 @@ To begin with, it illustrates the steps required to open the DO and DI port.
 Next, it performs the operation of writing to a DO pin and reading from a DI pin.
 Lastly, it concludes by closing the DO and DI port.
 
-If your product is "STEM", please invoke the function `Sys_setPortDIOMode_async`.
+If your product is "STEM", please invoke the function `Sys_setDIOMode_async`.
+
+The DIO ports 0 to 1 are assigned to slot 1, while ports 2 to 3 are assigned to slot 2.
+---------------------------
+|  Slot 1    port 1 & 0   |
+|  Slot 2    port 3 & 2   |
+|  Slot 3    port 5 & 4   |
+|  Slot 4    port 7 & 6   |
+---------------------------
 
 -------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
@@ -21,12 +29,12 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import asyncio
 
 ## WPC
 
 from wpcsys import pywpc
+
 
 async def main():
     ## Get Python driver version
@@ -46,7 +54,7 @@ async def main():
 
     try:
         ## Parameters setting
-        port = 1 ## Depend on your device
+        slot = 1 ## Connect DIO module to slot
         DO_port = 0
         DI_port = 1
 
@@ -54,21 +62,21 @@ async def main():
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-        
-        ## Get port mode
-        port_mode = await dev.Sys_getPortMode_async(port)
-        print("Slot mode:", port_mode)
 
-        ## If the port mode is not set to "DIO", set the port mode to "DIO"
-        if port_mode != "DIO":
-            err = await dev.Sys_setPortDIOMode_async(port)
-            print(f"Sys_setPortDIOMode_async in port {port}: {err}")
+        ## Get slot mode
+        slot_mode = await dev.Sys_getMode_async(slot)
+        print("slot mode:", slot_mode)
 
-        ## Get port mode
-        port_mode = await dev.Sys_getPortMode_async(port)
-        print("Slot mode:", port_mode)
+        ## If the slot mode is not set to "DIO", set the slot mode to "DIO"
+        if slot_mode != "DIO":
+            err = await dev.Sys_setDIOMode_async(slot)
+            print(f"Sys_setDIOMode_async in slot {slot}: {err}")
 
-        ## Get port DIO start up information
+        ## Get slot mode
+        slot_mode = await dev.Sys_getMode_async(slot)
+        print("slot mode:", slot_mode)
+
+        ## Get DIO start up information
         info = await dev.DIO_loadStartup_async(DO_port)
         print("Enable:   ", info[0])
         print("Direction:", info[1])
@@ -76,13 +84,11 @@ async def main():
 
         ## Write DO port to high or low
         err = await dev.DO_writePort_async(DO_port, [1, 0, 1, 0])
-        print(f"DO_writePort_async in port {DO_port}: {err}")
+        print(f"DO_writePort_async in DO_port {DO_port}: {err}")
 
         ## Read DI port state
         state_list = await dev.DI_readPort_async(DI_port)
-        print(f"state_list in port {DI_port}: {state_list}")
-
-        
+        print(f"state_list in DI_port {DI_port}: {state_list}")
     except Exception as err:
         pywpc.printGenericError(err)
 
@@ -99,7 +105,6 @@ def main_for_spyder(*args):
         return asyncio.create_task(main(*args)).result()
     else:
         return asyncio.run(main(*args))
-
 if __name__ == '__main__':
     asyncio.run(main()) ## Use terminal
     # await main() ## Use Jupyter or IPython(>=7.0)

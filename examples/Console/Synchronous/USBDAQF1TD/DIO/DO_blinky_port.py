@@ -18,12 +18,12 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import time
 
 ## WPC
 
 from wpcsys import pywpc
+
 
 def main():
     ## Get Python driver version
@@ -42,7 +42,6 @@ def main():
         return
 
     try:
-        
         ## Parameters setting
         port = 0 ## Depend on your device
         timeout = 3  ## second
@@ -52,7 +51,7 @@ def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## Open port and set it to digital output.
+        ## Open port with digital output
         err = dev.DO_openPort(port, timeout=timeout)
         print(f"DO_openPort in port {port}: {err}")
 
@@ -67,7 +66,6 @@ def main():
         ## Close port with digital output
         err = dev.DO_closePort(port, timeout=timeout)
         print(f"DO_closePort in port {port}: {err}")
-        
     except Exception as err:
         pywpc.printGenericError(err)
 
