@@ -40,11 +40,11 @@ import asyncio
 from wpcsys import pywpc
 
 
-async def loop_func(handle, slot, num_of_samples=600, delay=0.05, exit_loop_time=3):
+async def loop_func(handle, slot, get_samples=600, delay=0.05, exit_time=3):
     time_cal = 0
-    while time_cal < exit_loop_time:
+    while time_cal < exit_time:
         ## Read data acquisition
-        data = await handle.AI_readStreaming_async(slot, num_of_samples, delay=delay)
+        data = await handle.AI_readStreaming_async(slot, get_samples, delay=delay)
 
         ## Print data
         for i in range(len(data)):
@@ -119,18 +119,18 @@ async def main():
         await asyncio.sleep(1) ## delay [s]
 
         ## Set loop parameters
-        num_of_samples = 200
+        get_samples = 200
         delay = 0.05
-        exit_loop_time = 0.1
+        exit_time = 0.1
 
         ## Start loop
-        await loop_func(dev, slot, num_of_samples=num_of_samples, delay=delay, exit_loop_time=exit_loop_time)
+        await loop_func(dev, slot, get_samples, delay, exit_time)
 
-        ## Stop AI acquisition
+        ## Stop AI
         err = await dev.AI_stop_async(slot)
         print(f"AI_stop_async in slot {slot}: {err}")
 
-        ## Close AI acquisition
+        ## Close AI
         err = await dev.AI_close_async(slot)
         print(f"AI_close_async in slot {slot}: {err}")
     except Exception as err:

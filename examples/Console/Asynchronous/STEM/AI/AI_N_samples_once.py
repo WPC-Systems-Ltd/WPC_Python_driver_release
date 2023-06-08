@@ -119,6 +119,10 @@ async def main():
         for i in range(len(data)):
             print(f"{data[i]}")
 
+        ## Stop AI
+        err = await dev.AI_stop_async(port)
+        print(f"AI_stop_async in port {port}: {err}")
+
         ## Close AI
         err = await dev.AI_close_async(slot)
         print(f"AI_close_async in slot {slot}: {err}")

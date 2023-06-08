@@ -87,7 +87,7 @@ def main():
         for i in range(len(data)):
             print(f"{data[i]}")
 
-        ## Stop AI acquisition
+        ## Stop AI
         err = dev.AI_stop(port, timeout=timeout)
         print(f"AI_stop in port {port}: {err}")
 
