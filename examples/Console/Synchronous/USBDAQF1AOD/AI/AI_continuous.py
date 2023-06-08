@@ -4,9 +4,9 @@ AI - AI_continuous.py with synchronous mode.
 This example demonstrates the process of obtaining AI data in continuous mode.
 Additionally, it utilizes a loop to retrieve AI data with 8 channels from USBDAQF1AOD with a timeout of 100 ms.
 
-To begin with, it demonstrates the steps to open the AI port and configure the AI parameters.
+To begin with, it demonstrates the steps to open the AI and configure the AI parameters.
 Next, it outlines the procedure for reading the streaming AI data.
-Finally, it concludes by explaining how to close the AI port.
+Finally, it concludes by explaining how to close the AI.
 
 -------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
@@ -19,18 +19,18 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import time
 
 ## WPC
 
 from wpcsys import pywpc
 
-def loop_func(handle, port, num_of_samples=600, delay=0.05, exit_loop_time=3):
+
+def loop_func(handle, port, get_samples=600, delay=0.05, exit_time=3):
     time_cal = 0
-    while time_cal < exit_loop_time:
+    while time_cal < exit_time:
         ## Read data acquisition
-        data = handle.AI_readStreaming(port, num_of_samples, delay=delay) ## Get 600 points at a time
+        data = handle.AI_readStreaming(port, get_samples, delay=delay)
 
         ## Print data
         for i in range(len(data)):
@@ -59,20 +59,19 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        mode = 2  ## 0 : On demand, 1 : N-samples, 2 : Continuous.
+        mode = 2 ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 1000
         timeout = 3  ## second
-        chip_select = [0, 1]
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-        
-        ## Open port
+
+        ## Open AI
         err = dev.AI_open(port, timeout=timeout)
         print(f"AI_open in port {port}: {err}")
-        
+
         ## Set AI acquisition mode to continuous mode (2)
         err = dev.AI_setMode(port, mode, timeout=timeout)
         print(f"AI_setMode {mode} in port {port}: {err}")
@@ -86,14 +85,18 @@ def main():
         print(f"AI_start in port {port}: {err}")
 
         ## Set loop parameters
-        num_of_samples = 100
+        get_samples = 200
         delay = 0.05
-        exit_loop_time = 0.1
+        exit_time = 0.1
 
         ## Start loop
-        loop_func(dev, port, num_of_samples=num_of_samples, delay=delay, exit_loop_time=exit_loop_time)
+        loop_func(dev, port, get_samples, delay, exit_time)
 
-        ## Close port
+        ## Stop AI
+        err = dev.AI_stop(port, timeout=timeout)
+        print(f"AI_stop in port {port}: {err}")
+
+        ## Close AI
         err = dev.AI_close(port, timeout=timeout)
         print(f"AI_close in port {port}: {err}")
     except Exception as err:

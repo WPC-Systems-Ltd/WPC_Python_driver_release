@@ -4,9 +4,9 @@ AI - AI_on_demand_once.py with asynchronous mode.
 This example demonstrates the process of obtaining AI data in on demand mode.
 Additionally, it retrieve AI data from WifiDAQE3A.
 
-To begin with, it demonstrates the steps to open the AI port and configure the AI parameters.
+To begin with, it demonstrates the steps to open the AI and configure the AI parameters.
 Next, it outlines the procedure for reading the AI on demand data.
-Finally, it concludes by explaining how to close the AI port.
+Finally, it concludes by explaining how to close the AI.
 
 -------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
@@ -19,12 +19,12 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import asyncio
 
 ## WPC
 
 from wpcsys import pywpc
+
 
 async def main():
     ## Get Python driver version
@@ -35,7 +35,7 @@ async def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.5.79") ## Depend on your device
+        dev.connect("192.168.5.35") ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -46,27 +46,26 @@ async def main():
         ## Parameters setting
         port = 0 ## Depend on your device
         mode = 0
-        chip_select = [0, 1]
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-        
-        ## Open port
+
+        ## Open AI
         err = await dev.AI_open_async(port)
         print(f"AI_open_async in port {port}: {err}")
-        
-        ## Set AI port and acquisition mode to on demand mode (0)
+
+        ## Set AI acquisition mode to on demand mode (0)
         err = await dev.AI_setMode_async(port, mode)
         print(f"AI_setMode_async {mode} in port {port}: {err}")
 
-        ## Set AI port and data acquisition
+        ## Data acquisition
         data = await dev.AI_readOnDemand_async(port)
         print(f"data in port {port}: ")
         print(f"{data}")
 
-        ## Close port
+        ## Close AI
         err = await dev.AI_close_async(port)
         print(f"AI_close_async in port {port}: {err}")
     except Exception as err:
@@ -85,7 +84,6 @@ def main_for_spyder(*args):
         return asyncio.create_task(main(*args)).result()
     else:
         return asyncio.run(main(*args))
-
 if __name__ == '__main__':
     asyncio.run(main()) ## Use terminal
     # await main() ## Use Jupyter or IPython(>=7.0)

@@ -19,12 +19,12 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import asyncio
 
 ## WPC
 
 from wpcsys import pywpc
+
 
 async def main():
     ## Get Python driver version
@@ -52,18 +52,18 @@ async def main():
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-        
+
         ## Open DO port with digital output
         err = await dev.DO_openPort_async(DO_port)
-        print(f"DO_openPort_async in port {DO_port}: {err}")
+        print(f"DO_openPort_async in DO_port {DO_port}: {err}")
 
         ## Open DI port with digital input
         err = await dev.DI_openPort_async(DI_port)
-        print(f"DI_openPort_async in port {DI_port}: {err}")
+        print(f"DI_openPort_async in DI_port {DI_port}: {err}")
 
         ## Write DO port to high or low
         err = await dev.DO_writePort_async(DO_port, [1, 0, 1, 0])
-        print(f"DO_writePort_async in port {DO_port}: {err}")
+        print(f"DO_writePort_async in DO_port {DO_port}: {err}")
 
         ## Read DI port state
         state_list = await dev.DI_readPort_async(DI_port)
@@ -71,12 +71,11 @@ async def main():
 
         ## Close DO port with digital output
         err = await dev.DO_closePort_async(DO_port)
-        print(f"DO_closePort_async in port {DO_port}: {err}")
+        print(f"DO_closePort_async in DO_port {DO_port}: {err}")
 
         ## Close DI port with digital input
         err = await dev.DI_closePort_async(DI_port)
-        print(f"DI_closePort_async in port {DI_port}: {err}")
-        
+        print(f"DI_closePort_async in DI_port {DI_port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 
@@ -93,7 +92,6 @@ def main_for_spyder(*args):
         return asyncio.create_task(main(*args)).result()
     else:
         return asyncio.run(main(*args))
-
 if __name__ == '__main__':
     asyncio.run(main()) ## Use terminal
     # await main() ## Use Jupyter or IPython(>=7.0)

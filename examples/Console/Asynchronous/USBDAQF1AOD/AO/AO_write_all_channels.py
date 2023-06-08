@@ -2,9 +2,9 @@
 AO - AO_write_all_channels.py with asynchronous mode.
 
 This example demonstrates the process of writing AO signal of USBDAQF1AOD.
-To begin with, it demonstrates the steps to open the AO port.
+To begin with, it demonstrates the steps to open AO.
 Next, it outlines the procedure for writing digital signals simultaneously to the AO pins.
-Finally, it concludes by explaining how to close the AO port.
+Finally, it concludes by explaining how to close AO.
 
 -------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
@@ -17,12 +17,12 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import asyncio
 
 ## WPC
 
 from wpcsys import pywpc
+
 
 async def main():
     ## Get Python driver version
@@ -48,12 +48,12 @@ async def main():
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-        
+
         ## Open AO
         err = await dev.AO_open_async(port)
         print(f"AO_open_async in port {port}: {err}")
 
-        ## Set AO port and write data simultaneously
+        ## Write AO data simultaneously
         ## CH0~CH1 5V, CH2~CH3 3V, CH4~CH5 2V, CH6~CH7 0V
         err = await dev.AO_writeAllChannels_async(port, [5,5,3,3,2,2,0,0])
         print(f"AO_writeAllChannels_async in port {port}: {err}")
@@ -77,7 +77,6 @@ def main_for_spyder(*args):
         return asyncio.create_task(main(*args)).result()
     else:
         return asyncio.run(main(*args))
-
 if __name__ == '__main__':
     asyncio.run(main()) ## Use terminal
     # await main() ## Use Jupyter or IPython(>=7.0)

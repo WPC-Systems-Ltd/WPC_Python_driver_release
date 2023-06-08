@@ -4,11 +4,11 @@ AI - AI_on_demand_in_loop.py with synchronous mode.
 This example demonstrates the process of obtaining AI data in on demand mode.
 Additionally, it utilizes a loop to retrieve AI data with 5 times from STEM.
 
-To begin with, it demonstrates the steps to open the AI port and configure the AI parameters.
+To begin with, it demonstrates the steps to open the AI and configure the AI parameters.
 Next, it outlines the procedure for reading the AI on demand data.
-Finally, it concludes by explaining how to close the AI port.
+Finally, it concludes by explaining how to close the AI.
 
-If your product is "STEM", please invoke the function `Sys_setPortAIOMode`and `AI_enableCS`.
+If your product is "STEM", please invoke the function `Sys_setAIOMode`and `AI_enableCS`.
 Example: AI_enableCS is {0, 2}
 Subsequently, the returned value of AI_readOnDemand and AI_readStreaming will be displayed as follows.
 data:
@@ -33,24 +33,13 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import time
 
 ## WPC
 
 from wpcsys import pywpc
 
-def loop_func(handle, port, delay=0.05, exit_loop_time=3):
-    time_cal = 0
-    while time_cal < exit_loop_time:
-        ## data acquisition
-        data = handle.AI_readOnDemand(port)
-        if len(data) > 0:
-            print(f"data in port {port}: {data}")
 
-        ## Wait
-        time.sleep(delay) ## delay [s]
-        time_cal += delay
 
 def main():
     ## Get Python driver version
@@ -70,7 +59,7 @@ def main():
 
     try:
         ## Parameters setting
-        port = 1 ## Depend on your device
+        slot = 1 ## Connect AIO module to slot
         mode = 0
         timeout = 3  ## second
         chip_select = [0, 1]
@@ -79,42 +68,42 @@ def main():
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-        
-        ## Get port mode
-        port_mode = dev.Sys_getPortMode(port, timeout=timeout)
-        print("Slot mode:", port_mode)
 
-        ## If the port mode is not set to "AIO", set the port mode to "AIO"
-        if port_mode != "AIO":
-            err = dev.Sys_setPortAIOMode(port, timeout=timeout)
-            print(f"Sys_setPortAIOMode in port {port}: {err}")
+        ## Get slot mode
+        slot_mode = dev.Sys_getMode(slot, timeout=timeout)
+        print("Slot mode:", slot_mode)
 
-        ## Get port mode
-        port_mode = dev.Sys_getPortMode(port, timeout=timeout)
-        print("Slot mode:", port_mode)
+        ## If the slot mode is not set to "AIO", set the slot mode to "AIO"
+        if slot_mode != "AIO":
+            err = dev.Sys_setAIOMode(slot, timeout=timeout)
+            print(f"Sys_setAIOMode in slot {slot}: {err}")
 
-        ## Open port
-        err = dev.AI_open(port, timeout=timeout)
-        print(f"AI_open in port {port}: {err}")
+        ## Get slot mode
+        slot_mode = dev.Sys_getMode(slot, timeout=timeout)
+        print("Slot mode:", slot_mode)
+
+        ## Open AI
+        err = dev.AI_open(slot, timeout=timeout)
+        print(f"AI_open in slot {slot}: {err}")
 
         ## Enable CS
-        err = dev.AI_enableCS(port, chip_select, timeout=timeout)
-        print(f"AI_enableCS in port {port}: {err}")
-        
+        err = dev.AI_enableCS(slot, chip_select, timeout=timeout)
+        print(f"AI_enableCS in slot {slot}: {err}")
+
         ## Set AI acquisition mode to on demand mode (0)
-        err = dev.AI_setMode(port, mode, timeout=timeout)
-        print(f"AI_setMode {mode} in port {port}: {err}")
+        err = dev.AI_setMode(slot, mode, timeout=timeout)
+        print(f"AI_setMode {mode} in slot {slot}: {err}")
 
         ## Read AI data with 5 times
-        print(f"data in port {port}: ")
+        print(f"data in slot {slot}: ")
         for i in range(5):
             ## data acquisition
-            data = dev.AI_readOnDemand(port)
+            data = dev.AI_readOnDemand(slot)
             print(f"{data}")
 
-        ## Close port
-        err = dev.AI_close(port, timeout=timeout)
-        print(f"AI_close in port {port}: {err}")
+        ## Close AI
+        err = dev.AI_close(slot, timeout=timeout)
+        print(f"AI_close in slot {slot}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

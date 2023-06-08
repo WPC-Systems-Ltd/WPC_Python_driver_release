@@ -579,3 +579,34 @@ Wifi-DAQ-E3-A
 
    examples/Console/Asynchronous/WifiDAQE3A/Tutorial/multiple_loops_async.rst
 
+
+Wifi-DAQ-F4-A
+-------------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/Asynchronous/WifiDAQF4A/AI/AI_continuous.rst
+
+   examples/Console/Asynchronous/WifiDAQF4A/AI/AI_continuous_with_logger.rst
+
+   examples/Console/Asynchronous/WifiDAQF4A/AI/AI_N_samples_once.rst
+
+   examples/Console/Asynchronous/WifiDAQF4A/AI/AI_N_samples_in_loop.rst
+
+   examples/Console/Asynchronous/WifiDAQF4A/AI/AI_on_demand_in_loop.rst
+
+   examples/Console/Asynchronous/WifiDAQF4A/AI/AI_on_demand_once.rst
+
+   examples/Console/Asynchronous/WifiDAQF4A/System_Wifi/get_network_info.rst
+
+   examples/Console/Asynchronous/WifiDAQF4A/System_Wifi/get_Wifi_DAQ_status.rst
+
+   examples/Console/Asynchronous/WifiDAQF4A/Tutorial/single_loop_thread.rst
+
+   examples/Console/Asynchronous/WifiDAQF4A/Tutorial/single_loop_async.rst
+
+   examples/Console/Asynchronous/WifiDAQF4A/Tutorial/multiple_loops_thread.rst
+
+   examples/Console/Asynchronous/WifiDAQF4A/Tutorial/multiple_loops_async.rst
+

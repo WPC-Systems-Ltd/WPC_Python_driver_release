@@ -18,12 +18,12 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import asyncio
 
 ## WPC
 
 from wpcsys import pywpc
+
 
 async def main():
     ## Get Python driver version
@@ -42,7 +42,6 @@ async def main():
         return
 
     try:
-        
         ## Parameters setting
         port = 0 ## Depend on your device
 
@@ -51,7 +50,7 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## Open port and set it to digital output
+        ## Open port with digital output
         err = await dev.DO_openPort_async(port)
         print(f"DO_openPort_async in port {port}: {err}")
 
@@ -65,7 +64,6 @@ async def main():
         ## Close port with digital output
         err = await dev.DO_closePort_async(port)
         print(f"DO_closePort_async in port {port}: {err}")
-        
     except Exception as err:
         pywpc.printGenericError(err)
 
@@ -82,7 +80,6 @@ def main_for_spyder(*args):
         return asyncio.create_task(main(*args)).result()
     else:
         return asyncio.run(main(*args))
-
 if __name__ == '__main__':
     asyncio.run(main()) ## Use terminal
     # await main() ## Use Jupyter or IPython(>=7.0)
