@@ -4,10 +4,10 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <meta content="WPC Python driver" name="title" />
 <meta content="The easiest way to Control &amp; Data Acquisition (DAQ)" name="description" />
-<meta content="DAQ, USB, Ethernet, Wifi, driver" name="keywords" />
+<meta content="DAQ, Controller, Motion card, USB, Ethernet, Wifi" name="keywords" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Overview &mdash; WPC Python driver 2.1.2 documentation</title>
+  <title>Overview &mdash; WPC Python driver 2.1.4 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/custom_sphinx.css" type="text/css" />
@@ -36,7 +36,7 @@
             <img src="_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.1.2
+                2.1.4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -60,7 +60,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">APPENDICES</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="ref_port.html">I/O Function Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ref_port.html">I/O port function table</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ref_error.html">Error Code Table</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ref_SPI.html">Setting Table</a></li>
 </ul>
@@ -98,7 +98,7 @@ It supports Python version from 3.8 to 3.10 under Windows 10 operating systems.<
 <p>In general, synchronous mode is easier to understand and debug, while asynchronous mode is more scalable and allows for greater concurrency.</p>
 <p>Some API functions in the <cite>pywpc</cite> package may not compatible with earlier versions of WPC DAQ firmware.
 To update device firmware to the latest version, please use WPC Device Manager and <a class="reference external" href="https://drive.google.com/file/d/1Uj6r65KhNxvuApiqrMkZp-NWyq-Eek-k/view">LabVIEW Run-time engine</a>.
-You can download WPC Device Manager by <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/releases/tag/v2.0.0">latest release</a> or visit <a class="reference external" href="http://www.wpc.com.tw/">WPC Systems Ltd. official website</a>.</p>
+You can download WPC Device Manager by <a class="reference external" href="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/releases/tag/v2.1.4">latest release</a> or visit <a class="reference external" href="http://www.wpc.com.tw/">WPC Systems Ltd. official website</a>.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 19%" />
@@ -143,7 +143,7 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_NAME</span>
 <span class="go">pywpc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pywpc</span><span class="o">.</span><span class="n">HANDLE_LIST</span>
-<span class="go">[&#39;DeviceFinder&#39;, &#39;WifiDAQE3A&#39;, &#39;STEM&#39;, &#39;EMotion&#39;, &#39;EthanA&#39;, &#39;EthanD&#39;, &#39;EthanL&#39;, &#39;EthanO&#39;, &#39;USBDAQF1D&#39;, &#39;USBDAQF1DSNK&#39;, &#39;USBDAQF1AD&#39;, &#39;USBDAQF1AOD&#39;, &#39;USBDAQF1TD&#39;, &#39;USBDAQF1RD&#39;, &#39;USBDAQF1CD&#39;]</span>
+<span class="go">[&#39;DeviceFinder&#39;, &#39;WifiDAQE3A&#39;, &#39;WifiDAQF4A&#39;, &#39;STEM&#39;, &#39;EMotion&#39;, &#39;EthanA&#39;, &#39;EthanD&#39;, &#39;EthanL&#39;, &#39;EthanO&#39;, &#39;USBDAQF1D&#39;, &#39;USBDAQF1DSNK&#39;, &#39;USBDAQF1AD&#39;, &#39;USBDAQF1AOD&#39;, &#39;USBDAQF1TD&#39;, &#39;USBDAQF1RD&#39;, &#39;USBDAQF1CD&#39;]</span>
 </pre></div>
 </div>
 </section>
@@ -199,10 +199,11 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <p>Wifi based DAQ card</p>
 <ul class="simple">
 <li><p>Wifi-DAQ-E3-A</p></li>
+<li><p>Wifi-DAQ-F4-A</p></li>
 </ul>
 </section>
-<section id="i-o-function-table">
-<h1>I/O Function Table<a class="headerlink" href="#i-o-function-table" title="Permalink to this heading"></a></h1>
+<section id="i-o-port-function-table">
+<h1>I/O port function table<a class="headerlink" href="#i-o-port-function-table" title="Permalink to this heading"></a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 24%" />
@@ -232,9 +233,9 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <td><p>TC</p></td>
 <td><p>Motion</p></td>
 </tr>
-<tr class="row-even"><td><p>STEM</p></td>
-<td><p>1,3,4</p></td>
-<td><p>1,3,4</p></td>
+<tr class="row-even"><td><p><a href="#id1"><span class="problematic" id="id2">*</span></a>STEM</p></td>
+<td><p>1,2,4</p></td>
+<td><p>1,2,4</p></td>
 <td><p>0~7</p></td>
 <td><p>0~7</p></td>
 <td></td>
@@ -414,8 +415,23 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <td></td>
 <td></td>
 </tr>
+<tr class="row-even"><td><p>Wifi-DAQ-F4-A</p></td>
+<td><p>0</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
+<p>In the <cite>STEM</cite> product, the values 1, 2, and 4 are used to represent the slots in the AIO.
+Additionally, the DIO ports 0 to 1 are assigned to slot 1, while ports 2 to 3 are assigned to slot 2.</p>
 <p>Remark: <cite>TC</cite> stands for <cite>Thermocouple</cite></p>
 <p>Take <cite>USB-DAQ-F1-AOD</cite> for example:</p>
 <ul class="simple">

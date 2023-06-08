@@ -1,0 +1,19 @@
+Wifi-DAQ-F4-A
+=============
+
+
+Device pinout 
+-------------
+
+.. image:: ../images/Pinouts/pinout-WifiDAQF4A.JPG
+   :width: 90%
+   :alt: WifiDAQF4A
+
+
+API function description 
+------------------------
+
+.. autoclass:: pywpc.WifiDAQF4A
+   :members:
+   :undoc-members:
+   :inherited-members:

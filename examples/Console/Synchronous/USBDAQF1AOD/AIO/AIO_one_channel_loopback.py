@@ -5,7 +5,7 @@ This example demonstrates the process of AIO loopback with specific channels of 
 It involves using AO pins to send signals and AI pins to receive signals on a single device, commonly referred to as "loopback".
 The AI and AO pins are connected using a wire.
 
-Initially, the example demonstrates the steps required to open the AI and AO port
+Initially, the example demonstrates the steps required to open the AI and AO.
 Next, it reads AI data and displays its corresponding values.
 Following that, it writes digital signals to the AO pins and reads AI on-demand data once again.
 Lastly, it closes the AO and AI ports.
@@ -21,12 +21,12 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import time
 
 ## WPC
 
 from wpcsys import pywpc
+
 
 def main():
     ## Get Python driver version
@@ -47,18 +47,17 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        chip_select = [0]
         timeout = 3  ## second
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-        
+
         ## Open AI
         err = dev.AI_open(port, timeout=timeout)
         print(f"AI_open in port {port}: {err}")
-        
+
         ## Open AO
         err = dev.AO_open(port, timeout=timeout)
         print(f"AO_open in port {port}: {err}")

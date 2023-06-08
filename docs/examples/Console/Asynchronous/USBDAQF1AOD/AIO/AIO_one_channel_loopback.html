@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AIO one channel loopback &mdash; WPC Python driver 2.1.2 documentation</title>
+  <title>AIO one channel loopback &mdash; WPC Python driver 2.1.4 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.1.2
+                2.1.4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -96,6 +96,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../../examples_console_Asynchronous.html#usb-daq-f1-rd">USB-DAQ-F1-RD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../examples_console_Asynchronous.html#usb-daq-f1-td">USB-DAQ-F1-TD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../examples_console_Asynchronous.html#wifi-daq-e3-a">Wifi-DAQ-E3-A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../examples_console_Asynchronous.html#wifi-daq-f4-a">Wifi-DAQ-F4-A</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../examples_GUI_Synchronous.html">Example Codes - GUI (sync)</a></li>
@@ -103,7 +104,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">APPENDICES</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../ref_port.html">I/O Function Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../ref_port.html">I/O port function table</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../ref_error.html">Error Code Table</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../ref_SPI.html">Setting Table</a></li>
 </ul>
@@ -141,7 +142,7 @@
 <span class="linenos">  5</span><span class="sd">It involves using AO pins to send signals and AI pins to receive signals on a single device, commonly referred to as &quot;loopback&quot;.</span>
 <span class="linenos">  6</span><span class="sd">The AI and AO pins are connected using a wire.</span>
 <span class="linenos">  7</span>
-<span class="linenos">  8</span><span class="sd">Initially, the example demonstrates the steps required to open the AI and AO port</span>
+<span class="linenos">  8</span><span class="sd">Initially, the example demonstrates the steps required to open the AI and AO.</span>
 <span class="linenos">  9</span><span class="sd">Next, it reads AI data and displays its corresponding values.</span>
 <span class="linenos"> 10</span><span class="sd">Following that, it writes digital signals to the AO pins and reads AI on-demand data once again.</span>
 <span class="linenos"> 11</span><span class="sd">Lastly, it closes the AO and AI ports.</span>
@@ -157,12 +158,12 @@
 <span class="linenos"> 21</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos"> 22</span>
 <span class="linenos"> 23</span><span class="c1">## Python</span>
-<span class="linenos"> 24</span>
-<span class="linenos"> 25</span><span class="kn">import</span> <span class="nn">asyncio</span>
-<span class="linenos"> 26</span>
-<span class="linenos"> 27</span><span class="c1">## WPC</span>
-<span class="linenos"> 28</span>
-<span class="linenos"> 29</span><span class="kn">from</span> <span class="nn">wpcsys</span> <span class="kn">import</span> <span class="n">pywpc</span>
+<span class="linenos"> 24</span><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="linenos"> 25</span>
+<span class="linenos"> 26</span><span class="c1">## WPC</span>
+<span class="linenos"> 27</span>
+<span class="linenos"> 28</span><span class="kn">from</span> <span class="nn">wpcsys</span> <span class="kn">import</span> <span class="n">pywpc</span>
+<span class="linenos"> 29</span>
 <span class="linenos"> 30</span>
 <span class="linenos"> 31</span><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
 <span class="linenos"> 32</span>    <span class="c1">## Get Python driver version</span>
@@ -189,36 +190,36 @@
 <span class="linenos"> 53</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo_async</span><span class="p">()</span>
 <span class="linenos"> 54</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="linenos"> 55</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="linenos"> 56</span>        
+<span class="linenos"> 56</span>
 <span class="linenos"> 57</span>        <span class="c1">## Open AI</span>
 <span class="linenos"> 58</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_open_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
 <span class="linenos"> 59</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_open_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 60</span>        
+<span class="linenos"> 60</span>
 <span class="linenos"> 61</span>        <span class="c1">## Open AO</span>
 <span class="linenos"> 62</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AO_open_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
 <span class="linenos"> 63</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AO_open_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 64</span>
-<span class="linenos"> 65</span>        <span class="c1">## Set AI port and data acquisition</span>
+<span class="linenos"> 65</span>        <span class="c1">## Read data acquisition</span>
 <span class="linenos"> 66</span>        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_readOnDemand_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
 <span class="linenos"> 67</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI data in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 68</span>
-<span class="linenos"> 69</span>        <span class="c1">## Set AO port and write data 1.5(V) in channel 0</span>
+<span class="linenos"> 69</span>        <span class="c1">## Write AO vaule 1.5(V) in channel 0</span>
 <span class="linenos"> 70</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AO_writeOneChannel_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
 <span class="linenos"> 71</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AO_writeOneChannel_async in ch0 in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 72</span>
-<span class="linenos"> 73</span>        <span class="c1">## Set AO port and write data 2.5(V) in channel 1</span>
+<span class="linenos"> 73</span>        <span class="c1">## Write AO vaule 2.5(V) in channel 1</span>
 <span class="linenos"> 74</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AO_writeOneChannel_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">)</span>
 <span class="linenos"> 75</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AO_writeOneChannel_async in ch1 in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 76</span>
-<span class="linenos"> 77</span>        <span class="c1">## Set AO port and write data 3.5(V) in channel 2</span>
+<span class="linenos"> 77</span>        <span class="c1">## Write AO vaule 3.5(V) in channel 2</span>
 <span class="linenos"> 78</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AO_writeOneChannel_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">)</span>
 <span class="linenos"> 79</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AO_writeOneChannel_async in ch2 in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 80</span>
-<span class="linenos"> 81</span>        <span class="c1">## Set AO port and write data 4.5(V) in channel 3</span>
+<span class="linenos"> 81</span>        <span class="c1">## Write AO vaule 4.5(V) in channel 3</span>
 <span class="linenos"> 82</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AO_writeOneChannel_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">)</span>
 <span class="linenos"> 83</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AO_writeOneChannel_async in ch3 in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 84</span>
-<span class="linenos"> 85</span>        <span class="c1">## Set AI port and data acquisition</span>
+<span class="linenos"> 85</span>        <span class="c1">## Read data acquisition</span>
 <span class="linenos"> 86</span>        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_readOnDemand_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
 <span class="linenos"> 87</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI data in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 88</span>
@@ -245,11 +246,10 @@
 <span class="linenos">109</span>        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
 <span class="linenos">110</span>    <span class="k">else</span><span class="p">:</span>
 <span class="linenos">111</span>        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span>
-<span class="linenos">112</span>
-<span class="linenos">113</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">114</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span> <span class="c1">## Use terminal</span>
-<span class="linenos">115</span>    <span class="c1"># await main() ## Use Jupyter or IPython(&gt;=7.0)</span>
-<span class="linenos">116</span>    <span class="c1"># main_for_spyder() ## Use Spyder</span>
+<span class="linenos">112</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">113</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span> <span class="c1">## Use terminal</span>
+<span class="linenos">114</span>    <span class="c1"># await main() ## Use Jupyter or IPython(&gt;=7.0)</span>
+<span class="linenos">115</span>    <span class="c1"># main_for_spyder() ## Use Spyder</span>
 </pre></div>
 </div>
 </section>

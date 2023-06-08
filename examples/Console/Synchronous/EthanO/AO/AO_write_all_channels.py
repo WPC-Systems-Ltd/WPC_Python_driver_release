@@ -2,9 +2,9 @@
 AO - AO_write_all_channels.py with synchronous mode.
 
 This example demonstrates the process of writing AO signal of EthanO.
-To begin with, it demonstrates the steps to open the AO port.
+To begin with, it demonstrates the steps to open AO.
 Next, it outlines the procedure for writing digital signals simultaneously to the AO pins.
-Finally, it concludes by explaining how to close the AO port.
+Finally, it concludes by explaining how to close AO.
 
 -------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
@@ -17,12 +17,13 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import time
 
 ## WPC
 
-from wpcsys import pywpc
+def main():
+    ## STEM has not supported yet
+
 
 def main():
     ## Get Python driver version
@@ -49,12 +50,12 @@ def main():
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-        
+
         ## Open AO
         err = dev.AO_open(port, timeout=timeout)
         print(f"AO_open in port {port}: {err}")
 
-        ## Set AO port and write data simultaneously
+        ## Write AO data simultaneously
         ## CH0~CH1 5V, CH2~CH3 3V, CH4~CH5 2V, CH6~CH7 0V
         err = dev.AO_writeAllChannels(port, [5,5,3,3,2,2,0,0], timeout=timeout)
         print(f"AO_writeAllChannels in port {port}: {err}")

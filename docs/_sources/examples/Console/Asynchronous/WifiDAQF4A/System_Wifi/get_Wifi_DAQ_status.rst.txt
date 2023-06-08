@@ -1,0 +1,6 @@
+System get Wifi DAQ status
+==========================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/WifiDAQF4A/System_Wifi/get_Wifi_DAQ_status.py
+   :language: python
+   :linenos:

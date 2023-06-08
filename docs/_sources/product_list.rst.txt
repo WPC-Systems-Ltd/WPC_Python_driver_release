@@ -16,6 +16,7 @@ Wifi devices
    :maxdepth: 4
 
    products/WifiDAQE3A
+   products/WifiDAQF4A
 
 Ethernet devices
 ----------------

@@ -18,12 +18,12 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import time
 
 ## WPC
 
 from wpcsys import pywpc
+
 
 def main():
     ## Get Python driver version
@@ -42,7 +42,6 @@ def main():
         return
 
     try:
-        
         ## Parameters setting
         port = 0 ## Depend on your device
         pinindex = [1, 3, 5, 7]
@@ -68,7 +67,6 @@ def main():
         ## Close pins with digital output
         err = dev.DO_closePins(port, pinindex, timeout=timeout)
         print(f"DO_closePins in port {port}: {err}")
-        
     except Exception as err:
         pywpc.printGenericError(err)
 

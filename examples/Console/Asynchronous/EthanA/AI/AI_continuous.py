@@ -4,9 +4,9 @@ AI - AI_continuous.py with asynchronous mode.
 This example demonstrates the process of obtaining AI data in continuous mode.
 Additionally, it utilizes a loop to retrieve AI data with 8 channels from EthanA with a timeout of 100 ms.
 
-To begin with, it demonstrates the steps to open the AI port and configure the AI parameters.
+To begin with, it demonstrates the steps to open the AI and configure the AI parameters.
 Next, it outlines the procedure for reading the streaming AI data.
-Finally, it concludes by explaining how to close the AI port.
+Finally, it concludes by explaining how to close the AI.
 
 -------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
@@ -19,18 +19,18 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import asyncio
 
 ## WPC
 
 from wpcsys import pywpc
 
-async def loop_func(handle, port, num_of_samples=600, delay=0.05, exit_loop_time=3):
+
+async def loop_func(handle, port, get_samples=600, delay=0.05, exit_time=3):
     time_cal = 0
-    while time_cal < exit_loop_time:
+    while time_cal < exit_time:
         ## Read data acquisition
-        data = await handle.AI_readStreaming_async(port, num_of_samples, delay=delay) ## Get 600 points at a time
+        data = await handle.AI_readStreaming_async(port, get_samples, delay=delay)
 
         ## Print data
         for i in range(len(data)):
@@ -59,19 +59,17 @@ async def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        mode = 2  ## 0 : On demand, 1 : N-samples, 2 : Continuous.
+        mode = 2 ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 1000
-        chip_select = [0, 1]
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-        
+
         ## Open port
         err = await dev.AI_open_async(port)
         print(f"AI_open_async in port {port}: {err}")
-        
 
         ## Set AI acquisition mode to continuous mode (2)
         err = await dev.AI_setMode_async(port, mode)
@@ -89,14 +87,18 @@ async def main():
         await asyncio.sleep(1) ## delay [s]
 
         ## Set loop parameters
-        num_of_samples = 100
+        get_samples = 200
         delay = 0.05
-        exit_loop_time = 0.1
+        exit_time = 0.1
 
         ## Start loop
-        await loop_func(dev, port, num_of_samples=num_of_samples, delay=delay, exit_loop_time=exit_loop_time)
+        await loop_func(dev, port, get_samples, delay, exit_time)
 
-        ## Close port
+        ## Stop AI
+        err = await dev.AI_stop_async(port)
+        print(f"AI_stop_async in port {port}: {err}")
+
+        ## Close AI
         err = await dev.AI_close_async(port)
         print(f"AI_close_async in port {port}: {err}")
     except Exception as err:
@@ -115,7 +117,6 @@ def main_for_spyder(*args):
         return asyncio.create_task(main(*args)).result()
     else:
         return asyncio.run(main(*args))
-
 if __name__ == '__main__':
     asyncio.run(main()) ## Use terminal
     # await main() ## Use Jupyter or IPython(>=7.0)

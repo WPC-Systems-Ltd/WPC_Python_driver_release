@@ -2,9 +2,9 @@
 AO - AO_waveform_gen.py with synchronous mode.
 
 This example demonstrates the process of writing AO signal of EthanO.
-To begin with, it demonstrates the steps to open the AO port and configure the AO parameters.
+To begin with, it demonstrates the steps to open AO and configure the AO parameters.
 Next, it outlines the procedure for AO streaming.
-Finally, it concludes by explaining how to close the AO port.
+Finally, it concludes by explaining how to close AO.
 
 -------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
@@ -17,12 +17,13 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import time
 
 ## WPC
 
 from wpcsys import pywpc
+
+
 
 def main():
     ## Get Python driver version
@@ -56,7 +57,7 @@ def main():
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-        
+
         ## Open AO
         err = dev.AO_open(port, timeout=timeout)
         print(f"AO_open in port {port}: {err}")
@@ -81,11 +82,11 @@ def main():
         err = dev.AO_setFormParam(port, 1, amplitude, offset, period_1, timeout=timeout)
         print(f"AO_setFormParam in channel 1 in port {port}: {err}")
 
-        ## Set AO port and generation mode
+        ## Set AO generation mode
         err = dev.AO_setMode(port, mode, timeout=timeout)
         print(f"AO_setMode in port {port}: {err}")
 
-        ## Set AO port and sampling rate to 1k (Hz)
+        ## Set AO sampling rate to 1k (Hz)
         err = dev.AO_setSamplingRate(port, sampling_rate, timeout=timeout)
         print(f"AO_setSamplingRate in port {port}: {err}")
 

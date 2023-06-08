@@ -18,12 +18,12 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import asyncio
 
 ## WPC
 
 from wpcsys import pywpc
+
 
 async def main():
     ## Get Python driver version
@@ -42,10 +42,8 @@ async def main():
         return
 
     try:
-        
         ## Parameters setting
         port = 0 ## Depend on your device
-        DO_port = 1
         pinindex = [1, 3, 5, 7]
 
         ## Get firmware model & version
@@ -53,32 +51,21 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## Get port mode
-        port_mode = await dev.Sys_getPortMode_async(port)
-        print("Slot mode:", port_mode)
+        ## Open pins with digital output
+        err = await dev.DO_openPins_async(port, pinindex)
+        print(f"DO_openPins_async in port {port}: {err}")
 
-        ## If the port mode is not set to "DIO", set the port mode to "DIO"
-        if port_mode != "DIO":
-            err = await dev.Sys_setPortDIOMode_async(port)
-            print(f"Sys_setPortDIOMode_async in port {port}: {err}")
-
-        ## Get port mode
-        port_mode = await dev.Sys_getPortMode_async(port)
-        print("Slot mode:", port_mode)
-
-        ## Get port DIO start up information
-        info = await dev.DIO_loadStartup_async(DO_port)
-        print("Enable:   ", info[0])
-        print("Direction:", info[1])
-        print("State:    ", info[2])
-
+        ## Toggle digital state for 10 times. Each times delay for 0.5 second
         for i in range(10):
-            state = await dev.DO_togglePins_async(DO_port, pinindex)
+            state = await dev.DO_togglePins_async(port, pinindex)
             print(state)
 
             ## Wait for 0.5 second to see led status
             await asyncio.sleep(0.5)  ## delay [s]
-        
+
+        ## Close pins with digital output
+        err = await dev.DO_closePins_async(port, pinindex)
+        print(f"DO_closePins_async in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 
@@ -95,7 +82,6 @@ def main_for_spyder(*args):
         return asyncio.create_task(main(*args)).result()
     else:
         return asyncio.run(main(*args))
-
 if __name__ == '__main__':
     asyncio.run(main()) ## Use terminal
     # await main() ## Use Jupyter or IPython(>=7.0)

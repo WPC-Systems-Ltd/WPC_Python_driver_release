@@ -19,12 +19,12 @@ Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-
 import asyncio
 
 ## WPC
 
 from wpcsys import pywpc
+
 
 async def main():
     ## Get Python driver version
@@ -43,9 +43,9 @@ async def main():
         return
 
     try:
-        
         ## Parameters setting
-        port = 0 ## Depend on your device
+        DO_port = 0
+        DI_port = 1
         DO_pins = [0, 1, 2, 3]
         DI_pins = [4, 5, 6, 7]
 
@@ -54,31 +54,34 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
+        ## Get firmware model & version
+        driver_info = await dev.Sys_getDriverInfo_async()
+        print("Model name: " + driver_info[0])
+        print("Firmware version: " + driver_info[-1])
+
         ## Open pins with digital output
-        err = await dev.DO_openPins_async(port, DO_pins)
-        print(f"DO_openPins_async in port {port}: {err}")
+        err = await dev.DO_openPins_async(DO_port, DO_pins)
+        print(f"DO_openPins_async in DO_port {DO_port}: {err}")
 
         ## Write pins to high or low
-        err = await dev.DO_writePins_async(port, DO_pins, [1, 1, 0, 0])
-        print(f"DO_writePins_async in port {port}: {err}")
+        err = await dev.DO_writePins_async(DO_port, DO_pins, [1, 1, 0, 0])
+        print(f"DO_writePins_async in DO_port {DO_port}: {err}")
 
         ## Open pins with digital iutput
-        err = await dev.DI_openPins_async(port, DI_pins)
-        print(f"DI_openPins_async in port {port}: {err}")
+        err = await dev.DI_openPins_async(DI_port, DI_pins)
+        print(f"DI_openPins_async in DI_port {DI_port}: {err}")
 
         ## Read pins state
-        state_list = await dev.DI_readPins_async(port, DI_pins)
+        state_list = await dev.DI_readPins_async(DI_port, DI_pins)
         print(state_list)
 
         ## Close pins with digital output
-        err = await dev.DO_closePins_async(port, DO_pins)
-        print(f"DO_closePins_async in port {port}: {err}")
+        err = await dev.DO_closePins_async(DO_port, DO_pins)
+        print(f"DO_closePins_async in DO_port {DO_port}: {err}")
 
         ## Close pins with digital input
-        ## Close pin5, pin6 and pin7 with digital input
-        err = await dev.DI_closePins_async(port, DI_pins)
-        print(f"DI_closePins_async in port {port}: {err}")
-        
+        err = await dev.DI_closePins_async(DI_port, DI_pins)
+        print(f"DI_closePins_async in DI_port {DI_port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 
@@ -95,7 +98,6 @@ def main_for_spyder(*args):
         return asyncio.create_task(main(*args)).result()
     else:
         return asyncio.run(main(*args))
-
 if __name__ == '__main__':
     asyncio.run(main()) ## Use terminal
     # await main() ## Use Jupyter or IPython(>=7.0)
