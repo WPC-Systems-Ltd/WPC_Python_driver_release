@@ -1,6 +1,19 @@
 WPC Python driver release changelog
 ===================================
 
+v2.1.4 Date: 2023/06/08, Developer: Chunglee_people
+---------------------------------------------------
+### Added
+- New product: `WifiDAQF4A`
+- Add STEM port supplementary note
+
+### Fixed
+- `STEM` has not supported `AO_waveform_gen` yet
+- Bug of missing `AI_stop` in AI series example code
+- If the product is `STEM`, use slot instead of port
+
+v2.1.2 Date: 2023/06/05, Developer: Chunglee_people
+---------------------------------------------------
 ### Added
 - STEM product introduction
 
@@ -15,17 +28,6 @@ WPC Python driver release changelog
 
 ### Removed
 - Remove pywpc.__version__ in README.rst
-
-v2.1.4 Date: 2023/06/08, Developer: Chunglee_people
----------------------------------------------------
-### Added
-- New product: `WifiDAQF4A`
-- Add STEM port supplementary note
-
-### Fixed
-- `STEM` has not supported `AO_waveform_gen` yet
-- Bug of missing `AI_stop` in AI series example code
-- If the product is `STEM`, use slot instead of port
 
 v2.1.1 Date: 2023/06/03, Developer: Chunglee_people
 ---------------------------------------------------
