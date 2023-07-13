@@ -96,3 +96,4 @@ Error code,Error message
 -8814,The specified motion breakpoint mode is invalid.
 -8815,The specified motion operation mode is invalid.
 -8816,The specified motion acceleration mode is invalid.
+-8904,EDST port not avaliable or already occupied by other process.
