@@ -22,6 +22,23 @@ Products Feature
       .. image:: images/Products/product-Emotion.jpg
          :width: 100%
          :alt: product-Emotion.jpg
+
+   * -
+      **Edrive-ST**
+         - Motor Type: 2-phase stepper motor
+         - Microstepping Resolution: 51,200 steps/revolution (adjustable)
+         - Maximum Power Supply Voltage: 36V (max)
+         - Maximum Output Current: 2.1A (max)
+         - Maximum Peak Current: 5A (max)
+         - Limit Switches: FWD, REV (without Home)
+         - Encoder: ABZ (Nominal: 8MHz)
+         - Features: Stall detection / Intelligent energy-saving / Diagnostic functions
+         - 8-Points Ramp for Smooth Acceleration
+         - Support Python, C# and LabVIEW
+     -
+      .. image:: images/Products/product-Edrive_ST.jpg
+         :width: 100%
+         :alt: product-Edrive_ST.jpg
    * -
       **STEM**
          - 4-slot IDC-50P 3.3V DIO

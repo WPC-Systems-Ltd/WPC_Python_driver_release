@@ -301,3 +301,6 @@ Error Code Table
    * - -8816
      - 
      - The specified motion acceleration mode is invalid.
+   * - -8904
+     - 
+     - Drive port not avaliable or already occupied by other process.

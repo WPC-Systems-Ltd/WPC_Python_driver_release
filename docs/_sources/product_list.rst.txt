@@ -24,6 +24,7 @@ Ethernet devices
 .. toctree::
    :maxdepth: 4
 
+   products/EDrive_ST
    products/EMotion
    products/STEM
    products/EthanA
