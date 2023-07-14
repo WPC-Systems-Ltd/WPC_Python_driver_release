@@ -1,6 +1,11 @@
 WPC Python driver release changelog
 ===================================
 
+v2.1.5 Date: 2023/07/14, Developer: Chunglee_people
+---------------------------------------------------
+### Added
+- New product: `EDrive-ST`
+
 v2.1.4 Date: 2023/06/08, Developer: Chunglee_people
 ---------------------------------------------------
 ### Added
