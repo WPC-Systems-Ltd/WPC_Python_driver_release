@@ -143,7 +143,7 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_NAME</span>
 <span class="go">pywpc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pywpc</span><span class="o">.</span><span class="n">HANDLE_LIST</span>
-<span class="go">[&#39;DeviceFinder&#39;, &#39;WifiDAQE3A&#39;, &#39;WifiDAQF4A&#39;, &#39;STEM&#39;, &#39;EMotion&#39;, &#39;EthanA&#39;, &#39;EthanD&#39;, &#39;EthanL&#39;, &#39;EthanO&#39;, &#39;USBDAQF1D&#39;, &#39;USBDAQF1DSNK&#39;, &#39;USBDAQF1AD&#39;, &#39;USBDAQF1AOD&#39;, &#39;USBDAQF1TD&#39;, &#39;USBDAQF1RD&#39;, &#39;USBDAQF1CD&#39;]</span>
+<span class="go">[&#39;DeviceFinder&#39;, &#39;WifiDAQE3A&#39;, &#39;WifiDAQF4A&#39;, &#39;STEM&#39;, &#39;EMotion&#39;, &#39;EDrive_ST&#39;, &#39;EthanA&#39;, &#39;EthanD&#39;, &#39;EthanL&#39;, &#39;EthanO&#39;, &#39;USBDAQF1D&#39;, &#39;USBDAQF1DSNK&#39;, &#39;USBDAQF1AD&#39;, &#39;USBDAQF1AOD&#39;, &#39;USBDAQF1TD&#39;, &#39;USBDAQF1RD&#39;, &#39;USBDAQF1CD&#39;]</span>
 </pre></div>
 </div>
 </section>
@@ -204,24 +204,139 @@ You can download WPC Device Manager by <a class="reference external" href="https
 </section>
 <section id="i-o-port-function-table">
 <h1>I/O port function table<a class="headerlink" href="#i-o-port-function-table" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p>EMotion &amp; Motor driver series</p></li>
+</ul>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 22%" />
-<col style="width: 7%" />
-<col style="width: 7%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 7%" />
-<col style="width: 7%" />
-<col style="width: 7%" />
-<col style="width: 6%" />
-<col style="width: 4%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
+<col style="width: 55%" />
+<col style="width: 24%" />
+<col style="width: 21%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Model</p></td>
+<tr class="row-odd"><td><p>Product/module</p></td>
+<td><p>Motion</p></td>
+<td><p>Drive</p></td>
+</tr>
+<tr class="row-even"><td><p>EMotion</p></td>
+<td><p>0</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Edrive-ST</p></td>
+<td></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>STEM series</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Product/module</p></td>
+<td><p>AI</p></td>
+<td><p>AO</p></td>
+<td><p>DI</p></td>
+<td><p>DO</p></td>
+</tr>
+<tr class="row-even"><td><p>EMotion</p></td>
+<td><p>1,2,4</p></td>
+<td><p>1,2,4</p></td>
+<td><p>0~7</p></td>
+<td><p>0~7</p></td>
+</tr>
+</tbody>
+</table>
+<p>In the <cite>STEM</cite> product, the values 1, 2, and 4 are used to represent the slots in the AIO.
+Additionally, the DIO ports 0 to 1 are assigned to slot 1, while ports 2 to 3 are assigned to slot 2.</p>
+<ul class="simple">
+<li><p>Ethan &amp; Wifi series</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Product/module</p></td>
+<td><p>AI</p></td>
+<td><p>AO</p></td>
+<td><p>DI</p></td>
+<td><p>DO</p></td>
+</tr>
+<tr class="row-even"><td><p>Emotion</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Ethan-A</p></td>
+<td><p>0</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Ethan-D</p></td>
+<td></td>
+<td></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ethan-L</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>Ethan-O</p></td>
+<td></td>
+<td><p>0</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Wifi-DAQ-E3-A</p></td>
+<td><p>0</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Wifi-DAQ-F4-A</p></td>
+<td><p>0</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>USB series</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 7%" />
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Product/module</p></td>
 <td><p>AI</p></td>
 <td><p>AO</p></td>
 <td><p>DI</p></td>
@@ -232,108 +347,8 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <td><p>I2C</p></td>
 <td><p>RTD</p></td>
 <td><p>TC</p></td>
-<td><p>Motion</p></td>
-<td><p>EDST</p></td>
 </tr>
-<tr class="row-even"><td><p>STEM</p></td>
-<td><p>1,2,4</p></td>
-<td><p>1,2,4</p></td>
-<td><p>0~7</p></td>
-<td><p>0~7</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Edrive-ST</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>Emotion</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>0</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Ethan-A</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Ethan-D</p></td>
-<td></td>
-<td></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Ethan-L</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Ethan-O</p></td>
-<td></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>USB-DAQ-F1-D</p></td>
+<tr class="row-even"><td><p>USB-DAQ-F1-D</p></td>
 <td></td>
 <td></td>
 <td><p>0~3</p></td>
@@ -344,10 +359,8 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <td><p>1, 2</p></td>
 <td></td>
 <td></td>
-<td></td>
-<td></td>
 </tr>
-<tr class="row-even"><td><p>USB-DAQ-F1-DSNK</p></td>
+<tr class="row-odd"><td><p>USB-DAQ-F1-DSNK</p></td>
 <td></td>
 <td></td>
 <td><p>0, 1</p></td>
@@ -358,10 +371,8 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <td></td>
 <td></td>
 <td></td>
-<td></td>
-<td></td>
 </tr>
-<tr class="row-odd"><td><p>USB-DAQ-F1-AD</p></td>
+<tr class="row-even"><td><p>USB-DAQ-F1-AD</p></td>
 <td><p>0</p></td>
 <td></td>
 <td><p>0~3</p></td>
@@ -372,10 +383,8 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <td><p>1, 2</p></td>
 <td></td>
 <td></td>
-<td></td>
-<td></td>
 </tr>
-<tr class="row-even"><td><p>USB-DAQ-F1-TD</p></td>
+<tr class="row-odd"><td><p>USB-DAQ-F1-TD</p></td>
 <td></td>
 <td></td>
 <td><p>0~3</p></td>
@@ -386,10 +395,8 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <td><p>1, 2</p></td>
 <td></td>
 <td><p>1</p></td>
-<td></td>
-<td></td>
 </tr>
-<tr class="row-odd"><td><p>USB-DAQ-F1-RD</p></td>
+<tr class="row-even"><td><p>USB-DAQ-F1-RD</p></td>
 <td></td>
 <td></td>
 <td><p>0~3</p></td>
@@ -400,10 +407,8 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <td><p>1, 2</p></td>
 <td><p>1</p></td>
 <td></td>
-<td></td>
-<td></td>
 </tr>
-<tr class="row-even"><td><p>USB-DAQ-F1-CD</p></td>
+<tr class="row-odd"><td><p>USB-DAQ-F1-CD</p></td>
 <td></td>
 <td></td>
 <td><p>0~3</p></td>
@@ -414,10 +419,8 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <td><p>1, 2</p></td>
 <td></td>
 <td></td>
-<td></td>
-<td></td>
 </tr>
-<tr class="row-odd"><td><p>USB-DAQ-F1-AOD</p></td>
+<tr class="row-even"><td><p>USB-DAQ-F1-AOD</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
 <td><p>0~3</p></td>
@@ -426,43 +429,11 @@ You can download WPC Device Manager by <a class="reference external" href="https
 <td><p>1, 2</p></td>
 <td></td>
 <td><p>1, 2</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Wifi-DAQ-E3-A</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Wifi-DAQ-F4-A</p></td>
-<td><p>0</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 <td></td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<p>In the <cite>STEM</cite> product, the values 1, 2, and 4 are used to represent the slots in the AIO.
-Additionally, the DIO ports 0 to 1 are assigned to slot 1, while ports 2 to 3 are assigned to slot 2.</p>
 <p>Remark: <cite>TC</cite> stands for <cite>Thermocouple</cite></p>
 <p>Take <cite>USB-DAQ-F1-AOD</cite> for example:</p>
 <ul class="simple">

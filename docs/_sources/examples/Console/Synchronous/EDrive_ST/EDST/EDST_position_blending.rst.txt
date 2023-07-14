@@ -1,6 +1,0 @@
-EDST position blending
-======================
-
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/EDrive_ST/EDST/EDST_position_blending.py
-   :language: python
-   :linenos:

@@ -1,6 +1,0 @@
-EDST 1axis move
-===============
-
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/EDrive_ST/EDST/EDST_1axis_move.py
-   :language: python
-   :linenos:

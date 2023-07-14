@@ -1,6 +1,0 @@
-EDST servo on
-=============
-
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/EDrive_ST/EDST/EDST_servo_on.py
-   :language: python
-   :linenos:

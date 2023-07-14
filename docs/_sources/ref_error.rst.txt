@@ -303,4 +303,4 @@ Error Code Table
      - The specified motion acceleration mode is invalid.
    * - -8904
      - 
-     - EDST port not avaliable or already occupied by other process.
+     - Drive port not avaliable or already occupied by other process.
