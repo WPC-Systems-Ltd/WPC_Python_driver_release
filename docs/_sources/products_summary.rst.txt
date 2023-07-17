@@ -71,7 +71,18 @@ Products Feature
       .. image:: images/Products/product-EthanD.jpg
          :width: 100%
          :alt: product-EthanD.jpg
-
+   * -
+      **EthanI**
+         - 10/100 cable Ethernet
+         - 8ch 24-bit current input
+         - +/-20mA input range
+         - Max current: 1A
+         - Update rate: 1KHz
+         - Support Python, C# and LabVIEW
+     -
+      .. image:: images/Products/product-EthanI.jpg
+         :width: 100%
+         :alt: product-EthanI.jpg
    * -
       **EthanL**
          - 10/100 T-based Ethernet interface
@@ -86,7 +97,6 @@ Products Feature
       .. image:: images/Products/product-EthanA.jpg
          :width: 100%
          :alt: product-EthanL.jpg
-
    * -
       **EthanO**
          - 10/100 T-based Ethernet interface
@@ -99,6 +109,18 @@ Products Feature
       .. image:: images/Products/product-EthanA.jpg
          :width: 100%
          :alt: product-EthanO.jpg
+   * -
+      **EthanT**
+         - 10/100 cable Ethernet
+         - 7ch thermocouple input
+         - Sensor type: (K, J, N, R, S, T, E, B)
+         - Settling time: 160ms (1ch)
+         - Support Python, C# and LabVIEW
+     -
+      .. image:: images/Products/product-EthanT.jpg
+         :width: 100%
+         :alt: product-EthanT.jpg
+
    * -
       **USBDAQF1D**
          - 26ch 3.3V DIO/I2C/SPI
