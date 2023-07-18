@@ -24,13 +24,15 @@ Ethernet devices
 .. toctree::
    :maxdepth: 4
 
+   products/STEM
    products/EDrive_ST
    products/EMotion
-   products/STEM
    products/EthanA
    products/EthanD
+   products/EthanI
    products/EthanL
    products/EthanO
+   products/EthanT
 
 USB devices
 -----------

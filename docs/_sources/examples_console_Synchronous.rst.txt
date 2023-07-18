@@ -53,7 +53,7 @@ STEM
    examples/Console/Synchronous/STEM/System_ETH/get_network_info.rst
 
 
-EDrive_ST
+EDrive-ST
 ---------
 
 .. toctree::
@@ -171,6 +171,17 @@ Ethan-D
    examples/Console/Synchronous/EthanD/System_ETH/get_network_info.rst
 
 
+Ethan-I
+-------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/Synchronous/EthanI/AI24Bit/AI_on_demand_once.rst
+
+   examples/Console/Synchronous/EthanI/System_ETH/get_network_info.rst
+
+
 Ethan-L
 -------
 
@@ -197,6 +208,21 @@ Ethan-O
    examples/Console/Synchronous/EthanO/AO/AO_waveform_gen.rst
 
    examples/Console/Synchronous/EthanO/System_ETH/get_network_info.rst
+
+
+Ethan-T
+-------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/Synchronous/EthanT/Temperature_TC/TC_read_channel_data.rst
+
+   examples/Console/Synchronous/EthanT/Temperature_TC/TC_read_channel_data_with_logger.rst
+
+   examples/Console/Synchronous/EthanT/Temperature_TC/TC_read_channel_status.rst
+
+   examples/Console/Synchronous/EthanT/System_ETH/get_network_info.rst
 
 
 USB-DAQ-F1-AD
