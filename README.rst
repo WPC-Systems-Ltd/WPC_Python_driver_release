@@ -14,7 +14,7 @@ In general, synchronous mode is easier to understand and debug, while asynchrono
 
 Some API functions in the `pywpc` package may not compatible with earlier versions of WPC DAQ firmware.
 To update device firmware to the latest version, please use WPC Device Manager and `LabVIEW Run-time engine <https://drive.google.com/file/d/1Uj6r65KhNxvuApiqrMkZp-NWyq-Eek-k/view>`_.
-You can download WPC Device Manager by `latest release <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/releases/tag/v2.1.5>`_ or visit `WPC Systems Ltd. official website <http://www.wpc.com.tw/>`_.
+You can download WPC Device Manager by `latest release <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/releases/tag/v2.1.6>`_ or visit `WPC Systems Ltd. official website <http://www.wpc.com.tw/>`_.
 
 +-------------------+-----------------------------------------------------------------------------------+
 |                   | Link                                                                              |
@@ -68,7 +68,7 @@ Quick Start
    >>> pywpc.PKG_NAME
    pywpc
    >>> pywpc.HANDLE_LIST
-   ['DeviceFinder', 'WifiDAQE3A', 'WifiDAQF4A', 'STEM', 'EMotion', 'EDrive_ST', 'EthanA', 'EthanD', 'EthanL', 'EthanO', 'USBDAQF1D', 'USBDAQF1DSNK', 'USBDAQF1AD', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1RD', 'USBDAQF1CD']
+   ['DeviceFinder', 'WifiDAQE3A', 'WifiDAQF4A', 'STEM', 'EMotion', 'EDrive_ST', 'EthanA', 'EthanD', 'EthanI', 'EthanL', 'EthanO', 'EthanT', 'USBDAQF1D', 'USBDAQF1DSNK', 'USBDAQF1AD', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1RD', 'USBDAQF1CD']
 
 Install and Upgrade
 -------------------
@@ -110,9 +110,13 @@ Ethernet based DAQ card
 
 - Ethan-D
 
+- Ethan-I
+
 - Ethan-L
 
 - Ethan-O
+
+- Ethan-T
 
 USB interface DAQ card
 
@@ -162,23 +166,25 @@ Additionally, the DIO ports 0 to 1 are assigned to slot 1, while ports 2 to 3 ar
 
 - Ethan & Wifi series
 
-+----------------+-----+-----+----+----+
-| Product/module |AI   |AO   |DI  |DO  |
-+----------------+-----+-----+----+----+
-| Emotion        |     |     |    |    |
-+----------------+-----+-----+----+----+
-| Ethan-A        |0    |     |    |    |
-+----------------+-----+-----+----+----+
-| Ethan-D        |     |     |1   |0   |
-+----------------+-----+-----+----+----+
-| Ethan-L        |     |     |    |0   |
-+----------------+-----+-----+----+----+
-| Ethan-O        |     | 0   |    |    |
-+----------------+-----+-----+----+----+
-| Wifi-DAQ-E3-A  |0    |     |    |    |
-+----------------+-----+-----+----+----+
-| Wifi-DAQ-F4-A  |0    |     |    |    |
-+----------------+-----+-----+----+----+
++----------------+-----+-----+----+----+----+
+| Product/module |AI   |AO   |DI  |DO  |TC  |
++----------------+-----+-----+----+----+----+
+| Ethan-A        |0    |     |    |    |    |
++----------------+-----+-----+----+----+----+
+| Ethan-D        |     |     |1   |0   |    |
++----------------+-----+-----+----+----+----+
+| Ethan-I        |0    |     |    |    |    |
++----------------+-----+-----+----+----+----+
+| Ethan-L        |     |     |    |0   |    |
++----------------+-----+-----+----+----+----+
+| Ethan-O        |     | 0   |    |    |    |
++----------------+-----+-----+----+----+----+
+| Ethan-T        |     |     |    |    | 1  |
++----------------+-----+-----+----+----+----+
+| Wifi-DAQ-E3-A  |0    |     |    |    |    |
++----------------+-----+-----+----+----+----+
+| Wifi-DAQ-F4-A  |0    |     |    |    |    |
++----------------+-----+-----+----+----+----+
 
 - USB series
 

@@ -1,6 +1,11 @@
 WPC Python driver release changelog
 ===================================
 
+v2.1.6 Date: 2023/07/18, Developer: Chunglee_people
+---------------------------------------------------
+### Added
+- New product: `EthanI` & `EthanT`
+
 v2.1.5 Date: 2023/07/14, Developer: Chunglee_people
 ---------------------------------------------------
 ### Added
