@@ -8,7 +8,7 @@ __pycache__/
 .bak
 
 # C extensions
-*.so
+# *.so
 
 # Distribution / packaging
 bin/
