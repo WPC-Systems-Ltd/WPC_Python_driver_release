@@ -10,7 +10,12 @@ import setuptools as sut
 
 ## WPC
 sys.path.append('wpcsys/')
-import pywpc
+
+ # --- get version ---
+version = "unknown"
+with open("wpcsys/version.py") as f:
+    line = f.read().strip()
+    version = line.replace("version = ", "").replace('"', '')
 
 class BinaryDistribution(sut.dist.Distribution):
     """Distribution which always forces a binary package with platform name"""
@@ -26,7 +31,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 sut.setup(
     name="wpcsys",
-    version=pywpc.__version__,
+    version=version,
     description='WPC Python driver APIs, the easiest way to Control & Data Acquisition (DAQ)',
     long_description=long_description,
     long_description_content_type='text/x-rst',

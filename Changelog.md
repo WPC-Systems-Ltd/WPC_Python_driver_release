@@ -1,6 +1,18 @@
 WPC Python driver release changelog
 ===================================
 
+v2.1.7 Date: 2023/07/27, Developer: Chunglee_people
+---------------------------------------------------
+### Added
+- version.py in wpcsys package
+
+### Fixed
+- API name: _Drive_ssetEncoderPosition-> _Drive_setEncoderPosition
+- Use version.py's version instead of pywpc's
+
+### Removed
+- latest version in README.rst
+
 v2.1.6 Date: 2023/07/18, Developer: Chunglee_people
 ---------------------------------------------------
 ### Added
