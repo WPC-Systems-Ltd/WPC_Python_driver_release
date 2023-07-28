@@ -1,6 +1,17 @@
 WPC Python driver release changelog
 ===================================
 
+v3.0.0 Date: 2023/07/28, Developer: Chunglee_people
+---------------------------------------------------
+### Added
+- Support Linux Ubuntu22.04
+
+### Fixed
+- Keyword, author name, install_requires in setup.py
+
+### Removed
+- PyQt5Designer in requirements.txt
+
 v2.1.7 Date: 2023/07/27, Developer: Chunglee_people
 ---------------------------------------------------
 ### Added
