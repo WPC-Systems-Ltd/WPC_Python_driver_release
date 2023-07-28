@@ -1,8 +1,8 @@
 Overview
 --------
 
-**WPC Python driver**, also known as `pywpc`, contains APIs for interacting with basically WPC DAQ cards or any other WPC USB, WiFi and Ethernet based devices.
-It supports Python version from 3.8 to 3.10 under Windows 10 operating systems.
+**WPC Python driver**, also known as `pywpc`, contains APIs for interacting with DAQ (Data Acquisition) & Motion cards & Motion driver based on USB, WiFi and Ethernet.
+It supports Python 3.8 to 3.10 under Windows 10 and Python 3.10 under linux ubuntu22.04 operating systems.
 
 Our APIs support synchronous and asynchronous modes for computer processes or threads.
 
@@ -100,6 +100,10 @@ Controller
 
 - STEM
 
+Ethernet motion driver
+
+- EMdrive-ST
+
 Ethernet based motion card
 
 - EMotion
@@ -148,7 +152,7 @@ I/O port function table
 +----------------+-------+------+
 | Product/module |Motion |Drive |
 +----------------+-------+------+
-|  EMotion       |0      |      |
+| EMotion        |0      |      |
 +----------------+-------+------+
 | Edrive-ST      |       |0     |
 +----------------+-------+------+

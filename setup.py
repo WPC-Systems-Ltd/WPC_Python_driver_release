@@ -25,10 +25,6 @@ class BinaryDistribution(sut.dist.Distribution):
 with open("README.rst", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
-# with open("requirements.txt", "r", encoding="utf-8") as fh:
-#     install_requires = fh.readlines()
-#     install_requires = [str_.rstrip(' \n') for str_ in install_requires]
-
 sut.setup(
     name="wpcsys",
     version=version,
@@ -36,7 +32,7 @@ sut.setup(
     long_description=long_description,
     long_description_content_type='text/x-rst',
 
-    author="chunglee_people, Chieh-An Lin",
+    author="Chunglee people, Chieh-An Lin",
     author_email="wu@wpc.com.tw",
     url="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release",
 
@@ -56,12 +52,12 @@ sut.setup(
     ],
     distclass=BinaryDistribution,
     license='MIT',
-    keywords='wpc, daq, driver, usb, ethernet, wifi, data acquisition',
+    keywords='WPC, DAQ, Motion card, Motion driver, USB, Ethernet, Wifi',
 
     include_package_data=True,
     install_requires=['pyusb>=1.2.1', 'numpy>=1.23.0',
                       'qasync>=0.23.0', 'matplotlib>=3.5.2',
-                      'PyQt5Designer>=5.14.1', 'PyQt5>=5.15.4', 'PyQt5-Qt5>=5.15.2',
+                      'PyQt5>=5.15.4', 'PyQt5-Qt5>=5.15.2',
                       'PyQt5-sip>=12.10.1',
                       'wpcEXEbuild>=0.0.1'],
 
