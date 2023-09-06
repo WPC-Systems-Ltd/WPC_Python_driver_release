@@ -1,6 +1,17 @@
 WPC Python driver release changelog
 ===================================
 
+v3.0.1 Date: 2023/09/06, Developer: Chunglee_people
+---------------------------------------------------
+### Added
+- API: _Wifi_resetAIBuffer
+
+### Changed
+- API name: _setWifiBandwidth->Wifi_setBandwidth
+
+### Fixed
+- Sphinx main page
+
 v3.0.0 Date: 2023/07/28, Developer: Chunglee_people
 ---------------------------------------------------
 ### Added
