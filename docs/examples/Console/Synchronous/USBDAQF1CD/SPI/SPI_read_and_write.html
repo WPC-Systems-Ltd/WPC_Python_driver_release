@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SPI read and write &mdash; WPC Python driver 3.0.0 documentation</title>
+  <title>SPI read and write &mdash; WPC Python driver 3.0.1 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.0
+                3.0.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -293,37 +293,38 @@
 <span class="linenos">164</span>
 <span class="linenos">165</span>        <span class="c1">## Read data byte from the generated address</span>
 <span class="linenos">166</span>        <span class="n">data</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">SPI_readAndWrite</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="p">[</span><span class="n">READ</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">DUMMY</span><span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">167</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Read data: 0x</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">02X</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">168</span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
-<span class="linenos">169</span>
-<span class="linenos">170</span>        <span class="c1">## Set CS(pin0) to high</span>
-<span class="linenos">171</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins</span><span class="p">(</span><span class="n">DO_port</span><span class="p">,</span> <span class="n">DO_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">172</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DO_writePins in port </span><span class="si">{</span><span class="n">DO_port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">173</span>
-<span class="linenos">174</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
-<span class="linenos">175</span><span class="sd">        Close DO pins and SPI port</span>
-<span class="linenos">176</span><span class="sd">        &#39;&#39;&#39;</span>
-<span class="linenos">177</span>
-<span class="linenos">178</span>        <span class="c1">## Close SPI</span>
-<span class="linenos">179</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">SPI_close</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">180</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SPI_close in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">181</span>
-<span class="linenos">182</span>        <span class="c1">## Close pin0 with digital output</span>
-<span class="linenos">183</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_closePins</span><span class="p">(</span><span class="n">DO_port</span><span class="p">,</span> <span class="n">DO_index</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">184</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DO_closePins in port </span><span class="si">{</span><span class="n">DO_port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">185</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos">186</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="linenos">187</span>
-<span class="linenos">188</span>    <span class="c1">## Disconnect device</span>
-<span class="linenos">189</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
-<span class="linenos">190</span>
-<span class="linenos">191</span>    <span class="c1">## Release device handle</span>
-<span class="linenos">192</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="linenos">193</span>
-<span class="linenos">194</span>    <span class="k">return</span>
-<span class="linenos">195</span>
-<span class="linenos">196</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">197</span>    <span class="n">main</span><span class="p">()</span>
+<span class="linenos">167</span>        <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="si">{:02x}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+<span class="linenos">168</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;read data :&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="linenos">169</span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="linenos">170</span>
+<span class="linenos">171</span>        <span class="c1">## Set CS(pin0) to high</span>
+<span class="linenos">172</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins</span><span class="p">(</span><span class="n">DO_port</span><span class="p">,</span> <span class="n">DO_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">173</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DO_writePins in port </span><span class="si">{</span><span class="n">DO_port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">174</span>
+<span class="linenos">175</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos">176</span><span class="sd">        Close DO pins and SPI port</span>
+<span class="linenos">177</span><span class="sd">        &#39;&#39;&#39;</span>
+<span class="linenos">178</span>
+<span class="linenos">179</span>        <span class="c1">## Close SPI</span>
+<span class="linenos">180</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">SPI_close</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">181</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SPI_close in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">182</span>
+<span class="linenos">183</span>        <span class="c1">## Close pin0 with digital output</span>
+<span class="linenos">184</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_closePins</span><span class="p">(</span><span class="n">DO_port</span><span class="p">,</span> <span class="n">DO_index</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">185</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DO_closePins in port </span><span class="si">{</span><span class="n">DO_port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">186</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos">187</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">188</span>
+<span class="linenos">189</span>    <span class="c1">## Disconnect device</span>
+<span class="linenos">190</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+<span class="linenos">191</span>
+<span class="linenos">192</span>    <span class="c1">## Release device handle</span>
+<span class="linenos">193</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos">194</span>
+<span class="linenos">195</span>    <span class="k">return</span>
+<span class="linenos">196</span>
+<span class="linenos">197</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">198</span>    <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>
