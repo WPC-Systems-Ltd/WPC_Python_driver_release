@@ -164,7 +164,8 @@ def main():
 
         ## Read data byte from the generated address
         data = dev.SPI_readAndWrite(port, [READ, 0x00, addr, DUMMY], timeout=timeout)
-        print(f"Read data: 0x{data[0]:02X}")
+        data = ['{:02x}'.format(value) for value in data]
+        print("read data :", data)
         time.sleep(0.01)
 
         ## Set CS(pin0) to high

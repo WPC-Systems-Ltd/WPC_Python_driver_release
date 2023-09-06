@@ -1,9 +1,15 @@
 Overview
 --------
+Welcome to **WPC Python driver release** API documentation. It is an easy-to-use open-source tool for beginners.
+We provide excellent example codes to help you quickly get started with our products, connecting code to real-world usage. This makes it a great way to learn.
 
-**WPC Python driver**, also known as `pywpc`, contains APIs for interacting with DAQ (Data Acquisition) & Motion cards & Motion driver based on USB, WiFi and Ethernet.
-It supports Python 3.8 to 3.10 under Windows 10 and Python 3.10 under linux ubuntu22.04 operating systems.
+Therefore, we highly recommend using our driver because it's simple to use. Just ``open``, ``read/write``, and ``close`` - allowing you to access or update data with ease.
+Adding WPC Python driver to your toolkit not only simplifies tasks but also provides a practical learning experience that bridges theory and real-world application.
 
+Last but not least, it's a valuable resource for both learning and working efficiently.
+
+Architecture
+------------
 Our APIs support synchronous and asynchronous modes for computer processes or threads.
 
 Synchronous mode means that two or more processes run in a step-by-step manner, one after the other.In this mode, the execution of a process is blocked until the previous process is completed.
@@ -11,22 +17,6 @@ Synchronous mode means that two or more processes run in a step-by-step manner, 
 Asynchronous mode means that processes run independently of each other and don't wait for the completion of the previous process. Instead, each process runs on its own, without blocking the execution of other processes.
 
 In general, synchronous mode is easier to understand and debug, while asynchronous mode is more scalable and allows for greater concurrency.
-
-Some API functions in the `pywpc` package may not compatible with earlier versions of WPC DAQ firmware.
-To update device firmware to the latest version, please use WPC Device Manager and `LabVIEW Run-time engine <https://drive.google.com/file/d/1Uj6r65KhNxvuApiqrMkZp-NWyq-Eek-k/view>`_.
-You can download WPC Device Manager by visiting `WPC Systems Ltd. official website <http://www.wpc.com.tw/>`_.
-
-+-------------------+-----------------------------------------------------------------------------------+
-|                   | Link                                                                              |
-+===================+===================================================================================+
-| WPC official site | http://www.wpc.com.tw/                                                            |
-+-------------------+-----------------------------------------------------------------------------------+
-| GitHub            | https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release                      |
-+-------------------+-----------------------------------------------------------------------------------+
-| User guide        | https://wpc-systems-ltd.github.io/WPC_Python_driver_release/                      |
-+-------------------+-----------------------------------------------------------------------------------+
-| Example code      | https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples   |
-+-------------------+-----------------------------------------------------------------------------------+
 
 .. image:: https://img.shields.io/badge/pip%20install-wpcsys-orange.svg
     :target: https://pypi.org/project/wpcsys/
@@ -60,16 +50,6 @@ You can download WPC Device Manager by visiting `WPC Systems Ltd. official websi
 
    Make sure the latest version of firmware is up to date with your products.
 
-Quick Start
------------
-**Easy, fast, and just works!**
-
-   >>> from wpcsys import pywpc
-   >>> pywpc.PKG_NAME
-   pywpc
-   >>> pywpc.HANDLE_LIST
-   ['DeviceFinder', 'WifiDAQE3A', 'WifiDAQF4A', 'STEM', 'EMotion', 'EDrive_ST', 'EthanA', 'EthanD', 'EthanI', 'EthanL', 'EthanO', 'EthanT', 'USBDAQF1D', 'USBDAQF1DSNK', 'USBDAQF1AD', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1RD', 'USBDAQF1CD']
-
 Install and Upgrade
 -------------------
 
@@ -85,154 +65,32 @@ Install and Upgrade
 
    pip install --upgrade wpcsys
 
-Requirements
-------------
-Python 3.8 or later with all `requirements.txt <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/requirements.txt>`_ dependencies installed, including PyQt5, PyQt5Designer, qasync and so on.
+Quick Start
+-----------
+**Easy, fast, and just works!**
 
-.. code-block:: shell
+   >>> from wpcsys import pywpc
+   >>> pywpc.PKG_NAME
+   pywpc
+   >>> pywpc.HANDLE_LIST
+   ['DeviceFinder', 'WifiDAQE3A', 'WifiDAQF4A', 'STEM', 'EMotion', 'EDrive_ST', 'EthanA', 'EthanD', 'EthanI', 'EthanL', 'EthanO', 'EthanT', 'USBDAQF1D', 'USBDAQF1DSNK', 'USBDAQF1AD', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1RD', 'USBDAQF1CD']
 
-   pip install -r requirements.txt
-
-Products
---------
-
-Controller
-
-- STEM
-
-Ethernet motion driver
-
-- EMdrive-ST
-
-Ethernet based motion card
-
-- EMotion
-
-Ethernet based DAQ card
-
-- Ethan-A
-
-- Ethan-D
-
-- Ethan-I
-
-- Ethan-L
-
-- Ethan-O
-
-- Ethan-T
-
-USB interface DAQ card
-
-- USB-DAQ-F1-D (Digital)
-
-- USB-DAQ-F1-DSNK (24V Digital)
-
-- USB-DAQ-F1-AD (Digital + AI)
-
-- USB-DAQ-F1-TD (Digital + Thermocouple)
-
-- USB-DAQ-F1-RD (Digital + RTD)
-
-- USB-DAQ-F1-CD (Digital + CAN)
-
-- USB-DAQ-F1-AOD (Digital + AI + AO)
-
-Wifi based DAQ card
-
-- Wifi-DAQ-E3-A
-
-- Wifi-DAQ-F4-A
-
-I/O port function table
------------------------
-
-- EMotion & Motor driver series
-
-+----------------+-------+------+
-| Product/module |Motion |Drive |
-+----------------+-------+------+
-| EMotion        |0      |      |
-+----------------+-------+------+
-| Edrive-ST      |       |0     |
-+----------------+-------+------+
-
-- STEM series
-
-+----------------+------+------+------+------+
-| Product/module |AI    |AO    |DI    |DO    |
-+----------------+------+------+------+------+
-|  EMotion       |1,2,4 |1,2,4 |0~7   |0~7   |
-+----------------+------+------+------+------+
-
-In the `STEM` product, the values 1, 2, and 4 are used to represent the slots in the AIO.
-Additionally, the DIO ports 0 to 1 are assigned to slot 1, while ports 2 to 3 are assigned to slot 2.
-
-- Ethan & Wifi series
-
-+----------------+-----+-----+----+----+----+
-| Product/module |AI   |AO   |DI  |DO  |TC  |
-+----------------+-----+-----+----+----+----+
-| Ethan-A        |0    |     |    |    |    |
-+----------------+-----+-----+----+----+----+
-| Ethan-D        |     |     |1   |0   |    |
-+----------------+-----+-----+----+----+----+
-| Ethan-I        |0    |     |    |    |    |
-+----------------+-----+-----+----+----+----+
-| Ethan-L        |     |     |    |0   |    |
-+----------------+-----+-----+----+----+----+
-| Ethan-O        |     | 0   |    |    |    |
-+----------------+-----+-----+----+----+----+
-| Ethan-T        |     |     |    |    | 1  |
-+----------------+-----+-----+----+----+----+
-| Wifi-DAQ-E3-A  |0    |     |    |    |    |
-+----------------+-----+-----+----+----+----+
-| Wifi-DAQ-F4-A  |0    |     |    |    |    |
-+----------------+-----+-----+----+----+----+
-
-- USB series
-
-+----------------+-----+-----+----+----+----+-----+-----+-----+----+---+
-| Product/module |AI   |AO   |DI  |DO  |CAN |UART |SPI  |I2C  |RTD |TC |
-+----------------+-----+-----+----+----+----+-----+-----+-----+----+---+
-| USB-DAQ-F1-D   |     |     |0~3 |0~3 |    |1, 2 |1, 2 |1, 2 |    |   |
-+----------------+-----+-----+----+----+----+-----+-----+-----+----+---+
-| USB-DAQ-F1-DSNK|     |     |0, 1|2, 3|    |     |     |     |    |   |
-+----------------+-----+-----+----+----+----+-----+-----+-----+----+---+
-| USB-DAQ-F1-AD  |0    |     |0~3 |0~3 |    |1, 2 |2    |1, 2 |    |   |
-+----------------+-----+-----+----+----+----+-----+-----+-----+----+---+
-| USB-DAQ-F1-TD  |     |     |0~3 |0~3 |    |1, 2 |2    |1, 2 |    |1  |
-+----------------+-----+-----+----+----+----+-----+-----+-----+----+---+
-| USB-DAQ-F1-RD  |     |     |0~3 |0~3 |    |1, 2 |2    |1, 2 |1   |   |
-+----------------+-----+-----+----+----+----+-----+-----+-----+----+---+
-| USB-DAQ-F1-CD  |     |     |0~3 |0~3 |1   |1, 2 |2    |1, 2 |    |   |
-+----------------+-----+-----+----+----+----+-----+-----+-----+----+---+
-| USB-DAQ-F1-AOD |0    |0    |0~3 |0~3 |    |1, 2 |     |1, 2 |    |   |
-+----------------+-----+-----+----+----+----+-----+-----+-----+----+---+
-
-Remark: `TC` stands for `Thermocouple`
-
-Take `USB-DAQ-F1-AOD` for example:
-
-- Port 0 is available for AI
-
-- Port 2 is available for DI
-
-- Ports 0 & 1 are available for DO
-
-- Port 2 is available for UART
 
 References
 ----------
-- `Useful conda commands <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/Useful-Conda-Commands>`_
+- `GitHub <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release>`_
 
-- `User manual - WPC Python driver <https://wpc-systems-ltd.github.io/WPC_Python_driver_release/>`_
+- `Documentation - WPC Python driver <https://wpc-systems-ltd.github.io/WPC_Python_driver_release/>`_
+
+- `Useful conda commands <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/Useful-Conda-Commands>`_
 
 - `Run example code in console <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-run-WPC-Python-driver-example-code-in-console>`_
 
 - `How to build your own Python code to EXE file <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-build-your-own-Python-code-to-EXE-file>`_
 
 - `How to install miniconda and build your own virtual environment <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/wiki/How-to-install-miniconda-and-build-your-own-virtual-environment>`_
+
+- `LabVIEW Run-time engine <https://drive.google.com/file/d/1Uj6r65KhNxvuApiqrMkZp-NWyq-Eek-k/view>`_
 
 License
 -------
