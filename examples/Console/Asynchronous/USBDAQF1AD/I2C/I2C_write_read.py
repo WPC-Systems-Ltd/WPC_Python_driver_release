@@ -43,16 +43,19 @@ async def main():
         return
 
     try:
-        '''
-        Take 24C08C for example
-        '''
-
         ## Parameters setting
-        port = 1 ## Depend on your device
         port = 1 ## Depend on your device
         mode = 0
         device_address = 0x50 ## 01010000
-        word_address = 0x00
+
+        ## Generate random data
+        import numpy as np
+        word_address = np.random.randint(8) ## Generate a random address
+        value = np.random.randint(256) ## Generate a random value
+
+        '''
+        Take 24C08C for example
+        '''
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -80,8 +83,9 @@ async def main():
         '''
 
         ## Write WREN byte
-        err = await dev.I2C_write_async(port, device_address, [word_address, 0xAA, 0x55, 0xAA, 0x55])
+        err = await dev.I2C_write_async(port, device_address, [word_address, value])
         print(f"I2C_write_async in port {port}: {err}")
+        print(f"write data: 0x{value:02X}")
 
         '''
         Read data via I2C
@@ -90,8 +94,8 @@ async def main():
         err = await dev.I2C_write_async(port, device_address, [word_address])
         print(f"I2C_write_async in port {port}: {err}")
 
-        data_list = await dev.I2C_read_async(port, device_address, 4)
-        print("read data :", data_list)
+        data = await dev.I2C_read_async(port, device_address, 1)
+        print(f"read data: 0x{data[0]:02X}")
 
         '''
         Close I2C port

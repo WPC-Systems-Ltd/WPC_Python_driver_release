@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ethan-D &mdash; WPC Python driver 3.0.1 documentation</title>
+  <title>Ethan-D &mdash; WPC Python driver 3.0.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.1
+                3.0.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -80,8 +80,9 @@
 <p class="caption" role="heading"><span class="caption-text">APPENDICES</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../ref_port.html">I/O port function table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref_channel.html">I/O channel function table</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ref_error.html">Error Code Table</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ref_SPI.html">Setting Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref_param.html">Setting Table</a></li>
 </ul>
 
         </div>
@@ -134,7 +135,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -168,7 +169,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 </dl>
 </dd>
@@ -200,7 +201,7 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>enabled</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>16 bits of enabled for int.</p></li>
@@ -238,7 +239,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>enabled</strong><span class="classifier">int</span></dt><dd><ul class="simple">
 <li><p>16 bits of enabled for int.</p></li>
@@ -274,7 +275,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -297,7 +298,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 </dl>
 </dd>
@@ -318,7 +319,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -341,7 +342,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 </dl>
 </dd>
@@ -362,7 +363,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -385,7 +386,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 </dl>
 </dd>
@@ -406,7 +407,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><p>Pin number you want to close.</p>
 </dd>
@@ -431,7 +432,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><p>Pin number you want to close.</p>
 </dd>
@@ -454,7 +455,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -477,7 +478,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 </dl>
 </dd>
@@ -516,7 +517,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><p>Pin number you want to set to digital intput.</p>
 </dd>
@@ -541,7 +542,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><p>Pin number you want to set to digital intput.</p>
 </dd>
@@ -564,7 +565,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -587,7 +588,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 </dl>
 </dd>
@@ -608,7 +609,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><p>Pin number you want to read.</p>
 </dd>
@@ -632,7 +633,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><p>Pin number you want to read.</p>
 </dd>
@@ -654,7 +655,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -676,7 +677,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 </dl>
 </dd>
@@ -696,7 +697,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">list</span></dt><dd><ul class="simple">
 <li><p>Pin number you want to close.</p></li>
@@ -725,7 +726,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">list</span></dt><dd><ul class="simple">
 <li><p>Pin number you want to close.</p></li>
@@ -752,7 +753,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -775,7 +776,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 </dl>
 </dd>
@@ -814,7 +815,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
 <li><p>Pin number you want to set to digital output.</p></li>
@@ -843,7 +844,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
 <li><p>Pin number you want to set to digital output.</p></li>
@@ -870,7 +871,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -893,7 +894,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 </dl>
 </dd>
@@ -914,7 +915,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
 <li><p>Pin number you want to toggle</p></li>
@@ -944,7 +945,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
 <li><p>Pin number you want to toggle</p></li>
@@ -972,7 +973,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -1004,7 +1005,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 </dl>
 </dd>
@@ -1034,7 +1035,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
 <li><p>Pin number you want to set.</p></li>
@@ -1070,7 +1071,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>pin</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
 <li><p>Pin number you want to set.</p></li>
@@ -1104,7 +1105,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>value</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
 <li><p>Pin number you want to set digital high or low.</p></li>
@@ -1135,7 +1136,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>value</strong><span class="classifier">int or list</span></dt><dd><ul class="simple">
 <li><p>Pin number you want to set digital high or low.</p></li>
@@ -1423,6 +1424,278 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanD.PWM_close">
+<span class="sig-name descname"><span class="pre">PWM_close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.PWM_close" title="Permalink to this definition"></a></dt>
+<dd><p>Close PWM channel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>channel</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_channel.html#channel-table"><span class="std std-ref">here</span></a> for available channel of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanD.PWM_close_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PWM_close_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.PWM_close_async" title="Permalink to this definition"></a></dt>
+<dd><p>Close PWM channel with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>channel</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_channel.html#channel-table"><span class="std std-ref">here</span></a> for available channel of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanD.PWM_open">
+<span class="sig-name descname"><span class="pre">PWM_open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.PWM_open" title="Permalink to this definition"></a></dt>
+<dd><p>Open PWM channel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>channel</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_channel.html#channel-table"><span class="std std-ref">here</span></a> for available channel of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanD.PWM_open_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PWM_open_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.PWM_open_async" title="Permalink to this definition"></a></dt>
+<dd><p>Open PWM channel with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>channel</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_channel.html#channel-table"><span class="std std-ref">here</span></a> for available channel of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanD.PWM_setDutyCycle">
+<span class="sig-name descname"><span class="pre">PWM_setDutyCycle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duty_cycle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.PWM_setDutyCycle" title="Permalink to this definition"></a></dt>
+<dd><p>Set duty cycle on PWM channel with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>channel</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_channel.html#channel-table"><span class="std std-ref">here</span></a> for available channel of different WPC devices.</p>
+</dd>
+<dt><strong>duty_cycle</strong><span class="classifier">float</span></dt><dd><p>It is the amount of time a digital signal is in the active state relative to the period of the signal. (%)</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanD.PWM_setDutyCycle_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PWM_setDutyCycle_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duty_cycle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.PWM_setDutyCycle_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set duty cycle on PWM channel with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>channel</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_channel.html#channel-table"><span class="std std-ref">here</span></a> for available channel of different WPC devices.</p>
+</dd>
+<dt><strong>duty_cycle</strong><span class="classifier">float</span></dt><dd><p>It is the amount of time a digital signal is in the active state relative to the period of the signal. (%)</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanD.PWM_setFrequency">
+<span class="sig-name descname"><span class="pre">PWM_setFrequency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frequency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.PWM_setFrequency" title="Permalink to this definition"></a></dt>
+<dd><p>Set frequency on PWM channel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>channel</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_channel.html#channel-table"><span class="std std-ref">here</span></a> for available channel of different WPC devices.</p>
+</dd>
+<dt><strong>frequency</strong><span class="classifier">float</span></dt><dd><p>frequency (HZ)</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanD.PWM_setFrequency_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PWM_setFrequency_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frequency</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.PWM_setFrequency_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set frequency on PWM channel with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>channel</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_channel.html#channel-table"><span class="std std-ref">here</span></a> for available channel of different WPC devices.</p>
+</dd>
+<dt><strong>frequency</strong><span class="classifier">float</span></dt><dd><p>frequency (HZ)</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanD.PWM_start">
+<span class="sig-name descname"><span class="pre">PWM_start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.PWM_start" title="Permalink to this definition"></a></dt>
+<dd><p>Start PWM generation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>channel</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_channel.html#channel-table"><span class="std std-ref">here</span></a> for available channel of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanD.PWM_start_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PWM_start_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.PWM_start_async" title="Permalink to this definition"></a></dt>
+<dd><p>Start PWM generation with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>channel</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_channel.html#channel-table"><span class="std std-ref">here</span></a> for available channel of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanD.PWM_stop">
+<span class="sig-name descname"><span class="pre">PWM_stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.PWM_stop" title="Permalink to this definition"></a></dt>
+<dd><p>Stop PWM generation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>channel</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_channel.html#channel-table"><span class="std std-ref">here</span></a> for available channel of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanD.PWM_stop_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PWM_stop_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.PWM_stop_async" title="Permalink to this definition"></a></dt>
+<dd><p>Stop PWM generation async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>channel</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_channel.html#channel-table"><span class="std std-ref">here</span></a> for available channel of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EthanD.Sys_getDriverInfo">
 <span class="sig-name descname"><span class="pre">Sys_getDriverInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanD.Sys_getDriverInfo" title="Permalink to this definition"></a></dt>
 <dd><p>Get device firmware information.</p>
@@ -1514,7 +1787,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
-See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -1537,7 +1810,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
-See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
 </dd>
 </dl>
 </dd>
@@ -1557,7 +1830,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -1584,7 +1857,7 @@ See <a class="reference internal" href="../ref_port.html#fct-table"><span class=
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 </dl>
 </dd>
@@ -1770,7 +2043,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
-See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -1794,7 +2067,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
-See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
 </dd>
 </dl>
 </dd>
@@ -1816,7 +2089,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
-See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -1840,7 +2113,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
-See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
 </dd>
 </dl>
 </dd>
@@ -1862,7 +2135,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
-See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -1886,7 +2159,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
-See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
 </dd>
 </dl>
 </dd>
@@ -1908,7 +2181,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
-See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -1932,7 +2205,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
-See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
 </dd>
 </dl>
 </dd>
@@ -1968,7 +2241,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
-See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -1992,7 +2265,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
-See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
 </dd>
 </dl>
 </dd>
@@ -2014,7 +2287,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
-See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -2038,7 +2311,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
-See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
 </dd>
 </dl>
 </dd>
@@ -2132,7 +2405,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
-See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -2156,7 +2429,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
-See <a class="reference internal" href="../ref_port.html#fct-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
 </dd>
 </dl>
 </dd>

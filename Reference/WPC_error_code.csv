@@ -32,6 +32,8 @@ Error code,Error message
 -7026,The bootloader error in the firmware.
 -7027,The parser error in the firmware.
 -7028,The other error in the firmware.
+-7701,The PWM channel is not available.
+-7702,The counter channel is not available.
 -7801,STEM port not available or already occupied by other process.
 -7901,Please ensure that the relay counter index is restricted to the range of 0 to 5 or -1.
 -8001,Failed to connect to WPC DAQ. Please check USB plugin status and serial number.

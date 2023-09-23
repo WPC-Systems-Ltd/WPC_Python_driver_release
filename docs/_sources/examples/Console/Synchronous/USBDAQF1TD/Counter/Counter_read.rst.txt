@@ -1,0 +1,6 @@
+Counter read
+============
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/USBDAQF1TD/Counter/Counter_read.py
+   :language: python
+   :linenos:

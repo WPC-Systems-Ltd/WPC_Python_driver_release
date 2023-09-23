@@ -31,5 +31,6 @@
    :caption: APPENDICES
 
    ref_port
+   ref_channel
    ref_error
-   ref_SPI
+   ref_param

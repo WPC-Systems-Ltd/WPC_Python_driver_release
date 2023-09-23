@@ -1,6 +1,17 @@
 WPC Python driver release changelog
 ===================================
 
+v3.0.2 Date: 2023/09/23, Developer: Chunglee_people
+---------------------------------------------------
+### Added
+- New modules: Counter and PWM
+
+### Changed
+- USB DAQ series's pinout with PWM & channel supported
+
+### Fixed
+- example code(async): I2C_write_read and SPI_read_and_write content
+
 v3.0.1 Date: 2023/09/06, Developer: Chunglee_people
 ---------------------------------------------------
 ### Added

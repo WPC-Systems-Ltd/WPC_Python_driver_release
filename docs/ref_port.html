@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>I/O port function table &mdash; WPC Python driver 3.0.1 documentation</title>
+  <title>I/O port function table &mdash; WPC Python driver 3.0.2 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/custom_sphinx.css" type="text/css" />
@@ -21,7 +21,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Error Code Table" href="ref_error.html" />
+    <link rel="next" title="I/O channel function table" href="ref_channel.html" />
     <link rel="prev" title="UART test panel" href="examples/GUI/Asynchronous/UART/UART_gui.html" /> 
 </head>
 
@@ -34,7 +34,7 @@
             <img src="_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.1
+                3.0.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -59,8 +59,9 @@
 <p class="caption" role="heading"><span class="caption-text">APPENDICES</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">I/O port function table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ref_channel.html">I/O channel function table</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ref_error.html">Error Code Table</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ref_SPI.html">Setting Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ref_param.html">Setting Table</a></li>
 </ul>
 
         </div>
@@ -88,7 +89,7 @@
              
   <section id="i-o-port-function-table">
 <h1>I/O port function table<a class="headerlink" href="#i-o-port-function-table" title="Permalink to this heading"></a></h1>
-<ul class="simple" id="fct-table">
+<ul class="simple" id="port-table">
 <li><p>EMotion &amp; Motor driver series</p></li>
 </ul>
 <table class="docutils align-default">
@@ -102,13 +103,13 @@
 <td><p>Motion</p></td>
 <td><p>Drive</p></td>
 </tr>
-<tr class="row-even"><td><p>EMotion</p></td>
-<td><p>0</p></td>
+<tr class="row-even"><td><p>Edrive-ST</p></td>
 <td></td>
+<td><p>0</p></td>
 </tr>
-<tr class="row-odd"><td><p>Edrive-ST</p></td>
-<td></td>
+<tr class="row-odd"><td><p>EMotion</p></td>
 <td><p>0</p></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -145,12 +146,13 @@ Additionally, the DIO ports 0 to 1 are assigned to slot 1, while ports 2 to 3 ar
 </ul>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 42%" />
-<col style="width: 13%" />
-<col style="width: 13%" />
-<col style="width: 11%" />
-<col style="width: 11%" />
-<col style="width: 11%" />
+<col style="width: 38%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Product/module</p></td>
@@ -159,9 +161,11 @@ Additionally, the DIO ports 0 to 1 are assigned to slot 1, while ports 2 to 3 ar
 <td><p>DI</p></td>
 <td><p>DO</p></td>
 <td><p>TC</p></td>
+<td><p>PWM</p></td>
 </tr>
 <tr class="row-even"><td><p>Ethan-A</p></td>
 <td><p>0</p></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -173,9 +177,11 @@ Additionally, the DIO ports 0 to 1 are assigned to slot 1, while ports 2 to 3 ar
 <td><p>1</p></td>
 <td><p>0</p></td>
 <td></td>
+<td><p>0, 1</p></td>
 </tr>
 <tr class="row-even"><td><p>Ethan-I</p></td>
 <td><p>0</p></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -187,10 +193,12 @@ Additionally, the DIO ports 0 to 1 are assigned to slot 1, while ports 2 to 3 ar
 <td></td>
 <td><p>0</p></td>
 <td></td>
+<td></td>
 </tr>
 <tr class="row-even"><td><p>Ethan-O</p></td>
 <td></td>
 <td><p>0</p></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -201,6 +209,7 @@ Additionally, the DIO ports 0 to 1 are assigned to slot 1, while ports 2 to 3 ar
 <td></td>
 <td></td>
 <td><p>1</p></td>
+<td></td>
 </tr>
 <tr class="row-even"><td><p>Wifi-DAQ-E3-A</p></td>
 <td><p>0</p></td>
@@ -208,9 +217,11 @@ Additionally, the DIO ports 0 to 1 are assigned to slot 1, while ports 2 to 3 ar
 <td></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><p>Wifi-DAQ-F4-A</p></td>
 <td><p>0</p></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -248,30 +259,6 @@ Additionally, the DIO ports 0 to 1 are assigned to slot 1, while ports 2 to 3 ar
 <td><p>RTD</p></td>
 <td><p>TC</p></td>
 </tr>
-<tr class="row-even"><td><p>USB-DAQ-F1-D</p></td>
-<td></td>
-<td></td>
-<td><p>0~3</p></td>
-<td><p>0~3</p></td>
-<td></td>
-<td><p>1, 2</p></td>
-<td><p>1, 2</p></td>
-<td><p>1, 2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>USB-DAQ-F1-DSNK</p></td>
-<td></td>
-<td></td>
-<td><p>0, 1</p></td>
-<td><p>2, 3</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 <tr class="row-even"><td><p>USB-DAQ-F1-AD</p></td>
 <td><p>0</p></td>
 <td></td>
@@ -284,43 +271,7 @@ Additionally, the DIO ports 0 to 1 are assigned to slot 1, while ports 2 to 3 ar
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>USB-DAQ-F1-TD</p></td>
-<td></td>
-<td></td>
-<td><p>0~3</p></td>
-<td><p>0~3</p></td>
-<td></td>
-<td><p>1, 2</p></td>
-<td><p>2</p></td>
-<td><p>1, 2</p></td>
-<td></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>USB-DAQ-F1-RD</p></td>
-<td></td>
-<td></td>
-<td><p>0~3</p></td>
-<td><p>0~3</p></td>
-<td></td>
-<td><p>1, 2</p></td>
-<td><p>2</p></td>
-<td><p>1, 2</p></td>
-<td><p>1</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>USB-DAQ-F1-CD</p></td>
-<td></td>
-<td></td>
-<td><p>0~3</p></td>
-<td><p>0~3</p></td>
-<td><p>1</p></td>
-<td><p>1, 2</p></td>
-<td><p>2</p></td>
-<td><p>1, 2</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>USB-DAQ-F1-AOD</p></td>
+<tr class="row-odd"><td><p>USB-DAQ-F1-AOD</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
 <td><p>0~3</p></td>
@@ -331,6 +282,66 @@ Additionally, the DIO ports 0 to 1 are assigned to slot 1, while ports 2 to 3 ar
 <td><p>1, 2</p></td>
 <td></td>
 <td></td>
+</tr>
+<tr class="row-even"><td><p>USB-DAQ-F1-CD</p></td>
+<td></td>
+<td></td>
+<td><p>0~3</p></td>
+<td><p>0~3</p></td>
+<td><p>1</p></td>
+<td><p>1, 2</p></td>
+<td><p>2</p></td>
+<td><p>1, 2</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>USB-DAQ-F1-D</p></td>
+<td></td>
+<td></td>
+<td><p>0~3</p></td>
+<td><p>0~3</p></td>
+<td></td>
+<td><p>1, 2</p></td>
+<td><p>1, 2</p></td>
+<td><p>1, 2</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>USB-DAQ-F1-DSNK</p></td>
+<td></td>
+<td></td>
+<td><p>0, 1</p></td>
+<td><p>2, 3</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>USB-DAQ-F1-RD</p></td>
+<td></td>
+<td></td>
+<td><p>0~3</p></td>
+<td><p>0~3</p></td>
+<td></td>
+<td><p>1, 2</p></td>
+<td><p>2</p></td>
+<td><p>1, 2</p></td>
+<td><p>1</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>USB-DAQ-F1-TD</p></td>
+<td></td>
+<td></td>
+<td><p>0~3</p></td>
+<td><p>0~3</p></td>
+<td></td>
+<td><p>1, 2</p></td>
+<td><p>2</p></td>
+<td><p>1, 2</p></td>
+<td></td>
+<td><p>1</p></td>
 </tr>
 </tbody>
 </table>
@@ -349,7 +360,7 @@ Additionally, the DIO ports 0 to 1 are assigned to slot 1, while ports 2 to 3 ar
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="examples/GUI/Asynchronous/UART/UART_gui.html" class="btn btn-neutral float-left" title="UART test panel" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="ref_error.html" class="btn btn-neutral float-right" title="Error Code Table" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ref_channel.html" class="btn btn-neutral float-right" title="I/O channel function table" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
