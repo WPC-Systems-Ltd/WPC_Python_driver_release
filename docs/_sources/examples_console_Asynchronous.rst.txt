@@ -200,6 +200,8 @@ Ethan-D
 
    examples/Console/Asynchronous/EthanD/DIO/DO_write_port.rst
 
+   examples/Console/Asynchronous/EthanD/PWM/PWM_generate.rst
+
    examples/Console/Asynchronous/EthanD/System_ETH/get_network_info.rst
 
    examples/Console/Asynchronous/EthanD/Tutorial/single_loop_thread.rst
@@ -315,6 +317,8 @@ USB-DAQ-F1-AD
 
    examples/Console/Asynchronous/USBDAQF1AD/AI/AI_on_demand_once.rst
 
+   examples/Console/Asynchronous/USBDAQF1AD/Counter/Counter_read.rst
+
    examples/Console/Asynchronous/USBDAQF1AD/DIO/DO_blinky_pins.rst
 
    examples/Console/Asynchronous/USBDAQF1AD/DIO/DO_blinky_port.rst
@@ -332,6 +336,8 @@ USB-DAQ-F1-AD
    examples/Console/Asynchronous/USBDAQF1AD/SPI/SPI_read_and_write.rst
 
    examples/Console/Asynchronous/USBDAQF1AD/SPI/SPI_write.rst
+
+   examples/Console/Asynchronous/USBDAQF1AD/PWM/PWM_generate.rst
 
    examples/Console/Asynchronous/USBDAQF1AD/UART/UART_read.rst
 
@@ -378,6 +384,8 @@ USB-DAQ-F1-AOD
 
    examples/Console/Asynchronous/USBDAQF1AOD/AIO/AIO_all_channels_loopback.rst
 
+   examples/Console/Asynchronous/USBDAQF1AOD/Counter/Counter_read.rst
+
    examples/Console/Asynchronous/USBDAQF1AOD/DIO/DO_blinky_pins.rst
 
    examples/Console/Asynchronous/USBDAQF1AOD/DIO/DO_blinky_port.rst
@@ -391,6 +399,8 @@ USB-DAQ-F1-AOD
    examples/Console/Asynchronous/USBDAQF1AOD/DIO/DO_write_port.rst
 
    examples/Console/Asynchronous/USBDAQF1AOD/I2C/I2C_write_read.rst
+
+   examples/Console/Asynchronous/USBDAQF1AOD/PWM/PWM_generate.rst
 
    examples/Console/Asynchronous/USBDAQF1AOD/UART/UART_read.rst
 
@@ -414,6 +424,8 @@ USB-DAQ-F1-CD
 
 .. toctree::
    :maxdepth: 4
+
+   examples/Console/Asynchronous/USBDAQF1CD/Counter/Counter_read.rst
 
    examples/Console/Asynchronous/USBDAQF1CD/DIO/DO_blinky_pins.rst
 
@@ -441,6 +453,8 @@ USB-DAQ-F1-CD
 
    examples/Console/Asynchronous/USBDAQF1CD/CAN/CAN_write.rst
 
+   examples/Console/Asynchronous/USBDAQF1CD/PWM/PWM_generate.rst
+
    examples/Console/Asynchronous/USBDAQF1CD/System_USB/get_pin_mode.rst
 
    examples/Console/Asynchronous/USBDAQF1CD/System_USB/get_USB_info.rst
@@ -459,6 +473,8 @@ USB-DAQ-F1-D
 
 .. toctree::
    :maxdepth: 4
+
+   examples/Console/Asynchronous/USBDAQF1D/Counter/Counter_read.rst
 
    examples/Console/Asynchronous/USBDAQF1D/DIO/DO_blinky_pins.rst
 
@@ -482,6 +498,8 @@ USB-DAQ-F1-D
 
    examples/Console/Asynchronous/USBDAQF1D/UART/UART_write.rst
 
+   examples/Console/Asynchronous/USBDAQF1D/PWM/PWM_generate.rst
+
    examples/Console/Asynchronous/USBDAQF1D/System_USB/get_pin_mode.rst
 
    examples/Console/Asynchronous/USBDAQF1D/System_USB/get_USB_info.rst
@@ -501,6 +519,8 @@ USB-DAQ-F1-D-SNK
 .. toctree::
    :maxdepth: 4
 
+   examples/Console/Asynchronous/USBDAQF1DSNK/Counter/Counter_read.rst
+
    examples/Console/Asynchronous/USBDAQF1DSNK/DIO/DO_blinky_pins.rst
 
    examples/Console/Asynchronous/USBDAQF1DSNK/DIO/DO_blinky_port.rst
@@ -512,6 +532,8 @@ USB-DAQ-F1-D-SNK
    examples/Console/Asynchronous/USBDAQF1DSNK/DIO/DO_write_pins.rst
 
    examples/Console/Asynchronous/USBDAQF1DSNK/DIO/DO_write_port.rst
+
+   examples/Console/Asynchronous/USBDAQF1DSNK/PWM/PWM_generate.rst
 
    examples/Console/Asynchronous/USBDAQF1DSNK/System_USB/get_pin_mode.rst
 
@@ -531,6 +553,8 @@ USB-DAQ-F1-RD
 
 .. toctree::
    :maxdepth: 4
+
+   examples/Console/Asynchronous/USBDAQF1RD/Counter/Counter_read.rst
 
    examples/Console/Asynchronous/USBDAQF1RD/DIO/DO_blinky_pins.rst
 
@@ -553,6 +577,8 @@ USB-DAQ-F1-RD
    examples/Console/Asynchronous/USBDAQF1RD/UART/UART_read.rst
 
    examples/Console/Asynchronous/USBDAQF1RD/UART/UART_write.rst
+
+   examples/Console/Asynchronous/USBDAQF1RD/PWM/PWM_generate.rst
 
    examples/Console/Asynchronous/USBDAQF1RD/Temperature_RTD/RTD_read_channel_data.rst
 
@@ -579,6 +605,8 @@ USB-DAQ-F1-TD
 .. toctree::
    :maxdepth: 4
 
+   examples/Console/Asynchronous/USBDAQF1TD/Counter/Counter_read.rst
+
    examples/Console/Asynchronous/USBDAQF1TD/DIO/DO_blinky_pins.rst
 
    examples/Console/Asynchronous/USBDAQF1TD/DIO/DO_blinky_port.rst
@@ -600,6 +628,8 @@ USB-DAQ-F1-TD
    examples/Console/Asynchronous/USBDAQF1TD/UART/UART_read.rst
 
    examples/Console/Asynchronous/USBDAQF1TD/UART/UART_write.rst
+
+   examples/Console/Asynchronous/USBDAQF1TD/PWM/PWM_generate.rst
 
    examples/Console/Asynchronous/USBDAQF1TD/Temperature_TC/TC_read_channel_data.rst
 

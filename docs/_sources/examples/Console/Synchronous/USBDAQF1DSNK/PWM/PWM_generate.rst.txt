@@ -1,0 +1,6 @@
+PWM generate
+============
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/USBDAQF1DSNK/PWM/PWM_generate.py
+   :language: python
+   :linenos:
