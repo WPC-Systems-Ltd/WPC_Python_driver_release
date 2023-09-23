@@ -168,6 +168,8 @@ Ethan-D
 
    examples/Console/Synchronous/EthanD/DIO/DO_write_port.rst
 
+   examples/Console/Synchronous/EthanD/PWM/PWM_generate.rst
+
    examples/Console/Synchronous/EthanD/System_ETH/get_network_info.rst
 
 
@@ -243,6 +245,8 @@ USB-DAQ-F1-AD
 
    examples/Console/Synchronous/USBDAQF1AD/AI/AI_on_demand_once.rst
 
+   examples/Console/Synchronous/USBDAQF1AD/Counter/Counter_read.rst
+
    examples/Console/Synchronous/USBDAQF1AD/DIO/DO_blinky_pins.rst
 
    examples/Console/Synchronous/USBDAQF1AD/DIO/DO_blinky_port.rst
@@ -260,6 +264,8 @@ USB-DAQ-F1-AD
    examples/Console/Synchronous/USBDAQF1AD/SPI/SPI_read_and_write.rst
 
    examples/Console/Synchronous/USBDAQF1AD/SPI/SPI_write.rst
+
+   examples/Console/Synchronous/USBDAQF1AD/PWM/PWM_generate.rst
 
    examples/Console/Synchronous/USBDAQF1AD/UART/UART_read.rst
 
@@ -298,6 +304,8 @@ USB-DAQ-F1-AOD
 
    examples/Console/Synchronous/USBDAQF1AOD/AIO/AIO_all_channels_loopback.rst
 
+   examples/Console/Synchronous/USBDAQF1AOD/Counter/Counter_read.rst
+
    examples/Console/Synchronous/USBDAQF1AOD/DIO/DO_blinky_pins.rst
 
    examples/Console/Synchronous/USBDAQF1AOD/DIO/DO_blinky_port.rst
@@ -311,6 +319,8 @@ USB-DAQ-F1-AOD
    examples/Console/Synchronous/USBDAQF1AOD/DIO/DO_write_port.rst
 
    examples/Console/Synchronous/USBDAQF1AOD/I2C/I2C_write_read.rst
+
+   examples/Console/Synchronous/USBDAQF1AOD/PWM/PWM_generate.rst
 
    examples/Console/Synchronous/USBDAQF1AOD/UART/UART_read.rst
 
@@ -326,6 +336,8 @@ USB-DAQ-F1-CD
 
 .. toctree::
    :maxdepth: 4
+
+   examples/Console/Synchronous/USBDAQF1CD/Counter/Counter_read.rst
 
    examples/Console/Synchronous/USBDAQF1CD/DIO/DO_blinky_pins.rst
 
@@ -353,6 +365,8 @@ USB-DAQ-F1-CD
 
    examples/Console/Synchronous/USBDAQF1CD/CAN/CAN_write.rst
 
+   examples/Console/Synchronous/USBDAQF1CD/PWM/PWM_generate.rst
+
    examples/Console/Synchronous/USBDAQF1CD/System_USB/get_pin_mode.rst
 
    examples/Console/Synchronous/USBDAQF1CD/System_USB/get_USB_info.rst
@@ -363,6 +377,8 @@ USB-DAQ-F1-D
 
 .. toctree::
    :maxdepth: 4
+
+   examples/Console/Synchronous/USBDAQF1D/Counter/Counter_read.rst
 
    examples/Console/Synchronous/USBDAQF1D/DIO/DO_blinky_pins.rst
 
@@ -386,6 +402,8 @@ USB-DAQ-F1-D
 
    examples/Console/Synchronous/USBDAQF1D/UART/UART_write.rst
 
+   examples/Console/Synchronous/USBDAQF1D/PWM/PWM_generate.rst
+
    examples/Console/Synchronous/USBDAQF1D/System_USB/get_pin_mode.rst
 
    examples/Console/Synchronous/USBDAQF1D/System_USB/get_USB_info.rst
@@ -396,6 +414,8 @@ USB-DAQ-F1-D-SNK
 
 .. toctree::
    :maxdepth: 4
+
+   examples/Console/Synchronous/USBDAQF1DSNK/Counter/Counter_read.rst
 
    examples/Console/Synchronous/USBDAQF1DSNK/DIO/DO_blinky_pins.rst
 
@@ -409,6 +429,8 @@ USB-DAQ-F1-D-SNK
 
    examples/Console/Synchronous/USBDAQF1DSNK/DIO/DO_write_port.rst
 
+   examples/Console/Synchronous/USBDAQF1DSNK/PWM/PWM_generate.rst
+
    examples/Console/Synchronous/USBDAQF1DSNK/System_USB/get_pin_mode.rst
 
    examples/Console/Synchronous/USBDAQF1DSNK/System_USB/get_USB_info.rst
@@ -419,6 +441,8 @@ USB-DAQ-F1-RD
 
 .. toctree::
    :maxdepth: 4
+
+   examples/Console/Synchronous/USBDAQF1RD/Counter/Counter_read.rst
 
    examples/Console/Synchronous/USBDAQF1RD/DIO/DO_blinky_pins.rst
 
@@ -442,6 +466,8 @@ USB-DAQ-F1-RD
 
    examples/Console/Synchronous/USBDAQF1RD/UART/UART_write.rst
 
+   examples/Console/Synchronous/USBDAQF1RD/PWM/PWM_generate.rst
+
    examples/Console/Synchronous/USBDAQF1RD/Temperature_RTD/RTD_read_channel_data.rst
 
    examples/Console/Synchronous/USBDAQF1RD/Temperature_RTD/RTD_read_channel_data_with_logger.rst
@@ -458,6 +484,8 @@ USB-DAQ-F1-TD
 
 .. toctree::
    :maxdepth: 4
+
+   examples/Console/Synchronous/USBDAQF1TD/Counter/Counter_read.rst
 
    examples/Console/Synchronous/USBDAQF1TD/DIO/DO_blinky_pins.rst
 
@@ -480,6 +508,8 @@ USB-DAQ-F1-TD
    examples/Console/Synchronous/USBDAQF1TD/UART/UART_read.rst
 
    examples/Console/Synchronous/USBDAQF1TD/UART/UART_write.rst
+
+   examples/Console/Synchronous/USBDAQF1TD/PWM/PWM_generate.rst
 
    examples/Console/Synchronous/USBDAQF1TD/Temperature_TC/TC_read_channel_data.rst
 
