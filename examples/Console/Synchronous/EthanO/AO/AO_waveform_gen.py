@@ -44,14 +44,15 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        mode = 2
-        sampling_rate = 1000
-        timeout = 3  ## second
-        form_mode = 2
+        mode = 2 ## 0: on demand, 1: N-samples, 2: Continuous
+        sampling_rate = 10000
+        number_of_sample = 10000
+        form_mode = 3 ##  0:DC voltage, 1: retangular, 2: triangular, 3: sine.
         amplitude = 1
-        offset = 0.5
-        period_0 = 0.2
-        period_1 = 0.1
+        offset = 0.1
+        freq_0 = 10
+        freq_1 = 20
+        timeout = 3  ## second
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
@@ -61,6 +62,18 @@ def main():
         ## Open AO
         err = dev.AO_open(port, timeout=timeout)
         print(f"AO_open in port {port}: {err}")
+
+        ## Set AO generation mode
+        err = dev.AO_setMode(port, mode, timeout=timeout)
+        print(f"AO_setMode in port {port}: {err}")
+
+        ## Set AO sampling rate to 10k (Hz)
+        err = dev.AO_setSamplingRate(port, sampling_rate, timeout=timeout)
+        print(f"AO_setSamplingRate in port {port}: {err}")
+
+        ## Set AO NumSamples rate to 10000
+        err = dev.AO_setNumSamples(port, number_of_sample, timeout=timeout)
+        print(f"AO_setNumSamples in port {port}: {err}")
 
         ## Set AO enabled channels
         err = dev.AO_setEnableChannels(port, [0,1], timeout=timeout)
@@ -75,20 +88,12 @@ def main():
         print(f"AO_setForm in channel 1 in port {port}: {err}")
 
         ## Set Channel 0 form parameters
-        err = dev.AO_setFormParam(port, 0, amplitude, offset, period_0, timeout=timeout)
+        err = dev.AO_setFormParam(port, 0, amplitude, offset, freq_0, timeout=timeout)
         print(f"AO_setFormParam in channel 0 in port {port}: {err}")
 
         ## Set Channel 1 form parameters
-        err = dev.AO_setFormParam(port, 1, amplitude, offset, period_1, timeout=timeout)
+        err = dev.AO_setFormParam(port, 1, amplitude, offset, freq_1, timeout=timeout)
         print(f"AO_setFormParam in channel 1 in port {port}: {err}")
-
-        ## Set AO generation mode
-        err = dev.AO_setMode(port, mode, timeout=timeout)
-        print(f"AO_setMode in port {port}: {err}")
-
-        ## Set AO sampling rate to 1k (Hz)
-        err = dev.AO_setSamplingRate(port, sampling_rate, timeout=timeout)
-        print(f"AO_setSamplingRate in port {port}: {err}")
 
         ## Open AO streaming
         info = dev.AO_openStreaming(port, timeout=timeout)
@@ -98,8 +103,8 @@ def main():
         err = dev.AO_startStreaming(port)
         print(f"AO_startStreaming in port {port}: {err}")
 
-        ## Wait for 5 seconds
-        time.sleep(5) ## delay [s]
+        ## Wait for 10 seconds to generate form
+        time.sleep(10) ## delay [s]
 
         ## Close AO streaming
         err = dev.AO_closeStreaming(port, timeout=timeout)

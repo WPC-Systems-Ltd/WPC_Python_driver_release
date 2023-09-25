@@ -43,13 +43,14 @@ async def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        mode = 2
-        sampling_rate = 1000
-        form_mode = 2
+        mode = 2 ## 0: on demand, 1: N-samples, 2: Continuous
+        sampling_rate = 10000
+        number_of_sample = 10000
+        form_mode = 3 ##  0:DC voltage, 1: retangular, 2: triangular, 3: sine.
         amplitude = 1
-        offset = 0.5
-        period_0 = 0.2
-        period_1 = 0.1
+        offset = 0.1
+        freq_0 = 10
+        freq_1 = 20
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -59,6 +60,18 @@ async def main():
         ## Open AO
         err = await dev.AO_open_async(port)
         print(f"AO_open_async in port {port}: {err}")
+
+        ## Set AO generation mode
+        err = await dev.AO_setMode_async(port, mode)
+        print(f"AO_setMode_async in port {port}: {err}")
+
+        ## Set AO sampling rate to 10k (Hz)
+        err = await dev.AO_setSamplingRate_async(port, sampling_rate)
+        print(f"AO_setSamplingRate_async in port {port}: {err}")
+
+        ## Set AO NumSamples rate to 10000
+        err = await dev.AO_setNumSamples_async(port, number_of_sample)
+        print(f"AO_setNumSamples in port {port}: {err}")
 
         ## Set AO enabled channels
         err = await dev.AO_setEnableChannels_async(port, [0, 1])
@@ -73,20 +86,12 @@ async def main():
         print(f"AO_setForm_async in channel 1 in port {port}: {err}")
 
         ## Set Channel 0 form parameters
-        err = await dev.AO_setFormParam_async(port, 0, amplitude, offset, period_0)
-        print(f"AO_setForm_async in channel 0 in port {port}: {err}")
+        err = await dev.AO_setFormParam_async(port, 0, amplitude, offset, freq_0)
+        print(f"AO_setFormParam_async in channel 0 in port {port}: {err}")
 
         ## Set Channel 1 form parameters
-        err = await dev.AO_setFormParam_async(port, 1, amplitude, offset, period_1)
-        print(f"AO_setForm_async in channel 1 in port {port}: {err}")
-
-        ## Set AO generation mode
-        err = await dev.AO_setMode_async(port, mode)
-        print(f"AO_setMode_async in port {port}: {err}")
-
-        ## Set AO sampling rate to 1k (Hz)
-        err = await dev.AO_setSamplingRate_async(port, sampling_rate)
-        print(f"AO_setSamplingRate_async in port {port}: {err}")
+        err = await dev.AO_setFormParam_async(port, 1, amplitude, offset, freq_1)
+        print(f"AO_setFormParam_async in channel 1 in port {port}: {err}")
 
         ## Open AO streaming
         info = await dev.AO_openStreaming_async(port)
@@ -96,8 +101,8 @@ async def main():
         err = await dev.AO_startStreaming_async(port)
         print(f"AO_startStreaming_async in port {port}: {err}")
 
-        ## Wait for 5 seconds
-        await asyncio.sleep(5)  ## delay [s]
+        ## Wait for 10 seconds to generate form
+        await asyncio.sleep(10)  ## delay [s]
 
         ## Close AO streaming
         err = await dev.AO_closeStreaming_async(port)
