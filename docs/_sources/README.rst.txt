@@ -1,6 +1,6 @@
 Overview
 --------
-Welcome to **WPC Python driver release** API documentation. It is an easy-to-use open-source tool for beginners.
+Welcome to **WPC Python driver** API documentation. It is an easy-to-use open-source tool for beginners.
 We provide excellent example codes to help you quickly get started with our products, connecting code to real-world usage. This makes it a great way to learn.
 
 Therefore, we highly recommend using our driver because it's simple to use. Just ``open``, ``read/write``, and ``close`` - allowing you to access or update data with ease.
@@ -95,5 +95,5 @@ References
 License
 -------
 
-**WPC Python driver release** is licensed under an MIT-style license see `LICENSE <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/LICENSE>`_ Other incorporated projects may be licensed under different licenses.
+**WPC Python driver** is licensed under an MIT-style license see `LICENSE <https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/LICENSE>`_ Other incorporated projects may be licensed under different licenses.
 All licenses allow for non-commercial and commercial use.
