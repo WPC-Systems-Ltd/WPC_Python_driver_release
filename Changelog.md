@@ -1,6 +1,11 @@
 WPC Python driver release changelog
 ===================================
 
+v3.0.3 Date: 2023/09/25, Developer: Chunglee_people
+---------------------------------------------------
+### Fixed
+- AO function generation code
+
 v3.0.2 Date: 2023/09/23, Developer: Chunglee_people
 ---------------------------------------------------
 ### Added

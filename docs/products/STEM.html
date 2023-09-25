@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>STEM &mdash; WPC Python driver 3.0.2 documentation</title>
+  <title>STEM &mdash; WPC Python driver 3.0.3 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.2
+                3.0.3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -367,7 +367,7 @@ For each <code class="docutils literal notranslate"><span class="pre">i</span></
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>mode</strong><span class="classifier">{0, 1, 2}</span></dt><dd><p>Acquisition mode.
+<dt><strong>mode</strong><span class="classifier">int</span></dt><dd><p>Acquisition mode.
 0: on demand, 1: N-samples, 2: continuous.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
@@ -394,7 +394,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>mode</strong><span class="classifier">{0, 1, 2}</span></dt><dd><p>Acquisition mode.
+<dt><strong>mode</strong><span class="classifier">int</span></dt><dd><p>Acquisition mode.
 0: on demand, 1: N-samples, 2: continuous.</p>
 </dd>
 </dl>
@@ -1050,8 +1050,8 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd>
 <dt><strong>channel</strong><span class="classifier">int</span></dt><dd><p>Channel number.</p>
 </dd>
-<dt><strong>form</strong><span class="classifier">{1, 2, 3}</span></dt><dd><p>Form of the signal to generate.
-1: retangular, 2: triangular, 3: sine.</p>
+<dt><strong>form</strong><span class="classifier">int</span></dt><dd><p>Form of the signal to generate.
+0: DC voltage, 1: retangular, 2: triangular, 3: sine.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -1084,7 +1084,7 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd>
 <dt><strong>offset</strong><span class="classifier">float</span></dt><dd><p>Offset of signal average in volt.</p>
 </dd>
-<dt><strong>frequency</strong><span class="classifier">float</span></dt><dd><p>Signal period in seconds.</p>
+<dt><strong>frequency</strong><span class="classifier">float</span></dt><dd><p>How often something repeats in a given time period.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -1117,7 +1117,7 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd>
 <dt><strong>offset</strong><span class="classifier">float</span></dt><dd><p>Offset of signal average in volt.</p>
 </dd>
-<dt><strong>frequency</strong><span class="classifier">float</span></dt><dd><p>Signal frequency.</p>
+<dt><strong>frequency</strong><span class="classifier">float</span></dt><dd><p>How often something repeats in a given time period.</p>
 </dd>
 <dt><strong>phase</strong><span class="classifier">float</span></dt><dd><p>Phase.</p>
 </dd>
@@ -1146,8 +1146,8 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd>
 <dt><strong>channel</strong><span class="classifier">int</span></dt><dd><p>Channel number.</p>
 </dd>
-<dt><strong>form</strong><span class="classifier">{1, 2, 3}</span></dt><dd><p>Form of the signal to generate.
-1: retangular, 2: triangular, 3: sine.</p>
+<dt><strong>form</strong><span class="classifier">int</span></dt><dd><p>Form of the signal to generate.
+0: DC voltage, 1: retangular, 2: triangular, 3: sine.</p>
 </dd>
 </dl>
 </dd>
@@ -1171,7 +1171,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>mode</strong><span class="classifier">{0, 1, 2}</span></dt><dd><p>Generation mode.
+<dt><strong>mode</strong><span class="classifier">int</span></dt><dd><p>Generation mode.
 0: on demand, 1: N-samples, 2: continuous.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
@@ -1198,7 +1198,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>mode</strong><span class="classifier">{0, 1, 2}</span></dt><dd><p>Generation mode.
+<dt><strong>mode</strong><span class="classifier">int</span></dt><dd><p>Generation mode.
 0: on demand, 1: N-samples, 2: continuous.</p>
 </dd>
 </dl>
