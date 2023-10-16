@@ -1,10 +1,11 @@
 WPC Python driver release changelog
 ===================================
 
-v3.0.4 Date: 2023/10/16, Developer: Chunglee_people
+v3.0.5 Date: 2023/10/16, Developer: Chunglee_people
 ---------------------------------------------------
 ### Added
-Add reboot example code in hello world.py
+- Add reboot example code in hello world.py
+- Ubuntu's os badge
 
 v3.0.3 Date: 2023/09/25, Developer: Chunglee_people
 ---------------------------------------------------
