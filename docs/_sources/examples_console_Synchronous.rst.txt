@@ -52,6 +52,8 @@ STEM
 
    examples/Console/Synchronous/STEM/System_ETH/get_network_info.rst
 
+   examples/Console/Synchronous/STEM/System_ETH/hello_world.rst
+
 
 EDrive-ST
 ---------
@@ -72,6 +74,8 @@ EDrive-ST
    examples/Console/Synchronous/EDrive_ST/Drive/Drive_velocity_blending_acceleration.rst
 
    examples/Console/Synchronous/EDrive_ST/System_ETH/get_network_info.rst
+
+   examples/Console/Synchronous/EDrive_ST/System_ETH/hello_world.rst
 
 
 EMotion
@@ -128,6 +132,8 @@ EMotion
 
    examples/Console/Synchronous/EMotion/System_ETH/get_network_info.rst
 
+   examples/Console/Synchronous/EMotion/System_ETH/hello_world.rst
+
 
 Ethan-A
 -------
@@ -148,6 +154,8 @@ Ethan-A
    examples/Console/Synchronous/EthanA/AI/AI_on_demand_once.rst
 
    examples/Console/Synchronous/EthanA/System_ETH/get_network_info.rst
+
+   examples/Console/Synchronous/EthanA/System_ETH/hello_world.rst
 
 
 Ethan-D
@@ -172,6 +180,8 @@ Ethan-D
 
    examples/Console/Synchronous/EthanD/System_ETH/get_network_info.rst
 
+   examples/Console/Synchronous/EthanD/System_ETH/hello_world.rst
+
 
 Ethan-I
 -------
@@ -182,6 +192,8 @@ Ethan-I
    examples/Console/Synchronous/EthanI/AI24Bit/AI_on_demand_once.rst
 
    examples/Console/Synchronous/EthanI/System_ETH/get_network_info.rst
+
+   examples/Console/Synchronous/EthanI/System_ETH/hello_world.rst
 
 
 Ethan-L
@@ -195,6 +207,8 @@ Ethan-L
    examples/Console/Synchronous/EthanL/Relay/Relay_read_counters.rst
 
    examples/Console/Synchronous/EthanL/System_ETH/get_network_info.rst
+
+   examples/Console/Synchronous/EthanL/System_ETH/hello_world.rst
 
 
 Ethan-O
@@ -211,6 +225,8 @@ Ethan-O
 
    examples/Console/Synchronous/EthanO/System_ETH/get_network_info.rst
 
+   examples/Console/Synchronous/EthanO/System_ETH/hello_world.rst
+
 
 Ethan-T
 -------
@@ -225,6 +241,8 @@ Ethan-T
    examples/Console/Synchronous/EthanT/Temperature_TC/TC_read_channel_status.rst
 
    examples/Console/Synchronous/EthanT/System_ETH/get_network_info.rst
+
+   examples/Console/Synchronous/EthanT/System_ETH/hello_world.rst
 
 
 USB-DAQ-F1-AD
@@ -274,6 +292,8 @@ USB-DAQ-F1-AD
    examples/Console/Synchronous/USBDAQF1AD/System_USB/get_pin_mode.rst
 
    examples/Console/Synchronous/USBDAQF1AD/System_USB/get_USB_info.rst
+
+   examples/Console/Synchronous/USBDAQF1AD/System_USB/hello_world.rst
 
 
 USB-DAQ-F1-AOD
@@ -330,6 +350,8 @@ USB-DAQ-F1-AOD
 
    examples/Console/Synchronous/USBDAQF1AOD/System_USB/get_USB_info.rst
 
+   examples/Console/Synchronous/USBDAQF1AOD/System_USB/hello_world.rst
+
 
 USB-DAQ-F1-CD
 -------------
@@ -371,6 +393,8 @@ USB-DAQ-F1-CD
 
    examples/Console/Synchronous/USBDAQF1CD/System_USB/get_USB_info.rst
 
+   examples/Console/Synchronous/USBDAQF1CD/System_USB/hello_world.rst
+
 
 USB-DAQ-F1-D
 ------------
@@ -408,6 +432,8 @@ USB-DAQ-F1-D
 
    examples/Console/Synchronous/USBDAQF1D/System_USB/get_USB_info.rst
 
+   examples/Console/Synchronous/USBDAQF1D/System_USB/hello_world.rst
+
 
 USB-DAQ-F1-D-SNK
 ----------------
@@ -434,6 +460,8 @@ USB-DAQ-F1-D-SNK
    examples/Console/Synchronous/USBDAQF1DSNK/System_USB/get_pin_mode.rst
 
    examples/Console/Synchronous/USBDAQF1DSNK/System_USB/get_USB_info.rst
+
+   examples/Console/Synchronous/USBDAQF1DSNK/System_USB/hello_world.rst
 
 
 USB-DAQ-F1-RD
@@ -478,6 +506,8 @@ USB-DAQ-F1-RD
 
    examples/Console/Synchronous/USBDAQF1RD/System_USB/get_USB_info.rst
 
+   examples/Console/Synchronous/USBDAQF1RD/System_USB/hello_world.rst
+
 
 USB-DAQ-F1-TD
 -------------
@@ -521,6 +551,8 @@ USB-DAQ-F1-TD
 
    examples/Console/Synchronous/USBDAQF1TD/System_USB/get_USB_info.rst
 
+   examples/Console/Synchronous/USBDAQF1TD/System_USB/hello_world.rst
+
 
 Wifi-DAQ-E3-A
 -------------
@@ -544,6 +576,8 @@ Wifi-DAQ-E3-A
 
    examples/Console/Synchronous/WifiDAQE3A/System_Wifi/get_Wifi_DAQ_status.rst
 
+   examples/Console/Synchronous/WifiDAQE3A/System_Wifi/hello_world.rst
+
 
 Wifi-DAQ-F4-A
 -------------
@@ -566,4 +600,6 @@ Wifi-DAQ-F4-A
    examples/Console/Synchronous/WifiDAQF4A/System_Wifi/get_network_info.rst
 
    examples/Console/Synchronous/WifiDAQF4A/System_Wifi/get_Wifi_DAQ_status.rst
+
+   examples/Console/Synchronous/WifiDAQF4A/System_Wifi/hello_world.rst
 

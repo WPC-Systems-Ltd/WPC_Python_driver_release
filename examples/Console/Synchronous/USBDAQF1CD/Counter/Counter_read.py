@@ -1,5 +1,5 @@
 '''
-Counter - Counter read.py with synchronous mode.
+Counter - Counter_read.py with synchronous mode.
 
 This example demonstrates how to read counter with USBDAQF1CD.
 

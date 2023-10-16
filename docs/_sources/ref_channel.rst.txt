@@ -6,10 +6,18 @@ I/O channel function table
 - PWM and counter channel
 - If you set the PWM channel to 0, then CTR has to be set to 1
 
+
+- Ethan & Wifi series
 +----------------+----+-------+
 | Product/module |PWM |Counter|
 +----------------+----+-------+
 | Ethan-D        |0, 1|       |
++----------------+----+-------+
+
+- USB series
+
++----------------+----+-------+
+| Product/module |PWM |Counter|
 +----------------+----+-------+
 | USB-DAQ-F1-AD  |0, 1|0, 1   |
 +----------------+----+-------+

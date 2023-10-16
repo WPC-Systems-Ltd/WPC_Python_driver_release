@@ -71,7 +71,7 @@ def main():
         err = dev.AO_setSamplingRate(port, sampling_rate, timeout=timeout)
         print(f"AO_setSamplingRate in port {port}: {err}")
 
-        ## Set AO NumSamples rate to 10000
+        ## Set AO NumSamples to 10000
         err = dev.AO_setNumSamples(port, number_of_sample, timeout=timeout)
         print(f"AO_setNumSamples in port {port}: {err}")
 
