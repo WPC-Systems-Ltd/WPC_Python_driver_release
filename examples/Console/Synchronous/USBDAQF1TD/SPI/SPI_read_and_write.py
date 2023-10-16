@@ -162,7 +162,7 @@ def main():
         print(f"DO_writePins in port {DO_port}: {err}")
         time.sleep(0.01)
 
-        ## Read data byte from the generated address
+        ## Read the written byte from the generated address
         data = dev.SPI_readAndWrite(port, [READ, 0x00, addr, DUMMY], timeout=timeout)
         data = ['{:02x}'.format(value) for value in data]
         print("read data :", data)

@@ -1,20 +1,20 @@
-# DIO
+# Counter
 > **Note**
 > Make sure you are connected to correct IP or serial number.
 
 ## Overview
 
-This example project demonstrates how to use WPC python driver to control motion
+This example project demonstrates how to use WPC python driver with counter
 
 In order to use API correctly, please refer [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-If you want to build your own motion application, try to use this as a basic template, then add your own code.
+If you want to build your own counter application, try to use this as a basic template, then add your own code.
 
 ## How to use this example
 
 ### Hardware Requirement
 
-In order to run this example, you should get USBDAQF1TD product, which contains motion function.
+In order to run this example, you should get USBDAQF1TD product, which contains counter function.
 
 Then, we take `USBDAQF1TD` for example.
 
