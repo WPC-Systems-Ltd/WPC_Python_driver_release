@@ -1,5 +1,5 @@
 '''
-System_USB - hello world.py with synchronous mode.
+System_USB - hello_world.py with synchronous mode.
 
 This example code is in the public domain from USBDAQF1DSNK.
 

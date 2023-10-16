@@ -1,5 +1,5 @@
 '''
-System_ETH - hello world.py with asynchronous mode.
+System_ETH - hello_world.py with asynchronous mode.
 
 This example code is in the public domain from EthanL.
 

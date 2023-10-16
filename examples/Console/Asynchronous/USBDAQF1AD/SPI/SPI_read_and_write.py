@@ -152,7 +152,7 @@ async def main():
         err = await dev.DO_writePins_async(DO_port, DO_index, [0])
         print(f"DO_writePins_async in port {DO_port}: {err}")
 
-        ## Read data byte 0x0A from address 0x0001
+        ## Read the written byte from the generated address
         data = await dev.SPI_readAndWrite_async(port, [READ, 0x00, addr, DUMMY])
         data = ['{:02x}'.format(value) for value in data]
         print("read data :", data)

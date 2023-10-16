@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SPI read and write &mdash; WPC Python driver 3.0.4 documentation</title>
+  <title>SPI read and write &mdash; WPC Python driver 3.0.5 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.4
+                3.0.5
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -81,7 +81,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../PWM/PWM_generate.html">PWM generate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../System_USB/get_pin_mode.html">System get pin mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../System_USB/get_USB_info.html">System get USB info</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../System_USB/hello_world.html">hello world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../System_USB/hello_world.html">System hello world</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../examples_console_Synchronous.html#usb-daq-f1-d-snk">USB-DAQ-F1-D-SNK</a></li>
@@ -293,7 +293,7 @@
 <span class="linenos">162</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DO_writePins in port </span><span class="si">{</span><span class="n">DO_port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">163</span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
 <span class="linenos">164</span>
-<span class="linenos">165</span>        <span class="c1">## Read data byte from the generated address</span>
+<span class="linenos">165</span>        <span class="c1">## Read the written byte from the generated address</span>
 <span class="linenos">166</span>        <span class="n">data</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">SPI_readAndWrite</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="p">[</span><span class="n">READ</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="n">addr</span><span class="p">,</span> <span class="n">DUMMY</span><span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
 <span class="linenos">167</span>        <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="si">{:02x}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
 <span class="linenos">168</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;read data :&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>

@@ -1,5 +1,5 @@
 '''
-System_Wifi - hello world.py with synchronous mode.
+System_Wifi - hello_world.py with synchronous mode.
 
 This example code is in the public domain from WifiDAQE3A.
 
