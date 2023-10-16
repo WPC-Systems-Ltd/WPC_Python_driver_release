@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AO waveform generation &mdash; WPC Python driver 3.0.3 documentation</title>
+  <title>AO waveform generation &mdash; WPC Python driver 3.0.4 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.3
+                3.0.4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -88,6 +88,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../UART/UART_write.html">UART write</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../System_USB/get_pin_mode.html">System get pin mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../System_USB/get_USB_info.html">System get USB info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../System_USB/hello_world.html">hello world</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../examples_console_Synchronous.html#usb-daq-f1-cd">USB-DAQ-F1-CD</a></li>
@@ -210,7 +211,7 @@
 <span class="linenos"> 71</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AO_setSamplingRate</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">sampling_rate</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
 <span class="linenos"> 72</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AO_setSamplingRate in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 73</span>
-<span class="linenos"> 74</span>        <span class="c1">## Set AO NumSamples rate to 10000</span>
+<span class="linenos"> 74</span>        <span class="c1">## Set AO NumSamples to 10000</span>
 <span class="linenos"> 75</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AO_setNumSamples</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">number_of_sample</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
 <span class="linenos"> 76</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AO_setNumSamples in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 77</span>

@@ -69,7 +69,7 @@ async def main():
         err = await dev.AO_setSamplingRate_async(port, sampling_rate)
         print(f"AO_setSamplingRate_async in port {port}: {err}")
 
-        ## Set AO NumSamples rate to 10000
+        ## Set AO NumSamples to 10000
         err = await dev.AO_setNumSamples_async(port, number_of_sample)
         print(f"AO_setNumSamples in port {port}: {err}")
 
