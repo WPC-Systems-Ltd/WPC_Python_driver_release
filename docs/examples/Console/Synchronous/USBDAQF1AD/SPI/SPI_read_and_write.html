@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SPI read and write &mdash; WPC Python driver 3.0.5 documentation</title>
+  <title>SPI read and write &mdash; WPC Python driver 3.0.6 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -18,7 +18,6 @@
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
-        <script src="../../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -35,7 +34,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.5
+                3.0.6
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -86,6 +85,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../System_USB/get_pin_mode.html">System get pin mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../System_USB/get_USB_info.html">System get USB info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../System_USB/hello_world.html">System hello world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../examples_console_Synchronous.html#usb-daq-f1-aod">USB-DAQ-F1-AOD</a></li>
@@ -207,7 +207,7 @@
 <span class="linenos"> 69</span>        <span class="n">READ</span> <span class="o">=</span> <span class="mh">0x03</span>
 <span class="linenos"> 70</span>        <span class="n">WREN</span> <span class="o">=</span> <span class="mh">0x06</span>
 <span class="linenos"> 71</span>
-<span class="linenos"> 72</span>        <span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos"> 72</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos"> 73</span><span class="sd">        Take 25LC640 for example</span>
 <span class="linenos"> 74</span><span class="sd">        &#39;&#39;&#39;</span>
 <span class="linenos"> 75</span>
@@ -216,7 +216,7 @@
 <span class="linenos"> 78</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="linenos"> 79</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 <span class="linenos"> 80</span>
-<span class="linenos"> 81</span>        <span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos"> 81</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos"> 82</span><span class="sd">        Open DO pins &amp; SPI port &amp; set CS(pin0) to high</span>
 <span class="linenos"> 83</span><span class="sd">        &#39;&#39;&#39;</span>
 <span class="linenos"> 84</span>
@@ -232,7 +232,7 @@
 <span class="linenos"> 94</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins</span><span class="p">(</span><span class="n">DO_port</span><span class="p">,</span> <span class="n">DO_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
 <span class="linenos"> 95</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DO_writePins in port </span><span class="si">{</span><span class="n">DO_port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 96</span>
-<span class="linenos"> 97</span>        <span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos"> 97</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos"> 98</span><span class="sd">        Set SPI parameter</span>
 <span class="linenos"> 99</span><span class="sd">        &#39;&#39;&#39;</span>
 <span class="linenos">100</span>
@@ -252,7 +252,7 @@
 <span class="linenos">114</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">SPI_setMode</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
 <span class="linenos">115</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SPI_setMode in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">116</span>
-<span class="linenos">117</span>        <span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos">117</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos">118</span><span class="sd">        Write data via SPI</span>
 <span class="linenos">119</span><span class="sd">        &#39;&#39;&#39;</span>
 <span class="linenos">120</span>
@@ -271,7 +271,7 @@
 <span class="linenos">133</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DO_writePins in port </span><span class="si">{</span><span class="n">DO_port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">134</span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
 <span class="linenos">135</span>
-<span class="linenos">136</span>        <span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos">136</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos">137</span><span class="sd">        Write data via SPI</span>
 <span class="linenos">138</span><span class="sd">        &#39;&#39;&#39;</span>
 <span class="linenos">139</span>
@@ -291,7 +291,7 @@
 <span class="linenos">153</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DO_writePins in port </span><span class="si">{</span><span class="n">DO_port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">154</span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
 <span class="linenos">155</span>
-<span class="linenos">156</span>        <span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos">156</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos">157</span><span class="sd">        Read data via SPI</span>
 <span class="linenos">158</span><span class="sd">        &#39;&#39;&#39;</span>
 <span class="linenos">159</span>
@@ -310,7 +310,7 @@
 <span class="linenos">172</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins</span><span class="p">(</span><span class="n">DO_port</span><span class="p">,</span> <span class="n">DO_index</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
 <span class="linenos">173</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DO_writePins in port </span><span class="si">{</span><span class="n">DO_port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">174</span>
-<span class="linenos">175</span>        <span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos">175</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos">176</span><span class="sd">        Close DO pins and SPI port</span>
 <span class="linenos">177</span><span class="sd">        &#39;&#39;&#39;</span>
 <span class="linenos">178</span>

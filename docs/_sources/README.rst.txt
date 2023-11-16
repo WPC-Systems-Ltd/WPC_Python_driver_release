@@ -30,7 +30,7 @@ In general, synchronous mode is easier to understand and debug, while asynchrono
     :target: https://pypi.org/project/wpcsys/
     :alt: Python
 
-.. image:: https://img.shields.io/badge/os-Windows%2010-brown.svg
+.. image:: https://img.shields.io/badge/os-Ubuntu%20&%20Windows%2010-brown.svg
     :target: https://www.microsoft.com/zh-tw/software-download/windows10
     :alt: OS
 

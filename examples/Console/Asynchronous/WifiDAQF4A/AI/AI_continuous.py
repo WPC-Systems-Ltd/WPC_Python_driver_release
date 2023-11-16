@@ -49,7 +49,7 @@ async def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.5.35") ## Depend on your device
+        dev.connect("192.168.5.38") ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle

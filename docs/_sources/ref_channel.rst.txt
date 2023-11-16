@@ -8,6 +8,7 @@ I/O channel function table
 
 
 - Ethan & Wifi series
+
 +----------------+----+-------+
 | Product/module |PWM |Counter|
 +----------------+----+-------+

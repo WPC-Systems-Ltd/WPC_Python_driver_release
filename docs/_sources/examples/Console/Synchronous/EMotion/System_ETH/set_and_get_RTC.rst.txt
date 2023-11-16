@@ -1,0 +1,6 @@
+Set and get RTC
+===============
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/EMotion/System_ETH/set_and_get_RTC.py
+   :language: python
+   :linenos:

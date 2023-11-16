@@ -11,7 +11,7 @@ Products Feature
    * -
       **Emotion**
          - Ethernet based motion controller modular inter-connection
-         - board:Easy and quick connect to Servo amplifier (Yaskawa, Panasonic, Mitsubishi, Delta...etc)
+         - board: Easy and quick connect to Servo amplifier (Yaskawa, Panasonic, Mitsubishi, Delta...etc)
          - Pulse/Direction or CW/CCW output mode
          - Differential output (Max: 8MPPS)
          - Encoder ABZ input (Max: 12MHz)
@@ -200,6 +200,7 @@ Products Feature
       **WifiDAQE3A**
          - 8ch 16-bit +/-10V analog input
          - Max sampling rate is 10KHz
+         - Built in 9DoF IMU with posture est.
          - Web-based configurator
          - 802.11 b/g/n WiFi
          - 2.4 GHz to 2.5 GHz

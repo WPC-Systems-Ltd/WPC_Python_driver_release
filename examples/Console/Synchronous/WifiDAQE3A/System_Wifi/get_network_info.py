@@ -32,7 +32,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.5.35") ## Depend on your device
+        dev.connect("192.168.5.38") ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -48,13 +48,6 @@ def main():
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-
-        ## Set RTC
-        status = dev.Sys_setRTC(2023, 5, 8, 15, 8, 7)
-        print(f"Set RTC status: {status}")
-
-        ## Get RTC
-        print(f"Get RTC: {dev.Sys_getRTC()}")
 
         ## Get IP & submask
         ip_addr, submask = dev.Net_getIPAddrAndSubmask(timeout=timeout)
