@@ -1,6 +1,11 @@
 WPC Python driver release changelog
 ===================================
 
+v3.0.6 Date: 2023/11/16, Developer: Chunglee_people
+---------------------------------------------------
+### Added
+- Add example code: AHRS_read.cs
+
 v3.0.5 Date: 2023/10/16, Developer: Chunglee_people
 ---------------------------------------------------
 ### Added
