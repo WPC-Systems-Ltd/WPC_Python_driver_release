@@ -1,4 +1,5 @@
 Error code,Error message
+570003,Occurrence AHRS queue overflow.
 570002,Occurrence CAN queue overflow.
 560001,Occurrence UART queue overflow.
 520003,Occurrence AI queue overflow.
@@ -32,6 +33,7 @@ Error code,Error message
 -7026,The bootloader error in the firmware.
 -7027,The parser error in the firmware.
 -7028,The other error in the firmware.
+-7601,AHRS port not available or already occupied by other process.
 -7701,The PWM channel is not available.
 -7702,The counter channel is not available.
 -7801,STEM port not available or already occupied by other process.
