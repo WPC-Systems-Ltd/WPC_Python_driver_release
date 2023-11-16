@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>STEM &mdash; WPC Python driver 3.0.5 documentation</title>
+  <title>STEM &mdash; WPC Python driver 3.0.6 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -18,7 +18,6 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -35,7 +34,7 @@
             <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.5
+                3.0.6
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -121,7 +120,17 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="pywpc.STEM">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pywpc.</span></span><span class="sig-name descname"><span class="pre">STEM</span></span><a class="headerlink" href="#pywpc.STEM" title="Permalink to this definition"></a></dt>
-<dd><dl class="py method">
+<dd><p><cite>STEM</cite> has 24ch-24V-DI/ 24ch-24V-DO/ 12-12ch-24V-DIO/ 24ch-5V-TTL/ 24ch-AIO.</p>
+<dl class="simple">
+<dt>Available ports:</dt><dd><ul class="simple">
+<li><p>AI : 1, 2, 4</p></li>
+<li><p>AO : 1, 2, 4</p></li>
+<li><p>DI : 0, 1, 2, 3, 4, 5, 6, 7</p></li>
+<li><p>DO : 0, 1, 2, 3, 4, 5, 6, 7</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.STEM.AI_close">
 <span class="sig-name descname"><span class="pre">AI_close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.STEM.AI_close" title="Permalink to this definition"></a></dt>
 <dd><p>Close AI module on a given port.</p>

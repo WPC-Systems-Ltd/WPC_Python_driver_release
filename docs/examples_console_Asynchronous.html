@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Example Codes - Console (async) &mdash; WPC Python driver 3.0.5 documentation</title>
+  <title>Example Codes - Console (async) &mdash; WPC Python driver 3.0.6 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/custom_sphinx.css" type="text/css" />
@@ -18,12 +18,11 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Find all devices" href="examples/Console/Asynchronous/DeviceFinder/Find_devices/find_all_devices.html" />
-    <link rel="prev" title="System hello world" href="examples/Console/Synchronous/WifiDAQF4A/System_Wifi/hello_world.html" /> 
+    <link rel="prev" title="Set and get RTC" href="examples/Console/Synchronous/WifiDAQF4A/System_Wifi/set_and_get_RTC.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -35,7 +34,7 @@
             <img src="_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.5
+                3.0.6
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -78,6 +77,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/DIO/DO_write_port.html">DO write port</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/System_ETH/hello_world.html">System hello world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -93,6 +93,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EDrive_ST/Drive/Drive_velocity_blending_acceleration.html">Drive velocity blending acceleration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EDrive_ST/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EDrive_ST/System_ETH/hello_world.html">System hello world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EDrive_ST/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EDrive_ST/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EDrive_ST/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EDrive_ST/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -125,6 +126,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_3axis_synchronous_move.html">Motion 3axis sync move</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/System_ETH/hello_world.html">System hello world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -140,6 +142,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/AI/AI_on_demand_once.html">AI on demand once</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/System_ETH/hello_world.html">System hello world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -156,6 +159,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanD/PWM/PWM_generate.html">PWM generate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanD/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanD/System_ETH/hello_world.html">System hello world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanD/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanD/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanD/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanD/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -166,6 +170,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanI/AI24Bit/AI_on_demand_once.html">AI on demand once</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanI/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanI/System_ETH/hello_world.html">System hello world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanI/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanI/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanI/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanI/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -177,6 +182,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/Relay/Relay_read_counters.html">Relay read counters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/System_ETH/hello_world.html">System hello world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -189,6 +195,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanO/AO/AO_waveform_gen.html">AO waveform generation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanO/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanO/System_ETH/hello_world.html">System hello world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanO/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanO/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanO/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanO/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -201,6 +208,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanT/Temperature_TC/TC_read_channel_status.html">TC read channel status</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanT/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanT/System_ETH/hello_world.html">System hello world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanT/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanT/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanT/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanT/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -230,6 +238,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/System_USB/get_pin_mode.html">System get pin mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/System_USB/get_USB_info.html">System get USB info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/System_USB/hello_world.html">System hello world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -262,6 +271,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/System_USB/get_pin_mode.html">System get pin mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/System_USB/get_USB_info.html">System get USB info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/System_USB/hello_world.html">System hello world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -287,6 +297,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1CD/System_USB/get_pin_mode.html">System get pin mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1CD/System_USB/get_USB_info.html">System get USB info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1CD/System_USB/hello_world.html">System hello world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1CD/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1CD/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1CD/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1CD/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -310,6 +321,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1D/System_USB/get_pin_mode.html">System get pin mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1D/System_USB/get_USB_info.html">System get USB info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1D/System_USB/hello_world.html">System hello world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1D/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1D/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1D/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1D/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -328,6 +340,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1DSNK/System_USB/get_pin_mode.html">System get pin mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1DSNK/System_USB/get_USB_info.html">System get USB info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1DSNK/System_USB/hello_world.html">System hello world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1DSNK/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1DSNK/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1DSNK/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1DSNK/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -354,6 +367,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1RD/System_USB/get_pin_mode.html">System get pin mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1RD/System_USB/get_USB_info.html">System get USB info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1RD/System_USB/hello_world.html">System hello world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1RD/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1RD/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1RD/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1RD/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -380,6 +394,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1TD/System_USB/get_pin_mode.html">System get pin mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1TD/System_USB/get_USB_info.html">System get USB info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1TD/System_USB/hello_world.html">System hello world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1TD/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1TD/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1TD/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1TD/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -393,9 +408,11 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/AI/AI_N_samples_in_loop.html">AI N samples in loop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/AI/AI_on_demand_in_loop.html">AI on demand in loop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/AI/AI_on_demand_once.html">AI on demand once</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/AHRS/AHRS_read.html">AHRS read</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/System_Wifi/get_network_info.html">System get network info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/System_Wifi/get_Wifi_DAQ_status.html">System get Wifi DAQ status</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/System_Wifi/hello_world.html">System hello world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/System_Wifi/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -412,6 +429,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/System_Wifi/get_network_info.html">System get network info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/System_Wifi/get_Wifi_DAQ_status.html">System get Wifi DAQ status</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/System_Wifi/hello_world.html">System hello world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/System_Wifi/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -487,6 +505,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/DIO/DO_write_port.html">DO write port</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/System_ETH/hello_world.html">System hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -506,6 +525,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EDrive_ST/Drive/Drive_velocity_blending_acceleration.html">Drive velocity blending acceleration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EDrive_ST/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EDrive_ST/System_ETH/hello_world.html">System hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EDrive_ST/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EDrive_ST/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EDrive_ST/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EDrive_ST/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -542,6 +562,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Motion/Motion_3axis_synchronous_move.html">Motion 3axis sync move</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/System_ETH/hello_world.html">System hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EMotion/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -561,6 +582,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/AI/AI_on_demand_once.html">AI on demand once</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/System_ETH/hello_world.html">System hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -581,6 +603,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanD/PWM/PWM_generate.html">PWM generate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanD/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanD/System_ETH/hello_world.html">System hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanD/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanD/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanD/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanD/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -595,6 +618,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanI/AI24Bit/AI_on_demand_once.html">AI on demand once</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanI/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanI/System_ETH/hello_world.html">System hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanI/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanI/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanI/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanI/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -610,6 +634,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/Relay/Relay_read_counters.html">Relay read counters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/System_ETH/hello_world.html">System hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanL/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -626,6 +651,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanO/AO/AO_waveform_gen.html">AO waveform generation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanO/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanO/System_ETH/hello_world.html">System hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanO/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanO/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanO/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanO/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -642,6 +668,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanT/Temperature_TC/TC_read_channel_status.html">TC read channel status</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanT/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanT/System_ETH/hello_world.html">System hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanT/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanT/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanT/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanT/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -675,6 +702,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/System_USB/get_pin_mode.html">System get pin mode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/System_USB/get_USB_info.html">System get USB info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/System_USB/hello_world.html">System hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -711,6 +739,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/System_USB/get_pin_mode.html">System get pin mode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/System_USB/get_USB_info.html">System get USB info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/System_USB/hello_world.html">System hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -740,6 +769,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1CD/System_USB/get_pin_mode.html">System get pin mode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1CD/System_USB/get_USB_info.html">System get USB info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1CD/System_USB/hello_world.html">System hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1CD/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1CD/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1CD/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1CD/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -767,6 +797,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1D/System_USB/get_pin_mode.html">System get pin mode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1D/System_USB/get_USB_info.html">System get USB info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1D/System_USB/hello_world.html">System hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1D/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1D/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1D/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1D/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -789,6 +820,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1DSNK/System_USB/get_pin_mode.html">System get pin mode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1DSNK/System_USB/get_USB_info.html">System get USB info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1DSNK/System_USB/hello_world.html">System hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1DSNK/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1DSNK/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1DSNK/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1DSNK/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -819,6 +851,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1RD/System_USB/get_pin_mode.html">System get pin mode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1RD/System_USB/get_USB_info.html">System get USB info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1RD/System_USB/hello_world.html">System hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1RD/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1RD/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1RD/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1RD/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -849,6 +882,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1TD/System_USB/get_pin_mode.html">System get pin mode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1TD/System_USB/get_USB_info.html">System get USB info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1TD/System_USB/hello_world.html">System hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1TD/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1TD/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1TD/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1TD/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -866,9 +900,11 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/AI/AI_N_samples_in_loop.html">AI N samples in loop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/AI/AI_on_demand_in_loop.html">AI on demand in loop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/AI/AI_on_demand_once.html">AI on demand once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/AHRS/AHRS_read.html">AHRS read</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/System_Wifi/get_network_info.html">System get network info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/System_Wifi/get_Wifi_DAQ_status.html">System get Wifi DAQ status</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/System_Wifi/hello_world.html">System hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/System_Wifi/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -889,6 +925,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/System_Wifi/get_network_info.html">System get network info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/System_Wifi/get_Wifi_DAQ_status.html">System get Wifi DAQ status</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/System_Wifi/hello_world.html">System hello world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/System_Wifi/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -902,7 +939,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="examples/Console/Synchronous/WifiDAQF4A/System_Wifi/hello_world.html" class="btn btn-neutral float-left" title="System hello world" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="examples/Console/Synchronous/WifiDAQF4A/System_Wifi/set_and_get_RTC.html" class="btn btn-neutral float-left" title="Set and get RTC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="examples/Console/Asynchronous/DeviceFinder/Find_devices/find_all_devices.html" class="btn btn-neutral float-right" title="Find all devices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

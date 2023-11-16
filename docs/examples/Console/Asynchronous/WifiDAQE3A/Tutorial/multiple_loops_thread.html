@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tutorial multiple loops thread &mdash; WPC Python driver 3.0.5 documentation</title>
+  <title>Tutorial multiple loops thread &mdash; WPC Python driver 3.0.6 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -18,7 +18,6 @@
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
-        <script src="../../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -35,7 +34,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.5
+                3.0.6
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -78,9 +77,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../AI/AI_N_samples_in_loop.html">AI N samples in loop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../AI/AI_on_demand_in_loop.html">AI on demand in loop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../AI/AI_on_demand_once.html">AI on demand once</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../AHRS/AHRS_read.html">AHRS read</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../System_Wifi/get_network_info.html">System get network info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../System_Wifi/get_Wifi_DAQ_status.html">System get Wifi DAQ status</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../System_Wifi/hello_world.html">System hello world</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../System_Wifi/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Tutorial multiple loops thread</a></li>
@@ -178,7 +179,7 @@
 <span class="linenos">49</span>
 <span class="linenos">50</span>    <span class="c1">## Connect to device</span>
 <span class="linenos">51</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos">52</span>        <span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;192.168.5.35&quot;</span><span class="p">)</span> <span class="c1">## Depend on your device</span>
+<span class="linenos">52</span>        <span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;192.168.5.38&quot;</span><span class="p">)</span> <span class="c1">## Depend on your device</span>
 <span class="linenos">53</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos">54</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="linenos">55</span>        <span class="c1">## Release device handle</span>
@@ -201,7 +202,7 @@
 <span class="linenos">72</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="linenos">73</span>
 <span class="linenos">74</span>    <span class="c1">## This part will execute immediately because the sync thread is running in parallel.</span>
-<span class="linenos">75</span>    <span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos">75</span><span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos">76</span><span class="sd">    # Disconnect device</span>
 <span class="linenos">77</span><span class="sd">    dev.disconnect()</span>
 <span class="linenos">78</span>

@@ -10,6 +10,9 @@ Error Code Table
    * - Error code
      - Type
      - Error messages
+   * - 570003
+     - Warning
+     - Occurrence AHRS queue overflow.
    * - 570002
      - Warning
      - Occurrence CAN queue overflow.
@@ -109,6 +112,9 @@ Error Code Table
    * - -7028
      - 
      - The other error in the firmware.
+   * - -7601
+     - 
+     - AHRS port not available or already occupied by other process.
    * - -7701
      - 
      - The PWM channel is not available.
