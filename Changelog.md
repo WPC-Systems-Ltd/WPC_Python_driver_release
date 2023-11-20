@@ -1,6 +1,11 @@
 WPC Python driver release changelog
 ===================================
 
+v3.0.7 Date: 2023/11/20, Developer: Chunglee_people
+---------------------------------------------------
+### Fixed
+- Fix module reopen issue
+
 v3.0.6 Date: 2023/11/16, Developer: Chunglee_people
 ---------------------------------------------------
 ### Added

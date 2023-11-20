@@ -78,7 +78,7 @@ def main():
         print("Slot mode:", slot_mode)
 
         ## If the slot mode is not set to "AIO", set the slot mode to "AIO"
-        if port_mode != "AIO":
+        if slot_mode != "AIO":
             err = dev.Sys_setAIOMode(slot, timeout=timeout)
             print(f"Sys_setAIOMode in slot {slot}: {err}")
 

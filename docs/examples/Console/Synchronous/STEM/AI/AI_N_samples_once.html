@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI N samples once &mdash; WPC Python driver 3.0.6 documentation</title>
+  <title>AI N samples once &mdash; WPC Python driver 3.0.7 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.6
+                3.0.7
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -213,7 +213,7 @@
 <span class="linenos"> 78</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Slot mode:&quot;</span><span class="p">,</span> <span class="n">slot_mode</span><span class="p">)</span>
 <span class="linenos"> 79</span>
 <span class="linenos"> 80</span>        <span class="c1">## If the slot mode is not set to &quot;AIO&quot;, set the slot mode to &quot;AIO&quot;</span>
-<span class="linenos"> 81</span>        <span class="k">if</span> <span class="n">port_mode</span> <span class="o">!=</span> <span class="s2">&quot;AIO&quot;</span><span class="p">:</span>
+<span class="linenos"> 81</span>        <span class="k">if</span> <span class="n">slot_mode</span> <span class="o">!=</span> <span class="s2">&quot;AIO&quot;</span><span class="p">:</span>
 <span class="linenos"> 82</span>            <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_setAIOMode</span><span class="p">(</span><span class="n">slot</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
 <span class="linenos"> 83</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sys_setAIOMode in slot </span><span class="si">{</span><span class="n">slot</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 84</span>
