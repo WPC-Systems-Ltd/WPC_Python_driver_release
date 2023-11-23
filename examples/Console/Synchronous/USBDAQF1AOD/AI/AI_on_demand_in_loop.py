@@ -62,12 +62,10 @@ def main():
         err = dev.AI_setMode(port, mode, timeout=timeout)
         print(f"AI_setMode {mode} in port {port}: {err}")
 
-        ## Read AI data with 5 times
-        print(f"data in port {port}: ")
+        ## Read AI
         for i in range(5):
-            ## data acquisition
             data = dev.AI_readOnDemand(port)
-            print(f"{data}")
+            print(f"data in port {port}: {data}")
 
         ## Close AI
         err = dev.AI_close(port, timeout=timeout)

@@ -93,10 +93,9 @@ def main():
         err = dev.AI_setMode(slot, mode, timeout=timeout)
         print(f"AI_setMode {mode} in slot {slot}: {err}")
 
-        ## Read data acquisition
+        ## Read AI
         data =  dev.AI_readOnDemand(slot, timeout=timeout)
-        print(f"data in slot {slot}: ")
-        print(f"{data}")
+        print(f"data in slot {slot}: {data}")
 
         ## Close AI
         err = dev.AI_close(slot, timeout=timeout)

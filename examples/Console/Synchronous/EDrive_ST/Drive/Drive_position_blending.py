@@ -78,7 +78,7 @@ def main():
         print(f"Drive_start: {err}")
 
         ## Wait for 3 seconds for moving
-        time.sleep(3)
+        time.sleep(3) ## delay [s]
 
         ## EDrive-ST read encoder position
         posi = dev.Drive_readEncoderPosition(port, timeout=timeout)

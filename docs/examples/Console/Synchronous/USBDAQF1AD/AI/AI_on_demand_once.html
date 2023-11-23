@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI on demand once &mdash; WPC Python driver 3.0.7 documentation</title>
+  <title>AI on demand once &mdash; WPC Python driver 3.0.8 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.7
+                3.0.8
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -66,7 +66,6 @@
 <li class="toctree-l3"><a class="reference internal" href="AI_continuous.html">AI continuous</a></li>
 <li class="toctree-l3"><a class="reference internal" href="AI_continuous_with_logger.html">AI continuous with logger</a></li>
 <li class="toctree-l3"><a class="reference internal" href="AI_N_samples_once.html">AI N samples once</a></li>
-<li class="toctree-l3"><a class="reference internal" href="AI_N_samples_in_loop.html">AI N samples in loop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="AI_on_demand_in_loop.html">AI on demand in loop</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">AI on demand once</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Counter/Counter_read.html">Counter read</a></li>
@@ -199,27 +198,26 @@
 <span class="linenos">61</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_setMode</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
 <span class="linenos">62</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_setMode </span><span class="si">{</span><span class="n">mode</span><span class="si">}</span><span class="s2"> in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">63</span>
-<span class="linenos">64</span>        <span class="c1">## Read data acquisition</span>
+<span class="linenos">64</span>        <span class="c1">## Read AI</span>
 <span class="linenos">65</span>        <span class="n">data</span> <span class="o">=</span>  <span class="n">dev</span><span class="o">.</span><span class="n">AI_readOnDemand</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">66</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;data in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: &quot;</span><span class="p">)</span>
-<span class="linenos">67</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">68</span>
-<span class="linenos">69</span>        <span class="c1">## Close AI</span>
-<span class="linenos">70</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_close</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">71</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_close in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">72</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos">73</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="linenos">74</span>
-<span class="linenos">75</span>    <span class="c1">## Disconnect device</span>
-<span class="linenos">76</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
-<span class="linenos">77</span>
-<span class="linenos">78</span>    <span class="c1">## Release device handle</span>
-<span class="linenos">79</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="linenos">80</span>
-<span class="linenos">81</span>    <span class="k">return</span>
-<span class="linenos">82</span>
-<span class="linenos">83</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">84</span>    <span class="n">main</span><span class="p">()</span>
+<span class="linenos">66</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;data in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">67</span>
+<span class="linenos">68</span>        <span class="c1">## Close AI</span>
+<span class="linenos">69</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_close</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">70</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_close in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">71</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos">72</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">73</span>
+<span class="linenos">74</span>    <span class="c1">## Disconnect device</span>
+<span class="linenos">75</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+<span class="linenos">76</span>
+<span class="linenos">77</span>    <span class="c1">## Release device handle</span>
+<span class="linenos">78</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos">79</span>
+<span class="linenos">80</span>    <span class="k">return</span>
+<span class="linenos">81</span>
+<span class="linenos">82</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">83</span>    <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>

@@ -71,7 +71,7 @@ async def main():
                 for frame in frame_list:
                     print(frame)
             else:
-                ## Wait for 0.01 seconds
+                ## Wait
                 await asyncio.sleep(0.01) ## delay [s]
 
         ## Set CAN port and stop CAN

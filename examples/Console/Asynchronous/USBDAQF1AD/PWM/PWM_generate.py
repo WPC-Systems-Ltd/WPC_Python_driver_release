@@ -67,7 +67,7 @@ async def main():
         print(f"PWM_start_async in channel {channel}: {err}")
 
         ## delay for 5 seconds
-        time.sleep(5)
+        time.sleep(5) ## delay [s]
 
         ## Stop PWM
         err = await dev.PWM_stop_async(channel)

@@ -95,7 +95,7 @@ async def main():
         err = await dev.Motion_startSingleAxisMove_async(port, axis)
         print(f"startSingleAxisMove_async in axis{axis}: {err}")
 
-        await asyncio.sleep(5)
+        await asyncio.sleep(5) ## delay [s]
 
         ## Motion override velocity
         new_velo = -3000
@@ -108,7 +108,7 @@ async def main():
         err = await dev.Motion_overrideAxisAccel_async(port, axis, new_accel, new_decel)
         print(f"overrideAxisAccel_async in axis{axis}: {err}")
 
-        await asyncio.sleep(5)
+        await asyncio.sleep(5) ## delay [s]
 
         new_velo = 6000
         new_accel = 100000

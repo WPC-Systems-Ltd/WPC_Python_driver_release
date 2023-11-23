@@ -2,7 +2,7 @@
 AI - AI_N_samples_once.py with synchronous mode.
 
 This example demonstrates the process of obtaining AI data in N-sample mode.
-Additionally, it gets AI data with 50 points in once from USBDAQF1AD.
+Additionally, it gets AI data with points in once from USBDAQF1AD.
 
 To begin with, it demonstrates the steps to open the AI and configure the AI parameters.
 Next, it outlines the procedure for reading the streaming AI data.
@@ -48,9 +48,9 @@ def main():
         port = 0 ## Depend on your device
         mode = 1 ## 0 : On demand, 1 : N-samples, 2 : Continuous
         sampling_rate = 1000
-        samples = 50
-        read_points = 50
-        delay = 0.05 ## second
+        samples = 200
+        read_points = 200
+        delay = 0.5 ## second
         timeout = 3  ## second
 
         ## Get firmware model & version
@@ -66,26 +66,32 @@ def main():
         err = dev.AI_setMode(port, mode, timeout=timeout)
         print(f"AI_setMode {mode} in port {port}: {err}")
 
-        ## Set AI sampling rate to 1k (Hz)
+        ## Set AI sampling rate
         err = dev.AI_setSamplingRate(port, sampling_rate, timeout=timeout)
         print(f"AI_setSamplingRate {sampling_rate} in port {port}: {err}")
 
-        ## Set AI # of samples to 50 (pts)
+        ## Set AI # of samples
         err = dev.AI_setNumSamples(port, samples, timeout=timeout)
         print(f"AI_setNumSamples {samples} in port {port}: {err}")
 
-        ## Start AI acquisition
+        ## Start AI
         err = dev.AI_start(port, timeout=timeout)
         print(f"AI_start in port {port}: {err}")
 
-        ## Wait 1 seconds for acquisition
-        time.sleep(1) ## delay [s]
-
-        ## Read data acquisition
+        ## Read AI
         data = dev.AI_readStreaming(port, read_points, delay=delay)
-        print(f"data in port {port}: ")
-        for i in range(len(data)):
-            print(f"{data[i]}")
+        print(f"number of samples = {len(data)}" )
+
+        ok = True
+        for i, samp in enumerate(data):
+            ## Check for any missing data
+            if len(samp) != 8:
+                print(i, samp)
+                ok = False
+        if ok:
+            print('OK')
+        else:
+            print('NG')
 
         ## Stop AI
         err = dev.AI_stop(port, timeout=timeout)

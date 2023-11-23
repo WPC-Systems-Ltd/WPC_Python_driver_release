@@ -114,17 +114,17 @@ def main():
         ## Set CS(pin0) to low
         err = dev.DO_writePins(DO_port, DO_index, [0], timeout=timeout)
         print(f"DO_writePins in port {DO_port}: {err}")
-        time.sleep(0.01)
+        time.sleep(0.01) ## delay [s]
 
         ## Write WREN byte
         err = dev.SPI_write(port, [WREN], timeout=timeout)
         print(f"SPI_write in port {port}: {err}")
-        time.sleep(0.01)
+        time.sleep(0.01) ## delay [s]
 
         ## Set CS(pin0) to high
         err = dev.DO_writePins(DO_port, DO_index, [1], timeout=timeout)
         print(f"DO_writePins in port {DO_port}: {err}")
-        time.sleep(0.05)
+        time.sleep(0.05) ## delay [s]
 
         '''
         Write data via SPI
@@ -133,12 +133,12 @@ def main():
         ## Set CS(pin0) to low
         err = dev.DO_writePins(DO_port, DO_index, [0], timeout=timeout)
         print(f"DO_writePins in port {DO_port}: {err}")
-        time.sleep(0.01)
+        time.sleep(0.01) ## delay [s]
 
         ## Write data byte 0x55 in to address 0x0002
         err = dev.SPI_write(port, [WRITE, 0x00, 0x02, 0x55], timeout=timeout)
         print(f"SPI_write in port {port}: {err}")
-        time.sleep(0.01)
+        time.sleep(0.01) ## delay [s]
 
         ## Set CS(pin0) to high
         err = dev.DO_writePins(DO_port, DO_index, [1], timeout=timeout)

@@ -87,7 +87,7 @@ def main():
         err = dev.I2C_write(port, device_address, [word_address, value], timeout=timeout)
         print(f"I2C_write in port {port}: {err}")
         print(f"write data: 0x{value:02X}")
-        time.sleep(0.05)
+        time.sleep(0.05) ## delay [s]
 
         '''
         Read data via I2C

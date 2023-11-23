@@ -39,8 +39,8 @@ def main():
     try:
         ## Parameters setting
         port = None ## Depend on your device
+        delay = 1 ## second
         timeout = 3  ## second
-        delay = 1
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)

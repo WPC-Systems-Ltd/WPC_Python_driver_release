@@ -2,7 +2,7 @@
 AI - AI_N_samples_once.py with synchronous mode.
 
 This example demonstrates the process of obtaining AI data in N-sample mode.
-Additionally, it gets AI data with 50 points in once from STEM.
+Additionally, it gets AI data with points in once from STEM.
 
 To begin with, it demonstrates the steps to open the AI and configure the AI parameters.
 Next, it outlines the procedure for reading the streaming AI data.
@@ -62,9 +62,9 @@ def main():
         slot = 1 ## Connect AIO module to slot
         mode = 1 ## 0 : On demand, 1 : N-samples, 2 : Continuous
         sampling_rate = 1000
-        samples = 50
-        read_points = 50
-        delay = 0.05 ## second
+        samples = 200
+        read_points = 200
+        delay = 0.5 ## second
         timeout = 3  ## second
         chip_select = [0, 1]
 
@@ -98,26 +98,32 @@ def main():
         err = dev.AI_setMode(slot, mode, timeout=timeout)
         print(f"AI_setMode {mode} in slot {slot}: {err}")
 
-        ## Set AI sampling rate to 1k (Hz)
+        ## Set AI sampling rate
         err = dev.AI_setSamplingRate(slot, sampling_rate, timeout=timeout)
         print(f"AI_setSamplingRate {sampling_rate} in slot {slot}: {err}")
 
-        ## Set AI # of samples to 50 (pts)
+        ## Set AI # of samples
         err = dev.AI_setNumSamples(slot, samples, timeout=timeout)
         print(f"AI_setNumSamples {samples} in slot {slot}: {err}")
 
-        ## Start AI acquisition
+        ## Start AI
         err = dev.AI_start(slot, timeout=timeout)
         print(f"AI_start in slot {slot}: {err}")
 
-        ## Wait 1 seconds for acquisition
-        time.sleep(1) ## delay [s]
-
-        ## Read data acquisition
+        ## Read AI data
         data = dev.AI_readStreaming(slot, read_points, delay=delay)
-        print(f"data in slot {slot}: ")
-        for i in range(len(data)):
-            print(f"{data[i]}")
+        print(f"number of samples = {len(data)}" )
+
+        ok = True
+        for i, samp in enumerate(data):
+            ## Check for any missing data
+            if len(samp) != len(chip_select)*8:
+                print(i, samp)
+                ok = False
+        if ok:
+            print('OK')
+        else:
+            print('NG')
 
         ## Stop AI
         err = dev.AI_stop(slot, timeout=timeout)
