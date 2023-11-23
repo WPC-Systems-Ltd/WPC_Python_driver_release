@@ -39,7 +39,6 @@ async def main():
     try:
         ## Parameters setting
         channel = 1 ## Depend on your device
-        timeout = 3  ## second
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo()

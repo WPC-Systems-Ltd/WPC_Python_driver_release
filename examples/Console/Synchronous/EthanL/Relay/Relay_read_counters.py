@@ -38,7 +38,7 @@ def main():
 
     try:
         ## Parameters setting
-        timeout = 3
+        timeout = 3 ## second
         index = -1
 
         ## Get firmware model & version

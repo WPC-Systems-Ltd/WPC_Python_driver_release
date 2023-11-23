@@ -47,7 +47,7 @@ def main():
         over_sampling_mode = 0  ## 0:1 sample, 1:2 samples, 2:4 sample, 3:8 samples, 4:16 samples
         thermo_type = 3         ## 0:B type, 1:E type, 2:J type, 3:K type
                                 ## 4:N type, 5:R type, 6:S type, 7:T type
-        timeout = 3  ## second
+        timeout = 3 ## second
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)

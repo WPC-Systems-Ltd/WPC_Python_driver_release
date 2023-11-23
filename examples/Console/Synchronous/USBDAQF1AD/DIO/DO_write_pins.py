@@ -45,7 +45,7 @@ def main():
         ## Parameters setting
         port = 0 ## Depend on your device
         pin_index = [0, 1, 2, 3]
-        timeout = 3  ## second
+        timeout = 3 ## second
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)

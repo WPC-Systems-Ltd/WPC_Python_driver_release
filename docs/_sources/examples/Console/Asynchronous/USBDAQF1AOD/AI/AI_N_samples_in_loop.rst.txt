@@ -1,6 +1,0 @@
-AI N samples in loop
-====================
-
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/USBDAQF1AOD/AI/AI_N_samples_in_loop.py
-   :language: python
-   :linenos:

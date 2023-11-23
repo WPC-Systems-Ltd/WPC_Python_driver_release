@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>I2C write and read &mdash; WPC Python driver 3.0.7 documentation</title>
+  <title>I2C write and read &mdash; WPC Python driver 3.0.8 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.7
+                3.0.8
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -179,7 +179,7 @@
 <span class="linenos"> 47</span>        <span class="n">port</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">## Depend on your device</span>
 <span class="linenos"> 48</span>        <span class="n">mode</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="linenos"> 49</span>        <span class="n">device_address</span> <span class="o">=</span> <span class="mh">0x50</span> <span class="c1">## 01010000</span>
-<span class="linenos"> 50</span>        <span class="n">timeout</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1">## second</span>
+<span class="linenos"> 50</span>        <span class="n">timeout</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1">## second</span>
 <span class="linenos"> 51</span>
 <span class="linenos"> 52</span>        <span class="c1">## Generate random data</span>
 <span class="linenos"> 53</span>        <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -219,7 +219,7 @@
 <span class="linenos"> 87</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">I2C_write</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">device_address</span><span class="p">,</span> <span class="p">[</span><span class="n">word_address</span><span class="p">,</span> <span class="n">value</span><span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
 <span class="linenos"> 88</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I2C_write in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 89</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;write data: 0x</span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">02X</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 90</span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="linenos"> 90</span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span> <span class="c1">## delay [s]</span>
 <span class="linenos"> 91</span>
 <span class="linenos"> 92</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos"> 93</span><span class="sd">        Read data via I2C</span>

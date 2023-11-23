@@ -43,7 +43,7 @@ def main():
 
         ## Operation and stop mode
         stop_decel = 0
-        timeout = 3  ## second
+        timeout = 3 ## second
 
         ## Polarity and enable parameters
         active_low = 0
@@ -93,7 +93,7 @@ def main():
         print("forward_hit: ", forward_hit)
 
         ## Wait for 3 seconds for moving
-        time.sleep(3) ## [sec]
+        time.sleep(3) ## delay [s]
 
         ## EDrive-ST Stop
         err = dev.Drive_stop(port, stop_decel, timeout=timeout)

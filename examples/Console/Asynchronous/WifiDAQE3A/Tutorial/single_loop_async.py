@@ -25,7 +25,7 @@ async def loop_func(handle, timeout=3, delay=1):
     while t < timeout:
         data = await handle.Sys_getRTC_async()
         print("RTC Time:" + str(data))
-        await asyncio.sleep(delay)  ## delay(sec)
+        await asyncio.sleep(delay) ## delay [s]
         t += delay
 
 async def main():

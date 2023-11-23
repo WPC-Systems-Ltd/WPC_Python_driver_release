@@ -55,7 +55,7 @@ def main():
     try:
         ## Parameters setting
         slot = 1 ## Connect DIO module to slot
-        timeout = 3  ## second
+        timeout = 3 ## second
         DO_port = 0
         DI_port = 1
         DO_pins = [0, 1, 2, 3]

@@ -62,7 +62,7 @@ def main():
     try:
         ## Parameters setting
         slot = 1 ## Connect AIO module to slot
-        timeout = 3  ## second
+        timeout = 3 ## second
         chip_select = [0]
 
         ## Get firmware model & version

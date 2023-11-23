@@ -48,7 +48,7 @@ def main():
         port = 1 ## Depend on your device
         ch0 = 0
         ch1 = 1
-        timeout = 3  ## second
+        timeout = 3 ## second
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)

@@ -1,8 +1,8 @@
 '''
 AI - AI_continuous_with_logger.py with asynchronous mode.
 
-This example demonstrates the process of obtaining AI data in continuous mode and saving it into a CSV file.
-Additionally, it utilizes a loop to retrieve AI data with 8 channels from WifiDAQE3A with a timeout of 100 ms.
+This example demonstrates the process of obtaining AI data in continuous mode with 8 channels from WifiDAQE3A.
+Then, save data into CSV file.
 
 To begin with, it demonstrates the steps to open the AI and configure the AI parameters.
 Next, it outlines the procedure for reading and saving the streaming AI data.
@@ -26,22 +26,6 @@ import asyncio
 from wpcsys import pywpc
 
 
-async def loop_func(handle, port, get_samples=600, delay=0.05, exit_time=3):
-    time_cal = 0
-    while time_cal < exit_time:
-        ## Read data acquisition
-        data = await handle.AI_readStreaming_async(port, get_samples, delay=delay)
-        ## Write data into CSV file
-        handle.Logger_write2DList(data)
-
-        ## Print data
-        for i in range(len(data)):
-            print(f"{data[i]}")
-
-        ## Wait
-        await asyncio.sleep(delay)  ## delay [s]
-        time_cal += delay
-
 async def main():
     ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
@@ -62,7 +46,9 @@ async def main():
         ## Parameters setting
         port = 0 ## Depend on your device
         mode = 2 ## 0 : On demand, 1 : N-samples, 2 : Continuous.
-        sampling_rate = 1000
+        sampling_rate = 200
+        read_points = 100
+        delay = 0.2 ## second
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -85,28 +71,32 @@ async def main():
         err = await dev.AI_setMode_async(port, mode)
         print(f"AI_setMode_async {mode} in port {port}: {err}")
 
-        ## Set AI sampling rate to 1k (Hz)
+        ## Set AI sampling rate
         err = await dev.AI_setSamplingRate_async(port, sampling_rate)
         print(f"AI_setSamplingRate_async {sampling_rate} in port {port}: {err}")
 
-        ## Start AI acquisition
+        ## Start AI
         err = await dev.AI_start_async(port)
         print(f"AI_start_async in port {port}: {err}")
 
-        ## Wait 1 seconds for acquisition
+        ## Wait for acquisition
         await asyncio.sleep(1) ## delay [s]
-
-        ## Set loop parameters
-        get_samples = 200
-        delay = 0.05
-        exit_time = 0.1
-
-        ## Start loop
-        await loop_func(dev, port, get_samples, delay, exit_time)
 
         ## Stop AI
         err = await dev.AI_stop_async(port)
         print(f"AI_stop_async in port {port}: {err}")
+
+        data_len = 1
+        while data_len > 0:
+            ## Read data acquisition
+            data = await dev.AI_readStreaming_async(port, read_points, delay=delay)
+            print(f"number of samples = {len(data)}" )
+
+            ## Write data into CSV file
+            dev.Logger_write2DList(data)
+
+            ## Update data len
+            data_len = len(data)
 
         ## Close AI
         err = await dev.AI_close_async(port)

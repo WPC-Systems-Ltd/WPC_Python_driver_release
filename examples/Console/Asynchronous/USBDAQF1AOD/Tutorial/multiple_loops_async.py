@@ -24,12 +24,12 @@ async def readRTC_loop(handle, delay=1):
     while True:
         rtc = await handle.Sys_getRTC_async()
         print(f"RTC Time: {rtc}")
-        await asyncio.sleep(delay)  ## delay(second)
+        await asyncio.sleep(delay) ## delay [s]
 
 async def printString_loop(handle, delay=1):
     while True:
         print("WPC Systems Ltd")
-        await asyncio.sleep(delay)  # delay(second)
+        await asyncio.sleep(delay) ## delay [s]
 
 async def main():
     ## Get Python driver version

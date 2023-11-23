@@ -48,7 +48,7 @@ async def main():
         theo_grav = 9.81
         dt = 0.003
         offset_z = 0.003
-        delay = 0.05
+        delay = 0.05 ## second
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -67,7 +67,7 @@ async def main():
         err = await dev.AHRS_start_async(port, mask)
         print(f"AHRS_start_async in port {port}: {err}")
 
-        ## Wait 1 seconds for acquisition
+        ## Wait for acquisition
         await asyncio.sleep(1) ## delay [s]
 
         ## Read AHRS estimation

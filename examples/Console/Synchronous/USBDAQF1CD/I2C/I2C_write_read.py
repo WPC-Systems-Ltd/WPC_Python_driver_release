@@ -47,7 +47,7 @@ def main():
         port = 1 ## Depend on your device
         mode = 0
         device_address = 0x50 ## 01010000
-        timeout = 3  ## second
+        timeout = 3 ## second
 
         ## Generate random data
         import numpy as np
@@ -87,7 +87,7 @@ def main():
         err = dev.I2C_write(port, device_address, [word_address, value], timeout=timeout)
         print(f"I2C_write in port {port}: {err}")
         print(f"write data: 0x{value:02X}")
-        time.sleep(0.05)
+        time.sleep(0.05) ## delay [s]
 
         '''
         Read data via I2C

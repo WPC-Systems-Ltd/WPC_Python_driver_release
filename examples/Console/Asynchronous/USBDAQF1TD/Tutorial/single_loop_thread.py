@@ -24,12 +24,12 @@ from wpcsys import pywpc
 async def getRTC(handle, delay=1):
     data = await handle.Sys_getRTC_async()
     print("RTC Time:" + str(data))
-    await asyncio.sleep(delay)  ## delay(second)
+    await asyncio.sleep(delay) ## delay [s]
 
 def RTC_thread(handle, delay=1):
     while True:
         asyncio.run(getRTC(handle, delay))
-        time.sleep(delay)
+        time.sleep(delay) ## delay [s]
 
 async def main():
     ## Get Python driver version
