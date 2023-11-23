@@ -38,7 +38,7 @@ def main():
         ## Parameters setting
         port = 0 ## Depend on your device
         stop_decel = 0
-        timeout = 3  ## second
+        timeout = 3 ## second
 
         ## Linear interpolation parameters
         axis1 = 0

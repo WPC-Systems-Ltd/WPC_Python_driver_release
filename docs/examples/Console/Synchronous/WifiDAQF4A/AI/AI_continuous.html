@@ -18,6 +18,7 @@
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -172,7 +173,7 @@
 <span class="linenos"> 48</span>        <span class="n">sampling_rate</span> <span class="o">=</span> <span class="mi">200</span>
 <span class="linenos"> 49</span>        <span class="n">read_points</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="linenos"> 50</span>        <span class="n">delay</span> <span class="o">=</span> <span class="mf">0.2</span> <span class="c1">## second</span>
-<span class="linenos"> 51</span>        <span class="n">timeout</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1">## second</span>
+<span class="linenos"> 51</span>        <span class="n">timeout</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1">## second</span>
 <span class="linenos"> 52</span>
 <span class="linenos"> 53</span>        <span class="c1">## Get firmware model &amp; version</span>
 <span class="linenos"> 54</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
@@ -203,7 +204,7 @@
 <span class="linenos"> 79</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_stop in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 80</span>
 <span class="linenos"> 81</span>        <span class="n">data_len</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="linenos"> 82</span>        <span class="k">while</span> <span class="n">data_len</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+<span class="linenos"> 82</span>        <span class="k">while</span> <span class="n">data_len</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
 <span class="linenos"> 83</span>            <span class="c1">## Read data acquisition</span>
 <span class="linenos"> 84</span>            <span class="n">data</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_readStreaming</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">read_points</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="n">delay</span><span class="p">)</span>
 <span class="linenos"> 85</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;number of samples = </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">)</span>

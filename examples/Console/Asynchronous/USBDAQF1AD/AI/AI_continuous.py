@@ -48,7 +48,6 @@ async def main():
         sampling_rate = 200
         read_points = 100
         delay = 0.2 ## second
-        timeout = 3  ## second
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -79,7 +78,7 @@ async def main():
         print(f"AI_stop_async in port {port}: {err}")
 
         data_len = 1
-        while data_len>0:
+        while data_len > 0:
             ## Read data acquisition
             data = await dev.AI_readStreaming_async(port, read_points, delay=delay)
             print(f"number of samples = {len(data)}" )

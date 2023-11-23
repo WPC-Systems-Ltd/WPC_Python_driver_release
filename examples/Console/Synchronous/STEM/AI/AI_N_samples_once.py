@@ -65,7 +65,7 @@ def main():
         samples = 200
         read_points = 200
         delay = 0.5 ## second
-        timeout = 3  ## second
+        timeout = 3 ## second
         chip_select = [0, 1]
 
         ## Get firmware model & version

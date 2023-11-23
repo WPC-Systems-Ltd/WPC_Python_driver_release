@@ -18,6 +18,7 @@
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -184,7 +185,7 @@
 <span class="linenos"> 47</span>        <span class="n">data_bit_mode</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">## 0 : 8-bit data, 1 : 9-bit data.</span>
 <span class="linenos"> 48</span>        <span class="n">parity_mode</span> <span class="o">=</span> <span class="mi">0</span>    <span class="c1">## 0 : None, 2 : Even parity, 3 : Odd parity.</span>
 <span class="linenos"> 49</span>        <span class="n">stop_bit_mode</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">## 0 : 1 bit, 1 : 0.5 bits, 2 : 2 bits, 3 : 1.5 bits</span>
-<span class="linenos"> 50</span>        <span class="n">timeout</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1">## second</span>
+<span class="linenos"> 50</span>        <span class="n">timeout</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1">## second</span>
 <span class="linenos"> 51</span>
 <span class="linenos"> 52</span>        <span class="c1">## Get firmware model &amp; version</span>
 <span class="linenos"> 53</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>

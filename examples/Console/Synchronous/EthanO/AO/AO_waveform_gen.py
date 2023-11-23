@@ -52,7 +52,7 @@ def main():
         offset = 0.1
         freq_0 = 10
         freq_1 = 20
-        timeout = 3  ## second
+        timeout = 3 ## second
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)

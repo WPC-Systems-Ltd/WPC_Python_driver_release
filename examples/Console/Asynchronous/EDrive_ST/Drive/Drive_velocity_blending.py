@@ -43,7 +43,6 @@ async def main():
 
         ## Operation and stop mode
         stop_decel = 0
-        timeout = 3  ## second
 
         ## Polarity and enable parameters
         active_low = 0

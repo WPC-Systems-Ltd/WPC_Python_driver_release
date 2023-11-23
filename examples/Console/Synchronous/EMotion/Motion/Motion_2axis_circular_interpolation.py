@@ -40,7 +40,7 @@ def main():
         axis = 0
         stop_decel = 0
         rel_posi_mode = 1
-        timeout = 3  ## second
+        timeout = 3 ## second
 
         ## Circular interpolation parameters
         x_axis = 0

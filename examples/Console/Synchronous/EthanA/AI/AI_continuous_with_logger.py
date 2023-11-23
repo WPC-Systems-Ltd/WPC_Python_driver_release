@@ -49,7 +49,7 @@ def main():
         sampling_rate = 200
         read_points = 100
         delay = 0.2 ## second
-        timeout = 3  ## second
+        timeout = 3 ## second
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
@@ -88,7 +88,7 @@ def main():
         print(f"AI_stop in port {port}: {err}")
 
         data_len = 1
-        while data_len>0:
+        while data_len > 0:
             ## Read data acquisition
             data = dev.AI_readStreaming(port, read_points, delay=delay)
             print(f"number of samples = {len(data)}" )

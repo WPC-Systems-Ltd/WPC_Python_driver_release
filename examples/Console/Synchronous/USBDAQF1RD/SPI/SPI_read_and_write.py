@@ -57,7 +57,7 @@ def main():
             DO_port = 3
             DO_index = [2] ## CS pin
 
-        timeout = 3  ## second
+        timeout = 3 ## second
 
         ## Generate random data
         import numpy as np

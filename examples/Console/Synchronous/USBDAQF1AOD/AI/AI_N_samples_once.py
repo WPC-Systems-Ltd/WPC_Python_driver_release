@@ -51,7 +51,7 @@ def main():
         samples = 200
         read_points = 200
         delay = 0.5 ## second
-        timeout = 3  ## second
+        timeout = 3 ## second
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)

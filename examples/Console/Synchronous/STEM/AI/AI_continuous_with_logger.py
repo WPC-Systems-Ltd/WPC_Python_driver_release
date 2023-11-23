@@ -63,7 +63,7 @@ def main():
         sampling_rate = 200
         read_points = 100
         delay = 0.2 ## second
-        timeout = 3  ## second
+        timeout = 3 ## second
         chip_select = [0, 1]
 
         ## Get firmware model & version
@@ -120,7 +120,7 @@ def main():
         print(f"AI_stop in slot {slot}: {err}")
 
         data_len = 1
-        while data_len>0:
+        while data_len > 0:
             ## Read data acquisition
             data = dev.AI_readStreaming(slot, read_points, delay=delay)
             print(f"number of samples = {len(data)}" )
