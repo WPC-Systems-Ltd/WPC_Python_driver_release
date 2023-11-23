@@ -22,8 +22,6 @@ STEM
 
    examples/Console/Asynchronous/STEM/AI/AI_N_samples_once.rst
 
-   examples/Console/Asynchronous/STEM/AI/AI_N_samples_in_loop.rst
-
    examples/Console/Asynchronous/STEM/AI/AI_on_demand_in_loop.rst
 
    examples/Console/Asynchronous/STEM/AI/AI_on_demand_once.rst
@@ -176,8 +174,6 @@ Ethan-A
    examples/Console/Asynchronous/EthanA/AI/AI_continuous_with_logger.rst
 
    examples/Console/Asynchronous/EthanA/AI/AI_N_samples_once.rst
-
-   examples/Console/Asynchronous/EthanA/AI/AI_N_samples_in_loop.rst
 
    examples/Console/Asynchronous/EthanA/AI/AI_on_demand_in_loop.rst
 
@@ -347,8 +343,6 @@ USB-DAQ-F1-AD
 
    examples/Console/Asynchronous/USBDAQF1AD/AI/AI_N_samples_once.rst
 
-   examples/Console/Asynchronous/USBDAQF1AD/AI/AI_N_samples_in_loop.rst
-
    examples/Console/Asynchronous/USBDAQF1AD/AI/AI_on_demand_in_loop.rst
 
    examples/Console/Asynchronous/USBDAQF1AD/AI/AI_on_demand_once.rst
@@ -407,8 +401,6 @@ USB-DAQ-F1-AOD
    examples/Console/Asynchronous/USBDAQF1AOD/AI/AI_continuous_with_logger.rst
 
    examples/Console/Asynchronous/USBDAQF1AOD/AI/AI_N_samples_once.rst
-
-   examples/Console/Asynchronous/USBDAQF1AOD/AI/AI_N_samples_in_loop.rst
 
    examples/Console/Asynchronous/USBDAQF1AOD/AI/AI_on_demand_in_loop.rst
 
@@ -726,8 +718,6 @@ Wifi-DAQ-E3-A
 
    examples/Console/Asynchronous/WifiDAQE3A/AI/AI_N_samples_once.rst
 
-   examples/Console/Asynchronous/WifiDAQE3A/AI/AI_N_samples_in_loop.rst
-
    examples/Console/Asynchronous/WifiDAQE3A/AI/AI_on_demand_in_loop.rst
 
    examples/Console/Asynchronous/WifiDAQE3A/AI/AI_on_demand_once.rst
@@ -762,8 +752,6 @@ Wifi-DAQ-F4-A
    examples/Console/Asynchronous/WifiDAQF4A/AI/AI_continuous_with_logger.rst
 
    examples/Console/Asynchronous/WifiDAQF4A/AI/AI_N_samples_once.rst
-
-   examples/Console/Asynchronous/WifiDAQF4A/AI/AI_N_samples_in_loop.rst
 
    examples/Console/Asynchronous/WifiDAQF4A/AI/AI_on_demand_in_loop.rst
 

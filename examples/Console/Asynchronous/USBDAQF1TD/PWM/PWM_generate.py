@@ -44,7 +44,7 @@ async def main():
         channel = 0 ## Depend on your device
         frequency = 100
         duty_cycle = 50
-        timeout = 3  ## second
+        timeout = 3 ## second
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo()
@@ -67,7 +67,7 @@ async def main():
         print(f"PWM_start_async in channel {channel}: {err}")
 
         ## delay for 5 seconds
-        time.sleep(5)
+        time.sleep(5) ## delay [s]
 
         ## Stop PWM
         err = await dev.PWM_stop_async(channel)

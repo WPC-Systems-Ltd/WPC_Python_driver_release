@@ -40,7 +40,7 @@ def main():
         axis = 0
         rel_posi_mode = 1
         stop_decel = 0
-        timeout = 3  ## second
+        timeout = 3 ## second
 
         ## Polarity and enable parameters
         active_low = 0

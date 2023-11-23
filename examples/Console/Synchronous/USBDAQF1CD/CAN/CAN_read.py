@@ -45,7 +45,7 @@ def main():
         port = 1 ## Depend on your device
         speed = 0 ## 0 = 125 KHz, 1 = 250 kHz, 2 = 500 kHz, 3 = 1 MHz
         delay = 0.005 ## second
-        timeout = 3  ## second
+        timeout = 3 ## second
 
         ## Get Firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)

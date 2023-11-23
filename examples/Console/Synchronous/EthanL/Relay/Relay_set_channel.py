@@ -39,7 +39,7 @@ def main():
     try:
         ## Parameters setting
         DO_port = 0
-        timeout = 3
+        timeout = 3 ## second
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)

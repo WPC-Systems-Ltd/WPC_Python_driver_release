@@ -41,7 +41,7 @@ def main():
         target_position = 30000
         new_position = 0
         stop_decel = 0
-        timeout = 3  ## second
+        timeout = 3 ## second
 
         ## Polarity and enable parameters
         active_low = 0
@@ -78,7 +78,7 @@ def main():
         print(f"Drive_start: {err}")
 
         ## Wait for 3 seconds for moving
-        time.sleep(3)
+        time.sleep(3) ## delay [s]
 
         ## EDrive-ST read encoder position
         posi = dev.Drive_readEncoderPosition(port, timeout=timeout)

@@ -40,7 +40,7 @@ def main():
         target_position = 10000
         relative_position_mode = 1
         stop_decel = 0
-        timeout = 3  ## second
+        timeout = 3 ## second
 
         ## Polarity and enable parameters
         active_low = 0

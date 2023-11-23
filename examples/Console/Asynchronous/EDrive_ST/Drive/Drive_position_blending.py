@@ -41,7 +41,6 @@ async def main():
         target_position = 30000
         new_position = 0
         stop_decel = 0
-        timeout = 3  ## second
 
         ## Polarity and enable parameters
         active_low = 0

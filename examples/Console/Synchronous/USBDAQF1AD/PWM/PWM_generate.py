@@ -44,7 +44,7 @@ def main():
         channel = 0 ## Depend on your device
         frequency = 100
         duty_cycle = 50
-        timeout = 3  ## second
+        timeout = 3 ## second
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
@@ -67,7 +67,7 @@ def main():
         print(f"PWM_start in channel {channel}: {err}")
 
         ## delay for 5 seconds
-        time.sleep(5)
+        time.sleep(5) ## delay [s]
 
         ## Stop PWM
         err = dev.PWM_stop(channel, timeout=timeout)

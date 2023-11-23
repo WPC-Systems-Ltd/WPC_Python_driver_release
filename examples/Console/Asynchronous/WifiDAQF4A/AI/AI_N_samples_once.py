@@ -2,7 +2,7 @@
 AI - AI_N_samples_once.py with asynchronous mode.
 
 This example demonstrates the process of obtaining AI data in N-sample mode.
-Additionally, it gets AI data with 50 points in once from WifiDAQF4A.
+Additionally, it gets AI data with points in once from WifiDAQF4A.
 
 To begin with, it demonstrates the steps to open the AI and configure the AI parameters.
 Next, it outlines the procedure for reading the streaming AI data.
@@ -47,10 +47,9 @@ async def main():
         port = 0 ## Depend on your device
         mode = 1 ## 0 : On demand, 1 : N-samples, 2 : Continuous
         sampling_rate = 1000
-        samples = 50
-        read_points = 50
-        delay = 0.05 ## second
-        chip_select = [0, 1]
+        samples = 200
+        read_points = 200
+        delay = 0.5 ## second
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -65,28 +64,32 @@ async def main():
         err = await dev.AI_setMode_async(port, mode)
         print(f"AI_setMode_async {mode} in port {port}: {err}")
 
-        ## Set AI sampling rate to 1k (Hz)
+        ## Set AI sampling rate
         err = await dev.AI_setSamplingRate_async(port, sampling_rate)
         print(f"AI_setSamplingRate_async {sampling_rate} in port {port}: {err}")
 
-        ## Set AI # of samples to 50 (pts)
+        ## Set AI # of samples
         err = await dev.AI_setNumSamples_async(port, samples)
         print(f"AI_setNumSamples_async {samples} in port {port}: {err}")
 
-        ## Start AI acquisition
+        ## Start AI
         err = await dev.AI_start_async(port)
         print(f"AI_start_async in port {port}: {err}")
 
-        ## Wait 1 seconds for acquisition
-        await asyncio.sleep(1) ## delay [s]
-
-        ## Data acquisition
+        ## Read AI
         data = await dev.AI_readStreaming_async(port, read_points, delay=delay)
+        print(f"number of samples = {len(data)}" )
 
-        ## Read acquisition data 50 points
-        print(f"data in port {port}: ")
-        for i in range(len(data)):
-            print(f"{data[i]}")
+        ok = True
+        for i, samp in enumerate(data):
+            ## Check for any missing data
+            if len(samp) != 8:
+                print(i, samp)
+                ok = False
+        if ok:
+            print('OK')
+        else:
+            print('NG')
 
         ## Stop AI
         err = await dev.AI_stop_async(port)

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>System get Wifi DAQ status &mdash; WPC Python driver 3.0.7 documentation</title>
+  <title>System get Wifi DAQ status &mdash; WPC Python driver 3.0.8 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -18,6 +18,7 @@
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -34,7 +35,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.7
+                3.0.8
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -73,7 +74,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../AI/AI_continuous.html">AI continuous</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../AI/AI_continuous_with_logger.html">AI continuous with logger</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../AI/AI_N_samples_once.html">AI N samples once</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../AI/AI_N_samples_in_loop.html">AI N samples in loop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../AI/AI_on_demand_in_loop.html">AI on demand in loop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../AI/AI_on_demand_once.html">AI on demand once</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../AHRS/AHRS_read.html">AHRS read</a></li>
@@ -165,7 +165,7 @@
 <span class="linenos">39</span>    <span class="k">try</span><span class="p">:</span>
 <span class="linenos">40</span>        <span class="c1">## Parameters setting</span>
 <span class="linenos">41</span>        <span class="n">port</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1">## Depend on your device</span>
-<span class="linenos">42</span>        <span class="n">timeout</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1">## second</span>
+<span class="linenos">42</span>        <span class="n">timeout</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1">## second</span>
 <span class="linenos">43</span>
 <span class="linenos">44</span>        <span class="c1">## Get firmware model &amp; version</span>
 <span class="linenos">45</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>

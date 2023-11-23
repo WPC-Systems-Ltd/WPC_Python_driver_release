@@ -1,8 +1,8 @@
 '''
 AI - AI_continuous_with_logger.py with synchronous mode.
 
-This example demonstrates the process of obtaining AI data in continuous mode and saving it into a CSV file.
-Additionally, it utilizes a loop to retrieve AI data with 8 channels from WifiDAQE3A with a timeout of 100 ms.
+This example demonstrates the process of obtaining AI data in continuous mode with 8 channels from WifiDAQE3A.
+Then, save data into CSV file.
 
 To begin with, it demonstrates the steps to open the AI and configure the AI parameters.
 Next, it outlines the procedure for reading and saving the streaming AI data.
@@ -26,23 +26,6 @@ import time
 from wpcsys import pywpc
 
 
-def loop_func(handle, port, get_samples=600, delay=0.05, exit_time=3):
-    time_cal = 0
-    while time_cal < exit_time:
-        ## Read data acquisition
-        data = handle.AI_readStreaming(port, get_samples, delay=delay)
-
-        ## Write data into CSV file
-        handle.Logger_write2DList(data)
-
-        ## Print data
-        for i in range(len(data)):
-            print(f"{data[i]}")
-
-        ## Wait
-        time.sleep(delay) ## delay [s]
-        time_cal += delay
-
 def main():
     ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
@@ -63,8 +46,10 @@ def main():
         ## Parameters setting
         port = 0 ## Depend on your device
         mode = 2 ## 0 : On demand, 1 : N-samples, 2 : Continuous.
-        sampling_rate = 1000
-        timeout = 3  ## second
+        sampling_rate = 200
+        read_points = 100
+        delay = 0.2 ## second
+        timeout = 3 ## second
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
@@ -87,25 +72,32 @@ def main():
         err = dev.AI_setMode(port, mode, timeout=timeout)
         print(f"AI_setMode {mode} in port {port}: {err}")
 
-        ## Set AI sampling rate to 1k (Hz)
+        ## Set AI sampling rate
         err = dev.AI_setSamplingRate(port, sampling_rate, timeout=timeout)
         print(f"AI_setSamplingRate {sampling_rate} in port {port}: {err}")
 
-        ## Start AI acquisition
+        ## Start AI
         err = dev.AI_start(port, timeout=timeout)
         print(f"AI_start in port {port}: {err}")
 
-        ## Set loop parameters
-        get_samples = 200
-        delay = 0.05
-        exit_time = 0.1
-
-        ## Start loop
-        loop_func(dev, port, get_samples, delay, exit_time)
+        ## Wait a while for data acquisition
+        time.sleep(1) ## delay [s]
 
         ## Stop AI
         err = dev.AI_stop(port, timeout=timeout)
         print(f"AI_stop in port {port}: {err}")
+
+        data_len = 1
+        while data_len > 0:
+            ## Read data acquisition
+            data = dev.AI_readStreaming(port, read_points, delay=delay)
+            print(f"number of samples = {len(data)}" )
+
+            ## Write data into CSV file
+            dev.Logger_write2DList(data)
+
+            ## Update data len
+            data_len = len(data)
 
         ## Close AI
         err = dev.AI_close(port, timeout=timeout)

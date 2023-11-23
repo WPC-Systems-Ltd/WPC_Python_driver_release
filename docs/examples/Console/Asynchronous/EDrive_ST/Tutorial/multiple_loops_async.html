@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tutorial multiple loops async &mdash; WPC Python driver 3.0.7 documentation</title>
+  <title>Tutorial multiple loops async &mdash; WPC Python driver 3.0.8 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -18,6 +18,7 @@
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -34,7 +35,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.7
+                3.0.8
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -152,12 +153,12 @@
 <span class="linenos">24</span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
 <span class="linenos">25</span>        <span class="n">rtc</span> <span class="o">=</span> <span class="k">await</span> <span class="n">handle</span><span class="o">.</span><span class="n">Sys_getRTC_async</span><span class="p">()</span>
 <span class="linenos">26</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RTC Time: </span><span class="si">{</span><span class="n">rtc</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">27</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span>  <span class="c1">## delay(second)</span>
+<span class="linenos">27</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span> <span class="c1">## delay [s]</span>
 <span class="linenos">28</span>
 <span class="linenos">29</span><span class="k">async</span> <span class="k">def</span> <span class="nf">printString_loop</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
 <span class="linenos">30</span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
 <span class="linenos">31</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WPC Systems Ltd&quot;</span><span class="p">)</span>
-<span class="linenos">32</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span>  <span class="c1"># delay(second)</span>
+<span class="linenos">32</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span> <span class="c1">## delay [s]</span>
 <span class="linenos">33</span>
 <span class="linenos">34</span><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
 <span class="linenos">35</span>    <span class="c1">## Get Python driver version</span>

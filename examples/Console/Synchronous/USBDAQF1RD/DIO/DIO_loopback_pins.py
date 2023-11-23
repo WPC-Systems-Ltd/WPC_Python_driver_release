@@ -44,7 +44,7 @@ def main():
 
     try:
         ## Parameters setting
-        timeout = 3  ## second
+        timeout = 3 ## second
         DO_port = 0
         DI_port = 1
         DO_pins = [0, 1, 2, 3]

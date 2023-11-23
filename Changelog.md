@@ -1,6 +1,11 @@
 WPC Python driver release changelog
 ===================================
 
+v3.0.8 Date: 2023/11/23, Developer: Chunglee_people
+---------------------------------------------------
+### Fixed
+- Fix AI readStreaming's returned data length
+
 v3.0.7 Date: 2023/11/20, Developer: Chunglee_people
 ---------------------------------------------------
 ### Fixed
