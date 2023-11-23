@@ -41,7 +41,7 @@ def main():
         one_pulse_mode = 0
         two_pulse_mode = 1
         stop_decel = 0
-        timeout = 3  ## second
+        timeout = 3 ## second
 
         ## Axis and encoder parameters
         axis_dir_cw = 0

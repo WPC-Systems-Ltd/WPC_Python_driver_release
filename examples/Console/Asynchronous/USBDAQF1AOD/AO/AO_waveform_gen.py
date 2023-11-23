@@ -101,7 +101,7 @@ async def main():
         err = await dev.AO_startStreaming_async(port)
         print(f"AO_startStreaming_async in port {port}: {err}")
 
-        ## Wait for 10 seconds to generate form
+        ## Wait for generating form
         await asyncio.sleep(10)  ## delay [s]
 
         ## Close AO streaming

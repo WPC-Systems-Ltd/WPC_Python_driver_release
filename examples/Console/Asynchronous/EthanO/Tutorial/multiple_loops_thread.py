@@ -24,21 +24,21 @@ from wpcsys import pywpc
 async def getRTC(handle, delay=1):
     data = await handle.Sys_getRTC_async()
     print("RTC Time:" + str(data))
-    await asyncio.sleep(delay)  ## delay(second)
+    await asyncio.sleep(delay)  ## delay [s]
 
 async def printString(handle, delay=1):
     print("WPC Systems Ltd")
-    await asyncio.sleep(delay)  # delay(second)
+    await asyncio.sleep(delay)  ## delay [s]
 
 def RTC_thread(handle, delay):
     while True:
         asyncio.run(getRTC(handle, delay))
-        time.sleep(1)
+        time.sleep(1) ## delay [s]
 
 def Print_thread(handle, delay):
     while True:
         asyncio.run(printString(handle, delay))
-        time.sleep(1)
+        time.sleep(1) ## delay [s]
 
 async def main():
     ## Get Python driver version

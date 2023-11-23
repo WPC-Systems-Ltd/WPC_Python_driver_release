@@ -48,8 +48,8 @@ def main():
         theo_grav = 9.81
         dt = 0.003
         offset_z = 0.003
-        delay = 0.05
-        timeout = 3  ## second
+        delay = 0.05 ## second
+        timeout = 3 ## second
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)

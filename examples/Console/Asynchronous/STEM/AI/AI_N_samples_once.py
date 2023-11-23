@@ -2,7 +2,7 @@
 AI - AI_N_samples_once.py with asynchronous mode.
 
 This example demonstrates the process of obtaining AI data in N-sample mode.
-Additionally, it gets AI data with 50 points in once from STEM.
+Additionally, it gets AI data with points in once from STEM.
 
 To begin with, it demonstrates the steps to open the AI and configure the AI parameters.
 Next, it outlines the procedure for reading the streaming AI data.
@@ -61,9 +61,9 @@ async def main():
         slot = 1 ## Connect AIO module to slot
         mode = 1 ## 0 : On demand, 1 : N-samples, 2 : Continuous
         sampling_rate = 1000
-        samples = 50
-        read_points = 50
-        delay = 0.05 ## second
+        samples = 200
+        read_points = 200
+        delay = 0.5 ## second
         chip_select = [0, 1]
 
         ## Get firmware model & version
@@ -96,32 +96,36 @@ async def main():
         err = await dev.AI_setMode_async(slot, mode)
         print(f"AI_setMode_async {mode} in slot {slot}: {err}")
 
-        ## Set AI sampling rate to 1k (Hz)
+        ## Set AI sampling rate
         err = await dev.AI_setSamplingRate_async(slot, sampling_rate)
         print(f"AI_setSamplingRate_async {sampling_rate} in slot {slot}: {err}")
 
-        ## Set AI # of samples to 50 (pts)
+        ## Set AI # of samples
         err = await dev.AI_setNumSamples_async(slot, samples)
         print(f"AI_setNumSamples_async {samples} in slot {slot}: {err}")
 
-        ## Start AI acquisition
+        ## Start AI
         err = await dev.AI_start_async(slot)
         print(f"AI_start_async in slot {slot}: {err}")
 
-        ## Wait 1 seconds for acquisition
-        await asyncio.sleep(1) ## delay [s]
-
-        ## Data acquisition
+        ## Read AI
         data = await dev.AI_readStreaming_async(slot, read_points, delay=delay)
+        print(f"number of samples = {len(data)}" )
 
-        ## Read acquisition data 50 points
-        print(f"data in slot {slot}: ")
-        for i in range(len(data)):
-            print(f"{data[i]}")
+        ok = True
+        for i, samp in enumerate(data):
+            ## Check for any missing data
+            if len(samp) != len(chip_select)*8:
+                print(i, samp)
+                ok = False
+        if ok:
+            print('OK')
+        else:
+            print('NG')
 
         ## Stop AI
-        err = await dev.AI_stop_async(port)
-        print(f"AI_stop_async in port {port}: {err}")
+        err = await dev.AI_stop_async(slot)
+        print(f"AI_stop_async in port {slot}: {err}")
 
         ## Close AI
         err = await dev.AI_close_async(slot)

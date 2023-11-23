@@ -47,7 +47,7 @@ def main():
         data_bit_mode = 0  ## 0 : 8-bit data, 1 : 9-bit data.
         parity_mode = 0    ## 0 : None, 2 : Even parity, 3 : Odd parity.
         stop_bit_mode = 0  ## 0 : 1 bit, 1 : 0.5 bits, 2 : 2 bits, 3 : 1.5 bits
-        timeout = 3  ## second
+        timeout = 3 ## second
         read_bytes = 20
         delay = 0.005 ## second
 

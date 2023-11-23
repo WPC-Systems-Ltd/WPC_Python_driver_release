@@ -39,7 +39,7 @@ def main():
         port = 0 ## Depend on your device
         axis = 0
         stop_decel = 0
-        timeout = 3  ## second
+        timeout = 3 ## second
 
         ## Helical parameters
         center_x = 0

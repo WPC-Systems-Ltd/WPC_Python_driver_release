@@ -55,7 +55,7 @@ def main():
         ## Parameters setting
         slot = 1 ## Connect DIO module to slot
         DO_port = 1
-        timeout = 3  ## second
+        timeout = 3 ## second
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
