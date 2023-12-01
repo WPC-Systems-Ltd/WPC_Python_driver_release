@@ -12,6 +12,14 @@ If you want to build your own AO application, try to use this as a basic templat
 
 ## How to use this example
 
+### AO output range
+
+| Product/module  |AO range    |
+|:---------------:|:----------:|
+| USB-DAQ-F1-AOD  | 0 ~ 5 V    |
+| Ethan-O         | -10 ~ 10 V |
+| STEM            | -10 ~ 10 V |
+
 ### Hardware Requirement
 
 In order to run this example, you should get USBDAQF1AOD product, which contains AO function.
@@ -22,7 +30,7 @@ Then, we take `USBDAQF1AOD` for example.
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-USBDAQF1AOD.JPG" alt="drawing" width="600"/>
 
-## AO interfacing SOP 
+## AO interfacing SOP
 
 Create device handle -> Connect to device -> Open AO port -> Write AO signal -> Close AO port -> Disconnect device -> Release device handle.
 

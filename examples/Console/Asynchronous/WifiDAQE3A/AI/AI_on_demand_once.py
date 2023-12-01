@@ -61,8 +61,8 @@ async def main():
         print(f"AI_setMode_async {mode} in port {port}: {err}")
 
         ## Read AI
-        data = await dev.AI_readOnDemand_async(port)
-        print(f"data in port {port}: {data}")
+        ai_list = await dev.AI_readOnDemand_async(port)
+        print(f"data in port {port}: {ai_list}")
 
         ## Close AI
         err = await dev.AI_close_async(port)

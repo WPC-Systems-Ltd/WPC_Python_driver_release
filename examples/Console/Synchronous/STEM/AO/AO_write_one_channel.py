@@ -26,7 +26,6 @@ import time
 from wpcsys import pywpc
 
 
-
 def main():
     ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
@@ -46,13 +45,14 @@ def main():
     try:
         ## Parameters setting
         slot = 1 ## Connect AIO module to slot
+        ao_value_list = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5]
         timeout = 3 ## second
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
-        
+
         ## Get slot mode
         slot_mode = dev.Sys_getMode(slot, timeout=timeout)
         print("Slot mode:", slot_mode)
@@ -65,26 +65,26 @@ def main():
         ## Get slot mode
         slot_mode = dev.Sys_getMode(slot, timeout=timeout)
         print("Slot mode:", slot_mode)
-        
+
         ## Open AO
         err = dev.AO_open(slot, timeout=timeout)
         print(f"AO_open in slot {slot}: {err}")
 
-        ## Write AO 1.5(V) in channel 0
-        err = dev.AO_writeOneChannel(slot, 0, 1.5, timeout=timeout)
-        print(f"AO_writeOneChannel in ch0 in slot {slot}: {err}")
+        ## Write AO vaule in channel 0
+        err = dev.AO_writeOneChannel(slot, 0, ao_value_list[0], timeout=timeout)
+        print(f"In slot {slot} channel 0, the AO value is {ao_value_list[0]}: {err}")
 
-        ## Write AO 2.5(V) in channel 1
-        err = dev.AO_writeOneChannel(slot, 1, 2.5, timeout=timeout)
-        print(f"AO_writeOneChannel in ch1 in slot {slot}: {err}")
+        ## Write AO vaule in channel 1
+        err = dev.AO_writeOneChannel(slot, 1, ao_value_list[1], timeout=timeout)
+        print(f"In slot {slot} channel 1, the AO value is {ao_value_list[1]}: {err}")
 
-        ## Write AO 3.5(V) in channel 2
-        err = dev.AO_writeOneChannel(slot, 2, 3.5, timeout=timeout)
-        print(f"AO_writeOneChannel in ch2 in slot {slot}: {err}")
+        ## Write AO vaule in channel 2
+        err = dev.AO_writeOneChannel(slot, 2, ao_value_list[2], timeout=timeout)
+        print(f"In slot {slot} channel 2, the AO value is {ao_value_list[2]}: {err}")
 
-        ## Write AO 4.5(V) in channel 3
-        err = dev.AO_writeOneChannel(slot, 3, 4.5, timeout=timeout)
-        print(f"AO_writeOneChannel in ch3 in slot {slot}: {err}")
+        ## Write AO vaule in channel 3
+        err = dev.AO_writeOneChannel(slot, 3, ao_value_list[3], timeout=timeout)
+        print(f"In slot {slot} channel 3, the AO value is {ao_value_list[3]}: {err}")
 
         ## Close AO
         err = dev.AO_close(slot)

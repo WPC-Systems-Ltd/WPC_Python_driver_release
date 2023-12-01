@@ -62,8 +62,8 @@ def main():
         print(f"AI_setMode {mode} in port {port}: {err}")
 
         ## Read AI
-        data =  dev.AI_readOnDemand(port, timeout=timeout)
-        print(f"data in port {port}: {data}")
+        ai_list = dev.AI_readOnDemand(port, timeout=timeout)
+        print(f"data in port {port}: {ai_list}")
 
         ## Close AI
         err = dev.AI_close(port, timeout=timeout)

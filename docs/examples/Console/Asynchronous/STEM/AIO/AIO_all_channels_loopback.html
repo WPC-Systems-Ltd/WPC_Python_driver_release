@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AIO all channels loopback &mdash; WPC Python driver 3.0.8 documentation</title>
+  <title>AIO all channels loopback &mdash; WPC Python driver 3.0.11 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -21,7 +21,7 @@
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="DO blinky pins" href="../DIO/DO_blinky_pins.html" />
+    <link rel="next" title="AO output while AI streaming" href="AO_output_while_AI_streaming.html" />
     <link rel="prev" title="AIO one channel loopback" href="AIO_one_channel_loopback.html" /> 
 </head>
 
@@ -34,7 +34,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.8
+                3.0.11
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -60,11 +60,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../AI/AI_N_samples_once.html">AI N samples once</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../AI/AI_on_demand_in_loop.html">AI on demand in loop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../AI/AI_on_demand_once.html">AI on demand once</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../AI/AI_continuous_multi_slot.html">AI continuous multi slot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../AO/AO_write_all_channels.html">AO write all channels</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../AO/AO_write_one_channel.html">AO write one channel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../AO/AO_waveform_gen.html">AO waveform generation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="AIO_one_channel_loopback.html">AIO one channel loopback</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">AIO all channels loopback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AO_output_while_AI_streaming.html">AO output while AI streaming</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../DIO/DO_blinky_pins.html">DO blinky pins</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../DIO/DO_blinky_port.html">DO blinky port</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../DIO/DIO_loopback_pins.html">DIO loopback pins</a></li>
@@ -199,50 +201,50 @@
 <span class="linenos"> 61</span>    <span class="k">try</span><span class="p">:</span>
 <span class="linenos"> 62</span>        <span class="c1">## Parameters setting</span>
 <span class="linenos"> 63</span>        <span class="n">slot</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">## Connect AIO module to slot</span>
-<span class="linenos"> 64</span>        <span class="n">chip_select</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="linenos"> 65</span>
-<span class="linenos"> 66</span>        <span class="c1">## Get firmware model &amp; version</span>
-<span class="linenos"> 67</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo_async</span><span class="p">()</span>
-<span class="linenos"> 68</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="linenos"> 69</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="linenos"> 70</span>
-<span class="linenos"> 71</span>        <span class="c1">## Get slot mode</span>
-<span class="linenos"> 72</span>        <span class="n">slot_mode</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getMode_async</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
-<span class="linenos"> 73</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;slot mode:&quot;</span><span class="p">,</span> <span class="n">slot_mode</span><span class="p">)</span>
-<span class="linenos"> 74</span>
-<span class="linenos"> 75</span>        <span class="c1">## If the slot mode is not set to &quot;AIO&quot;, set the slot mode to &quot;AIO&quot;</span>
-<span class="linenos"> 76</span>        <span class="k">if</span> <span class="n">slot_mode</span> <span class="o">!=</span> <span class="s2">&quot;AIO&quot;</span><span class="p">:</span>
-<span class="linenos"> 77</span>            <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_setAIOMode_async</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
-<span class="linenos"> 78</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sys_setAIOMode_async in slot </span><span class="si">{</span><span class="n">slot</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 79</span>
-<span class="linenos"> 80</span>        <span class="c1">## Get slot mode</span>
-<span class="linenos"> 81</span>        <span class="n">slot_mode</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getMode_async</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
-<span class="linenos"> 82</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;slot mode:&quot;</span><span class="p">,</span> <span class="n">slot_mode</span><span class="p">)</span>
-<span class="linenos"> 83</span>
-<span class="linenos"> 84</span>        <span class="c1">## Open AI</span>
-<span class="linenos"> 85</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_open_async</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
-<span class="linenos"> 86</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_open_async in slot </span><span class="si">{</span><span class="n">slot</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 87</span>
-<span class="linenos"> 88</span>        <span class="c1">## Enable CS</span>
-<span class="linenos"> 89</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_enableCS_async</span><span class="p">(</span><span class="n">slot</span><span class="p">,</span> <span class="n">chip_select</span><span class="p">)</span>
-<span class="linenos"> 90</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_enableCS_async in slot </span><span class="si">{</span><span class="n">slot</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 91</span>
-<span class="linenos"> 92</span>        <span class="c1">## Open AO</span>
-<span class="linenos"> 93</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AO_open_async</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
-<span class="linenos"> 94</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AO_open_async in slot </span><span class="si">{</span><span class="n">slot</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 95</span>
-<span class="linenos"> 96</span>        <span class="c1">## Read data acquisition</span>
-<span class="linenos"> 97</span>        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_readOnDemand_async</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
-<span class="linenos"> 98</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI data in slot </span><span class="si">{</span><span class="n">slot</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 99</span>
-<span class="linenos">100</span>        <span class="c1">## Write AO value simultaneously</span>
-<span class="linenos">101</span>        <span class="c1">## CH0~CH1 5V, CH2~CH3 3V, CH4~CH5 2V, CH6~CH7 0V</span>
-<span class="linenos">102</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AO_writeAllChannels_async</span><span class="p">(</span><span class="n">slot</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
-<span class="linenos">103</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AO_writeAllChannels_async in slot </span><span class="si">{</span><span class="n">slot</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 64</span>        <span class="n">ao_value_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">]</span>
+<span class="linenos"> 65</span>        <span class="n">chip_select</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos"> 66</span>
+<span class="linenos"> 67</span>        <span class="c1">## Get firmware model &amp; version</span>
+<span class="linenos"> 68</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo_async</span><span class="p">()</span>
+<span class="linenos"> 69</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="linenos"> 70</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos"> 71</span>
+<span class="linenos"> 72</span>        <span class="c1">## Get slot mode</span>
+<span class="linenos"> 73</span>        <span class="n">slot_mode</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getMode_async</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
+<span class="linenos"> 74</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;slot mode:&quot;</span><span class="p">,</span> <span class="n">slot_mode</span><span class="p">)</span>
+<span class="linenos"> 75</span>
+<span class="linenos"> 76</span>        <span class="c1">## If the slot mode is not set to &quot;AIO&quot;, set the slot mode to &quot;AIO&quot;</span>
+<span class="linenos"> 77</span>        <span class="k">if</span> <span class="n">slot_mode</span> <span class="o">!=</span> <span class="s2">&quot;AIO&quot;</span><span class="p">:</span>
+<span class="linenos"> 78</span>            <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_setAIOMode_async</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
+<span class="linenos"> 79</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sys_setAIOMode_async in slot </span><span class="si">{</span><span class="n">slot</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 80</span>
+<span class="linenos"> 81</span>        <span class="c1">## Get slot mode</span>
+<span class="linenos"> 82</span>        <span class="n">slot_mode</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getMode_async</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
+<span class="linenos"> 83</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;slot mode:&quot;</span><span class="p">,</span> <span class="n">slot_mode</span><span class="p">)</span>
+<span class="linenos"> 84</span>
+<span class="linenos"> 85</span>        <span class="c1">## Open AI</span>
+<span class="linenos"> 86</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_open_async</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
+<span class="linenos"> 87</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_open_async in slot </span><span class="si">{</span><span class="n">slot</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 88</span>
+<span class="linenos"> 89</span>        <span class="c1">## Enable CS</span>
+<span class="linenos"> 90</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_enableCS_async</span><span class="p">(</span><span class="n">slot</span><span class="p">,</span> <span class="n">chip_select</span><span class="p">)</span>
+<span class="linenos"> 91</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_enableCS_async in slot </span><span class="si">{</span><span class="n">slot</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 92</span>
+<span class="linenos"> 93</span>        <span class="c1">## Open AO</span>
+<span class="linenos"> 94</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AO_open_async</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
+<span class="linenos"> 95</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AO_open_async in slot </span><span class="si">{</span><span class="n">slot</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 96</span>
+<span class="linenos"> 97</span>        <span class="c1">## Read data acquisition</span>
+<span class="linenos"> 98</span>        <span class="n">ai_list</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_readOnDemand_async</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
+<span class="linenos"> 99</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI data in slot </span><span class="si">{</span><span class="n">slot</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">ai_list</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">100</span>
+<span class="linenos">101</span>        <span class="c1">## Write AO value simultaneously</span>
+<span class="linenos">102</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AO_writeAllChannels_async</span><span class="p">(</span><span class="n">slot</span><span class="p">,</span> <span class="n">ao_value_list</span><span class="p">)</span>
+<span class="linenos">103</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;In slot </span><span class="si">{</span><span class="n">slot</span><span class="si">}</span><span class="s2"> the AO value is </span><span class="si">{</span><span class="n">ao_value_list</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">104</span>
 <span class="linenos">105</span>        <span class="c1">## Read data acquisition</span>
-<span class="linenos">106</span>        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_readOnDemand_async</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
-<span class="linenos">107</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI data in slot </span><span class="si">{</span><span class="n">slot</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">106</span>        <span class="n">ai_list</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_readOnDemand_async</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
+<span class="linenos">107</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI data in slot </span><span class="si">{</span><span class="n">slot</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">ai_list</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">108</span>
 <span class="linenos">109</span>        <span class="c1">## Close AI</span>
 <span class="linenos">110</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_close_async</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
@@ -280,7 +282,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="AIO_one_channel_loopback.html" class="btn btn-neutral float-left" title="AIO one channel loopback" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../DIO/DO_blinky_pins.html" class="btn btn-neutral float-right" title="DO blinky pins" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="AO_output_while_AI_streaming.html" class="btn btn-neutral float-right" title="AO output while AI streaming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

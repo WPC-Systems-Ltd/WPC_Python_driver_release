@@ -94,8 +94,8 @@ async def main():
 
         ## Read AI
         for i in range(5):
-            data = await dev.AI_readOnDemand_async(slot)
-            print(f"data in slot {slot}: {data}")
+            ai_list = await dev.AI_readOnDemand_async(slot)
+            print(f"data in slot {slot}: {ai_list}")
 
         ## Close AI
         err = await dev.AI_close_async(slot)

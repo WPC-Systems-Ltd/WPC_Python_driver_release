@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Example Codes - Console (async) &mdash; WPC Python driver 3.0.8 documentation</title>
+  <title>Example Codes - Console (async) &mdash; WPC Python driver 3.0.11 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.8
+                3.0.11
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -63,11 +63,13 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AI/AI_N_samples_once.html">AI N samples once</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AI/AI_on_demand_in_loop.html">AI on demand in loop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AI/AI_on_demand_once.html">AI on demand once</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AI/AI_continuous_multi_slot.html">AI continuous multi slot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AO/AO_write_all_channels.html">AO write all channels</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AO/AO_write_one_channel.html">AO write one channel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AO/AO_waveform_gen.html">AO waveform generation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AIO/AIO_one_channel_loopback.html">AIO one channel loopback</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AIO/AIO_all_channels_loopback.html">AIO all channels loopback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AIO/AO_output_while_AI_streaming.html">AO output while AI streaming</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/DIO/DO_blinky_pins.html">DO blinky pins</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/DIO/DO_blinky_port.html">DO blinky port</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/STEM/DIO/DIO_loopback_pins.html">DIO loopback pins</a></li>
@@ -138,6 +140,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/AI/AI_N_samples_once.html">AI N samples once</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/AI/AI_on_demand_in_loop.html">AI on demand in loop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/AI/AI_on_demand_once.html">AI on demand once</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/AI/AI_continuous_multi_slot.html">AI continuous multi slot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
@@ -219,6 +222,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/AI/AI_N_samples_once.html">AI N samples once</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/AI/AI_on_demand_in_loop.html">AI on demand in loop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/AI/AI_on_demand_once.html">AI on demand once</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/AI/AI_continuous_multi_slot.html">AI continuous multi slot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/Counter/Counter_read.html">Counter read</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/DIO/DO_blinky_pins.html">DO blinky pins</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/DIO/DO_blinky_port.html">DO blinky port</a></li>
@@ -248,11 +252,13 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/AI/AI_N_samples_once.html">AI N samples once</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/AI/AI_on_demand_in_loop.html">AI on demand in loop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/AI/AI_on_demand_once.html">AI on demand once</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/AI/AI_continuous_multi_slot.html">AI continuous multi slot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/AO/AO_write_all_channels.html">AO write all channels</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/AO/AO_write_one_channel.html">AO write one channel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/AO/AO_waveform_gen.html">AO waveform generation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/AIO/AIO_one_channel_loopback.html">AIO one channel loopback</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/AIO/AIO_all_channels_loopback.html">AIO all channels loopback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/AIO/AO_output_while_AI_streaming.html">AO output while AI streaming</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/Counter/Counter_read.html">Counter read</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/DIO/DO_blinky_pins.html">DO blinky pins</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/DIO/DO_blinky_port.html">DO blinky port</a></li>
@@ -403,6 +409,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/AI/AI_N_samples_once.html">AI N samples once</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/AI/AI_on_demand_in_loop.html">AI on demand in loop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/AI/AI_on_demand_once.html">AI on demand once</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/AI/AI_continuous_multi_slot.html">AI continuous multi slot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/AHRS/AHRS_read.html">AHRS read</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/System_Wifi/get_network_info.html">System get network info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/System_Wifi/get_Wifi_DAQ_status.html">System get Wifi DAQ status</a></li>
@@ -420,6 +427,7 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/AI/AI_N_samples_once.html">AI N samples once</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/AI/AI_on_demand_in_loop.html">AI on demand in loop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/AI/AI_on_demand_once.html">AI on demand once</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/AI/AI_continuous_multi_slot.html">AI continuous multi slot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/System_Wifi/get_network_info.html">System get network info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/System_Wifi/get_Wifi_DAQ_status.html">System get Wifi DAQ status</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/System_Wifi/hello_world.html">System hello world</a></li>
@@ -485,11 +493,13 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AI/AI_N_samples_once.html">AI N samples once</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AI/AI_on_demand_in_loop.html">AI on demand in loop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AI/AI_on_demand_once.html">AI on demand once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AI/AI_continuous_multi_slot.html">AI continuous multi slot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AO/AO_write_all_channels.html">AO write all channels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AO/AO_write_one_channel.html">AO write one channel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AO/AO_waveform_gen.html">AO waveform generation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AIO/AIO_one_channel_loopback.html">AIO one channel loopback</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AIO/AIO_all_channels_loopback.html">AIO all channels loopback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/AIO/AO_output_while_AI_streaming.html">AO output while AI streaming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/DIO/DO_blinky_pins.html">DO blinky pins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/DIO/DO_blinky_port.html">DO blinky port</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/STEM/DIO/DIO_loopback_pins.html">DIO loopback pins</a></li>
@@ -572,6 +582,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/AI/AI_N_samples_once.html">AI N samples once</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/AI/AI_on_demand_in_loop.html">AI on demand in loop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/AI/AI_on_demand_once.html">AI on demand once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/AI/AI_continuous_multi_slot.html">AI continuous multi slot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/EthanA/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
@@ -677,6 +688,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/AI/AI_N_samples_once.html">AI N samples once</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/AI/AI_on_demand_in_loop.html">AI on demand in loop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/AI/AI_on_demand_once.html">AI on demand once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/AI/AI_continuous_multi_slot.html">AI continuous multi slot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/Counter/Counter_read.html">Counter read</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/DIO/DO_blinky_pins.html">DO blinky pins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AD/DIO/DO_blinky_port.html">DO blinky port</a></li>
@@ -710,11 +722,13 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/AI/AI_N_samples_once.html">AI N samples once</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/AI/AI_on_demand_in_loop.html">AI on demand in loop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/AI/AI_on_demand_once.html">AI on demand once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/AI/AI_continuous_multi_slot.html">AI continuous multi slot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/AO/AO_write_all_channels.html">AO write all channels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/AO/AO_write_one_channel.html">AO write one channel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/AO/AO_waveform_gen.html">AO waveform generation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/AIO/AIO_one_channel_loopback.html">AIO one channel loopback</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/AIO/AIO_all_channels_loopback.html">AIO all channels loopback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/AIO/AO_output_while_AI_streaming.html">AO output while AI streaming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/Counter/Counter_read.html">Counter read</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/DIO/DO_blinky_pins.html">DO blinky pins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/USBDAQF1AOD/DIO/DO_blinky_port.html">DO blinky port</a></li>
@@ -889,6 +903,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/AI/AI_N_samples_once.html">AI N samples once</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/AI/AI_on_demand_in_loop.html">AI on demand in loop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/AI/AI_on_demand_once.html">AI on demand once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/AI/AI_continuous_multi_slot.html">AI continuous multi slot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/AHRS/AHRS_read.html">AHRS read</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/System_Wifi/get_network_info.html">System get network info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQE3A/System_Wifi/get_Wifi_DAQ_status.html">System get Wifi DAQ status</a></li>
@@ -910,6 +925,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/AI/AI_N_samples_once.html">AI N samples once</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/AI/AI_on_demand_in_loop.html">AI on demand in loop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/AI/AI_on_demand_once.html">AI on demand once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/AI/AI_continuous_multi_slot.html">AI continuous multi slot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/System_Wifi/get_network_info.html">System get network info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/System_Wifi/get_Wifi_DAQ_status.html">System get Wifi DAQ status</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Asynchronous/WifiDAQF4A/System_Wifi/hello_world.html">System hello world</a></li>

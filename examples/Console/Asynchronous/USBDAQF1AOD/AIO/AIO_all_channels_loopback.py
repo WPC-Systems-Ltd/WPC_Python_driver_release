@@ -47,6 +47,7 @@ async def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
+        ao_value_list = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5]
         chip_select = [0]
 
         ## Get firmware model & version
@@ -63,17 +64,16 @@ async def main():
         print(f"AO_open_async in port {port}: {err}")
 
         ## Read data acquisition
-        data = await dev.AI_readOnDemand_async(port)
-        print(f"AI data in port {port}: {data}")
+        ai_list = await dev.AI_readOnDemand_async(port)
+        print(f"AI data in port {port}: {ai_list}")
 
         ## Write AO value simultaneously
-        ## CH0~CH1 5V, CH2~CH3 3V, CH4~CH5 2V, CH6~CH7 0V
-        err = await dev.AO_writeAllChannels_async(port, [5,5,3,3,2,2,0,0])
-        print(f"AO_writeAllChannels_async in port {port}: {err}")
+        err = await dev.AO_writeAllChannels_async(port, ao_value_list)
+        print(f"In port {port} the AO value is {ao_value_list}: {err}")
 
         ## Read data acquisition
-        data = await dev.AI_readOnDemand_async(port)
-        print(f"AI data in port {port}: {data}")
+        ai_list = await dev.AI_readOnDemand_async(port)
+        print(f"AI data in port {port}: {ai_list}")
 
         ## Close AI
         err = await dev.AI_close_async(port)

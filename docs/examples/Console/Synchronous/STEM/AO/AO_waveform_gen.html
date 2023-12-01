@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AO waveform generation &mdash; WPC Python driver 3.0.8 documentation</title>
+  <title>AO waveform generation &mdash; WPC Python driver 3.0.11 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -34,7 +34,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.8
+                3.0.11
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -59,11 +59,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../AI/AI_N_samples_once.html">AI N samples once</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../AI/AI_on_demand_in_loop.html">AI on demand in loop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../AI/AI_on_demand_once.html">AI on demand once</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../AI/AI_continuous_multi_slot.html">AI continuous multi slot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="AO_write_all_channels.html">AO write all channels</a></li>
 <li class="toctree-l3"><a class="reference internal" href="AO_write_one_channel.html">AO write one channel</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">AO waveform generation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../AIO/AIO_one_channel_loopback.html">AIO one channel loopback</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../AIO/AIO_all_channels_loopback.html">AIO all channels loopback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../AIO/AO_output_while_AI_streaming.html">AO output while AI streaming</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../DIO/DO_blinky_pins.html">DO blinky pins</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../DIO/DO_blinky_port.html">DO blinky port</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../DIO/DIO_loopback_pins.html">DIO loopback pins</a></li>
@@ -132,39 +134,8 @@
              
   <section id="ao-waveform-generation">
 <h1>AO waveform generation<a class="headerlink" href="#ao-waveform-generation" title="Permalink to this heading"></a></h1>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="sd">&#39;&#39;&#39;</span>
-<span class="linenos"> 2</span><span class="sd">AO - AO_waveform_gen.py with synchronous mode.</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="sd">This example demonstrates the process of writing AO signal of STEM.</span>
-<span class="linenos"> 5</span><span class="sd">To begin with, it demonstrates the steps to open AO and configure the AO parameters.</span>
-<span class="linenos"> 6</span><span class="sd">Next, it outlines the procedure for AO streaming.</span>
-<span class="linenos"> 7</span><span class="sd">Finally, it concludes by explaining how to close AO.</span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="sd">If your product is &quot;STEM&quot;, please invoke the function `Sys_setAIOMode`.</span>
-<span class="linenos">10</span>
-<span class="linenos">11</span><span class="sd">-------------------------------------------------------------------------------------</span>
-<span class="linenos">12</span><span class="sd">Please change correct serial number or IP and port number BEFORE you run example code.</span>
-<span class="linenos">13</span>
-<span class="linenos">14</span><span class="sd">For other examples please check:</span>
-<span class="linenos">15</span><span class="sd">    https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples</span>
-<span class="linenos">16</span><span class="sd">See README.md file to get detailed usage of this example.</span>
-<span class="linenos">17</span>
-<span class="linenos">18</span><span class="sd">Copyright (c) 2023 WPC Systems Ltd. All rights reserved.</span>
-<span class="linenos">19</span><span class="sd">&#39;&#39;&#39;</span>
-<span class="linenos">20</span>
-<span class="linenos">21</span><span class="c1">## Python</span>
-<span class="linenos">22</span><span class="kn">import</span> <span class="nn">time</span>
-<span class="linenos">23</span>
-<span class="linenos">24</span><span class="c1">## WPC</span>
-<span class="linenos">25</span>
-<span class="linenos">26</span><span class="kn">from</span> <span class="nn">wpcsys</span> <span class="kn">import</span> <span class="n">pywpc</span>
-<span class="linenos">27</span>
-<span class="linenos">28</span>
-<span class="linenos">29</span>
-<span class="linenos">30</span><span class="c1">## STEM has not supported yet</span>
-<span class="linenos">31</span>
-<span class="linenos">32</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">33</span>    <span class="n">main</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>
+<span class="linenos">2</span><span class="c1">## STEM has not supported yet</span>
 </pre></div>
 </div>
 </section>

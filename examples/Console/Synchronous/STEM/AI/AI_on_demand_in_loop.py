@@ -40,7 +40,6 @@ import time
 from wpcsys import pywpc
 
 
-
 def main():
     ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
@@ -96,8 +95,8 @@ def main():
 
         ## Read AI
         for i in range(5):
-            data = dev.AI_readOnDemand(slot)
-            print(f"data in slot {slot}: {data}")
+            ai_list = dev.AI_readOnDemand(slot)
+            print(f"data in slot {slot}: {ai_list}")
 
         ## Close AI
         err = dev.AI_close(slot, timeout=timeout)

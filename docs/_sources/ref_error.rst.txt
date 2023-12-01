@@ -127,6 +127,9 @@ Error Code Table
    * - -7901
      - 
      - Please ensure that the relay counter index is restricted to the range of 0 to 5 or -1.
+   * - -8000
+     - 
+     - In this product, there is no support for this API.
    * - -8001
      - 
      - Failed to connect to WPC DAQ. Please check USB plugin status and serial number.

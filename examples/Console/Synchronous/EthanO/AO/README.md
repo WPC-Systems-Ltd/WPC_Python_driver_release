@@ -12,6 +12,14 @@ If you want to build your own AO application, try to use this as a basic templat
 
 ## How to use this example
 
+### AO output range
+
+| Product/module  |AO range    |
+|:---------------:|:----------:|
+| USB-DAQ-F1-AOD  | 0 ~ 5 V    |
+| Ethan-O         | -10 ~ 10 V |
+| STEM            | -10 ~ 10 V |
+
 ### Hardware Requirement
 
 In order to run this example, you should get EthanO product, which contains AO function.

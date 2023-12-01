@@ -47,7 +47,7 @@ def main():
         port = 0 ## Depend on your device
         mode = 2 ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 200
-        read_points = 100
+        read_points = 200
         delay = 0.2 ## second
         timeout = 3 ## second
 
@@ -90,14 +90,14 @@ def main():
         data_len = 1
         while data_len > 0:
             ## Read data acquisition
-            data = dev.AI_readStreaming(port, read_points, delay=delay)
-            print(f"number of samples = {len(data)}" )
+            ai_2Dlist = dev.AI_readStreaming(port, read_points, delay=delay)
+            print(f"number of samples = {len(ai_2Dlist)}" )
 
             ## Write data into CSV file
-            dev.Logger_write2DList(data)
+            dev.Logger_write2DList(ai_2Dlist)
 
             ## Update data len
-            data_len = len(data)
+            data_len = len(ai_2Dlist)
 
         ## Close AI
         err = dev.AI_close(port, timeout=timeout)

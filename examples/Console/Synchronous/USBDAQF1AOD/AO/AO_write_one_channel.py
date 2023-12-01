@@ -24,7 +24,6 @@ import time
 from wpcsys import pywpc
 
 
-
 def main():
     ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
@@ -44,6 +43,7 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
+        ao_value_list = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5]
         timeout = 3 ## second
 
         ## Get firmware model & version
@@ -55,21 +55,21 @@ def main():
         err = dev.AO_open(port, timeout=timeout)
         print(f"AO_open in port {port}: {err}")
 
-        ## Write AO 1.5(V) in channel 0
-        err = dev.AO_writeOneChannel(port, 0, 1.5, timeout=timeout)
-        print(f"AO_writeOneChannel in ch0 in port {port}: {err}")
+        ## Write AO vaule in channel 0
+        err = dev.AO_writeOneChannel(port, 0, ao_value_list[0], timeout=timeout)
+        print(f"In port {port} channel 0, the AO value is {ao_value_list[0]}: {err}")
 
-        ## Write AO 2.5(V) in channel 1
-        err = dev.AO_writeOneChannel(port, 1, 2.5, timeout=timeout)
-        print(f"AO_writeOneChannel in ch1 in port {port}: {err}")
+        ## Write AO vaule in channel 1
+        err = dev.AO_writeOneChannel(port, 1, ao_value_list[1], timeout=timeout)
+        print(f"In port {port} channel 1, the AO value is {ao_value_list[1]}: {err}")
 
-        ## Write AO 3.5(V) in channel 2
-        err = dev.AO_writeOneChannel(port, 2, 3.5, timeout=timeout)
-        print(f"AO_writeOneChannel in ch2 in port {port}: {err}")
+        ## Write AO vaule in channel 2
+        err = dev.AO_writeOneChannel(port, 2, ao_value_list[2], timeout=timeout)
+        print(f"In port {port} channel 2, the AO value is {ao_value_list[2]}: {err}")
 
-        ## Write AO 4.5(V) in channel 3
-        err = dev.AO_writeOneChannel(port, 3, 4.5, timeout=timeout)
-        print(f"AO_writeOneChannel in ch3 in port {port}: {err}")
+        ## Write AO vaule in channel 3
+        err = dev.AO_writeOneChannel(port, 3, ao_value_list[3], timeout=timeout)
+        print(f"In port {port} channel 3, the AO value is {ao_value_list[3]}: {err}")
 
         ## Close AO
         err = dev.AO_close(port)

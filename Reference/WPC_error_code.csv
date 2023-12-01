@@ -38,6 +38,7 @@ Error code,Error message
 -7702,The counter channel is not available.
 -7801,STEM port not available or already occupied by other process.
 -7901,Please ensure that the relay counter index is restricted to the range of 0 to 5 or -1.
+-8000,"In this product, there is no support for this API."
 -8001,Failed to connect to WPC DAQ. Please check USB plugin status and serial number.
 -8002,Failed to connect to WPC DAQ. Please check network status and IP address.
 -8007,Network DAQ connection lost.

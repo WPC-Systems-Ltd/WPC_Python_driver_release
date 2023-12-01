@@ -77,14 +77,14 @@ async def main():
         print(f"AI_start_async in port {port}: {err}")
 
         ## Read AI
-        data = await dev.AI_readStreaming_async(port, read_points, delay=delay)
-        print(f"number of samples = {len(data)}" )
+        ai_2Dlist = await dev.AI_readStreaming_async(port, read_points, delay=delay)
+        print(f"number of samples = {len(ai_2Dlist)}" )
 
         ok = True
-        for i, samp in enumerate(data):
+        for i, ai_list in enumerate(ai_2Dlist):
             ## Check for any missing data
-            if len(samp) != 8:
-                print(i, samp)
+            if len(ai_list) != 8:
+                print(i, ai_list)
                 ok = False
         if ok:
             print('OK')

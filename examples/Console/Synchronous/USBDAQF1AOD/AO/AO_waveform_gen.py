@@ -1,3 +1,4 @@
+
 '''
 AO - AO_waveform_gen.py with synchronous mode.
 
@@ -22,8 +23,6 @@ import time
 ## WPC
 
 from wpcsys import pywpc
-
-
 
 def main():
     ## Get Python driver version
@@ -123,6 +122,5 @@ def main():
     dev.close()
 
     return
-
 if __name__ == '__main__':
     main()

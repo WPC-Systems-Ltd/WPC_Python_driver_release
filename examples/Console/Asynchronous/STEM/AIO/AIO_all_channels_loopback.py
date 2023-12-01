@@ -61,6 +61,7 @@ async def main():
     try:
         ## Parameters setting
         slot = 1 ## Connect AIO module to slot
+        ao_value_list = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5]
         chip_select = [0]
 
         ## Get firmware model & version
@@ -94,17 +95,16 @@ async def main():
         print(f"AO_open_async in slot {slot}: {err}")
 
         ## Read data acquisition
-        data = await dev.AI_readOnDemand_async(slot)
-        print(f"AI data in slot {slot}: {data}")
+        ai_list = await dev.AI_readOnDemand_async(slot)
+        print(f"AI data in slot {slot}: {ai_list}")
 
         ## Write AO value simultaneously
-        ## CH0~CH1 5V, CH2~CH3 3V, CH4~CH5 2V, CH6~CH7 0V
-        err = await dev.AO_writeAllChannels_async(slot, [5,5,3,3,2,2,0,0])
-        print(f"AO_writeAllChannels_async in slot {slot}: {err}")
+        err = await dev.AO_writeAllChannels_async(slot, ao_value_list)
+        print(f"In slot {slot} the AO value is {ao_value_list}: {err}")
 
         ## Read data acquisition
-        data = await dev.AI_readOnDemand_async(slot)
-        print(f"AI data in slot {slot}: {data}")
+        ai_list = await dev.AI_readOnDemand_async(slot)
+        print(f"AI data in slot {slot}: {ai_list}")
 
         ## Close AI
         err = await dev.AI_close_async(slot)

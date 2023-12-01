@@ -13,6 +13,15 @@ If you want to build your own AI application, try to use this as a basic templat
 
 ## How to use this example
 
+### Channel count vs. sampling rate
+
+| Product/module  |chan 0:0|chan 0:1|chan 0:2|chan 0:3|chan 0:4|chan 0:5|chan 0:6|chan 0:7|
+|:---------------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
+| USB-DAQ-F1-AD   | 20k    | 12.5k  | 8.1k   | 6.3k   | 4k     | 3.2k   | 3.2k   | 2.5k   |
+| USB-DAQ-F1-AOD  | 20k    | 12.5k  | 8.1k   | 6.3k   | 4k     | 3.2k   | 3.2k   | 2.5k   |
+| Wifi-DAQ        | 10k    | 10k    | 10k    | 10k    | 10k    | 10k    | 10k    | 10k    |
+| Ethan-A         | 20k    | 20k    | 20k    | 20k    | 20k    | 20k    | 20k    | 20k    |
+
 ### Hardware requirement
 
 In order to run this example, you should get STEM product, which contains AI function.
