@@ -45,6 +45,7 @@ async def main():
     try:
         ## Parameters setting
         slot = 1 ## Connect AIO module to slot
+        ao_value_list = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5]
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -68,21 +69,21 @@ async def main():
         err = await dev.AO_open_async(slot)
         print(f"AO_open_async in slot {slot}: {err}")
 
-        ## Write AO 1.5(V) in channel 0
-        err = await dev.AO_writeOneChannel_async(slot, 0, 1.5)
-        print(f"AO_writeOneChannel_async in ch0 in slot {slot}: {err}")
+        ## Write AO vaule in channel 0
+        err = await dev.AO_writeOneChannel_async(slot, 0, ao_value_list[0])
+        print(f"In slot {slot} channel 0, the AO value is {ao_value_list[0]}: {err}")
 
-        ## Write AO 2.5(V) in channel 1
-        err = await dev.AO_writeOneChannel_async(slot, 1, 2.5)
-        print(f"AO_writeOneChannel_async in ch1 in slot {slot}: {err}")
+        ## Write AO vaule in channel 1
+        err = await dev.AO_writeOneChannel_async(slot, 1, ao_value_list[1])
+        print(f"In slot {slot} channel 1, the AO value is {ao_value_list[1]}: {err}")
 
-        ## Write AO 3.5(V) in channel 2
-        err = await dev.AO_writeOneChannel_async(slot, 2, 3.5)
-        print(f"AO_writeOneChannel_async in ch2 in slot {slot}: {err}")
+        ## Write AO vaule in channel 2
+        err = await dev.AO_writeOneChannel_async(slot, 2, ao_value_list[2])
+        print(f"In slot {slot} channel 2, the AO value is {ao_value_list[2]}: {err}")
 
-        ## Write AO 4.5(V) in channel 3
-        err = await dev.AO_writeOneChannel_async(slot, 3, 4.5)
-        print(f"AO_writeOneChannel_async in ch3 in slot {slot}: {err}")
+        ## Write AO vaule in channel 3
+        err = await dev.AO_writeOneChannel_async(slot, 3, ao_value_list[3])
+        print(f"In slot {slot} channel 3, the AO value is {ao_value_list[3]}: {err}")
 
         ## Close AO
         err = await dev.AO_close_async(slot)

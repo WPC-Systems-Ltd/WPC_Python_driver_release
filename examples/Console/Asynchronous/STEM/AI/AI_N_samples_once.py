@@ -109,14 +109,14 @@ async def main():
         print(f"AI_start_async in slot {slot}: {err}")
 
         ## Read AI
-        data = await dev.AI_readStreaming_async(slot, read_points, delay=delay)
-        print(f"number of samples = {len(data)}" )
+        ai_2Dlist = await dev.AI_readStreaming_async(slot, read_points, delay=delay)
+        print(f"number of samples = {len(ai_2Dlist)}" )
 
         ok = True
-        for i, samp in enumerate(data):
+        for i, ai_list in enumerate(ai_2Dlist):
             ## Check for any missing data
-            if len(samp) != len(chip_select)*8:
-                print(i, samp)
+            if len(ai_list) != len(chip_select)*8:
+                print(i, ai_list)
                 ok = False
         if ok:
             print('OK')

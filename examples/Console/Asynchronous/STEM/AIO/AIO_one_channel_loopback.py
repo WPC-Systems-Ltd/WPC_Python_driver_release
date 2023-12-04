@@ -61,7 +61,7 @@ async def main():
     try:
         ## Parameters setting
         slot = 1 ## Connect AIO module to slot
-
+        ao_value_list = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5]
         chip_select = [0]
 
         ## Get firmware model & version
@@ -95,28 +95,28 @@ async def main():
         print(f"AO_open_async in slot {slot}: {err}")
 
         ## Read data acquisition
-        data = await dev.AI_readOnDemand_async(slot)
-        print(f"AI data in slot {slot}: {data}")
+        ai_list = await dev.AI_readOnDemand_async(slot)
+        print(f"AI data in slot {slot}: {ai_list}")
 
-        ## Write AO vaule 1.5(V) in channel 0
-        err = await dev.AO_writeOneChannel_async(slot, 0, 1.5)
-        print(f"AO_writeOneChannel_async in ch0 in slot {slot}: {err}")
+        ## Write AO vaule in channel 0
+        err = await dev.AO_writeOneChannel_async(slot, 0, ao_value_list[0])
+        print(f"In slot {slot} channel 0, the AO value is {ao_value_list[0]}: {err}")
 
-        ## Write AO vaule 2.5(V) in channel 1
-        err = await dev.AO_writeOneChannel_async(slot, 1, 2.5)
-        print(f"AO_writeOneChannel_async in ch1 in slot {slot}: {err}")
+        ## Write AO vaule in channel 1
+        err = await dev.AO_writeOneChannel_async(slot, 1, ao_value_list[1])
+        print(f"In slot {slot} channel 1, the AO value is {ao_value_list[1]}: {err}")
 
-        ## Write AO vaule 3.5(V) in channel 2
-        err = await dev.AO_writeOneChannel_async(slot, 2, 3.5)
-        print(f"AO_writeOneChannel_async in ch2 in slot {slot}: {err}")
+        ## Write AO vaule in channel 2
+        err = await dev.AO_writeOneChannel_async(slot, 2, ao_value_list[2])
+        print(f"In slot {slot} channel 2, the AO value is {ao_value_list[2]}: {err}")
 
-        ## Write AO vaule 4.5(V) in channel 3
-        err = await dev.AO_writeOneChannel_async(slot, 3, 4.5)
-        print(f"AO_writeOneChannel_async in ch3 in slot {slot}: {err}")
+        ## Write AO vaule in channel 3
+        err = await dev.AO_writeOneChannel_async(slot, 3, ao_value_list[3])
+        print(f"In slot {slot} channel 3, the AO value is {ao_value_list[3]}: {err}")
 
         ## Read data acquisition
-        data = await dev.AI_readOnDemand_async(slot)
-        print(f"AI data in slot {slot}: {data}")
+        ai_list = await dev.AI_readOnDemand_async(slot)
+        print(f"AI data in slot {slot}: {ai_list}")
 
         ## Close AI
         err = await dev.AI_close_async(slot)

@@ -1,6 +1,21 @@
 WPC Python driver release changelog
 ===================================
 
+v3.0.11 Date: 2023/12/04, Developer: Chunglee_people
+---------------------------------------------------
+### Added
+- example code: AI_continuous_multi_slot, AO_output_while_AI_streaming.
+- API: _AI_getCounter, Sys_getPythonVersion
+- Doc: Description in AI_enableCS
+- Error class: APINotSupportError
+- Channel count vs. sampling rate in AI README.md
+- The limitation of the sampling rate in AIO README.md
+- AO output range in AO README.md
+
+### Fixed
+- Each slot has it own chip_select variable
+- Buf of calculating wrong index in `_AI_changePortToIndex`
+
 v3.0.8 Date: 2023/11/23, Developer: Chunglee_people
 ---------------------------------------------------
 ### Fixed

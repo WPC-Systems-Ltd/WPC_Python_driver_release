@@ -47,6 +47,7 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
+        ao_value_list = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5]
         timeout = 3 ## second
 
         ## Get firmware model & version
@@ -63,28 +64,28 @@ def main():
         print(f"AO_open in port {port}: {err}")
 
         ## Read data acquisition
-        data = dev.AI_readOnDemand(port, timeout=timeout)
-        print(f"AI data in port {port}: {data}")
+        ai_list = dev.AI_readOnDemand(port, timeout=timeout)
+        print(f"AI data in port {port}: {ai_list}")
 
-        ## Write AO vaule 1.5(V) in channel 0
-        err = dev.AO_writeOneChannel(port, 0, 1.5, timeout=timeout)
-        print(f"AO_writeOneChannel in ch0 in port {port}: {err}")
+        ## Write AO vaule in channel 0
+        err = dev.AO_writeOneChannel(port, 0, ao_value_list[0], timeout=timeout)
+        print(f"In port {port} channel 0, the AO value is {ao_value_list[0]}: {err}")
 
-        ## Write AO vaule 2.5(V) in channel 1
-        err = dev.AO_writeOneChannel(port, 1, 2.5, timeout=timeout)
-        print(f"AO_writeOneChannel in ch1 in port {port}: {err}")
+        ## Write AO vaule in channel 1
+        err = dev.AO_writeOneChannel(port, 1, ao_value_list[1], timeout=timeout)
+        print(f"In port {port} channel 1, the AO value is {ao_value_list[1]}: {err}")
 
-        ## Write AO vaule 3.5(V) in channel 2
-        err = dev.AO_writeOneChannel(port, 2, 3.5, timeout=timeout)
-        print(f"AO_writeOneChannel in ch2 in port {port}: {err}")
+        ## Write AO vaule in channel 2
+        err = dev.AO_writeOneChannel(port, 2, ao_value_list[2], timeout=timeout)
+        print(f"In port {port} channel 2, the AO value is {ao_value_list[2]}: {err}")
 
-        ## Write AO vaule 4.5(V) in channel 3
-        err = dev.AO_writeOneChannel(port, 3, 4.5, timeout=timeout)
-        print(f"AO_writeOneChannel in ch3 in port {port}: {err}")
+        ## Write AO vaule in channel 3
+        err = dev.AO_writeOneChannel(port, 3, ao_value_list[3], timeout=timeout)
+        print(f"In port {port} channel 3, the AO value is {ao_value_list[3]}: {err}")
 
         ## Read data acquisition
-        data = dev.AI_readOnDemand(port, timeout=timeout)
-        print(f"AI data in port {port}: {data}")
+        ai_list = dev.AI_readOnDemand(port, timeout=timeout)
+        print(f"AI data in port {port}: {ai_list}")
 
         ## Close AI
         err = dev.AI_close(port, timeout=timeout)

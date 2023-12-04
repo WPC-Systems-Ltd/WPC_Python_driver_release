@@ -1,0 +1,6 @@
+AI continuous multi slot
+========================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/USBDAQF1AD/AI/AI_continuous_multi_slot.py
+   :language: python
+   :linenos:

@@ -94,8 +94,8 @@ def main():
         print(f"AI_setMode {mode} in slot {slot}: {err}")
 
         ## Read AI
-        data =  dev.AI_readOnDemand(slot, timeout=timeout)
-        print(f"data in slot {slot}: {data}")
+        ai_list = dev.AI_readOnDemand(slot, timeout=timeout)
+        print(f"data in slot {slot}: {ai_list}")
 
         ## Close AI
         err = dev.AI_close(slot, timeout=timeout)

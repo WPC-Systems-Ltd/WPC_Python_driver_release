@@ -1,0 +1,6 @@
+AO output while AI streaming
+============================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/STEM/AIO/AO_output_while_AI_streaming.py
+   :language: python
+   :linenos:

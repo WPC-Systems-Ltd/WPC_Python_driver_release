@@ -42,7 +42,6 @@ import time
 from wpcsys import pywpc
 
 
-
 def main():
     ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
@@ -62,6 +61,7 @@ def main():
     try:
         ## Parameters setting
         slot = 1 ## Connect AIO module to slot
+        ao_value_list = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5]
         timeout = 3 ## second
         chip_select = [0]
 
@@ -96,17 +96,16 @@ def main():
         print(f"AO_open in slot {slot}: {err}")
 
         ## Read data acquisition
-        data = dev.AI_readOnDemand(slot, timeout=timeout)
-        print(f"AI data in slot {slot}: {data}")
+        ai_list = dev.AI_readOnDemand(slot, timeout=timeout)
+        print(f"AI data in slot {slot}: {ai_list}")
 
         ## Write AO value simultaneously
-        ## CH0~CH1 5V, CH2~CH3 3V, CH4~CH5 2V, CH6~CH7 0V
-        err = dev.AO_writeAllChannels(slot, [5,5,3,3,2,2,0,0], timeout=timeout)
-        print(f"AO_writeAllChannels in slot {slot}: {err}")
+        err = dev.AO_writeAllChannels(slot, ao_value_list, timeout=timeout)
+        print(f"In slot {slot} the AO value is {ao_value_list}: {err}")
 
         ## Read data acquisition
-        data = dev.AI_readOnDemand(slot, timeout=timeout)
-        print(f"AI data in slot {slot}: {data}")
+        ai_list = dev.AI_readOnDemand(slot, timeout=timeout)
+        print(f"AI data in slot {slot}: {ai_list}")
 
         ## Close AI
         err = dev.AI_close(slot, timeout=timeout)
