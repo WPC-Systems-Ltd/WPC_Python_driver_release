@@ -18,6 +18,7 @@
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -188,7 +189,7 @@
 <span class="linenos">48</span>
 <span class="linenos">49</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
 <span class="linenos">50</span>            <span class="c1">## Get RTC</span>
-<span class="linenos">51</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Get RTC: </span><span class="si">{</span><span class="k">await</span><span class="w"> </span><span class="n">dev</span><span class="o">.</span><span class="n">Sys_getRTC_async</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">51</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Get RTC: </span><span class="si">{</span><span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getRTC_async</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">52</span>
 <span class="linenos">53</span>            <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">## delay [s]</span>
 <span class="linenos">54</span>
