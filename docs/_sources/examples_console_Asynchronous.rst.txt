@@ -26,6 +26,8 @@ STEM
 
    examples/Console/Asynchronous/STEM/AI/AI_on_demand_once.rst
 
+   examples/Console/Asynchronous/STEM/AI/AI_continuous_multi_slot.rst
+
    examples/Console/Asynchronous/STEM/AO/AO_write_all_channels.rst
 
    examples/Console/Asynchronous/STEM/AO/AO_write_one_channel.rst
@@ -35,6 +37,8 @@ STEM
    examples/Console/Asynchronous/STEM/AIO/AIO_one_channel_loopback.rst
 
    examples/Console/Asynchronous/STEM/AIO/AIO_all_channels_loopback.rst
+
+   examples/Console/Asynchronous/STEM/AIO/AO_output_while_AI_streaming.rst
 
    examples/Console/Asynchronous/STEM/DIO/DO_blinky_pins.rst
 
@@ -178,6 +182,8 @@ Ethan-A
    examples/Console/Asynchronous/EthanA/AI/AI_on_demand_in_loop.rst
 
    examples/Console/Asynchronous/EthanA/AI/AI_on_demand_once.rst
+
+   examples/Console/Asynchronous/EthanA/AI/AI_continuous_multi_slot.rst
 
    examples/Console/Asynchronous/EthanA/System_ETH/get_network_info.rst
 
@@ -347,6 +353,8 @@ USB-DAQ-F1-AD
 
    examples/Console/Asynchronous/USBDAQF1AD/AI/AI_on_demand_once.rst
 
+   examples/Console/Asynchronous/USBDAQF1AD/AI/AI_continuous_multi_slot.rst
+
    examples/Console/Asynchronous/USBDAQF1AD/Counter/Counter_read.rst
 
    examples/Console/Asynchronous/USBDAQF1AD/DIO/DO_blinky_pins.rst
@@ -406,6 +414,8 @@ USB-DAQ-F1-AOD
 
    examples/Console/Asynchronous/USBDAQF1AOD/AI/AI_on_demand_once.rst
 
+   examples/Console/Asynchronous/USBDAQF1AOD/AI/AI_continuous_multi_slot.rst
+
    examples/Console/Asynchronous/USBDAQF1AOD/AO/AO_write_all_channels.rst
 
    examples/Console/Asynchronous/USBDAQF1AOD/AO/AO_write_one_channel.rst
@@ -415,6 +425,8 @@ USB-DAQ-F1-AOD
    examples/Console/Asynchronous/USBDAQF1AOD/AIO/AIO_one_channel_loopback.rst
 
    examples/Console/Asynchronous/USBDAQF1AOD/AIO/AIO_all_channels_loopback.rst
+
+   examples/Console/Asynchronous/USBDAQF1AOD/AIO/AO_output_while_AI_streaming.rst
 
    examples/Console/Asynchronous/USBDAQF1AOD/Counter/Counter_read.rst
 
@@ -722,6 +734,8 @@ Wifi-DAQ-E3-A
 
    examples/Console/Asynchronous/WifiDAQE3A/AI/AI_on_demand_once.rst
 
+   examples/Console/Asynchronous/WifiDAQE3A/AI/AI_continuous_multi_slot.rst
+
    examples/Console/Asynchronous/WifiDAQE3A/AHRS/AHRS_read.rst
 
    examples/Console/Asynchronous/WifiDAQE3A/System_Wifi/get_network_info.rst
@@ -756,6 +770,8 @@ Wifi-DAQ-F4-A
    examples/Console/Asynchronous/WifiDAQF4A/AI/AI_on_demand_in_loop.rst
 
    examples/Console/Asynchronous/WifiDAQF4A/AI/AI_on_demand_once.rst
+
+   examples/Console/Asynchronous/WifiDAQF4A/AI/AI_continuous_multi_slot.rst
 
    examples/Console/Asynchronous/WifiDAQF4A/System_Wifi/get_network_info.rst
 

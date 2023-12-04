@@ -26,7 +26,6 @@ import time
 from wpcsys import pywpc
 
 
-
 def main():
     ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
@@ -79,14 +78,14 @@ def main():
         print(f"AI_start in port {port}: {err}")
 
         ## Read AI
-        data = dev.AI_readStreaming(port, read_points, delay=delay)
-        print(f"number of samples = {len(data)}" )
+        ai_2Dlist = dev.AI_readStreaming(port, read_points, delay=delay)
+        print(f"number of samples = {len(ai_2Dlist)}" )
 
         ok = True
-        for i, samp in enumerate(data):
+        for i, ai_list in enumerate(ai_2Dlist):
             ## Check for any missing data
-            if len(samp) != 8:
-                print(i, samp)
+            if len(ai_list) != 8:
+                print(i, ai_list)
                 ok = False
         if ok:
             print('OK')

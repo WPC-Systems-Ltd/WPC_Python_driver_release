@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AO write all channels &mdash; WPC Python driver 3.0.8 documentation</title>
+  <title>AO write all channels &mdash; WPC Python driver 3.0.11 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -18,6 +18,7 @@
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -34,7 +35,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.8
+                3.0.11
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -165,21 +166,21 @@
 <span class="linenos">44</span>    <span class="k">try</span><span class="p">:</span>
 <span class="linenos">45</span>        <span class="c1">## Parameters setting</span>
 <span class="linenos">46</span>        <span class="n">port</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">## Depend on your device</span>
-<span class="linenos">47</span>        <span class="n">timeout</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1">## second</span>
-<span class="linenos">48</span>
-<span class="linenos">49</span>        <span class="c1">## Get firmware model &amp; version</span>
-<span class="linenos">50</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">51</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="linenos">52</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="linenos">53</span>
-<span class="linenos">54</span>        <span class="c1">## Open AO</span>
-<span class="linenos">55</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AO_open</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">56</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AO_open in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">57</span>
-<span class="linenos">58</span>        <span class="c1">## Write AO data simultaneously</span>
-<span class="linenos">59</span>        <span class="c1">## CH0~CH1 5V, CH2~CH3 3V, CH4~CH5 2V, CH6~CH7 0V</span>
-<span class="linenos">60</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AO_writeAllChannels</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">61</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AO_writeAllChannels in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">47</span>        <span class="n">ao_value_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">]</span>
+<span class="linenos">48</span>        <span class="n">timeout</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1">## second</span>
+<span class="linenos">49</span>
+<span class="linenos">50</span>        <span class="c1">## Get firmware model &amp; version</span>
+<span class="linenos">51</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">52</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="linenos">53</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos">54</span>
+<span class="linenos">55</span>        <span class="c1">## Open AO</span>
+<span class="linenos">56</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AO_open</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">57</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AO_open in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">58</span>
+<span class="linenos">59</span>        <span class="c1">## Write AO value simultaneously</span>
+<span class="linenos">60</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AO_writeAllChannels</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">ao_value_list</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">61</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;In port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2"> the AO value is </span><span class="si">{</span><span class="n">ao_value_list</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">62</span>
 <span class="linenos">63</span>        <span class="c1">## Close AO</span>
 <span class="linenos">64</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AO_close</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>

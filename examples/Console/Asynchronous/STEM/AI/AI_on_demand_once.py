@@ -93,8 +93,8 @@ async def main():
         print(f"AI_setMode_async {mode} in slot {slot}: {err}")
 
         ## Read AI
-        data = await dev.AI_readOnDemand_async(slot)
-        print(f"data in slot {slot}: {data}")
+        ai_list = await dev.AI_readOnDemand_async(slot)
+        print(f"data in slot {slot}: {ai_list}")
 
         ## Close AI
         err = await dev.AI_close_async(slot)

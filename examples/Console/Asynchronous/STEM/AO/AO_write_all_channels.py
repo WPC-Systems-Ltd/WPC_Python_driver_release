@@ -45,6 +45,7 @@ async def main():
     try:
         ## Parameters setting
         slot = 1 ## Connect AIO module to slot
+        ao_value_list = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5]
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -68,10 +69,9 @@ async def main():
         err = await dev.AO_open_async(slot)
         print(f"AO_open_async in slot {slot}: {err}")
 
-        ## Write AO data simultaneously
-        ## CH0~CH1 5V, CH2~CH3 3V, CH4~CH5 2V, CH6~CH7 0V
-        err = await dev.AO_writeAllChannels_async(slot, [5,5,3,3,2,2,0,0])
-        print(f"AO_writeAllChannels_async in slot {slot}: {err}")
+        ## Write AO value simultaneously
+        err = await dev.AO_writeAllChannels_async(slot, ao_value_list)
+        print(f"In slot {slot} the AO value is {ao_value_list}: {err}")
 
         ## Close AO
         err = await dev.AO_close_async(slot)

@@ -1,3 +1,4 @@
+
 '''
 AO - AO_waveform_gen.py with asynchronous mode.
 
@@ -22,7 +23,6 @@ import asyncio
 ## WPC
 
 from wpcsys import pywpc
-
 
 async def main():
     ## Get Python driver version
@@ -121,7 +121,6 @@ async def main():
     dev.close()
 
     return
-
 def main_for_spyder(*args):
     if asyncio.get_event_loop().is_running():
         return asyncio.create_task(main(*args)).result()

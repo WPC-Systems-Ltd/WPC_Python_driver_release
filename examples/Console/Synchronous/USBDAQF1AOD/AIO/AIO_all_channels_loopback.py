@@ -28,7 +28,6 @@ import time
 from wpcsys import pywpc
 
 
-
 def main():
     ## Get Python driver version
     print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
@@ -48,6 +47,7 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
+        ao_value_list = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5]
         timeout = 3 ## second
 
         ## Get firmware model & version
@@ -64,17 +64,16 @@ def main():
         print(f"AO_open in port {port}: {err}")
 
         ## Read data acquisition
-        data = dev.AI_readOnDemand(port, timeout=timeout)
-        print(f"AI data in port {port}: {data}")
+        ai_list = dev.AI_readOnDemand(port, timeout=timeout)
+        print(f"AI data in port {port}: {ai_list}")
 
         ## Write AO value simultaneously
-        ## CH0~CH1 5V, CH2~CH3 3V, CH4~CH5 2V, CH6~CH7 0V
-        err = dev.AO_writeAllChannels(port, [5,5,3,3,2,2,0,0], timeout=timeout)
-        print(f"AO_writeAllChannels in port {port}: {err}")
+        err = dev.AO_writeAllChannels(port, ao_value_list, timeout=timeout)
+        print(f"In port {port} the AO value is {ao_value_list}: {err}")
 
         ## Read data acquisition
-        data = dev.AI_readOnDemand(port, timeout=timeout)
-        print(f"AI data in port {port}: {data}")
+        ai_list = dev.AI_readOnDemand(port, timeout=timeout)
+        print(f"AI data in port {port}: {ai_list}")
 
         ## Close AI
         err = dev.AI_close(port, timeout=timeout)

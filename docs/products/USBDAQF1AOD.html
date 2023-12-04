@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>USB-DAQ-F1-AOD &mdash; WPC Python driver 3.0.8 documentation</title>
+  <title>USB-DAQ-F1-AOD &mdash; WPC Python driver 3.0.11 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -18,6 +18,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -34,7 +35,7 @@
             <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.8
+                3.0.11
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -118,7 +119,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AOD">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pywpc.</span></span><span class="sig-name descname"><span class="pre">USBDAQF1AOD</span></span><a class="headerlink" href="#pywpc.USBDAQF1AOD" title="Permalink to this definition"></a></dt>
-<dd><p><cite>USB-DAQ-F1-AOD</cite> has 8ch simultaneous voltage input, 8ch voltage output,
+<dd><p><cite>USB-DAQ-F1-AOD</cite> has 8ch simultaneous voltage input, 8ch (+/-5V) voltage output,
 &amp; 16ch 3.3V DIO/I2C/SPI.</p>
 <dl class="simple">
 <dt>Available ports:</dt><dd><ul class="simple">
@@ -179,13 +180,57 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.AI_enableCS">
-<span class="sig-name descname"><span class="pre">AI_enableCS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chip_select</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AI_enableCS" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">AI_enableCS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chip_select</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AI_enableCS" title="Permalink to this definition"></a></dt>
+<dd><p>Set AI chip selection on a given slot.
+This API is only effective for STEM.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>chip_select</strong><span class="classifier">list</span></dt><dd><p>Chip number</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.AI_enableCS_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AI_enableCS_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chip_select</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AI_enableCS_async" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AI_enableCS_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chip_select</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AI_enableCS_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set AI chip selection on a given slot with async mode.
+This API is only effective for STEM.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>chip_select</strong><span class="classifier">list</span></dt><dd><p>chip number</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.AI_getPort">
@@ -720,15 +765,13 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.AO_getEnableChannels">
-<span class="sig-name descname"><span class="pre">AO_getEnableChannels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AO_getEnableChannels" title="Permalink to this definition"></a></dt>
-<dd><p>Get AO enable channels.</p>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AO_getEnableChannels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AO_getEnableChannels" title="Permalink to this definition"></a></dt>
+<dd><p>Get AO enable channels with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -967,34 +1010,6 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.AO_pushToBuffer">
-<span class="sig-name descname"><span class="pre">AO_pushToBuffer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_of_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AO_pushToBuffer" title="Permalink to this definition"></a></dt>
-<dd><p>Push AO values to the buffer.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
-See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>num_of_val</strong><span class="classifier">int</span></dt><dd><p>TODO</p>
-</dd>
-<dt><strong>value_list</strong><span class="classifier">list</span></dt><dd><p>TODO: List of AO values</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
-See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.AO_setEnableChannels">
 <span class="sig-name descname"><span class="pre">AO_setEnableChannels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.AO_setEnableChannels" title="Permalink to this definition"></a></dt>
 <dd><p>Set which AO channels to enable.
@@ -1134,8 +1149,10 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd>
 <dt><strong>duty_cycle</strong><span class="classifier">float</span></dt><dd><p>Duty cycle.</p>
 </dd>
-<dt><strong>Returns</strong></dt><dd></dd>
-<dt><strong>——-</strong></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
 See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
 </dd>
@@ -3612,6 +3629,38 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 <li><p>pinmode : Disabled, Idle, DI, DO, UART, I2C, SPI, CAN, PWM and ADC.</p></li>
 </ul>
 </dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.Sys_getPythonVersion">
+<span class="sig-name descname"><span class="pre">Sys_getPythonVersion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.Sys_getPythonVersion" title="Permalink to this definition"></a></dt>
+<dd><p>Get python software version.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>version</strong><span class="classifier">string</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.USBDAQF1AOD.Sys_getPythonVersion_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getPythonVersion_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.USBDAQF1AOD.Sys_getPythonVersion_async" title="Permalink to this definition"></a></dt>
+<dd><p>Get python software version with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>version</strong><span class="classifier">string</span></dt><dd></dd>
 </dl>
 </dd>
 </dl>

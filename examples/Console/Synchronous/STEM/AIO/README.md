@@ -12,6 +12,17 @@ If you want to build your own AIO application, try to use this as a basic templa
 
 ## How to use this example
 
+### The limitation of the sampling rate.
+
+- It only apply on ``STEM`` product
+- If you want to AI_streaming while simultaneously changing the AO (Analog Output) values, there will be limitations.
+
+| CS number  | Sampling rate (MAX)|
+|:----------:|:------------------:|
+|   3        | 1000 (HZ)          |
+|   2        | 1500 (HZ)          |
+|   1        | 3000 (HZ)          |
+
 ### Hardware Requirement
 
 In order to run this example, you should get STEM product, which contains AI and AO function.
