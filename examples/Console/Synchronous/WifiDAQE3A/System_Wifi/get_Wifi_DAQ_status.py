@@ -38,7 +38,6 @@ def main():
 
     try:
         ## Parameters setting
-        port = None ## Depend on your device
         timeout = 3 ## second
 
         ## Get firmware model & version
@@ -51,9 +50,15 @@ def main():
         battery = dev.Wifi_readBattery(timeout=timeout)
         thermo = dev.Wifi_readThermo(timeout=timeout)
 
+        ## Get power & charge status
+        power_status  = dev.Wifi_getPowerGoodStatus(timeout=timeout)
+        charge_status = dev.Wifi_getChargeStatus(timeout=timeout)
+
         print(f"RSSI: {rssi} dBm")
         print(f"Battery: {battery} mV")
         print(f"Thermo: {thermo} °C")
+        print(f"Power status: {power_status}")
+        print(f"Charge status: {charge_status}")
     except Exception as err:
         pywpc.printGenericError(err)
 
