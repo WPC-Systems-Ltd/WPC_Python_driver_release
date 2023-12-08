@@ -4407,17 +4407,17 @@ border-radius : 5px;
 color:  rgb(255, 255, 255); </string>
     </property>
     <property name="currentText">
-     <string>EthanA</string>
+     <string>STEM</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <property name="minimumContentsLength">
      <number>0</number>
     </property>
     <item>
      <property name="text">
-      <string>WifiDAQE3A</string>
+      <string>STEM</string>
      </property>
     </item>
     <item>
@@ -4433,6 +4433,11 @@ color:  rgb(255, 255, 255); </string>
     <item>
      <property name="text">
       <string>USBDAQF1AOD</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>WifiDAQE3A</string>
      </property>
     </item>
    </widget>

@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../../../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AHRS read &mdash; WPC Python driver 3.0.11 documentation</title>
-      <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
+  <title>AHRS read &mdash; WPC Python driver 3.0.12 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/custom_sphinx.css?v=20c2511c" />
+
+  
     <link rel="shortcut icon" href="../../../../../_static/WPC-trademark.jpg"/>
   <!--[if lt IE 9]>
     <script src="../../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
-        <script src="../../../../../_static/jquery.js"></script>
-        <script src="../../../../../_static/underscore.js"></script>
-        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../../../../_static/doctools.js"></script>
-        <script src="../../../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../../_static/documentation_options.js?v=410a57b6"></script>
+        <script src="../../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -31,15 +32,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../../../../index.html" class="icon icon-home"> WPC Python driver
-            <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../../../../index.html" class="icon icon-home">
+            WPC Python driver
+              <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.11
+                3.0.12
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -83,6 +88,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../System_Wifi/get_Wifi_DAQ_status.html">System get Wifi DAQ status</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../System_Wifi/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../System_Wifi/set_and_get_RTC.html">Set and get RTC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../System_Wifi/set_LED_status.html">Set LED status</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Tutorial/single_loop_thread.html">Tutorial single loop thread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Tutorial/single_loop_async.html">Tutorial single loop async</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Tutorial/multiple_loops_thread.html">Tutorial multiple loops thread</a></li>
@@ -93,7 +99,6 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../examples_GUI_Synchronous.html">Example Codes - GUI (sync)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../examples_GUI_Asynchronous.html">Example Codes - GUI (async)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">APPENDICES</span></p>
 <ul>
@@ -116,9 +121,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../../../../examples_console_Asynchronous.html">Example Codes - Console (async)</a> &raquo;</li>
-      <li>AHRS read</li>
+      <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../../examples_console_Asynchronous.html">Example Codes - Console (async)</a></li>
+      <li class="breadcrumb-item active">AHRS read</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -128,7 +133,7 @@
            <div itemprop="articleBody">
              
   <section id="ahrs-read">
-<h1>AHRS read<a class="headerlink" href="#ahrs-read" title="Permalink to this heading"></a></h1>
+<h1>AHRS read<a class="headerlink" href="#ahrs-read" title="Link to this heading"></a></h1>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos">  2</span><span class="sd">AHRS - AHRS_read.py with asynchronous mode.</span>
 <span class="linenos">  3</span>

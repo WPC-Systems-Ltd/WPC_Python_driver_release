@@ -746,6 +746,8 @@ Wifi-DAQ-E3-A
 
    examples/Console/Asynchronous/WifiDAQE3A/System_Wifi/set_and_get_RTC.rst
 
+   examples/Console/Asynchronous/WifiDAQE3A/System_Wifi/set_LED_status.rst
+
    examples/Console/Asynchronous/WifiDAQE3A/Tutorial/single_loop_thread.rst
 
    examples/Console/Asynchronous/WifiDAQE3A/Tutorial/single_loop_async.rst
@@ -780,6 +782,8 @@ Wifi-DAQ-F4-A
    examples/Console/Asynchronous/WifiDAQF4A/System_Wifi/hello_world.rst
 
    examples/Console/Asynchronous/WifiDAQF4A/System_Wifi/set_and_get_RTC.rst
+
+   examples/Console/Asynchronous/WifiDAQF4A/System_Wifi/set_LED_status.rst
 
    examples/Console/Asynchronous/WifiDAQF4A/Tutorial/single_loop_thread.rst
 

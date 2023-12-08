@@ -1,6 +1,20 @@
 WPC Python driver release changelog
 ===================================
 
+v3.0.12 Date: 2023/12/08, Developer: Chunglee_people
+---------------------------------------------------
+### Added
+- STEM's pinout
+- example code: set_LED_status
+- API: Wifi_getPowerGoodStatus, Wifi_getChargeStatus
+Wifi_resetLED, Wifi_setBlueLED, Wifi_setRedLED, Wifi_setGreenLED
+
+### Fixed
+- Synchronous GUI example code: AI
+
+### Removed
+- GUI example code: Asynchronous
+
 v3.0.11 Date: 2023/12/04, Developer: Chunglee_people
 ---------------------------------------------------
 ### Added

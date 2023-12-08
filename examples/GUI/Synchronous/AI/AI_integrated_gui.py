@@ -18,6 +18,7 @@ from UI_design.Ui_example_GUI_AI import Ui_MainWindow
 
 ## WPC
 from wpcsys import pywpc
+import time
 
 class MatplotlibWidget(QWidget):
     def __init__(self, parent=None):
@@ -58,6 +59,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         ## List parameter
         self.channel_list = []
+
         for j in range(8):
             self.channel_list.append([])
         self.plot_total_times = 0
@@ -96,13 +98,15 @@ class MainWindow(QtWidgets.QMainWindow):
     def selectHandle(self):
         handle_idx = int(self.ui.comboBox_handle.currentIndex())
         if handle_idx == 0:
-            self.dev = pywpc.WifiDAQE3A()
+            self.dev = pywpc.STEM()
         elif handle_idx == 1:
             self.dev = pywpc.EthanA()
         elif handle_idx == 2:
             self.dev = pywpc.USBDAQF1AD()
         elif handle_idx == 3:
             self.dev = pywpc.USBDAQF1AOD()
+        elif handle_idx == 4:
+            self.dev = pywpc.WifiDAQE3A()
 
     def updateParam(self):
         ## Get IP or serial_number from GUI
@@ -134,12 +138,10 @@ class MainWindow(QtWidgets.QMainWindow):
             ## Connect to device
             self.dev.connect(self.ip)
         except pywpc.Error as err:
-            print("err: " + str(err))
             return
 
         ## Open AI port
-        status = self.dev.AI_open(self.port)
-        print("AI_open status: ", status)
+        self.dev.AI_open(self.port)
 
         ## Change LED status
         self.ui.lb_led.setPixmap(QtGui.QPixmap(self.blue_led_path))
@@ -152,8 +154,7 @@ class MainWindow(QtWidgets.QMainWindow):
             return
 
         ## close AI port
-        status = self.dev.AI_close(self.port)
-        print("AI_close status: ", status)
+        self.dev.AI_close(self.port)
 
         ## Disconnect device
         self.dev.disconnect()
@@ -167,10 +168,12 @@ class MainWindow(QtWidgets.QMainWindow):
         self.connect_flag = 0
 
     def AIStreamThread(self):
-        while not self.killed :
+        while not self.killed:
+            self.ai_lock.acquire()
+            self.ai_lock.release()
             if self.dev != None:
                 ## data acquisition
-                data = self.dev.AI_readStreaming(self.port, 600, 0.005)## Get 600 points at a time
+                data = self.dev.AI_readStreaming(self.port, 200, 1)
                 if len(data) > 0:
                     self.setDisplayPlotNums(data, self.ai_n_samples)
             time.sleep(0.05)
@@ -187,10 +190,17 @@ class MainWindow(QtWidgets.QMainWindow):
         if self.mode == 0:
             data = self.dev.AI_readOnDemand(self.port)
             self.setDisplayPlotNums([data], self.ai_n_samples)
-        ## N-Samples/Continuous
-        else:
-            status = self.dev.AI_start(self.port)
-            print("AI_start status: ", status)
+        ## N-Samples
+        elif self.mode == 1:
+            self.dev.AI_start(self.port)
+            data = self.dev.AI_readStreaming(self.port, 200, 1)
+            if len(data) > 0:
+                self.setDisplayPlotNums(data, self.ai_n_samples)
+        ## Continuous
+        elif self.mode == 2:
+            self.dev.AI_start(self.port)
+            self.ai_lock.acquire(False)
+            self.ai_lock.release()
 
     def stopAIEvent(self):
         ## Check connection status
@@ -200,9 +210,11 @@ class MainWindow(QtWidgets.QMainWindow):
         ## Update Param
         self.updateParam()
 
-        ## Send AI stop
-        status = self.dev.AI_stop(self.port)
-        print("AI_stop status: ", status)
+        ## Continuous
+        if self.mode == 2:
+            ## Send AI stop
+            self.dev.AI_stop(self.port)
+            self.ai_lock.acquire() ## Acquire thread lock
 
     def chooseAIModeEvent(self, *args):
         ## Check connection status
@@ -213,8 +225,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.updateParam()
 
         ## Send AI mode
-        status = self.dev.AI_setMode(self.port, self.mode)
-        print("AI_setMode status: ", status)
+        self.dev.AI_setMode(self.port, self.mode)
 
     def setSamplingRateEvent(self):
         ## Check connection status
@@ -225,8 +236,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.updateParam()
 
         ## Send set sampling rate
-        status = self.dev.AI_setSamplingRate(self.port, self.ai_sampling_rate)
-        print("AI_setSamplingRate status: ", status)
+        self.dev.AI_setSamplingRate(self.port, self.ai_sampling_rate)
 
     def setNumofSampleEvent(self):
         ## Check connection status
@@ -237,8 +247,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.updateParam()
 
         ## Send set number of samples
-        status = self.dev.AI_setNumSamples(self.port, self.ai_n_samples)
-        print("AI_setNumSamples status: ", status)
+        self.dev.AI_setNumSamples(self.port, self.ai_n_samples)
 
     def plotInitial(self):
         self.checkboxstatus = [1 for x in range(8)]
@@ -287,10 +296,9 @@ class MainWindow(QtWidgets.QMainWindow):
             print("err_xlist " + str(len(x_list)))
             print("err_ylist " + str(len(self.channel_list[i])))
 
-
         ## Set x,y limit
         self.ui.MplWidget.canvas.axes.set_ylim(float(self.plot_y_min) * 1.05, float(self.plot_y_max) * 1.05)
-        self.ui.MplWidget.canvas.axes.set_xlim(x_min, x_max)
+        # self.ui.MplWidget.canvas.axes.set_xlim(x_min, x_max)
 
         ## Set xtickslabel
         self.ui.MplWidget.canvas.axes.set_xticks(ticks)

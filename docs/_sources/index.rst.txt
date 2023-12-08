@@ -23,7 +23,6 @@
    examples_console_Synchronous
    examples_console_Asynchronous
    examples_GUI_Synchronous
-   examples_GUI_Asynchronous
 
 .. toctree::
    :hidden:

@@ -1,7 +1,7 @@
 '''
 System_Wifi - get_Wifi_DAQ_status.py with asynchronous mode.
 
-This example demonstrates how to get basic information such as RSSI & battery & thermo from WifiDAQF4A.
+This example demonstrates how to get basic information such as RSSI & battery & thermo & power & charge status from WifiDAQF4A.
 
 -------------------------------------------------------------------------------------
 Please change correct serial number or IP and port number BEFORE you run example code.
@@ -47,9 +47,15 @@ async def main():
         battery = await dev.Wifi_readBattery_async()
         thermo = await dev.Wifi_readThermo_async()
 
+        ## Get power & charge status
+        power_status  = await dev.Wifi_getPowerGoodStatus_async()
+        charge_status = await dev.Wifi_getChargeStatus_async()
+
         print(f"RSSI: {rssi} dBm")
         print(f"Battery: {battery} mV")
         print(f"Thermo: {thermo} °C")
+        print(f"Power status: {power_status}")
+        print(f"Charge status: {charge_status}")
     except Exception as err:
         pywpc.printGenericError(err)
 
