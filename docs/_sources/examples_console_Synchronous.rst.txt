@@ -618,6 +618,8 @@ Wifi-DAQ-E3-A
 
    examples/Console/Synchronous/WifiDAQE3A/System_Wifi/set_and_get_RTC.rst
 
+   examples/Console/Synchronous/WifiDAQE3A/System_Wifi/set_LED_status.rst
+
 
 Wifi-DAQ-F4-A
 -------------
@@ -644,4 +646,6 @@ Wifi-DAQ-F4-A
    examples/Console/Synchronous/WifiDAQF4A/System_Wifi/hello_world.rst
 
    examples/Console/Synchronous/WifiDAQF4A/System_Wifi/set_and_get_RTC.rst
+
+   examples/Console/Synchronous/WifiDAQF4A/System_Wifi/set_LED_status.rst
 
