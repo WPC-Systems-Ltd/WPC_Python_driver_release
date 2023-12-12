@@ -6,7 +6,7 @@
 
 This example project demonstrates how to use WPC python driver with counter
 
-In order to use API correctly, please refer [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
+In order to use API correctly, please refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
 If you want to build your own counter application, try to use this as a basic template, then add your own code.
 

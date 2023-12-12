@@ -6,9 +6,9 @@
 
 This example project demonstrates how to use WPC python driver to read and write EEPROM (25LC640) through SPI interface.
 
-In order to use API correctly, please refer [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
+In order to use API correctly, please refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-If you want to build your own SPI application (for example, read the temperature data from external sensor with SPI interface), try to use this as a basic template, then add your own code.
+If you'd like to create your own application, start by using this simple template, and then include your own code.
 
 ## How to use this example
 
