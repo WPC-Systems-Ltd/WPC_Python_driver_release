@@ -7,9 +7,9 @@
 This example project demonstrates how to use WPC python driver to read and write through CAN interface.
 
 In order to verify, please take another `USBDAQF1CD` or other device which support CAN interface.
-We connect two device via CAN so that can communicate data.  
+We connect two device via CAN so that can communicate data.
 
-If you want to build your own CAN application, try to use this as a basic template, then add your own code.
+If you'd like to create your own application, start by using this simple template, and then include your own code.
 
 ## How to use this example
 

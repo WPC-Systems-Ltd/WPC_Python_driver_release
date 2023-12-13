@@ -6,22 +6,23 @@
 
 This example project demonstrates how to use WPC python driver to do AIO loopback.
 
-In order to use API correctly, please refer [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
+In order to use API correctly, please refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-If you want to build your own AIO application, try to use this as a basic template, then add your own code.
+If you'd like to create your own application, start by using this simple template, and then include your own code.
 
 ## How to use this example
 
 ### The limitation of the sampling rate.
 
-- It only apply on ``STEM`` product
-- If you want to AI_streaming while simultaneously changing the AO (Analog Output) values, there will be limitations.
+- For STEM, AO writing can be called while AI is streaming under a specific speed.
+- This speed depends on the number of enabled chip-selects.
+- Below is the table indicating the max AI sampling rate that allows AO writing.
 
-| CS number  | Sampling rate (MAX)|
-|:----------:|:------------------:|
-|   3        | 1000 (HZ)          |
-|   2        | 1500 (HZ)          |
-|   1        | 3000 (HZ)          |
+| CS number  | Sampling rate|
+|:----------:|:------------:|
+|   3        | 1K           |
+|   2        | 1.5K         |
+|   1        | 3K           |
 
 ### Hardware Requirement
 

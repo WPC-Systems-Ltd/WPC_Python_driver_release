@@ -47,6 +47,7 @@ async def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
+        channel = 8
         ao_value_list = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5]
         chip_select = [0]
 
@@ -58,6 +59,10 @@ async def main():
         ## Open AI
         err = await dev.AI_open_async(port)
         print(f"AI_open_async in port {port}: {err}")
+        
+        ## Set AI channel
+        err = await dev.AI_enableChannel_async(port, channel)
+        print("AI_enableChannel_async in port {port}: {err}")
 
         ## Open AO
         err = await dev.AO_open_async(port)

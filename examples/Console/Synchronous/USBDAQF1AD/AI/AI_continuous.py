@@ -44,6 +44,7 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
+        channel = 8
         mode = 2 ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 200
         read_points = 200
@@ -58,6 +59,10 @@ def main():
         ## Open AI
         err = dev.AI_open(port, timeout=timeout)
         print(f"AI_open in port {port}: {err}")
+        
+        ## Set AI channel
+        err = dev.AI_enableChannel(port, channel, timeout=timeout)
+        print("AI_enableChannel in port {port}: {err}")
 
         ## Set AI acquisition mode to continuous mode (2)
         err = dev.AI_setMode(port, mode, timeout=timeout)

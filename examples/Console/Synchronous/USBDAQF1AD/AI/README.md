@@ -7,20 +7,34 @@
 This example project demonstrates how to use WPC Python driver to acquire multi-channel AI data simultaneously.
 Also, we show how to perform data acquisition in on-demand, N samples and continuous mode individually.
 
-In order to use API correctly, please refer [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
+In order to use API correctly, please refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-If you want to build your own AI application, try to use this as a basic template, then add your own code.
+If you'd like to create your own application, start by using this simple template, and then include your own code.
 
 ## How to use this example
 
-### Channel count vs. sampling rate
+### Sampling rate
 
-| Product/module  |chan 0:0|chan 0:1|chan 0:2|chan 0:3|chan 0:4|chan 0:5|chan 0:6|chan 0:7|
-|:---------------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
-| USB-DAQ-F1-AD   | 20k    | 12.5k  | 8.1k   | 6.3k   | 4k     | 3.2k   | 3.2k   | 2.5k   |
-| USB-DAQ-F1-AOD  | 20k    | 12.5k  | 8.1k   | 6.3k   | 4k     | 3.2k   | 3.2k   | 2.5k   |
-| Wifi-DAQ        | 10k    | 10k    | 10k    | 10k    | 10k    | 10k    | 10k    | 10k    |
-| Ethan-A         | 20k    | 20k    | 20k    | 20k    | 20k    | 20k    | 20k    | 20k    |
+#### The max sampling rate is dependent on the number of enabled channels.
+
+| Product/channel | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   |
+|:---------------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| USB-DAQ-F1-AD   | 16k | 8k  | 5.3k| 4k  | 3.2k| 2.6k| 2.2k| 2.0k|
+| USB-DAQ-F1-AOD  | 16k | 8k  | 5.3k| 4k  | 3.2k| 2.6k| 2.2k| 2.0k|
+
+#### The max sampling rate is dependent on the number of enabled chip-selects.
+
+| Product/CS  | 1  | 2  |3   |
+|:-----------:|:--:|:--:|:--:|
+| STEM        |12k |6k  |4k  |
+
+#### The max sampling rate is fixed.
+
+| Product       |Sampling rate|
+|:-------------:|:-----------:|
+| Wifi-DAQ-E3-A | 10k         |
+| Wifi-DAQ-F4-A | 20k         |
+| Ethan-A       | 20k         |
 
 ### Hardware requirement
 

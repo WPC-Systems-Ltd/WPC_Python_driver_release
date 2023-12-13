@@ -1,8 +1,22 @@
 WPC Python driver release changelog
 ===================================
 
+v3.0.13 Date: 2023/12/13, Developer: Chunglee_people
+----------------------------------------------------
+### Added
+- Sampling rate chart in AI README.md
+- function description: AI_enableCS
+- AI Max Sampling Rate Table
+
+### Fixed
+- Synchronize error code with CSharp
+
+### Removed
+- examples_GUI_Asynchronous.rst
+- example code: AI_N_samples_in_loop
+
 v3.0.12 Date: 2023/12/08, Developer: Chunglee_people
----------------------------------------------------
+----------------------------------------------------
 ### Added
 - STEM's pinout
 - example code: set_LED_status
@@ -16,7 +30,7 @@ Wifi_resetLED, Wifi_setBlueLED, Wifi_setRedLED, Wifi_setGreenLED
 - GUI example code: Asynchronous
 
 v3.0.11 Date: 2023/12/04, Developer: Chunglee_people
----------------------------------------------------
+----------------------------------------------------
 ### Added
 - example code: AI_continuous_multi_slot, AO_output_while_AI_streaming.
 - API: _AI_getCounter, Sys_getPythonVersion

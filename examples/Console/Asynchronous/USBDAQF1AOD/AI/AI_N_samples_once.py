@@ -45,6 +45,7 @@ async def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
+        channel = 8
         mode = 1 ## 0 : On demand, 1 : N-samples, 2 : Continuous
         sampling_rate = 1000
         samples = 200
@@ -59,6 +60,10 @@ async def main():
         ## Open AI
         err = await dev.AI_open_async(port)
         print(f"AI_open_async in port {port}: {err}")
+        
+        ## Set AI channel
+        err = await dev.AI_enableChannel_async(port, channel)
+        print("AI_enableChannel_async in port {port}: {err}")
 
         ## Set AI acquisition mode to N-samples mode (1)
         err = await dev.AI_setMode_async(port, mode)
@@ -83,7 +88,7 @@ async def main():
         ok = True
         for i, ai_list in enumerate(ai_2Dlist):
             ## Check for any missing data
-            if len(ai_list) != 8:
+            if len(ai_list) != channel:
                 print(i, ai_list)
                 ok = False
         if ok:
