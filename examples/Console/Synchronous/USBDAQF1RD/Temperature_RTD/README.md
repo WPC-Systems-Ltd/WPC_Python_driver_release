@@ -6,9 +6,9 @@
 
 This example project demonstrates how to use WPC python driver to read RTD sensor temperature in Celcius.
 
-In order to use API correctly, please refer [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
+In order to use API correctly, please refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-If you want to build your own RTD application, try to use this as a basic template, then add your own code.
+If you'd like to create your own application, start by using this simple template, and then include your own code.
 
 ## How to use this example
 
@@ -24,7 +24,7 @@ Then, we take `USBDAQF1RD` for example.
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-USBDAQF1RD.JPG" alt="drawing" width="600"/>
 
-## RTD interfacing SOP 
+## RTD interfacing SOP
 
 Create device handle -> Connect to device -> Open Thermal port -> Set Thermal parameters -> Read RTD data -> Close Thermal port -> Disconnect device -> Release device handle.
 

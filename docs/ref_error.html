@@ -1,30 +1,29 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="./">
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Error Code Table &mdash; WPC Python driver 3.0.12 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="_static/custom_sphinx.css?v=20c2511c" />
-
-  
+  <title>Error Code Table &mdash; WPC Python driver 3.0.13 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom_sphinx.css" type="text/css" />
     <link rel="shortcut icon" href="_static/WPC-trademark.jpg"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=410a57b6"></script>
-        <script src="_static/doctools.js?v=888ff710"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Setting Table" href="ref_param.html" />
-    <link rel="prev" title="I/O channel function table" href="ref_channel.html" /> 
+    <link rel="prev" title="AI Max Sampling Rate Table" href="ref_AIO.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -32,19 +31,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-
-          
-          
-          <a href="index.html" class="icon icon-home">
-            WPC Python driver
-              <img src="_static/WPC-logo.PNG" class="logo" alt="Logo"/>
+            <a href="index.html" class="icon icon-home"> WPC Python driver
+            <img src="_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.12
+                3.0.13
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -63,8 +58,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">APPENDICES</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="ref_port.html">I/O port function table</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ref_channel.html">I/O channel function table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ref_port.html">I/O Port Function Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ref_channel.html">I/O Channel Function Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ref_AIO.html">AI Max Sampling Rate Table</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Error Code Table</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ref_param.html">Setting Table</a></li>
 </ul>
@@ -82,8 +78,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Error Code Table</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Error Code Table</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -93,12 +89,12 @@
            <div itemprop="articleBody">
              
   <section id="error-code-table">
-<h1>Error Code Table<a class="headerlink" href="#error-code-table" title="Link to this heading"></a></h1>
-<table class="docutils align-default" id="error-code">
+<h1>Error Code Table<a class="headerlink" href="#error-code-table" title="Permalink to this heading"></a></h1>
+<table class="colwidths-given docutils align-default" id="error-code">
 <colgroup>
-<col style="width: 33.3%" />
-<col style="width: 33.3%" />
-<col style="width: 33.3%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Error code</p></th>
@@ -107,19 +103,19 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>570003</p></td>
+<tr class="row-even"><td><p>520003</p></td>
 <td><p>Warning</p></td>
 <td><p>Occurrence AHRS queue overflow.</p></td>
 </tr>
-<tr class="row-odd"><td><p>570002</p></td>
+<tr class="row-odd"><td><p>520002</p></td>
 <td><p>Warning</p></td>
 <td><p>Occurrence CAN queue overflow.</p></td>
 </tr>
-<tr class="row-even"><td><p>560001</p></td>
+<tr class="row-even"><td><p>520001</p></td>
 <td><p>Warning</p></td>
 <td><p>Occurrence UART queue overflow.</p></td>
 </tr>
-<tr class="row-odd"><td><p>520003</p></td>
+<tr class="row-odd"><td><p>520000</p></td>
 <td><p>Warning</p></td>
 <td><p>Occurrence AI queue overflow.</p></td>
 </tr>
@@ -141,7 +137,7 @@
 </tr>
 <tr class="row-even"><td><p>-7003</p></td>
 <td></td>
-<td><p>The WPC handle index error in the firmware.</p></td>
+<td><p>The HAL error in the firmware.</p></td>
 </tr>
 <tr class="row-odd"><td><p>-7004</p></td>
 <td></td>
@@ -185,7 +181,7 @@
 </tr>
 <tr class="row-odd"><td><p>-7014</p></td>
 <td></td>
-<td><p>The system core error in the firmware.</p></td>
+<td><p>The Core error in the firmware.</p></td>
 </tr>
 <tr class="row-even"><td><p>-7015</p></td>
 <td></td>
@@ -243,281 +239,281 @@
 <td></td>
 <td><p>The other error in the firmware.</p></td>
 </tr>
-<tr class="row-even"><td><p>-7601</p></td>
-<td></td>
-<td><p>AHRS port not available or already occupied by other process.</p></td>
-</tr>
-<tr class="row-odd"><td><p>-7701</p></td>
-<td></td>
-<td><p>The PWM channel is not available.</p></td>
-</tr>
-<tr class="row-even"><td><p>-7702</p></td>
-<td></td>
-<td><p>The counter channel is not available.</p></td>
-</tr>
-<tr class="row-odd"><td><p>-7801</p></td>
-<td></td>
-<td><p>STEM port not available or already occupied by other process.</p></td>
-</tr>
-<tr class="row-even"><td><p>-7901</p></td>
-<td></td>
-<td><p>Please ensure that the relay counter index is restricted to the range of 0 to 5 or -1.</p></td>
-</tr>
-<tr class="row-odd"><td><p>-8000</p></td>
+<tr class="row-even"><td><p>-8000</p></td>
 <td></td>
 <td><p>In this product, there is no support for this API.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8001</p></td>
+<tr class="row-odd"><td><p>-8001</p></td>
 <td></td>
 <td><p>Failed to connect to WPC DAQ. Please check USB plugin status and serial number.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8002</p></td>
+<tr class="row-even"><td><p>-8002</p></td>
 <td></td>
 <td><p>Failed to connect to WPC DAQ. Please check network status and IP address.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8007</p></td>
+<tr class="row-odd"><td><p>-8003</p></td>
 <td></td>
 <td><p>Network DAQ connection lost.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8008</p></td>
+<tr class="row-even"><td><p>-8004</p></td>
 <td></td>
 <td><p>Receive packet timeout.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8009</p></td>
+<tr class="row-odd"><td><p>-8005</p></td>
 <td></td>
-<td><p>The pin index is invalid</p></td>
+<td><p>The pin index is not valid or is not recognized.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8010</p></td>
+<tr class="row-even"><td><p>-8006</p></td>
 <td></td>
 <td><p>Inconsistency between the number of pins &amp; the number of values.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8011</p></td>
+<tr class="row-odd"><td><p>-8007</p></td>
 <td></td>
-<td><p>There is a discrepancy in the data types between the pins and the corresponding values</p></td>
+<td><p>Inconsistency between the type of pins &amp; the type of values.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8012</p></td>
+<tr class="row-even"><td><p>-8008</p></td>
 <td></td>
-<td><p>The data type is incompatible or not supported.</p></td>
+<td><p>The data type is not valid or is not recognized.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8014</p></td>
+<tr class="row-odd"><td><p>-8009</p></td>
 <td></td>
 <td><p>The input value is not the acceptable range.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8015</p></td>
+<tr class="row-even"><td><p>-8010</p></td>
 <td></td>
 <td><p>The Ini file extension name is not correct.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8016</p></td>
+<tr class="row-odd"><td><p>-8011</p></td>
 <td></td>
 <td><p>No such file or directory.</p></td>
 </tr>
+<tr class="row-even"><td><p>-8100</p></td>
+<td></td>
+<td><p>The DI port is not available or is already occupied by another process.</p></td>
+</tr>
 <tr class="row-odd"><td><p>-8101</p></td>
 <td></td>
-<td><p>DI port not avaliable or already occupied by other process.</p></td>
+<td><p>The DO port is not available or is already occupied by another process.</p></td>
 </tr>
 <tr class="row-even"><td><p>-8102</p></td>
 <td></td>
-<td><p>DO port not available or already occupied by other process.</p></td>
+<td><p>The PWM channel is not available.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8201</p></td>
+<tr class="row-odd"><td><p>-8103</p></td>
 <td></td>
-<td><p>AI port not available or already occupied by other process.</p></td>
+<td><p>The counter channel is not available.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8202</p></td>
+<tr class="row-even"><td><p>-8104</p></td>
 <td></td>
-<td><p>The specified AI chip select is invalid.</p></td>
+<td><p>The relay counter index error is not valid or is not recognized.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-8200</p></td>
+<td></td>
+<td><p>The AI channel is not available.</p></td>
+</tr>
+<tr class="row-even"><td><p>-8201</p></td>
+<td></td>
+<td><p>The AI port is not available or is already occupied by another process.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-8202</p></td>
+<td></td>
+<td><p>The AI chip is not valid or is not recognized.</p></td>
+</tr>
+<tr class="row-even"><td><p>-8203</p></td>
+<td></td>
+<td><p>The AI mode is not valid or is not recognized.</p></td>
 </tr>
 <tr class="row-odd"><td><p>-8204</p></td>
 <td></td>
-<td><p>AO port not available or already occupied by other process.</p></td>
+<td><p>The AI sampling rate is not valid or is not recognized.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8206</p></td>
+<tr class="row-even"><td><p>-8300</p></td>
 <td></td>
-<td><p>The specified AO generation mode is invalid.</p></td>
+<td><p>The AO port is not available or is already occupied by another process.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8207</p></td>
+<tr class="row-odd"><td><p>-8301</p></td>
 <td></td>
-<td><p>The specified AO span mode is invalid.</p></td>
+<td><p>The AO generation mode is not valid or is not recognized.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8208</p></td>
+<tr class="row-even"><td><p>-8302</p></td>
 <td></td>
-<td><p>The specified AI acquisition mode is invalid.</p></td>
+<td><p>The AO span mode is not valid or is not recognized.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8209</p></td>
+<tr class="row-odd"><td><p>-8303</p></td>
 <td></td>
-<td><p>AO channel not avaliable or already occupied by other process.</p></td>
+<td><p>The AO channel is not available.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8210</p></td>
+<tr class="row-even"><td><p>-8304</p></td>
 <td></td>
-<td><p>The specified AI sampling rate is invalid.</p></td>
+<td><p>The AO form is not valid or is not recognized.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8211</p></td>
+<tr class="row-odd"><td><p>-8305</p></td>
 <td></td>
-<td><p>The specified AO form is invalid.</p></td>
+<td><p>The AO sampling rate is not valid or is not recognized.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8212</p></td>
+<tr class="row-even"><td><p>-8400</p></td>
 <td></td>
-<td><p>The specified AO sampling rate is invalid.</p></td>
+<td><p>The AHRS port is not available or is already occupied by another process.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8213</p></td>
+<tr class="row-odd"><td><p>-8500</p></td>
 <td></td>
-<td><p>Numbers of AO value must lower than 13.</p></td>
+<td><p>The thermal port is not available or is already occupied by another process.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8301</p></td>
+<tr class="row-even"><td><p>-8501</p></td>
 <td></td>
-<td><p>Thermal port not avaliable or already occupied by other process.</p></td>
+<td><p>The thermal channel is not available.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8304</p></td>
+<tr class="row-odd"><td><p>-8502</p></td>
 <td></td>
-<td><p>Thermal channel not avaliable or already occupied by other process.</p></td>
+<td><p>The thermal filter mode is not valid or is not recognized.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8305</p></td>
+<tr class="row-even"><td><p>-8503</p></td>
 <td></td>
-<td><p>The specified thermal filter mode is invalid.</p></td>
+<td><p>The thermal type mode is not valid or is not recognized.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8306</p></td>
+<tr class="row-odd"><td><p>-8600</p></td>
 <td></td>
-<td><p>The specified thermal type mode is invalid.</p></td>
+<td><p>The I2C port is not available or is already occupied by another process.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8401</p></td>
+<tr class="row-even"><td><p>-8601</p></td>
 <td></td>
-<td><p>I2C port not avaliable or already occupied by other process.</p></td>
+<td><p>The I2C clock mode is not available.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8403</p></td>
+<tr class="row-odd"><td><p>-8602</p></td>
 <td></td>
-<td><p>The specified I2C clock mode is invalid.</p></td>
+<td><p>The I2C address mode is not available.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8404</p></td>
+<tr class="row-even"><td><p>-8700</p></td>
 <td></td>
-<td><p>The specified I2C address mode is invalid.</p></td>
-</tr>
-<tr class="row-odd"><td><p>-8501</p></td>
-<td></td>
-<td><p>SPI port not avaliable or already occupied by other process.</p></td>
-</tr>
-<tr class="row-even"><td><p>-8502</p></td>
-<td></td>
-<td><p>The length of data exceeds maximum transfer length of SPI.</p></td>
-</tr>
-<tr class="row-odd"><td><p>-8503</p></td>
-<td></td>
-<td><p>The specified SPI data size mode is invalid.</p></td>
-</tr>
-<tr class="row-even"><td><p>-8504</p></td>
-<td></td>
-<td><p>The specified SPI first bit mode is invalid.</p></td>
-</tr>
-<tr class="row-odd"><td><p>-8505</p></td>
-<td></td>
-<td><p>The specified SPI prescaler mode is invalid.</p></td>
-</tr>
-<tr class="row-even"><td><p>-8506</p></td>
-<td></td>
-<td><p>The specified SPI mode is invalid.</p></td>
-</tr>
-<tr class="row-odd"><td><p>-8601</p></td>
-<td></td>
-<td><p>UART port not avaliable or already occupied by other process.</p></td>
-</tr>
-<tr class="row-even"><td><p>-8602</p></td>
-<td></td>
-<td><p>The length of data exceeds maximum transfer length of UART.</p></td>
-</tr>
-<tr class="row-odd"><td><p>-8603</p></td>
-<td></td>
-<td><p>The specified UART baud rate is invalid.</p></td>
-</tr>
-<tr class="row-even"><td><p>-8604</p></td>
-<td></td>
-<td><p>The specified UART stop bit mode is invalid.</p></td>
-</tr>
-<tr class="row-odd"><td><p>-8605</p></td>
-<td></td>
-<td><p>The specified UART parity mode is invalid.</p></td>
-</tr>
-<tr class="row-even"><td><p>-8606</p></td>
-<td></td>
-<td><p>The specified UART data bit mode is invalid.</p></td>
+<td><p>The SPI port is not available or is already occupied by another process.</p></td>
 </tr>
 <tr class="row-odd"><td><p>-8701</p></td>
 <td></td>
-<td><p>CAN port not avaliable or already occupied by other process.</p></td>
+<td><p>The length of data exceeds maximum transfer length of SPI.</p></td>
 </tr>
 <tr class="row-even"><td><p>-8702</p></td>
 <td></td>
-<td><p>The specified CAN speed mode from WPC DAQ is invalid.</p></td>
+<td><p>The SPI data size mode is not valid or is not recognized.</p></td>
 </tr>
 <tr class="row-odd"><td><p>-8703</p></td>
 <td></td>
+<td><p>The SPI first bit mode is not valid or is not recognized.</p></td>
+</tr>
+<tr class="row-even"><td><p>-8704</p></td>
+<td></td>
+<td><p>The SPI prescaler mode is not valid or is not recognized.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-8705</p></td>
+<td></td>
+<td><p>The SPI mode is not valid or is not recognized.</p></td>
+</tr>
+<tr class="row-even"><td><p>-8800</p></td>
+<td></td>
+<td><p>The UART port is not available or is already occupied by another process.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-8801</p></td>
+<td></td>
+<td><p>The length of data exceeds maximum transfer length of UART.</p></td>
+</tr>
+<tr class="row-even"><td><p>-8802</p></td>
+<td></td>
+<td><p>The UART baud rate is not valid or is not recognized.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-8803</p></td>
+<td></td>
+<td><p>The UART stop bit mode is not valid or is not recognized.</p></td>
+</tr>
+<tr class="row-even"><td><p>-8804</p></td>
+<td></td>
+<td><p>The UART parity mode is not valid or is not recognized.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-8805</p></td>
+<td></td>
+<td><p>The UART data bit mode is not valid or is not recognized.</p></td>
+</tr>
+<tr class="row-even"><td><p>-8900</p></td>
+<td></td>
+<td><p>The drive port is not available or is already occupied by another process.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-8900</p></td>
+<td></td>
+<td><p>The CAN port is not available or is already occupied by another process.</p></td>
+</tr>
+<tr class="row-even"><td><p>-8901</p></td>
+<td></td>
+<td><p>The CAN speed mode is not valid or is not recognized.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-8902</p></td>
+<td></td>
 <td><p>The length of the specified CAN data is invalid.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8793</p></td>
+<tr class="row-even"><td><p>-8903</p></td>
 <td></td>
-<td><p>The specified CAN TX is invalid.</p></td>
+<td><p>The CAN TX is not valid or is not recognized</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8794</p></td>
+<tr class="row-odd"><td><p>-8904</p></td>
 <td></td>
-<td><p>The specified CAN TX priority is invalid.</p></td>
+<td><p>The CAN TX priority is not valid or is not recognized.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8803</p></td>
+<tr class="row-even"><td><p>-9100</p></td>
 <td></td>
-<td><p>The specified motion axis is invalid</p></td>
+<td><p>The motion axis is not valid or is not recognized.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8804</p></td>
+<tr class="row-odd"><td><p>-9101</p></td>
 <td></td>
-<td><p>Motion port not avaliable or already occupied by other process.</p></td>
+<td><p>The motion port is not available or is already occupied by another process.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8805</p></td>
+<tr class="row-even"><td><p>-9102</p></td>
 <td></td>
-<td><p>The specified motion stop mode is invalid.</p></td>
+<td><p>The motion stop mode is not valid or is not recognized.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8806</p></td>
+<tr class="row-odd"><td><p>-9103</p></td>
 <td></td>
-<td><p>The specified motion search type is invalid.</p></td>
+<td><p>The motion search type is not valid or is not recognized.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8807</p></td>
+<tr class="row-even"><td><p>-9104</p></td>
 <td></td>
-<td><p>The specified motion search direction is invalid.</p></td>
+<td><p>The motion search direction is not valid or is not recognized.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8808</p></td>
+<tr class="row-odd"><td><p>-9105</p></td>
 <td></td>
-<td><p>The specified motion enable is invalid.</p></td>
+<td><p>The motion enable is not valid or is not recognized.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8809</p></td>
+<tr class="row-even"><td><p>-9106</p></td>
 <td></td>
-<td><p>The specified motion stepper output is invalid.</p></td>
+<td><p>The motion stepper output is not valid or is not recognized.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8810</p></td>
+<tr class="row-odd"><td><p>-9107</p></td>
 <td></td>
-<td><p>The specified motion direction is invalid.</p></td>
+<td><p>The motion direction is not valid or is not recognized.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8811</p></td>
+<tr class="row-even"><td><p>-9108</p></td>
 <td></td>
-<td><p>The specified motion polarity is invalid.</p></td>
+<td><p>The motion polarity is not valid or is not recognized.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8812</p></td>
+<tr class="row-odd"><td><p>-9109</p></td>
 <td></td>
-<td><p>The specified motion capture type is invalid.</p></td>
+<td><p>The motion capture type is not valid or is not recognized.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8813</p></td>
+<tr class="row-even"><td><p>-9110</p></td>
 <td></td>
-<td><p>The specified motion capture mode is invalid.</p></td>
+<td><p>The motion capture mode is not valid or is not recognized.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8814</p></td>
+<tr class="row-odd"><td><p>-9111</p></td>
 <td></td>
-<td><p>The specified motion breakpoint mode is invalid.</p></td>
+<td><p>The motion breakpoint mode is not valid or is not recognized.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8815</p></td>
+<tr class="row-even"><td><p>-9112</p></td>
 <td></td>
-<td><p>The specified motion operation mode is invalid.</p></td>
+<td><p>The motion operation mode is not valid or is not recognized.</p></td>
 </tr>
-<tr class="row-odd"><td><p>-8816</p></td>
+<tr class="row-odd"><td><p>-9113</p></td>
 <td></td>
-<td><p>The specified motion acceleration mode is invalid.</p></td>
+<td><p>The motion acceleration mode is not valid or is not recognized.</p></td>
 </tr>
-<tr class="row-even"><td><p>-8904</p></td>
+<tr class="row-even"><td><p>-9200</p></td>
 <td></td>
-<td><p>Drive port not avaliable or already occupied by other process.</p></td>
+<td><p>The STEM slot is not available or is already occupied by another process.</p></td>
 </tr>
 </tbody>
 </table>
@@ -527,7 +523,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="ref_channel.html" class="btn btn-neutral float-left" title="I/O channel function table" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ref_AIO.html" class="btn btn-neutral float-left" title="AI Max Sampling Rate Table" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="ref_param.html" class="btn btn-neutral float-right" title="Setting Table" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

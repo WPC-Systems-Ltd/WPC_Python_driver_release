@@ -45,6 +45,7 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
+        channel = 8
         mode = 1 ## 0 : On demand, 1 : N-samples, 2 : Continuous
         sampling_rate = 1000
         samples = 200
@@ -57,9 +58,13 @@ def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## Open port
+        ## Open AI
         err = dev.AI_open(port, timeout=timeout)
         print(f"AI_open in port {port}: {err}")
+        
+        ## Set AI channel
+        err = dev.AI_enableChannel(port, channel, timeout=timeout)
+        print("AI_enableChannel in port {port}: {err}")
 
         ## Set AI acquisition mode to N-samples mode (1)
         err = dev.AI_setMode(port, mode, timeout=timeout)
@@ -84,7 +89,7 @@ def main():
         ok = True
         for i, ai_list in enumerate(ai_2Dlist):
             ## Check for any missing data
-            if len(ai_list) != 8:
+            if len(ai_list) != channel:
                 print(i, ai_list)
                 ok = False
         if ok:

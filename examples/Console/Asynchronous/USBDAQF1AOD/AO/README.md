@@ -6,15 +6,15 @@
 
 This example project demonstrates how to use WPC python driver to output digital signal.
 
-In order to use API correctly, please refer [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
+In order to use API correctly, please refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-If you want to build your own AO application, try to use this as a basic template, then add your own code.
+If you'd like to create your own application, start by using this simple template, and then include your own code.
 
 ## How to use this example
 
 ### AO output range
 
-| Product/module  |AO range    |
+| Product         |AO range    |
 |:---------------:|:----------:|
 | USB-DAQ-F1-AOD  | 0 ~ 5 V    |
 | Ethan-O         | -10 ~ 10 V |

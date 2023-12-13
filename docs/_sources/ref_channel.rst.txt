@@ -1,4 +1,4 @@
-I/O channel function table
+I/O Channel Function Table
 ==========================
 
 .. _channel_table:

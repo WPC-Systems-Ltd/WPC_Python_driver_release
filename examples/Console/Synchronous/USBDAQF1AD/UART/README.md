@@ -10,9 +10,9 @@ In order to verify, please take another WPC USB DAQ device or other device which
 
 We connect two device via UART so that can communicate data.
 
-In order to use API correctly, please refer [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
+In order to use API correctly, please refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-If you want to build your own UART application (for example, read the temperature data from external sensor with UART interface), try to use this as a basic template, then add your own code.
+If you'd like to create your own application, start by using this simple template, and then include your own code.
 
 ## How to use this example
 

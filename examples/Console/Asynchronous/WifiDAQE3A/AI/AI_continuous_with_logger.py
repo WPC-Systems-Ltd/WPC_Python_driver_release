@@ -45,6 +45,7 @@ async def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
+        channel = 8
         mode = 2 ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 200
         read_points = 200
@@ -63,9 +64,10 @@ async def main():
         err = dev.Logger_writeHeader(["CH0","CH1","CH2","CH3","CH4","CH5","CH6","CH7"])
         print(f"Logger_writeHeader: {err}")
 
-        ## Open port
+        ## Open AI
         err = await dev.AI_open_async(port)
         print(f"AI_open_async in port {port}: {err}")
+        
 
         ## Set AI acquisition mode to continuous mode (2)
         err = await dev.AI_setMode_async(port, mode)

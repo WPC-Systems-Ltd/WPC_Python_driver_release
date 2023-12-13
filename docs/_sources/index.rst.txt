@@ -31,5 +31,6 @@
 
    ref_port
    ref_channel
+   ref_AIO
    ref_error
    ref_param

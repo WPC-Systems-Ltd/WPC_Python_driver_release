@@ -10,16 +10,16 @@ Error Code Table
    * - Error code
      - Type
      - Error messages
-   * - 570003
+   * - 520003
      - Warning
      - Occurrence AHRS queue overflow.
-   * - 570002
+   * - 520002
      - Warning
      - Occurrence CAN queue overflow.
-   * - 560001
+   * - 520001
      - Warning
      - Occurrence UART queue overflow.
-   * - 520003
+   * - 520000
      - Warning
      - Occurrence AI queue overflow.
    * - 519000
@@ -36,7 +36,7 @@ Error Code Table
      - The HAL handle index error in the firmware.
    * - -7003
      - 
-     - The WPC handle index error in the firmware.
+     - The HAL error in the firmware.
    * - -7004
      - 
      - The RTC error in the firmware.
@@ -69,7 +69,7 @@ Error Code Table
      - The OLED error in the firmware.
    * - -7014
      - 
-     - The system core error in the firmware.
+     - The Core error in the firmware.
    * - -7015
      - 
      - The DIO error in the firmware.
@@ -112,21 +112,6 @@ Error Code Table
    * - -7028
      - 
      - The other error in the firmware.
-   * - -7601
-     - 
-     - AHRS port not available or already occupied by other process.
-   * - -7701
-     - 
-     - The PWM channel is not available.
-   * - -7702
-     - 
-     - The counter channel is not available.
-   * - -7801
-     - 
-     - STEM port not available or already occupied by other process.
-   * - -7901
-     - 
-     - Please ensure that the relay counter index is restricted to the range of 0 to 5 or -1.
    * - -8000
      - 
      - In this product, there is no support for this API.
@@ -136,186 +121,201 @@ Error Code Table
    * - -8002
      - 
      - Failed to connect to WPC DAQ. Please check network status and IP address.
-   * - -8007
+   * - -8003
      - 
      - Network DAQ connection lost.
-   * - -8008
+   * - -8004
      - 
      - Receive packet timeout.
-   * - -8009
+   * - -8005
      - 
-     - The pin index is invalid
-   * - -8010
+     - The pin index is not valid or is not recognized.
+   * - -8006
      - 
      - Inconsistency between the number of pins & the number of values.
-   * - -8011
+   * - -8007
      - 
-     - There is a discrepancy in the data types between the pins and the corresponding values
-   * - -8012
+     - Inconsistency between the type of pins & the type of values.
+   * - -8008
      - 
-     - The data type is incompatible or not supported.
-   * - -8014
+     - The data type is not valid or is not recognized.
+   * - -8009
      - 
      - The input value is not the acceptable range.
-   * - -8015
+   * - -8010
      - 
      - The Ini file extension name is not correct.
-   * - -8016
+   * - -8011
      - 
      - No such file or directory.
+   * - -8100
+     - 
+     - The DI port is not available or is already occupied by another process.
    * - -8101
      - 
-     - DI port not avaliable or already occupied by other process.
+     - The DO port is not available or is already occupied by another process.
    * - -8102
      - 
-     - DO port not available or already occupied by other process.
+     - The PWM channel is not available.
+   * - -8103
+     - 
+     - The counter channel is not available.
+   * - -8104
+     - 
+     - The relay counter index error is not valid or is not recognized.
+   * - -8200
+     - 
+     - The AI channel is not available.
    * - -8201
      - 
-     - AI port not available or already occupied by other process.
+     - The AI port is not available or is already occupied by another process.
    * - -8202
      - 
-     - The specified AI chip select is invalid.
+     - The AI chip is not valid or is not recognized.
+   * - -8203
+     - 
+     - The AI mode is not valid or is not recognized.
    * - -8204
      - 
-     - AO port not available or already occupied by other process.
-   * - -8206
+     - The AI sampling rate is not valid or is not recognized.
+   * - -8300
      - 
-     - The specified AO generation mode is invalid.
-   * - -8207
-     - 
-     - The specified AO span mode is invalid.
-   * - -8208
-     - 
-     - The specified AI acquisition mode is invalid.
-   * - -8209
-     - 
-     - AO channel not avaliable or already occupied by other process.
-   * - -8210
-     - 
-     - The specified AI sampling rate is invalid.
-   * - -8211
-     - 
-     - The specified AO form is invalid.
-   * - -8212
-     - 
-     - The specified AO sampling rate is invalid.
-   * - -8213
-     - 
-     - Numbers of AO value must lower than 13.
+     - The AO port is not available or is already occupied by another process.
    * - -8301
      - 
-     - Thermal port not avaliable or already occupied by other process.
+     - The AO generation mode is not valid or is not recognized.
+   * - -8302
+     - 
+     - The AO span mode is not valid or is not recognized.
+   * - -8303
+     - 
+     - The AO channel is not available.
    * - -8304
      - 
-     - Thermal channel not avaliable or already occupied by other process.
+     - The AO form is not valid or is not recognized.
    * - -8305
      - 
-     - The specified thermal filter mode is invalid.
-   * - -8306
+     - The AO sampling rate is not valid or is not recognized.
+   * - -8400
      - 
-     - The specified thermal type mode is invalid.
-   * - -8401
+     - The AHRS port is not available or is already occupied by another process.
+   * - -8500
      - 
-     - I2C port not avaliable or already occupied by other process.
-   * - -8403
-     - 
-     - The specified I2C clock mode is invalid.
-   * - -8404
-     - 
-     - The specified I2C address mode is invalid.
+     - The thermal port is not available or is already occupied by another process.
    * - -8501
      - 
-     - SPI port not avaliable or already occupied by other process.
+     - The thermal channel is not available.
    * - -8502
      - 
-     - The length of data exceeds maximum transfer length of SPI.
+     - The thermal filter mode is not valid or is not recognized.
    * - -8503
      - 
-     - The specified SPI data size mode is invalid.
-   * - -8504
+     - The thermal type mode is not valid or is not recognized.
+   * - -8600
      - 
-     - The specified SPI first bit mode is invalid.
-   * - -8505
-     - 
-     - The specified SPI prescaler mode is invalid.
-   * - -8506
-     - 
-     - The specified SPI mode is invalid.
+     - The I2C port is not available or is already occupied by another process.
    * - -8601
      - 
-     - UART port not avaliable or already occupied by other process.
+     - The I2C clock mode is not available.
    * - -8602
      - 
-     - The length of data exceeds maximum transfer length of UART.
-   * - -8603
+     - The I2C address mode is not available.
+   * - -8700
      - 
-     - The specified UART baud rate is invalid.
-   * - -8604
-     - 
-     - The specified UART stop bit mode is invalid.
-   * - -8605
-     - 
-     - The specified UART parity mode is invalid.
-   * - -8606
-     - 
-     - The specified UART data bit mode is invalid.
+     - The SPI port is not available or is already occupied by another process.
    * - -8701
      - 
-     - CAN port not avaliable or already occupied by other process.
+     - The length of data exceeds maximum transfer length of SPI.
    * - -8702
      - 
-     - The specified CAN speed mode from WPC DAQ is invalid.
+     - The SPI data size mode is not valid or is not recognized.
    * - -8703
      - 
-     - The length of the specified CAN data is invalid.
-   * - -8793
+     - The SPI first bit mode is not valid or is not recognized.
+   * - -8704
      - 
-     - The specified CAN TX is invalid.
-   * - -8794
+     - The SPI prescaler mode is not valid or is not recognized.
+   * - -8705
      - 
-     - The specified CAN TX priority is invalid.
+     - The SPI mode is not valid or is not recognized.
+   * - -8800
+     - 
+     - The UART port is not available or is already occupied by another process.
+   * - -8801
+     - 
+     - The length of data exceeds maximum transfer length of UART.
+   * - -8802
+     - 
+     - The UART baud rate is not valid or is not recognized.
    * - -8803
      - 
-     - The specified motion axis is invalid
+     - The UART stop bit mode is not valid or is not recognized.
    * - -8804
      - 
-     - Motion port not avaliable or already occupied by other process.
+     - The UART parity mode is not valid or is not recognized.
    * - -8805
      - 
-     - The specified motion stop mode is invalid.
-   * - -8806
+     - The UART data bit mode is not valid or is not recognized.
+   * - -8900
      - 
-     - The specified motion search type is invalid.
-   * - -8807
+     - The drive port is not available or is already occupied by another process.
+   * - -8900
      - 
-     - The specified motion search direction is invalid.
-   * - -8808
+     - The CAN port is not available or is already occupied by another process.
+   * - -8901
      - 
-     - The specified motion enable is invalid.
-   * - -8809
+     - The CAN speed mode is not valid or is not recognized.
+   * - -8902
      - 
-     - The specified motion stepper output is invalid.
-   * - -8810
+     - The length of the specified CAN data is invalid.
+   * - -8903
      - 
-     - The specified motion direction is invalid.
-   * - -8811
-     - 
-     - The specified motion polarity is invalid.
-   * - -8812
-     - 
-     - The specified motion capture type is invalid.
-   * - -8813
-     - 
-     - The specified motion capture mode is invalid.
-   * - -8814
-     - 
-     - The specified motion breakpoint mode is invalid.
-   * - -8815
-     - 
-     - The specified motion operation mode is invalid.
-   * - -8816
-     - 
-     - The specified motion acceleration mode is invalid.
+     - The CAN TX is not valid or is not recognized
    * - -8904
      - 
-     - Drive port not avaliable or already occupied by other process.
+     - The CAN TX priority is not valid or is not recognized.
+   * - -9100
+     - 
+     - The motion axis is not valid or is not recognized.
+   * - -9101
+     - 
+     - The motion port is not available or is already occupied by another process.
+   * - -9102
+     - 
+     - The motion stop mode is not valid or is not recognized.
+   * - -9103
+     - 
+     - The motion search type is not valid or is not recognized.
+   * - -9104
+     - 
+     - The motion search direction is not valid or is not recognized.
+   * - -9105
+     - 
+     - The motion enable is not valid or is not recognized.
+   * - -9106
+     - 
+     - The motion stepper output is not valid or is not recognized.
+   * - -9107
+     - 
+     - The motion direction is not valid or is not recognized.
+   * - -9108
+     - 
+     - The motion polarity is not valid or is not recognized.
+   * - -9109
+     - 
+     - The motion capture type is not valid or is not recognized.
+   * - -9110
+     - 
+     - The motion capture mode is not valid or is not recognized.
+   * - -9111
+     - 
+     - The motion breakpoint mode is not valid or is not recognized.
+   * - -9112
+     - 
+     - The motion operation mode is not valid or is not recognized.
+   * - -9113
+     - 
+     - The motion acceleration mode is not valid or is not recognized.
+   * - -9200
+     - 
+     - The STEM slot is not available or is already occupied by another process.

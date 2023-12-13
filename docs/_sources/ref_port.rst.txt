@@ -1,4 +1,4 @@
-I/O port function table
+I/O Port Function Table
 =======================
 
 .. _port_table:
