@@ -47,6 +47,7 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
+        channel = 8
         ao_value_list = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5]
         timeout = 3 ## second
 
@@ -58,6 +59,10 @@ def main():
         ## Open AI
         err = dev.AI_open(port, timeout=timeout)
         print(f"AI_open in port {port}: {err}")
+        
+        ## Set AI channel
+        err = dev.AI_enableChannel(port, channel, timeout=timeout)
+        print("AI_enableChannel in port {port}: {err}")
 
         ## Open AO
         err = dev.AO_open(port, timeout=timeout)

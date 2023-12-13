@@ -45,6 +45,7 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
+        channel = 8
         mode = 0
         timeout = 3 ## second
 
@@ -56,6 +57,10 @@ def main():
         ## Open AI
         err = dev.AI_open(port, timeout=timeout)
         print(f"AI_open in port {port}: {err}")
+        
+        ## Set AI channel
+        err = dev.AI_enableChannel(port, channel, timeout=timeout)
+        print("AI_enableChannel in port {port}: {err}")
 
         ## Set AI acquisition mode to on demand mode (0)
         err = dev.AI_setMode(port, mode, timeout=timeout)

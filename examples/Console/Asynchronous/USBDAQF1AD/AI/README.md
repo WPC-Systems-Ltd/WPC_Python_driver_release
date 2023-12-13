@@ -11,27 +11,30 @@ In order to use API correctly, please refer to the [documentation](https://wpc-s
 
 If you'd like to create your own application, start by using this simple template, and then include your own code.
 
-## Sampling rate
+## How to use this example
 
-### The sampling rate is dependent on the channel.
+### Sampling rate
+
+#### The max sampling rate is dependent on the number of enabled channels.
 
 | Product/channel | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   |
 |:---------------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | USB-DAQ-F1-AD   | 16k | 8k  | 5.3k| 4k  | 3.2k| 2.6k| 2.2k| 2.0k|
 | USB-DAQ-F1-AOD  | 16k | 8k  | 5.3k| 4k  | 3.2k| 2.6k| 2.2k| 2.0k|
 
-### The sampling rate is dependent on the chip select.
+#### The max sampling rate is dependent on the number of enabled chip-selects.
 
 | Product/CS  | 1  | 2  |3   |
 |:-----------:|:--:|:--:|:--:|
 | STEM        |12k |6k  |4k  |
 
-### The sampling rate is independent.
+#### The max sampling rate is fixed.
 
-| Product     |Sampling rate|
-|:-----------:|:-----------:|
-| Wifi-DAQ    | 10k         |
-| Ethan-A     | 20k         |
+| Product       |Sampling rate|
+|:-------------:|:-----------:|
+| Wifi-DAQ-E3-A | 10k         |
+| Wifi-DAQ-F4-A | 20k         |
+| Ethan-A       | 20k         |
 
 ### Hardware requirement
 

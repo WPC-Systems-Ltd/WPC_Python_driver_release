@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Products Usage &mdash; WPC Python driver 3.0.12 documentation</title>
+  <title>Products Usage &mdash; WPC Python driver 3.0.13 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="_static/custom_sphinx.css?v=20c2511c" />
@@ -17,7 +17,7 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=410a57b6"></script>
+        <script src="_static/documentation_options.js?v=e572d3af"></script>
         <script src="_static/doctools.js?v=888ff710"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -40,7 +40,7 @@
               <img src="_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.12
+                3.0.13
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -96,8 +96,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">APPENDICES</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="ref_port.html">I/O port function table</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ref_channel.html">I/O channel function table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ref_port.html">I/O Port Function Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ref_channel.html">I/O Channel Function Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ref_AIO.html">AI Max Sampling Rate Table</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ref_error.html">Error Code Table</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ref_param.html">Setting Table</a></li>
 </ul>
@@ -179,6 +180,8 @@
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQE3A.html#pywpc.WifiDAQE3A.AI_close_async"><code class="docutils literal notranslate"><span class="pre">WifiDAQE3A.AI_close_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQE3A.html#pywpc.WifiDAQE3A.AI_enableCS"><code class="docutils literal notranslate"><span class="pre">WifiDAQE3A.AI_enableCS()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQE3A.html#pywpc.WifiDAQE3A.AI_enableCS_async"><code class="docutils literal notranslate"><span class="pre">WifiDAQE3A.AI_enableCS_async()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="products/WifiDAQE3A.html#pywpc.WifiDAQE3A.AI_enableChannel"><code class="docutils literal notranslate"><span class="pre">WifiDAQE3A.AI_enableChannel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="products/WifiDAQE3A.html#pywpc.WifiDAQE3A.AI_enableChannel_async"><code class="docutils literal notranslate"><span class="pre">WifiDAQE3A.AI_enableChannel_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQE3A.html#pywpc.WifiDAQE3A.AI_getPort"><code class="docutils literal notranslate"><span class="pre">WifiDAQE3A.AI_getPort()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQE3A.html#pywpc.WifiDAQE3A.AI_open"><code class="docutils literal notranslate"><span class="pre">WifiDAQE3A.AI_open()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQE3A.html#pywpc.WifiDAQE3A.AI_open_async"><code class="docutils literal notranslate"><span class="pre">WifiDAQE3A.AI_open_async()</span></code></a></li>
@@ -247,8 +250,6 @@
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQE3A.html#pywpc.WifiDAQE3A.Sys_setMotionMode_async"><code class="docutils literal notranslate"><span class="pre">WifiDAQE3A.Sys_setMotionMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQE3A.html#pywpc.WifiDAQE3A.Sys_setRTC"><code class="docutils literal notranslate"><span class="pre">WifiDAQE3A.Sys_setRTC()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQE3A.html#pywpc.WifiDAQE3A.Sys_setRTC_async"><code class="docutils literal notranslate"><span class="pre">WifiDAQE3A.Sys_setRTC_async()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/WifiDAQE3A.html#pywpc.WifiDAQE3A.Sys_setSlotMode"><code class="docutils literal notranslate"><span class="pre">WifiDAQE3A.Sys_setSlotMode()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/WifiDAQE3A.html#pywpc.WifiDAQE3A.Sys_setSlotMode_async"><code class="docutils literal notranslate"><span class="pre">WifiDAQE3A.Sys_setSlotMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQE3A.html#pywpc.WifiDAQE3A.Sys_setSwitchMode"><code class="docutils literal notranslate"><span class="pre">WifiDAQE3A.Sys_setSwitchMode()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQE3A.html#pywpc.WifiDAQE3A.Sys_setSwitchMode_async"><code class="docutils literal notranslate"><span class="pre">WifiDAQE3A.Sys_setSwitchMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQE3A.html#pywpc.WifiDAQE3A.Wifi_getChargeStatus"><code class="docutils literal notranslate"><span class="pre">WifiDAQE3A.Wifi_getChargeStatus()</span></code></a></li>
@@ -296,6 +297,8 @@
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQF4A.html#pywpc.WifiDAQF4A.AI_close_async"><code class="docutils literal notranslate"><span class="pre">WifiDAQF4A.AI_close_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQF4A.html#pywpc.WifiDAQF4A.AI_enableCS"><code class="docutils literal notranslate"><span class="pre">WifiDAQF4A.AI_enableCS()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQF4A.html#pywpc.WifiDAQF4A.AI_enableCS_async"><code class="docutils literal notranslate"><span class="pre">WifiDAQF4A.AI_enableCS_async()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="products/WifiDAQF4A.html#pywpc.WifiDAQF4A.AI_enableChannel"><code class="docutils literal notranslate"><span class="pre">WifiDAQF4A.AI_enableChannel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="products/WifiDAQF4A.html#pywpc.WifiDAQF4A.AI_enableChannel_async"><code class="docutils literal notranslate"><span class="pre">WifiDAQF4A.AI_enableChannel_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQF4A.html#pywpc.WifiDAQF4A.AI_getPort"><code class="docutils literal notranslate"><span class="pre">WifiDAQF4A.AI_getPort()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQF4A.html#pywpc.WifiDAQF4A.AI_open"><code class="docutils literal notranslate"><span class="pre">WifiDAQF4A.AI_open()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQF4A.html#pywpc.WifiDAQF4A.AI_open_async"><code class="docutils literal notranslate"><span class="pre">WifiDAQF4A.AI_open_async()</span></code></a></li>
@@ -364,8 +367,6 @@
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQF4A.html#pywpc.WifiDAQF4A.Sys_setMotionMode_async"><code class="docutils literal notranslate"><span class="pre">WifiDAQF4A.Sys_setMotionMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQF4A.html#pywpc.WifiDAQF4A.Sys_setRTC"><code class="docutils literal notranslate"><span class="pre">WifiDAQF4A.Sys_setRTC()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQF4A.html#pywpc.WifiDAQF4A.Sys_setRTC_async"><code class="docutils literal notranslate"><span class="pre">WifiDAQF4A.Sys_setRTC_async()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/WifiDAQF4A.html#pywpc.WifiDAQF4A.Sys_setSlotMode"><code class="docutils literal notranslate"><span class="pre">WifiDAQF4A.Sys_setSlotMode()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/WifiDAQF4A.html#pywpc.WifiDAQF4A.Sys_setSlotMode_async"><code class="docutils literal notranslate"><span class="pre">WifiDAQF4A.Sys_setSlotMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQF4A.html#pywpc.WifiDAQF4A.Sys_setSwitchMode"><code class="docutils literal notranslate"><span class="pre">WifiDAQF4A.Sys_setSwitchMode()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQF4A.html#pywpc.WifiDAQF4A.Sys_setSwitchMode_async"><code class="docutils literal notranslate"><span class="pre">WifiDAQF4A.Sys_setSwitchMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/WifiDAQF4A.html#pywpc.WifiDAQF4A.Wifi_getChargeStatus"><code class="docutils literal notranslate"><span class="pre">WifiDAQF4A.Wifi_getChargeStatus()</span></code></a></li>
@@ -420,6 +421,8 @@
 <li class="toctree-l4"><a class="reference internal" href="products/STEM.html#pywpc.STEM.AI_close_async"><code class="docutils literal notranslate"><span class="pre">STEM.AI_close_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/STEM.html#pywpc.STEM.AI_enableCS"><code class="docutils literal notranslate"><span class="pre">STEM.AI_enableCS()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/STEM.html#pywpc.STEM.AI_enableCS_async"><code class="docutils literal notranslate"><span class="pre">STEM.AI_enableCS_async()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="products/STEM.html#pywpc.STEM.AI_enableChannel"><code class="docutils literal notranslate"><span class="pre">STEM.AI_enableChannel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="products/STEM.html#pywpc.STEM.AI_enableChannel_async"><code class="docutils literal notranslate"><span class="pre">STEM.AI_enableChannel_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/STEM.html#pywpc.STEM.AI_getPort"><code class="docutils literal notranslate"><span class="pre">STEM.AI_getPort()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/STEM.html#pywpc.STEM.AI_open"><code class="docutils literal notranslate"><span class="pre">STEM.AI_open()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/STEM.html#pywpc.STEM.AI_open_async"><code class="docutils literal notranslate"><span class="pre">STEM.AI_open_async()</span></code></a></li>
@@ -649,8 +652,6 @@
 <li class="toctree-l4"><a class="reference internal" href="products/STEM.html#pywpc.STEM.Sys_setMotionMode_async"><code class="docutils literal notranslate"><span class="pre">STEM.Sys_setMotionMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/STEM.html#pywpc.STEM.Sys_setRTC"><code class="docutils literal notranslate"><span class="pre">STEM.Sys_setRTC()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/STEM.html#pywpc.STEM.Sys_setRTC_async"><code class="docutils literal notranslate"><span class="pre">STEM.Sys_setRTC_async()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/STEM.html#pywpc.STEM.Sys_setSlotMode"><code class="docutils literal notranslate"><span class="pre">STEM.Sys_setSlotMode()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/STEM.html#pywpc.STEM.Sys_setSlotMode_async"><code class="docutils literal notranslate"><span class="pre">STEM.Sys_setSlotMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/STEM.html#pywpc.STEM.Sys_setSwitchMode"><code class="docutils literal notranslate"><span class="pre">STEM.Sys_setSwitchMode()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/STEM.html#pywpc.STEM.Sys_setSwitchMode_async"><code class="docutils literal notranslate"><span class="pre">STEM.Sys_setSwitchMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/STEM.html#pywpc.STEM.close"><code class="docutils literal notranslate"><span class="pre">STEM.close()</span></code></a></li>
@@ -756,8 +757,6 @@
 <li class="toctree-l4"><a class="reference internal" href="products/EDrive_ST.html#pywpc.EDrive_ST.Sys_setMotionMode_async"><code class="docutils literal notranslate"><span class="pre">EDrive_ST.Sys_setMotionMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EDrive_ST.html#pywpc.EDrive_ST.Sys_setRTC"><code class="docutils literal notranslate"><span class="pre">EDrive_ST.Sys_setRTC()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EDrive_ST.html#pywpc.EDrive_ST.Sys_setRTC_async"><code class="docutils literal notranslate"><span class="pre">EDrive_ST.Sys_setRTC_async()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/EDrive_ST.html#pywpc.EDrive_ST.Sys_setSlotMode"><code class="docutils literal notranslate"><span class="pre">EDrive_ST.Sys_setSlotMode()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/EDrive_ST.html#pywpc.EDrive_ST.Sys_setSlotMode_async"><code class="docutils literal notranslate"><span class="pre">EDrive_ST.Sys_setSlotMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EDrive_ST.html#pywpc.EDrive_ST.Sys_setSwitchMode"><code class="docutils literal notranslate"><span class="pre">EDrive_ST.Sys_setSwitchMode()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EDrive_ST.html#pywpc.EDrive_ST.Sys_setSwitchMode_async"><code class="docutils literal notranslate"><span class="pre">EDrive_ST.Sys_setSwitchMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EDrive_ST.html#pywpc.EDrive_ST.close"><code class="docutils literal notranslate"><span class="pre">EDrive_ST.close()</span></code></a></li>
@@ -912,8 +911,6 @@
 <li class="toctree-l4"><a class="reference internal" href="products/EMotion.html#pywpc.EMotion.Sys_setMotionMode_async"><code class="docutils literal notranslate"><span class="pre">EMotion.Sys_setMotionMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EMotion.html#pywpc.EMotion.Sys_setRTC"><code class="docutils literal notranslate"><span class="pre">EMotion.Sys_setRTC()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EMotion.html#pywpc.EMotion.Sys_setRTC_async"><code class="docutils literal notranslate"><span class="pre">EMotion.Sys_setRTC_async()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/EMotion.html#pywpc.EMotion.Sys_setSlotMode"><code class="docutils literal notranslate"><span class="pre">EMotion.Sys_setSlotMode()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/EMotion.html#pywpc.EMotion.Sys_setSlotMode_async"><code class="docutils literal notranslate"><span class="pre">EMotion.Sys_setSlotMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EMotion.html#pywpc.EMotion.Sys_setSwitchMode"><code class="docutils literal notranslate"><span class="pre">EMotion.Sys_setSwitchMode()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EMotion.html#pywpc.EMotion.Sys_setSwitchMode_async"><code class="docutils literal notranslate"><span class="pre">EMotion.Sys_setSwitchMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EMotion.html#pywpc.EMotion.close"><code class="docutils literal notranslate"><span class="pre">EMotion.close()</span></code></a></li>
@@ -933,6 +930,8 @@
 <li class="toctree-l4"><a class="reference internal" href="products/EthanA.html#pywpc.EthanA.AI_close_async"><code class="docutils literal notranslate"><span class="pre">EthanA.AI_close_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanA.html#pywpc.EthanA.AI_enableCS"><code class="docutils literal notranslate"><span class="pre">EthanA.AI_enableCS()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanA.html#pywpc.EthanA.AI_enableCS_async"><code class="docutils literal notranslate"><span class="pre">EthanA.AI_enableCS_async()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="products/EthanA.html#pywpc.EthanA.AI_enableChannel"><code class="docutils literal notranslate"><span class="pre">EthanA.AI_enableChannel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="products/EthanA.html#pywpc.EthanA.AI_enableChannel_async"><code class="docutils literal notranslate"><span class="pre">EthanA.AI_enableChannel_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanA.html#pywpc.EthanA.AI_getPort"><code class="docutils literal notranslate"><span class="pre">EthanA.AI_getPort()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanA.html#pywpc.EthanA.AI_open"><code class="docutils literal notranslate"><span class="pre">EthanA.AI_open()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanA.html#pywpc.EthanA.AI_open_async"><code class="docutils literal notranslate"><span class="pre">EthanA.AI_open_async()</span></code></a></li>
@@ -1001,8 +1000,6 @@
 <li class="toctree-l4"><a class="reference internal" href="products/EthanA.html#pywpc.EthanA.Sys_setMotionMode_async"><code class="docutils literal notranslate"><span class="pre">EthanA.Sys_setMotionMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanA.html#pywpc.EthanA.Sys_setRTC"><code class="docutils literal notranslate"><span class="pre">EthanA.Sys_setRTC()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanA.html#pywpc.EthanA.Sys_setRTC_async"><code class="docutils literal notranslate"><span class="pre">EthanA.Sys_setRTC_async()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/EthanA.html#pywpc.EthanA.Sys_setSlotMode"><code class="docutils literal notranslate"><span class="pre">EthanA.Sys_setSlotMode()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/EthanA.html#pywpc.EthanA.Sys_setSlotMode_async"><code class="docutils literal notranslate"><span class="pre">EthanA.Sys_setSlotMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanA.html#pywpc.EthanA.Sys_setSwitchMode"><code class="docutils literal notranslate"><span class="pre">EthanA.Sys_setSwitchMode()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanA.html#pywpc.EthanA.Sys_setSwitchMode_async"><code class="docutils literal notranslate"><span class="pre">EthanA.Sys_setSwitchMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanA.html#pywpc.EthanA.close"><code class="docutils literal notranslate"><span class="pre">EthanA.close()</span></code></a></li>
@@ -1121,8 +1118,6 @@
 <li class="toctree-l4"><a class="reference internal" href="products/EthanD.html#pywpc.EthanD.Sys_setMotionMode_async"><code class="docutils literal notranslate"><span class="pre">EthanD.Sys_setMotionMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanD.html#pywpc.EthanD.Sys_setRTC"><code class="docutils literal notranslate"><span class="pre">EthanD.Sys_setRTC()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanD.html#pywpc.EthanD.Sys_setRTC_async"><code class="docutils literal notranslate"><span class="pre">EthanD.Sys_setRTC_async()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/EthanD.html#pywpc.EthanD.Sys_setSlotMode"><code class="docutils literal notranslate"><span class="pre">EthanD.Sys_setSlotMode()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/EthanD.html#pywpc.EthanD.Sys_setSlotMode_async"><code class="docutils literal notranslate"><span class="pre">EthanD.Sys_setSlotMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanD.html#pywpc.EthanD.Sys_setSwitchMode"><code class="docutils literal notranslate"><span class="pre">EthanD.Sys_setSwitchMode()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanD.html#pywpc.EthanD.Sys_setSwitchMode_async"><code class="docutils literal notranslate"><span class="pre">EthanD.Sys_setSwitchMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanD.html#pywpc.EthanD.close"><code class="docutils literal notranslate"><span class="pre">EthanD.close()</span></code></a></li>
@@ -1196,8 +1191,6 @@
 <li class="toctree-l4"><a class="reference internal" href="products/EthanI.html#pywpc.EthanI.Sys_setMotionMode_async"><code class="docutils literal notranslate"><span class="pre">EthanI.Sys_setMotionMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanI.html#pywpc.EthanI.Sys_setRTC"><code class="docutils literal notranslate"><span class="pre">EthanI.Sys_setRTC()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanI.html#pywpc.EthanI.Sys_setRTC_async"><code class="docutils literal notranslate"><span class="pre">EthanI.Sys_setRTC_async()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/EthanI.html#pywpc.EthanI.Sys_setSlotMode"><code class="docutils literal notranslate"><span class="pre">EthanI.Sys_setSlotMode()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/EthanI.html#pywpc.EthanI.Sys_setSlotMode_async"><code class="docutils literal notranslate"><span class="pre">EthanI.Sys_setSlotMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanI.html#pywpc.EthanI.Sys_setSwitchMode"><code class="docutils literal notranslate"><span class="pre">EthanI.Sys_setSwitchMode()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanI.html#pywpc.EthanI.Sys_setSwitchMode_async"><code class="docutils literal notranslate"><span class="pre">EthanI.Sys_setSwitchMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanI.html#pywpc.EthanI.close"><code class="docutils literal notranslate"><span class="pre">EthanI.close()</span></code></a></li>
@@ -1310,8 +1303,6 @@
 <li class="toctree-l4"><a class="reference internal" href="products/EthanL.html#pywpc.EthanL.Sys_setMotionMode_async"><code class="docutils literal notranslate"><span class="pre">EthanL.Sys_setMotionMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanL.html#pywpc.EthanL.Sys_setRTC"><code class="docutils literal notranslate"><span class="pre">EthanL.Sys_setRTC()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanL.html#pywpc.EthanL.Sys_setRTC_async"><code class="docutils literal notranslate"><span class="pre">EthanL.Sys_setRTC_async()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/EthanL.html#pywpc.EthanL.Sys_setSlotMode"><code class="docutils literal notranslate"><span class="pre">EthanL.Sys_setSlotMode()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/EthanL.html#pywpc.EthanL.Sys_setSlotMode_async"><code class="docutils literal notranslate"><span class="pre">EthanL.Sys_setSlotMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanL.html#pywpc.EthanL.Sys_setSwitchMode"><code class="docutils literal notranslate"><span class="pre">EthanL.Sys_setSwitchMode()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanL.html#pywpc.EthanL.Sys_setSwitchMode_async"><code class="docutils literal notranslate"><span class="pre">EthanL.Sys_setSwitchMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanL.html#pywpc.EthanL.close"><code class="docutils literal notranslate"><span class="pre">EthanL.close()</span></code></a></li>
@@ -1411,8 +1402,6 @@
 <li class="toctree-l4"><a class="reference internal" href="products/EthanO.html#pywpc.EthanO.Sys_setMotionMode_async"><code class="docutils literal notranslate"><span class="pre">EthanO.Sys_setMotionMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanO.html#pywpc.EthanO.Sys_setRTC"><code class="docutils literal notranslate"><span class="pre">EthanO.Sys_setRTC()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanO.html#pywpc.EthanO.Sys_setRTC_async"><code class="docutils literal notranslate"><span class="pre">EthanO.Sys_setRTC_async()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/EthanO.html#pywpc.EthanO.Sys_setSlotMode"><code class="docutils literal notranslate"><span class="pre">EthanO.Sys_setSlotMode()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/EthanO.html#pywpc.EthanO.Sys_setSlotMode_async"><code class="docutils literal notranslate"><span class="pre">EthanO.Sys_setSlotMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanO.html#pywpc.EthanO.Sys_setSwitchMode"><code class="docutils literal notranslate"><span class="pre">EthanO.Sys_setSwitchMode()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanO.html#pywpc.EthanO.Sys_setSwitchMode_async"><code class="docutils literal notranslate"><span class="pre">EthanO.Sys_setSwitchMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanO.html#pywpc.EthanO.close"><code class="docutils literal notranslate"><span class="pre">EthanO.close()</span></code></a></li>
@@ -1479,8 +1468,6 @@
 <li class="toctree-l4"><a class="reference internal" href="products/EthanT.html#pywpc.EthanT.Sys_setMotionMode_async"><code class="docutils literal notranslate"><span class="pre">EthanT.Sys_setMotionMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanT.html#pywpc.EthanT.Sys_setRTC"><code class="docutils literal notranslate"><span class="pre">EthanT.Sys_setRTC()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanT.html#pywpc.EthanT.Sys_setRTC_async"><code class="docutils literal notranslate"><span class="pre">EthanT.Sys_setRTC_async()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/EthanT.html#pywpc.EthanT.Sys_setSlotMode"><code class="docutils literal notranslate"><span class="pre">EthanT.Sys_setSlotMode()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/EthanT.html#pywpc.EthanT.Sys_setSlotMode_async"><code class="docutils literal notranslate"><span class="pre">EthanT.Sys_setSlotMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanT.html#pywpc.EthanT.Sys_setSwitchMode"><code class="docutils literal notranslate"><span class="pre">EthanT.Sys_setSwitchMode()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanT.html#pywpc.EthanT.Sys_setSwitchMode_async"><code class="docutils literal notranslate"><span class="pre">EthanT.Sys_setSwitchMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/EthanT.html#pywpc.EthanT.Thermal_close"><code class="docutils literal notranslate"><span class="pre">EthanT.Thermal_close()</span></code></a></li>
@@ -1649,8 +1636,6 @@
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1D.html#pywpc.USBDAQF1D.Sys_setMotionMode_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1D.Sys_setMotionMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1D.html#pywpc.USBDAQF1D.Sys_setRTC"><code class="docutils literal notranslate"><span class="pre">USBDAQF1D.Sys_setRTC()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1D.html#pywpc.USBDAQF1D.Sys_setRTC_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1D.Sys_setRTC_async()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1D.html#pywpc.USBDAQF1D.Sys_setSlotMode"><code class="docutils literal notranslate"><span class="pre">USBDAQF1D.Sys_setSlotMode()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1D.html#pywpc.USBDAQF1D.Sys_setSlotMode_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1D.Sys_setSlotMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1D.html#pywpc.USBDAQF1D.Sys_setSwitchMode"><code class="docutils literal notranslate"><span class="pre">USBDAQF1D.Sys_setSwitchMode()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1D.html#pywpc.USBDAQF1D.Sys_setSwitchMode_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1D.Sys_setSwitchMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1D.html#pywpc.USBDAQF1D.UART_close"><code class="docutils literal notranslate"><span class="pre">USBDAQF1D.UART_close()</span></code></a></li>
@@ -1784,8 +1769,6 @@
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1DSNK.html#pywpc.USBDAQF1DSNK.Sys_setMotionMode_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1DSNK.Sys_setMotionMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1DSNK.html#pywpc.USBDAQF1DSNK.Sys_setRTC"><code class="docutils literal notranslate"><span class="pre">USBDAQF1DSNK.Sys_setRTC()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1DSNK.html#pywpc.USBDAQF1DSNK.Sys_setRTC_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1DSNK.Sys_setRTC_async()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1DSNK.html#pywpc.USBDAQF1DSNK.Sys_setSlotMode"><code class="docutils literal notranslate"><span class="pre">USBDAQF1DSNK.Sys_setSlotMode()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1DSNK.html#pywpc.USBDAQF1DSNK.Sys_setSlotMode_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1DSNK.Sys_setSlotMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1DSNK.html#pywpc.USBDAQF1DSNK.Sys_setSwitchMode"><code class="docutils literal notranslate"><span class="pre">USBDAQF1DSNK.Sys_setSwitchMode()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1DSNK.html#pywpc.USBDAQF1DSNK.Sys_setSwitchMode_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1DSNK.Sys_setSwitchMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1DSNK.html#pywpc.USBDAQF1DSNK.close"><code class="docutils literal notranslate"><span class="pre">USBDAQF1DSNK.close()</span></code></a></li>
@@ -1805,6 +1788,8 @@
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AD.html#pywpc.USBDAQF1AD.AI_close_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AD.AI_close_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AD.html#pywpc.USBDAQF1AD.AI_enableCS"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AD.AI_enableCS()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AD.html#pywpc.USBDAQF1AD.AI_enableCS_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AD.AI_enableCS_async()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AD.html#pywpc.USBDAQF1AD.AI_enableChannel"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AD.AI_enableChannel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AD.html#pywpc.USBDAQF1AD.AI_enableChannel_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AD.AI_enableChannel_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AD.html#pywpc.USBDAQF1AD.AI_getPort"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AD.AI_getPort()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AD.html#pywpc.USBDAQF1AD.AI_open"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AD.AI_open()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AD.html#pywpc.USBDAQF1AD.AI_open_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AD.AI_open_async()</span></code></a></li>
@@ -1955,8 +1940,6 @@
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AD.html#pywpc.USBDAQF1AD.Sys_setMotionMode_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AD.Sys_setMotionMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AD.html#pywpc.USBDAQF1AD.Sys_setRTC"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AD.Sys_setRTC()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AD.html#pywpc.USBDAQF1AD.Sys_setRTC_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AD.Sys_setRTC_async()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AD.html#pywpc.USBDAQF1AD.Sys_setSlotMode"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AD.Sys_setSlotMode()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AD.html#pywpc.USBDAQF1AD.Sys_setSlotMode_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AD.Sys_setSlotMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AD.html#pywpc.USBDAQF1AD.Sys_setSwitchMode"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AD.Sys_setSwitchMode()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AD.html#pywpc.USBDAQF1AD.Sys_setSwitchMode_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AD.Sys_setSwitchMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AD.html#pywpc.USBDAQF1AD.UART_close"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AD.UART_close()</span></code></a></li>
@@ -1997,6 +1980,8 @@
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AOD.html#pywpc.USBDAQF1AOD.AI_close_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AOD.AI_close_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AOD.html#pywpc.USBDAQF1AOD.AI_enableCS"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AOD.AI_enableCS()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AOD.html#pywpc.USBDAQF1AOD.AI_enableCS_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AOD.AI_enableCS_async()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AOD.html#pywpc.USBDAQF1AOD.AI_enableChannel"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AOD.AI_enableChannel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AOD.html#pywpc.USBDAQF1AOD.AI_enableChannel_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AOD.AI_enableChannel_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AOD.html#pywpc.USBDAQF1AOD.AI_getPort"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AOD.AI_getPort()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AOD.html#pywpc.USBDAQF1AOD.AI_open"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AOD.AI_open()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AOD.html#pywpc.USBDAQF1AOD.AI_open_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AOD.AI_open_async()</span></code></a></li>
@@ -2159,8 +2144,6 @@
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AOD.html#pywpc.USBDAQF1AOD.Sys_setMotionMode_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AOD.Sys_setMotionMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AOD.html#pywpc.USBDAQF1AOD.Sys_setRTC"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AOD.Sys_setRTC()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AOD.html#pywpc.USBDAQF1AOD.Sys_setRTC_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AOD.Sys_setRTC_async()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AOD.html#pywpc.USBDAQF1AOD.Sys_setSlotMode"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AOD.Sys_setSlotMode()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AOD.html#pywpc.USBDAQF1AOD.Sys_setSlotMode_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AOD.Sys_setSlotMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AOD.html#pywpc.USBDAQF1AOD.Sys_setSwitchMode"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AOD.Sys_setSwitchMode()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AOD.html#pywpc.USBDAQF1AOD.Sys_setSwitchMode_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AOD.Sys_setSwitchMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1AOD.html#pywpc.USBDAQF1AOD.UART_close"><code class="docutils literal notranslate"><span class="pre">USBDAQF1AOD.UART_close()</span></code></a></li>
@@ -2330,8 +2313,6 @@
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1TD.html#pywpc.USBDAQF1TD.Sys_setMotionMode_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1TD.Sys_setMotionMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1TD.html#pywpc.USBDAQF1TD.Sys_setRTC"><code class="docutils literal notranslate"><span class="pre">USBDAQF1TD.Sys_setRTC()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1TD.html#pywpc.USBDAQF1TD.Sys_setRTC_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1TD.Sys_setRTC_async()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1TD.html#pywpc.USBDAQF1TD.Sys_setSlotMode"><code class="docutils literal notranslate"><span class="pre">USBDAQF1TD.Sys_setSlotMode()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1TD.html#pywpc.USBDAQF1TD.Sys_setSlotMode_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1TD.Sys_setSlotMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1TD.html#pywpc.USBDAQF1TD.Sys_setSwitchMode"><code class="docutils literal notranslate"><span class="pre">USBDAQF1TD.Sys_setSwitchMode()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1TD.html#pywpc.USBDAQF1TD.Sys_setSwitchMode_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1TD.Sys_setSwitchMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1TD.html#pywpc.USBDAQF1TD.Thermal_close"><code class="docutils literal notranslate"><span class="pre">USBDAQF1TD.Thermal_close()</span></code></a></li>
@@ -2514,8 +2495,6 @@
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1RD.html#pywpc.USBDAQF1RD.Sys_setMotionMode_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1RD.Sys_setMotionMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1RD.html#pywpc.USBDAQF1RD.Sys_setRTC"><code class="docutils literal notranslate"><span class="pre">USBDAQF1RD.Sys_setRTC()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1RD.html#pywpc.USBDAQF1RD.Sys_setRTC_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1RD.Sys_setRTC_async()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1RD.html#pywpc.USBDAQF1RD.Sys_setSlotMode"><code class="docutils literal notranslate"><span class="pre">USBDAQF1RD.Sys_setSlotMode()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1RD.html#pywpc.USBDAQF1RD.Sys_setSlotMode_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1RD.Sys_setSlotMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1RD.html#pywpc.USBDAQF1RD.Sys_setSwitchMode"><code class="docutils literal notranslate"><span class="pre">USBDAQF1RD.Sys_setSwitchMode()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1RD.html#pywpc.USBDAQF1RD.Sys_setSwitchMode_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1RD.Sys_setSwitchMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1RD.html#pywpc.USBDAQF1RD.Thermal_close"><code class="docutils literal notranslate"><span class="pre">USBDAQF1RD.Thermal_close()</span></code></a></li>
@@ -2715,8 +2694,6 @@
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1CD.html#pywpc.USBDAQF1CD.Sys_setMotionMode_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1CD.Sys_setMotionMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1CD.html#pywpc.USBDAQF1CD.Sys_setRTC"><code class="docutils literal notranslate"><span class="pre">USBDAQF1CD.Sys_setRTC()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1CD.html#pywpc.USBDAQF1CD.Sys_setRTC_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1CD.Sys_setRTC_async()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1CD.html#pywpc.USBDAQF1CD.Sys_setSlotMode"><code class="docutils literal notranslate"><span class="pre">USBDAQF1CD.Sys_setSlotMode()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1CD.html#pywpc.USBDAQF1CD.Sys_setSlotMode_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1CD.Sys_setSlotMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1CD.html#pywpc.USBDAQF1CD.Sys_setSwitchMode"><code class="docutils literal notranslate"><span class="pre">USBDAQF1CD.Sys_setSwitchMode()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1CD.html#pywpc.USBDAQF1CD.Sys_setSwitchMode_async"><code class="docutils literal notranslate"><span class="pre">USBDAQF1CD.Sys_setSwitchMode_async()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="products/USBDAQF1CD.html#pywpc.USBDAQF1CD.UART_close"><code class="docutils literal notranslate"><span class="pre">USBDAQF1CD.UART_close()</span></code></a></li>

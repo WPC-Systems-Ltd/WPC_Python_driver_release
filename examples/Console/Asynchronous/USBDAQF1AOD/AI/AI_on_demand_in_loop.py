@@ -45,6 +45,7 @@ async def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
+        channel = 8
         mode = 0
         chip_select = [0, 1]
 
@@ -56,6 +57,10 @@ async def main():
         ## Open AI
         err = await dev.AI_open_async(port)
         print(f"AI_open_async in port {port}: {err}")
+        
+        ## Set AI channel
+        err = await dev.AI_enableChannel_async(port, channel)
+        print("AI_enableChannel_async in port {port}: {err}")
 
         ## Set AI acquisition mode to on demand mode (0)
         err = await dev.AI_setMode_async(port, mode)

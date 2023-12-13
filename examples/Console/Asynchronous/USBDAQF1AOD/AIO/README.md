@@ -14,14 +14,15 @@ If you'd like to create your own application, start by using this simple templat
 
 ### The limitation of the sampling rate.
 
-- It only apply on ``STEM`` product
-- If you want to AI_streaming while simultaneously changing the AO (Analog Output) values, there will be limitations.
+- For STEM, AO writing can be called while AI is streaming under a specific speed.
+- This speed depends on the number of enabled chip-selects.
+- Below is the table indicating the max AI sampling rate that allows AO writing.
 
-| CS number  | Sampling rate (MAX)|
-|:----------:|:------------------:|
-|   3        | 1000 (HZ)          |
-|   2        | 1500 (HZ)          |
-|   1        | 3000 (HZ)          |
+| CS number  | Sampling rate|
+|:----------:|:------------:|
+|   3        | 1K           |
+|   2        | 1.5K         |
+|   1        | 3K           |
 
 ### Hardware Requirement
 

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wifi-DAQ-F4-A &mdash; WPC Python driver 3.0.12 documentation</title>
+  <title>Wifi-DAQ-F4-A &mdash; WPC Python driver 3.0.13 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/custom_sphinx.css?v=20c2511c" />
@@ -17,7 +17,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=410a57b6"></script>
+        <script src="../_static/documentation_options.js?v=e572d3af"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -40,7 +40,7 @@
               <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.12
+                3.0.13
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -77,8 +77,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">APPENDICES</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../ref_port.html">I/O port function table</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ref_channel.html">I/O channel function table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref_port.html">I/O Port Function Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref_channel.html">I/O Channel Function Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref_AIO.html">AI Max Sampling Rate Table</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ref_error.html">Error Code Table</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ref_param.html">Setting Table</a></li>
 </ul>
@@ -212,6 +213,60 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 <dt><strong>chip_select</strong><span class="classifier">list</span></dt><dd><p>chip number</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQF4A.AI_enableChannel">
+<span class="sig-name descname"><span class="pre">AI_enableChannel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQF4A.AI_enableChannel" title="Link to this definition"></a></dt>
+<dd><p>Set AI channel.
+This API is only effective for USBDAQF1AD and USBDAQF1AOD.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>channel</strong><span class="classifier">int</span></dt><dd><p>The number of channels that you want to enable.
+If this parameter is set to 4, it means the AI channel is open from channel 0 to 3.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQF4A.AI_enableChannel_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AI_enableChannel_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQF4A.AI_enableChannel_async" title="Link to this definition"></a></dt>
+<dd><p>Set AI channel with async mode.
+This API is only effective for USBDAQF1AD and USBDAQF1AOD.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>channel</strong><span class="classifier">int</span></dt><dd><p>The number of channels that you want to enable.
+If this parameter is set to 4, it means the AI channel is open from channel 0 to 3.</p>
 </dd>
 </dl>
 </dd>
@@ -1650,16 +1705,6 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.WifiDAQF4A.Sys_setSlotMode">
-<span class="sig-name descname"><span class="pre">Sys_setSlotMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQF4A.Sys_setSlotMode" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.WifiDAQF4A.Sys_setSlotMode_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setSlotMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQF4A.Sys_setSlotMode_async" title="Link to this definition"></a></dt>
-<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQF4A.Sys_setSwitchMode">
