@@ -40,27 +40,27 @@ def main():
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## EDrive-ST open
-        err = dev.Drive_open(port, timeout=timeout)
+        err = dev.Drive_open(port, timeout)
         print(f"Drive_open: {err}")
 
         ## EDrive-ST servo on
-        err = dev.Drive_enableServoOn(port, timeout=timeout)
+        err = dev.Drive_enableServoOn(port, timeout)
         print(f"Drive_enableServoOn: {err}")
 
         ## Wait for 5 seconds
         time.sleep(5) ## delay [s]
 
         ## EDrive-ST servo off
-        err = dev.Drive_enableServoOff(port, timeout=timeout)
+        err = dev.Drive_enableServoOff(port, timeout)
         print(f"Drive_enableServoOff: {err}")
 
         ## EDrive-ST close
-        err = dev.Drive_close(port, timeout=timeout)
+        err = dev.Drive_close(port, timeout)
         print(f"Drive_close: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

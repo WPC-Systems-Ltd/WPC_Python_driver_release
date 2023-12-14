@@ -48,7 +48,7 @@ def main():
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
@@ -61,18 +61,18 @@ def main():
         print(f"Logger_writeHeader: {err}")
 
         ## Open RTD
-        err = dev.Thermal_open(port, timeout=timeout)
+        err = dev.Thermal_open(port, timeout)
         print(f"Thermal_open in port {port}: {err}")
 
         ## Wait for at least 100 ms
         time.sleep(0.1) ## delay [s]
 
         ## Set RTD port and read RTD in channel 0
-        data0 = dev.Thermal_readSensor(port, ch0, timeout=timeout)
+        data0 = dev.Thermal_readSensor(port, ch0, timeout)
         print(f"Read sensor in channel {ch0} in port {port}: {data0}°C")
 
         ## Set RTD port and read RTD in channel 1
-        data1 = dev.Thermal_readSensor(port, ch1, timeout=timeout)
+        data1 = dev.Thermal_readSensor(port, ch1, timeout)
         print(f"Read sensor in channel {ch1} in port {port}: {data1}°C")
 
         ## Write data into CSV file
@@ -80,7 +80,7 @@ def main():
         print(f"Logger_writeList: {err}")
 
         ## Close RTD
-        err = dev.Thermal_close(port, timeout=timeout)
+        err = dev.Thermal_close(port, timeout)
         print(f"Thermal_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

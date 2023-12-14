@@ -47,24 +47,24 @@ def main():
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Open port with digital output
-        err = dev.DO_openPort(port, timeout=timeout)
+        err = dev.DO_openPort(port, timeout)
         print(f"DO_openPort in port {port}: {err}")
 
         ## Toggle digital state for 10 times. Each times delay for 0.5 second
         for i in range(10):
-            state = dev.DO_togglePort(port, timeout=timeout)
+            state = dev.DO_togglePort(port, timeout)
             print(state)
 
             ## Wait for 0.5 second to see led status
             time.sleep(0.5) ## delay [s]
 
         ## Close port with digital output
-        err = dev.DO_closePort(port, timeout=timeout)
+        err = dev.DO_closePort(port, timeout)
         print(f"DO_closePort in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

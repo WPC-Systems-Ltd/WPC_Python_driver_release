@@ -42,12 +42,12 @@ def main():
         index = -1
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Relay open
-        err = dev.Relay_open(timeout=timeout)
+        err = dev.Relay_open(timeout)
         print(f"Relay_open: {err}")
 
         ## Read counters
@@ -55,7 +55,7 @@ def main():
         print(f"Relay_read: {counter}")
 
         ## Relay close
-        err = dev.Relay_close(timeout=timeout)
+        err = dev.Relay_close(timeout)
         print(f"Relay_close: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

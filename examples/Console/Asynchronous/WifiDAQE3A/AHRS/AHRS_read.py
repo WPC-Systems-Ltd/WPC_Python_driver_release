@@ -44,11 +44,8 @@ async def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        mask = 0x01 ## data mask
-        theo_grav = 9.81
-        dt = 0.003
-        offset_z = 0.003
-        delay = 0.05 ## second
+        sampling_period = 0.003
+        read_delay = 0.05 ## second
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -59,12 +56,12 @@ async def main():
         err = await dev.AHRS_open_async(port)
         print(f"AHRS_open_async in port {port}: {err}")
 
-        ## Set general setting
-        err = await dev.AHRS_setGeneral_async(port, theo_grav, dt, offset_z)
-        print(f"AHRS_setGeneral in port {port}: {err}")
+        ## Set period
+        err = await dev.AHRS_setSamplingPeriod_async(port, sampling_period)
+        print(f"AHRS_setSamplingPeriod_async in port {port}: {err}")
 
         ## Start AHRS
-        err = await dev.AHRS_start_async(port, mask)
+        err = await dev.AHRS_start_async(port)
         print(f"AHRS_start_async in port {port}: {err}")
 
         ## Wait for acquisition
@@ -72,8 +69,8 @@ async def main():
 
         ## Read AHRS estimation
         for i in range(10):
-            ahrs_list = await dev.AHRS_readStreaming_async(port, delay=delay)
-            print(f"x_esti: {ahrs_list[0]}, y_esti: {ahrs_list[1]}, z_est: {ahrs_list[2]}")
+            ahrs_list = await dev.AHRS_readStreaming_async(port, read_delay)
+            print(f"Roll: {ahrs_list[0]}, Pitch: {ahrs_list[1]}, Yaw: {ahrs_list[2]}")
 
         ## Stop AHRS
         err = await dev.AHRS_stop_async(port)

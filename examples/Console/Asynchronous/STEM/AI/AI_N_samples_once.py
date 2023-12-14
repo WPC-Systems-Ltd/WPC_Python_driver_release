@@ -63,7 +63,7 @@ async def main():
         sampling_rate = 1000
         samples = 200
         read_points = 200
-        delay = 0.5 ## second
+        read_delay = 0.5 ## second
         chip_select = [0, 1]
 
         ## Get firmware model & version
@@ -109,7 +109,7 @@ async def main():
         print(f"AI_start_async in slot {slot}: {err}")
 
         ## Read AI
-        ai_2Dlist = await dev.AI_readStreaming_async(slot, read_points, delay=delay)
+        ai_2Dlist = await dev.AI_readStreaming_async(slot, read_points, read_delay)
         print(f"number of samples = {len(ai_2Dlist)}" )
 
         ok = True

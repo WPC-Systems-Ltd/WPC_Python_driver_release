@@ -45,7 +45,7 @@ async def main():
         port = 1 ## Depend on your device
         port  = 1
         speed = 0 ## 0 = 125 KHz, 1 = 250 kHz, 2 = 500 kHz, 3 = 1 MHz
-        delay = 0.005 ## second
+        read_delay = 0.005 ## second
 
         ## Get Firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -66,7 +66,7 @@ async def main():
 
         ## Read 5 frames for 1000 times
         for i in range(1000):
-            frame_list = await dev.CAN_read_async(port, 5, delay=delay)
+            frame_list = await dev.CAN_read_async(port, 5, read_delay)
             if len(frame_list) > 0 :
                 for frame in frame_list:
                     print(frame)

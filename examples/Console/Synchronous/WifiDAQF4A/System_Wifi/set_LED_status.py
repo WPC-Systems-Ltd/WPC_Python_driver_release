@@ -42,35 +42,35 @@ def main():
         value = 1
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         for i in range(3):
             ## Reset LED status
-            err = dev.Wifi_resetLED(timeout=timeout)
+            err = dev.Wifi_resetLED(timeout)
             print(f"Wifi_resetLED: {err}")
 
             ## Set green LED status
-            err = dev.Wifi_setGreenLED(value, timeout=timeout)
+            err = dev.Wifi_setGreenLED(value, timeout)
             print(f"Wifi_setGreenLED: {err}")
             time.sleep(1) ## delay [s]
 
             ## Reset LED status
-            err = dev.Wifi_resetLED(timeout=timeout)
+            err = dev.Wifi_resetLED(timeout)
             print(f"Wifi_resetLED: {err}")
 
             ## Set blue LED status
-            err = dev.Wifi_setBlueLED(value, timeout=timeout)
+            err = dev.Wifi_setBlueLED(value, timeout)
             print(f"Wifi_setBluLeED: {err}")
             time.sleep(1) ## delay [s]
 
             ## Reset LED status
-            err = dev.Wifi_resetLED(timeout=timeout)
+            err = dev.Wifi_resetLED(timeout)
             print(f"Wifi_resetLED: {err}")
 
             ## Set red LED status
-            err = dev.Wifi_setRedLED(value, timeout=timeout)
+            err = dev.Wifi_setRedLED(value, timeout)
             print(f"Wifi_setRedLED: {err}")
             time.sleep(1) ## delay [s]
 

@@ -50,55 +50,55 @@ def main():
         orginal_direction = 0
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## EDrive-ST open
-        err = dev.Drive_open(port, timeout=timeout)
+        err = dev.Drive_open(port, timeout)
         print(f"Drive_open: {err}")
 
         ## EDrive-ST configure
-        err = dev.Drive_cfgAxisMove(port, relative_position_mode, target_position, timeout=timeout)
+        err = dev.Drive_cfgAxisMove(port, relative_position_mode, target_position, timeout)
         print(f"Drive_cfgAxisMove: {err}")
 
-        err = dev.Drive_cfgAxisDirection(port, orginal_direction, timeout=timeout)
+        err = dev.Drive_cfgAxisDirection(port, orginal_direction, timeout)
         print(f"Drive_cfgAxisDirection: {err}")
 
-        err = dev.Drive_cfgEncoderDirection(port, orginal_direction, timeout=timeout)
+        err = dev.Drive_cfgEncoderDirection(port, orginal_direction, timeout)
         print(f"Drive_cfgEncoderDirection: {err}")
 
-        err = dev.Drive_cfgLimit(port, en_forward, en_reverse, active_low, timeout=timeout)
+        err = dev.Drive_cfgLimit(port, en_forward, en_reverse, active_low, timeout)
         print(f"Drive_cfgLimit: {err}")
 
         ## EDrive-ST reset
-        err = dev.Drive_rstEncoderPosi(port, timeout=timeout)
+        err = dev.Drive_rstEncoderPosi(port, timeout)
         print(f"EDST_reset: {err}")
 
         ## EDrive-ST Servo on
-        err = dev.Drive_enableServoOn(port, timeout=timeout)
+        err = dev.Drive_enableServoOn(port, timeout)
         print(f"Drive_enableServoOn: {err}")
 
         ## EDrive-ST start
-        err = dev.Drive_start(port, timeout=timeout)
+        err = dev.Drive_start(port, timeout)
         print(f"Drive_start: {err}")
 
         move_status = 0
         while move_status == 0:
-            move_status = dev.Drive_getMoveStatus(port, timeout=timeout)
-            posi = dev.Drive_readEncoderPosition(port, timeout=timeout)
+            move_status = dev.Drive_getMoveStatus(port, timeout)
+            posi = dev.Drive_readEncoderPosition(port, timeout)
             print(f"encoder_posi: {posi[0]}, logical_posi: {posi[1]}")
 
         ## EDrive-ST Stop
-        err = dev.Drive_stop(port, stop_decel, timeout=timeout)
+        err = dev.Drive_stop(port, stop_decel, timeout)
         print(f"Drive_stop: {err}")
 
         ## EDrive-ST Servo off
-        err = dev.Drive_enableServoOff(port, timeout=timeout)
+        err = dev.Drive_enableServoOff(port, timeout)
         print(f"Drive_enableServoOff: {err}")
 
         ## EDrive-ST close
-        err = dev.Drive_close(port, timeout=timeout)
+        err = dev.Drive_close(port, timeout)
         print(f"Drive_close: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

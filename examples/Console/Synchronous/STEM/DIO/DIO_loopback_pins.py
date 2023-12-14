@@ -60,37 +60,38 @@ def main():
         DI_port = 1
         DO_pins = [0, 1, 2, 3]
         DI_pins = [4, 5, 6, 7]
+        DO_value = [1, 0, 1, 0]
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Get slot mode
-        slot_mode = dev.Sys_getMode(slot, timeout=timeout)
+        slot_mode = dev.Sys_getMode(slot, timeout)
         print("Slot mode:", slot_mode)
 
         ## If the slot mode is not set to "DIO", set the slot mode to "DIO"
         if slot_mode != "DIO":
-            err = dev.Sys_setDIOMode(slot, timeout=timeout)
+            err = dev.Sys_setDIOMode(slot, timeout)
             print(f"Sys_setDIOMode in slot {slot}: {err}")
 
         ## Get slot mode
-        slot_mode = dev.Sys_getMode(slot, timeout=timeout)
+        slot_mode = dev.Sys_getMode(slot, timeout)
         print("Slot mode:", slot_mode)
 
         ## Get DIO start up information
-        info = dev.DIO_loadStartup(DO_port, timeout=timeout)
+        info = dev.DIO_loadStartup(DO_port, timeout)
         print("Enable:   ", info[0])
         print("Direction:", info[1])
         print("State:    ", info[2])
 
         ## Write pins to high or low
-        err =  dev.DO_writePins(DO_port, DO_pins, [1, 1, 0, 0], timeout=timeout)
+        err = dev.DO_writePins(DO_port, DO_pins, DO_value, timeout)
         print(f"DO_writePins in DO_port {DO_port}: {err}")
 
         ## Read pins state
-        state_list = dev.DI_readPins(DI_port, DI_pins, timeout=timeout)
+        state_list = dev.DI_readPins(DI_port, DI_pins, timeout)
         print(f"state_list in DI_port {DI_port}: {state_list}")
     except Exception as err:
         pywpc.printGenericError(err)

@@ -45,13 +45,13 @@ def main():
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print(f"Model name: {driver_info[0]}")
         print(f"Firmware version: {driver_info[-1]}")
 
         ## Get serial number & RTC Time
-        serial_num = dev.Sys_getSerialNumber(timeout=timeout)
-        rtc = dev.Sys_getRTC(timeout=timeout)
+        serial_num = dev.Sys_getSerialNumber(timeout)
+        rtc = dev.Sys_getRTC(timeout)
         print(f"Serial number: {serial_num}")
         print(f"RTC data time: {rtc}")
     except Exception as err:

@@ -46,35 +46,36 @@ def main():
         ## Parameters setting
         DO_port = 0
         DI_port = 1
+        DO_value = [1, 0, 1, 0]
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Open DO port with digital output
-        err = dev.DO_openPort(DO_port, timeout=timeout)
+        err = dev.DO_openPort(DO_port, timeout)
         print(f"DO_openPort in DO_port {DO_port}: {err}")
 
         ## Open DI port with digital input
-        err = dev.DI_openPort(DI_port, timeout=timeout)
+        err = dev.DI_openPort(DI_port, timeout)
         print(f"DI_openPort in DI_port {DI_port}: {err}")
 
         ## Write DO port to high or low
-        err = dev.DO_writePort(DO_port, [1, 0, 1, 0], timeout=timeout)
+        err = dev.DO_writePort(DO_port, DO_value, timeout)
         print(f"DO_writePort in DO_port {DO_port}: {err}")
 
         ## Read DI port state
-        state_list = dev.DI_readPort(DI_port, timeout=timeout)
+        state_list = dev.DI_readPort(DI_port, timeout)
         print(f"state_list in DI_port {DI_port}: {state_list}")
 
         ## Close DO port with digital output
-        err = dev.DO_closePort(DO_port, timeout=timeout)
+        err = dev.DO_closePort(DO_port, timeout)
         print(f"DO_closePort in DO_port {DO_port}: {err}")
 
         ## Close DI port with digital input
-        err = dev.DI_closePort(DI_port, timeout=timeout)
+        err = dev.DI_closePort(DI_port, timeout)
         print(f"DI_closePort in DI_port {DI_port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

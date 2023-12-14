@@ -40,12 +40,12 @@ def main():
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Motion open
-        err = dev.Motion_open(port, timeout=timeout)
+        err = dev.Motion_open(port, timeout)
         print(f"Motion_open in port {port}: {err}")
 
         ## Motion open configuration file
@@ -53,11 +53,11 @@ def main():
         print(f"Motion_openCfgFile: {err}")
 
         ## Motion load configuration file
-        err = dev.Motion_loadCfgFile(timeout=timeout)
+        err = dev.Motion_loadCfgFile(timeout)
         print(f"Motion_loadCfgFile: {err}")
 
         ## Motion close
-        err = dev.Motion_close(port, timeout=timeout)
+        err = dev.Motion_close(port, timeout)
         print(f"Motion_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

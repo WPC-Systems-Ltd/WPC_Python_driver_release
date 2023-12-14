@@ -47,28 +47,28 @@ def main():
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Open AO
-        err = dev.AO_open(port, timeout=timeout)
+        err = dev.AO_open(port, timeout)
         print(f"AO_open in port {port}: {err}")
 
         ## Write AO vaule in channel 0
-        err = dev.AO_writeOneChannel(port, 0, ao_value_list[0], timeout=timeout)
+        err = dev.AO_writeOneChannel(port, 0, ao_value_list[0], timeout)
         print(f"In port {port} channel 0, the AO value is {ao_value_list[0]}: {err}")
 
         ## Write AO vaule in channel 1
-        err = dev.AO_writeOneChannel(port, 1, ao_value_list[1], timeout=timeout)
+        err = dev.AO_writeOneChannel(port, 1, ao_value_list[1], timeout)
         print(f"In port {port} channel 1, the AO value is {ao_value_list[1]}: {err}")
 
         ## Write AO vaule in channel 2
-        err = dev.AO_writeOneChannel(port, 2, ao_value_list[2], timeout=timeout)
+        err = dev.AO_writeOneChannel(port, 2, ao_value_list[2], timeout)
         print(f"In port {port} channel 2, the AO value is {ao_value_list[2]}: {err}")
 
         ## Write AO vaule in channel 3
-        err = dev.AO_writeOneChannel(port, 3, ao_value_list[3], timeout=timeout)
+        err = dev.AO_writeOneChannel(port, 3, ao_value_list[3], timeout)
         print(f"In port {port} channel 3, the AO value is {ao_value_list[3]}: {err}")
 
         ## Close AO
