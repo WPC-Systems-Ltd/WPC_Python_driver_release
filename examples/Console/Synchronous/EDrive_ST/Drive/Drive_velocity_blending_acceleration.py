@@ -52,27 +52,27 @@ def main():
         en_reverse = 0
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## EDrive-ST open
-        err = dev.Drive_open(port, timeout=timeout)
+        err = dev.Drive_open(port, timeout)
         print(f"Drive_open: {err}")
 
         ## EDrive-ST configure
-        err = dev.Drive_cfgAxisMove(port, velocity_mode, timeout=timeout)
+        err = dev.Drive_cfgAxisMove(port, velocity_mode, timeout)
         print(f"Drive_cfgAxisMove: {err}")
 
-        err = dev.Drive_cfgLimit(port, en_forward, en_reverse, active_low, timeout=timeout)
+        err = dev.Drive_cfgLimit(port, en_forward, en_reverse, active_low, timeout)
         print(f"Drive_cfgLimit: {err}")
 
         ## EDrive-ST reset
-        err = dev.Drive_rstEncoderPosi(port, timeout=timeout)
+        err = dev.Drive_rstEncoderPosi(port, timeout)
         print(f"EDST_reset: {err}")
 
         ## EDrive-ST Servo on
-        err = dev.Drive_enableServoOn(port, timeout=timeout)
+        err = dev.Drive_enableServoOn(port, timeout)
         print(f"Drive_enableServoOn: {err}")
 
         ## EDrive-ST start
@@ -85,10 +85,10 @@ def main():
         new_velo = -3000
         new_accel = 100
         new_decel = 100
-        err = dev.Drive_overrideVelocity(port, new_velo, timeout=timeout)
+        err = dev.Drive_overrideVelocity(port, new_velo, timeout)
         print(f"Drive_overrideVelocity: {err}")
 
-        err = dev.Drive_overrideAccel(port, new_accel, new_decel, timeout=timeout)
+        err = dev.Drive_overrideAccel(port, new_accel, new_decel, timeout)
         print(f"Drive_overrideAccel: {err}")
 
         ## Wait for 5 seconds for moving
@@ -97,25 +97,25 @@ def main():
         new_velo = 6000
         new_accel = 100000
         new_decel = 100000
-        err = dev.Drive_overrideVelocity(port, new_velo, timeout=timeout)
+        err = dev.Drive_overrideVelocity(port, new_velo, timeout)
         print(f"Drive_overrideVelocity: {err}")
 
-        err = dev.Drive_overrideAccel(port, new_accel, new_decel, timeout=timeout)
+        err = dev.Drive_overrideAccel(port, new_accel, new_decel, timeout)
         print(f"Drive_overrideAccel: {err}")
 
         ## Wait for 5 seconds for moving
         time.sleep(5) ## delay [s]
 
         ## EDrive-ST Stop
-        err = dev.Drive_stop(port, stop_decel, timeout=timeout)
+        err = dev.Drive_stop(port, stop_decel, timeout)
         print(f"Drive_stop: {err}")
 
         ## EDrive-ST Servo off
-        err = dev.Drive_enableServoOff(port, timeout=timeout)
+        err = dev.Drive_enableServoOff(port, timeout)
         print(f"Drive_enableServoOff: {err}")
 
         ## EDrive-ST close
-        err = dev.Drive_close(port, timeout=timeout)
+        err = dev.Drive_close(port, timeout)
         print(f"Drive_close: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

@@ -66,53 +66,53 @@ def main():
         chip_select = [0]
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Get slot mode
-        slot_mode = dev.Sys_getMode(slot, timeout=timeout)
+        slot_mode = dev.Sys_getMode(slot, timeout)
         print("Slot mode:", slot_mode)
 
         ## If the slot mode is not set to "AIO", set the slot mode to "AIO"
         if slot_mode != "AIO":
-            err = dev.Sys_setAIOMode(slot, timeout=timeout)
+            err = dev.Sys_setAIOMode(slot, timeout)
             print(f"Sys_setAIOMode in slot {slot}: {err}")
 
         ## Get slot mode
-        slot_mode = dev.Sys_getMode(slot, timeout=timeout)
+        slot_mode = dev.Sys_getMode(slot, timeout)
         print("Slot mode:", slot_mode)
 
         ## Open AI
-        err = dev.AI_open(slot, timeout=timeout)
+        err = dev.AI_open(slot, timeout)
         print(f"AI_open in slot {slot}: {err}")
 
         ## Enable CS
-        err = dev.AI_enableCS(slot, chip_select, timeout=timeout)
+        err = dev.AI_enableCS(slot, chip_select, timeout)
         print(f"AI_enableCS in slot {slot}: {err}")
 
         ## Open AO
-        err = dev.AO_open(slot, timeout=timeout)
+        err = dev.AO_open(slot, timeout)
         print(f"AO_open in slot {slot}: {err}")
 
         ## Read data acquisition
-        ai_list = dev.AI_readOnDemand(slot, timeout=timeout)
+        ai_list = dev.AI_readOnDemand(slot, timeout)
         print(f"AI data in slot {slot}: {ai_list}")
 
         ## Write AO value simultaneously
-        err = dev.AO_writeAllChannels(slot, ao_value_list, timeout=timeout)
+        err = dev.AO_writeAllChannels(slot, ao_value_list, timeout)
         print(f"In slot {slot} the AO value is {ao_value_list}: {err}")
 
         ## Read data acquisition
-        ai_list = dev.AI_readOnDemand(slot, timeout=timeout)
+        ai_list = dev.AI_readOnDemand(slot, timeout)
         print(f"AI data in slot {slot}: {ai_list}")
 
         ## Close AI
-        err = dev.AI_close(slot, timeout=timeout)
+        err = dev.AI_close(slot, timeout)
         print(f"AI_close in slot {slot}: {err}")
 
         ## Close AO
-        err = dev.AO_close(slot, timeout=timeout)
+        err = dev.AO_close(slot, timeout)
         print(f"AO_close in slot {slot}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

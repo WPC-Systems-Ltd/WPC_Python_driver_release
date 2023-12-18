@@ -61,7 +61,7 @@ async def main():
         mode = 2 ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 200
         read_points = 200
-        delay = 0.2 ## second
+        read_delay = 0.2 ## second
         chip_select = [0, 1]
 
         ## Get firmware model & version
@@ -110,7 +110,7 @@ async def main():
         while data_len > 0:
             for slot in slot_list:
                 ## Read data acquisition
-                ai_2Dlist = await dev.AI_readStreaming_async(slot, read_points, delay=delay)
+                ai_2Dlist = await dev.AI_readStreaming_async(slot, read_points, read_delay)
                 print(f"Slot{slot}: data len {len(ai_2Dlist)}" )
 
                 ## Update data len and counter

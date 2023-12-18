@@ -56,6 +56,7 @@ async def main():
         slot = 1 ## Connect DIO module to slot
         DO_port = 1
         pin_index = [0, 1, 2, 3]
+        DO_value = [1, 0, 1, 0]
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -82,7 +83,7 @@ async def main():
         print("State:    ", info[2])
 
         ## Write pins to high or low
-        err = await dev.DO_writePins_async(DO_port, pin_index, [1, 1, 0, 0])
+        err = await dev.DO_writePins_async(DO_port, pin_index, DO_value)
         print(f"DO_writePins_async in DO_port {DO_port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

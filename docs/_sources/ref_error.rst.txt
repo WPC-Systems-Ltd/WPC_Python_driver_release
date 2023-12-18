@@ -228,10 +228,10 @@ Error Code Table
      - The length of data exceeds maximum transfer length of SPI.
    * - -8702
      - 
-     - TThe SPI data size mode is not valid or is not recognized.
+     - The SPI data size mode is not valid or is not recognized.
    * - -8703
      - 
-     - TThe SPI first bit mode is not valid or is not recognized.
+     - The SPI first bit mode is not valid or is not recognized.
    * - -8704
      - 
      - The SPI prescaler mode is not valid or is not recognized.
@@ -300,7 +300,7 @@ Error Code Table
      - The motion direction is not valid or is not recognized.
    * - -9108
      - 
-     - TThe motion polarity is not valid or is not recognized.
+     - The motion polarity is not valid or is not recognized.
    * - -9109
      - 
      - The motion capture type is not valid or is not recognized.

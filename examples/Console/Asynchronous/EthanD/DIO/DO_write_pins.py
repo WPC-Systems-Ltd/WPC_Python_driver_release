@@ -45,6 +45,7 @@ async def main():
         ## Parameters setting
         port = 0 ## Depend on your device
         pin_index = [0, 1, 2, 3]
+        DO_value = [1, 0, 1, 0]
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -56,7 +57,7 @@ async def main():
         print(f"DO_openPins_async in port {port}: {err}")
 
         ## Write pins to high or low
-        err = await dev.DO_writePins_async(port, pin_index, [1, 1, 0, 0])
+        err = await dev.DO_writePins_async(port, pin_index, DO_value)
         print(f"DO_writePins_async in port {port}: {err}")
 
         ## Wait for 1 seconds to see led status

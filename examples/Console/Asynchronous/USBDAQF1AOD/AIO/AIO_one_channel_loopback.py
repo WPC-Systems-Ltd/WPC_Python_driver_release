@@ -62,7 +62,7 @@ async def main():
         
         ## Set AI channel
         err = await dev.AI_enableChannel_async(port, channel)
-        print("AI_enableChannel_async in port {port}: {err}")
+        print(f"AI_enableChannel_async in port {port}: {err}")
 
         ## Open AO
         err = await dev.AO_open_async(port)

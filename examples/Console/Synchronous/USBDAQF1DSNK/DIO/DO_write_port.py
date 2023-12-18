@@ -44,26 +44,27 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
+        DO_value = [1, 0, 1, 0]
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Open port to digital output
-        err = dev.DO_openPort(port, timeout=timeout)
+        err = dev.DO_openPort(port, timeout)
         print(f"DO_openPort in port {port}: {err}")
 
         ## Write port to high or low
-        err = dev.DO_writePort(port, [1, 1, 0, 0], timeout=timeout)
+        err = dev.DO_writePort(port, DO_value, timeout)
         print(f"DO_writePort in port {port}: {err}")
 
         ## Wait for 3 seconds to see led status
         time.sleep(3) ## delay [s]
 
         ## Close port with digital output
-        err = dev.DO_closePort(port, timeout=timeout)
+        err = dev.DO_closePort(port, timeout)
         print(f"DO_closePort in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

@@ -44,17 +44,17 @@ def main():
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Get IP & submask
-        ip_addr, submask = dev.Net_getIPAddrAndSubmask(timeout=timeout)
+        ip_addr, submask = dev.Net_getIPAddrAndSubmask(timeout)
         print(f"IP: {ip_addr}")
         print(f"Submask: {submask}")
 
         ## Get MAC
-        mac = dev.Net_getMACAddr(timeout=timeout)
+        mac = dev.Net_getMACAddr(timeout)
         print(f"MAC: {mac}")
     except Exception as err:
         pywpc.printGenericError(err)

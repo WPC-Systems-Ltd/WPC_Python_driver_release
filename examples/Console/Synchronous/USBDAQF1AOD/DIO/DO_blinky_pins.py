@@ -48,24 +48,24 @@ def main():
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Open pins with digital output
-        err = dev.DO_openPins(port, pinindex, timeout=timeout)
+        err = dev.DO_openPins(port, pinindex, timeout)
         print(f"DO_openPins in port {port}: {err}")
 
         ## Toggle digital state for 10 times. Each times delay for 0.5 second
         for i in range(10):
-            state = dev.DO_togglePins(port, pinindex, timeout=timeout)
+            state = dev.DO_togglePins(port, pinindex, timeout)
             print(state)
 
             ## Wait for 0.5 second to see led status
             time.sleep(0.5) ## delay [s]
 
         ## Close pins with digital output
-        err = dev.DO_closePins(port, pinindex, timeout=timeout)
+        err = dev.DO_closePins(port, pinindex, timeout)
         print(f"DO_closePins in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

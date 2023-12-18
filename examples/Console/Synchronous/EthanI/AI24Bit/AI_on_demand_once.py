@@ -43,21 +43,21 @@ def main():
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Open AI
-        err = dev.AI_open(port, timeout=timeout)
+        err = dev.AI_open(port, timeout)
         print(f"AI_open in port {port}: {err}")
 
         ## Read data acquisition
-        data =  dev.AI_readOnDemand(port, timeout=timeout)
+        data =  dev.AI_readOnDemand(port, timeout)
         print(f"data in port {port}: ")
         print(f"{data}")
 
         ## Close AI
-        err = dev.AI_close(port, timeout=timeout)
+        err = dev.AI_close(port, timeout)
         print(f"AI_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

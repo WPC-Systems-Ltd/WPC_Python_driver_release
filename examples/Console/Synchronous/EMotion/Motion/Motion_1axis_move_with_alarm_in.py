@@ -55,12 +55,12 @@ def main():
         alarm_enable_false = 0
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Motion open
-        err = dev.Motion_open(port, timeout=timeout)
+        err = dev.Motion_open(port, timeout)
         print(f"Motion_open in port {port}: {err}")
 
         '''
@@ -74,13 +74,13 @@ def main():
         '''
 
         ## Motion configure
-        err = dev.Motion_cfgAxis(port, axis, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low, timeout=timeout)
+        err = dev.Motion_cfgAxis(port, axis, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low, timeout)
         print(f"Motion_cfgAxis in axis{axis}: {err}")
 
-        err = dev.Motion_cfgLimit(port, axis, forward_enable_true, reverse_enable_true, active_low, timeout=timeout)
+        err = dev.Motion_cfgLimit(port, axis, forward_enable_true, reverse_enable_true, active_low, timeout)
         print(f"Motion_cfgLimit in axis{axis}: {err}")
 
-        err = dev.Motion_cfgAlarm(port, axis, alarm_enable_false, active_low, timeout=timeout)
+        err = dev.Motion_cfgAlarm(port, axis, alarm_enable_false, active_low, timeout)
         print(f"Motion_cfgAlarm in axis{axis}: {err}")
 
         err = dev.Motion_cfgAxisMove(port, axis, rel_posi_mode, target_posi=5000, velo=10000, accel=100000, decel=100000, timeout=timeout)
@@ -90,28 +90,28 @@ def main():
         print(f"Motion_rstEncoderPosi in axis{axis}: {err}")
 
         ## Servo on
-        err = dev.Motion_enableServoOn(port, axis, timeout=timeout)
+        err = dev.Motion_enableServoOn(port, axis, timeout)
         print(f"Motion_enableServoOn in axis{axis}: {err}")
 
         ## Motion start
-        err = dev.Motion_startSingleAxisMove(port, axis, timeout=timeout)
+        err = dev.Motion_startSingleAxisMove(port, axis, timeout)
         print(f"Motion_startSingleAxisMove in axis{axis}: {err}")
 
         move_status = 0
         while move_status == 0:
-            move_status = dev.Motion_getMoveStatus(port, axis, timeout=timeout)
+            move_status = dev.Motion_getMoveStatus(port, axis, timeout)
             print(f"Motion_getMoveStatus in axis{axis}: {move_status}")
 
         ## Motion stop
-        err = dev.Motion_stop(port, axis, stop_decel, timeout=timeout)
+        err = dev.Motion_stop(port, axis, stop_decel, timeout)
         print(f"Motion_stop in axis{axis}: {err}")
 
         ## Servo off
-        err = dev.Motion_enableServoOff(port, axis, timeout=timeout)
+        err = dev.Motion_enableServoOff(port, axis, timeout)
         print(f"Motion_enableServoOff in axis{axis}: {err}")
 
         ## Motion close
-        err = dev.Motion_close(port, timeout=timeout)
+        err = dev.Motion_close(port, timeout)
         print(f"Motion_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

@@ -62,53 +62,53 @@ def main():
         mode = 2 ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 200
         read_points = 200
-        delay = 2 ## second
+        read_delay = 2 ## second
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         for slot in slot_list:
             ## Get slot mode
-            slot_mode = dev.Sys_getMode(slot, timeout=timeout)
+            slot_mode = dev.Sys_getMode(slot, timeout)
             print("Slot mode:", slot_mode)
 
             ## If the slot mode is not set to "AIO", set the slot mode to "AIO"
             if slot_mode != "AIO":
-                err = dev.Sys_setAIOMode(slot, timeout=timeout)
+                err = dev.Sys_setAIOMode(slot, timeout)
                 print(f"Sys_setAIOMod in slot {slot}: {err}")
 
             ## Get slot mode
-            slot_mode = dev.Sys_getMode(slot, timeout=timeout)
+            slot_mode = dev.Sys_getMode(slot, timeout)
             print("Slot mode:", slot_mode)
 
             ## Open AI
-            err = dev.AI_open(slot, timeout=timeout)
+            err = dev.AI_open(slot, timeout)
             print(f"AI_open in slot {slot}: {err}")
 
             ## Enable CS
-            err = dev.AI_enableCS(slot, chip_select, timeout=timeout)
+            err = dev.AI_enableCS(slot, chip_select, timeout)
             print(f"AI_enableCS in slot {slot}: {err}")
 
             ## Set AI acquisition mode to continuous mode (2)
-            err = dev.AI_setMode(slot, mode, timeout=timeout)
+            err = dev.AI_setMode(slot, mode, timeout)
             print(f"AI_setMode {mode} in slot {slot}: {err}")
 
             ## Set AI sampling rate
-            err = dev.AI_setSamplingRate(slot, sampling_rate, timeout=timeout)
+            err = dev.AI_setSamplingRate(slot, sampling_rate, timeout)
             print(f"AI_setSamplingRate {sampling_rate} in slot {slot}: {err}")
 
             ## Start AI
-            err = dev.AI_start(slot, timeout=timeout)
+            err = dev.AI_start(slot, timeout)
             print(f"AI_start in slot {slot}: {err}")
 
         data_len = 1
         while data_len > 0:
             for slot in slot_list:
                 ## Read data acquisition
-                ai_2Dlist = dev.AI_readStreaming(slot, read_points, delay=delay)
+                ai_2Dlist = dev.AI_readStreaming(slot, read_points, read_delay)
                 print(f"Slot{slot}: data len {len(ai_2Dlist)}" )
 
                 ## Update data len and counter
@@ -121,11 +121,11 @@ def main():
     finally:
         for slot in slot_list:
             ## Stop AI
-            err = dev.AI_stop(slot, timeout=timeout)
+            err = dev.AI_stop(slot, timeout)
             print(f"AI_stop in slot {slot}: {err}")
 
             ## Close AI
-            err = dev.AI_close(slot, timeout=timeout)
+            err = dev.AI_close(slot, timeout)
             print(f"AI_close in slot {slot}: {err}")
 
         ## Disconnect device

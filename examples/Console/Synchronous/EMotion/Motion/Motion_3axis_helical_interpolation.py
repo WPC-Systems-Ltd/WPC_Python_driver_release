@@ -54,12 +54,12 @@ def main():
         helical_dir_cw = 0
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Motion open
-        err = dev.Motion_open(port, timeout=timeout)
+        err = dev.Motion_open(port, timeout)
         print(f"Motion_open in port {port}: {err}")
 
         ## Motion open configuration file
@@ -67,31 +67,31 @@ def main():
         print(f"Motion_openCfgFile: {err}")
 
         ## Motion load configuration file
-        err = dev.Motion_loadCfgFile(timeout=timeout)
+        err = dev.Motion_loadCfgFile(timeout)
         print(f"Motion_loadCfgFile: {err}")
 
         ## Motion configure
         err = dev.Motion_cfgHelicalInterpo(port, center_x, center_y, finish_x, finish_y, int(False), pitch_axis3, int(False), pitch_axis4, rotation_num,
-        speed, helical_dir_cw, cal_timeout, timeout=timeout)
+        speed, helical_dir_cw, cal_timeout, timeout)
         print(f"Motion_cfgHelicalInterpo in axis{axis}: {err}")
 
         ## Motion start
-        err = dev.Motion_startHelicalInterpo(port, timeout=timeout)
+        err = dev.Motion_startHelicalInterpo(port, timeout)
         print(f"Motion_startHelicalInterpo in axis{axis}: {err}")
 
         move_status = 0
         while move_status == 0:
-            move_status = dev.Motion_getMoveStatus(port, axis, timeout=timeout)
+            move_status = dev.Motion_getMoveStatus(port, axis, timeout)
             if move_status != 0:
                 print(f"Move completed axis {axis}...")
                 return move_status
 
         ## Motion stop
-        err = dev.Motion_stop(port, axis, stop_decel, timeout=timeout)
+        err = dev.Motion_stop(port, axis, stop_decel, timeout)
         print(f"Motion_stop in axis{axis}: {err}")
 
         ## Motion close
-        err = dev.Motion_close(port, timeout=timeout)
+        err = dev.Motion_close(port, timeout)
         print(f"Motion_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
