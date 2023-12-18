@@ -45,7 +45,7 @@ def main():
         ## Parameters setting
         port = 0 ## Depend on your device
         sampling_period = 0.003
-        read_delay = 0.05 ## second
+        read_delay = 0.5 ## second
         timeout = 3 ## second
 
         ## Get firmware model & version
@@ -66,10 +66,19 @@ def main():
         print(f"AHRS_start in port {port}: {err}")
 
         ## Read AHRS estimation
-        for i in range(10):
+        data_len = 1
+        while data_len > 0:
             ahrs_list = dev.AHRS_readStreaming(port, read_delay)
-            print(f"Roll: {ahrs_list[0]}, Pitch: {ahrs_list[1]}, Yaw: {ahrs_list[2]}")
+            for i in range(len(ahrs_list)//3):
+                print(f"Roll: {ahrs_list[3*i]}, Pitch: {ahrs_list[3*i+1]}, Yaw: {ahrs_list[3*i+2]}")
 
+    except KeyboardInterrupt:
+        print("Press keyboard")
+
+    except Exception as err:
+        pywpc.printGenericError(err)
+
+    finally:
         ## Stop AHRS
         err = dev.AHRS_stop(port, timeout)
         print(f"AHRS_stop in port {port}: {err}")
@@ -77,14 +86,12 @@ def main():
         ## Close AHRS
         err = dev.AHRS_close(port, timeout)
         print(f"AHRS_close in port {port}: {err}")
-    except Exception as err:
-        pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
     return
 if __name__ == '__main__':
