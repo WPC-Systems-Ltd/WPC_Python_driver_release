@@ -43,12 +43,12 @@ def main():
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Set RTC
-        status = dev.Sys_setRTC(2023, 5, 8, 15, 8, 7, timeout)
+        status = dev.Sys_setRTC(2023, 5, 8, 15, 8, 7)
         print(f"Set RTC status: {status}")
 
         for i in range(10):

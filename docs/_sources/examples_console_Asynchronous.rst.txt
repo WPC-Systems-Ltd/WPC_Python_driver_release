@@ -738,8 +738,6 @@ Wifi-DAQ-E3-A
 
    examples/Console/Asynchronous/WifiDAQE3A/AHRS/AHRS_read.rst
 
-   examples/Console/Asynchronous/WifiDAQE3A/AHRS/AHRS_visualize.rst
-
    examples/Console/Asynchronous/WifiDAQE3A/System_Wifi/get_network_info.rst
 
    examples/Console/Asynchronous/WifiDAQE3A/System_Wifi/get_Wifi_DAQ_status.rst

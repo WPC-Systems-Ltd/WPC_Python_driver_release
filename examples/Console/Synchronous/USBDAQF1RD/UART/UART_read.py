@@ -52,28 +52,28 @@ def main():
         delay = 0.005 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Open UART
-        err = dev.UART_open(port, timeout)
+        err = dev.UART_open(port, timeout=timeout)
         print(f"UART_open in port {port}: {err}")
 
         ## Set UART port and set baudrate to 9600
-        err = dev.UART_setBaudRate(port, baudrate, timeout)
+        err = dev.UART_setBaudRate(port, baudrate, timeout=timeout)
         print(f"UART_setBaudRate in port {port}: {err}")
 
         ## Set UART port and set data bit to 8-bit data
-        err = dev.UART_setDataBit(port, data_bit_mode, timeout)
+        err = dev.UART_setDataBit(port, data_bit_mode, timeout=timeout)
         print(f"UART_setDataBit in port {port}: {err}")
 
         ## Set UART port and set parity to None
-        err = dev.UART_setParity(port, parity_mode, timeout)
+        err = dev.UART_setParity(port, parity_mode, timeout=timeout)
         print(f"UART_setParity in port {port}: {err}")
 
         ## Set UART port and set stop bit to 8-bit data
-        err = dev.UART_setNumStopBit(port, stop_bit_mode, timeout)
+        err = dev.UART_setNumStopBit(port, stop_bit_mode, timeout=timeout)
         print(f"UART_setNumStopBit in port {port}: {err}")
 
         ## Print informaion
@@ -87,7 +87,7 @@ def main():
         print(f"data in port {port}: {data}")
 
         ## Close UART
-        err = dev.UART_close(port, timeout)
+        err = dev.UART_close(port, timeout=timeout)
         print(f"UART_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

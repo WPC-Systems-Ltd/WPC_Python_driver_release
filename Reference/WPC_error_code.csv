@@ -71,8 +71,8 @@ Error code,Error message
 -8602,The I2C address mode is not available.
 -8700,The SPI port is not available or is already occupied by another process.
 -8701,The length of data exceeds maximum transfer length of SPI.
--8702,The SPI data size mode is not valid or is not recognized.
--8703,The SPI first bit mode is not valid or is not recognized.
+-8702,TThe SPI data size mode is not valid or is not recognized.
+-8703,TThe SPI first bit mode is not valid or is not recognized.
 -8704,The SPI prescaler mode is not valid or is not recognized.
 -8705,The SPI mode is not valid or is not recognized.
 -8800,The UART port is not available or is already occupied by another process.
@@ -95,7 +95,7 @@ Error code,Error message
 -9105,The motion enable is not valid or is not recognized.
 -9106,The motion stepper output is not valid or is not recognized.
 -9107,The motion direction is not valid or is not recognized.
--9108,The motion polarity is not valid or is not recognized.
+-9108,TThe motion polarity is not valid or is not recognized.
 -9109,The motion capture type is not valid or is not recognized.
 -9110,The motion capture mode is not valid or is not recognized.
 -9111,The motion breakpoint mode is not valid or is not recognized.

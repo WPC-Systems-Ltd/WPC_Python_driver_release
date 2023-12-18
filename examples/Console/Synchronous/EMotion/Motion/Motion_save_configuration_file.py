@@ -51,12 +51,12 @@ def main():
         active_high = 1
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Motion open
-        err = dev.Motion_open(port, timeout)
+        err = dev.Motion_open(port, timeout=timeout)
         print(f"Motion_open in port {port}: {err}")
 
         ## Motion open configuration file
@@ -64,7 +64,7 @@ def main():
         print(f"Motion_openCfgFile: {err}")
 
         ## Motion configure
-        err = dev.Motion_cfgAxis(port, axis, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low, timeout)
+        err = dev.Motion_cfgAxis(port, axis, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low, timeout=timeout)
         print(f"Motion_cfgAxis in axis{axis}: {err}")
 
         err = dev.Motion_cfgAxisMove(port, axis, rel_posi_mode, target_posi=5000, velo=10000, accel=100000, decel=100000, timeout=timeout)
@@ -75,7 +75,7 @@ def main():
         print(f"Motion_saveCfgFile: {err}")
 
         ## Motion close
-        err = dev.Motion_close(port, timeout)
+        err = dev.Motion_close(port, timeout=timeout)
         print(f"Motion_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

@@ -41,27 +41,27 @@ def main():
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Motion open
-        err = dev.Motion_open(port, timeout)
+        err = dev.Motion_open(port, timeout=timeout)
         print(f"Motion_open in port {port}: {err}")
 
         ## servo on
-        err = dev.Motion_enableServoOn(port, axis, timeout)
+        err = dev.Motion_enableServoOn(port, axis, timeout=timeout)
         print(f"Motion_enableServoOn in axis{axis}: {err}")
 
         ## Wait
         time.sleep(5) ## delay [s]
 
         ## servo off
-        err = dev.Motion_enableServoOff(port, axis, timeout)
+        err = dev.Motion_enableServoOff(port, axis, timeout=timeout)
         print(f"Motion_enableServoOff in axis{axis}: {err}")
 
         ## Motion close
-        err = dev.Motion_close(port, timeout)
+        err = dev.Motion_close(port, timeout=timeout)
         print(f"Motion_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

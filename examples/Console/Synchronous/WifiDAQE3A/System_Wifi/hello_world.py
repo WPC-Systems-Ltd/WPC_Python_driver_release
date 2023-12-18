@@ -45,7 +45,7 @@ def main():
             time.sleep(1) ## delay [s]
 
         print(f"Restarting now")
-        dev.Sys_reboot(timeout)
+        dev.Sys_reboot(timeout=timeout)
     except Exception as err:
         pywpc.printGenericError(err)
 

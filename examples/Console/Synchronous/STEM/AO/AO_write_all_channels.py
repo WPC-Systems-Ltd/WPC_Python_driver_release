@@ -50,29 +50,29 @@ def main():
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Get slot mode
-        slot_mode = dev.Sys_getMode(slot, timeout)
+        slot_mode = dev.Sys_getMode(slot, timeout=timeout)
         print("Slot mode:", slot_mode)
 
         ## If the slot mode is not set to "AIO", set the slot mode to "AIO"
         if slot_mode != "AIO":
-            err = dev.Sys_setAIOMode(slot, timeout)
+            err = dev.Sys_setAIOMode(slot, timeout=timeout)
             print(f"Sys_setAIOMode in slot {slot}: {err}")
 
         ## Get slot mode
-        slot_mode = dev.Sys_getMode(slot, timeout)
+        slot_mode = dev.Sys_getMode(slot, timeout=timeout)
         print("Slot mode:", slot_mode)
 
         ## Open AO
-        err = dev.AO_open(slot, timeout)
+        err = dev.AO_open(slot, timeout=timeout)
         print(f"AO_open in slot {slot}: {err}")
 
         ## Write AO value simultaneously
-        err = dev.AO_writeAllChannels(slot, ao_value_list, timeout)
+        err = dev.AO_writeAllChannels(slot, ao_value_list, timeout=timeout)
         print(f"In slot {slot} the AO value is {ao_value_list}: {err}")
 
         ## Close AO

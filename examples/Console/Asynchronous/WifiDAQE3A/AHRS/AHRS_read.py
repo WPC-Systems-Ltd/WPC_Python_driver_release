@@ -44,8 +44,11 @@ async def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        sampling_period = 0.003
-        read_delay = 0.5 ## second
+        mask = 0x01 ## data mask
+        theo_grav = 9.81
+        dt = 0.003
+        offset_z = 0.003
+        delay = 0.05 ## second
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -56,28 +59,22 @@ async def main():
         err = await dev.AHRS_open_async(port)
         print(f"AHRS_open_async in port {port}: {err}")
 
-        ## Set period
-        err = await dev.AHRS_setSamplingPeriod_async(port, sampling_period)
-        print(f"AHRS_setSamplingPeriod_async in port {port}: {err}")
+        ## Set general setting
+        err = await dev.AHRS_setGeneral_async(port, theo_grav, dt, offset_z)
+        print(f"AHRS_setGeneral in port {port}: {err}")
 
         ## Start AHRS
-        err = await dev.AHRS_start_async(port)
+        err = await dev.AHRS_start_async(port, mask)
         print(f"AHRS_start_async in port {port}: {err}")
 
+        ## Wait for acquisition
+        await asyncio.sleep(1) ## delay [s]
+
         ## Read AHRS estimation
-        data_len = 1
-        while data_len > 0:
-            ahrs_list = await dev.AHRS_readStreaming_async(port, read_delay)
-            for i in range(len(ahrs_list)//3):
-                print(f"Roll: {ahrs_list[3*i]}, Pitch: {ahrs_list[3*i+1]}, Yaw: {ahrs_list[3*i+2]}")
+        for i in range(10):
+            ahrs_list = await dev.AHRS_readStreaming_async(port, delay=delay)
+            print(f"x_esti: {ahrs_list[0]}, y_esti: {ahrs_list[1]}, z_est: {ahrs_list[2]}")
 
-    except KeyboardInterrupt:
-        print("Press keyboard")
-
-    except Exception as err:
-        pywpc.printGenericError(err)
-
-    finally:
         ## Stop AHRS
         err = await dev.AHRS_stop_async(port)
         print(f"AHRS_stop_async in port {port}: {err}")
@@ -85,12 +82,15 @@ async def main():
         ## Close AHRS
         err = await dev.AHRS_close_async(port)
         print(f"AHRS_close_async in port {port}: {err}")
+    except Exception as err:
+        pywpc.printGenericError(err)
 
-        ## Disconnect device
-        dev.disconnect()
+    ## Disconnect device
+    dev.disconnect()
 
-        ## Release device handle
-        dev.close()
+    ## Release device handle
+    dev.close()
+
     return
 def main_for_spyder(*args):
     if asyncio.get_event_loop().is_running():

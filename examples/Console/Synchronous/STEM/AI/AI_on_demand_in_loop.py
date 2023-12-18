@@ -64,33 +64,33 @@ def main():
         chip_select = [0, 1]
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Get slot mode
-        slot_mode = dev.Sys_getMode(slot, timeout)
+        slot_mode = dev.Sys_getMode(slot, timeout=timeout)
         print("Slot mode:", slot_mode)
 
         ## If the slot mode is not set to "AIO", set the slot mode to "AIO"
         if slot_mode != "AIO":
-            err = dev.Sys_setAIOMode(slot, timeout)
+            err = dev.Sys_setAIOMode(slot, timeout=timeout)
             print(f"Sys_setAIOMode in slot {slot}: {err}")
 
         ## Get slot mode
-        slot_mode = dev.Sys_getMode(slot, timeout)
+        slot_mode = dev.Sys_getMode(slot, timeout=timeout)
         print("Slot mode:", slot_mode)
 
         ## Open AI
-        err = dev.AI_open(slot, timeout)
+        err = dev.AI_open(slot, timeout=timeout)
         print(f"AI_open in slot {slot}: {err}")
 
         ## Enable CS
-        err = dev.AI_enableCS(slot, chip_select, timeout)
+        err = dev.AI_enableCS(slot, chip_select, timeout=timeout)
         print(f"AI_enableCS in slot {slot}: {err}")
 
         ## Set AI acquisition mode to on demand mode (0)
-        err = dev.AI_setMode(slot, mode, timeout)
+        err = dev.AI_setMode(slot, mode, timeout=timeout)
         print(f"AI_setMode {mode} in slot {slot}: {err}")
 
         ## Read AI
@@ -99,7 +99,7 @@ def main():
             print(f"data in slot {slot}: {ai_list}")
 
         ## Close AI
-        err = dev.AI_close(slot, timeout)
+        err = dev.AI_close(slot, timeout=timeout)
         print(f"AI_close in slot {slot}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

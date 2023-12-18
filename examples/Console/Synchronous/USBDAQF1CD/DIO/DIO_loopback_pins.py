@@ -49,35 +49,34 @@ def main():
         DI_port = 1
         DO_pins = [0, 1, 2, 3]
         DI_pins = [4, 5, 6, 7]
-        DO_value = [1, 0, 1, 0]
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Open pins with digital output
-        err = dev.DO_openPins(DO_port, DO_pins, timeout)
+        err = dev.DO_openPins(DO_port, DO_pins, timeout=timeout)
         print(f"DO_openPins in DO_port {DO_port}: {err}")
 
         ## Write pins to high or low
-        err = dev.DO_writePins(DO_port, DO_pins, DO_value, timeout)
+        err = dev.DO_writePins(DO_port, DO_pins, [1, 1, 0, 0], timeout=timeout)
         print(f"DO_writePins in {DO_port}: {err}")
 
         ## Open pins with digital iutput
-        err = dev.DI_openPins(DI_port, DI_pins, timeout)
+        err = dev.DI_openPins(DI_port, DI_pins, timeout=timeout)
         print(f"DI_openPins in DI_port {DI_port}: {err}")
 
         ## Read pins state
-        state_list = dev.DI_readPins(DI_port, DI_pins, timeout)
+        state_list = dev.DI_readPins(DI_port, DI_pins, timeout=timeout)
         print(f"state_list in DI_port {DI_port}: {state_list}")
 
         ## Close pins with digital output
-        err = dev.DO_closePins(DO_port, DO_pins, timeout)
+        err = dev.DO_closePins(DO_port, DO_pins, timeout=timeout)
         print(f"DO_closePins in DO_port {DO_port}: {err}")
 
         ## Close pins with digital input
-        err = dev.DI_closePins(DI_port, DI_pins, timeout)
+        err = dev.DI_closePins(DI_port, DI_pins, timeout=timeout)
         print(f"DI_closePins in DI_port {DI_port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

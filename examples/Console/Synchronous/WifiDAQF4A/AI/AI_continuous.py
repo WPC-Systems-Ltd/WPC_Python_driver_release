@@ -48,48 +48,48 @@ def main():
         mode = 2 ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 200
         read_points = 200
-        read_delay = 0.2 ## second
+        delay = 0.2 ## second
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Open AI
-        err = dev.AI_open(port, timeout)
+        err = dev.AI_open(port, timeout=timeout)
         print(f"AI_open in port {port}: {err}")
         
 
         ## Set AI acquisition mode to continuous mode (2)
-        err = dev.AI_setMode(port, mode, timeout)
+        err = dev.AI_setMode(port, mode, timeout=timeout)
         print(f"AI_setMode {mode} in port {port}: {err}")
 
         ## Set AI sampling rate
-        err = dev.AI_setSamplingRate(port, sampling_rate, timeout)
+        err = dev.AI_setSamplingRate(port, sampling_rate, timeout=timeout)
         print(f"AI_setSamplingRate {sampling_rate} in port {port}: {err}")
 
         ## Start AI
-        err = dev.AI_start(port, timeout)
+        err = dev.AI_start(port, timeout=timeout)
         print(f"AI_start in port {port}: {err}")
 
         ## Wait a while for data acquisition
         time.sleep(1) ## delay [s]
 
         ## Stop AI
-        err = dev.AI_stop(port, timeout)
+        err = dev.AI_stop(port, timeout=timeout)
         print(f"AI_stop in port {port}: {err}")
 
         data_len = 1
         while data_len > 0:
             ## Read data acquisition
-            ai_2Dlist = dev.AI_readStreaming(port, read_points, read_delay)
+            ai_2Dlist = dev.AI_readStreaming(port, read_points, delay=delay)
             print(f"number of samples = {len(ai_2Dlist)}" )
 
             ## Update data len
             data_len = len(ai_2Dlist)
         ## Close AI
-        err = dev.AI_close(port, timeout)
+        err = dev.AI_close(port, timeout=timeout)
         print(f"AI_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

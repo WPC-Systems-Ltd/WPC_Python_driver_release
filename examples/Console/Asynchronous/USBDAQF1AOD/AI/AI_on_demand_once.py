@@ -59,7 +59,7 @@ async def main():
         
         ## Set AI channel
         err = await dev.AI_enableChannel_async(port, channel)
-        print(f"AI_enableChannel_async in port {port}: {err}")
+        print("AI_enableChannel_async in port {port}: {err}")
 
         ## Set AI acquisition mode to on demand mode (0)
         err = await dev.AI_setMode_async(port, mode)

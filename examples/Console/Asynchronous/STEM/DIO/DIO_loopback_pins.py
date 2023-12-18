@@ -59,7 +59,6 @@ async def main():
         DI_port = 1
         DO_pins = [0, 1, 2, 3]
         DI_pins = [4, 5, 6, 7]
-        DO_value = [1, 0, 1, 0]
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -86,7 +85,7 @@ async def main():
         print("State:    ", info[2])
 
         ## Write pins to high or low
-        err = await dev.DO_writePins_async(DO_port, DO_pins, DO_value)
+        err = await dev.DO_writePins_async(DO_port, DO_pins, [1, 1, 0, 0])
         print(f"DO_writePins_async in DO_port {DO_port}: {err}")
 
         ## Read pins state

@@ -50,44 +50,44 @@ def main():
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Open UART
-        err = dev.UART_open(port, timeout)
+        err = dev.UART_open(port, timeout=timeout)
         print(f"UART_open in port {port}: {err}")
 
         ## Set UART port and set baudrate to 9600
-        err = dev.UART_setBaudRate(port, baudrate, timeout)
+        err = dev.UART_setBaudRate(port, baudrate, timeout=timeout)
         print(f"UART_setBaudRate in port {port}: {err}")
 
         ## Set UART port and set data bit to 8-bit data
-        err = dev.UART_setDataBit(port, data_bit_mode, timeout)
+        err = dev.UART_setDataBit(port, data_bit_mode, timeout=timeout)
         print(f"UART_setDataBit in port {port}: {err}")
 
         ## Set UART port and set parity to None
-        err = dev.UART_setParity(port, parity_mode, timeout)
+        err = dev.UART_setParity(port, parity_mode, timeout=timeout)
         print(f"UART_setParity in port {port}: {err}")
 
         ## Set UART port and set stop bit to 1 bit
-        err = dev.UART_setNumStopBit(port, stop_bit_mode, timeout)
+        err = dev.UART_setNumStopBit(port, stop_bit_mode, timeout=timeout)
         print(f"UART_setNumStopBit in port {port}: {err}")
 
         ## Set UART port and and write "12345" to device in string format
-        err = dev.UART_write(port, "12345", timeout)
+        err = dev.UART_write(port, "12345", timeout=timeout)
         print(f"UART_write in port {port}: {err}")
 
         ## Set UART port and and write "chunglee people" to device
-        err = dev.UART_write(port, "chunglee people", timeout)
+        err = dev.UART_write(port, "chunglee people", timeout=timeout)
         print(f"UART_write in port {port}: {err}")
 
         ## Set UART port and and write "12345" to device in list format
-        err = dev.UART_write(port, ["1","2","3","4","5"], timeout)
+        err = dev.UART_write(port, ["1","2","3","4","5"], timeout=timeout)
         print(f"UART_write in port {port}: {err}")
 
         ## Close UART
-        err = dev.UART_close(port, timeout)
+        err = dev.UART_close(port, timeout=timeout)
         print(f"UART_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

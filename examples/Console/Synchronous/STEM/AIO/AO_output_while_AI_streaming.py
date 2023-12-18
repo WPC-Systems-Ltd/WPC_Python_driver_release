@@ -62,49 +62,49 @@ def main():
         mode = 2 ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 200
         read_points = 200
-        read_delay = 2 ## second
+        delay = 2 ## second
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Get slot mode
-        slot_mode = dev.Sys_getMode(slot, timeout)
+        slot_mode = dev.Sys_getMode(slot, timeout=timeout)
         print("Slot mode:", slot_mode)
 
         ## If the slot mode is not set to "AIO", set the slot mode to "AIO"
         if slot_mode != "AIO":
-            err = dev.Sys_setAIOMode(slot, timeout)
+            err = dev.Sys_setAIOMode(slot, timeout=timeout)
             print(f"Sys_setAIOMode in slot {slot}: {err}")
 
         ## Get slot mode
-        slot_mode = dev.Sys_getMode(slot, timeout)
+        slot_mode = dev.Sys_getMode(slot, timeout=timeout)
         print("Slot mode:", slot_mode)
 
         ## Open AO
-        err = dev.AO_open(slot, timeout)
+        err = dev.AO_open(slot, timeout=timeout)
         print(f"AO_open in slot {slot}: {err}")
 
         ## Open AI
-        err = dev.AI_open(slot, timeout)
+        err = dev.AI_open(slot, timeout=timeout)
         print(f"AI_open in slot {slot}: {err}")
 
         ## Set AI acquisition mode to continuous mode (2)
-        err = dev.AI_setMode(slot, mode, timeout)
+        err = dev.AI_setMode(slot, mode, timeout=timeout)
         print(f"AI_setMode {mode} in slot {slot}: {err}")
 
         ## Set AI sampling rate
-        err = dev.AI_setSamplingRate(slot, sampling_rate, timeout)
+        err = dev.AI_setSamplingRate(slot, sampling_rate, timeout=timeout)
         print(f"AI_setSamplingRate {sampling_rate} in slot {slot}: {err}")
 
         ## Enable CS
-        err = dev.AI_enableCS(slot, chip_select, timeout)
+        err = dev.AI_enableCS(slot, chip_select, timeout=timeout)
         print(f"AI_enableCS in slot {slot}: {err}")
 
         ## Start AI
-        err = dev.AI_start(slot, timeout)
+        err = dev.AI_start(slot, timeout=timeout)
         print(f"AI_start in slot {slot}: {err}")
 
         counter = 0
@@ -112,7 +112,7 @@ def main():
         ao_list = [-10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10]
         while data_len > 0:
             ## Read data acquisition
-            ai_2Dlist = dev.AI_readStreaming(slot, read_points, read_delay)
+            ai_2Dlist = dev.AI_readStreaming(slot, read_points, delay=delay)
             # print(ai_2Dlist)
             print(f"Data len = {len(ai_2Dlist)}" )
 
@@ -125,7 +125,7 @@ def main():
                 ao_value = random.choice(ao_list)
 
                 ## Write AO vaule in channel 0
-                err = dev.AO_writeOneChannel(slot, 0, ao_value, timeout)
+                err = dev.AO_writeOneChannel(slot, 0, ao_value, timeout=timeout)
                 print(f"In slot {slot} channel 0, the AO value is {ao_value}: {err}")
 
     except Exception as err:
@@ -134,15 +134,15 @@ def main():
         print("Press keyboard")
     finally:
         ## Stop AI
-        err = dev.AI_stop(slot, timeout)
+        err = dev.AI_stop(slot, timeout=timeout)
         print(f"AI_stop in slot {slot}: {err}")
 
         ## Close AI
-        err = dev.AI_close(slot, timeout)
+        err = dev.AI_close(slot, timeout=timeout)
         print(f"AI_close in slot {slot}: {err}")
 
         ## Close AO
-        err = dev.AO_close(slot, timeout)
+        err = dev.AO_close(slot, timeout=timeout)
         print(f"AO_close in slot {slot}: {err}")
 
         ## Disconnect device

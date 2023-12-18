@@ -52,52 +52,52 @@ def main():
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Open AI
-        err = dev.AI_open(port, timeout)
+        err = dev.AI_open(port, timeout=timeout)
         print(f"AI_open in port {port}: {err}")
         
         ## Set AI channel
-        err = dev.AI_enableChannel(port, channel, timeout)
-        print(f"AI_enableChannel in port {port}: {err}")
+        err = dev.AI_enableChannel(port, channel, timeout=timeout)
+        print("AI_enableChannel in port {port}: {err}")
 
         ## Open AO
-        err = dev.AO_open(port, timeout)
+        err = dev.AO_open(port, timeout=timeout)
         print(f"AO_open in port {port}: {err}")
 
         ## Read data acquisition
-        ai_list = dev.AI_readOnDemand(port, timeout)
+        ai_list = dev.AI_readOnDemand(port, timeout=timeout)
         print(f"AI data in port {port}: {ai_list}")
 
         ## Write AO vaule in channel 0
-        err = dev.AO_writeOneChannel(port, 0, ao_value_list[0], timeout)
+        err = dev.AO_writeOneChannel(port, 0, ao_value_list[0], timeout=timeout)
         print(f"In port {port} channel 0, the AO value is {ao_value_list[0]}: {err}")
 
         ## Write AO vaule in channel 1
-        err = dev.AO_writeOneChannel(port, 1, ao_value_list[1], timeout)
+        err = dev.AO_writeOneChannel(port, 1, ao_value_list[1], timeout=timeout)
         print(f"In port {port} channel 1, the AO value is {ao_value_list[1]}: {err}")
 
         ## Write AO vaule in channel 2
-        err = dev.AO_writeOneChannel(port, 2, ao_value_list[2], timeout)
+        err = dev.AO_writeOneChannel(port, 2, ao_value_list[2], timeout=timeout)
         print(f"In port {port} channel 2, the AO value is {ao_value_list[2]}: {err}")
 
         ## Write AO vaule in channel 3
-        err = dev.AO_writeOneChannel(port, 3, ao_value_list[3], timeout)
+        err = dev.AO_writeOneChannel(port, 3, ao_value_list[3], timeout=timeout)
         print(f"In port {port} channel 3, the AO value is {ao_value_list[3]}: {err}")
 
         ## Read data acquisition
-        ai_list = dev.AI_readOnDemand(port, timeout)
+        ai_list = dev.AI_readOnDemand(port, timeout=timeout)
         print(f"AI data in port {port}: {ai_list}")
 
         ## Close AI
-        err = dev.AI_close(port, timeout)
+        err = dev.AI_close(port, timeout=timeout)
         print(f"AI_close in port {port}: {err}")
 
         ## Close AO
-        err = dev.AO_close(port, timeout)
+        err = dev.AO_close(port, timeout=timeout)
         print(f"AO_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

@@ -52,41 +52,41 @@ def main():
         en_reverse = 0
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## EDrive-ST open
-        err = dev.Drive_open(port, timeout)
+        err = dev.Drive_open(port, timeout=timeout)
         print(f"Drive_open: {err}")
 
         ## EDrive-ST configure
-        err = dev.Drive_cfgAxisDirection(port, orginal_direction, timeout)
+        err = dev.Drive_cfgAxisDirection(port, orginal_direction, timeout=timeout)
         print(f"Drive_cfgAxisDirection: {err}")
 
-        err = dev.Drive_cfgEncoderDirection(port, orginal_direction, timeout)
+        err = dev.Drive_cfgEncoderDirection(port, orginal_direction, timeout=timeout)
         print(f"Drive_cfgEncoderDirection: {err}")
 
-        err = dev.Drive_cfgLimit(port, en_forward, en_reverse, active_low, timeout)
+        err = dev.Drive_cfgLimit(port, en_forward, en_reverse, active_low, timeout=timeout)
         print(f"Drive_cfgLimit: {err}")
 
-        err = dev.Drive_cfgFindRef(port, reverse, timeout)
+        err = dev.Drive_cfgFindRef(port, reverse, timeout=timeout)
         print(f"Drive_cfgFindRef: {err}")
 
         ## EDrive-ST reset
-        err = dev.Drive_rstEncoderPosi(port, timeout)
+        err = dev.Drive_rstEncoderPosi(port, timeout=timeout)
         print(f"EDST_reset: {err}")
 
         ## EDrive-ST Servo on
-        err = dev.Drive_enableServoOn(port, timeout)
+        err = dev.Drive_enableServoOn(port, timeout=timeout)
         print(f"Drive_enableServoOn: {err}")
 
         ## EDrive-ST find reference
-        err = dev.Drive_findReference(port, timeout)
+        err = dev.Drive_findReference(port, timeout=timeout)
         print(f"Drive_findReference: {err}")
 
         ## Get limit status
-        limit_status = dev.Drive_getLimitStatus(port, timeout)
+        limit_status = dev.Drive_getLimitStatus(port, timeout=timeout)
         reverse_hit = limit_status[0]
         forward_hit = limit_status[1]
         print("reverse_hit: ", reverse_hit)
@@ -96,15 +96,15 @@ def main():
         time.sleep(3) ## delay [s]
 
         ## EDrive-ST Stop
-        err = dev.Drive_stop(port, stop_decel, timeout)
+        err = dev.Drive_stop(port, stop_decel, timeout=timeout)
         print(f"Drive_stop: {err}")
 
         ## EDrive-ST Servo off
-        err = dev.Drive_enableServoOff(port, timeout)
+        err = dev.Drive_enableServoOff(port, timeout=timeout)
         print(f"Drive_enableServoOff: {err}")
 
         ## EDrive-ST close
-        err = dev.Drive_close(port, timeout)
+        err = dev.Drive_close(port, timeout=timeout)
         print(f"Drive_close: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

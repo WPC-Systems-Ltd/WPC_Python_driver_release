@@ -62,12 +62,12 @@ def main():
         mode = 2 ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 200
         read_points = 200
-        read_delay = 0.2 ## second
+        delay = 0.2 ## second
         timeout = 3 ## second
         chip_select = [0, 1]
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
@@ -80,49 +80,49 @@ def main():
         print(f"Logger_writeHeader: {err}")
 
         ## Get slot mode
-        slot_mode = dev.Sys_getMode(slot, timeout)
+        slot_mode = dev.Sys_getMode(slot, timeout=timeout)
         print("Slot mode:", slot_mode)
 
         ## If the slot mode is not set to "AIO", set the slot mode to "AIO"
         if slot_mode != "AIO":
-            err = dev.Sys_setAIOMode(slot, timeout)
+            err = dev.Sys_setAIOMode(slot, timeout=timeout)
             print(f"Sys_setAIOMode in slot {slot}: {err}")
 
         ## Get slot mode
-        slot_mode = dev.Sys_getMode(slot, timeout)
+        slot_mode = dev.Sys_getMode(slot, timeout=timeout)
         print("Slot mode:", slot_mode)
 
         ## Open AI
-        err = dev.AI_open(slot, timeout)
+        err = dev.AI_open(slot, timeout=timeout)
         print(f"AI_open in slot {slot}: {err}")
 
         ## Enable CS
-        err = dev.AI_enableCS(slot, chip_select, timeout)
+        err = dev.AI_enableCS(slot, chip_select, timeout=timeout)
         print(f"AI_enableCS in slot {slot}: {err}")
 
         ## Set AI acquisition mode to continuous mode (2)
-        err = dev.AI_setMode(slot, mode, timeout)
+        err = dev.AI_setMode(slot, mode, timeout=timeout)
         print(f"AI_setMode {mode} in slot {slot}: {err}")
 
         ## Set AI sampling rate
-        err = dev.AI_setSamplingRate(slot, sampling_rate, timeout)
+        err = dev.AI_setSamplingRate(slot, sampling_rate, timeout=timeout)
         print(f"AI_setSamplingRate {sampling_rate} in slot {slot}: {err}")
 
         ## Start AI
-        err = dev.AI_start(slot, timeout)
+        err = dev.AI_start(slot, timeout=timeout)
         print(f"AI_start in slot {slot}: {err}")
 
         ## Wait a while for data acquisition
         time.sleep(1) ## delay [s]
 
         ## Stop AI
-        err = dev.AI_stop(slot, timeout)
+        err = dev.AI_stop(slot, timeout=timeout)
         print(f"AI_stop in slot {slot}: {err}")
 
         data_len = 1
         while data_len > 0:
             ## Read data acquisition
-            ai_2Dlist = dev.AI_readStreaming(slot, read_points, read_delay)
+            ai_2Dlist = dev.AI_readStreaming(slot, read_points, delay=delay)
             print(f"number of samples = {len(ai_2Dlist)}" )
 
             ## Write data into CSV file
@@ -132,7 +132,7 @@ def main():
             data_len = len(ai_2Dlist)
 
         ## Close AI
-        err = dev.AI_close(slot, timeout)
+        err = dev.AI_close(slot, timeout=timeout)
         print(f"AI_close in slot {slot}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

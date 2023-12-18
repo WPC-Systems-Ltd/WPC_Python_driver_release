@@ -52,27 +52,27 @@ def main():
         en_reverse = 0
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## EDrive-ST open
-        err = dev.Drive_open(port, timeout)
+        err = dev.Drive_open(port, timeout=timeout)
         print(f"Drive_open: {err}")
 
         ## EDrive-ST configure
-        err = dev.Drive_cfgAxisMove(port, velocity_mode, timeout)
+        err = dev.Drive_cfgAxisMove(port, velocity_mode, timeout=timeout)
         print(f"Drive_cfgAxisMove: {err}")
 
-        err = dev.Drive_cfgLimit(port, en_forward, en_reverse, active_low, timeout)
+        err = dev.Drive_cfgLimit(port, en_forward, en_reverse, active_low, timeout=timeout)
         print(f"Drive_cfgLimit: {err}")
 
         ## EDrive-ST reset
-        err = dev.Drive_rstEncoderPosi(port, timeout)
+        err = dev.Drive_rstEncoderPosi(port, timeout=timeout)
         print(f"EDST_reset: {err}")
 
         ## EDrive-ST Servo on
-        err = dev.Drive_enableServoOn(port, timeout)
+        err = dev.Drive_enableServoOn(port, timeout=timeout)
         print(f"Drive_enableServoOn: {err}")
 
         ## EDrive-ST start
@@ -83,29 +83,29 @@ def main():
         time.sleep(3) ## delay [s]
 
         new_velo = 5000
-        err = dev.Drive_overrideVelocity(port, new_velo, timeout)
+        err = dev.Drive_overrideVelocity(port, new_velo, timeout=timeout)
         print(f"Drive_overrideVelocity: {err}")
 
         ## Wait for 3 seconds for moving
         time.sleep(3) ## delay [s]
 
         new_velo = -3000
-        err = dev.Drive_overrideVelocity(port, new_velo, timeout)
+        err = dev.Drive_overrideVelocity(port, new_velo, timeout=timeout)
         print(f"Drive_overrideVelocity: {err}")
 
         ## Wait for 3 seconds for moving
         time.sleep(3) ## delay [s]
 
         ## EDrive-ST Stop
-        err = dev.Drive_stop(port, stop_decel, timeout)
+        err = dev.Drive_stop(port, stop_decel, timeout=timeout)
         print(f"Drive_stop: {err}")
 
         ## EDrive-ST Servo off
-        err = dev.Drive_enableServoOff(port, timeout)
+        err = dev.Drive_enableServoOff(port, timeout=timeout)
         print(f"Drive_enableServoOff: {err}")
 
         ## EDrive-ST close
-        err = dev.Drive_close(port, timeout)
+        err = dev.Drive_close(port, timeout=timeout)
         print(f"Drive_close: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

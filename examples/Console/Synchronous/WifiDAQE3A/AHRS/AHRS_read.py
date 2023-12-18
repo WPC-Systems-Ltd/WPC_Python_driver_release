@@ -44,54 +44,50 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        sampling_period = 0.003
-        read_delay = 0.5 ## second
+        mask = 0x01 ## data mask
+        theo_grav = 9.81
+        dt = 0.003
+        offset_z = 0.003
+        delay = 0.05 ## second
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Open port
-        err = dev.AHRS_open(port, timeout)
+        err = dev.AHRS_open(port, timeout=timeout)
         print(f"AHRS_open in port {port}: {err}")
 
-        ## Set period
-        err = dev.AHRS_setSamplingPeriod(port, sampling_period, timeout)
-        print(f"AHRS_setSamplingPeriod in port {port}: {err}")
+        ## Set general setting
+        err = dev.AHRS_setGeneral(port, theo_grav, dt, offset_z, timeout=timeout)
+        print(f"AHRS_setGeneral in port {port}: {err}")
 
         ## Start AHRS
-        err = dev.AHRS_start(port, timeout)
+        err = dev.AHRS_start(port, mask, timeout=timeout)
         print(f"AHRS_start in port {port}: {err}")
 
         ## Read AHRS estimation
-        data_len = 1
-        while data_len > 0:
-            ahrs_list = dev.AHRS_readStreaming(port, read_delay)
-            for i in range(len(ahrs_list)//3):
-                print(f"Roll: {ahrs_list[3*i]}, Pitch: {ahrs_list[3*i+1]}, Yaw: {ahrs_list[3*i+2]}")
+        for i in range(10):
+            ahrs_list = dev.AHRS_readStreaming(port, delay=delay)
+            print(f"x_esti: {ahrs_list[0]}, y_esti: {ahrs_list[1]}, z_esti: {ahrs_list[2]}")
 
-    except KeyboardInterrupt:
-        print("Press keyboard")
-
-    except Exception as err:
-        pywpc.printGenericError(err)
-
-    finally:
         ## Stop AHRS
-        err = dev.AHRS_stop(port, timeout)
+        err = dev.AHRS_stop(port, timeout=timeout)
         print(f"AHRS_stop in port {port}: {err}")
 
         ## Close AHRS
-        err = dev.AHRS_close(port, timeout)
+        err = dev.AHRS_close(port, timeout=timeout)
         print(f"AHRS_close in port {port}: {err}")
+    except Exception as err:
+        pywpc.printGenericError(err)
 
-        ## Disconnect device
-        dev.disconnect()
+    ## Disconnect device
+    dev.disconnect()
 
-        ## Release device handle
-        dev.close()
+    ## Release device handle
+    dev.close()
 
     return
 if __name__ == '__main__':

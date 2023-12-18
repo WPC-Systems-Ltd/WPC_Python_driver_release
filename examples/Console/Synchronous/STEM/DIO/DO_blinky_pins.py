@@ -59,32 +59,32 @@ def main():
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Get slot mode
-        slot_mode = dev.Sys_getMode(slot, timeout)
+        slot_mode = dev.Sys_getMode(slot, timeout=timeout)
         print("Slot mode:", slot_mode)
 
         ## If the slot mode is not set to "DIO", set the slot mode to "DIO"
         if slot_mode != "DIO":
-            err = dev.Sys_setDIOMode(slot, timeout)
+            err = dev.Sys_setDIOMode(slot, timeout=timeout)
             print(f"Sys_setDIOMode in slot {slot}: {err}")
 
         ## Get slot mode
-        slot_mode = dev.Sys_getMode(slot, timeout)
+        slot_mode = dev.Sys_getMode(slot, timeout=timeout)
         print("Slot mode:", slot_mode)
 
         ## Get DIO start up information
-        info = dev.DIO_loadStartup(DO_port, timeout)
+        info = dev.DIO_loadStartup(DO_port, timeout=timeout)
         print("Enable:   ", info[0])
         print("Direction:", info[1])
         print("State:    ", info[2])
 
         ## Toggle digital state for 10 times. Each times delay for 0.5 second
         for i in range(10):
-            state = dev.DO_togglePins(DO_port, pinindex, timeout)
+            state = dev.DO_togglePins(DO_port, pinindex, timeout=timeout)
             print(state)
 
             ## Wait for 0.5 second to see led status

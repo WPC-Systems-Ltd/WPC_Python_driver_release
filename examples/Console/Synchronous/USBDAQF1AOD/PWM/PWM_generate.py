@@ -47,34 +47,34 @@ def main():
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Open PWM
-        err = dev.PWM_open(channel, timeout)
+        err = dev.PWM_open(channel, timeout=timeout)
         print(f"PWM_open in channel {channel}: {err}")
 
         ## Set frequency and duty_cycle
-        err = dev.PWM_setFrequency(channel, frequency, timeout)
+        err = dev.PWM_setFrequency(channel, frequency, timeout=timeout)
         print(f"PWM_setFrequency in channel {channel}: {err}")
 
-        err = dev.PWM_setDutyCycle(channel, duty_cycle, timeout)
+        err = dev.PWM_setDutyCycle(channel, duty_cycle, timeout=timeout)
         print(f"PWM_setDutyCycle in channel {channel}: {err}")
 
         ## Start PWM
-        err = dev.PWM_start(channel, timeout)
+        err = dev.PWM_start(channel, timeout=timeout)
         print(f"PWM_start in channel {channel}: {err}")
 
         ## delay for 5 seconds
         time.sleep(5) ## delay [s]
 
         ## Stop PWM
-        err = dev.PWM_stop(channel, timeout)
+        err = dev.PWM_stop(channel, timeout=timeout)
         print(f"PWM_stop in channel {channel}: {err}")
 
         ## Close PWM
-        err = dev.PWM_close(channel, timeout)
+        err = dev.PWM_close(channel, timeout=timeout)
         print(f"PWM_close in channel {channel}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

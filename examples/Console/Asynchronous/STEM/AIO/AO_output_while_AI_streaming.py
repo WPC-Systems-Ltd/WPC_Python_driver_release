@@ -62,7 +62,7 @@ async def main():
         mode = 2 ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 200
         read_points = 200
-        read_delay = 2 ## second
+        delay = 2 ## second
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -111,7 +111,7 @@ async def main():
         ao_list = [-10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10]
         while data_len > 0:
             ## Read data acquisition
-            ai_2Dlist = await dev.AI_readStreaming_async(slot, read_points, read_delay)
+            ai_2Dlist = await dev.AI_readStreaming_async(slot, read_points, delay=delay)
             # print(ai_2Dlist)
             print(f"Data len = {len(ai_2Dlist)}" )
 
