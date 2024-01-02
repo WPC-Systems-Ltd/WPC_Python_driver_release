@@ -8,7 +8,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -96,7 +96,7 @@ def main():
         err = dev.Motion_startSingleAxisMove(port, axis, timeout)
         print(f"Motion_startSingleAxisMove in axis{axis}: {err}")
 
-        ## Wait for 3 seconds for moving
+        ## Wait for seconds for moving
         time.sleep(3) ## delay [s]
 
         ## Motion override velocity
@@ -104,7 +104,7 @@ def main():
         err = dev.Motion_overrideAxisVelocity(port, axis, new_velo, timeout)
         print(f"Motion_overrideAxisVelocity in axis{axis}: {err}")
 
-        ## Wait for 3 seconds for moving
+        ## Wait for seconds for moving
         time.sleep(3) ## delay [s]
 
         ## Motion override velocity
@@ -112,7 +112,7 @@ def main():
         err = dev.Motion_overrideAxisVelocity(port, axis, new_velo, timeout)
         print(f"Motion_overrideAxisVelocity in axis{axis}: {err}")
 
-        ## Wait for 3 seconds for moving
+        ## Wait for seconds for moving
         time.sleep(3) ## delay [s]
 
         ## Motion stop

@@ -1,29 +1,30 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../../../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Drive find limit &mdash; WPC Python driver 3.0.15 documentation</title>
-      <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
+  <title>Drive find limit &mdash; WPC Python driver 3.0.17 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/custom_sphinx.css?v=20c2511c" />
+
+  
     <link rel="shortcut icon" href="../../../../../_static/WPC-trademark.jpg"/>
   <!--[if lt IE 9]>
     <script src="../../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
-        <script src="../../../../../_static/jquery.js"></script>
-        <script src="../../../../../_static/underscore.js"></script>
-        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../../../../_static/doctools.js"></script>
-        <script src="../../../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../../_static/documentation_options.js?v=1903c908"></script>
+        <script src="../../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="Drive servo on" href="Drive_servo_on.html" />
-    <link rel="prev" title="Drive 1axis move" href="Drive_1axis_move.html" /> 
+    <link rel="next" title="Drive position blending" href="Drive_position_blending.html" />
+    <link rel="prev" title="Drive find home" href="Drive_find_home.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -31,15 +32,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../../../../index.html" class="icon icon-home"> WPC Python driver
-            <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../../../../index.html" class="icon icon-home">
+            WPC Python driver
+              <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.15
+                3.0.17
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -57,12 +62,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../../examples_console_Asynchronous.html#device-finder">Device finder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../examples_console_Asynchronous.html#stem">STEM</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../../../../examples_console_Asynchronous.html#edrive-st">EDrive-ST</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Drive_1axis_move.html">Drive 1axis move</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Drive_find_home.html">Drive find home</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Drive find limit</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Drive_servo_on.html">Drive servo on</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Drive_position_blending.html">Drive position blending</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Drive_velocity_blending.html">Drive velocity blending</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Drive_position_move.html">Drive position move</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Drive_scan_move.html">Drive scan move</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Drive_servo_on.html">Drive servo on</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Drive_velocity_blending_acceleration.html">Drive velocity blending acceleration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Drive_velocity_move.html">Drive velocity move</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
@@ -114,9 +121,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../../../../examples_console_Asynchronous.html">Example Codes - Console (async)</a> &raquo;</li>
-      <li>Drive find limit</li>
+      <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../../examples_console_Asynchronous.html">Example Codes - Console (async)</a></li>
+      <li class="breadcrumb-item active">Drive find limit</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -126,7 +133,7 @@
            <div itemprop="articleBody">
              
   <section id="drive-find-limit">
-<h1>Drive find limit<a class="headerlink" href="#drive-find-limit" title="Permalink to this heading"></a></h1>
+<h1>Drive find limit<a class="headerlink" href="#drive-find-limit" title="Link to this heading"></a></h1>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos">  2</span><span class="sd">Drive - Drive_find_limit.py with asynchronous mode.</span>
 <span class="linenos">  3</span>
@@ -137,7 +144,7 @@
 <span class="linenos">  8</span><span class="sd">    https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples</span>
 <span class="linenos">  9</span><span class="sd">See README.md file to get detailed usage of this example.</span>
 <span class="linenos"> 10</span>
-<span class="linenos"> 11</span><span class="sd">Copyright (c) 2023 WPC Systems Ltd. All rights reserved.</span>
+<span class="linenos"> 11</span><span class="sd">Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.</span>
 <span class="linenos"> 12</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos"> 13</span>
 <span class="linenos"> 14</span><span class="c1">## Python</span>
@@ -166,95 +173,85 @@
 <span class="linenos"> 37</span>    <span class="k">try</span><span class="p">:</span>
 <span class="linenos"> 38</span>        <span class="c1">## Parameters setting</span>
 <span class="linenos"> 39</span>        <span class="n">port</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">## Depend on your device</span>
-<span class="linenos"> 40</span>        <span class="n">forward</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 41</span>        <span class="n">reverse</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="linenos"> 42</span>        <span class="n">orginal_direction</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 43</span>
-<span class="linenos"> 44</span>        <span class="c1">## Operation and stop mode</span>
-<span class="linenos"> 45</span>        <span class="n">stop_decel</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 46</span>
-<span class="linenos"> 47</span>        <span class="c1">## Polarity and enable parameters</span>
-<span class="linenos"> 48</span>        <span class="n">active_low</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 49</span>        <span class="n">active_high</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="linenos"> 50</span>        <span class="n">en_forward</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 51</span>        <span class="n">en_reverse</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 52</span>
-<span class="linenos"> 53</span>        <span class="c1">## Get firmware model &amp; version</span>
-<span class="linenos"> 54</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo_async</span><span class="p">()</span>
-<span class="linenos"> 55</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="linenos"> 56</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="linenos"> 57</span>
-<span class="linenos"> 58</span>        <span class="c1">## EDrive-ST open</span>
-<span class="linenos"> 59</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Drive_open_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos"> 60</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drive_open: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 61</span>
-<span class="linenos"> 62</span>        <span class="c1">## EDrive-ST configure</span>
-<span class="linenos"> 63</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Drive_cfgAxisDirection_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">orginal_direction</span><span class="p">)</span>
-<span class="linenos"> 64</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drive_cfgAxisDirection: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 65</span>
-<span class="linenos"> 66</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Drive_cfgEncoderDirection_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">orginal_direction</span><span class="p">)</span>
-<span class="linenos"> 67</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drive_cfgEncoderDirection: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 68</span>
-<span class="linenos"> 69</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Drive_cfgLimit_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">en_forward</span><span class="p">,</span> <span class="n">en_reverse</span><span class="p">,</span> <span class="n">active_low</span><span class="p">)</span>
-<span class="linenos"> 70</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drive_cfgLimit: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 40</span>        <span class="n">mode</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">## 1: forward, -1: reverse.</span>
+<span class="linenos"> 41</span>        <span class="n">active_low</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 42</span>        <span class="n">active_high</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos"> 43</span>        <span class="n">en_forward</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 44</span>        <span class="n">en_reverse</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 45</span>        <span class="n">searching_speed</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="linenos"> 46</span>        <span class="n">approaching_speed</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="linenos"> 47</span>        <span class="n">acceleration</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="linenos"> 48</span>        <span class="n">offset</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 49</span>        <span class="n">reset_position</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="linenos"> 50</span>
+<span class="linenos"> 51</span>        <span class="c1">## Get firmware model &amp; version</span>
+<span class="linenos"> 52</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo_async</span><span class="p">()</span>
+<span class="linenos"> 53</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="linenos"> 54</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos"> 55</span>
+<span class="linenos"> 56</span>        <span class="c1">## Motion open</span>
+<span class="linenos"> 57</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_open_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+<span class="linenos"> 58</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_open: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 59</span>
+<span class="linenos"> 60</span>        <span class="c1">## Motion config</span>
+<span class="linenos"> 61</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_cfgLimit_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">en_forward</span><span class="p">,</span> <span class="n">en_reverse</span><span class="p">,</span> <span class="n">active_low</span><span class="p">)</span>
+<span class="linenos"> 62</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_cfgLimit: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 63</span>
+<span class="linenos"> 64</span>        <span class="c1">## Motion reset</span>
+<span class="linenos"> 65</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_rstEncoderPosi_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+<span class="linenos"> 66</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_resetEncoder: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 67</span>
+<span class="linenos"> 68</span>        <span class="c1">## Motion Servo on</span>
+<span class="linenos"> 69</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_enableServoOn_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+<span class="linenos"> 70</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_enableServoOn: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 71</span>
-<span class="linenos"> 72</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Drive_cfgFindRef_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">reverse</span><span class="p">)</span>
-<span class="linenos"> 73</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drive_cfgFindRef: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 74</span>
-<span class="linenos"> 75</span>        <span class="c1">## EDrive-ST reset</span>
-<span class="linenos"> 76</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Drive_rstEncoderPosi_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos"> 77</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;EDST_reset: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 78</span>
-<span class="linenos"> 79</span>        <span class="c1">## EDrive-ST Servo on</span>
-<span class="linenos"> 80</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Drive_enableServoOn_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos"> 81</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drive_enableServoOn: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 82</span>
-<span class="linenos"> 83</span>        <span class="c1">## EDrive-ST find reference</span>
-<span class="linenos"> 84</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Drive_findReference_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos"> 85</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drive_findReference: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 86</span>
-<span class="linenos"> 87</span>        <span class="c1">## Get limit status</span>
-<span class="linenos"> 88</span>        <span class="n">limit_status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Drive_getLimitStatus_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos"> 89</span>        <span class="n">reverse_hit</span> <span class="o">=</span> <span class="n">limit_status</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="linenos"> 90</span>        <span class="n">forward_hit</span> <span class="o">=</span> <span class="n">limit_status</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="linenos"> 91</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;reverse_hit: &quot;</span><span class="p">,</span> <span class="n">reverse_hit</span><span class="p">)</span>
-<span class="linenos"> 92</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;forward_hit: &quot;</span><span class="p">,</span> <span class="n">forward_hit</span><span class="p">)</span>
-<span class="linenos"> 93</span>
-<span class="linenos"> 94</span>        <span class="c1">## Wait for 3 seconds for moving</span>
-<span class="linenos"> 95</span>        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1">## delay [s]</span>
-<span class="linenos"> 96</span>
-<span class="linenos"> 97</span>        <span class="c1">## EDrive-ST Stop</span>
-<span class="linenos"> 98</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Drive_stop_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">stop_decel</span><span class="p">)</span>
-<span class="linenos"> 99</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drive_stop: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">100</span>
-<span class="linenos">101</span>        <span class="c1">## EDrive-ST Servo off</span>
-<span class="linenos">102</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Drive_enableServoOff_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos">103</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drive_enableServoOff: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">104</span>
-<span class="linenos">105</span>        <span class="c1">## EDrive-ST close</span>
-<span class="linenos">106</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Drive_close_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos">107</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drive_close: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">108</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos">109</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="linenos">110</span>
-<span class="linenos">111</span>    <span class="c1">## Disconnect device</span>
-<span class="linenos">112</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
-<span class="linenos">113</span>
-<span class="linenos">114</span>    <span class="c1">## Release device handle</span>
-<span class="linenos">115</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="linenos">116</span>
-<span class="linenos">117</span>    <span class="k">return</span>
-<span class="linenos">118</span>
-<span class="linenos">119</span><span class="k">def</span> <span class="nf">main_for_spyder</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<span class="linenos">120</span>    <span class="k">if</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">is_running</span><span class="p">():</span>
-<span class="linenos">121</span>        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
-<span class="linenos">122</span>    <span class="k">else</span><span class="p">:</span>
-<span class="linenos">123</span>        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span>
-<span class="linenos">124</span>
-<span class="linenos">125</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">126</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span> <span class="c1">## Use terminal</span>
-<span class="linenos">127</span>    <span class="c1"># await main() ## Use Jupyter or IPython(&gt;=7.0)</span>
-<span class="linenos">128</span>    <span class="c1"># main_for_spyder() ## Use Spyder</span>
+<span class="linenos"> 72</span>        <span class="c1">## Motion find reference</span>
+<span class="linenos"> 73</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_startFindLimit_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">searching_speed</span><span class="p">,</span> <span class="n">approaching_speed</span><span class="p">,</span> <span class="n">acceleration</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">reset_position</span><span class="p">)</span>
+<span class="linenos"> 74</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_startFindLimit: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 75</span>
+<span class="linenos"> 76</span>        <span class="n">status</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos"> 77</span>        <span class="k">while</span> <span class="n">status</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">:</span>
+<span class="linenos"> 78</span>            <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_getProcessState_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+<span class="linenos"> 79</span>
+<span class="linenos"> 80</span>        <span class="c1">## Motion get limit status</span>
+<span class="linenos"> 81</span>        <span class="n">state_list</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_getLimitStatus_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+<span class="linenos"> 82</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Forward limit status: </span><span class="si">{</span><span class="n">state_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 83</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Reverse limit status: </span><span class="si">{</span><span class="n">state_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 84</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Home status: </span><span class="si">{</span><span class="n">state_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 85</span>
+<span class="linenos"> 86</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos"> 87</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos"> 88</span>    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+<span class="linenos"> 89</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Press keyboard&quot;</span><span class="p">)</span>
+<span class="linenos"> 90</span>    <span class="k">finally</span><span class="p">:</span>
+<span class="linenos"> 91</span>        <span class="c1">## Motion stop</span>
+<span class="linenos"> 92</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_stopProcess_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+<span class="linenos"> 93</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_stopProcess: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 94</span>
+<span class="linenos"> 95</span>        <span class="c1">## Motion Servo off</span>
+<span class="linenos"> 96</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_enableServoOff_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+<span class="linenos"> 97</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_enableServoOff: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 98</span>
+<span class="linenos"> 99</span>        <span class="c1">## Motion close</span>
+<span class="linenos">100</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_close_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+<span class="linenos">101</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_close: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">102</span>
+<span class="linenos">103</span>    <span class="c1">## Disconnect device</span>
+<span class="linenos">104</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+<span class="linenos">105</span>
+<span class="linenos">106</span>    <span class="c1">## Release device handle</span>
+<span class="linenos">107</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos">108</span>
+<span class="linenos">109</span><span class="k">def</span> <span class="nf">main_for_spyder</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="linenos">110</span>    <span class="k">if</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">is_running</span><span class="p">():</span>
+<span class="linenos">111</span>        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+<span class="linenos">112</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">113</span>        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span>
+<span class="linenos">114</span>
+<span class="linenos">115</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">116</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span> <span class="c1">## Use terminal</span>
+<span class="linenos">117</span>    <span class="c1"># await main() ## Use Jupyter or IPython(&gt;=7.0)</span>
+<span class="linenos">118</span>    <span class="c1"># main_for_spyder() ## Use Spyder</span>
 </pre></div>
 </div>
 </section>
@@ -263,8 +260,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="Drive_1axis_move.html" class="btn btn-neutral float-left" title="Drive 1axis move" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="Drive_servo_on.html" class="btn btn-neutral float-right" title="Drive servo on" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Drive_find_home.html" class="btn btn-neutral float-left" title="Drive find home" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Drive_position_blending.html" class="btn btn-neutral float-right" title="Drive position blending" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

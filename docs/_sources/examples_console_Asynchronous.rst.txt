@@ -73,17 +73,21 @@ EDrive-ST
 .. toctree::
    :maxdepth: 4
 
-   examples/Console/Asynchronous/EDrive_ST/Drive/Drive_1axis_move.rst
+   examples/Console/Asynchronous/EDrive_ST/Drive/Drive_find_home.rst
 
    examples/Console/Asynchronous/EDrive_ST/Drive/Drive_find_limit.rst
 
-   examples/Console/Asynchronous/EDrive_ST/Drive/Drive_servo_on.rst
-
    examples/Console/Asynchronous/EDrive_ST/Drive/Drive_position_blending.rst
 
-   examples/Console/Asynchronous/EDrive_ST/Drive/Drive_velocity_blending.rst
+   examples/Console/Asynchronous/EDrive_ST/Drive/Drive_position_move.rst
+
+   examples/Console/Asynchronous/EDrive_ST/Drive/Drive_scan_move.rst
+
+   examples/Console/Asynchronous/EDrive_ST/Drive/Drive_servo_on.rst
 
    examples/Console/Asynchronous/EDrive_ST/Drive/Drive_velocity_blending_acceleration.rst
+
+   examples/Console/Asynchronous/EDrive_ST/Drive/Drive_velocity_move.rst
 
    examples/Console/Asynchronous/EDrive_ST/System_ETH/get_network_info.rst
 

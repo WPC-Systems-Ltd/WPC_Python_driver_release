@@ -29,7 +29,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -128,13 +128,13 @@ def main():
             err = dev.AI_close(slot, timeout)
             print(f"AI_close in slot {slot}: {err}")
 
-        ## Disconnect device
-        dev.disconnect()
+    ## Disconnect device
+    dev.disconnect()
 
-        ## Release device handle
-        dev.close()
+    ## Release device handle
+    dev.close()
 
-        return
+    return
 
 if __name__ == '__main__':
     main()

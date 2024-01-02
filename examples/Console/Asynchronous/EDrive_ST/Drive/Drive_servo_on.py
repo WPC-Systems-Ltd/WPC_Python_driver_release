@@ -8,7 +8,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -43,34 +43,36 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## EDrive-ST open
-        err = await dev.Drive_open_async(port)
-        print(f"Drive_open: {err}")
+        ## Motion open
+        err = await dev.Motion_open_async(port)
+        print(f"Motion_open: {err}")
 
-        ## EDrive-ST servo on
-        err = await dev.Drive_enableServoOn_async(port)
-        print(f"Drive_enableServoOn: {err}")
+        ## Motion servo on
+        err = await dev.Motion_enableServoOn_async(port)
+        print(f"Motion_enableServoOn: {err}")
 
-        ## Wait for 5 seconds
-        await asyncio.sleep(5) ## delay [s]
-
-        ## EDrive-ST servo off
-        err = await dev.Drive_enableServoOff_async(port)
-        print(f"Drive_enableServoOff: {err}")
-
-        ## EDrive-ST close
-        err = await dev.Drive_close_async(port)
-        print(f"Drive_close: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
+    except KeyboardInterrupt:
+        print("Press keyboard")
+    finally:
+        ## Motion stop
+        err = await dev.Motion_stopProcess_async(port)
+        print(f"Motion_stopProcess: {err}")
+
+        ## Motion Servo off
+        err = await dev.Motion_enableServoOff_async(port)
+        print(f"Motion_enableServoOff: {err}")
+
+        ## Motion close
+        err = await dev.Motion_close_async(port)
+        print(f"Motion_close: {err}")
 
     ## Disconnect device
     dev.disconnect()
 
     ## Release device handle
     dev.close()
-
-    return
 
 def main_for_spyder(*args):
     if asyncio.get_event_loop().is_running():

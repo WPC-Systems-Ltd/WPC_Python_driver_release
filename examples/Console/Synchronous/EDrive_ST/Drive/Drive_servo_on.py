@@ -8,7 +8,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -44,34 +44,36 @@ def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## EDrive-ST open
-        err = dev.Drive_open(port, timeout)
-        print(f"Drive_open: {err}")
+        ## Motion open
+        err = dev.Motion_open(port, timeout)
+        print(f"Motion_open: {err}")
 
-        ## EDrive-ST servo on
-        err = dev.Drive_enableServoOn(port, timeout)
-        print(f"Drive_enableServoOn: {err}")
+        ## Motion servo on
+        err = dev.Motion_enableServoOn(port, timeout)
+        print(f"Motion_enableServoOn: {err}")
 
-        ## Wait for 5 seconds
-        time.sleep(5) ## delay [s]
-
-        ## EDrive-ST servo off
-        err = dev.Drive_enableServoOff(port, timeout)
-        print(f"Drive_enableServoOff: {err}")
-
-        ## EDrive-ST close
-        err = dev.Drive_close(port, timeout)
-        print(f"Drive_close: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
+    except KeyboardInterrupt:
+        print("Press keyboard")
+    finally:
+        ## Motion stop
+        err = dev.Motion_stopProcess(port, timeout)
+        print(f"Motion_stopProcess: {err}")
+
+        ## Motion Servo off
+        err = dev.Motion_enableServoOff(port, timeout)
+        print(f"Motion_enableServoOff: {err}")
+
+        ## Motion close
+        err = dev.Motion_close(port, timeout)
+        print(f"Motion_close: {err}")
 
     ## Disconnect device
     dev.disconnect()
 
     ## Release device handle
     dev.close()
-
-    return
 
 if __name__ == '__main__':
     main()
