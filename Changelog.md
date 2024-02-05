@@ -1,6 +1,16 @@
 WPC Python driver release changelog
 ===================================
 
+v3.0.17 Date: 2024/02/05, Developer: Chunglee_people
+----------------------------------------------------
+### Added
+- Add `numpy-stl>=3.1.1` in requirements.txt
+- Integrated motion command and its API
+- API: AHRS_setSamplingPeriod
+
+### Fixed
+- example code: AHRS_visualize.py
+
 v3.0.14 Date: 2023/12/18, Developer: Chunglee_people
 ----------------------------------------------------
 ### Added
