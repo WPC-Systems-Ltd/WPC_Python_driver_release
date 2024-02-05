@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>System hello world &mdash; WPC Python driver 3.0.13 documentation</title>
+  <title>System hello world &mdash; WPC Python driver 3.0.17 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -35,7 +35,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.13
+                3.0.17
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -135,7 +135,7 @@
 <span class="linenos">10</span><span class="sd">    https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples</span>
 <span class="linenos">11</span><span class="sd">See README.md file to get detailed usage of this example.</span>
 <span class="linenos">12</span>
-<span class="linenos">13</span><span class="sd">Copyright (c) 2023 WPC Systems Ltd. All rights reserved.</span>
+<span class="linenos">13</span><span class="sd">Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.</span>
 <span class="linenos">14</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos">15</span>
 <span class="linenos">16</span><span class="c1">## Python</span>
@@ -165,12 +165,12 @@
 <span class="linenos">40</span>        <span class="c1">## Parameters setting</span>
 <span class="linenos">41</span>        <span class="n">timeout</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1">## second</span>
 <span class="linenos">42</span>
-<span class="linenos">43</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+<span class="linenos">43</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
 <span class="linenos">44</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Restarting in </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> seconds...&quot;</span><span class="p">)</span>
 <span class="linenos">45</span>            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">## delay [s]</span>
 <span class="linenos">46</span>
 <span class="linenos">47</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Restarting now&quot;</span><span class="p">)</span>
-<span class="linenos">48</span>        <span class="n">dev</span><span class="o">.</span><span class="n">Sys_reboot</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">48</span>        <span class="n">dev</span><span class="o">.</span><span class="n">Sys_reboot</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
 <span class="linenos">49</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos">50</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="linenos">51</span>

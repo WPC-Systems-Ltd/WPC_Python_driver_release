@@ -14,7 +14,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -50,7 +50,7 @@ def main():
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
@@ -62,22 +62,22 @@ def main():
         print(f"Logger_writeHeader: {err}")
 
         ## Open thermo
-        err = dev.Thermal_open(port, timeout=timeout)
+        err = dev.Thermal_open(port, timeout)
         print(f"Thermal_open in port {port}: {err}")
 
         ## Set thermo port and set over-sampling mode to no over-sampling in channel 1
-        err = dev.Thermal_setOverSampling(port, ch, over_sampling_mode, timeout=timeout)
+        err = dev.Thermal_setOverSampling(port, ch, over_sampling_mode, timeout)
         print(f"Thermal_setOverSampling in channel {ch} in port {port}: {err}")
 
         ## Set thermo port and set K type in channel 1
-        err = dev.Thermal_setType(port, ch, thermo_type, timeout=timeout)
+        err = dev.Thermal_setType(port, ch, thermo_type, timeout)
         print(f"Thermal_setType in channel {ch} in port {port}: {err}")
 
         ## Wait for at least 500 ms after setting type or oversampling
         time.sleep(0.5) ## delay [s]
 
         ## Set thermo port and read thermo in channel 1
-        data = dev.Thermal_readSensor(port, ch, timeout=timeout)
+        data = dev.Thermal_readSensor(port, ch, timeout)
         print(f"Read sensor in channel {ch} in port {port}: {data}°C")
 
         ## Write data into CSV file
@@ -85,7 +85,7 @@ def main():
         print(f"Logger_writeValue: {err}")
 
         ## Close thermo
-        err = dev.Thermal_close(port, timeout=timeout)
+        err = dev.Thermal_close(port, timeout)
         print(f"Thermal_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

@@ -13,7 +13,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -47,34 +47,34 @@ def main():
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Open PWM
-        err = dev.PWM_open(channel, timeout=timeout)
+        err = dev.PWM_open(channel, timeout)
         print(f"PWM_open in channel {channel}: {err}")
 
         ## Set frequency and duty_cycle
-        err = dev.PWM_setFrequency(channel, frequency, timeout=timeout)
+        err = dev.PWM_setFrequency(channel, frequency, timeout)
         print(f"PWM_setFrequency in channel {channel}: {err}")
 
-        err = dev.PWM_setDutyCycle(channel, duty_cycle, timeout=timeout)
+        err = dev.PWM_setDutyCycle(channel, duty_cycle, timeout)
         print(f"PWM_setDutyCycle in channel {channel}: {err}")
 
         ## Start PWM
-        err = dev.PWM_start(channel, timeout=timeout)
+        err = dev.PWM_start(channel, timeout)
         print(f"PWM_start in channel {channel}: {err}")
 
         ## delay for 5 seconds
         time.sleep(5) ## delay [s]
 
         ## Stop PWM
-        err = dev.PWM_stop(channel, timeout=timeout)
+        err = dev.PWM_stop(channel, timeout)
         print(f"PWM_stop in channel {channel}: {err}")
 
         ## Close PWM
-        err = dev.PWM_close(channel, timeout=timeout)
+        err = dev.PWM_close(channel, timeout)
         print(f"PWM_close in channel {channel}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

@@ -25,7 +25,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -57,6 +57,7 @@ async def main():
         slot = 1 ## Connect DIO module to slot
         DO_port = 0
         DI_port = 1
+        DO_value = [1, 0, 1, 0]
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -83,7 +84,7 @@ async def main():
         print("State:    ", info[2])
 
         ## Write DO port to high or low
-        err = await dev.DO_writePort_async(DO_port, [1, 0, 1, 0])
+        err = await dev.DO_writePort_async(DO_port, DO_value)
         print(f"DO_writePort_async in DO_port {DO_port}: {err}")
 
         ## Read DI port state

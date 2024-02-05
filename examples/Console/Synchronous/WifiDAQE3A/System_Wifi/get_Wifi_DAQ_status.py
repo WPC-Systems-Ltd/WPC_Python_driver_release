@@ -10,7 +10,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -41,18 +41,18 @@ def main():
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Firmware model:" + driver_info[0])
         print("Firmware version:" + driver_info[-1])
 
         ## Get RSSI, battery and thermo
-        rssi = dev.Wifi_readRSSI(timeout=timeout)
-        battery = dev.Wifi_readBattery(timeout=timeout)
-        thermo = dev.Wifi_readThermo(timeout=timeout)
+        rssi = dev.Wifi_readRSSI(timeout)
+        battery = dev.Wifi_readBattery(timeout)
+        thermo = dev.Wifi_readThermo(timeout)
 
         ## Get power & charge status
-        power_status  = dev.Wifi_getPowerGoodStatus(timeout=timeout)
-        charge_status = dev.Wifi_getChargeStatus(timeout=timeout)
+        power_status  = dev.Wifi_getPowerGoodStatus(timeout)
+        charge_status = dev.Wifi_getChargeStatus(timeout)
 
         print(f"RSSI: {rssi} dBm")
         print(f"Battery: {battery} mV")

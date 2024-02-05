@@ -29,7 +29,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -61,7 +61,7 @@ async def main():
         mode = 2 ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 200
         read_points = 200
-        delay = 0.2 ## second
+        read_delay = 0.2 ## second
         chip_select = [0, 1]
 
         ## Get firmware model & version
@@ -110,7 +110,7 @@ async def main():
         while data_len > 0:
             for slot in slot_list:
                 ## Read data acquisition
-                ai_2Dlist = await dev.AI_readStreaming_async(slot, read_points, delay=delay)
+                ai_2Dlist = await dev.AI_readStreaming_async(slot, read_points, read_delay)
                 print(f"Slot{slot}: data len {len(ai_2Dlist)}" )
 
                 ## Update data len and counter
@@ -130,13 +130,13 @@ async def main():
             err = await dev.AI_close_async(slot)
             print(f"AI_close_async in slot {slot}: {err}")
 
-        ## Disconnect device
-        dev.disconnect()
+    ## Disconnect device
+    dev.disconnect()
 
-        ## Release device handle
-        dev.close()
+    ## Release device handle
+    dev.close()
 
-        return
+    return
 
 def main_for_spyder(*args):
     if asyncio.get_event_loop().is_running():

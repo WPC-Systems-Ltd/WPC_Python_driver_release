@@ -15,7 +15,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -50,7 +50,7 @@ async def main():
         sampling_rate = 1000
         samples = 200
         read_points = 200
-        delay = 0.5 ## second
+        read_delay = 0.5 ## second
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -79,7 +79,7 @@ async def main():
         print(f"AI_start_async in port {port}: {err}")
 
         ## Read AI
-        ai_2Dlist = await dev.AI_readStreaming_async(port, read_points, delay=delay)
+        ai_2Dlist = await dev.AI_readStreaming_async(port, read_points, read_delay)
         print(f"number of samples = {len(ai_2Dlist)}" )
 
         ok = True

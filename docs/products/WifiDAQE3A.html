@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wifi-DAQ-E3-A &mdash; WPC Python driver 3.0.13 documentation</title>
+  <title>Wifi-DAQ-E3-A &mdash; WPC Python driver 3.0.17 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -35,7 +35,7 @@
             <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.13
+                3.0.17
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -216,7 +216,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AHRS_readStreaming">
-<span class="sig-name descname"><span class="pre">AHRS_readStreaming</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.005</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AHRS_readStreaming" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">AHRS_readStreaming</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AHRS_readStreaming" title="Permalink to this definition"></a></dt>
 <dd><p>Read AHRS streaming samples from a given port.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -230,8 +230,7 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>sample_list</strong><span class="classifier">list of float</span></dt><dd><p>X, Y, Z axis estimation data.
-[x1, y1, z1]</p>
+<dt><strong>estimation data</strong><span class="classifier">list of float</span></dt><dd><p>[Raw, Pitch, Yaw]</p>
 </dd>
 </dl>
 </dd>
@@ -240,7 +239,7 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AHRS_readStreaming_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AHRS_readStreaming_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.005</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AHRS_readStreaming_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AHRS_readStreaming_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AHRS_readStreaming_async" title="Permalink to this definition"></a></dt>
 <dd><p>Read AHRS streaming samples from a given port with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -254,8 +253,7 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>sample_list</strong><span class="classifier">list of float</span></dt><dd><p>X, Y, Z axis estimation data.
-[x1, y1, z1]</p>
+<dt><strong>estimation data</strong><span class="classifier">list of float</span></dt><dd><p>[Raw, Pitch, Yaw]</p>
 </dd>
 </dl>
 </dd>
@@ -309,21 +307,16 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AHRS_setGeneral">
-<span class="sig-name descname"><span class="pre">AHRS_setGeneral</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gravity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AHRS_setGeneral" title="Permalink to this definition"></a></dt>
-<dd><p>Set theoretical gravity &amp; dt and acceleration of z_offset.</p>
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AHRS_setSamplingPeriod">
+<span class="sig-name descname"><span class="pre">AHRS_setSamplingPeriod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampling_period</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AHRS_setSamplingPeriod" title="Permalink to this definition"></a></dt>
+<dd><p>Set AHRS sampling period.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>gravity</strong><span class="classifier">float</span></dt><dd><p>Gravity in m/s^2.
-Near 9.81 on surface of the Earth.</p>
-</dd>
-<dt><strong>dt</strong><span class="classifier">float</span></dt><dd><p>Period in seconds.</p>
-</dd>
-<dt><strong>z_offset</strong><span class="classifier">float</span></dt><dd><p>The acceleration offset on z-axis in m/s^2.</p>
+<dt><strong>sampling_period</strong><span class="classifier">float</span></dt><dd><p>Period in seconds.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -340,23 +333,16 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AHRS_setGeneral_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AHRS_setGeneral_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gravity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_offset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AHRS_setGeneral_async" title="Permalink to this definition"></a></dt>
-<dd><p>Set theoretical gravity &amp; dt and acceleration of z_offset with async mode.</p>
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AHRS_setSamplingPeriod_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AHRS_setSamplingPeriod_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampling_period</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AHRS_setSamplingPeriod_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set AHRS sampling period with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>gravity</strong><span class="classifier">float</span></dt><dd><p>Gravity in m/s^2.
-Near 9.81 on surface of the Earth.</p>
-</dd>
-<dt><strong>dt</strong><span class="classifier">float</span></dt><dd><p>Period in seconds.</p>
-</dd>
-<dt><strong>z_offset</strong><span class="classifier">float</span></dt><dd><p>The acceleration offset on z-axis in m/s^2.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+<dt><strong>sampling_period</strong><span class="classifier">float</span></dt><dd><p>Period in seconds.</p>
 </dd>
 </dl>
 </dd>
@@ -372,23 +358,13 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AHRS_start">
-<span class="sig-name descname"><span class="pre">AHRS_start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AHRS_start" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">AHRS_start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AHRS_start" title="Permalink to this definition"></a></dt>
 <dd><p>Start AHRS module on a given port.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>mask</strong><span class="classifier">int</span></dt><dd><p>Set data in streaming.
-0x00 = no streaming
-0x01 = orientation [rad]
-0x02 = position [m]
-0x04 = angular speed [rad/s]
-0x08 = velocity [m/s]
-0x0F = acceleration [m/s^2]
-For example:
-0b10101 = acceleration [m/s^2], angular speed [rad/s], orientation [rad]</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -406,23 +382,13 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AHRS_start_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AHRS_start_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AHRS_start_async" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AHRS_start_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AHRS_start_async" title="Permalink to this definition"></a></dt>
 <dd><p>Start AHRS module on a given port with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>mask</strong><span class="classifier">int</span></dt><dd><p>Set data in streaming.
-0x00 = no streaming
-0x01 = orientation [rad]
-0x02 = position [m]
-0x04 = angular speed [rad/s]
-0x08 = velocity [m/s]
-0x0F = acceleration [m/s^2]
-For example:
-0b10101 = acceleration [m/s^2], angular speed [rad/s], orientation [rad]</p>
 </dd>
 <dt><strong>Returns</strong></dt><dd></dd>
 <dt><strong>——-</strong></dt><dd></dd>
@@ -537,7 +503,7 @@ This API is only effective for STEM.</p>
 <dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
 See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>chip_select</strong><span class="classifier">list</span></dt><dd><p>Chip number</p>
+<dt><strong>chip_select</strong><span class="classifier">list</span></dt><dd><p>Chip-number</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -564,7 +530,7 @@ This API is only effective for STEM.</p>
 <dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
 See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>chip_select</strong><span class="classifier">list</span></dt><dd><p>chip number</p>
+<dt><strong>chip_select</strong><span class="classifier">list</span></dt><dd><p>Chip-number</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>

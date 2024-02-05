@@ -15,7 +15,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -49,7 +49,7 @@ async def main():
         mode = 2 ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 200
         read_points = 200
-        delay = 0.2 ## second
+        read_delay = 0.2 ## second
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -91,7 +91,7 @@ async def main():
         data_len = 1
         while data_len > 0:
             ## Read data acquisition
-            ai_2Dlist = await dev.AI_readStreaming_async(port, read_points, delay=delay)
+            ai_2Dlist = await dev.AI_readStreaming_async(port, read_points, read_delay)
             print(f"number of samples = {len(ai_2Dlist)}" )
 
             ## Write data into CSV file
