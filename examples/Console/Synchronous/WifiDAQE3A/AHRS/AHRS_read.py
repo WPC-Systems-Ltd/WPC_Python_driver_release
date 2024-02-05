@@ -14,7 +14,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -44,50 +44,54 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        mask = 0x01 ## data mask
-        theo_grav = 9.81
-        dt = 0.003
-        offset_z = 0.003
-        delay = 0.05 ## second
+        sampling_period = 0.003
+        read_delay = 0.5 ## second
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Open port
-        err = dev.AHRS_open(port, timeout=timeout)
+        err = dev.AHRS_open(port, timeout)
         print(f"AHRS_open in port {port}: {err}")
 
-        ## Set general setting
-        err = dev.AHRS_setGeneral(port, theo_grav, dt, offset_z, timeout=timeout)
-        print(f"AHRS_setGeneral in port {port}: {err}")
+        ## Set period
+        err = dev.AHRS_setSamplingPeriod(port, sampling_period, timeout)
+        print(f"AHRS_setSamplingPeriod in port {port}: {err}")
 
         ## Start AHRS
-        err = dev.AHRS_start(port, mask, timeout=timeout)
+        err = dev.AHRS_start(port, timeout)
         print(f"AHRS_start in port {port}: {err}")
 
         ## Read AHRS estimation
-        for i in range(10):
-            ahrs_list = dev.AHRS_readStreaming(port, delay=delay)
-            print(f"x_esti: {ahrs_list[0]}, y_esti: {ahrs_list[1]}, z_esti: {ahrs_list[2]}")
+        data_len = 1
+        while data_len > 0:
+            ahrs_list = dev.AHRS_readStreaming(port, read_delay)
+            for i in range(len(ahrs_list)//3):
+                print(f"Roll: {ahrs_list[3*i]}, Pitch: {ahrs_list[3*i+1]}, Yaw: {ahrs_list[3*i+2]}")
 
-        ## Stop AHRS
-        err = dev.AHRS_stop(port, timeout=timeout)
-        print(f"AHRS_stop in port {port}: {err}")
+    except KeyboardInterrupt:
+        print("Press keyboard")
 
-        ## Close AHRS
-        err = dev.AHRS_close(port, timeout=timeout)
-        print(f"AHRS_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+    finally:
+        ## Stop AHRS
+        err = dev.AHRS_stop(port, timeout)
+        print(f"AHRS_stop in port {port}: {err}")
 
-    ## Release device handle
-    dev.close()
+        ## Close AHRS
+        err = dev.AHRS_close(port, timeout)
+        print(f"AHRS_close in port {port}: {err}")
+
+        ## Disconnect device
+        dev.disconnect()
+
+        ## Release device handle
+        dev.close()
 
     return
 if __name__ == '__main__':

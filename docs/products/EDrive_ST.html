@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EDrive-ST &mdash; WPC Python driver 3.0.13 documentation</title>
+  <title>EDrive-ST &mdash; WPC Python driver 3.0.17 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -35,7 +35,7 @@
             <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.13
+                3.0.17
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -129,8 +129,8 @@
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_cfgAxisDirection">
-<span class="sig-name descname"><span class="pre">Drive_cfgAxisDirection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_cfgAxisDirection" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_cfgAxisDirection">
+<span class="sig-name descname"><span class="pre">Motion_cfgAxisDirection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_cfgAxisDirection" title="Permalink to this definition"></a></dt>
 <dd><p>Configure axis direction.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -156,9 +156,9 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_cfgAxisDirection_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Drive_cfgAxisDirection_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_cfgAxisDirection_async" title="Permalink to this definition"></a></dt>
-<dd><p>Configure axis direction.</p>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_cfgAxisDirection_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgAxisDirection_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_cfgAxisDirection_async" title="Permalink to this definition"></a></dt>
+<dd><p>Configure axis direction with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -168,8 +168,6 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 <dt><strong>axis_dir</strong><span class="classifier">int</span></dt><dd><p>Set the dirction for the axis.
 0: Original direction, 1: Inverse direction.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
-</dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -183,78 +181,8 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_cfgAxisMove">
-<span class="sig-name descname"><span class="pre">Drive_cfgAxisMove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_posi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_cfgAxisMove" title="Permalink to this definition"></a></dt>
-<dd><p>Configure operation mode, target position, velocity, acceleration and deceleration of move.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
-See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>mode</strong><span class="classifier">{0, 1, 2}</span></dt><dd><p>Operation mode.
-0: Absolute mode, 1: Relative mode, 2: Velocity mode.</p>
-</dd>
-<dt><strong>target_posi</strong><span class="classifier">int</span></dt><dd><p>Target position in counts or steps.</p>
-</dd>
-<dt><strong>velo</strong><span class="classifier">int</span></dt><dd><p>Velocity in counts/s or steps/s.</p>
-</dd>
-<dt><strong>accel</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
-</dd>
-<dt><strong>decel</strong><span class="classifier">int</span></dt><dd><p>Deceleration value in counts/s2 or steps/s2.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
-See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_cfgAxisMove_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Drive_cfgAxisMove_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_posi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_cfgAxisMove_async" title="Permalink to this definition"></a></dt>
-<dd><p>Configure operation mode, target position, velocity, acceleration and deceleration of move.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
-See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>mode</strong><span class="classifier">{0, 1, 2}</span></dt><dd><p>Operation mode.
-0: Absolute mode, 1: Relative mode, 2: Velocity mode.</p>
-</dd>
-<dt><strong>target_posi</strong><span class="classifier">int</span></dt><dd><p>Target position in counts or steps.</p>
-</dd>
-<dt><strong>velo</strong><span class="classifier">int</span></dt><dd><p>Velocity in counts/s or steps/s.</p>
-</dd>
-<dt><strong>accel</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
-</dd>
-<dt><strong>decel</strong><span class="classifier">int</span></dt><dd><p>Deceleration value in counts/s2 or steps/s2.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
-See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_cfgEncoder">
-<span class="sig-name descname"><span class="pre">Drive_cfgEncoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_posi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_cfgEncoder" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_cfgEncoder">
+<span class="sig-name descname"><span class="pre">Motion_cfgEncoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_posi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_cfgEncoder" title="Permalink to this definition"></a></dt>
 <dd><p>Configure encoder direction and position.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -282,63 +210,9 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_cfgEncoderDirection">
-<span class="sig-name descname"><span class="pre">Drive_cfgEncoderDirection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_cfgEncoderDirection" title="Permalink to this definition"></a></dt>
-<dd><p>Configure encoder direction.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
-See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>encoder_dir</strong><span class="classifier">int</span></dt><dd><p>Set the dirction for the encoder.
-0: Original direction, 1: Inverse direction.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
-See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_cfgEncoderDirection_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Drive_cfgEncoderDirection_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_cfgEncoderDirection_async" title="Permalink to this definition"></a></dt>
-<dd><p>Configure encoder direction.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
-See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>encoder_dir</strong><span class="classifier">int</span></dt><dd><p>Set the dirction for the encoder.
-0: Original direction, 1: Inverse direction.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
-See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_cfgEncoder_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Drive_cfgEncoder_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_posi</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_cfgEncoder_async" title="Permalink to this definition"></a></dt>
-<dd><p>Configure encoder direction and position.</p>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_cfgEncoder_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgEncoder_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_posi</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_cfgEncoder_async" title="Permalink to this definition"></a></dt>
+<dd><p>Configure encoder direction and position with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -350,8 +224,6 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd>
 <dt><strong>encoder_posi</strong><span class="classifier">int</span></dt><dd><p>The value of encoder position.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
-</dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -365,90 +237,8 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_cfgFindRef">
-<span class="sig-name descname"><span class="pre">Drive_cfgFindRef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_velo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_accle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">approach_velo_percent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_reset_posi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset_posi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_cfgFindRef" title="Permalink to this definition"></a></dt>
-<dd><p>Configure find reference parameters.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
-See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>search_type</strong><span class="classifier">{0, 1, 2}</span></dt><dd><p>Reference position to find.
-0: Home, 1: Index, 2: Limit.</p>
-</dd>
-<dt><strong>search_dir</strong><span class="classifier">int</span></dt><dd><p>Set search direction to forward or reverse.
-0: Forward, 1: Reverse.</p>
-</dd>
-<dt><strong>search_velo</strong><span class="classifier">int</span></dt><dd><p>Set velocity in counts/s or steps/s.</p>
-</dd>
-<dt><strong>search_accle</strong><span class="classifier">int</span></dt><dd><p>Set acceleration value in counts/s2 or steps/s2.</p>
-</dd>
-<dt><strong>approach_velo_percent</strong><span class="classifier">int or float</span></dt><dd><p>The percent of the loaded velocity that a given axis uses to perform final adjustments.</p>
-</dd>
-<dt><strong>en_reset_posi</strong><span class="classifier">int</span></dt><dd><p>If true, after successfully locating the given reference, it resets positions to values indicated by current position. If false, no reset is performed.
-0: False, 1: True.</p>
-</dd>
-<dt><strong>offset_posi</strong><span class="classifier">int</span></dt><dd><p>Performs an offset move of a given distance, in counts (steps), after successfully locating the given reference, but before resetting the position if a reset is requested.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
-See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_cfgFindRef_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Drive_cfgFindRef_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_velo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_accle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">approach_velo_percent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_reset_posi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset_posi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_cfgFindRef_async" title="Permalink to this definition"></a></dt>
-<dd><p>Configure find reference parameters.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
-See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>search_type</strong><span class="classifier">{0, 1, 2}</span></dt><dd><p>Reference position to find.
-0: Home, 1: Index, 2: Limit.</p>
-</dd>
-<dt><strong>search_dir</strong><span class="classifier">int</span></dt><dd><p>Set search direction to forward or reverse.
-0: Forward, 1: Reverse.</p>
-</dd>
-<dt><strong>search_velo</strong><span class="classifier">int</span></dt><dd><p>Set velocity in counts/s or steps/s.</p>
-</dd>
-<dt><strong>search_accle</strong><span class="classifier">int</span></dt><dd><p>Set acceleration value in counts/s2 or steps/s2.</p>
-</dd>
-<dt><strong>approach_velo_percent</strong><span class="classifier">int or float</span></dt><dd><p>The percent of the loaded velocity that a given axis uses to perform final adjustments.</p>
-</dd>
-<dt><strong>en_reset_posi</strong><span class="classifier">int</span></dt><dd><p>If true, after successfully locating the given reference, it resets positions to values indicated by current position. If false, no reset is performed.
-0: False, 1: True.</p>
-</dd>
-<dt><strong>offset_posi</strong><span class="classifier">int</span></dt><dd><p>Performs an offset move of a given distance, in counts (steps), after successfully locating the given reference, but before resetting the position if a reset is requested.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
-See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_cfgLimit">
-<span class="sig-name descname"><span class="pre">Drive_cfgLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_forward</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_reverse</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit_polarity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_cfgLimit" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_cfgLimit">
+<span class="sig-name descname"><span class="pre">Motion_cfgLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_forward</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_reverse</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit_polarity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_cfgLimit" title="Permalink to this definition"></a></dt>
 <dd><p>Configure limit enable and polarity.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -480,9 +270,9 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_cfgLimit_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Drive_cfgLimit_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_forward</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_reverse</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit_polarity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_cfgLimit_async" title="Permalink to this definition"></a></dt>
-<dd><p>Configure limit enable and polarity.</p>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_cfgLimit_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_cfgLimit_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_forward</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">en_reverse</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit_polarity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_cfgLimit_async" title="Permalink to this definition"></a></dt>
+<dd><p>Configure limit enable and polarity with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -498,8 +288,6 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 <dt><strong>limit_polarity</strong><span class="classifier">{0, 1}</span></dt><dd><p>Set the polarity for limit.
 0: Active Low, 1: Active High.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
-</dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -513,8 +301,8 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_close">
-<span class="sig-name descname"><span class="pre">Drive_close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_close" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_close">
+<span class="sig-name descname"><span class="pre">Motion_close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_close" title="Permalink to this definition"></a></dt>
 <dd><p>Close module on a given port.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -537,16 +325,14 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_close_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Drive_close_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_close_async" title="Permalink to this definition"></a></dt>
-<dd><p>Close module on a given port.</p>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_close_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_close_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_close_async" title="Permalink to this definition"></a></dt>
+<dd><p>Close module on a given port with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -561,8 +347,8 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_enableServoOff">
-<span class="sig-name descname"><span class="pre">Drive_enableServoOff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_enableServoOff" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_enableServoOff">
+<span class="sig-name descname"><span class="pre">Motion_enableServoOff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_enableServoOff" title="Permalink to this definition"></a></dt>
 <dd><p>Servo off the singal.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -585,16 +371,14 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_enableServoOff_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Drive_enableServoOff_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_enableServoOff_async" title="Permalink to this definition"></a></dt>
-<dd><p>Servo off the singal.</p>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_enableServoOff_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_enableServoOff_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_enableServoOff_async" title="Permalink to this definition"></a></dt>
+<dd><p>Servo off the singal with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -609,8 +393,8 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_enableServoOn">
-<span class="sig-name descname"><span class="pre">Drive_enableServoOn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_enableServoOn" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_enableServoOn">
+<span class="sig-name descname"><span class="pre">Motion_enableServoOn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_enableServoOn" title="Permalink to this definition"></a></dt>
 <dd><p>Servo on the singal.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -633,16 +417,14 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_enableServoOn_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Drive_enableServoOn_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_enableServoOn_async" title="Permalink to this definition"></a></dt>
-<dd><p>Servo on the singal.</p>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_enableServoOn_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_enableServoOn_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_enableServoOn_async" title="Permalink to this definition"></a></dt>
+<dd><p>Servo on the singal with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -657,56 +439,8 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_findReference">
-<span class="sig-name descname"><span class="pre">Drive_findReference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_findReference" title="Permalink to this definition"></a></dt>
-<dd><p>Execute a search operation to find a reference position.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
-See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
-See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_findReference_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Drive_findReference_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_findReference_async" title="Permalink to this definition"></a></dt>
-<dd><p>Execute a search operation to find a reference position.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
-See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
-See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_getAlarmStatus">
-<span class="sig-name descname"><span class="pre">Drive_getAlarmStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_getAlarmStatus" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_getAlarmStatus">
+<span class="sig-name descname"><span class="pre">Motion_getAlarmStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_getAlarmStatus" title="Permalink to this definition"></a></dt>
 <dd><p>Get the alarm status.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -728,16 +462,14 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_getAlarmStatus_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Drive_getAlarmStatus_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_getAlarmStatus_async" title="Permalink to this definition"></a></dt>
-<dd><p>Get the alarm status.</p>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_getAlarmStatus_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_getAlarmStatus_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_getAlarmStatus_async" title="Permalink to this definition"></a></dt>
+<dd><p>Get the alarm status with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -751,8 +483,8 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_getLimitStatus">
-<span class="sig-name descname"><span class="pre">Drive_getLimitStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_getLimitStatus" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_getLimitStatus">
+<span class="sig-name descname"><span class="pre">Motion_getLimitStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_getLimitStatus" title="Permalink to this definition"></a></dt>
 <dd><p>Read the instantaneous status of the hardware limit inputs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -766,7 +498,7 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">list</span></dt><dd><p>List of forward and reverse limit status.</p>
+<dt><strong>status</strong><span class="classifier">list</span></dt><dd><p>List of forward, reverse and home limit status.</p>
 </dd>
 </dl>
 </dd>
@@ -774,9 +506,30 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_getLimitStatus_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Drive_getLimitStatus_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_getLimitStatus_async" title="Permalink to this definition"></a></dt>
-<dd><p>Read the instantaneous status of the hardware limit inputs.</p>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_getLimitStatus_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_getLimitStatus_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_getLimitStatus_async" title="Permalink to this definition"></a></dt>
+<dd><p>Read the instantaneous status of the hardware limit inputs with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">list</span></dt><dd><p>List of forward, reverse and home limit status.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_getParameters">
+<span class="sig-name descname"><span class="pre">Motion_getParameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_getParameters" title="Permalink to this definition"></a></dt>
+<dd><p>Get module parameters on a given port.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -789,7 +542,8 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">list</span></dt><dd><p>List of forward and reverse limit status.</p>
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
 </dd>
 </dl>
 </dd>
@@ -797,9 +551,31 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_getMoveStatus">
-<span class="sig-name descname"><span class="pre">Drive_getMoveStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_getMoveStatus" title="Permalink to this definition"></a></dt>
-<dd><p>Get the move complete status.</p>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_getParameters_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_getParameters_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_getParameters_async" title="Permalink to this definition"></a></dt>
+<dd><p>Get module parameters on a given port with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_getProcessState">
+<span class="sig-name descname"><span class="pre">Motion_getProcessState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_getProcessState" title="Permalink to this definition"></a></dt>
+<dd><p>Get process state on a given port.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -812,7 +588,8 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>If return value is 1, move complete.</p>
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
 </dd>
 </dl>
 </dd>
@@ -820,9 +597,67 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_getMoveStatus_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Drive_getMoveStatus_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_getMoveStatus_async" title="Permalink to this definition"></a></dt>
-<dd><p>Get the move complete status.</p>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_getProcessState_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_getProcessState_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_getProcessState_async" title="Permalink to this definition"></a></dt>
+<dd><p>Get process state on a given port with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_loadCfgFile">
+<span class="sig-name descname"><span class="pre">Motion_loadCfgFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_loadCfgFile" title="Permalink to this definition"></a></dt>
+<dd><p>Load motion parameters from configuration file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_loadCfgFile_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_loadCfgFile_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_loadCfgFile_async" title="Permalink to this definition"></a></dt>
+<dd><p>Load motion parameters from configuration file with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_loadParameters">
+<span class="sig-name descname"><span class="pre">Motion_loadParameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_loadParameters" title="Permalink to this definition"></a></dt>
+<dd><p>Load module parameters on a given port.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -835,7 +670,8 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>If return value is 1, move complete.</p>
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
 </dd>
 </dl>
 </dd>
@@ -843,8 +679,30 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_open">
-<span class="sig-name descname"><span class="pre">Drive_open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_open" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_loadParameters_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_loadParameters_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_loadParameters_async" title="Permalink to this definition"></a></dt>
+<dd><p>Load module parameters on a given port with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_open">
+<span class="sig-name descname"><span class="pre">Motion_open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_open" title="Permalink to this definition"></a></dt>
 <dd><p>Open module on a given port.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -867,16 +725,13 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_open_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Drive_open_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_open_async" title="Permalink to this definition"></a></dt>
-<dd><p>Open module on a given port.</p>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_openCfgFile">
+<span class="sig-name descname"><span class="pre">Motion_openCfgFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'test.ini'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_openCfgFile" title="Permalink to this definition"></a></dt>
+<dd><p>Open configuration file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
-See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+<dt><strong>filename</strong><span class="classifier">str</span></dt><dd><p>The file name.</p>
 </dd>
 </dl>
 </dd>
@@ -891,20 +746,13 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_overrideAccel">
-<span class="sig-name descname"><span class="pre">Drive_overrideAccel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_accel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_decel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_overrideAccel" title="Permalink to this definition"></a></dt>
-<dd><p>Override instantaneous accerleration / deceleration.</p>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_openCfgFile_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_openCfgFile_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'test.ini'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_openCfgFile_async" title="Permalink to this definition"></a></dt>
+<dd><p>Open configuration file with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
-See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>new_accel</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
-</dd>
-<dt><strong>new_decel</strong><span class="classifier">int</span></dt><dd><p>Deceleration value in counts/s2 or steps/s2.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+<dt><strong>filename</strong><span class="classifier">str</span></dt><dd><p>The file name.</p>
 </dd>
 </dl>
 </dd>
@@ -919,20 +767,14 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_overrideAccel_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Drive_overrideAccel_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_accel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_decel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_overrideAccel_async" title="Permalink to this definition"></a></dt>
-<dd><p>Override instantaneous accerleration / deceleration.</p>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_open_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_open_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_open_async" title="Permalink to this definition"></a></dt>
+<dd><p>Open module on a given port with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>new_accel</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
-</dd>
-<dt><strong>new_decel</strong><span class="classifier">int</span></dt><dd><p>Deceleration value in counts/s2 or steps/s2.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -947,112 +789,8 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_overridePosition">
-<span class="sig-name descname"><span class="pre">Drive_overridePosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_overridePosition" title="Permalink to this definition"></a></dt>
-<dd><p>Override new position.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
-See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>new_position</strong><span class="classifier">int</span></dt><dd><p>New position.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
-See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_overridePosition_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Drive_overridePosition_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_overridePosition_async" title="Permalink to this definition"></a></dt>
-<dd><p>Override new position.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
-See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>new_position</strong><span class="classifier">int</span></dt><dd><p>New position.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
-See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_overrideVelocity">
-<span class="sig-name descname"><span class="pre">Drive_overrideVelocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_velocity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_overrideVelocity" title="Permalink to this definition"></a></dt>
-<dd><p>Override instantaneous velocity.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
-See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>new_velo</strong><span class="classifier">int</span></dt><dd><p>Velocity in counts/s or steps/s.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
-See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_overrideVelocity_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Drive_overrideVelocity_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_velocity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_overrideVelocity_async" title="Permalink to this definition"></a></dt>
-<dd><p>Override instantaneous velocity.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
-See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>new_velo</strong><span class="classifier">int</span></dt><dd><p>Velocity in counts/s or steps/s.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
-See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_readCurrentVelocity">
-<span class="sig-name descname"><span class="pre">Drive_readCurrentVelocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_readCurrentVelocity" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_readCurrentVelocity">
+<span class="sig-name descname"><span class="pre">Motion_readCurrentVelocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_readCurrentVelocity" title="Permalink to this definition"></a></dt>
 <dd><p>Read current veloicty.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1074,16 +812,14 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_readCurrentVelocity_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Drive_readCurrentVelocity_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_readCurrentVelocity_async" title="Permalink to this definition"></a></dt>
-<dd><p>Read current veloicty.</p>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_readCurrentVelocity_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_readCurrentVelocity_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_readCurrentVelocity_async" title="Permalink to this definition"></a></dt>
+<dd><p>Read current veloicty with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1097,8 +833,8 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_readEncoderPosition">
-<span class="sig-name descname"><span class="pre">Drive_readEncoderPosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_readEncoderPosition" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_readEncoderPosition">
+<span class="sig-name descname"><span class="pre">Motion_readEncoderPosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_readEncoderPosition" title="Permalink to this definition"></a></dt>
 <dd><p>Read encoder position.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1121,16 +857,14 @@ position[1] : logical position</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_readEncoderPosition_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Drive_readEncoderPosition_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_readEncoderPosition_async" title="Permalink to this definition"></a></dt>
-<dd><p>Read encoder position.</p>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_readEncoderPosition_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_readEncoderPosition_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_readEncoderPosition_async" title="Permalink to this definition"></a></dt>
+<dd><p>Read encoder position with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
 </dl>
 </dd>
@@ -1145,8 +879,54 @@ position[1] : logical position</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_rstEncoderPosi">
-<span class="sig-name descname"><span class="pre">Drive_rstEncoderPosi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_posi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_rstEncoderPosi" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_resetFactory">
+<span class="sig-name descname"><span class="pre">Motion_resetFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_resetFactory" title="Permalink to this definition"></a></dt>
+<dd><p>Reset factory on a given port.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_resetFactory_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_resetFactory_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_resetFactory_async" title="Permalink to this definition"></a></dt>
+<dd><p>Reset factory on a given port with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_rstEncoderPosi">
+<span class="sig-name descname"><span class="pre">Motion_rstEncoderPosi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_posi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_rstEncoderPosi" title="Permalink to this definition"></a></dt>
 <dd><p>Reset the position of an encoder.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1171,9 +951,9 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_rstEncoderPosi_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Drive_rstEncoderPosi_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_posi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_rstEncoderPosi_async" title="Permalink to this definition"></a></dt>
-<dd><p>Reset the position of an encoder.</p>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_rstEncoderPosi_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_rstEncoderPosi_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_posi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_rstEncoderPosi_async" title="Permalink to this definition"></a></dt>
+<dd><p>Reset the position of an encoder with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1182,8 +962,6 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd>
 <dt><strong>encoder_posi</strong><span class="classifier">int</span></dt><dd><p>The value of encoder position.</p>
 </dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
-</dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -1197,9 +975,39 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_start">
-<span class="sig-name descname"><span class="pre">Drive_start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_start" title="Permalink to this definition"></a></dt>
-<dd><p>Start Drive.</p>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_saveCfgFile">
+<span class="sig-name descname"><span class="pre">Motion_saveCfgFile</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_saveCfgFile" title="Permalink to this definition"></a></dt>
+<dd><p>Save motion parameters into configuration file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_saveCfgFile_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_saveCfgFile_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_saveCfgFile_async" title="Permalink to this definition"></a></dt>
+<dd><p>Save motion parameters into configuration file with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_saveParameters">
+<span class="sig-name descname"><span class="pre">Motion_saveParameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_saveParameters" title="Permalink to this definition"></a></dt>
+<dd><p>Save module parameters on a given port.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1221,9 +1029,31 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_start_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Drive_start_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_start_async" title="Permalink to this definition"></a></dt>
-<dd><p>Start Drive.</p>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_saveParameters_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_saveParameters_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_saveParameters_async" title="Permalink to this definition"></a></dt>
+<dd><p>Save module parameters on a given port with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_setParameters">
+<span class="sig-name descname"><span class="pre">Motion_setParameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_setParameters" title="Permalink to this definition"></a></dt>
+<dd><p>Set module parameters on a given port.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1245,17 +1075,52 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_stop">
-<span class="sig-name descname"><span class="pre">Drive_stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_stop" title="Permalink to this definition"></a></dt>
-<dd><p>Stop Drive.</p>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_setParameters_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_setParameters_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_setParameters_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set module parameters on a given port with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>mode</strong><span class="classifier">{0, 1}</span></dt><dd><p>Mode of stop to execute.
-0: deceleration, 1: halt.</p>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_startFindHome">
+<span class="sig-name descname"><span class="pre">Motion_startFindHome</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">searching_speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">approaching_speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">approach_direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset_position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_startFindHome" title="Permalink to this definition"></a></dt>
+<dd><p>Start find home.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>mode</strong><span class="classifier">int</span></dt><dd><p>1: forward, -1: reverse.</p>
+</dd>
+<dt><strong>searching_speed</strong><span class="classifier">int</span></dt><dd><p>Set velocity in counts/s or steps/s.</p>
+</dd>
+<dt><strong>approaching_speed</strong><span class="classifier">int</span></dt><dd><p>Set velocity in counts/s or steps/s.</p>
+</dd>
+<dt><strong>acceleration</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
+</dd>
+<dt><strong>search_direction</strong><span class="classifier">int</span></dt><dd><p>1: pointing to forward, -1: pointing to reverse.</p>
+</dd>
+<dt><strong>approach_direction</strong><span class="classifier">int</span></dt><dd><p>1: pointing to forward, -1: pointing to reverse.</p>
+</dd>
+<dt><strong>offset</strong><span class="classifier">int</span></dt><dd><p>Performs an offset move of a given distance, in counts (steps), after successfully locating the given reference, but before resetting the position if a reset is requested.</p>
+</dd>
+<dt><strong>reset_position: bool</strong></dt><dd><p>True or false to reset the position.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
 </dd>
@@ -1272,19 +1137,414 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.EDrive_ST.Drive_stop_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Drive_stop_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Drive_stop_async" title="Permalink to this definition"></a></dt>
-<dd><p>Stop EDSY.</p>
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_startFindHome_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_startFindHome_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">searching_speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">approaching_speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">approach_direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset_position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_startFindHome_async" title="Permalink to this definition"></a></dt>
+<dd><p>Start find home with async mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
 See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
-<dt><strong>mode</strong><span class="classifier">{0, 1}</span></dt><dd><p>Mode of stop to execute.
-0: deceleration, 1: halt.</p>
+<dt><strong>mode</strong><span class="classifier">int</span></dt><dd><p>1: forward, -1: reverse.</p>
+</dd>
+<dt><strong>searching_speed</strong><span class="classifier">int</span></dt><dd><p>Set velocity in counts/s or steps/s.</p>
+</dd>
+<dt><strong>approaching_speed</strong><span class="classifier">int</span></dt><dd><p>Set velocity in counts/s or steps/s.</p>
+</dd>
+<dt><strong>acceleration</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
+</dd>
+<dt><strong>search_direction</strong><span class="classifier">int</span></dt><dd><p>1: pointing to forward, -1: pointing to reverse.</p>
+</dd>
+<dt><strong>approach_direction</strong><span class="classifier">int</span></dt><dd><p>1: pointing to forward, -1: pointing to reverse.</p>
+</dd>
+<dt><strong>offset</strong><span class="classifier">int</span></dt><dd><p>Performs an offset move of a given distance, in counts (steps), after successfully locating the given reference, but before resetting the position if a reset is requested.</p>
+</dd>
+<dt><strong>reset_position: bool</strong></dt><dd><p>True or false to reset the position.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_startFindLimit">
+<span class="sig-name descname"><span class="pre">Motion_startFindLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">searching_speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">approaching_speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset_position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_startFindLimit" title="Permalink to this definition"></a></dt>
+<dd><p>Start find limit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>mode</strong><span class="classifier">int</span></dt><dd><p>1: forward, -1: reverse.</p>
+</dd>
+<dt><strong>searching_speed</strong><span class="classifier">int</span></dt><dd><p>Set velocity in counts/s or steps/s.</p>
+</dd>
+<dt><strong>approaching_speed</strong><span class="classifier">int</span></dt><dd><p>Set velocity in counts/s or steps/s.</p>
+</dd>
+<dt><strong>acceleration</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
+</dd>
+<dt><strong>offset</strong><span class="classifier">int</span></dt><dd><p>Performs an offset move of a given distance, in counts (steps), after successfully locating the given reference, but before resetting the position if a reset is requested.</p>
+</dd>
+<dt><strong>reset_position: bool</strong></dt><dd><p>True or false to reset the position.</p>
 </dd>
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_startFindLimit_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_startFindLimit_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">searching_speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">approaching_speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset_position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_startFindLimit_async" title="Permalink to this definition"></a></dt>
+<dd><p>Start find limit with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>mode</strong><span class="classifier">int</span></dt><dd><p>1: forward, -1: reverse.</p>
+</dd>
+<dt><strong>searching_speed</strong><span class="classifier">int</span></dt><dd><p>Set velocity in counts/s or steps/s.</p>
+</dd>
+<dt><strong>approaching_speed</strong><span class="classifier">int</span></dt><dd><p>Set velocity in counts/s or steps/s.</p>
+</dd>
+<dt><strong>acceleration</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
+</dd>
+<dt><strong>offset</strong><span class="classifier">int</span></dt><dd><p>Performs an offset move of a given distance, in counts (steps), after successfully locating the given reference, but before resetting the position if a reset is requested.</p>
+</dd>
+<dt><strong>reset_position: bool</strong></dt><dd><p>True or false to reset the position.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_startFindZPolarity">
+<span class="sig-name descname"><span class="pre">Motion_startFindZPolarity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">searching_speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">approaching_speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">approach_direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset_position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_startFindZPolarity" title="Permalink to this definition"></a></dt>
+<dd><p>Start find Z polarity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>mode</strong><span class="classifier">int</span></dt><dd><p>1: forward, -1: reverse.</p>
+</dd>
+<dt><strong>searching_speed</strong><span class="classifier">int</span></dt><dd><p>Set velocity in counts/s or steps/s.</p>
+</dd>
+<dt><strong>approaching_speed</strong><span class="classifier">int</span></dt><dd><p>Set velocity in counts/s or steps/s.</p>
+</dd>
+<dt><strong>acceleration</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
+</dd>
+<dt><strong>search_direction</strong><span class="classifier">int</span></dt><dd><p>1: pointing to forward, -1: pointing to reverse.</p>
+</dd>
+<dt><strong>approach_direction</strong><span class="classifier">int</span></dt><dd><p>1: pointing to forward, -1: pointing to reverse.</p>
+</dd>
+<dt><strong>offset</strong><span class="classifier">int</span></dt><dd><p>Performs an offset move of a given distance, in counts (steps), after successfully locating the given reference, but before resetting the position if a reset is requested.</p>
+</dd>
+<dt><strong>reset_position: bool</strong></dt><dd><p>True or false to reset the position.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_startFindZPolarity_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_startFindZPolarity_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">searching_speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">approaching_speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">approach_direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset_position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_startFindZPolarity_async" title="Permalink to this definition"></a></dt>
+<dd><p>Start find Z polarity with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>mode</strong><span class="classifier">int</span></dt><dd><p>1: forward, -1: reverse.</p>
+</dd>
+<dt><strong>searching_speed</strong><span class="classifier">int</span></dt><dd><p>Set velocity in counts/s or steps/s.</p>
+</dd>
+<dt><strong>approaching_speed</strong><span class="classifier">int</span></dt><dd><p>Set velocity in counts/s or steps/s.</p>
+</dd>
+<dt><strong>acceleration</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
+</dd>
+<dt><strong>search_direction</strong><span class="classifier">int</span></dt><dd><p>1: pointing to forward, -1: pointing to reverse.</p>
+</dd>
+<dt><strong>approach_direction</strong><span class="classifier">int</span></dt><dd><p>1: pointing to forward, -1: pointing to reverse.</p>
+</dd>
+<dt><strong>offset</strong><span class="classifier">int</span></dt><dd><p>Performs an offset move of a given distance, in counts (steps), after successfully locating the given reference, but before resetting the position if a reset is requested.</p>
+</dd>
+<dt><strong>reset_position: bool</strong></dt><dd><p>True or false to reset the position.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_startPositionMove">
+<span class="sig-name descname"><span class="pre">Motion_startPositionMove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deceleration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_startPositionMove" title="Permalink to this definition"></a></dt>
+<dd><p>Start position move.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>position</strong><span class="classifier">int</span></dt><dd><p>Target position in counts or steps.</p>
+</dd>
+<dt><strong>speed</strong><span class="classifier">int</span></dt><dd><p>Speed vector of move.</p>
+</dd>
+<dt><strong>acceleration</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
+</dd>
+<dt><strong>deceleration</strong><span class="classifier">int</span></dt><dd><p>Deceleration value in counts/s2 or steps/s2.</p>
+</dd>
+<dt><strong>mode</strong><span class="classifier">int</span></dt><dd><p>0: absolute, 1: relative.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_startPositionMove_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_startPositionMove_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deceleration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_startPositionMove_async" title="Permalink to this definition"></a></dt>
+<dd><p>Start position move with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>position</strong><span class="classifier">int</span></dt><dd><p>Target position in counts or steps.</p>
+</dd>
+<dt><strong>speed</strong><span class="classifier">int</span></dt><dd><p>Speed vector of move.</p>
+</dd>
+<dt><strong>acceleration</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
+</dd>
+<dt><strong>deceleration</strong><span class="classifier">int</span></dt><dd><p>Deceleration value in counts/s2 or steps/s2.</p>
+</dd>
+<dt><strong>mode</strong><span class="classifier">int</span></dt><dd><p>0: absolute, 1: relative.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_startScanMove">
+<span class="sig-name descname"><span class="pre">Motion_startScanMove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_startScanMove" title="Permalink to this definition"></a></dt>
+<dd><p>Start scan move.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>position_0</strong><span class="classifier">int</span></dt><dd><p>Target position in counts or steps.</p>
+</dd>
+<dt><strong>position_1</strong><span class="classifier">int</span></dt><dd><p>Target position in counts or steps.</p>
+</dd>
+<dt><strong>speed</strong><span class="classifier">int</span></dt><dd><p>Speed vector of move.</p>
+</dd>
+<dt><strong>acceleration</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_startScanMove_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_startScanMove_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_startScanMove_async" title="Permalink to this definition"></a></dt>
+<dd><p>Start scan move with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>position_0</strong><span class="classifier">int</span></dt><dd><p>Target position in counts or steps.</p>
+</dd>
+<dt><strong>position_1</strong><span class="classifier">int</span></dt><dd><p>Target position in counts or steps.</p>
+</dd>
+<dt><strong>speed</strong><span class="classifier">int</span></dt><dd><p>Speed vector of move.</p>
+</dd>
+<dt><strong>acceleration</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_startVelocticyMove">
+<span class="sig-name descname"><span class="pre">Motion_startVelocticyMove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deceleration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_startVelocticyMove" title="Permalink to this definition"></a></dt>
+<dd><p>Start velocity move.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>speed</strong><span class="classifier">int</span></dt><dd><p>Speed vector of move.</p>
+</dd>
+<dt><strong>acceleration</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
+</dd>
+<dt><strong>deceleration</strong><span class="classifier">int</span></dt><dd><p>Deceleration value in counts/s2 or steps/s2.</p>
+</dd>
+<dt><strong>direction</strong><span class="classifier">int</span></dt><dd><p>1: pointing to forward, -1: pointing to reverse.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_startVelocticyMove_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_startVelocticyMove_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceleration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deceleration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_startVelocticyMove_async" title="Permalink to this definition"></a></dt>
+<dd><p>Start velocity move with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>speed</strong><span class="classifier">int</span></dt><dd><p>Speed vector of move.</p>
+</dd>
+<dt><strong>acceleration</strong><span class="classifier">int</span></dt><dd><p>Acceleration value in counts/s2 or steps/s2.</p>
+</dd>
+<dt><strong>deceleration</strong><span class="classifier">int</span></dt><dd><p>Deceleration value in counts/s2 or steps/s2.</p>
+</dd>
+<dt><strong>direction</strong><span class="classifier">int</span></dt><dd><p>1: pointing to forward, -1: pointing to reverse.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_stopProcess">
+<span class="sig-name descname"><span class="pre">Motion_stopProcess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_stopProcess" title="Permalink to this definition"></a></dt>
+<dd><p>Stop process on a given port.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EDrive_ST.Motion_stopProcess_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Motion_stopProcess_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EDrive_ST.Motion_stopProcess_async" title="Permalink to this definition"></a></dt>
+<dd><p>Stop process on a given port with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
 </dd>
 </dl>
 </dd>

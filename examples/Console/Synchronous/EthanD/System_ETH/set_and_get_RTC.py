@@ -10,7 +10,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -43,12 +43,12 @@ def main():
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Set RTC
-        status = dev.Sys_setRTC(2023, 5, 8, 15, 8, 7)
+        status = dev.Sys_setRTC(2023, 5, 8, 15, 8, 7, timeout)
         print(f"Set RTC status: {status}")
 
         for i in range(10):

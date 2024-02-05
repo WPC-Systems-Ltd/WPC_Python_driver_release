@@ -8,7 +8,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -37,12 +37,13 @@ async def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        relative_position_mode = 1
-        target_position = 30000
-        new_position = 0
-        stop_decel = 0
-
-        ## Polarity and enable parameters
+        position = 10000
+        position1 = 30000
+        position2 = -10000
+        speed = 10000
+        acceleration = 10000
+        deceleration = 10000
+        mode = 1    ## 0: absolute, 1: relative.
         active_low = 0
         active_high = 1
         en_forward = 0
@@ -53,69 +54,66 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## EDrive-ST open
-        err = await dev.Drive_open_async(port)
-        print(f"Drive_open: {err}")
+        ## Motion open
+        err = await dev.Motion_open_async(port)
+        print(f"Motion_open: {err}")
 
-        ## EDrive-ST configure
-        err = await dev.Drive_cfgAxisMove_async(port, relative_position_mode, target_position)
-        print(f"Drive_cfgAxisMove: {err}")
+        ## Motion configure
+        err = await dev.Motion_cfgLimit_async(port, en_forward, en_reverse, active_low)
+        print(f"Motion_cfgLimit: {err}")
 
-        err = await dev.Drive_cfgLimit_async(port, en_forward, en_reverse, active_low)
-        print(f"Drive_cfgLimit: {err}")
+        ## Motion reset
+        err = await dev.Motion_rstEncoderPosi_async(port)
+        print(f"Motion_resetEncoder: {err}")
 
-        ## EDrive-ST reset
-        err = await dev.Drive_rstEncoderPosi_async(port)
-        print(f"EDST_reset: {err}")
+        ## Motion Servo on
+        err = await dev.Motion_enableServoOn_async(port)
+        print(f"Motion_enableServoOn: {err}")
 
-        ## EDrive-ST Servo on
-        err = await dev.Drive_enableServoOn_async(port)
-        print(f"Drive_enableServoOn: {err}")
+        ## Motion start
+        err = await dev.Motion_startPositionMove_async(port, position, speed, acceleration, deceleration, mode)
+        print(f"Motion_startPositionMove: {err}")
 
-        ## EDrive-ST start
-        err = await dev.Drive_start_async(port)
-        print(f"Drive_start: {err}")
+        ## Wait for seconds for moving
+        await asyncio.sleep(1) ## delay [s]
 
-        ## Wait for 3 seconds for moving
-        await asyncio.sleep(3) ## delay [s]
+        ## Motion start
+        err = await dev.Motion_startPositionMove_async(port, position1, speed, acceleration, deceleration, mode)
+        print(f"Motion_startPositionMove: {err}")
 
-        ## EDrive-ST read encoder position
-        posi = await dev.Drive_readEncoderPosition_async(port)
-        print(f"encoder_posi: {posi[0]}, logical_posi: {posi[1]}")
+        ## Wait for seconds for moving
+        await asyncio.sleep(1) ## delay [s]
 
-        move_status = 0
-        while move_status == 0:
-            move_status = await dev.Drive_getMoveStatus_async(port)
+        ## Motion start
+        err = await dev.Motion_startPositionMove_async(port, position2, speed, acceleration, deceleration, mode)
+        print(f"Motion_startPositionMove: {err}")
 
-            ## EDrive-ST read encoder position
-            posi = await dev.Drive_readEncoderPosition_async(port)
-            print(f"encoder_posi: {posi[0]}, logical_posi: {posi[1]}")
+        status = 1
+        while status != 0 :
+            status = await dev.Motion_getProcessState_async(port)
 
-            ## EDrive-ST overwrite position
-            err = await dev.Drive_overridePosition_async(port, new_position)
-            # print(f"Drive_overridePosition: {err}")
-
-        ## EDrive-ST Stop
-        err = await dev.Drive_stop_async(port, stop_decel)
-        print(f"Drive_stop: {err}")
-
-        ## EDrive-ST Servo off
-        err = await dev.Drive_enableServoOff_async(port)
-        print(f"Drive_enableServoOff: {err}")
-
-        ## EDrive-ST close
-        err = await dev.Drive_close_async(port)
-        print(f"Drive_close: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
+    except KeyboardInterrupt:
+        print("Press keyboard")
+    finally:
+        ## Motion stop
+        err = await dev.Motion_stopProcess_async(port)
+        print(f"Motion_stopProcess: {err}")
+
+        ## Motion Servo off
+        err = await dev.Motion_enableServoOff_async(port)
+        print(f"Motion_enableServoOff: {err}")
+
+        ## Motion close
+        err = await dev.Motion_close_async(port)
+        print(f"Motion_close: {err}")
 
     ## Disconnect device
     dev.disconnect()
 
     ## Release device handle
     dev.close()
-
-    return
 
 def main_for_spyder(*args):
     if asyncio.get_event_loop().is_running():

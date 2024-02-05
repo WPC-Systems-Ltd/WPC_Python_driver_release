@@ -10,7 +10,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -42,12 +42,12 @@ def main():
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Relay open
-        err = dev.Relay_open(timeout=timeout)
+        err = dev.Relay_open(timeout)
         print(f"Relay_open: {err}")
 
         ## Toggle digital state for 10 times. Each times delay for 0.5 second
@@ -57,14 +57,14 @@ def main():
             else:
                 value = [1, 1, 1, 1, 1, 1]
 
-            dev.DO_writePort(DO_port, value, timeout=timeout)
+            dev.DO_writePort(DO_port, value, timeout)
             print(f'Port: {DO_port}, digital state= {value}')
 
             ## Wait
             time.sleep(0.5)  ## delay [s]
 
         ## Relay close
-        err = dev.Relay_close(timeout=timeout)
+        err = dev.Relay_close(timeout)
         print(f"Relay_close: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>System get network info &mdash; WPC Python driver 3.0.13 documentation</title>
+  <title>System get network info &mdash; WPC Python driver 3.0.17 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -23,7 +23,7 @@
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
     <link rel="next" title="System hello world" href="hello_world.html" />
-    <link rel="prev" title="Drive velocity blending acceleration" href="../Drive/Drive_velocity_blending_acceleration.html" /> 
+    <link rel="prev" title="Drive velocity move" href="../Drive/Drive_velocity_move.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -35,7 +35,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.13
+                3.0.17
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -56,12 +56,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../../examples_console_Synchronous.html#device-finder">Device finder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../examples_console_Synchronous.html#stem">STEM</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../../../../examples_console_Synchronous.html#edrive-st">EDrive-ST</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../Drive/Drive_1axis_move.html">Drive 1axis move</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Drive/Drive_find_home.html">Drive find home</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Drive/Drive_find_limit.html">Drive find limit</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Drive/Drive_servo_on.html">Drive servo on</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Drive/Drive_position_blending.html">Drive position blending</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Drive/Drive_velocity_blending.html">Drive velocity blending</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Drive/Drive_position_move.html">Drive position move</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Drive/Drive_scan_move.html">Drive scan move</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Drive/Drive_servo_on.html">Drive servo on</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Drive/Drive_velocity_blending_acceleration.html">Drive velocity blending acceleration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Drive/Drive_velocity_move.html">Drive velocity move</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">System get network info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="set_and_get_RTC.html">Set and get RTC</a></li>
@@ -138,7 +140,7 @@
 <span class="linenos">13</span><span class="sd">    https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples</span>
 <span class="linenos">14</span><span class="sd">See README.md file to get detailed usage of this example.</span>
 <span class="linenos">15</span>
-<span class="linenos">16</span><span class="sd">Copyright (c) 2023 WPC Systems Ltd. All rights reserved.</span>
+<span class="linenos">16</span><span class="sd">Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.</span>
 <span class="linenos">17</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos">18</span>
 <span class="linenos">19</span><span class="c1">## Python</span>
@@ -171,17 +173,17 @@
 <span class="linenos">46</span>        <span class="n">timeout</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1">## second</span>
 <span class="linenos">47</span>
 <span class="linenos">48</span>        <span class="c1">## Get firmware model &amp; version</span>
-<span class="linenos">49</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">49</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
 <span class="linenos">50</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="linenos">51</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 <span class="linenos">52</span>
 <span class="linenos">53</span>        <span class="c1">## Get IP &amp; submask</span>
-<span class="linenos">54</span>        <span class="n">ip_addr</span><span class="p">,</span> <span class="n">submask</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Net_getIPAddrAndSubmask</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">54</span>        <span class="n">ip_addr</span><span class="p">,</span> <span class="n">submask</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Net_getIPAddrAndSubmask</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
 <span class="linenos">55</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;IP: </span><span class="si">{</span><span class="n">ip_addr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">56</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Submask: </span><span class="si">{</span><span class="n">submask</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">57</span>
 <span class="linenos">58</span>        <span class="c1">## Get MAC</span>
-<span class="linenos">59</span>        <span class="n">mac</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Net_getMACAddr</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">59</span>        <span class="n">mac</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Net_getMACAddr</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
 <span class="linenos">60</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MAC: </span><span class="si">{</span><span class="n">mac</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">61</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos">62</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
@@ -204,7 +206,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../Drive/Drive_velocity_blending_acceleration.html" class="btn btn-neutral float-left" title="Drive velocity blending acceleration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Drive/Drive_velocity_move.html" class="btn btn-neutral float-left" title="Drive velocity move" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="hello_world.html" class="btn btn-neutral float-right" title="System hello world" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

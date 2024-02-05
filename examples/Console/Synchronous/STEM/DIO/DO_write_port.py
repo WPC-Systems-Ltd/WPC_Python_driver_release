@@ -24,7 +24,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -55,34 +55,35 @@ def main():
         ## Parameters setting
         slot = 1 ## Connect DIO module to slot
         DO_port = 1
+        DO_value = [1, 0, 1, 0]
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Get slot mode
-        slot_mode = dev.Sys_getMode(slot, timeout=timeout)
+        slot_mode = dev.Sys_getMode(slot, timeout)
         print("Slot mode:", slot_mode)
 
         ## If the slot mode is not set to "DIO", set the slot mode to "DIO"
         if slot_mode != "DIO":
-            err = dev.Sys_setDIOMode(slot, timeout=timeout)
+            err = dev.Sys_setDIOMode(slot, timeout)
             print(f"Sys_setDIOMode in slot {slot}: {err}")
 
         ## Get slot mode
-        slot_mode = dev.Sys_getMode(slot, timeout=timeout)
+        slot_mode = dev.Sys_getMode(slot, timeout)
         print("Slot mode:", slot_mode)
 
         ## Get DIO start up information
-        info = dev.DIO_loadStartup(DO_port, timeout=timeout)
+        info = dev.DIO_loadStartup(DO_port, timeout)
         print("Enable:   ", info[0])
         print("Direction:", info[1])
         print("State:    ", info[2])
 
         ## Write port to high or low
-        err = dev.DO_writePort(DO_port, [1, 1, 0, 0], timeout=timeout)
+        err = dev.DO_writePort(DO_port, DO_value, timeout)
         print(f"DO_writePort in DO_port {DO_port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

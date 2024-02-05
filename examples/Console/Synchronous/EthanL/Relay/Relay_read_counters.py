@@ -10,7 +10,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -42,12 +42,12 @@ def main():
         index = -1
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Relay open
-        err = dev.Relay_open(timeout=timeout)
+        err = dev.Relay_open(timeout)
         print(f"Relay_open: {err}")
 
         ## Read counters
@@ -55,7 +55,7 @@ def main():
         print(f"Relay_read: {counter}")
 
         ## Relay close
-        err = dev.Relay_close(timeout=timeout)
+        err = dev.Relay_close(timeout)
         print(f"Relay_close: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

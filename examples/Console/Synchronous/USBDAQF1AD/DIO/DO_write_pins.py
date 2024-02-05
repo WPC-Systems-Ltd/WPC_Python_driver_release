@@ -14,7 +14,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -45,26 +45,27 @@ def main():
         ## Parameters setting
         port = 0 ## Depend on your device
         pin_index = [0, 1, 2, 3]
+        DO_value = [1, 0, 1, 0]
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Open pins with digital output
-        err = dev.DO_openPins(port, pin_index, timeout=timeout)
+        err = dev.DO_openPins(port, pin_index, timeout)
         print(f"DO_openPins in port {port}: {err}")
 
         ## Write pins to high or low
-        err = dev.DO_writePins(port, pin_index, [1, 1, 0, 0], timeout=timeout)
+        err = dev.DO_writePins(port, pin_index, DO_value, timeout)
         print(f"DO_writePins in port {port}: {err}")
 
         ## Wait for 1 seconds to see led status
         time.sleep(1) ## delay [s]
 
         ## Close pins with digital output
-        err = dev.DO_closePins(port, pin_index, timeout=timeout)
+        err = dev.DO_closePins(port, pin_index, timeout)
         print(f"DO_closePins in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

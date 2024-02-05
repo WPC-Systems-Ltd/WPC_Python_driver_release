@@ -16,7 +16,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -59,7 +59,7 @@ def main():
         '''
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
@@ -68,7 +68,7 @@ def main():
         '''
 
         ## Open I2C
-        err = dev.I2C_open(port, timeout=timeout)
+        err = dev.I2C_open(port, timeout)
         print(f"I2C_open in port {port}: {err}")
 
         '''
@@ -76,7 +76,7 @@ def main():
         '''
 
         ## Set I2C port and set clock rate to standard mode
-        err = dev.I2C_setClockRate(port, mode, timeout=timeout)
+        err = dev.I2C_setClockRate(port, mode, timeout)
         print(f"I2C_setClockRate in port {port}: {err}")
 
         '''
@@ -84,7 +84,7 @@ def main():
         '''
 
         ## Write data to device
-        err = dev.I2C_write(port, device_address, [word_address, value], timeout=timeout)
+        err = dev.I2C_write(port, device_address, [word_address, value], timeout)
         print(f"I2C_write in port {port}: {err}")
         print(f"write data: 0x{value:02X}")
         time.sleep(0.05) ## delay [s]
@@ -94,11 +94,11 @@ def main():
         '''
 
         ## Write to set pointer for reading
-        err = dev.I2C_write(port, device_address, [word_address], timeout=timeout)
+        err = dev.I2C_write(port, device_address, [word_address], timeout)
         print(f"I2C_write in port {port}: {err}")
 
         ## Read data from device
-        data = dev.I2C_read(port, device_address, 1, timeout=timeout)
+        data = dev.I2C_read(port, device_address, 1, timeout)
         print(f"read data: 0x{data[0]:02X}")
 
         '''
@@ -106,7 +106,7 @@ def main():
         '''
 
         ## Close I2C
-        err = dev.I2C_close(port, timeout=timeout)
+        err = dev.I2C_close(port, timeout)
         print(f"I2C_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

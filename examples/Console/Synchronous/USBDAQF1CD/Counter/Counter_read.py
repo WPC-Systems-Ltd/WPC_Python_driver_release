@@ -10,7 +10,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -42,29 +42,29 @@ def main():
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Open counter
-        err = dev.Counter_open(channel, timeout=timeout)
+        err = dev.Counter_open(channel, timeout)
         print(f"Counter_open in channel {channel}: {err}")
 
         ## Start counter
-        err = dev.Counter_start(channel, timeout=timeout)
+        err = dev.Counter_start(channel, timeout)
         print(f"Counter_start in channel {channel}: {err}")
 
         ## Read counter
         for i in range(10):
-            counter = dev.Counter_read(channel, timeout=timeout)
+            counter = dev.Counter_read(channel, timeout)
             print(f"Read counter in channel {channel}: {counter}")
 
         ## Stop counter
-        err = dev.Counter_stop(channel, timeout=timeout)
+        err = dev.Counter_stop(channel, timeout)
         print(f"Counter_stop in channel {channel}: {err}")
 
         ## Close counter
-        err = dev.Counter_close(channel, timeout=timeout)
+        err = dev.Counter_close(channel, timeout)
         print(f"Counter_close in channel {channel}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)

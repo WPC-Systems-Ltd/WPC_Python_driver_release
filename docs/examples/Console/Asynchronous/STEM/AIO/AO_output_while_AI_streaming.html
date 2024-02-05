@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AO output while AI streaming &mdash; WPC Python driver 3.0.13 documentation</title>
+  <title>AO output while AI streaming &mdash; WPC Python driver 3.0.17 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -35,7 +35,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.13
+                3.0.17
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -169,7 +169,7 @@
 <span class="linenos"> 28</span><span class="sd">    https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples</span>
 <span class="linenos"> 29</span><span class="sd">See README.md file to get detailed usage of this example.</span>
 <span class="linenos"> 30</span>
-<span class="linenos"> 31</span><span class="sd">Copyright (c) 2023 WPC Systems Ltd. All rights reserved.</span>
+<span class="linenos"> 31</span><span class="sd">Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.</span>
 <span class="linenos"> 32</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos"> 33</span>
 <span class="linenos"> 34</span><span class="c1">## Python</span>
@@ -203,7 +203,7 @@
 <span class="linenos"> 62</span>        <span class="n">mode</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1">## 0 : On demand, 1 : N-samples, 2 : Continuous.</span>
 <span class="linenos"> 63</span>        <span class="n">sampling_rate</span> <span class="o">=</span> <span class="mi">200</span>
 <span class="linenos"> 64</span>        <span class="n">read_points</span> <span class="o">=</span> <span class="mi">200</span>
-<span class="linenos"> 65</span>        <span class="n">delay</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1">## second</span>
+<span class="linenos"> 65</span>        <span class="n">read_delay</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1">## second</span>
 <span class="linenos"> 66</span>
 <span class="linenos"> 67</span>        <span class="c1">## Get firmware model &amp; version</span>
 <span class="linenos"> 68</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo_async</span><span class="p">()</span>
@@ -252,7 +252,7 @@
 <span class="linenos">111</span>        <span class="n">ao_list</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 <span class="linenos">112</span>        <span class="k">while</span> <span class="n">data_len</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
 <span class="linenos">113</span>            <span class="c1">## Read data acquisition</span>
-<span class="linenos">114</span>            <span class="n">ai_2Dlist</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_readStreaming_async</span><span class="p">(</span><span class="n">slot</span><span class="p">,</span> <span class="n">read_points</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="n">delay</span><span class="p">)</span>
+<span class="linenos">114</span>            <span class="n">ai_2Dlist</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_readStreaming_async</span><span class="p">(</span><span class="n">slot</span><span class="p">,</span> <span class="n">read_points</span><span class="p">,</span> <span class="n">read_delay</span><span class="p">)</span>
 <span class="linenos">115</span>            <span class="c1"># print(ai_2Dlist)</span>
 <span class="linenos">116</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data len = </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ai_2Dlist</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">)</span>
 <span class="linenos">117</span>

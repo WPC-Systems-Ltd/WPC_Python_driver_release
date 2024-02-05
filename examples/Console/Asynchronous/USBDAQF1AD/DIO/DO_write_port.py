@@ -14,7 +14,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -44,6 +44,7 @@ async def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
+        DO_value = [1, 0, 1, 0]
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -55,7 +56,7 @@ async def main():
         print(f"DO_openPort_async in port {port}: {err}")
 
         ## Write port to high or low
-        err = await dev.DO_writePort_async(port, [1, 1, 0, 0])
+        err = await dev.DO_writePort_async(port, DO_value)
         print(f"DO_writePort_async in port {port}: {err}")
 
         ## Wait for 3 seconds to see led status

@@ -8,7 +8,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -37,96 +37,74 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        forward = 0
-        reverse = 1
-        velocity_mode = 2
-
-        ## Operation and stop mode
-        stop_decel = 0
-        timeout = 3 ## second
-
-        ## Polarity and enable parameters
+        speed = 10000
+        acceleration = 10000
+        deceleration = 10000
+        direction = 1   ## 1: pointing to forward, -1: pointing to reverse.
         active_low = 0
         active_high = 1
         en_forward = 0
         en_reverse = 0
+        timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## EDrive-ST open
-        err = dev.Drive_open(port, timeout=timeout)
-        print(f"Drive_open: {err}")
+        ## Motion open
+        err = dev.Motion_open(port, timeout)
+        print(f"Motion_open: {err}")
 
-        ## EDrive-ST configure
-        err = dev.Drive_cfgAxisMove(port, velocity_mode, timeout=timeout)
-        print(f"Drive_cfgAxisMove: {err}")
+        ## Motion configure
+        err = dev.Motion_cfgLimit(port, en_forward, en_reverse, active_low, timeout)
+        print(f"Motion_cfgLimit: {err}")
 
-        err = dev.Drive_cfgLimit(port, en_forward, en_reverse, active_low, timeout=timeout)
-        print(f"Drive_cfgLimit: {err}")
+        ## Motion reset
+        err = dev.Motion_rstEncoderPosi(port, timeout)
+        print(f"Motion_resetEncoderPosi: {err}")
 
-        ## EDrive-ST reset
-        err = dev.Drive_rstEncoderPosi(port, timeout=timeout)
-        print(f"EDST_reset: {err}")
+        ## Motion Servo on
+        err = dev.Motion_enableServoOn(port, timeout)
+        print(f"Motion_enableServoOn: {err}")
 
-        ## EDrive-ST Servo on
-        err = dev.Drive_enableServoOn(port, timeout=timeout)
-        print(f"Drive_enableServoOn: {err}")
+        ## Motion start
+        err = dev.Motion_startVelocticyMove(port, speed, acceleration, deceleration, direction, timeout)
+        print(f"Motion_startVelocticyMove: {err}")
 
-        ## EDrive-ST start
-        err = dev.Drive_start(port)
-        print(f"Drive_start: {err}")
+        ## Wait for seconds for moving
+        time.sleep(1) ## delay [s]
 
-        ## Wait for 5 seconds for moving
-        time.sleep(5) ## delay [s]
+        ## Motion start
+        new_speed = 2000
+        new_acceleration = 1000
+        new_deceleration = 1000
 
-        new_velo = -3000
-        new_accel = 100
-        new_decel = 100
-        err = dev.Drive_overrideVelocity(port, new_velo, timeout=timeout)
-        print(f"Drive_overrideVelocity: {err}")
+        err = dev.Motion_startVelocticyMove(port, new_speed, new_acceleration, new_deceleration, direction, timeout)
+        print(f"Motion_startVelocticyMove: {err}")
 
-        err = dev.Drive_overrideAccel(port, new_accel, new_decel, timeout=timeout)
-        print(f"Drive_overrideAccel: {err}")
-
-        ## Wait for 5 seconds for moving
-        time.sleep(5) ## delay [s]
-
-        new_velo = 6000
-        new_accel = 100000
-        new_decel = 100000
-        err = dev.Drive_overrideVelocity(port, new_velo, timeout=timeout)
-        print(f"Drive_overrideVelocity: {err}")
-
-        err = dev.Drive_overrideAccel(port, new_accel, new_decel, timeout=timeout)
-        print(f"Drive_overrideAccel: {err}")
-
-        ## Wait for 5 seconds for moving
-        time.sleep(5) ## delay [s]
-
-        ## EDrive-ST Stop
-        err = dev.Drive_stop(port, stop_decel, timeout=timeout)
-        print(f"Drive_stop: {err}")
-
-        ## EDrive-ST Servo off
-        err = dev.Drive_enableServoOff(port, timeout=timeout)
-        print(f"Drive_enableServoOff: {err}")
-
-        ## EDrive-ST close
-        err = dev.Drive_close(port, timeout=timeout)
-        print(f"Drive_close: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
+    except KeyboardInterrupt:
+        print("Press keyboard")
+    finally:
+        ## Motion stop
+        err = dev.Motion_stopProcess(port, timeout)
+        print(f"Motion_stopProcess: {err}")
+
+        ## Motion Servo off
+        err = dev.Motion_enableServoOff(port, timeout)
+        print(f"Motion_enableServoOff: {err}")
+
+        ## Motion close
+        err = dev.Motion_close(port, timeout)
+        print(f"Motion_close: {err}")
 
     ## Disconnect device
     dev.disconnect()
 
     ## Release device handle
     dev.close()
-
-    return
 
 if __name__ == '__main__':
     main()

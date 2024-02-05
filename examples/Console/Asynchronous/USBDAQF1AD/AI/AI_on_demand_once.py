@@ -15,7 +15,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -59,7 +59,7 @@ async def main():
         
         ## Set AI channel
         err = await dev.AI_enableChannel_async(port, channel)
-        print("AI_enableChannel_async in port {port}: {err}")
+        print(f"AI_enableChannel_async in port {port}: {err}")
 
         ## Set AI acquisition mode to on demand mode (0)
         err = await dev.AI_setMode_async(port, mode)

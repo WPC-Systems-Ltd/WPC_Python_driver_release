@@ -8,7 +8,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2023 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
@@ -41,23 +41,23 @@ def main():
         timeout = 3 ## second
 
         ## Get firmware model & version
-        driver_info = dev.Sys_getDriverInfo(timeout=timeout)
+        driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Motion open
-        err = dev.Motion_open(port, timeout=timeout)
+        err = dev.Motion_open(port, timeout)
         print(f"Motion_open in port {port}: {err}")
 
         for i in range(100):
-            err = dev.Motion_setLogicalPosi(port, axis, i, timeout=timeout)
+            err = dev.Motion_setLogicalPosi(port, axis, i, timeout)
             if err != 0:
                 print(f"Motion_setLogicalPosi in axis{axis}: {err}")
-            posi = dev.Motion_getLogicalPosi(port, axis, timeout=timeout)
+            posi = dev.Motion_getLogicalPosi(port, axis, timeout)
             print(f"Motion_getLogicalPosi in axis{axis}: {posi}")
 
         ## Motion close
-        err = dev.Motion_close(port, timeout=timeout)
+        err = dev.Motion_close(port, timeout)
         print(f"Motion_close in port {port}: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
