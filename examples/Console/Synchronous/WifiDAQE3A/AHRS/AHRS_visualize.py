@@ -132,7 +132,7 @@ def WPC_initializeFigure(nb_rows=1, nb_col=1, share_x='all', share_y='all', opti
     ax_value_pitch=fig.add_subplot(gs[1, 2])
     ax_value_roll=fig.add_subplot(gs[2, 2])
     
-    fig.figimage(imgWPC, xo=fig.bbox.xmin, yo=fig.bbox.ymin, alpha=1)
+    #fig.figimage(imgWPC, xo=fig.bbox.xmin, yo=fig.bbox.ymin, alpha=1)
     ax_dict = {
       'main': ax_main,
       'plane_yaw': ax_plane_yaw,
@@ -271,6 +271,25 @@ def WPC_drawCat(fig, ax, data_orig, poly, roll, pitch, yaw):
   ## Plot
   poly.set_verts(data)
   # fig.canvas.flush_events() ## Update the 3D object
+  figimage_width = fig.bbox.xmax - fig.bbox.xmin
+  figimage_height = fig.bbox.ymax - fig.bbox.ymin
+  
+  img_aspect_ratio = imgWPC.shape[1]/imgWPC.shape[0]
+  fig.figimage(imgWPC, xo=fig.bbox.xmin, yo=fig.bbox.ymin, alpha=1)
+  
+  if figimage_width / figimage_height > img_aspect_ratio:
+    img_width = figimage_height * img_aspect_ratio
+    img_height = figimage_height
+  else:
+      img_width = figimage_width
+      img_height = figimage_width / img_aspect_ratio
+
+  # Calculate the positions of the image such that it is centered in the figure
+  xo = fig.bbox.xmin + (figimage_width - img_width) / 2
+  yo = fig.bbox.ymin + (figimage_height - img_height) / 2
+
+  # Plot the image
+  fig.figimage(imgWPC, xo=xo, yo=yo, alpha=1)
 
   return
 
