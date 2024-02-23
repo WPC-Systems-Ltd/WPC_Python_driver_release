@@ -104,7 +104,7 @@ MODEL_DICT = {
   'rat': dict(label='Rat', view=50),
   'rat': dict(label='Rat', view=50),
 }
-DEFAULT_MODEL = 'cat'
+DEFAULT_MODEL = 'rat'
 
 ################################################################################
 ## Constants
@@ -287,9 +287,9 @@ def WPC_text_button(fig,ax,roll,pitch,yaw,ax_value_roll,ax_value_pitch,ax_value_
   Roll ="{:7.2f}".format(roll) 
   Pitch="{:7.2f}".format(pitch)
   Yaw="{:7.2f}".format(yaw)
-  ax_value_roll.text(0.5, 0.5, f' Roll:\n{Roll}', fontsize=32,weight='bold', color=bmh_blue,ha='center',va='center')
-  ax_value_pitch.text(0.5, 0.5, f' Pitch:\n{Pitch}', fontsize=32,weight='bold',color=bmh_burgundy,ha='center', va='center')
-  ax_value_yaw.text(0.5, 0.5, f' Yaw:\n{Yaw}', fontsize=32,weight='bold',color=bmh_purple,ha='center', va='center')
+  ax_value_roll.text(0.5, 0.5, f' Roll:\n{Roll} deg', fontsize=32,weight='bold', color=bmh_blue,ha='center',va='center')
+  ax_value_pitch.text(0.5, 0.5, f' Pitch:\n{Pitch} deg', fontsize=32,weight='bold',color=bmh_burgundy,ha='center', va='center')
+  ax_value_yaw.text(0.5, 0.5, f' Yaw:\n{Yaw} deg', fontsize=32,weight='bold',color=bmh_purple,ha='center', va='center')
   ax.grid(False)
   
   return
@@ -319,7 +319,7 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        sampling_period = 0.003
+        sampling_period = 0.003 
         read_delay = 0.5 ## second
         timeout = 3 ## second
 
@@ -340,7 +340,7 @@ def main():
         err = dev.AHRS_start(port, timeout)
         print(f"AHRS_start in port {port}: {err}")
 
-        while True:
+        while plt.fignum_exists(fig.number):
             ahrs_list = dev.AHRS_readStreaming(port, read_delay)
             if len(ahrs_list) > 0:
                 WPC_drawCat(fig, ax, data_orig, poly, ahrs_list[0], ahrs_list[1], ahrs_list[2])
@@ -373,7 +373,6 @@ def main():
         dev.disconnect()
 
         ## Release device handle
-        dev.close()
     return
 if __name__ == '__main__':
     main()

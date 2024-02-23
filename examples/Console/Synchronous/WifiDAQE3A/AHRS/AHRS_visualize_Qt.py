@@ -116,11 +116,13 @@ class Ui_MainWindow(object):
         
         self.graphicYaw = QtWidgets.QGraphicsView(self.centralwidget)
         self.graphicYaw.setObjectName("graphicYaw")
-        self.other_widgets_layout.addWidget(self.graphicYaw, 1, 1, 1, 1)
+        self.other_widgets_layout.addWidget(self.graphicYaw, 3, 1, 1, 1)
         
         self.graphicRoll = QtWidgets.QGraphicsView(self.centralwidget)
         self.graphicRoll.setObjectName("graphicRoll")
-        self.other_widgets_layout.addWidget(self.graphicRoll, 3, 1, 1, 1)
+        self.other_widgets_layout.addWidget(self.graphicRoll, 1, 1, 1, 1)
+        
+        self.graphicPlanes = {'yaw': self.graphicYaw, 'pitch': self.graphicPitch, 'roll': self.graphicRoll}
         
         self.graphicTextPitch = QtWidgets.QGraphicsView(self.centralwidget)
         self.graphicTextPitch.setObjectName("graphicTextPitch")
@@ -128,11 +130,11 @@ class Ui_MainWindow(object):
         
         self.graphicTextYaw = QtWidgets.QGraphicsView(self.centralwidget)
         self.graphicTextYaw.setObjectName("graphicTextYaw")
-        self.other_widgets_layout.addWidget(self.graphicTextYaw, 1, 2, 1, 1)
+        self.other_widgets_layout.addWidget(self.graphicTextYaw, 3, 2, 1, 1)
         
         self.graphicTextRoll = QtWidgets.QGraphicsView(self.centralwidget)
         self.graphicTextRoll.setObjectName("graphicTextRoll")
-        self.other_widgets_layout.addWidget(self.graphicTextRoll, 3, 2, 1, 1)
+        self.other_widgets_layout.addWidget(self.graphicTextRoll, 1, 2, 1, 1)
         
         self.other_widgets.setLayout(self.other_widgets_layout)
 
@@ -181,6 +183,8 @@ class Ui_MainWindow(object):
             scene.addItem(text_item)
 
         # define graphic scenes in a dictionary for an easy access
+        
+        
         self.graphicTextScenes = {
             'yaw': self.textSceneYaw,
             'pitch': self.textScenePitch,
@@ -210,7 +214,7 @@ class Ui_MainWindow(object):
         
         
         #a revoir !!!!!!!!!!!!!!!!!!!!!
-        self.pixmap_Yaw = self.sceneYaw.items()[0]  
+        self.pixmap_Yaw = self.sceneYaw.items()[0]
         self.Yaw_width = self.pixmap_Yaw.pixmap().width()
         self.Yaw_height = self.pixmap_Yaw.pixmap().height()
         self.Yaw_center = (self.Yaw_width / 2, self.Yaw_height / 2)
@@ -229,7 +233,7 @@ class Ui_MainWindow(object):
         self.center = {'yaw' : self.Yaw_center,'pitch' : self.Pitch_center,'roll' : self.Roll_center} #dictionnary to store the center of the pixmap
 
         #initialize useful constants
-        self.dict_map = {'yaw' : 0,'pitch' : 1,'roll' : 2}
+        self.dict_map = {'roll' : 0,'pitch' : 1,'yaw' : 2}
         
         #to prevent error in case of missing values, we just read the last one available
         self.list_angle = [[0,0] for i in range(3)]        
@@ -300,9 +304,7 @@ class Ui_MainWindow(object):
             print("It's complicated to stop, when it's not started :)")
 
     def close_and_quit(self):
-        MainWindow.close()
-        quit()
-        
+        MainWindow.close()        
                
     def load_image(self, file_path, scene):
         pixmap = QPixmap(file_path)
@@ -354,29 +356,20 @@ class Ui_MainWindow(object):
         
             # Scale the pixmap
         scene_x, scene_y = self.get_scene_dimensions(self.scene_dict.get(type))
-        min_scene = min(scene_x, scene_y)
-        pixmap_item = self.pixmap.get(type)
-        original_pixmap = pixmap_item.pixmap()
-        scaled_pixmap = original_pixmap.scaledToWidth(300)
         
-        #calcul center of image 
-        scaled_width = scaled_pixmap.width()
-        scaled_height = scaled_pixmap.height()
-        scaled_center = (scaled_width / 2, scaled_height / 2)        
+        self.scene_dict.get(type).setSceneRect(0, 0, 50, 50)        
+        self.graphic
+        #calcul center of image  
         # Create a transformation for rotation
-        transform = QTransform().translate(scaled_center[0], scaled_center[1]).rotate(angle).translate(-scaled_center[0], -scaled_center[1])
+        transform = QTransform().translate(self.center.get(type)[0], self.center.get(type)[1]).rotate(angle).translate(-self.center.get(type)[0], -self.center.get(type)[1])
         
         # Apply the transformation to the pixmap
-        pixmap_item.setPixmap(scaled_pixmap)
-        pixmap_item.setTransform(transform)
+        self.pixmap.get(type).setTransform(transform)
         
-        # Center image 
-        scene_rect = pixmap_item.sceneBoundingRect()
-        scene_width = pixmap_item.scene().width()
-        scene_height = pixmap_item.scene().height()
-        dx = (scene_width - scene_rect.width()) / 2 - scene_rect.x() # coordonnées du coin supérieur gauche
-        dy = (scene_height - scene_rect.height()) / 2 - scene_rect.y() #coordonnées du coin inférieur droit  pas sur à revoir !!!!!
-        pixmap_item.setPos(pixmap_item.x() + dx, pixmap_item.y() + dy)
+
+        # dx = (scene_width - scene_rect.width()) / 2 - scene_rect.x() # coordonnées du coin supérieur gauche
+        # dy = (scene_height - scene_rect.height()) / 2 - scene_rect.y() #coordonnées du coin inférieur droit  pas sur à revoir !!!!!
+        # pixmap_item.setPos(pixmap_item.x() + dx, pixmap_item.y() + dy)
     def WPC_getRotMat(self, use_deg=True):
         yaw, pitch, roll = self.ahrs_list[self.dict_map.get('yaw')], self.ahrs_list[self.dict_map.get('pitch')], self.ahrs_list[self.dict_map.get('roll')]
         if use_deg:
