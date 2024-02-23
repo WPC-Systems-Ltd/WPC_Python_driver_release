@@ -22,9 +22,9 @@ import numpy as np
 from wpcsys import pywpc
 
 
-DATA_PATH = "examples/Console/Synchronous/WifiDAQE3A/AHRS/data/"
-IMG_PATH = 'examples/Console/Synchronous/WifiDAQE3A/AHRS/data/avion_'
-tag = 'rat'
+DATA_PATH = "Material/viz_data/"
+IMG_PATH = 'Material/viz_data/avion_'
+tag = 'cat'
 
 style_neon = DATA_PATH + "themeWPC.qss"   
 text_properties = {
@@ -45,7 +45,7 @@ RADIAN_TO_DEGREE   = 180.0 / np.pi
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         self.graphicsView = QGraphicsView()
-        
+        self.dev = pywpc.WifiDAQE3A()
         ## DISPLAY
         
         MainWindow.setObjectName("MainWindow")
@@ -66,8 +66,14 @@ class Ui_MainWindow(object):
         self.lineEditIP.setObjectName("lineEditIP")
         self.lineEditIP.setText("192.168.5.39")
         self.InputLayout.addWidget(self.lineEditIP)
+        
+        self.comboBox_port = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox_port.addItem("0")
+        self.comboBox_port.setCurrentIndex(0)
+        self.comboBox_port.setObjectName("comboBox_port")     
+        self.InputLayout.addWidget(self.comboBox_port)
+        
         self.pushConnect = QtWidgets.QPushButton(self.centralwidget)
-        self.pushConnect.setStyleSheet(style_neon)
         self.pushConnect.setObjectName("pushConnect")
         self.InputLayout.addWidget(self.pushConnect)
         self.pushConnect.clicked.connect(self.start_connection)
@@ -83,15 +89,6 @@ class Ui_MainWindow(object):
         self.pushQuit.clicked.connect(self.close_and_quit)
         self.lineEditIP.setAlignment(QtCore.Qt.AlignCenter)
 
-        
-        self.comboBox_port = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox_port.addItem("0")
-        self.comboBox_port.setCurrentIndex(0)
-        self.comboBox_port.setObjectName("comboBox_port")
-        
-
-        
-        self.InputLayout.addWidget(self.comboBox_port)
       
         self.MainVlayout.addLayout(self.InputLayout)
         
@@ -144,6 +141,7 @@ class Ui_MainWindow(object):
         
         
         
+        
         self.MainVlayout.addLayout(self.gridLayout)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -161,14 +159,16 @@ class Ui_MainWindow(object):
         self.read_delay = 0.5 ## second
         self.timeout = 3 ## second
         self.sampling_period = 0.003
-
-        ##Tewt Part 
+        
+        self.timer_running = False #become True when start is pressed, to avoid multiple pressing errors
+        self.quit_state = False
+        ##Text Part 
         
         self.textSceneYaw = QGraphicsScene()
         self.textScenePitch = QGraphicsScene()
         self.textSceneRoll = QGraphicsScene()
         
-        
+ 
 
         self.textItems = {}
         for key, props in text_properties.items():
@@ -213,7 +213,6 @@ class Ui_MainWindow(object):
         self.load_image(f'{IMG_PATH}roll.png', self.sceneRoll)
         
         
-        #a revoir !!!!!!!!!!!!!!!!!!!!!
         self.pixmap_Yaw = self.sceneYaw.items()[0]
         self.Yaw_width = self.pixmap_Yaw.pixmap().width()
         self.Yaw_height = self.pixmap_Yaw.pixmap().height()
@@ -255,7 +254,15 @@ class Ui_MainWindow(object):
         self.mesh_item = gl.GLMeshItem(vertexes=self.vertices, faces=self.faces, smooth=False, color=(152, 171, 238,0.3))
         self.widget3D.addItem(self.mesh_item)
         # Set camera position and orientation
-        self.widget3D.setCameraPosition(distance=120)
+        # Calculate the maximum dimension of the mesh
+        max_dimension = max(max(self.vertices[:, 0]) - min(self.vertices[:, 0]),
+                    max(self.vertices[:, 1]) - min(self.vertices[:, 1]),
+                    max(self.vertices[:, 2]) - min(self.vertices[:, 2]))
+
+        # Set the camera distance based on the maximum dimension
+        camera_distance = max_dimension * 1.2
+
+        self.widget3D.setCameraPosition(distance=camera_distance)
         
         #change displaying
         self.mesh_item.setGLOptions('additive')
@@ -263,8 +270,9 @@ class Ui_MainWindow(object):
         #plot a grid
         grid = gl.GLGridItem()
         self.widget3D.addItem(grid)
-        grid.scale(10, 10, 10)
-        grid.translate(0, 0, -12)
+
+        grid.scale(max_dimension, max_dimension, max_dimension)
+        grid.translate(0, 0, -max_dimension * 1.2)
         #light blue background, set it 
         self.widget3D.setBackgroundColor(5,9,27)
         
@@ -280,42 +288,80 @@ class Ui_MainWindow(object):
 
 
     def start_connection(self):
-        # Add a timer to simulate new temperature measurements
-        self.ip_address = self.lineEditIP.text()
-        self.port = int(self.comboBox_port.currentIndex())
-        self.dev = pywpc.WifiDAQE3A()
-        self.dev.connect(self.ip_address)
-        self.dev.AHRS_open(self.port,self.timeout)
-        self.dev.AHRS_setSamplingPeriod(self.port, self.sampling_period, self.timeout)
-        self.dev.AHRS_start(self.port, self.timeout)
-        self.timer = QtCore.QTimer()
-        self.timer.setInterval(50) # 10 ms
-        self.timer.timeout.connect(self.general_update)
-        self.timer.start()
+            if not self.timer_running:
+                print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
+                self.timer_running = True
+                self.ip_address = self.lineEditIP.text()
+                self.port = int(self.comboBox_port.currentIndex())
+                try:
+                     self.dev.connect("192.168.5.39") ## Depend on your device
+                except Exception as err:
+                    pywpc.printGenericError(err)
+                    text_error = QtWidgets.QGraphicsTextItem('Error: ' + str(err))  
+                    text_error.setDefaultTextColor(QtGui.QColor(255, 0, 0))  
+                    self.textScenePitch.addItem(text_error)   
+                    
+                    ## Release device handle
+                    self.dev.close()
+                    return
+                self.dev.AHRS_open(self.port,self.timeout)
+                self.dev.AHRS_setSamplingPeriod(self.port, self.sampling_period, self.timeout)
+                self.dev.AHRS_start(self.port, self.timeout)
+                self.timer = QtCore.QTimer()
+                self.timer.setInterval(50) # 10 ms
+                self.timer.timeout.connect(self.general_update)
+                self.timer.start()
     
     def stop_connection(self):
-        try:
-            getattr(self, "timer")
+        if not self.timer_running and not self.quit_state:
+             # Timer does not exist
+            print("System not connected, can not stop.")
+        
+        elif not self.timer_running and self.quit_state:
+            pass
+            
+        else:
+            # Timer does exist
             self.timer.stop()
-            self.dev.AI_stop(self.port)
-            # Le timer existe
-        except AttributeError:
-        # Le timer n'existe pas
-            print("It's complicated to stop, when it's not started :)")
+            self.timer_running = False
+
+            ## Stop AHRS
+            self.dev.AHRS_stop(self.port, self.timeout)
+
+            ## Close AHRS
+            self.dev.AHRS_close(self.port, self.timeout)
+            print(f"AHRS_close in port {self.port}")
+
+            ## Disconnect device
+            self.dev.disconnect()    
+            
 
     def close_and_quit(self):
-        MainWindow.close()        
-               
+        self.quit_state = True
+        MainWindow.close() 
+        self.stop_connection()
+                
     def load_image(self, file_path, scene):
         pixmap = QPixmap(file_path)
         scene.addPixmap(pixmap)
 
     def general_update(self):
         self.ahrs_list = self.dev.AHRS_readStreaming(self.port,self.read_delay)
-        self.ip_address = self.lineEditIP.text()  # Récupérer la nouvelle adresse IP saisie par l'utilisateur
+        self.ip_address = self.lineEditIP.text()  # New IP address
+        
         # Get port from GUI
         self.port = int(self.comboBox_port.currentIndex())
         
+        #in case of missing values, we just read the last one available
+        for type in self.dict_map.keys():
+            self.list_angle[self.dict_map.get(type)] = self.list_angle[self.dict_map.get(type)][1:]
+            if len(self.ahrs_list) > 0:
+                angle = self.ahrs_list[self.dict_map.get(type)]
+            else:
+                angle = self.list_angle[self.dict_map.get(type)][-1]
+                
+            self.ahrs_list[self.dict_map.get(type)] = angle 
+             
         self.update_image_rotation_plane('yaw')
         self.update_image_rotation_plane('pitch')
         self.update_image_rotation_plane('roll')
@@ -333,9 +379,9 @@ class Ui_MainWindow(object):
     def update_text(self):
         
         #improvement : create a security process to avoid missing value (same as in update_image_rotation_plane)
-        self.align_texts('Yaw',f'{self.ahrs_list[self.dict_map.get("yaw")]:.2f}',type='yaw')
-        self.align_texts('Pitch',f'{self.ahrs_list[self.dict_map.get("pitch")]:.2f}',type='pitch')
-        self.align_texts('Roll',f'{self.ahrs_list[self.dict_map.get("roll")]:.2f}',type='roll')
+        self.align_texts('Yaw',f'{self.ahrs_list[self.dict_map.get("yaw")]:.2f} deg',type='yaw')
+        self.align_texts('Pitch',f'{self.ahrs_list[self.dict_map.get("pitch")]:.2f} deg',type='pitch')
+        self.align_texts('Roll',f'{self.ahrs_list[self.dict_map.get("roll")]:.2f} deg',type='roll')
         
 
             
@@ -346,19 +392,11 @@ class Ui_MainWindow(object):
         
     def update_image_rotation_plane(self,type):
         # Appliquer la rotation à l'image
-        self.list_angle[self.dict_map.get(type)] = self.list_angle[self.dict_map.get(type)][1:]
-        if len(self.ahrs_list) > 0:
-            angle = self.ahrs_list[self.dict_map.get(type)]
-        else:
-            angle = self.list_angle[self.dict_map.get(type)][-1]
-            
-        self.list_angle[self.dict_map.get(type)].append(angle)
+ 
         
             # Scale the pixmap
-        scene_x, scene_y = self.get_scene_dimensions(self.scene_dict.get(type))
-        
-        self.scene_dict.get(type).setSceneRect(0, 0, 50, 50)        
-        self.graphic
+        angle = self.ahrs_list[self.dict_map.get(type)]
+        self.graphicPlanes.get(type).fitInView(self.scene_dict.get(type).sceneRect(), Qt.KeepAspectRatio)     
         #calcul center of image  
         # Create a transformation for rotation
         transform = QTransform().translate(self.center.get(type)[0], self.center.get(type)[1]).rotate(angle).translate(-self.center.get(type)[0], -self.center.get(type)[1])
@@ -367,9 +405,6 @@ class Ui_MainWindow(object):
         self.pixmap.get(type).setTransform(transform)
         
 
-        # dx = (scene_width - scene_rect.width()) / 2 - scene_rect.x() # coordonnées du coin supérieur gauche
-        # dy = (scene_height - scene_rect.height()) / 2 - scene_rect.y() #coordonnées du coin inférieur droit  pas sur à revoir !!!!!
-        # pixmap_item.setPos(pixmap_item.x() + dx, pixmap_item.y() + dy)
     def WPC_getRotMat(self, use_deg=True):
         yaw, pitch, roll = self.ahrs_list[self.dict_map.get('yaw')], self.ahrs_list[self.dict_map.get('pitch')], self.ahrs_list[self.dict_map.get('roll')]
         if use_deg:

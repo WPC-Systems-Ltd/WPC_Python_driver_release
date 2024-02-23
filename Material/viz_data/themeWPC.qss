@@ -1,0 +1,107 @@
+/* Thème personnalisé */
+QWidget {
+    background-color: rgb(5, 9, 27);
+}
+
+QPushButton {
+    color: rgb(232, 232, 232); /* Texte en gris clair */
+    border-radius: 15px; /* Arrondir les coins pour rendre les boutons plus arrondis */
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold; /* Texte en gras */
+}
+
+QPushButton#pushConnect {
+    background-color: rgb(5,9,27); /* Couleur pour le bouton Start and Connect */
+    border: 3px solid rgb(0, 255, 0,0.35); /* Bordure verte avec une épaisseur de 3px */
+}
+
+QPushButton#pushConnect:hover {
+    background-color: rgba(0, 255, 0,0.35); /* Changement de couleur au survol */
+}
+
+QPushButton#pushStop {
+    background-color: rgb(5,9,27); /* Couleur pour le bouton Pause */
+    border: 3px solid rgba(255, 255, 0, 0.35); /* Bordure jaune avec une épaisseur de 3px */
+}
+
+QPushButton#pushStop:hover {
+    background-color: rgba(255, 255, 0, 0.35); /* Changement de couleur au survol */
+}
+
+QPushButton#pushQuit {
+    background-color: rgb(5,9,27); /* Couleur pour le bouton Quit */
+    border: 3px solid rgb(255, 0, 0,0.35); /* Bordure rouge avec une épaisseur de 3px */
+}
+
+QPushButton#pushQuit:hover {
+    background-color: rgb(255, 0, 0,0.35); /* Changement de couleur au survol */
+}
+
+QLineEdit {
+    background-color: rgb(5,9,27); /* Couleur de fond de la fenêtre d'affichage de la ligne */
+    color: rgb(232, 232, 232);
+    border: 3px solid rgb(85, 136, 163,0.35);
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 16px; /* Augmenter la taille de la police */
+    font-weight: bold; /* Texte en gras */
+    width: 250px; /* Largeur fixe */
+}
+
+QLineEdit:hover,
+QLineEdit:focus {
+    background-color: rgb(85, 136, 163); /* Changement de couleur au survol et au focus */
+}
+
+QComboBox {
+    background-color: rgb(5,9,27); /* Couleur de fond de la fenêtre d'affichage de la ligne */
+    color: rgb(232, 232, 232);
+    border: 3px solid rgb(85, 136, 163,0.35);
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 16px; /* Augmenter la taille de la police */
+    font-weight: bold; /* Texte en gras */
+    width: 250px; /* Largeur fixe */
+}
+
+QComboBox:hover,
+QComboBox:focus {
+    background-color: rgb(85, 136, 163); /* Changement de couleur au survol et au focus */
+}
+
+
+
+
+
+
+
+QMenuBar {
+    background-color: rgb(5, 9, 27);
+    color: rgb(6, 9, 27);
+}
+
+QMenuBar::item {
+    background-color: transparent;
+}
+
+QMenuBar::item:selected {
+    background-color: rgb(83, 92, 145);
+}
+
+QMenuBar::item:pressed {
+    background-color: rgb(83, 92, 145);
+}
+
+QStatusBar {
+    background-color: rgb(5, 9, 27);
+    color: rgb(232, 232, 232);
+}
+QGraphicsView {
+    background-color: rgba(5,9,27,255); 
+    border-radius: 50%; /* Bordure arrondie pour simuler un hublot */
+    border: 4px rgba(255, 255, 255, 0.8); /* Bordure blanche semi-transparente */
+    border-style: groove;
+
+}
+

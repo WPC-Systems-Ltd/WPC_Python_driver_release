@@ -14,36 +14,31 @@ Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
-import time
-import numpy as np
-import mpl_toolkits.mplot3d as mplot3d
-from mpl_toolkits.mplot3d import Axes3D
-from matplotlib.transforms import Affine2D
+
+import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
 import matplotlib.image as mpimg
 import matplotlib.font_manager as font_manager
 from matplotlib import rcParams
+from matplotlib.transforms import Affine2D
+
+import mpl_toolkits.mplot3d as mplot3d
 
 
-
-
+import numpy as np
 import stl.mesh as mesh
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-import matplotlib.gridspec as mgs
-import matplotlib.gridspec as gridspec
-import matplotlib.patches as patches
+
 
 ## WPC
 
 from wpcsys import pywpc
 
 
-
 ################################################################################
 ## Configuration
 
-DATA_PATH = 'examples/Console/Synchronous/WifiDAQE3A/AHRS/data/'
-IMG_PATH = 'examples/Console/Synchronous/WifiDAQE3A/AHRS/data/avion_'
+DATA_PATH = 'Material/viz_data/'
+IMG_PATH = 'Material/viz_data/avion_'
 
 
 
@@ -93,6 +88,7 @@ center_roll = size_roll / 2
 diag_roll = np.sqrt(np.sum(size_roll ** 2))
 alpha_roll = (diag_roll - size_roll) / 2
 
+## Dictionaries
 PLANE_DICT = {
   'yaw': dict(img=img_yaw, size=size_yaw, center=center_yaw, diag=diag_yaw, alpha=alpha_yaw),
   'pitch': dict(img=img_pitch, size=size_pitch, center=center_pitch, diag=diag_pitch, alpha=alpha_pitch),
@@ -127,22 +123,31 @@ def WPC_initializeFigure(nb_rows=1, nb_col=1, share_x='all', share_y='all', opti
 
   ## If `option` is `3D`, return a 3-D axis.
   if option == '3D':
-    ax_main = fig.add_subplot(gs[:,0], projection='3d')
+    ax_main = fig.add_subplot(gs[:, 0], projection='3d')
     ax_main.set_title('Main 3D Plot')
     ax_plane_yaw = fig.add_subplot(gs[0, 1])
     ax_plane_pitch = fig.add_subplot(gs[1, 1])
     ax_plane_roll = fig.add_subplot(gs[2, 1])
-    ax_value_yaw=fig.add_subplot(gs[0,2])
-    ax_value_pitch=fig.add_subplot(gs[1,2])
-    ax_value_roll=fig.add_subplot(gs[2,2])
+    ax_value_yaw=fig.add_subplot(gs[0, 2])
+    ax_value_pitch=fig.add_subplot(gs[1, 2])
+    ax_value_roll=fig.add_subplot(gs[2, 2])
     
     fig.figimage(imgWPC, xo=fig.bbox.xmin, yo=fig.bbox.ymin, alpha=1)
+    ax_dict = {
+      'main': ax_main,
+      'plane_yaw': ax_plane_yaw,
+      'plane_pitch': ax_plane_pitch,
+      'plane_roll': ax_plane_roll,
+      'value_yaw': ax_value_yaw,
+      'value_pitch': ax_value_pitch,
+      'value_roll': ax_value_roll,
+    }
 
-    return fig, ax_main, ax_plane_yaw, ax_plane_pitch, ax_plane_roll, ax_value_yaw, ax_value_pitch, ax_value_roll
+    return fig, ax_dict
 
   ## If `option` is `grid`, return gridspec for further usage.
   if option == 'grid':
-    ax_grid = mgs.GridSpec(nb_rows, nb_col, figure=fig)
+    ax_grid = gridspec.GridSpec(nb_rows, nb_col, figure=fig)
     return fig, None, None, ax_grid
 
   ## If empty rows or columns, return `None`.
@@ -160,8 +165,8 @@ def WPC_initializeFigure(nb_rows=1, nb_col=1, share_x='all', share_y='all', opti
 
   return fig, ax, ax_arr, ax_mat
 
-def WPC_initialize_plane(angle_type,fig,ax):
-  #charger l'image
+def WPC_initialize_plane(angle_type, fig, ax):
+  #load image
   ax.set_axis_off()
   d_plane = PLANE_DICT[angle_type]
   img_plane=d_plane['img']
@@ -176,7 +181,7 @@ def WPC_initialize_plane(angle_type,fig,ax):
   ax.set_xlim(-alpha_plane[1]*tt, (size_plane[1] + alpha_plane[1])*tt)
   ax.set_ylim(-alpha_plane[0]*tt, (size_plane[0] + alpha_plane[0])*tt)
   ## display circle
-  cc = plt.Circle((center_plane[1],center_plane[0]), diag_plane/2, fill=False, color='black', linewidth=2, linestyle = 'dashdot')
+  cc = plt.Circle((center_plane[1], center_plane[0]), diag_plane/2, fill=False, color='black', linewidth=2, linestyle = 'dashdot')
   ax.add_artist(cc) 
   return  im
 
@@ -205,8 +210,8 @@ def WPC_saveFigure(save, fig, tag, prefix='', verbose=True):
   if save == 0: ## Show
     w, h = fig.get_size_inches()
     fig.set_size_inches(w, h, forward=True)
-    mpl.pyplot.ion() ## Turn on interactive mode
-    mpl.pyplot.show()
+    plt.ion() ## Turn on interactive mode
+    plt.show()
   return
 
 def WPC_getRotMat(roll, pitch, yaw, use_deg=False):
@@ -221,35 +226,41 @@ def WPC_getRotMat(roll, pitch, yaw, use_deg=False):
   return rot_mat
 
 def WPC_showEmpty(tag=DEFAULT_MODEL, save=0):
-  fig, ax_main, ax_plane_yaw, ax_plane_pitch, ax_plane_roll, ax_value_yaw, ax_value_pitch, ax_value_roll = WPC_initializeFigure(option='3D')
-  im_yaw = WPC_initialize_plane('yaw',fig,ax_plane_yaw)
-  im_pitch = WPC_initialize_plane('pitch',fig,ax_plane_pitch)
-  im_roll = WPC_initialize_plane('roll',fig,ax_plane_roll)
+  fig, ax_dict = WPC_initializeFigure(option='3D')
+  im_yaw = WPC_initialize_plane('yaw', fig, ax_dict.get('plane_yaw'))
+  im_pitch = WPC_initialize_plane('pitch', fig, ax_dict.get('plane_pitch'))
+  im_roll = WPC_initialize_plane('roll', fig, ax_dict.get('plane_roll'))
+
+  im_dict = {
+    'yaw': im_yaw,
+    'pitch': im_pitch,
+    'roll': im_roll,
+  }
   d = MODEL_DICT[tag] #model dict dictionary
-  ## print("Model Dict",MODEL_DICT)
+  ## print("Model Dict", MODEL_DICT)
 
   ## Load
   model = mesh.Mesh.from_file(f'{DATA_PATH}{tag}.stl')
   data_orig = model.vectors ## 3D array
 
   ## Plot
-  poly = mplot3d.art3d.Poly3DCollection([],color=bmh_blue, edgecolor='k', lw=0.2) #or lightsteelblue
-  ax_main.add_collection3d(poly)
+  poly = mplot3d.art3d.Poly3DCollection([], color=bmh_blue, edgecolor='k', lw=0.2) #or lightsteelblue
+  ax_dict.get('main').add_collection3d(poly)
 
 
   ## Settings
   scale = [-0.6*d['view'], 0.6*d['view']]
-  ax_main.view_init(elev=0, azim=0, roll=0)
-  ax_main.auto_scale_xyz(scale, scale, scale)
-  ax_main.set_axis_off()
-  ax_main.set_title(f'Sensor fusion {tag}',weight='bold')
+  ax_dict.get('main').view_init(elev=0, azim=0, roll=0)
+  ax_dict.get('main').auto_scale_xyz(scale, scale, scale)
+  ax_dict.get('main').set_axis_off()
+  ax_dict.get('main').set_title(f'Sensor fusion {tag}', weight='bold')
   ## Save
   fig.set_size_inches(6, 6)
   fig.subplots_adjust(left=0.05, right=0.95, bottom=0.05, top=0.95)
   fig.canvas.manager.set_window_title('WPC AHRS visualization')
 
   WPC_saveFigure(save, fig, f'{DATA_PATH}{tag}_empty')
-  return fig, ax_main, data_orig, poly, ax_plane_yaw, ax_plane_pitch, ax_plane_roll, ax_value_yaw, ax_value_pitch, ax_value_roll, im_yaw, im_pitch, im_roll
+  return fig, ax_dict, im_dict, data_orig, poly
 
 
 def WPC_drawCat(fig, ax, data_orig, poly, roll, pitch, yaw):
@@ -264,33 +275,32 @@ def WPC_drawCat(fig, ax, data_orig, poly, roll, pitch, yaw):
   return
 
 #angle_type = 'yaw' for example
-def WPC_plot_plane(fig,ax,angle_type,im,center):
+def WPC_plot_plane(fig, ax, angle_type, im, center):
    # Afficher l'image
   im.remove()
-  # Calculer l'angle de rotation en radians
-  angle = np.deg2rad(angle_type)  # Convertir en radians
-  # Appliquer la rotation à l'image
+  # Calculate rotation angle in radians
+  angle = np.deg2rad(angle_type)  #Convert in  en radians
+  # Apply rotation to the image
   rotation_matrix = Affine2D().rotate_deg_around(center[1], center[0], np.rad2deg(angle)+180)
   im.set_transform(rotation_matrix + ax.transData)
-  # Afficher à nouveau l'image
+  # Show the image again
   ax.add_artist(im)
   
   return
 
-def WPC_text_button(fig,ax,roll,pitch,yaw,ax_value_roll,ax_value_pitch,ax_value_yaw):
-  for ax in [ax_value_roll,ax_value_pitch,ax_value_yaw]:
+def WPC_text_button(fig, Roll, Pitch, Yaw, ax_value_roll, ax_value_pitch, ax_value_yaw):
+  for ax in [ax_value_roll, ax_value_pitch, ax_value_yaw]:
     ax.clear()
     ax.axis('off')
-    ax.add_patch(plt.Rectangle((0,0), 1, 1, facecolor='#ebebeb',
+    ax.add_patch(plt.Rectangle((0, 0), 1, 1, facecolor='#ebebeb',
                            transform=ax.transAxes, zorder=-1))
     ax.grid(False)
-  Roll ="{:7.2f}".format(roll) 
-  Pitch="{:7.2f}".format(pitch)
-  Yaw="{:7.2f}".format(yaw)
-  ax_value_roll.text(0.5, 0.5, f' Roll:\n{Roll} deg', fontsize=32,weight='bold', color=bmh_blue,ha='center',va='center')
-  ax_value_pitch.text(0.5, 0.5, f' Pitch:\n{Pitch} deg', fontsize=32,weight='bold',color=bmh_burgundy,ha='center', va='center')
-  ax_value_yaw.text(0.5, 0.5, f' Yaw:\n{Yaw} deg', fontsize=32,weight='bold',color=bmh_purple,ha='center', va='center')
-  ax.grid(False)
+  roll ="{:7.2f}".format(Roll) 
+  pitch="{:7.2f}".format(Pitch)
+  yaw="{:7.2f}".format(Yaw)
+  ax_value_roll.text(0.5, 0.5, f' Roll:\n{roll} deg', fontsize=32, weight='bold', color=bmh_blue,ha='center',va='center')
+  ax_value_pitch.text(0.5, 0.5, f' Pitch:\n{pitch} deg', fontsize=32, weight='bold', color=bmh_burgundy, ha='center',  va='center')
+  ax_value_yaw.text(0.5, 0.5, f' Yaw:\n{yaw} deg', fontsize=32, weight='bold', color=bmh_purple, ha='center', va='center')
   
   return
     
@@ -304,7 +314,7 @@ def main():
     ## Show empty
 
 
-    fig, ax, data_orig, poly, ax_plane_yaw, ax_plane_pitch, ax_plane_roll, ax_value_yaw, ax_value_pitch, ax_value_roll, im_yaw, im_pitch, im_roll = WPC_showEmpty()
+    fig, ax_dict, im_dict, data_orig, poly = WPC_showEmpty()
 
 
     ## Connect to device
@@ -343,11 +353,11 @@ def main():
         while plt.fignum_exists(fig.number):
             ahrs_list = dev.AHRS_readStreaming(port, read_delay)
             if len(ahrs_list) > 0:
-                WPC_drawCat(fig, ax, data_orig, poly, ahrs_list[0], ahrs_list[1], ahrs_list[2])
-                WPC_plot_plane(fig,ax_plane_roll, ahrs_list[0], im_roll, center_roll)
-                WPC_plot_plane(fig,ax_plane_pitch, ahrs_list[1], im_pitch, center_pitch)
-                WPC_plot_plane(fig,ax_plane_yaw, ahrs_list[2], im_yaw, center_yaw)
-                WPC_text_button(fig,ax_value_yaw, ahrs_list[0], ahrs_list[1], ahrs_list[2],ax_value_roll,ax_value_pitch,ax_value_yaw)
+                WPC_drawCat(fig, ax_dict.get('main'), data_orig, poly, ahrs_list[0], ahrs_list[1], ahrs_list[2])
+                WPC_plot_plane(fig, ax_dict.get('plane_roll'), ahrs_list[0], im_dict.get('roll'), center_roll)
+                WPC_plot_plane(fig, ax_dict.get('plane_pitch'), ahrs_list[1], im_dict.get('pitch'), center_pitch)
+                WPC_plot_plane(fig, ax_dict.get('plane_yaw'), ahrs_list[2], im_dict.get('yaw'), center_yaw)
+                WPC_text_button(fig, ahrs_list[0], ahrs_list[1], ahrs_list[2], ax_dict.get('value_roll'), ax_dict.get('value_pitch'),  ax_dict.get('value_yaw'))
                 plt.tight_layout()
                 plt.pause(2**-5)
 
