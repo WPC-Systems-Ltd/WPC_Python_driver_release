@@ -28,9 +28,9 @@ tag = 'cat'
 
 style_neon = DATA_PATH + "themeWPC.qss"   
 text_properties = {
-            'yaw': {'text': 'W', 'font': QtGui.QFont("Arial", 38), 'color': QtGui.QColor(232, 232, 232)},
+            'yaw': {'text': 'C', 'font': QtGui.QFont("Arial", 38), 'color': QtGui.QColor(232, 232, 232)},
             'pitch': {'text': 'P', 'font': QtGui.QFont("Arial", 38), 'color': QtGui.QColor(232, 232, 232)},
-            'roll': {'text': 'C', 'font': QtGui.QFont("Arial", 38), 'color': QtGui.QColor(232, 232, 232)}
+            'roll': {'text': 'W', 'font': QtGui.QFont("Arial", 38), 'color': QtGui.QColor(232, 232, 232)}
         }
 
 
@@ -204,7 +204,7 @@ class Ui_MainWindow(object):
         self.graphicPitch.setScene(self.scenePitch)
         self.graphicRoll.setScene(self.sceneRoll)
 
-        self.scene_dict = {'yaw' : self.sceneYaw,'pitch' : self.scenePitch,'roll' : self.sceneRoll}
+        self.scene_dict = {'yaw' : self.sceneYaw, 'pitch' : self.scenePitch, 'roll' : self.sceneRoll}
         
 
         # Load and show images in their scenes
@@ -228,11 +228,11 @@ class Ui_MainWindow(object):
         self.Roll_height = self.pixmap_Roll.pixmap().height()
         self.Roll_center = (self.Roll_width / 2, self.Roll_height / 2)
         
-        self.pixmap = {'yaw' : self.pixmap_Yaw,'pitch' : self.pixmap_Pitch,'roll' : self.pixmap_Roll} #dictionnary to store the pixmap
-        self.center = {'yaw' : self.Yaw_center,'pitch' : self.Pitch_center,'roll' : self.Roll_center} #dictionnary to store the center of the pixmap
+        self.pixmap = {'yaw' : self.pixmap_Yaw, 'pitch' : self.pixmap_Pitch, 'roll' : self.pixmap_Roll} #dictionnary to store the pixmap
+        self.center = {'yaw' : self.Yaw_center, 'pitch' : self.Pitch_center, 'roll' : self.Roll_center} #dictionnary to store the center of the pixmap
 
         #initialize useful constants
-        self.dict_map = {'roll' : 0,'pitch' : 1,'yaw' : 2}
+        self.dict_map = {'roll' : 0, 'pitch' : 1, 'yaw' : 2}
         
         #to prevent error in case of missing values, we just read the last one available
         self.list_angle = [[0,0] for i in range(3)]        
@@ -251,7 +251,7 @@ class Ui_MainWindow(object):
         self.faces = mesh.cells[0].data
 
         # Create a mesh item
-        self.mesh_item = gl.GLMeshItem(vertexes=self.vertices, faces=self.faces, smooth=False, color=(152, 171, 238,0.3))
+        self.mesh_item = gl.GLMeshItem(vertexes=self.vertices, faces=self.faces,  smooth=False, color=(152, 171, 238, 0.3))
         self.widget3D.addItem(self.mesh_item)
         # Set camera position and orientation
         # Calculate the maximum dimension of the mesh
@@ -266,7 +266,7 @@ class Ui_MainWindow(object):
         
         #change displaying
         self.mesh_item.setGLOptions('additive')
-        self.mesh_item.setMeshData(vertexes=self.vertices, faces=self.faces, smooth=True, color=(152, 171, 238,0.4))
+        self.mesh_item.setMeshData(vertexes=self.vertices, faces=self.faces, smooth=True, color=(152, 171, 238, 0.4))
         #plot a grid
         grid = gl.GLGridItem()
         self.widget3D.addItem(grid)
@@ -274,7 +274,7 @@ class Ui_MainWindow(object):
         grid.scale(max_dimension, max_dimension, max_dimension)
         grid.translate(0, 0, -max_dimension * 1.2)
         #light blue background, set it 
-        self.widget3D.setBackgroundColor(5,9,27)
+        self.widget3D.setBackgroundColor(5, 9, 27)
         
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -304,7 +304,7 @@ class Ui_MainWindow(object):
                     ## Release device handle
                     self.dev.close()
                     return
-                self.dev.AHRS_open(self.port,self.timeout)
+                self.dev.AHRS_open(self.port, self.timeout)
                 self.dev.AHRS_setSamplingPeriod(self.port, self.sampling_period, self.timeout)
                 self.dev.AHRS_start(self.port, self.timeout)
                 self.timer = QtCore.QTimer()
@@ -346,7 +346,7 @@ class Ui_MainWindow(object):
         scene.addPixmap(pixmap)
 
     def general_update(self):
-        self.ahrs_list = self.dev.AHRS_readStreaming(self.port,self.read_delay)
+        self.ahrs_list = self.dev.AHRS_readStreaming(self.port, self.read_delay)
         self.ip_address = self.lineEditIP.text()  # New IP address
         
         # Get port from GUI
@@ -368,7 +368,7 @@ class Ui_MainWindow(object):
         self.update_text()
         self.update_mesh()
 
-    def align_texts(self, txt1,txt2,type):
+    def align_texts(self, txt1, txt2, type):
         if len(txt1)>len(txt2):
             margin = (len(txt1)-len(txt2))//2
             self.textItems.get(type).setPlainText(txt1+'\n'+' '*margin+txt2)
@@ -379,18 +379,18 @@ class Ui_MainWindow(object):
     def update_text(self):
         
         #improvement : create a security process to avoid missing value (same as in update_image_rotation_plane)
-        self.align_texts('Yaw',f'{self.ahrs_list[self.dict_map.get("yaw")]:.2f} deg',type='yaw')
-        self.align_texts('Pitch',f'{self.ahrs_list[self.dict_map.get("pitch")]:.2f} deg',type='pitch')
-        self.align_texts('Roll',f'{self.ahrs_list[self.dict_map.get("roll")]:.2f} deg',type='roll')
+        self.align_texts('Yaw', f'{self.ahrs_list[self.dict_map.get("yaw")]:.2f} deg', type='yaw')
+        self.align_texts('Pitch', f'{self.ahrs_list[self.dict_map.get("pitch")]:.2f} deg', type='pitch')
+        self.align_texts('Roll', f'{self.ahrs_list[self.dict_map.get("roll")]:.2f} deg', type='roll')
         
 
             
-    def get_scene_dimensions(self,scene):
+    def get_scene_dimensions(self, scene):
         scene_x = scene.sceneRect().width()
         scene_y = scene.sceneRect().height()
         return scene_x, scene_y
         
-    def update_image_rotation_plane(self,type):
+    def update_image_rotation_plane(self, type):
         # Appliquer la rotation à l'image
  
         
@@ -419,7 +419,7 @@ class Ui_MainWindow(object):
         
 
     def update_mesh(self):
-        self.ahrs_list = self.dev.AHRS_readStreaming(self.port,self.read_delay)
+        self.ahrs_list = self.dev.AHRS_readStreaming(self.port, self.read_delay)
         # Apply rotation to vertices
         rotated_vertices = np.dot(self.vertices, self.WPC_getRotMat().T)
 
