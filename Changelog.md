@@ -1,16 +1,18 @@
 WPC Python driver release changelog
 ===================================
+
 v3.0.18 Date: 2024/02/26, Developer: Duflosth
-----------------------------------------------------
+---------------------------------------------
 ### Added
-- the file AHRS_visualize_Qt.py that provides an interactive sensor visualisation interface
+- The file AHRS_visualize_Qt.py that provides an interactive sensor visualisation interface
 - viz_data folder, with plane images, 7 digit police, and themeWPC.qss for the style the PyQt interface
-## Changed
-- the file AHRS_visualize.py: added animated pitch/roll/yaw plane images
+
+### Changed
+- The file AHRS_visualize.py: added animated pitch/roll/yaw plane images
 
 ### Removed
-- unnecessary code in AHRS_visualize.py
-- data folder in AHRS/
+- Unnecessary code in AHRS_visualize.py
+- Data folder in AHRS/
 
 v3.0.17 Date: 2024/02/05, Developer: Chunglee_people
 ----------------------------------------------------
