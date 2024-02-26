@@ -9,8 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QGraphicsScene, QGraphicsView, QSplashScreen, QApplication, QGridLayout, QMainWindow, QGraphicsTextItem
-from PyQt5.QtGui import QPixmap, QTransform, QFont, QFontDatabase
+from PyQt5.QtWidgets import QGraphicsScene, QGraphicsView, QSplashScreen, QMessageBox, QApplication, QGridLayout, QMainWindow, QGraphicsTextItem
+from PyQt5.QtGui import QPixmap, QTransform, QKeySequence, QFont, QFontDatabase
 from PyQt5.QtCore import Qt
 import time
 
@@ -24,10 +24,10 @@ from wpcsys import pywpc
 
 DATA_PATH = "Material/viz_data/"
 IMG_PATH = 'Material/viz_data/avion_'
-tag = 'cat'
+TAG = 'cat'
 
-style_neon = DATA_PATH + "themeWPC.qss"   
-text_properties = {
+STYLE_WPC = DATA_PATH + "themeWPC.qss"   
+TEXT_PROPERTIES = {
             'yaw': {'text': 'C', 'font': QtGui.QFont("Arial", 38), 'color': QtGui.QColor(232, 232, 232)},
             'pitch': {'text': 'P', 'font': QtGui.QFont("Arial", 38), 'color': QtGui.QColor(232, 232, 232)},
             'roll': {'text': 'W', 'font': QtGui.QFont("Arial", 38), 'color': QtGui.QColor(232, 232, 232)}
@@ -48,6 +48,7 @@ class Ui_MainWindow(object):
         self.dev = pywpc.WifiDAQE3A()
         ## DISPLAY
         
+        #Main WWindow settings
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(476, 384)
         MainWindow.setAutoFillBackground(False)
@@ -59,6 +60,8 @@ class Ui_MainWindow(object):
         self.MainVlayout.setObjectName("MainVlayout")
         
         #Input Display
+        
+        #LineEdit, we put a default IP address
         self.InputLayout = QtWidgets.QHBoxLayout()
         self.InputLayout.setObjectName("InputLayout")
         self.lineEditIP = QtWidgets.QLineEdit(self.centralwidget)
@@ -67,36 +70,52 @@ class Ui_MainWindow(object):
         self.lineEditIP.setText("192.168.5.39")
         self.InputLayout.addWidget(self.lineEditIP)
         
+        #ComboBox, even if there is only one port, we keep it to be able to add more in the future
         self.comboBox_port = QtWidgets.QComboBox(self.centralwidget)
         self.comboBox_port.addItem("0")
         self.comboBox_port.setCurrentIndex(0)
         self.comboBox_port.setObjectName("comboBox_port")     
         self.InputLayout.addWidget(self.comboBox_port)
         
+        #Start connection
         self.pushConnect = QtWidgets.QPushButton(self.centralwidget)
         self.pushConnect.setObjectName("pushConnect")
         self.InputLayout.addWidget(self.pushConnect)
+        self.shortcutConnect = QtWidgets.QShortcut(QKeySequence(Qt.Key_Return), MainWindow)
+        self.shortcutConnect.activated.connect(self.start_connection)
         self.pushConnect.clicked.connect(self.start_connection)
         
+        #Stop connection
         self.pushStop = QtWidgets.QPushButton(self.centralwidget)
         self.pushStop.setObjectName("pushStop")
+        self.shortcutStop = QtWidgets.QShortcut(QKeySequence(Qt.Key_Space), MainWindow)
+        self.shortcutStop.activated.connect(self.stop_connection)
         self.InputLayout.addWidget(self.pushStop)
+        
         self.pushStop.clicked.connect(self.stop_connection)
         
+        #Quit
         self.pushQuit = QtWidgets.QPushButton(self.centralwidget)
         self.pushQuit.setObjectName("pushQuit")
         self.InputLayout.addWidget(self.pushQuit)
         self.pushQuit.clicked.connect(self.close_and_quit)
+        self.shortcutQuit = QtWidgets.QShortcut(QtGui.QKeySequence("Ctrl+Q"), MainWindow)
+        self.shortcutQuit.activated.connect(self.close_and_quit)
         self.lineEditIP.setAlignment(QtCore.Qt.AlignCenter)
 
       
         self.MainVlayout.addLayout(self.InputLayout)
         
+        #Prepare the layout for the all graphic parts
         self.gridLayout = QtWidgets.QGridLayout()
         self.gridLayout.setObjectName("gridLayout")
 
+        #Splitter to separate the 3D graphic from the others, and give flexibility to the user:
+        #he can change the size of the 3D graphic directly on the interface
         self.splitter = QtWidgets.QSplitter(QtCore.Qt.Horizontal)  
 
+
+        #3D graphic part
         self.widget3D = QtWidgets.QGraphicsView(self.centralwidget)
         self.widget3D.setObjectName("graphicMesh")
         self.meshLayout = QtWidgets.QGridLayout()
@@ -107,28 +126,39 @@ class Ui_MainWindow(object):
         self.other_widgets = QtWidgets.QWidget()
         self.other_widgets_layout = QtWidgets.QGridLayout()
                 
+        ## Graphic Windows of plane images
+        
+        #Pitch part 
         self.graphicPitch = QtWidgets.QGraphicsView(self.centralwidget)
         self.graphicPitch.setObjectName("graphicPitch")
         self.other_widgets_layout.addWidget(self.graphicPitch, 2, 1, 1, 1)
         
+        #Yaw part
         self.graphicYaw = QtWidgets.QGraphicsView(self.centralwidget)
         self.graphicYaw.setObjectName("graphicYaw")
         self.other_widgets_layout.addWidget(self.graphicYaw, 3, 1, 1, 1)
         
+        #Roll part
         self.graphicRoll = QtWidgets.QGraphicsView(self.centralwidget)
         self.graphicRoll.setObjectName("graphicRoll")
         self.other_widgets_layout.addWidget(self.graphicRoll, 1, 1, 1, 1)
         
+        #Dictionary to find it easily
         self.graphicPlanes = {'yaw': self.graphicYaw, 'pitch': self.graphicPitch, 'roll': self.graphicRoll}
         
+        ##Graphic Windows of numeric values display of pitch, roll and yaw
+        
+        #Pitch part
         self.graphicTextPitch = QtWidgets.QGraphicsView(self.centralwidget)
         self.graphicTextPitch.setObjectName("graphicTextPitch")
         self.other_widgets_layout.addWidget(self.graphicTextPitch, 2, 2, 1, 1)
         
+        #Yaw part
         self.graphicTextYaw = QtWidgets.QGraphicsView(self.centralwidget)
         self.graphicTextYaw.setObjectName("graphicTextYaw")
         self.other_widgets_layout.addWidget(self.graphicTextYaw, 3, 2, 1, 1)
         
+        #Roll part
         self.graphicTextRoll = QtWidgets.QGraphicsView(self.centralwidget)
         self.graphicTextRoll.setObjectName("graphicTextRoll")
         self.other_widgets_layout.addWidget(self.graphicTextRoll, 1, 2, 1, 1)
@@ -137,23 +167,11 @@ class Ui_MainWindow(object):
 
         self.splitter.addWidget(self.other_widgets)
         self.gridLayout.addWidget(self.splitter, 1, 1, 3, 1)
-        
-        
-        
-        
-        
         self.MainVlayout.addLayout(self.gridLayout)
+        
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 476, 22))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
-        
+              
         #Input get infos
-        
         self.ip_address = self.lineEditIP.text()
         self.port = int(self.comboBox_port.currentIndex())
         self.read_delay = 0.5 ## second
@@ -169,9 +187,9 @@ class Ui_MainWindow(object):
         self.textSceneRoll = QGraphicsScene()
         
  
-
+        #create a dictionary to store the text characteristics
         self.textItems = {}
-        for key, props in text_properties.items():
+        for key, props in TEXT_PROPERTIES.items():
             text_item = QtWidgets.QGraphicsTextItem(props['text'])
             text_item.setFont(props['font'])
             text_item.setDefaultTextColor(props['color'])
@@ -228,6 +246,7 @@ class Ui_MainWindow(object):
         self.Roll_height = self.pixmap_Roll.pixmap().height()
         self.Roll_center = (self.Roll_width / 2, self.Roll_height / 2)
         
+        #create dictionaries to store the pixmap and the center of the pixmap, convenient for the rotation
         self.pixmap = {'yaw' : self.pixmap_Yaw, 'pitch' : self.pixmap_Pitch, 'roll' : self.pixmap_Roll} #dictionnary to store the pixmap
         self.center = {'yaw' : self.Yaw_center, 'pitch' : self.Pitch_center, 'roll' : self.Roll_center} #dictionnary to store the center of the pixmap
 
@@ -243,7 +262,7 @@ class Ui_MainWindow(object):
         self.widget3D = gl.GLViewWidget()
 
         # Load STL mesh file
-        mesh = meshio.read(f'{DATA_PATH}{tag}.stl')
+        mesh = meshio.read(f'{DATA_PATH}{TAG}.stl')
         
         # Extract vertices and faces
         
@@ -286,24 +305,36 @@ class Ui_MainWindow(object):
 
 
 
-
+    #start connection
     def start_connection(self):
             if not self.timer_running:
                 print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
-                self.timer_running = True
+                
                 self.ip_address = self.lineEditIP.text()
                 self.port = int(self.comboBox_port.currentIndex())
                 try:
-                     self.dev.connect("192.168.5.39") ## Depend on your device
+                     self.dev.connect(self.ip_address) ## Depend on your device
                 except Exception as err:
                     pywpc.printGenericError(err)
-                    text_error = QtWidgets.QGraphicsTextItem('Error: ' + str(err))  
-                    text_error.setDefaultTextColor(QtGui.QColor(255, 0, 0))  
-                    self.textScenePitch.addItem(text_error)   
+                    ErrorMsgBox = QMessageBox()
+                    ErrorMsgBox.setIcon(QMessageBox.Information)
+                    ErrorMsgBox.setText("Error: " + str(err))
+                    ErrorMsgBox.setWindowTitle("Error")
+                    ErrorMsgBox.setStandardButtons(QMessageBox.Ok)
                     
-                    ## Release device handle
-                    self.dev.close()
+                    ErrorMsgBox.setStyleSheet("QLabel { color: rgba(255, 255, 255, 0.7); font-weight: bold; text-align: center; } QPushButton { border: 2px solid rgba(255, 255, 255, 0.7); border-radius: 10px; } \
+                        QPushButton#qt_msgbox_buttonrole { color: rgba(255, 255, 255, 0.7); }")
+
+
+                    # Show the messagebox
+                    ErrorMsgBox.exec_()
+              
+                    
+
                     return
+                
+                #change the state of timer_running to avoid multiple pressing errors
+                self.timer_running = True
                 self.dev.AHRS_open(self.port, self.timeout)
                 self.dev.AHRS_setSamplingPeriod(self.port, self.sampling_period, self.timeout)
                 self.dev.AHRS_start(self.port, self.timeout)
@@ -312,6 +343,7 @@ class Ui_MainWindow(object):
                 self.timer.timeout.connect(self.general_update)
                 self.timer.start()
     
+    # Stop the connection, close the device and quit the application, take into account the quit_state to avoid multiple pressing errors
     def stop_connection(self):
         if not self.timer_running and not self.quit_state:
              # Timer does not exist
@@ -336,15 +368,19 @@ class Ui_MainWindow(object):
             self.dev.disconnect()    
             
 
+    # Close the application
     def close_and_quit(self):
         self.quit_state = True
         MainWindow.close() 
         self.stop_connection()
-                
+        self.dev.close()
+    
+    #simple function to load an image in a scene
     def load_image(self, file_path, scene):
         pixmap = QPixmap(file_path)
         scene.addPixmap(pixmap)
 
+    #update the display, calls the functions to update all sub parts of the display
     def general_update(self):
         self.ahrs_list = self.dev.AHRS_readStreaming(self.port, self.read_delay)
         self.ip_address = self.lineEditIP.text()  # New IP address
@@ -368,6 +404,7 @@ class Ui_MainWindow(object):
         self.update_text()
         self.update_mesh()
 
+    #simple function to align texts
     def align_texts(self, txt1, txt2, type):
         if len(txt1)>len(txt2):
             margin = (len(txt1)-len(txt2))//2
@@ -376,20 +413,21 @@ class Ui_MainWindow(object):
             margin = (len(txt2)-len(txt1))//2
             self.textItems.get(type).setPlainText(' '*margin+txt1+'\n'+txt2)
 
+    #update the text display
     def update_text(self):
         
-        #improvement : create a security process to avoid missing value (same as in update_image_rotation_plane)
         self.align_texts('Yaw', f'{self.ahrs_list[self.dict_map.get("yaw")]:.2f} deg', type='yaw')
         self.align_texts('Pitch', f'{self.ahrs_list[self.dict_map.get("pitch")]:.2f} deg', type='pitch')
         self.align_texts('Roll', f'{self.ahrs_list[self.dict_map.get("roll")]:.2f} deg', type='roll')
         
 
-            
+    #simple function to get the dimensions of a scene     
     def get_scene_dimensions(self, scene):
         scene_x = scene.sceneRect().width()
         scene_y = scene.sceneRect().height()
         return scene_x, scene_y
         
+    #update the rotation of plane images, two  opposite translations here because the rotation is done around the center of the image
     def update_image_rotation_plane(self, type):
         # Appliquer la rotation à l'image
  
@@ -405,6 +443,7 @@ class Ui_MainWindow(object):
         self.pixmap.get(type).setTransform(transform)
         
 
+    #simple function to get the rotation matrix
     def WPC_getRotMat(self, use_deg=True):
         yaw, pitch, roll = self.ahrs_list[self.dict_map.get('yaw')], self.ahrs_list[self.dict_map.get('pitch')], self.ahrs_list[self.dict_map.get('roll')]
         if use_deg:
@@ -418,6 +457,7 @@ class Ui_MainWindow(object):
         return rot_mat    
         
 
+    #update the mesh display
     def update_mesh(self):
         self.ahrs_list = self.dev.AHRS_readStreaming(self.port, self.read_delay)
         # Apply rotation to vertices
@@ -431,7 +471,7 @@ class Ui_MainWindow(object):
         self.meshLayout.addWidget(self.widget3D, 0, 0, self.meshLayout.rowCount(), 1)
         
 
-        
+    #function to retranslate the interface for the user
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "WPC Visualisation"))
@@ -440,11 +480,13 @@ class Ui_MainWindow(object):
         self.pushQuit.setText(_translate("MainWindow", "Quit"))
         self.comboBox_port.setItemText(0, _translate("MainWindow", "Port 0"))
 
+#main funtion
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     
-    splash_pix = QPixmap(DATA_PATH + 'WPClogo.jpg')
+    #display the trademark before the application starts
+    splash_pix = QPixmap('Material/trademark.jpg')
     splash_pix = splash_pix.scaledToWidth(400)  
     splash = QSplashScreen(splash_pix, Qt.WindowStaysOnTopHint)
     splash.setMask(splash_pix.mask())
@@ -455,7 +497,7 @@ if __name__ == "__main__":
     
     splash.finish(None)
     
-    app.setStyleSheet(open(style_neon).read())
+    app.setStyleSheet(open(STYLE_WPC).read())
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)

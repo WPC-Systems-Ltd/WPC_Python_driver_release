@@ -14,6 +14,9 @@ Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python
+import numpy as np
+import stl.mesh as mesh
+import mpl_toolkits.mplot3d as mplot3d
 
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
@@ -22,33 +25,28 @@ import matplotlib.font_manager as font_manager
 from matplotlib import rcParams
 from matplotlib.transforms import Affine2D
 
-import mpl_toolkits.mplot3d as mplot3d
-
-
-import numpy as np
-import stl.mesh as mesh
-
-
-## WPC
-
-from wpcsys import pywpc
-
-
 ################################################################################
 ## Configuration
 
 DATA_PATH = 'Material/viz_data/'
 IMG_PATH = 'Material/viz_data/avion_'
 
+for font in font_manager.findSystemFonts(DATA_PATH):
+    font_manager.fontManager.addfont(font)
 
+# Set font family globally
+rcParams['font.family'] = 'Digital-7 Mono'
 
-################################################################################
+## WPC
+
+from wpcsys import pywpc
+
 ## Style
 
 plt.style.use("bmh")
-bmh_burgundy="#a70f34"
-bmh_blue="#3d90be"
-bmh_purple="#7c6ca4"
+BMH_BURGUNDY="#a70f34"
+BMH_BLUE="#3d90be"
+BMH_PURPLE="#7c6ca4"
 
 
 for font in font_manager.findSystemFonts(DATA_PATH):
@@ -63,36 +61,35 @@ rcParams['font.family'] = 'Digital-7 Mono'
 
 
 
-imgname = 'WPClogo'
-imgWPC = plt.imread(f'{DATA_PATH}{imgname}.jpg')
+IMG_WPC = plt.imread('Material/trademark.jpg')
 
 ################################################################################
 ## Plane Images and Constants
-img_yaw = mpimg.imread(f'{IMG_PATH}yaw.png')
-img_pitch = mpimg.imread(f'{IMG_PATH}pitch.png')
-img_roll = mpimg.imread(f'{IMG_PATH}roll.png')
+IMG_YAW = mpimg.imread(f'{IMG_PATH}yaw.png')
+IMG_PITCH = mpimg.imread(f'{IMG_PATH}pitch.png')
+IMG_ROLL = mpimg.imread(f'{IMG_PATH}roll.png')
 
-size_yaw = np.array([img_yaw.shape[0], img_yaw.shape[1]])
-center_yaw = size_yaw / 2
-diag_yaw = np.sqrt(np.sum(size_yaw ** 2))
-alpha_yaw = (diag_yaw - size_yaw) / 2
+SIZE_YAW = np.array([IMG_YAW.shape[0], IMG_YAW.shape[1]])
+CENTER_YAW = SIZE_YAW / 2
+DIAG_YAW = np.sqrt(np.sum(SIZE_YAW ** 2))
+ALPHA_YAW = (DIAG_YAW - SIZE_YAW) / 2
 #size[1] = sixe_x and size[0] = size_y
 
-size_pitch = np.array([img_pitch.shape[0], img_pitch.shape[1]])
-center_pitch = size_pitch / 2
-diag_pitch = np.sqrt(np.sum(size_pitch ** 2))
-alpha_pitch = (diag_pitch - size_pitch) / 2
+SIZE_PITCH = np.array([IMG_PITCH.shape[0], IMG_PITCH.shape[1]])
+CENTER_PITCH = SIZE_PITCH / 2
+DIAG_PITCH = np.sqrt(np.sum(SIZE_PITCH ** 2))
+ALPHA_PITCH = (DIAG_PITCH - SIZE_PITCH) / 2
 
-size_roll = np.array([img_roll.shape[0], img_roll.shape[1]])
-center_roll = size_roll / 2
-diag_roll = np.sqrt(np.sum(size_roll ** 2))
-alpha_roll = (diag_roll - size_roll) / 2
+SIZE_ROLL = np.array([IMG_ROLL.shape[0], IMG_ROLL.shape[1]])
+CENTER_ROLL = SIZE_ROLL / 2
+DIAG_ROLL = np.sqrt(np.sum(SIZE_ROLL ** 2))
+ALPHA_ROLL = (DIAG_ROLL - SIZE_ROLL) / 2
 
 ## Dictionaries
 PLANE_DICT = {
-  'yaw': dict(img=img_yaw, size=size_yaw, center=center_yaw, diag=diag_yaw, alpha=alpha_yaw),
-  'pitch': dict(img=img_pitch, size=size_pitch, center=center_pitch, diag=diag_pitch, alpha=alpha_pitch),
-  'roll': dict(img=img_roll, size=size_roll, center=center_roll, diag=diag_roll, alpha = alpha_roll),
+  'yaw': dict(img=IMG_YAW, size=SIZE_YAW, center=CENTER_YAW, diag=DIAG_YAW, alpha=ALPHA_YAW),
+  'pitch': dict(img=IMG_PITCH, size=SIZE_PITCH, center=CENTER_PITCH, diag=DIAG_PITCH, alpha=ALPHA_PITCH),
+  'roll': dict(img=IMG_ROLL, size=SIZE_ROLL, center=CENTER_ROLL, diag=DIAG_ROLL, alpha = ALPHA_ROLL),
 }
 
 MODEL_DICT = {
@@ -132,7 +129,7 @@ def WPC_initializeFigure(nb_rows=1, nb_col=1, share_x='all', share_y='all', opti
     ax_value_pitch=fig.add_subplot(gs[1, 2])
     ax_value_roll=fig.add_subplot(gs[2, 2])
     
-    #fig.figimage(imgWPC, xo=fig.bbox.xmin, yo=fig.bbox.ymin, alpha=1)
+    #fig.figimage(IMG_WPC, xo=fig.bbox.xmin, yo=fig.bbox.ymin, alpha=1)
     ax_dict = {
       'main': ax_main,
       'plane_yaw': ax_plane_yaw,
@@ -185,7 +182,7 @@ def WPC_initialize_plane(angle_type, fig, ax):
   ax.add_artist(cc) 
   return  im
 
-def WPC_saveFigure(save, fig, tag, prefix='', verbose=True):
+def WPC_draw3DModel(save, fig, tag, prefix='', verbose=True):
   if save < 0:
     tag = prefix + tag #propably a string
 
@@ -244,7 +241,7 @@ def WPC_showEmpty(tag=DEFAULT_MODEL, save=0):
   data_orig = model.vectors ## 3D array
 
   ## Plot
-  poly = mplot3d.art3d.Poly3DCollection([], color=bmh_blue, edgecolor='k', lw=0.2) #or lightsteelblue
+  poly = mplot3d.art3d.Poly3DCollection([], color=BMH_BLUE, edgecolor='k', lw=0.2) #or lightsteelblue
   ax_dict.get('main').add_collection3d(poly)
 
 
@@ -259,7 +256,7 @@ def WPC_showEmpty(tag=DEFAULT_MODEL, save=0):
   fig.subplots_adjust(left=0.05, right=0.95, bottom=0.05, top=0.95)
   fig.canvas.manager.set_window_title('WPC AHRS visualization')
 
-  WPC_saveFigure(save, fig, f'{DATA_PATH}{tag}_empty')
+  WPC_draw3DModel(save, fig, f'{DATA_PATH}{tag}_empty')
   return fig, ax_dict, im_dict, data_orig, poly
 
 
@@ -270,27 +267,6 @@ def WPC_drawCat(fig, ax, data_orig, poly, roll, pitch, yaw):
 
   ## Plot
   poly.set_verts(data)
-  # fig.canvas.flush_events() ## Update the 3D object
-  figimage_width = fig.bbox.xmax - fig.bbox.xmin
-  figimage_height = fig.bbox.ymax - fig.bbox.ymin
-  
-  img_aspect_ratio = imgWPC.shape[1]/imgWPC.shape[0]
-  fig.figimage(imgWPC, xo=fig.bbox.xmin, yo=fig.bbox.ymin, alpha=1)
-  
-  if figimage_width / figimage_height > img_aspect_ratio:
-    img_width = figimage_height * img_aspect_ratio
-    img_height = figimage_height
-  else:
-      img_width = figimage_width
-      img_height = figimage_width / img_aspect_ratio
-
-  # Calculate the positions of the image such that it is centered in the figure
-  xo = fig.bbox.xmin + (figimage_width - img_width) / 2
-  yo = fig.bbox.ymin + (figimage_height - img_height) / 2
-
-  # Plot the image
-  fig.figimage(imgWPC, xo=xo, yo=yo, alpha=1)
-
   return
 
 #angle_type = 'yaw' for example
@@ -317,9 +293,9 @@ def WPC_text_button(fig, Roll, Pitch, Yaw, ax_value_roll, ax_value_pitch, ax_val
   roll ="{:7.2f}".format(Roll) 
   pitch="{:7.2f}".format(Pitch)
   yaw="{:7.2f}".format(Yaw)
-  ax_value_roll.text(0.5, 0.5, f' Roll:\n{roll} deg', fontsize=32, weight='bold', color=bmh_blue,ha='center',va='center')
-  ax_value_pitch.text(0.5, 0.5, f' Pitch:\n{pitch} deg', fontsize=32, weight='bold', color=bmh_burgundy, ha='center',  va='center')
-  ax_value_yaw.text(0.5, 0.5, f' Yaw:\n{yaw} deg', fontsize=32, weight='bold', color=bmh_purple, ha='center', va='center')
+  ax_value_roll.text(0.5, 0.5, f' Roll:\n{roll} deg', fontsize=32, weight='bold', color=BMH_BLUE,ha='center',va='center')
+  ax_value_pitch.text(0.5, 0.5, f' Pitch:\n{pitch} deg', fontsize=32, weight='bold', color=BMH_BURGUNDY, ha='center',  va='center')
+  ax_value_yaw.text(0.5, 0.5, f' Yaw:\n{yaw} deg', fontsize=32, weight='bold', color=BMH_PURPLE, ha='center', va='center')
   
   return
     
@@ -373,9 +349,9 @@ def main():
             ahrs_list = dev.AHRS_readStreaming(port, read_delay)
             if len(ahrs_list) > 0:
                 WPC_drawCat(fig, ax_dict.get('main'), data_orig, poly, ahrs_list[0], ahrs_list[1], ahrs_list[2])
-                WPC_plot_plane(fig, ax_dict.get('plane_roll'), ahrs_list[0], im_dict.get('roll'), center_roll)
-                WPC_plot_plane(fig, ax_dict.get('plane_pitch'), ahrs_list[1], im_dict.get('pitch'), center_pitch)
-                WPC_plot_plane(fig, ax_dict.get('plane_yaw'), ahrs_list[2], im_dict.get('yaw'), center_yaw)
+                WPC_plot_plane(fig, ax_dict.get('plane_roll'), ahrs_list[0], im_dict.get('roll'), CENTER_ROLL)
+                WPC_plot_plane(fig, ax_dict.get('plane_pitch'), ahrs_list[1], im_dict.get('pitch'), CENTER_PITCH)
+                WPC_plot_plane(fig, ax_dict.get('plane_yaw'), ahrs_list[2], im_dict.get('yaw'), CENTER_YAW)
                 WPC_text_button(fig, ahrs_list[0], ahrs_list[1], ahrs_list[2], ax_dict.get('value_roll'), ax_dict.get('value_pitch'),  ax_dict.get('value_yaw'))
                 plt.tight_layout()
                 plt.pause(2**-5)
