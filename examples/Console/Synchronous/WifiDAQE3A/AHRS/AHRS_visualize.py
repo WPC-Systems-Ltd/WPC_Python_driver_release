@@ -96,8 +96,7 @@ PLANE_DICT = {
 
 MODEL_DICT = {
   'cat': dict(label='Cat', view=400),
-  'rat': dict(label='Rat', view=50),
-  'rat': dict(label='Rat', view=50),
+  'rat': dict(label='Rat', view=50)
 }
 DEFAULT_MODEL = 'rat'
 
@@ -188,34 +187,11 @@ def WPC_initialize_plane(angle_type, fig, ax):
   ax.add_artist(cc) 
   return  im
 
-def WPC_draw3DModel(save, fig, tag, prefix='', verbose=True):
-  if save < 0:
-    tag = prefix + tag #propably a string
-
-  save = abs(save)
-
-  if save == 2: ## Save both PDF and PNG, transparancy on PDF
-    fig.patch.set_alpha(0.5)
-    name = f'{tag}.pdf'
-    fig.savefig(name)
-
-    if verbose:
-      print(f'Saved \"{name}\"')
-
-  if save in [1, 2]: ## Save PNG
-    fig.patch.set_alpha(1.0)
-    name = f'{tag}.png'
-    fig.savefig(name)
-
-    if verbose: 
-      print(f'Saved \"{name}\"')
-
-  if save == 0: ## Show
-    w, h = fig.get_size_inches()
-    fig.set_size_inches(w, h, forward=True)
-    plt.ion() ## Turn on interactive mode
-    plt.show()
-
+def WPC_showFigure(fig):
+  w, h = fig.get_size_inches()
+  fig.set_size_inches(w, h, forward=True)
+  plt.ion() ## Turn on interactive mode
+  plt.show()
   return
 
 def WPC_getRotMat(roll, pitch, yaw, use_deg=False):
@@ -263,11 +239,11 @@ def WPC_showEmpty(tag=DEFAULT_MODEL, save=0):
   fig.subplots_adjust(left=0.05, right=0.95, bottom=0.05, top=0.95)
   fig.canvas.manager.set_window_title('WPC AHRS visualization')
 
-  WPC_draw3DModel(save, fig, f'{DATA_PATH}{tag}_empty')
+  WPC_showFigure(fig)
   return fig, ax_dict, im_dict, data_orig, poly
 
 
-def WPC_drawCat(fig, ax, data_orig, poly, roll, pitch, yaw):
+def WPC_draw3DModel(fig, ax, data_orig, poly, roll, pitch, yaw):
   ## Rotate
   rot_mat = WPC_getRotMat(roll, pitch, yaw, use_deg=True)
   data = data_orig.dot(rot_mat)
@@ -355,7 +331,7 @@ def main():
         while plt.fignum_exists(fig.number):
             ahrs_list = dev.AHRS_readStreaming(port, read_delay)
             if len(ahrs_list) > 0:
-                WPC_drawCat(fig, ax_dict.get('main'), data_orig, poly, ahrs_list[0], ahrs_list[1], ahrs_list[2])
+                WPC_draw3DModel(fig, ax_dict.get('main'), data_orig, poly, ahrs_list[0], ahrs_list[1], ahrs_list[2])
                 WPC_plot_plane(fig, ax_dict.get('plane_roll'), ahrs_list[0], im_dict.get('roll'), CENTER_ROLL)
                 WPC_plot_plane(fig, ax_dict.get('plane_pitch'), ahrs_list[1], im_dict.get('pitch'), CENTER_PITCH)
                 WPC_plot_plane(fig, ax_dict.get('plane_yaw'), ahrs_list[2], im_dict.get('yaw'), CENTER_YAW)
