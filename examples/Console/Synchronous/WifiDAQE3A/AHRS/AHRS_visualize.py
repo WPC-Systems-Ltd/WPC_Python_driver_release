@@ -17,6 +17,7 @@ Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 import numpy as np
 import stl.mesh as mesh
 import mpl_toolkits.mplot3d as mplot3d
+from PIL import Image
 
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
@@ -62,6 +63,7 @@ rcParams['font.family'] = 'Digital-7 Mono'
 
 
 IMG_WPC = plt.imread('Material/trademark.jpg')
+IMG_WPC_PIL = Image.open('Material/trademark.jpg')
 
 ################################################################################
 ## Plane Images and Constants
@@ -129,6 +131,11 @@ def WPC_initializeFigure(nb_rows=1, nb_col=1, share_x='all', share_y='all', opti
     ax_value_pitch=fig.add_subplot(gs[1, 2])
     ax_value_roll=fig.add_subplot(gs[2, 2])
     
+    Pil_width = IMG_WPC_PIL.width
+    Pil_height = IMG_WPC_PIL.height
+    new_pil_image = IMG_WPC_PIL.resize((int(Pil_width//3), int(Pil_height//3)))
+    fig.figimage(new_pil_image, xo=fig.bbox.xmin, yo=fig.bbox.ymin, alpha=0.8, zorder = 0)
+    
     #fig.figimage(IMG_WPC, xo=fig.bbox.xmin, yo=fig.bbox.ymin, alpha=1)
     ax_dict = {
       'main': ax_main,
@@ -158,8 +165,7 @@ def WPC_initializeFigure(nb_rows=1, nb_col=1, share_x='all', share_y='all', opti
   ax = ax_arr[0]
 
   ## Add grid to the figure
-  fig.grid(True)
-
+  fig.grid(True) 
   return fig, ax, ax_arr, ax_mat
 
 def WPC_initialize_plane(angle_type, fig, ax):
@@ -209,6 +215,7 @@ def WPC_draw3DModel(save, fig, tag, prefix='', verbose=True):
     fig.set_size_inches(w, h, forward=True)
     plt.ion() ## Turn on interactive mode
     plt.show()
+
   return
 
 def WPC_getRotMat(roll, pitch, yaw, use_deg=False):
@@ -271,7 +278,7 @@ def WPC_drawCat(fig, ax, data_orig, poly, roll, pitch, yaw):
 
 #angle_type = 'yaw' for example
 def WPC_plot_plane(fig, ax, angle_type, im, center):
-   # Afficher l'image
+   # display image 
   im.remove()
   # Calculate rotation angle in radians
   angle = np.deg2rad(angle_type)  #Convert in  en radians
