@@ -52,10 +52,11 @@ Products Feature
          :alt: product-STEM.jpg
    * -
       **EthanA**
-         - 10/100 cable Ethernet
+         - 10/100 T-based Ethernet interface
          - 8ch simultaneous voltage input
          - Max sampling rate: 20KHz
          - +/-10V voltage input range
+         - Power input: 24VDC
          - Support Python, C# and LabVIEW
      -
       .. image:: images/Products/product-EthanA.jpg
@@ -63,9 +64,21 @@ Products Feature
          :alt: product-EthanA.jpg
    * -
       **EthanD**
-         - 10/100 cable Ethernet
-         - 8ch 24V digital input (sourcing DI, NPN)
-         - 6ch 24V digital output (sinking DO, NPN)
+         - 10/100 T-based Ethernet interface
+         - 6ch opto isolated digital output (DO)
+         - 8ch opto isolated digital input (DI)
+         - Power input: 24VDC
+         - Support Python, C# and LabVIEW
+     -
+      .. image:: images/Products/product-EthanD.jpg
+         :width: 100%
+         :alt: product-EthanD.jpg
+   * -
+      **EthanEX_D**
+         - 10/100 T-based Ethernet interface
+         - 16ch opto isolated digital output (DO)
+         - 16ch opto isolated digital input (DI)
+         - Power input: 24VDC
          - Support Python, C# and LabVIEW
      -
       .. image:: images/Products/product-EthanD.jpg
@@ -73,11 +86,23 @@ Products Feature
          :alt: product-EthanD.jpg
    * -
       **EthanI**
-         - 10/100 cable Ethernet
+         - 10/100 T-based Ethernet interface
          - 8ch 24-bit current input
+         - Max sampling rate: 1KHz
          - +/-20mA input range
-         - Max current: 1A
-         - Update rate: 1KHz
+         - Power input: 24VDC
+         - Support Python, C# and LabVIEW
+     -
+      .. image:: images/Products/product-EthanI.jpg
+         :width: 100%
+         :alt: product-EthanI.jpg
+   * -
+      **EthanIA**
+         - 10/100 T-based Ethernet interface
+         - 8ch 24-bit input
+         - Current: +/-20mA input range
+         - Voltage: +/-10V  input range
+         - Power input: 24VDC
          - Support Python, C# and LabVIEW
      -
       .. image:: images/Products/product-EthanI.jpg
@@ -88,13 +113,14 @@ Products Feature
          - 10/100 T-based Ethernet interface
          - 6ch high quality mechanical relay
          - 4ch Form-A (NO), 2ch Form-C (NO+NC)
+         - Max voltage: 220Vdc/250 Vac
          - Max current: 1A
          - Operating time: 2ms (excluding bounce)
          - Release time: 1ms (excluding bounce)
          - Power input: 24VDC
          - Support Python, C# and LabVIEW
      -
-      .. image:: images/Products/product-EthanA.jpg
+      .. image:: images/Products/product-EthanL.jpg
          :width: 100%
          :alt: product-EthanL.jpg
    * -
@@ -106,15 +132,29 @@ Products Feature
          - Power input: 24VDC
          - Support Python, C# and LabVIEW
      -
-      .. image:: images/Products/product-EthanA.jpg
+      .. image:: images/Products/product-EthanO.jpg
          :width: 100%
          :alt: product-EthanO.jpg
+
+   * -
+      **EthanP**
+         - 10/100 T-based Ethernet interface
+         - 4ch digital variable resistor output
+         - 300 to 50k ohm output range
+         - Max update rate: 1KHz
+         - Power input: 24VDC
+         - Support Python, C# and LabVIEW
+     -
+      .. image:: images/Products/product-EthanP.jpg
+         :width: 100%
+         :alt: product-EthanP.jpg
    * -
       **EthanT**
-         - 10/100 cable Ethernet
+         - 10/100 T-based Ethernet interface
          - 7ch thermocouple input
          - Sensor type: (K, J, N, R, S, T, E, B)
          - Settling time: 160ms (1ch)
+         - Power input: 24VDC
          - Support Python, C# and LabVIEW
      -
       .. image:: images/Products/product-EthanT.jpg

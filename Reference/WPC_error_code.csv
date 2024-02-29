@@ -102,3 +102,5 @@ Error code,Error message
 -9112,The motion operation mode is not valid or is not recognized.
 -9113,The motion acceleration mode is not valid or is not recognized.
 -9200,The STEM slot is not available or is already occupied by another process.
+-9300,The DPOT port is not available or is already occupied by another process.
+-9301,The amount of DPOT channel is not available.

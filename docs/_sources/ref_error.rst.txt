@@ -319,3 +319,9 @@ Error Code Table
    * - -9200
      - 
      - The STEM slot is not available or is already occupied by another process.
+   * - -9300
+     - 
+     - The DPOT port is not available or is already occupied by another process.
+   * - -9301
+     - 
+     - The amount of DPOT channel is not available.

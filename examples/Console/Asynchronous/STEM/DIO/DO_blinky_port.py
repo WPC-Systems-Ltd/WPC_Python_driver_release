@@ -54,7 +54,7 @@ async def main():
     try:
         ## Parameters setting
         slot = 1 ## Connect DIO module to slot
-        DO_port = 1
+        DO_port = 0
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
