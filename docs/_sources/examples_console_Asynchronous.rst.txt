@@ -73,35 +73,35 @@ EDrive-ST
 .. toctree::
    :maxdepth: 4
 
-   examples/Console/Asynchronous/EDrive_ST/Drive/Drive_find_home.rst
+   examples/Console/Asynchronous/EDriveST/Drive/Drive_find_home.rst
 
-   examples/Console/Asynchronous/EDrive_ST/Drive/Drive_find_limit.rst
+   examples/Console/Asynchronous/EDriveST/Drive/Drive_find_limit.rst
 
-   examples/Console/Asynchronous/EDrive_ST/Drive/Drive_position_blending.rst
+   examples/Console/Asynchronous/EDriveST/Drive/Drive_position_blending.rst
 
-   examples/Console/Asynchronous/EDrive_ST/Drive/Drive_position_move.rst
+   examples/Console/Asynchronous/EDriveST/Drive/Drive_position_move.rst
 
-   examples/Console/Asynchronous/EDrive_ST/Drive/Drive_scan_move.rst
+   examples/Console/Asynchronous/EDriveST/Drive/Drive_scan_move.rst
 
-   examples/Console/Asynchronous/EDrive_ST/Drive/Drive_servo_on.rst
+   examples/Console/Asynchronous/EDriveST/Drive/Drive_servo_on.rst
 
-   examples/Console/Asynchronous/EDrive_ST/Drive/Drive_velocity_blending_acceleration.rst
+   examples/Console/Asynchronous/EDriveST/Drive/Drive_velocity_blending_acceleration.rst
 
-   examples/Console/Asynchronous/EDrive_ST/Drive/Drive_velocity_move.rst
+   examples/Console/Asynchronous/EDriveST/Drive/Drive_velocity_move.rst
 
-   examples/Console/Asynchronous/EDrive_ST/System_ETH/get_network_info.rst
+   examples/Console/Asynchronous/EDriveST/System_ETH/get_network_info.rst
 
-   examples/Console/Asynchronous/EDrive_ST/System_ETH/hello_world.rst
+   examples/Console/Asynchronous/EDriveST/System_ETH/hello_world.rst
 
-   examples/Console/Asynchronous/EDrive_ST/System_ETH/set_and_get_RTC.rst
+   examples/Console/Asynchronous/EDriveST/System_ETH/set_and_get_RTC.rst
 
-   examples/Console/Asynchronous/EDrive_ST/Tutorial/single_loop_thread.rst
+   examples/Console/Asynchronous/EDriveST/Tutorial/single_loop_thread.rst
 
-   examples/Console/Asynchronous/EDrive_ST/Tutorial/single_loop_async.rst
+   examples/Console/Asynchronous/EDriveST/Tutorial/single_loop_async.rst
 
-   examples/Console/Asynchronous/EDrive_ST/Tutorial/multiple_loops_thread.rst
+   examples/Console/Asynchronous/EDriveST/Tutorial/multiple_loops_thread.rst
 
-   examples/Console/Asynchronous/EDrive_ST/Tutorial/multiple_loops_async.rst
+   examples/Console/Asynchronous/EDriveST/Tutorial/multiple_loops_async.rst
 
 
 EMotion
@@ -239,37 +239,37 @@ Ethan-D
    examples/Console/Asynchronous/EthanD/Tutorial/multiple_loops_async.rst
 
 
-Ethan-EX_D
+Ethan-EX-D
 ----------
 
 .. toctree::
    :maxdepth: 4
 
-   examples/Console/Asynchronous/EthanEX_D/DIO/DO_blinky_pins.rst
+   examples/Console/Asynchronous/EthanEXD/DIO/DO_blinky_pins.rst
 
-   examples/Console/Asynchronous/EthanEX_D/DIO/DO_blinky_port.rst
+   examples/Console/Asynchronous/EthanEXD/DIO/DO_blinky_port.rst
 
-   examples/Console/Asynchronous/EthanEX_D/DIO/DIO_loopback_pins.rst
+   examples/Console/Asynchronous/EthanEXD/DIO/DIO_loopback_pins.rst
 
-   examples/Console/Asynchronous/EthanEX_D/DIO/DIO_loopback_port.rst
+   examples/Console/Asynchronous/EthanEXD/DIO/DIO_loopback_port.rst
 
-   examples/Console/Asynchronous/EthanEX_D/DIO/DO_write_pins.rst
+   examples/Console/Asynchronous/EthanEXD/DIO/DO_write_pins.rst
 
-   examples/Console/Asynchronous/EthanEX_D/DIO/DO_write_port.rst
+   examples/Console/Asynchronous/EthanEXD/DIO/DO_write_port.rst
 
-   examples/Console/Asynchronous/EthanEX_D/System_ETH/get_network_info.rst
+   examples/Console/Asynchronous/EthanEXD/System_ETH/get_network_info.rst
 
-   examples/Console/Asynchronous/EthanEX_D/System_ETH/hello_world.rst
+   examples/Console/Asynchronous/EthanEXD/System_ETH/hello_world.rst
 
-   examples/Console/Asynchronous/EthanEX_D/System_ETH/set_and_get_RTC.rst
+   examples/Console/Asynchronous/EthanEXD/System_ETH/set_and_get_RTC.rst
 
-   examples/Console/Asynchronous/EthanEX_D/Tutorial/single_loop_thread.rst
+   examples/Console/Asynchronous/EthanEXD/Tutorial/single_loop_thread.rst
 
-   examples/Console/Asynchronous/EthanEX_D/Tutorial/single_loop_async.rst
+   examples/Console/Asynchronous/EthanEXD/Tutorial/single_loop_async.rst
 
-   examples/Console/Asynchronous/EthanEX_D/Tutorial/multiple_loops_thread.rst
+   examples/Console/Asynchronous/EthanEXD/Tutorial/multiple_loops_thread.rst
 
-   examples/Console/Asynchronous/EthanEX_D/Tutorial/multiple_loops_async.rst
+   examples/Console/Asynchronous/EthanEXD/Tutorial/multiple_loops_async.rst
 
 
 Ethan-I

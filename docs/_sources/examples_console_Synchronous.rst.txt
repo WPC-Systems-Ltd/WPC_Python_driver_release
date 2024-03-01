@@ -65,27 +65,27 @@ EDrive-ST
 .. toctree::
    :maxdepth: 4
 
-   examples/Console/Synchronous/EDrive_ST/Drive/Drive_find_home.rst
+   examples/Console/Synchronous/EDriveST/Drive/Drive_find_home.rst
 
-   examples/Console/Synchronous/EDrive_ST/Drive/Drive_find_limit.rst
+   examples/Console/Synchronous/EDriveST/Drive/Drive_find_limit.rst
 
-   examples/Console/Synchronous/EDrive_ST/Drive/Drive_position_blending.rst
+   examples/Console/Synchronous/EDriveST/Drive/Drive_position_blending.rst
 
-   examples/Console/Synchronous/EDrive_ST/Drive/Drive_position_move.rst
+   examples/Console/Synchronous/EDriveST/Drive/Drive_position_move.rst
 
-   examples/Console/Synchronous/EDrive_ST/Drive/Drive_scan_move.rst
+   examples/Console/Synchronous/EDriveST/Drive/Drive_scan_move.rst
 
-   examples/Console/Synchronous/EDrive_ST/Drive/Drive_servo_on.rst
+   examples/Console/Synchronous/EDriveST/Drive/Drive_servo_on.rst
 
-   examples/Console/Synchronous/EDrive_ST/Drive/Drive_velocity_blending_acceleration.rst
+   examples/Console/Synchronous/EDriveST/Drive/Drive_velocity_blending_acceleration.rst
 
-   examples/Console/Synchronous/EDrive_ST/Drive/Drive_velocity_move.rst
+   examples/Console/Synchronous/EDriveST/Drive/Drive_velocity_move.rst
 
-   examples/Console/Synchronous/EDrive_ST/System_ETH/get_network_info.rst
+   examples/Console/Synchronous/EDriveST/System_ETH/get_network_info.rst
 
-   examples/Console/Synchronous/EDrive_ST/System_ETH/hello_world.rst
+   examples/Console/Synchronous/EDriveST/System_ETH/hello_world.rst
 
-   examples/Console/Synchronous/EDrive_ST/System_ETH/set_and_get_RTC.rst
+   examples/Console/Synchronous/EDriveST/System_ETH/set_and_get_RTC.rst
 
 
 EMotion
@@ -199,29 +199,29 @@ Ethan-D
    examples/Console/Synchronous/EthanD/System_ETH/set_and_get_RTC.rst
 
 
-Ethan-EX_D
+Ethan-EX-D
 ----------
 
 .. toctree::
    :maxdepth: 4
 
-   examples/Console/Synchronous/EthanEX_D/DIO/DO_blinky_pins.rst
+   examples/Console/Synchronous/EthanEXD/DIO/DO_blinky_pins.rst
 
-   examples/Console/Synchronous/EthanEX_D/DIO/DO_blinky_port.rst
+   examples/Console/Synchronous/EthanEXD/DIO/DO_blinky_port.rst
 
-   examples/Console/Synchronous/EthanEX_D/DIO/DIO_loopback_pins.rst
+   examples/Console/Synchronous/EthanEXD/DIO/DIO_loopback_pins.rst
 
-   examples/Console/Synchronous/EthanEX_D/DIO/DIO_loopback_port.rst
+   examples/Console/Synchronous/EthanEXD/DIO/DIO_loopback_port.rst
 
-   examples/Console/Synchronous/EthanEX_D/DIO/DO_write_pins.rst
+   examples/Console/Synchronous/EthanEXD/DIO/DO_write_pins.rst
 
-   examples/Console/Synchronous/EthanEX_D/DIO/DO_write_port.rst
+   examples/Console/Synchronous/EthanEXD/DIO/DO_write_port.rst
 
-   examples/Console/Synchronous/EthanEX_D/System_ETH/get_network_info.rst
+   examples/Console/Synchronous/EthanEXD/System_ETH/get_network_info.rst
 
-   examples/Console/Synchronous/EthanEX_D/System_ETH/hello_world.rst
+   examples/Console/Synchronous/EthanEXD/System_ETH/hello_world.rst
 
-   examples/Console/Synchronous/EthanEX_D/System_ETH/set_and_get_RTC.rst
+   examples/Console/Synchronous/EthanEXD/System_ETH/set_and_get_RTC.rst
 
 
 Ethan-I

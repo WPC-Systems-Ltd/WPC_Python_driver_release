@@ -26,11 +26,11 @@ Ethernet devices
    :maxdepth: 4
 
    products/STEM
-   products/EDrive_ST
+   products/EDriveST
    products/EMotion
    products/EthanA
    products/EthanD
-   products/EthanEX_D
+   products/EthanEXD
    products/EthanI
    products/EthanIA
    products/EthanL

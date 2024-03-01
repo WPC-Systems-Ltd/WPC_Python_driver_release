@@ -36,9 +36,9 @@ Products Feature
          - 8-Points Ramp for Smooth Acceleration
          - Support Python, C# and LabVIEW
      -
-      .. image:: images/Products/product-Edrive_ST.jpg
+      .. image:: images/Products/product-EdriveST.jpg
          :width: 100%
-         :alt: product-Edrive_ST.jpg
+         :alt: product-EdriveST.jpg
    * -
       **STEM**
          - 4-slot IDC-50P 3.3V DIO
@@ -81,9 +81,9 @@ Products Feature
          - Power input: 24VDC
          - Support Python, C# and LabVIEW
      -
-      .. image:: images/Products/product-EthanD.jpg
+      .. image:: images/Products/product-EthanEXD.jpg
          :width: 100%
-         :alt: product-EthanD.jpg
+         :alt: product-EthanEXD.jpg
    * -
       **EthanI**
          - 10/100 T-based Ethernet interface

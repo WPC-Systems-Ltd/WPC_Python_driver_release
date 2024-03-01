@@ -1,6 +1,0 @@
-DO blinky port
-==============
-
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/EthanEX_D/DIO/DO_blinky_port.py
-   :language: python
-   :linenos:

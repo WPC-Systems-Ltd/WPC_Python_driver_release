@@ -1,6 +1,0 @@
-DO blinky pins
-==============
-
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/EthanEX_D/DIO/DO_blinky_pins.py
-   :language: python
-   :linenos:

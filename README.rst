@@ -73,7 +73,7 @@ Quick Start
    >>> pywpc.PKG_NAME
    pywpc
    >>> pywpc.HANDLE_LIST
-   ['DeviceFinder', 'WifiDAQE3A', 'WifiDAQE3AH', 'WifiDAQF4A', 'STEM', 'EMotion', 'EDrive_ST', 'EthanA', 'EthanD', 'EthanEX_D', 'EthanI', 'EthanIA', 'EthanL', 'EthanO', 'EthanP', 'EthanT', 'USBDAQF1D', 'USBDAQF1DSNK', 'USBDAQF1AD', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1RD', 'USBDAQF1CD']
+   ['DeviceFinder', 'WifiDAQE3A', 'WifiDAQE3AH', 'WifiDAQF4A', 'STEM', 'EMotion', 'EDriveST', 'EthanA', 'EthanD', 'EthanEXD', 'EthanI', 'EthanIA', 'EthanL', 'EthanO', 'EthanP', 'EthanT', 'USBDAQF1D', 'USBDAQF1DSNK', 'USBDAQF1AD', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1RD', 'USBDAQF1CD']
 
 
 References
