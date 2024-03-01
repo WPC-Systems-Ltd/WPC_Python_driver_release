@@ -43,7 +43,7 @@ async def main():
 
     try:
         ## Parameters setting
-        port = 0 ## Depend on your device
+        port = 2  ## Depend on your device
         pin_index = [0, 1, 2, 3]
         DO_value = [1, 0, 1, 0]
 

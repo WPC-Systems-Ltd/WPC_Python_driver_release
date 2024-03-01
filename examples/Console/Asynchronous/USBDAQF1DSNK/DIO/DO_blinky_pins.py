@@ -43,7 +43,7 @@ async def main():
 
     try:
         ## Parameters setting
-        port = 0 ## Depend on your device
+        port = 2  ## Depend on your device
         pinindex = [1, 3, 5, 7]
 
         ## Get firmware model & version

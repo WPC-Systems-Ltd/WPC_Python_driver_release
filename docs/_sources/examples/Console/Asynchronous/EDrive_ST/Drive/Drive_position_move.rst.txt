@@ -1,6 +1,0 @@
-Drive position move
-===================
-
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/EDrive_ST/Drive/Drive_position_move.py
-   :language: python
-   :linenos:

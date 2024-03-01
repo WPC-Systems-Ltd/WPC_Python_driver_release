@@ -44,7 +44,7 @@ def main():
 
     try:
         ## Parameters setting
-        DO_port = 0
+        DO_port = 0 ## Depend on your device
         DI_port = 1
         DO_value = [1, 0, 1, 0]
         timeout = 3 ## second

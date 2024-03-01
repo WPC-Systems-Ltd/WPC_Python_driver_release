@@ -43,7 +43,7 @@ async def main():
 
     try:
         ## Parameters setting
-        port = 0 ## Depend on your device
+        port = 2  ## Depend on your device
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()

@@ -1,6 +1,0 @@
-AHRS read
-=========
-
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/WifiDAQE3A/AHRS/AHRS_read.py
-   :language: python
-   :linenos:

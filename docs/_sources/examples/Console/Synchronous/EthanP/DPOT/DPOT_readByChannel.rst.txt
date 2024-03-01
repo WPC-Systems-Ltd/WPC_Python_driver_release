@@ -1,0 +1,6 @@
+DPOT read by channel
+====================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/EthanP/DPOT/DPOT_readByChannel.py
+   :language: python
+   :linenos:

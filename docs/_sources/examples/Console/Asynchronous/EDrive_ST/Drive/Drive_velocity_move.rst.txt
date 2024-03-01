@@ -1,6 +1,0 @@
-Drive velocity move
-===================
-
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/EDrive_ST/Drive/Drive_velocity_move.py
-   :language: python
-   :linenos:

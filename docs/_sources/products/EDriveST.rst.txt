@@ -1,0 +1,19 @@
+EDrive-ST
+=========
+
+
+Device pinout 
+-------------
+
+.. image:: ../images/Pinouts/pinout-EDriveST.JPG
+   :width: 90%
+   :alt: EDriveST
+
+
+API function description 
+------------------------
+
+.. autoclass:: pywpc.EDriveST
+   :members:
+   :undoc-members:
+   :inherited-members:
