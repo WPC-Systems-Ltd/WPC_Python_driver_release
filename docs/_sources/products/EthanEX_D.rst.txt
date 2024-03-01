@@ -1,0 +1,19 @@
+Ethan-EX_D
+==========
+
+
+Device pinout 
+-------------
+
+.. image:: ../images/Pinouts/pinout-EthanEX_D.JPG
+   :width: 90%
+   :alt: EthanEX_D
+
+
+API function description 
+------------------------
+
+.. autoclass:: pywpc.EthanEX_D
+   :members:
+   :undoc-members:
+   :inherited-members:

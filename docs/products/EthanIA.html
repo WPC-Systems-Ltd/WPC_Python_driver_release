@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ethan-IA &mdash; WPC Python driver 3.0.19 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/WPC-trademark.jpg"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Ethan-L" href="EthanL.html" />
+    <link rel="prev" title="Ethan-I" href="EthanI.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> WPC Python driver
+            <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                3.0.19
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API REFERNECE</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../products_summary.html">Products Feature</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../product_list.html">Products Usage</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../product_list.html#utilities">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../product_list.html#wifi-devices">Wifi devices</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../product_list.html#ethernet-devices">Ethernet devices</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="STEM.html">STEM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EDrive_ST.html">EDrive-ST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EMotion.html">EMotion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EthanA.html">Ethan-A</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EthanD.html">Ethan-D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EthanEX_D.html">Ethan-EX_D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EthanI.html">Ethan-I</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Ethan-IA</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#device-pinout">Device pinout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#api-function-description">API function description</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="EthanL.html">Ethan-L</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EthanO.html">Ethan-O</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EthanP.html">Ethan-P</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EthanT.html">Ethan-T</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../product_list.html#usb-devices">USB devices</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">EXAMPLE CODES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples_console_Synchronous.html">Example Codes - Console (sync)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples_console_Asynchronous.html">Example Codes - Console (async)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples_GUI_Synchronous.html">Example Codes - GUI (sync)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">APPENDICES</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ref_port.html">I/O Port Function Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref_channel.html">I/O Channel Function Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref_AIO.html">AI Max Sampling Rate Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref_error.html">Error Code Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref_param.html">Setting Table</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">WPC Python driver</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../product_list.html">Products Usage</a> &raquo;</li>
+      <li>Ethan-IA</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ethan-ia">
+<h1>Ethan-IA<a class="headerlink" href="#ethan-ia" title="Permalink to this heading"></a></h1>
+<section id="device-pinout">
+<h2>Device pinout<a class="headerlink" href="#device-pinout" title="Permalink to this heading"></a></h2>
+<a class="reference internal image-reference" href="../_images/pinout-EthanIA.JPG"><img alt="EthanIA" src="../_images/pinout-EthanIA.JPG" style="width: 90%;" /></a>
+</section>
+<section id="api-function-description">
+<h2>API function description<a class="headerlink" href="#api-function-description" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pywpc.EthanIA">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pywpc.</span></span><span class="sig-name descname"><span class="pre">EthanIA</span></span><a class="headerlink" href="#pywpc.EthanIA" title="Permalink to this definition"></a></dt>
+<dd><p><cite>Ethan-IA</cite> has 8ch 24-bit current input (+/-20mA) and voltage input(+/-10V).</p>
+<dl class="simple">
+<dt>Available ports:</dt><dd><ul class="simple">
+<li><p>Current : 0</p></li>
+<li><p>Voltage : 1</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.AI_close">
+<span class="sig-name descname"><span class="pre">AI_close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.AI_close" title="Permalink to this definition"></a></dt>
+<dd><p>Close AI module on a given port.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.AI_close_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AI_close_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.AI_close_async" title="Permalink to this definition"></a></dt>
+<dd><p>Close AI module on a given port with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.AI_getPort">
+<span class="sig-name descname"><span class="pre">AI_getPort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.AI_getPort" title="Permalink to this definition"></a></dt>
+<dd><p>Get AI port number(s).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>None</strong></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">list</span></dt><dd><p>Available AI port(s) from the device.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.AI_open">
+<span class="sig-name descname"><span class="pre">AI_open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.AI_open" title="Permalink to this definition"></a></dt>
+<dd><p>Open AI module on a given port.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.AI_open_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AI_open_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.AI_open_async" title="Permalink to this definition"></a></dt>
+<dd><p>Open AI module on a given port with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.AI_readOnDemand">
+<span class="sig-name descname"><span class="pre">AI_readOnDemand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.AI_readOnDemand" title="Permalink to this definition"></a></dt>
+<dd><p>If your product is <cite>EthanI</cite>, port 0 will return current (mA)</p>
+<p>If your product is <cite>EthanIA</cite>, it depends on your port.
+Port 0 will return current (mA), and port 1 will return voltage(V).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>Current/Voltage</strong><span class="classifier">list</span></dt><dd><p>Based on the port, return the corresponding data.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.AI_readOnDemand_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AI_readOnDemand_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.AI_readOnDemand_async" title="Permalink to this definition"></a></dt>
+<dd><p>If your product is <cite>EthanI</cite>, port 0 will return current (mA) with async mode.</p>
+<p>If your product is <cite>EthanIA</cite>, it depends on your port with async mode.
+Port 0 will return current (mA), and port 1 will return voltage(V).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>Current/Voltage</strong><span class="classifier">list</span></dt><dd><p>Based on the port, return the corresponding data.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Logger_openFile">
+<span class="sig-name descname"><span class="pre">Logger_openFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear_old</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Logger_openFile" title="Permalink to this definition"></a></dt>
+<dd><p>Open CSV file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>filename</strong><span class="classifier">str</span></dt><dd><p>The file name.</p>
+</dd>
+<dt><strong>clear_old</strong><span class="classifier">bool, default: True</span></dt><dd><p>Whether to clear old data (if the file alread exists) or not.</p>
+</dd>
+<dt><strong>verbose</strong><span class="classifier">bool, default: True</span></dt><dd><p>Whether to print message out.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Logger_write2DList">
+<span class="sig-name descname"><span class="pre">Logger_write2DList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value_mat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Logger_write2DList" title="Permalink to this definition"></a></dt>
+<dd><p>Write list of list into file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>value_mat</strong><span class="classifier">list of list</span></dt><dd><p>The list of list of data to be written.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Logger_writeHeader">
+<span class="sig-name descname"><span class="pre">Logger_writeHeader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">header</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Logger_writeHeader" title="Permalink to this definition"></a></dt>
+<dd><p>Write header into file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>header</strong><span class="classifier">list of str</span></dt><dd><p>Header to be written.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Logger_writeList">
+<span class="sig-name descname"><span class="pre">Logger_writeList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Logger_writeList" title="Permalink to this definition"></a></dt>
+<dd><p>Write list into file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>value_list</strong><span class="classifier">list</span></dt><dd><p>The list of data to be written.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Logger_writeValue">
+<span class="sig-name descname"><span class="pre">Logger_writeValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Logger_writeValue" title="Permalink to this definition"></a></dt>
+<dd><p>Write value into file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>value</strong><span class="classifier">object</span></dt><dd><p>The data to be written.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Net_getGateway">
+<span class="sig-name descname"><span class="pre">Net_getGateway</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Net_getGateway" title="Permalink to this definition"></a></dt>
+<dd><p>Get geteway from the connected web device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>gateway</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>Network gateway.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Net_getGateway_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Net_getGateway_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Net_getGateway_async" title="Permalink to this definition"></a></dt>
+<dd><p>Get geteway from the connected web device with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>gateway</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>Network gateway.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Net_getIPAddrAndSubmask">
+<span class="sig-name descname"><span class="pre">Net_getIPAddrAndSubmask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Net_getIPAddrAndSubmask" title="Permalink to this definition"></a></dt>
+<dd><p>Get IP address and subnet mask from the connected web device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>network_info</strong><span class="classifier">list of 2 str.</span></dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">network_info[0]</span></code>: IP address</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">network_info[1]</span></code>: subnet mask</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Net_getIPAddrAndSubmask_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Net_getIPAddrAndSubmask_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Net_getIPAddrAndSubmask_async" title="Permalink to this definition"></a></dt>
+<dd><p>Get IP address and subnet mask from the connected web device with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>network_info</strong><span class="classifier">list of 2 str.</span></dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">network_info[0]</span></code>: IP address</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">network_info[1]</span></code>: subnet mask</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Net_getMACAddr">
+<span class="sig-name descname"><span class="pre">Net_getMACAddr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Net_getMACAddr" title="Permalink to this definition"></a></dt>
+<dd><p>Get MAC address from the connected web device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>mac_addr</strong><span class="classifier">str of 6 int separated by colon.</span></dt><dd><p>MAC address.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Net_getMACAddr_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Net_getMACAddr_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Net_getMACAddr_async" title="Permalink to this definition"></a></dt>
+<dd><p>Get MAC address from the connected web device with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>mac_addr</strong><span class="classifier">str of 6 int separated by colon.</span></dt><dd><p>MAC address.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Net_setIPAddrAndSubmask">
+<span class="sig-name descname"><span class="pre">Net_setIPAddrAndSubmask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip_addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subnet_mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'255.255.255.0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Net_setIPAddrAndSubmask" title="Permalink to this definition"></a></dt>
+<dd><p>Set IP address and subnet mask to the connected web device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ip_addr</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>IP network address.</p>
+</dd>
+<dt><strong>subnet_mask</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>Subnet mask. (default: “255.255.255.0”)</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Net_setIPAddrAndSubmask_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Net_setIPAddrAndSubmask_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip_addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subnet_mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'255.255.255.0'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Net_setIPAddrAndSubmask_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set IP address and subnet mask to the connected web device with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ip_addr</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>IP network address.</p>
+</dd>
+<dt><strong>subnet_mask</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>Subnet mask. (default: “255.255.255.0”)</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_getDriverInfo">
+<span class="sig-name descname"><span class="pre">Sys_getDriverInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_getDriverInfo" title="Permalink to this definition"></a></dt>
+<dd><p>Get device firmware information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>driver_info</strong><span class="classifier">list of three string</span></dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[0]</span></code>: Model name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[1]</span></code>: Mode.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[2]</span></code>: Firmware version.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_getDriverInfo_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getDriverInfo_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_getDriverInfo_async" title="Permalink to this definition"></a></dt>
+<dd><p>Get device firmware information with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>driver_info</strong><span class="classifier">list of three string</span></dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[0]</span></code>: Model name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[1]</span></code>: Mode.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driver_info[2]</span></code>: Firmware version.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_getGateway">
+<span class="sig-name descname"><span class="pre">Sys_getGateway</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_getGateway" title="Permalink to this definition"></a></dt>
+<dd><p>Deprecated in v1.0.5. Will be removed in v1.2.0.</p>
+<p>See :ref:<code class="docutils literal notranslate"><span class="pre">Net_getGateway</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_getGateway_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getGateway_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_getGateway_async" title="Permalink to this definition"></a></dt>
+<dd><p>Deprecated in v1.0.5. Will be removed in v1.2.0.</p>
+<p>See :ref:<code class="docutils literal notranslate"><span class="pre">Net_getGateway_async</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_getIPAddrAndSubmask">
+<span class="sig-name descname"><span class="pre">Sys_getIPAddrAndSubmask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_getIPAddrAndSubmask" title="Permalink to this definition"></a></dt>
+<dd><p>Deprecated in v1.0.5. Will be removed in v1.2.0.</p>
+<p>See :ref:<code class="docutils literal notranslate"><span class="pre">Net_getIPAddrAndSubmask</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_getIPAddrAndSubmask_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getIPAddrAndSubmask_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_getIPAddrAndSubmask_async" title="Permalink to this definition"></a></dt>
+<dd><p>Deprecated in v1.0.5. Will be removed in v1.2.0.</p>
+<p>See :ref:<code class="docutils literal notranslate"><span class="pre">Net_getIPAddrAndSubmask_async</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_getMACAddr">
+<span class="sig-name descname"><span class="pre">Sys_getMACAddr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_getMACAddr" title="Permalink to this definition"></a></dt>
+<dd><p>Deprecated in v1.0.5. Will be removed in v1.2.0.</p>
+<p>See :ref:<code class="docutils literal notranslate"><span class="pre">Net_getMACAddr</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_getMACAddr_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getMACAddr_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_getMACAddr_async" title="Permalink to this definition"></a></dt>
+<dd><p>Deprecated in v1.0.5. Will be removed in v1.2.0.</p>
+<p>See :ref:<code class="docutils literal notranslate"><span class="pre">Net_getMACAddr_async</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_getMode">
+<span class="sig-name descname"><span class="pre">Sys_getMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_getMode" title="Permalink to this definition"></a></dt>
+<dd><p>Get the mode of the slot from the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><p>Mode of slot.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_getMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_getMode_async" title="Permalink to this definition"></a></dt>
+<dd><p>Get the mode of the slot from the connected WPC device with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><p>Mode of slot.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_getPinModeInPort">
+<span class="sig-name descname"><span class="pre">Sys_getPinModeInPort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_getPinModeInPort" title="Permalink to this definition"></a></dt>
+<dd><p>Get pin mode in specific port.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>pins</strong><span class="classifier">int</span></dt><dd><p>How many pins in specific port.</p>
+</dd>
+<dt><strong>pin_mode</strong><span class="classifier">list of 8 string</span></dt><dd><ul class="simple">
+<li><p>[pin0, pin1,……pin7]</p></li>
+<li><p>pinmode : Disabled, Idle, DI, DO, UART, I2C, SPI, CAN, PWM and ADC.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_getPinModeInPort_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getPinModeInPort_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_getPinModeInPort_async" title="Permalink to this definition"></a></dt>
+<dd><p>Get pin mode in specific port with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>pins</strong><span class="classifier">int</span></dt><dd><p>How many pins in specific port.</p>
+</dd>
+<dt><strong>pin_mode</strong><span class="classifier">list of 8 string</span></dt><dd><ul class="simple">
+<li><p>[pin0, pin1,……pin7]</p></li>
+<li><p>pinmode : Disabled, Idle, DI, DO, UART, I2C, SPI, CAN, PWM and ADC.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_getPythonVersion">
+<span class="sig-name descname"><span class="pre">Sys_getPythonVersion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_getPythonVersion" title="Permalink to this definition"></a></dt>
+<dd><p>Get python software version.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>version</strong><span class="classifier">string</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_getPythonVersion_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getPythonVersion_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_getPythonVersion_async" title="Permalink to this definition"></a></dt>
+<dd><p>Get python software version with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>version</strong><span class="classifier">string</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_getRTC">
+<span class="sig-name descname"><span class="pre">Sys_getRTC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_getRTC" title="Permalink to this definition"></a></dt>
+<dd><p>Get date and time to connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><dl class="simple">
+<dt>Date and time represented by “A-B-C, D:E:F”.</dt><dd><ul class="simple">
+<li><p>“A” is year.</p></li>
+<li><p>“B” is month.</p></li>
+<li><p>“C” is day.</p></li>
+<li><p>“D” is hour.</p></li>
+<li><p>“E” is minute.</p></li>
+<li><p>“F” is second.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_getRTC_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getRTC_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_getRTC_async" title="Permalink to this definition"></a></dt>
+<dd><p>Get date and time to connected WPC device with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><dl class="simple">
+<dt>Date and time represented by “A-B-C, D:E:F”.</dt><dd><ul class="simple">
+<li><p>“A” is year.</p></li>
+<li><p>“B” is month.</p></li>
+<li><p>“C” is day.</p></li>
+<li><p>“D” is hour.</p></li>
+<li><p>“E” is minute.</p></li>
+<li><p>“F” is second.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_getSerialNumber">
+<span class="sig-name descname"><span class="pre">Sys_getSerialNumber</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_getSerialNumber" title="Permalink to this definition"></a></dt>
+<dd><p>Get serial number from the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><p>Serial number represented by string of 8 characters.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_getSerialNumber_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_getSerialNumber_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_getSerialNumber_async" title="Permalink to this definition"></a></dt>
+<dd><p>Get serial number from the connected WPC device with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>str_</strong><span class="classifier">str</span></dt><dd><p>Serial number represented by string of 8 characters.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_reboot">
+<span class="sig-name descname"><span class="pre">Sys_reboot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_reboot" title="Permalink to this definition"></a></dt>
+<dd><p>Reboot from the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_rebootOnBootloader">
+<span class="sig-name descname"><span class="pre">Sys_rebootOnBootloader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_rebootOnBootloader" title="Permalink to this definition"></a></dt>
+<dd><p>Reboot on bootloader from the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_rebootOnBootloader_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_rebootOnBootloader_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_rebootOnBootloader_async" title="Permalink to this definition"></a></dt>
+<dd><p>Reboot on bootloader from the connected WPC device with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_reboot_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_reboot_async</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_reboot_async" title="Permalink to this definition"></a></dt>
+<dd><p>Reboot from the connected WPC device with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_setAIOMode">
+<span class="sig-name descname"><span class="pre">Sys_setAIOMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_setAIOMode" title="Permalink to this definition"></a></dt>
+<dd><p>Set the AIO state for the slot in the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_setAIOMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setAIOMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_setAIOMode_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set the AIO state for the slot in the connected WPC device with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_setDIMode">
+<span class="sig-name descname"><span class="pre">Sys_setDIMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_setDIMode" title="Permalink to this definition"></a></dt>
+<dd><p>Set the DI state for the slot in the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_setDIMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setDIMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_setDIMode_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set the DI state for the slot in the connected WPC device with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_setDIOMode">
+<span class="sig-name descname"><span class="pre">Sys_setDIOMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_setDIOMode" title="Permalink to this definition"></a></dt>
+<dd><p>Set the DIO state for the slot in the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_setDIOMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setDIOMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_setDIOMode_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set the DIO state for the slot in the connected WPC device with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_setDOMode">
+<span class="sig-name descname"><span class="pre">Sys_setDOMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_setDOMode" title="Permalink to this definition"></a></dt>
+<dd><p>Set the DO state for the slot in the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_setDOMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setDOMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_setDOMode_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set the DO state for the slot in the connected WPC device with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_setIPAddrAndSubmask">
+<span class="sig-name descname"><span class="pre">Sys_setIPAddrAndSubmask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip_addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subnet_mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'255.255.255.0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_setIPAddrAndSubmask" title="Permalink to this definition"></a></dt>
+<dd><p>Deprecated in v1.0.5. Will be removed in v1.2.0.</p>
+<p>See :ref:<code class="docutils literal notranslate"><span class="pre">Net_setIPAddrAndSubmask</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_setIPAddrAndSubmask_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setIPAddrAndSubmask_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip_addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subnet_mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'255.255.255.0'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_setIPAddrAndSubmask_async" title="Permalink to this definition"></a></dt>
+<dd><p>Deprecated in v1.0.5. Will be removed in v1.2.0.</p>
+<p>See :ref:<code class="docutils literal notranslate"><span class="pre">Net_setIPAddrAndSubmask_async</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_setIdleMode">
+<span class="sig-name descname"><span class="pre">Sys_setIdleMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_setIdleMode" title="Permalink to this definition"></a></dt>
+<dd><p>Set the IDLE state for the slot in the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_setIdleMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setIdleMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_setIdleMode_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set the IDLE state for the slot in the connected WPC device with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_setMotionMode">
+<span class="sig-name descname"><span class="pre">Sys_setMotionMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_setMotionMode" title="Permalink to this definition"></a></dt>
+<dd><p>Set the motion state for the slot in the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_setMotionMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setMotionMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_setMotionMode_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set the motion state for the slot in the connected WPC device with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_setRTC">
+<span class="sig-name descname"><span class="pre">Sys_setRTC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hour</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minute</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_setRTC" title="Permalink to this definition"></a></dt>
+<dd><p>Set date and time to connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>year</strong><span class="classifier">int</span></dt><dd><p>year (CE).</p>
+</dd>
+<dt><strong>month</strong><span class="classifier">int</span></dt><dd><p>month (1~12).</p>
+</dd>
+<dt><strong>day</strong><span class="classifier">int</span></dt><dd><p>day (1~31).</p>
+</dd>
+<dt><strong>hour</strong><span class="classifier">int</span></dt><dd><p>hour (24-hour clock) (0~23).</p>
+</dd>
+<dt><strong>minute</strong><span class="classifier">int</span></dt><dd><p>minute (0~59).</p>
+</dd>
+<dt><strong>second</strong><span class="classifier">int</span></dt><dd><p>second (0~59).</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 : Success, Others : Error.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_setRTC_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setRTC_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hour</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minute</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_setRTC_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set date and time to connected WPC device with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>year</strong><span class="classifier">int</span></dt><dd><p>year (CE).</p>
+</dd>
+<dt><strong>month</strong><span class="classifier">int</span></dt><dd><p>month (1~12).</p>
+</dd>
+<dt><strong>day</strong><span class="classifier">int</span></dt><dd><p>day (1~31).</p>
+</dd>
+<dt><strong>hour</strong><span class="classifier">int</span></dt><dd><p>hour (24-hour clock) (0~23).</p>
+</dd>
+<dt><strong>minute</strong><span class="classifier">int</span></dt><dd><p>minute (0~59).</p>
+</dd>
+<dt><strong>second</strong><span class="classifier">int</span></dt><dd><p>second (0~59).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>0 : Success, Others : Error.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_setSwitchMode">
+<span class="sig-name descname"><span class="pre">Sys_setSwitchMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_setSwitchMode" title="Permalink to this definition"></a></dt>
+<dd><p>Set the switch state for the slot in the connected WPC device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify an additional waiting time (sec) to set or get data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.Sys_setSwitchMode_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Sys_setSwitchMode_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.Sys_setSwitchMode_async" title="Permalink to this definition"></a></dt>
+<dd><p>Set the switch state for the slot in the connected WPC device with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slot</strong><span class="classifier">int</span></dt><dd><p>Slot number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available slot of different WPC devices.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.close" title="Permalink to this definition"></a></dt>
+<dd><p>Close web device handle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>verbose: bool, default: True</strong></dt><dd><p>Whether to print out messages or not.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip_addr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'192.168.1.110'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.connect" title="Permalink to this definition"></a></dt>
+<dd><p>Connect handle to web device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>ip_addr</strong><span class="classifier">str of 4 int separated by period.</span></dt><dd><p>IP network address of the WPC device to connect to.</p>
+</dd>
+<dt><strong>port</strong><span class="classifier">int, default: 7</span></dt><dd><p>TCP port.</p>
+</dd>
+<dt><strong>verbose: bool, default: True</strong></dt><dd><p>Whether to print out messages or not.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanIA.disconnect">
+<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanIA.disconnect" title="Permalink to this definition"></a></dt>
+<dd><p>Disconnect handle from web device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>verbose: bool, default: True</strong></dt><dd><p>Whether to print out messages or not.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="EthanI.html" class="btn btn-neutral float-left" title="Ethan-I" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="EthanL.html" class="btn btn-neutral float-right" title="Ethan-L" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, WPC Systems Ltd..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

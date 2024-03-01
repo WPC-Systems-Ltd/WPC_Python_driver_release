@@ -44,8 +44,7 @@ async def main():
 
     try:
         ## Parameters setting
-        port = 0 ## Depend on your device
-        DO_port = 0
+        DO_port = 2  ## Depend on your device
         DI_port = 1
         DO_value = [1, 0, 1, 0]
 

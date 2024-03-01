@@ -199,6 +199,31 @@ Ethan-D
    examples/Console/Synchronous/EthanD/System_ETH/set_and_get_RTC.rst
 
 
+Ethan-EX_D
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/Synchronous/EthanEX_D/DIO/DO_blinky_pins.rst
+
+   examples/Console/Synchronous/EthanEX_D/DIO/DO_blinky_port.rst
+
+   examples/Console/Synchronous/EthanEX_D/DIO/DIO_loopback_pins.rst
+
+   examples/Console/Synchronous/EthanEX_D/DIO/DIO_loopback_port.rst
+
+   examples/Console/Synchronous/EthanEX_D/DIO/DO_write_pins.rst
+
+   examples/Console/Synchronous/EthanEX_D/DIO/DO_write_port.rst
+
+   examples/Console/Synchronous/EthanEX_D/System_ETH/get_network_info.rst
+
+   examples/Console/Synchronous/EthanEX_D/System_ETH/hello_world.rst
+
+   examples/Console/Synchronous/EthanEX_D/System_ETH/set_and_get_RTC.rst
+
+
 Ethan-I
 -------
 
@@ -212,6 +237,21 @@ Ethan-I
    examples/Console/Synchronous/EthanI/System_ETH/hello_world.rst
 
    examples/Console/Synchronous/EthanI/System_ETH/set_and_get_RTC.rst
+
+
+Ethan-IA
+--------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/Synchronous/EthanIA/AI24Bit/AI_on_demand_once.rst
+
+   examples/Console/Synchronous/EthanIA/System_ETH/get_network_info.rst
+
+   examples/Console/Synchronous/EthanIA/System_ETH/hello_world.rst
+
+   examples/Console/Synchronous/EthanIA/System_ETH/set_and_get_RTC.rst
 
 
 Ethan-L
@@ -248,6 +288,23 @@ Ethan-O
    examples/Console/Synchronous/EthanO/System_ETH/hello_world.rst
 
    examples/Console/Synchronous/EthanO/System_ETH/set_and_get_RTC.rst
+
+
+Ethan-P
+-------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/Synchronous/EthanP/DPOT/DPOT_readByChannel.rst
+
+   examples/Console/Synchronous/EthanP/DPOT/DPOT_writeAllChannels.rst
+
+   examples/Console/Synchronous/EthanP/System_ETH/get_network_info.rst
+
+   examples/Console/Synchronous/EthanP/System_ETH/hello_world.rst
+
+   examples/Console/Synchronous/EthanP/System_ETH/set_and_get_RTC.rst
 
 
 Ethan-T
@@ -612,10 +669,6 @@ Wifi-DAQ-E3-A
 
    examples/Console/Synchronous/WifiDAQE3A/AI/AI_continuous_multi_slot.rst
 
-   examples/Console/Synchronous/WifiDAQE3A/AHRS/AHRS_read.rst
-
-   examples/Console/Synchronous/WifiDAQE3A/AHRS/AHRS_visualize.rst
-
    examples/Console/Synchronous/WifiDAQE3A/System_Wifi/get_network_info.rst
 
    examples/Console/Synchronous/WifiDAQE3A/System_Wifi/get_Wifi_DAQ_status.rst
@@ -625,6 +678,39 @@ Wifi-DAQ-E3-A
    examples/Console/Synchronous/WifiDAQE3A/System_Wifi/set_and_get_RTC.rst
 
    examples/Console/Synchronous/WifiDAQE3A/System_Wifi/set_LED_status.rst
+
+
+Wifi-DAQ-E3-AH
+--------------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/Synchronous/WifiDAQE3AH/AI/AI_continuous.rst
+
+   examples/Console/Synchronous/WifiDAQE3AH/AI/AI_continuous_with_logger.rst
+
+   examples/Console/Synchronous/WifiDAQE3AH/AI/AI_N_samples_once.rst
+
+   examples/Console/Synchronous/WifiDAQE3AH/AI/AI_on_demand_in_loop.rst
+
+   examples/Console/Synchronous/WifiDAQE3AH/AI/AI_on_demand_once.rst
+
+   examples/Console/Synchronous/WifiDAQE3AH/AI/AI_continuous_multi_slot.rst
+
+   examples/Console/Synchronous/WifiDAQE3AH/AHRS/AHRS_read.rst
+
+   examples/Console/Synchronous/WifiDAQE3AH/AHRS/AHRS_visualize.rst
+
+   examples/Console/Synchronous/WifiDAQE3AH/System_Wifi/get_network_info.rst
+
+   examples/Console/Synchronous/WifiDAQE3AH/System_Wifi/get_Wifi_DAQ_status.rst
+
+   examples/Console/Synchronous/WifiDAQE3AH/System_Wifi/hello_world.rst
+
+   examples/Console/Synchronous/WifiDAQE3AH/System_Wifi/set_and_get_RTC.rst
+
+   examples/Console/Synchronous/WifiDAQE3AH/System_Wifi/set_LED_status.rst
 
 
 Wifi-DAQ-F4-A

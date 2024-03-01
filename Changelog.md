@@ -1,6 +1,21 @@
 WPC Python driver release changelog
 ===================================
 
+
+v3.0.19 Date: 2024/03/01, Developer: Chunglee_people
+----------------------------------------------------
+### Added
+- New product: EthanP, EthanEX_D, EthanIA
+- Folder: Material
+- -9300/ -9301/ -8401 error code
+- API: AHRS_getEstimate
+
+### Fixed
+- Class: WifiDAQE3AH
+
+### Removed
+- API: AHRS_readStreaming
+
 v3.0.18 Date: 2024/02/26, Developer: Duflosth
 ---------------------------------------------
 ### Added

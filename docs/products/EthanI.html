@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ethan-I &mdash; WPC Python driver 3.0.17 documentation</title>
+  <title>Ethan-I &mdash; WPC Python driver 3.0.19 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -22,8 +22,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Ethan-L" href="EthanL.html" />
-    <link rel="prev" title="Ethan-D" href="EthanD.html" /> 
+    <link rel="next" title="Ethan-IA" href="EthanIA.html" />
+    <link rel="prev" title="Ethan-EX_D" href="EthanEX_D.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -35,7 +35,7 @@
             <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.17
+                3.0.19
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -57,13 +57,16 @@
 <li class="toctree-l3"><a class="reference internal" href="EMotion.html">EMotion</a></li>
 <li class="toctree-l3"><a class="reference internal" href="EthanA.html">Ethan-A</a></li>
 <li class="toctree-l3"><a class="reference internal" href="EthanD.html">Ethan-D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EthanEX_D.html">Ethan-EX_D</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Ethan-I</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#device-pinout">Device pinout</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#api-function-description">API function description</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="EthanIA.html">Ethan-IA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="EthanL.html">Ethan-L</a></li>
 <li class="toctree-l3"><a class="reference internal" href="EthanO.html">Ethan-O</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EthanP.html">Ethan-P</a></li>
 <li class="toctree-l3"><a class="reference internal" href="EthanT.html">Ethan-T</a></li>
 </ul>
 </li>
@@ -124,7 +127,7 @@
 <dd><p><cite>Ethan-I</cite> has 8ch 24-bit current input.</p>
 <dl class="simple">
 <dt>Available ports:</dt><dd><ul class="simple">
-<li><p>AI : 0</p></li>
+<li><p>Current : 0</p></li>
 </ul>
 </dd>
 </dl>
@@ -242,8 +245,9 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EthanI.AI_readOnDemand">
 <span class="sig-name descname"><span class="pre">AI_readOnDemand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanI.AI_readOnDemand" title="Permalink to this definition"></a></dt>
-<dd><p>Read one sample from a given AI port.
-This should only be used in the “on demand” mode.</p>
+<dd><p>If your product is <cite>EthanI</cite>, port 0 will return current (mA)</p>
+<p>If your product is <cite>EthanIA</cite>, it depends on your port.
+Port 0 will return current (mA), and port 1 will return voltage(V).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -256,7 +260,7 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>current</strong><span class="classifier">list</span></dt><dd><p>The list of current value.</p>
+<dt><strong>Current/Voltage</strong><span class="classifier">list</span></dt><dd><p>Based on the port, return the corresponding data.</p>
 </dd>
 </dl>
 </dd>
@@ -266,8 +270,9 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EthanI.AI_readOnDemand_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AI_readOnDemand_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanI.AI_readOnDemand_async" title="Permalink to this definition"></a></dt>
-<dd><p>Read one sample from a given AI port with async mode.
-This should only be used in the “on demand” mode.</p>
+<dd><p>If your product is <cite>EthanI</cite>, port 0 will return current (mA) with async mode.</p>
+<p>If your product is <cite>EthanIA</cite>, it depends on your port with async mode.
+Port 0 will return current (mA), and port 1 will return voltage(V).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -278,7 +283,7 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>current</strong><span class="classifier">list</span></dt><dd><p>The list of current value.</p>
+<dt><strong>Current/Voltage</strong><span class="classifier">list</span></dt><dd><p>Based on the port, return the corresponding data.</p>
 </dd>
 </dl>
 </dd>
@@ -1390,14 +1395,14 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="EthanD.html" class="btn btn-neutral float-left" title="Ethan-D" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="EthanL.html" class="btn btn-neutral float-right" title="Ethan-L" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="EthanEX_D.html" class="btn btn-neutral float-left" title="Ethan-EX_D" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="EthanIA.html" class="btn btn-neutral float-right" title="Ethan-IA" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, WPC Systems Ltd..</p>
+    <p>&#169; Copyright 2024, WPC Systems Ltd..</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
