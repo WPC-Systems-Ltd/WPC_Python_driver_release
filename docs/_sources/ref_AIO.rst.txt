@@ -23,15 +23,17 @@ AI Max Sampling Rate Table
 
 - The max sampling rate is fixed.
 
-+---------------+-------------+
-| Product       |Sampling rate|
-+---------------+-------------+
-| Wifi-DAQ-E3-A | 10k         |
-+---------------+-------------+
-| Wifi-DAQ-F4-A | 20k         |
-+---------------+-------------+
-| Ethan-A       | 20k         |
-+---------------+-------------+
++----------------+-------------+
+| Product        |Sampling rate|
++----------------+-------------+
+| Wifi-DAQ-E3-A  | 10k         |
++----------------+-------------+
+| Wifi-DAQ-E3-AH | 10k         |
++----------------+-------------+
+| Wifi-DAQ-F4-A  | 20k         |
++----------------+-------------+
+| Ethan-A        | 20k         |
++----------------+-------------+
 
 - For STEM, AO writing can be called while AI is streaming under a specific speed.
 - This speed depends on the number of enabled chip-selects.

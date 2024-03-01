@@ -232,7 +232,6 @@ def WPC_showEmpty(tag=DEFAULT_MODEL, save=0):
   WPC_showFigure(fig)
   return fig, ax_dict, im_dict, data_orig, poly
 
-
 def WPC_draw3DModel(fig, ax, data_orig, poly, roll, pitch, yaw):
   ## Rotate
   rot_mat = WPC_getRotMat(roll, pitch, yaw, use_deg=True)
@@ -242,7 +241,6 @@ def WPC_draw3DModel(fig, ax, data_orig, poly, roll, pitch, yaw):
   poly.set_verts(data)
   return
 
-## Angle_type = 'yaw' for example
 def WPC_plot_plane(fig, ax, angle_type, im, center):
   ## Display image
   im.remove()
@@ -345,6 +343,8 @@ def main():
       dev.disconnect()
 
       ## Release device handle
+      dev.close()
+
     return
 if __name__ == '__main__':
     main()

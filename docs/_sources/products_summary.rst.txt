@@ -240,7 +240,6 @@ Products Feature
       **WifiDAQE3A**
          - 8ch 16-bit +/-10V analog input
          - Max sampling rate is 10KHz
-         - Built in 9DoF IMU with posture est.
          - Web-based configurator
          - 802.11 b/g/n WiFi
          - 2.4 GHz to 2.5 GHz
@@ -249,6 +248,19 @@ Products Feature
       .. image:: images/Products/product-WIFIDAQE3A.jpg
          :width: 100%
          :alt: product-WIFIDAQE3A.jpg
+   * -
+      **WifiDAQE3AH**
+         - 8ch 16-bit +/-10V analog input
+         - Max sampling rate is 10KHz
+         - Built in 9DoF IMU with posture est.
+         - Web-based configurator
+         - 802.11 b/g/n WiFi
+         - 2.4 GHz to 2.5 GHz
+         - Support Python, C# and LabVIEW
+     -
+      .. image:: images/Products/product-WIFIDAQE3AH.jpg
+         :width: 100%
+         :alt: product-WIFIDAQE3AH.jpg
    * -
       **WifiDAQF4A**
          - 8ch 16-bit +/-10V analog input

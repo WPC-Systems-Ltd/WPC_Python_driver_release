@@ -34,7 +34,7 @@ TEXT_PROPERTIES = {
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        self.dev = pywpc.WifiDAQE3A()
+        self.dev = pywpc.WifiDAQE3AH()
         self.graphicsView = QGraphicsView()
 
         ## Main WWindow settings
@@ -162,7 +162,6 @@ class Ui_MainWindow(object):
         ## Input get infos
         self.ip_address = self.lineEditIP.text()
         self.port = int(self.comboBox_port.currentIndex())
-        self.read_delay = 0.5 ## second
         self.timeout = 3 ## second
         self.sampling_period = 0.003
 
@@ -358,7 +357,7 @@ class Ui_MainWindow(object):
 
     ## Update the display, calls the functions to update all sub parts of the display
     def general_update(self):
-        self.ahrs_list = self.dev.AHRS_getEstimate(self.port, self.mode, self.read_delay)
+        self.ahrs_list = self.dev.AHRS_getEstimate(self.port, self.mode, self.timeout)
         self.ip_address = self.lineEditIP.text()  # New IP address
 
         ## Get port from GUI
@@ -427,18 +426,20 @@ class Ui_MainWindow(object):
 
     ## Update the mesh display
     def update_mesh(self):
-        self.ahrs_list = self.dev.AHRS_readStreaming(self.port, self.read_delay)
-        # Apply rotation to vertices
+        self.ahrs_list = self.dev.AHRS_getEstimate(self.port, self.mode)
+        ## Apply rotation to vertices
         rotated_vertices = np.dot(self.vertices, self.WPC_getRotMat().T)
 
-        # Update mesh with rotated vertices
+        ## Update mesh with rotated vertices
         self.mesh_item.setMeshData(vertexes=rotated_vertices, faces=self.faces, smooth=True, color=(152, 171, 238, 0.4))
-        # Add the widget to the layout
+
+        ## Add the widget to the layout
         self.meshLayout.removeWidget(self.widget3D)
-        # Add the widget to the layout
+
+        ## Add the widget to the layout
         self.meshLayout.addWidget(self.widget3D, 0, 0, self.meshLayout.rowCount(), 1)
 
-    ## function to retranslate the interface for the user
+    ## Function to retranslate the interface for the user
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "WPC Visualisation"))
