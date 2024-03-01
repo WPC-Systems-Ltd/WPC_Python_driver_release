@@ -1,6 +1,6 @@
 ##  Example_analog_input/main.py
 ##  This is example for AI streaming with WPC DAQ Device with synchronous mode.
-##  Copyright (c) 2023 WPC Systems Ltd.
+##  Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
 ##  All rights reserved.
 
 ## Python

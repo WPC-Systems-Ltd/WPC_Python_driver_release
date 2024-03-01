@@ -1,0 +1,6 @@
+DPOT write all channels
+=======================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/EthanP/DPOT/DPOT_writeAllChannels.py
+   :language: python
+   :linenos:

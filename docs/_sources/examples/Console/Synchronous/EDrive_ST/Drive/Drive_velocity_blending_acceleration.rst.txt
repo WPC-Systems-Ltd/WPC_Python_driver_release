@@ -1,6 +1,0 @@
-Drive velocity blending acceleration
-====================================
-
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/EDrive_ST/Drive/Drive_velocity_blending_acceleration.py
-   :language: python
-   :linenos:

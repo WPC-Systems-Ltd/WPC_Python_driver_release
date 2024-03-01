@@ -44,16 +44,11 @@ async def main():
 
     try:
         ## Parameters setting
-        DO_port = 0
+        DO_port = 2  ## Depend on your device
         DI_port = 1
         DO_pins = [0, 1, 2, 3]
         DI_pins = [4, 5, 6, 7]
         DO_value = [1, 0, 1, 0]
-
-        ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()

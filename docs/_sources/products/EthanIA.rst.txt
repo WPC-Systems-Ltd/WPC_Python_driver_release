@@ -1,0 +1,19 @@
+Ethan-IA
+========
+
+
+Device pinout 
+-------------
+
+.. image:: ../images/Pinouts/pinout-EthanIA.JPG
+   :width: 90%
+   :alt: EthanIA
+
+
+API function description 
+------------------------
+
+.. autoclass:: pywpc.EthanIA
+   :members:
+   :undoc-members:
+   :inherited-members:

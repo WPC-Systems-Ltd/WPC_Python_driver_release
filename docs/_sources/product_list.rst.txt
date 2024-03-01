@@ -16,6 +16,7 @@ Wifi devices
    :maxdepth: 4
 
    products/WifiDAQE3A
+   products/WifiDAQE3AH
    products/WifiDAQF4A
 
 Ethernet devices
@@ -25,13 +26,16 @@ Ethernet devices
    :maxdepth: 4
 
    products/STEM
-   products/EDrive_ST
+   products/EDriveST
    products/EMotion
    products/EthanA
    products/EthanD
+   products/EthanEXD
    products/EthanI
+   products/EthanIA
    products/EthanL
    products/EthanO
+   products/EthanP
    products/EthanT
 
 USB devices

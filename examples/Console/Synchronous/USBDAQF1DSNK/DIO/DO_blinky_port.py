@@ -43,7 +43,7 @@ def main():
 
     try:
         ## Parameters setting
-        port = 0 ## Depend on your device
+        port = 2  ## Depend on your device
         timeout = 3 ## second
 
         ## Get firmware model & version
