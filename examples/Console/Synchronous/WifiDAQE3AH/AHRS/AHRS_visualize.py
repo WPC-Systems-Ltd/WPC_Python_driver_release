@@ -36,12 +36,6 @@ from wpcsys import pywpc
 DATA_PATH = 'Material/viz_data/'
 IMG_PATH = 'Material/viz_data/avion_'
 
-for font in font_manager.findSystemFonts(DATA_PATH):
-    font_manager.fontManager.addfont(font)
-
-## Set font family globally
-rcParams['font.family'] = 'Digital-7 Mono'
-
 ## Style
 plt.style.use("bmh")
 BMH_BURGUNDY = "#a70f34"
@@ -54,10 +48,9 @@ for font in font_manager.findSystemFonts(DATA_PATH):
 ## Set font family globally
 rcParams['font.family'] = 'Digital-7 Mono'
 
-IMG_WPC_PIL = Image.open('Material/trademark.jpg')
-
 ################################################################################
 ## Plane Images and Constants
+IMG_WPC_PIL = Image.open('Material/trademark.jpg')
 
 IMG_YAW = mpimg.imread(f'{IMG_PATH}yaw.png')
 IMG_PITCH = mpimg.imread(f'{IMG_PATH}pitch.png')
@@ -230,7 +223,7 @@ def WPC_showEmpty(tag=DEFAULT_MODEL, save=0):
   WPC_showFigure(fig)
   return fig, ax_dict, im_dict, data_orig, mesh_poly
 
-def WPC_draw3DModel(fig, ax, data_orig, mesh_poly, roll, pitch, yaw):
+def WPC_update_mesh(fig, ax, data_orig, mesh_poly, roll, pitch, yaw):
   ## Rotate
   rot_mat = WPC_getRotMat(roll, pitch, yaw, use_deg=True)
   mesh_data = data_orig.dot(rot_mat)
@@ -239,7 +232,7 @@ def WPC_draw3DModel(fig, ax, data_orig, mesh_poly, roll, pitch, yaw):
   mesh_poly.set_verts(mesh_data)
   return
 
-def WPC_plot_plane(fig, ax, angle_type, im, center):
+def WPC_update_image_plane(fig, ax, angle_type, im, center):
   ## Display image
   im.remove()
 
@@ -291,7 +284,7 @@ def main():
       ## Parameters setting
       port = 0 ## Depend on your device
       sampling_period = 0.003
-      mode = 0 ## 0: Orientation, 1: Acircle_around_planeeleration, 2: Orientation + Acircle_around_planeeleration
+      mode = 0 ## 0: Orientation, 1: Acceleration, 2: Orientation + Acceleration
       timeout = 3 ## second
 
       ## Get firmware model & version
@@ -313,12 +306,15 @@ def main():
 
       while plt.fignum_exists(fig.number):
           ahrs_list = dev.AHRS_getEstimate(port, mode, timeout)
+          roll = ahrs_list[0]
+          pitch = ahrs_list[1]
+          yaw = ahrs_list[2]
           if len(ahrs_list) > 0:
-              WPC_draw3DModel(fig, ax_dict.get('main'), data_orig, mesh_poly, ahrs_list[0], ahrs_list[1], ahrs_list[2])
-              WPC_plot_plane(fig, ax_dict.get('plane_roll'), ahrs_list[0], im_dict.get('roll'), CENTER_ROLL)
-              WPC_plot_plane(fig, ax_dict.get('plane_pitch'), ahrs_list[1], im_dict.get('pitch'), CENTER_PITCH)
-              WPC_plot_plane(fig, ax_dict.get('plane_yaw'), ahrs_list[2], im_dict.get('yaw'), CENTER_YAW)
-              WPC_text_button(fig, ahrs_list[0], ahrs_list[1], ahrs_list[2], ax_dict.get('value_roll'), ax_dict.get('value_pitch'),  ax_dict.get('value_yaw'))
+              WPC_update_mesh(fig, ax_dict.get('main'), data_orig, mesh_poly, roll, pitch, yaw)
+              WPC_update_image_plane(fig, ax_dict.get('plane_roll'), roll, im_dict.get('roll'), CENTER_ROLL)
+              WPC_update_image_plane(fig, ax_dict.get('plane_pitch'), pitch, im_dict.get('pitch'), CENTER_PITCH)
+              WPC_update_image_plane(fig, ax_dict.get('plane_yaw'), yaw, im_dict.get('yaw'), CENTER_YAW)
+              WPC_text_button(fig, roll, pitch, yaw, ax_dict.get('value_roll'), ax_dict.get('value_pitch'),  ax_dict.get('value_yaw'))
               plt.tight_layout()
               plt.pause(2**-5)
 
