@@ -195,14 +195,14 @@ def WPC_getRotMat(roll, pitch, yaw, use_deg=False):
 
 def WPC_showEmpty(tag=DEFAULT_MODEL, save=0):
   fig, ax_dict = WPC_initializeFigure(option='3D')
-  yaw_im = WPC_initialize_plane('yaw', fig, ax_dict.get('plane_yaw'))
-  pitch_im = WPC_initialize_plane('pitch', fig, ax_dict.get('plane_pitch'))
-  roll_im = WPC_initialize_plane('roll', fig, ax_dict.get('plane_roll'))
+  im_yaw = WPC_initialize_plane('yaw', fig, ax_dict.get('plane_yaw'))
+  im_pitch = WPC_initialize_plane('pitch', fig, ax_dict.get('plane_pitch'))
+  im_roll = WPC_initialize_plane('roll', fig, ax_dict.get('plane_roll'))
 
   im_dict = {
-    'yaw': yaw_im,
-    'pitch': pitch_im,
-    'roll': roll_im,
+    'yaw': im_yaw,
+    'pitch': im_pitch,
+    'roll': im_roll,
   }
 
   mesh_model_type = MESH_MODEL_DICT[tag] #model dict dictionary
