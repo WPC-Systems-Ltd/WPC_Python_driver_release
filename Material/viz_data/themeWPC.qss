@@ -11,30 +11,30 @@ QPushButton {
     font-weight: bold; /* Texte en gras */
 }
 
-QPushButton#pushConnect {
+QPushButton#push_connect {
     background-color: rgb(5,9,27); /* Couleur pour le bouton Start and Connect */
     border: 3px solid rgb(0, 255, 0,0.35); /* Bordure verte avec une épaisseur de 3px */
 }
 
-QPushButton#pushConnect:hover {
+QPushButton#push_connect:hover {
     background-color: rgba(0, 255, 0,0.35); /* Changement de couleur au survol */
 }
 
-QPushButton#pushStop {
+QPushButton#push_stop {
     background-color: rgb(5,9,27); /* Couleur pour le bouton Pause */
     border: 3px solid rgba(255, 255, 0, 0.35); /* Bordure jaune avec une épaisseur de 3px */
 }
 
-QPushButton#pushStop:hover {
+QPushButton#push_stop:hover {
     background-color: rgba(255, 255, 0, 0.35); /* Changement de couleur au survol */
 }
 
-QPushButton#pushQuit {
+QPushButton#push_quit {
     background-color: rgb(5,9,27); /* Couleur pour le bouton Quit */
     border: 3px solid rgb(255, 0, 0,0.35); /* Bordure rouge avec une épaisseur de 3px */
 }
 
-QPushButton#pushQuit:hover {
+QPushButton#push_quit:hover {
     background-color: rgb(255, 0, 0,0.35); /* Changement de couleur au survol */
 }
 

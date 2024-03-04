@@ -43,199 +43,199 @@ class Ui_MainWindow(object):
         MainWindow.setAutoFillBackground(False)
         # MainWindow.showFullScreen()
 
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setObjectName("centralwidget")
-
-        self.MainVlayout = QtWidgets.QVBoxLayout(self.centralwidget)
-        self.MainVlayout.setObjectName("MainVlayout")
+        self.central_widget = QtWidgets.QWidget(MainWindow)
+        self.central_widget.setObjectName("central_widget")
+        
+        self.main_v_layout = QtWidgets.QVBoxLayout(self.central_widget)
+        self.main_v_layout.setObjectName("main_v_layout")
 
         ## Input Display
 
         ## LineEdit, we put a default IP address
-        self.InputLayout = QtWidgets.QHBoxLayout()
-        self.InputLayout.setObjectName("InputLayout")
-        self.lineEditIP = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEditIP.setMaximumWidth(300)
-        self.lineEditIP.setObjectName("lineEditIP")
-        self.lineEditIP.setText("192.168.5.39")
-        self.InputLayout.addWidget(self.lineEditIP)
+        self.input_layout = QtWidgets.QHBoxLayout()
+        self.input_layout.setObjectName("input_layout")
+        self.lineEdit_ip = QtWidgets.QLineEdit(self.central_widget)
+        self.lineEdit_ip.setMaximumWidth(300)
+        self.lineEdit_ip.setObjectName("lineEdit_ip")
+        self.lineEdit_ip.setText("192.168.5.39")
+        self.input_layout.addWidget(self.lineEdit_ip)
 
         ## ComboBox, even if there is only one port, we keep it to be able to add more in the future
-        self.comboBox_port = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox_port = QtWidgets.QComboBox(self.central_widget)
         self.comboBox_port.addItem("0")
         self.comboBox_port.setCurrentIndex(0)
         self.comboBox_port.setObjectName("comboBox_port")
-        self.InputLayout.addWidget(self.comboBox_port)
+        self.input_layout.addWidget(self.comboBox_port)
 
         ## Start connection
-        self.pushConnect = QtWidgets.QPushButton(self.centralwidget)
-        self.pushConnect.setObjectName("pushConnect")
-        self.InputLayout.addWidget(self.pushConnect)
-        self.shortcutConnect = QtWidgets.QShortcut(QKeySequence(Qt.Key_Return), MainWindow)
-        self.shortcutConnect.activated.connect(self.start_connection)
-        self.pushConnect.clicked.connect(self.start_connection)
+        self.push_connect = QtWidgets.QPushButton(self.central_widget)
+        self.push_connect.setObjectName("push_connect")
+        self.input_layout.addWidget(self.push_connect)
+        self.push_quitshortcut_connect = QtWidgets.QShortcut(QKeySequence(Qt.Key_Return), MainWindow)
+        self.push_quitshortcut_connect.activated.connect(self.start_connection)
+        self.push_connect.clicked.connect(self.start_connection)
 
         ## Stop connection
-        self.pushStop = QtWidgets.QPushButton(self.centralwidget)
-        self.pushStop.setObjectName("pushStop")
-        self.shortcutStop = QtWidgets.QShortcut(QKeySequence(Qt.Key_Space), MainWindow)
-        self.shortcutStop.activated.connect(self.stop_connection)
-        self.InputLayout.addWidget(self.pushStop)
-        self.pushStop.clicked.connect(self.stop_connection)
+        self.push_stop = QtWidgets.QPushButton(self.central_widget)
+        self.push_stop.setObjectName("push_stop")
+        self.shortcut_stop = QtWidgets.QShortcut(QKeySequence(Qt.Key_Space), MainWindow)
+        self.shortcut_stop.activated.connect(self.stop_connection)
+        self.input_layout.addWidget(self.push_stop)
+        self.push_stop.clicked.connect(self.stop_connection)
 
         ## Quit
-        self.pushQuit = QtWidgets.QPushButton(self.centralwidget)
-        self.pushQuit.setObjectName("pushQuit")
-        self.InputLayout.addWidget(self.pushQuit)
-        self.pushQuit.clicked.connect(self.close_and_quit)
-        self.shortcutQuit = QtWidgets.QShortcut(QtGui.QKeySequence("Ctrl+Q"), MainWindow)
-        self.shortcutQuit.activated.connect(self.close_and_quit)
-        self.lineEditIP.setAlignment(QtCore.Qt.AlignCenter)
+        self.push_quit = QtWidgets.QPushButton(self.central_widget)
+        self.push_quit.setObjectName("push_quit")
+        self.input_layout.addWidget(self.push_quit)
+        self.push_quit.clicked.connect(self.close_and_quit)
+        self.shortcut_quit = QtWidgets.QShortcut(QtGui.QKeySequence("Ctrl+Q"), MainWindow)
+        self.shortcut_quit.activated.connect(self.close_and_quit)
+        self.lineEdit_ip.setAlignment(QtCore.Qt.AlignCenter)
 
-        ## MainVlayout
-        self.MainVlayout.addLayout(self.InputLayout)
+        ## main_v_layout
+        self.main_v_layout.addLayout(self.input_layout)
 
         ## Prepare the layout for the all graphic parts
-        self.gridLayout = QtWidgets.QGridLayout()
-        self.gridLayout.setObjectName("gridLayout")
+        self.grid_layout = QtWidgets.QGridLayout()
+        self.grid_layout.setObjectName("grid_layout")
 
         ## Splitter to separate the 3D graphic from the others, and give flexibility to the user:
         ## He can change the size of the 3D graphic directly on the interface
         self.splitter = QtWidgets.QSplitter(QtCore.Qt.Horizontal)
 
         ## 3D graphic part
-        self.widget3D = QtWidgets.QGraphicsView(self.centralwidget)
-        self.widget3D.setObjectName("graphicMesh")
-        self.meshLayout = QtWidgets.QGridLayout()
-        self.widget3D.setLayout(self.meshLayout)
-        self.splitter.addWidget(self.widget3D)
+        self.mesh_widget = QtWidgets.QGraphicsView(self.central_widget)
+        self.mesh_widget.setObjectName("graphicMesh")
+        self.mesh_layout = QtWidgets.QGridLayout()
+        self.mesh_widget.setLayout(self.mesh_layout)
+        self.splitter.addWidget(self.mesh_widget)
 
         ## Create a widget to hold the remaining widgets
-        self.other_widgets = QtWidgets.QWidget()
-        self.other_widgets_layout = QtWidgets.QGridLayout()
+        self.graphic_widgets = QtWidgets.QWidget()
+        self.right_grid_layout = QtWidgets.QGridLayout()
 
         ## Graphic Windows of plane images
 
         ## Pitch part
-        self.graphicPitch = QtWidgets.QGraphicsView(self.centralwidget)
-        self.graphicPitch.setObjectName("graphicPitch")
-        self.other_widgets_layout.addWidget(self.graphicPitch, 2, 1, 1, 1)
+        self.graphic_plane_image_pitch = QtWidgets.QGraphicsView(self.central_widget)
+        self.graphic_plane_image_pitch.setObjectName("graphic_plane_image_pitch")
+        self.right_grid_layout.addWidget(self.graphic_plane_image_pitch, 2, 1, 1, 1)
 
         ## Yaw part
-        self.graphicYaw = QtWidgets.QGraphicsView(self.centralwidget)
-        self.graphicYaw.setObjectName("graphicYaw")
-        self.other_widgets_layout.addWidget(self.graphicYaw, 3, 1, 1, 1)
+        self.graphic_plane_image_yaw = QtWidgets.QGraphicsView(self.central_widget)
+        self.graphic_plane_image_yaw.setObjectName("graphic_plane_image_yaw")
+        self.right_grid_layout.addWidget(self.graphic_plane_image_yaw, 3, 1, 1, 1)
 
         ## Roll part
-        self.graphicRoll = QtWidgets.QGraphicsView(self.centralwidget)
-        self.graphicRoll.setObjectName("graphicRoll")
-        self.other_widgets_layout.addWidget(self.graphicRoll, 1, 1, 1, 1)
+        self.graphic_plane_image_roll = QtWidgets.QGraphicsView(self.central_widget)
+        self.graphic_plane_image_roll.setObjectName("graphic_plane_image_roll")
+        self.right_grid_layout.addWidget(self.graphic_plane_image_roll, 1, 1, 1, 1)
 
         ## Use dictionary to find it easily
-        self.graphicPlanes = {'yaw': self.graphicYaw, 'pitch': self.graphicPitch, 'roll': self.graphicRoll}
+        self.graphic_planes = {'yaw': self.graphic_plane_image_yaw, 'pitch': self.graphic_plane_image_pitch, 'roll': self.graphic_plane_image_roll}
 
         ##Graphic Windows of numeric values display of pitch, roll and yaw
 
         ## Pitch part
-        self.graphicTextPitch = QtWidgets.QGraphicsView(self.centralwidget)
-        self.graphicTextPitch.setObjectName("graphicTextPitch")
-        self.other_widgets_layout.addWidget(self.graphicTextPitch, 2, 2, 1, 1)
+        self.graphic_text_pitch = QtWidgets.QGraphicsView(self.central_widget)
+        self.graphic_text_pitch.setObjectName("graphic_text_pitch")
+        self.right_grid_layout.addWidget(self.graphic_text_pitch, 2, 2, 1, 1)
 
         ## Yaw part
-        self.graphicTextYaw = QtWidgets.QGraphicsView(self.centralwidget)
-        self.graphicTextYaw.setObjectName("graphicTextYaw")
-        self.other_widgets_layout.addWidget(self.graphicTextYaw, 3, 2, 1, 1)
+        self.graphic_text_yaw = QtWidgets.QGraphicsView(self.central_widget)
+        self.graphic_text_yaw.setObjectName("graphic_text_yaw")
+        self.right_grid_layout.addWidget(self.graphic_text_yaw, 3, 2, 1, 1)
 
         ## Roll part
-        self.graphicTextRoll = QtWidgets.QGraphicsView(self.centralwidget)
-        self.graphicTextRoll.setObjectName("graphicTextRoll")
-        self.other_widgets_layout.addWidget(self.graphicTextRoll, 1, 2, 1, 1)
+        self.graphic_text_roll = QtWidgets.QGraphicsView(self.central_widget)
+        self.graphic_text_roll.setObjectName("graphic_text_roll")
+        self.right_grid_layout.addWidget(self.graphic_text_roll, 1, 2, 1, 1)
 
-        self.other_widgets.setLayout(self.other_widgets_layout)
+        self.graphic_widgets.setLayout(self.right_grid_layout)
 
-        self.splitter.addWidget(self.other_widgets)
-        self.gridLayout.addWidget(self.splitter, 1, 1, 3, 1)
-        self.MainVlayout.addLayout(self.gridLayout)
+        self.splitter.addWidget(self.graphic_widgets)
+        self.grid_layout.addWidget(self.splitter, 1, 1, 3, 1)
+        self.main_v_layout.addLayout(self.grid_layout)
 
-        MainWindow.setCentralWidget(self.centralwidget)
+        MainWindow.setCentralWidget(self.central_widget)
 
         ## Input get infos
-        self.ip_address = self.lineEditIP.text()
+        self.ip_address = self.lineEdit_ip.text()
         self.port = int(self.comboBox_port.currentIndex())
         self.timeout = 3 ## second
         self.sampling_period = 0.003
 
-        self.timer_running = False # Become True when start is pressed, to avoid multiple pressing errors
+        self.timer_running = False ## Become True when start is pressed, to avoid multiple pressing errors
         self.quit_state = False
 
         ## Text Part
-        self.textSceneYaw = QGraphicsScene()
-        self.textScenePitch = QGraphicsScene()
-        self.textSceneRoll = QGraphicsScene()
+        self.text_scene_yaw = QGraphicsScene()
+        self.text_scene_pitch = QGraphicsScene()
+        self.text_scene_roll = QGraphicsScene()
 
         ## Create a dictionary to store the text characteristics
-        self.textItems = {}
+        self.text_items_dict = {}
         for key, props in TEXT_PROPERTIES.items():
             text_item = QtWidgets.QGraphicsTextItem(props['text'])
             text_item.setFont(props['font'])
             text_item.setDefaultTextColor(props['color'])
-            self.textItems[key] = text_item
+            self.text_items_dict[key] = text_item
 
         ## Add texts to graphic scenes
-        for key, text_item in self.textItems.items():
-            scene = getattr(self, f"textScene{key.capitalize()}")
+        for key, text_item in self.text_items_dict.items():
+            scene = getattr(self, f"text_scene_{key}")
             scene.addItem(text_item)
 
         ## Define graphic scenes in a dictionary for an easy access
-        self.graphicTextScenes = {
-            'yaw': self.textSceneYaw,
-            'pitch': self.textScenePitch,
-            'roll': self.textSceneRoll
+        self.graphic_text_scenes_dict = {
+            'yaw': self.text_scene_yaw,
+            'pitch': self.text_scene_pitch,
+            'roll': self.text_scene_roll
         }
 
-        for key, scene in self.graphicTextScenes.items():
-            graphic_text_widget = getattr(self, f"graphicText{key.capitalize()}")
+        for key, scene in self.graphic_text_scenes_dict.items():
+            graphic_text_widget = getattr(self, f"graphic_text_{key}")
             graphic_text_widget.setScene(scene)
 
         ## Plane Part
-        self.sceneYaw = QGraphicsScene()
-        self.scenePitch = QGraphicsScene()
-        self.sceneRoll = QGraphicsScene()
+        self.scene_plane_yaw = QGraphicsScene()
+        self.scene_plane_pitch = QGraphicsScene()
+        self.scene_plane_roll = QGraphicsScene()
 
-        self.graphicYaw.setScene(self.sceneYaw)
-        self.graphicPitch.setScene(self.scenePitch)
-        self.graphicRoll.setScene(self.sceneRoll)
+        self.graphic_plane_image_yaw.setScene(self.scene_plane_yaw)
+        self.graphic_plane_image_pitch.setScene(self.scene_plane_pitch)
+        self.graphic_plane_image_roll.setScene(self.scene_plane_roll)
 
-        self.scene_dict = {'yaw' : self.sceneYaw, 'pitch' : self.scenePitch, 'roll' : self.sceneRoll}
+        self.scene_dict = {'yaw' : self.scene_plane_yaw, 'pitch' : self.scene_plane_pitch, 'roll' : self.scene_plane_roll}
 
 
         ## Load and show images in their scenes
-        self.load_image(f'{IMG_PATH}yaw.png', self.sceneYaw)
-        self.load_image(f'{IMG_PATH}pitch.png', self.scenePitch)
-        self.load_image(f'{IMG_PATH}roll.png', self.sceneRoll)
+        self.load_image(f'{IMG_PATH}yaw.png', self.scene_plane_yaw)
+        self.load_image(f'{IMG_PATH}pitch.png', self.scene_plane_pitch)
+        self.load_image(f'{IMG_PATH}roll.png', self.scene_plane_roll)
 
 
-        self.pixmap_Yaw = self.sceneYaw.items()[0]
-        self.Yaw_width = self.pixmap_Yaw.pixmap().width()
-        self.Yaw_height = self.pixmap_Yaw.pixmap().height()
-        self.Yaw_center = (self.Yaw_width / 2, self.Yaw_height / 2)
+        self.pixmap_yaw = self.scene_plane_yaw.items()[0]
+        self.width_yaw = self.pixmap_yaw.pixmap().width()
+        self.height_yaw = self.pixmap_yaw.pixmap().height()
+        self.center_yaw = (self.width_yaw / 2, self.height_yaw / 2)
 
-        self.pixmap_Pitch = self.scenePitch.items()[0]
-        self.Pitch_width = self.pixmap_Pitch.pixmap().width()
-        self.Pitch_height = self.pixmap_Pitch.pixmap().height()
-        self.Pitch_center = (self.Pitch_width / 2, self.Pitch_height / 2)
+        self.pixmap_pitch = self.scene_plane_pitch.items()[0]
+        self.width_pitch = self.pixmap_pitch.pixmap().width()
+        self.height_pitch = self.pixmap_pitch.pixmap().height()
+        self.center_pitch = (self.width_pitch / 2, self.height_pitch / 2)
 
-        self.pixmap_Roll = self.sceneRoll.items()[0]
-        self.Roll_width = self.pixmap_Roll.pixmap().width()
-        self.Roll_height = self.pixmap_Roll.pixmap().height()
-        self.Roll_center = (self.Roll_width / 2, self.Roll_height / 2)
+        self.pixmap_roll = self.scene_plane_roll.items()[0]
+        self.width_roll = self.pixmap_roll.pixmap().width()
+        self.height_roll = self.pixmap_roll.pixmap().height()
+        self.center_roll = (self.width_roll / 2, self.height_roll / 2)
 
         ## Create dictionaries to store the pixmap and the center of the pixmap, convenient for the rotation
-        self.pixmap = {'yaw' : self.pixmap_Yaw, 'pitch' : self.pixmap_Pitch, 'roll' : self.pixmap_Roll} # dictionnary to store the pixmap
-        self.center = {'yaw' : self.Yaw_center, 'pitch' : self.Pitch_center, 'roll' : self.Roll_center} # dictionnary to store the center of the pixmap
+        self.pixmap_dict = {'yaw' : self.pixmap_yaw, 'pitch' : self.pixmap_pitch, 'roll' : self.pixmap_roll} # dictionnary to store the pixmap
+        self.center_dict = {'yaw' : self.center_yaw, 'pitch' : self.center_pitch, 'roll' : self.center_roll} # dictionnary to store the center of the pixmap
 
         ## Initialize useful constants
-        self.dict_map = {'roll' : 0, 'pitch' : 1, 'yaw' : 2}
+        self.map_dict = {'roll' : 0, 'pitch' : 1, 'yaw' : 2}
 
         ## To prevent error in case of missing values, we just read the last one available
         self.list_angle = [[0,0] for i in range(3)]
@@ -243,7 +243,7 @@ class Ui_MainWindow(object):
         ## Mesh Part
 
         ## Create a widget to display 3D graphics
-        self.widget3D = gl.GLViewWidget()
+        self.mesh_widget = gl.GLViewWidget()
 
         ## Load STL mesh file
         mesh = meshio.read(f'{DATA_PATH}{TAG}.stl')
@@ -255,7 +255,7 @@ class Ui_MainWindow(object):
 
         ## Create a mesh item
         self.mesh_item = gl.GLMeshItem(vertexes=self.vertices, faces=self.faces,  smooth=False, color=(152, 171, 238, 0.3))
-        self.widget3D.addItem(self.mesh_item)
+        self.mesh_widget.addItem(self.mesh_item)
         ## Set camera position and orientation
         ## Calculate the maximum dimension of the mesh
         max_dimension = max(max(self.vertices[:, 0]) - min(self.vertices[:, 0]),
@@ -265,7 +265,7 @@ class Ui_MainWindow(object):
         ## Set the camera distance based on the maximum dimension
         camera_distance = max_dimension * 1.2
 
-        self.widget3D.setCameraPosition(distance=camera_distance)
+        self.mesh_widget.setCameraPosition(distance=camera_distance)
 
         ## Change displaying
         self.mesh_item.setGLOptions('additive')
@@ -273,13 +273,13 @@ class Ui_MainWindow(object):
 
         ## Plot a grid
         grid = gl.GLGridItem()
-        self.widget3D.addItem(grid)
+        self.mesh_widget.addItem(grid)
 
         grid.scale(max_dimension, max_dimension, max_dimension)
         grid.translate(0, 0, -max_dimension * 1.2)
 
         ## Light blue background, set it
-        self.widget3D.setBackgroundColor(5, 9, 27)
+        self.mesh_widget.setBackgroundColor(5, 9, 27)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -291,7 +291,7 @@ class Ui_MainWindow(object):
 
         print(f'{pywpc.PKG_FULL_NAME} - Version {pywpc.__version__}')
 
-        self.ip_address = self.lineEditIP.text()
+        self.ip_address = self.lineEdit_ip.text()
         self.port = int(self.comboBox_port.currentIndex())
         try:
             self.dev.connect(self.ip_address) ## Depend on your device
@@ -358,19 +358,19 @@ class Ui_MainWindow(object):
     ## Update the display, calls the functions to update all sub parts of the display
     def general_update(self):
         self.ahrs_list = self.dev.AHRS_getEstimate(self.port, self.mode, self.timeout)
-        self.ip_address = self.lineEditIP.text()  # New IP address
+        self.ip_address = self.lineEdit_ip.text()  # New IP address
 
         ## Get port from GUI
         self.port = int(self.comboBox_port.currentIndex())
 
         ## In case of missing values, we just read the last one available
-        for type in self.dict_map.keys():
-            self.list_angle[self.dict_map.get(type)] = self.list_angle[self.dict_map.get(type)][1:]
+        for type in self.map_dict.keys():
+            self.list_angle[self.map_dict.get(type)] = self.list_angle[self.map_dict.get(type)][1:]
             if len(self.ahrs_list) > 0:
-                angle = self.ahrs_list[self.dict_map.get(type)]
+                angle = self.ahrs_list[self.map_dict.get(type)]
             else:
-                angle = self.list_angle[self.dict_map.get(type)][-1]
-            self.ahrs_list[self.dict_map.get(type)] = angle
+                angle = self.list_angle[self.map_dict.get(type)][-1]
+            self.ahrs_list[self.map_dict.get(type)] = angle
 
         self.update_image_rotation_plane('yaw')
         self.update_image_rotation_plane('pitch')
@@ -382,16 +382,16 @@ class Ui_MainWindow(object):
     def align_texts(self, txt1, txt2, type):
         if len(txt1)>len(txt2):
             margin = (len(txt1)-len(txt2))//2
-            self.textItems.get(type).setPlainText(txt1+'\n'+' '*margin+txt2)
+            self.text_items_dict.get(type).setPlainText(txt1+'\n'+' '*margin+txt2)
         else:
             margin = (len(txt2)-len(txt1))//2
-            self.textItems.get(type).setPlainText(' '*margin+txt1+'\n'+txt2)
+            self.text_items_dict.get(type).setPlainText(' '*margin+txt1+'\n'+txt2)
 
     ## Update the text display
     def update_text(self):
-        self.align_texts('Yaw', f'{self.ahrs_list[self.dict_map.get("yaw")]:.2f} deg', type='yaw')
-        self.align_texts('Pitch', f'{self.ahrs_list[self.dict_map.get("pitch")]:.2f} deg', type='pitch')
-        self.align_texts('Roll', f'{self.ahrs_list[self.dict_map.get("roll")]:.2f} deg', type='roll')
+        self.align_texts('Yaw', f'{self.ahrs_list[self.map_dict.get("yaw")]:.2f} deg', type='yaw')
+        self.align_texts('Pitch', f'{self.ahrs_list[self.map_dict.get("pitch")]:.2f} deg', type='pitch')
+        self.align_texts('Roll', f'{self.ahrs_list[self.map_dict.get("roll")]:.2f} deg', type='roll')
 
     ## Simple function to get the dimensions of a scene
     def get_scene_dimensions(self, scene):
@@ -402,18 +402,18 @@ class Ui_MainWindow(object):
     ## Update the rotation of plane images, two  opposite translations here because the rotation is done around the center of the image
     def update_image_rotation_plane(self, type):
         ## Scale the pixmap
-        angle = self.ahrs_list[self.dict_map.get(type)]
-        self.graphicPlanes.get(type).fitInView(self.scene_dict.get(type).sceneRect(), Qt.KeepAspectRatio)
+        angle = self.ahrs_list[self.map_dict.get(type)]
+        self.graphic_planes.get(type).fitInView(self.scene_dict.get(type).sceneRect(), Qt.KeepAspectRatio)
 
         ## Calculate center of image and create a transformation for rotation
-        transform = QTransform().translate(self.center.get(type)[0], self.center.get(type)[1]).rotate(angle).translate(-self.center.get(type)[0], -self.center.get(type)[1])
+        transform = QTransform().translate(self.center_dict.get(type)[0], self.center_dict.get(type)[1]).rotate(angle).translate(-self.center_dict.get(type)[0], -self.center_dict.get(type)[1])
 
         ## Apply the transformation to the pixmap
-        self.pixmap.get(type).setTransform(transform)
+        self.pixmap_dict.get(type).setTransform(transform)
 
     ## Simple function to get the rotation matrix
     def WPC_getRotMat(self, use_deg=True):
-        yaw, pitch, roll = self.ahrs_list[self.dict_map.get('yaw')], self.ahrs_list[self.dict_map.get('pitch')], self.ahrs_list[self.dict_map.get('roll')]
+        yaw, pitch, roll = self.ahrs_list[self.map_dict.get('yaw')], self.ahrs_list[self.map_dict.get('pitch')], self.ahrs_list[self.map_dict.get('roll')]
         if use_deg:
             roll *= DEGREE_TO_RADIAN
             pitch *= DEGREE_TO_RADIAN
@@ -434,18 +434,18 @@ class Ui_MainWindow(object):
         self.mesh_item.setMeshData(vertexes=rotated_vertices, faces=self.faces, smooth=True, color=(152, 171, 238, 0.4))
 
         ## Add the widget to the layout
-        self.meshLayout.removeWidget(self.widget3D)
+        self.mesh_layout.removeWidget(self.mesh_widget)
 
         ## Add the widget to the layout
-        self.meshLayout.addWidget(self.widget3D, 0, 0, self.meshLayout.rowCount(), 1)
+        self.mesh_layout.addWidget(self.mesh_widget, 0, 0, self.mesh_layout.rowCount(), 1)
 
     ## Function to retranslate the interface for the user
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "WPC Visualisation"))
-        self.pushConnect.setText(_translate("MainWindow", "Start and Connect"))
-        self.pushStop.setText(_translate("MainWindow", "Stop"))
-        self.pushQuit.setText(_translate("MainWindow", "Quit"))
+        self.push_connect.setText(_translate("MainWindow", "Start and Connect"))
+        self.push_stop.setText(_translate("MainWindow", "Stop"))
+        self.push_quit.setText(_translate("MainWindow", "Quit"))
         self.comboBox_port.setItemText(0, _translate("MainWindow", "Port 0"))
 
 ## Main funtion
