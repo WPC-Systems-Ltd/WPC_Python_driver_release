@@ -186,7 +186,7 @@
 <span class="linenos">46</span>        <span class="n">duty_cycle</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="linenos">47</span>
 <span class="linenos">48</span>        <span class="c1">## Get firmware model &amp; version</span>
-<span class="linenos">49</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo</span><span class="p">()</span>
+<span class="linenos">49</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo_async</span><span class="p">()</span>
 <span class="linenos">50</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="linenos">51</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 <span class="linenos">52</span>
