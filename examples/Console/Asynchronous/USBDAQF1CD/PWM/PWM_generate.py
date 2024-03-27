@@ -58,6 +58,7 @@ async def main():
         err = await dev.PWM_setFrequency_async(channel, frequency)
         print(f"PWM_setFrequency_async in channel {channel}: {err}")
 
+        ## Set duty cycle
         err = await dev.PWM_setDutyCycle_async(channel, duty_cycle)
         print(f"PWM_setDutyCycle_async in channel {channel}: {err}")
 
@@ -65,8 +66,8 @@ async def main():
         err = await dev.PWM_start_async(channel)
         print(f"PWM_start_async in channel {channel}: {err}")
 
-        ## delay for 5 seconds
-        time.sleep(5) ## delay [s]
+        ## Wait for seconds for generating signal
+        await asyncio.sleep(5) ## delay [s]
 
         ## Stop PWM
         err = await dev.PWM_stop_async(channel)

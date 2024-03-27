@@ -55,10 +55,11 @@ def main():
         err = dev.PWM_open(channel, timeout)
         print(f"PWM_open in channel {channel}: {err}")
 
-        ## Set frequency and duty_cycle
+        ## Set frequency
         err = dev.PWM_setFrequency(channel, frequency, timeout)
         print(f"PWM_setFrequency in channel {channel}: {err}")
 
+        ## Set duty cycle
         err = dev.PWM_setDutyCycle(channel, duty_cycle, timeout)
         print(f"PWM_setDutyCycle in channel {channel}: {err}")
 
@@ -66,7 +67,7 @@ def main():
         err = dev.PWM_start(channel, timeout)
         print(f"PWM_start in channel {channel}: {err}")
 
-        ## delay for 5 seconds
+        ## Wait for seconds for generating signal
         time.sleep(5) ## delay [s]
 
         ## Stop PWM
