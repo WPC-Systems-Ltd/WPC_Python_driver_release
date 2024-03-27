@@ -60,8 +60,8 @@ async def main():
         err = await dev.DO_writePins_async(port, pin_index, DO_value)
         print(f"DO_writePins_async in port {port}: {err}")
 
-        ## Wait for 1 seconds to see led status
-        await asyncio.sleep(1) ## delay [s]
+        ## Wait for seconds to see led status
+        await asyncio.sleep(3) ## delay [s]
 
         ## Close pins with digital output
         err = await dev.DO_closePins_async(port, pin_index)

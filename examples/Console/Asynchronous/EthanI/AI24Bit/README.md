@@ -22,6 +22,14 @@ Then, we take EthanI for example.
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-EthanI.JPG" alt="drawing" width="600"/>
 
+## Get AI data
+
+| Product |port | Description      |
+|---------|-----|------------------|
+| EthanI  | 0   | Get current (mA) |
+| EthanIA | 0   | Get current (mA) |
+| EthanIA | 1   | Get voltage (V)  |
+
 ## AI interfacing SOP
 
 Create device handle -> Connect to device -> Open AI port -> Read AI data -> Close AI port -> Disconnect device -> Release device handle.

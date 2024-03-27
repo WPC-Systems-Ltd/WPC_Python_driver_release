@@ -37,13 +37,12 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        active_low = 0
         active_high = 1
-        en_forward = 0
-        en_reverse = 0
-        position_0 = 10000
-        position_1 = 20000
-        speed = 10000
+        en_forward = 1
+        en_reverse = 1
+        position_0 = 30000
+        position_1 = -30000
+        speed = 30000
         acceleration = 10000
         timeout = 3 ## second
 
@@ -57,7 +56,7 @@ def main():
         print(f"Motion_open: {err}")
 
         ## Motion configure
-        err = dev.Motion_cfgLimit(port, en_forward, en_reverse, active_low, timeout)
+        err = dev.Motion_cfgLimit(port, en_forward, en_reverse, active_high, timeout)
         print(f"Motion_cfgLimit: {err}")
 
         ## Motion Servo on
@@ -68,6 +67,8 @@ def main():
         err = dev.Motion_startScanMove(port, position_0, position_1, speed, acceleration, timeout)
         print(f"Motion_startScanMove: {err}")
 
+        ## Wait for seconds for moving
+        time.sleep(10) ## delay [s]
     except Exception as err:
         pywpc.printGenericError(err)
     except KeyboardInterrupt:

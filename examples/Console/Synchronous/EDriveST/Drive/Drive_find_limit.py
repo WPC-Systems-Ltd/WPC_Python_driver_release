@@ -38,11 +38,10 @@ def main():
         ## Parameters setting
         port = 0 ## Depend on your device
         mode = 1 ## 1: forward, -1: reverse.
-        active_low = 0
+        en_forward = 1
+        en_reverse = 1
         active_high = 1
-        en_forward = 0
-        en_reverse = 0
-        searching_speed = 10000
+        searching_speed = 50000
         approaching_speed = 10000
         acceleration = 10000
         offset = 0
@@ -59,7 +58,7 @@ def main():
         print(f"Motion_open: {err}")
 
         ## Motion config
-        err = dev.Motion_cfgLimit(port, en_forward, en_reverse, active_low, timeout)
+        err = dev.Motion_cfgLimit(port, en_forward, en_reverse, active_high, timeout)
         print(f"Motion_cfgLimit: {err}")
 
         ## Motion reset
@@ -77,6 +76,8 @@ def main():
         status = 1
         while status != 0 :
             status = dev.Motion_getProcessState(port, timeout)
+            if(status == 0):
+                print(f"Motion_getProcessState: {status}")
 
         ## Motion get limit status
         state_list = dev.Motion_getLimitStatus(port, timeout)

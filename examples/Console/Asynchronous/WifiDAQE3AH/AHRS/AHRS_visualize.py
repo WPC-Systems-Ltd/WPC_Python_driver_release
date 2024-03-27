@@ -293,7 +293,6 @@ async def main():
     try:
       ## Parameters setting
       port = 0 ## Depend on your device
-      sampling_period = 0.003
       mode = 0 ## 0: Orientation, 1: Acceleration, 2: Orientation + Acceleration
 
       ## Get firmware model & version
@@ -301,13 +300,9 @@ async def main():
       print("Model name: " + driver_info[0])
       print("Firmware version: " + driver_info[-1])
 
-      ## Open port
+      ## Open AHRS and update rate is 333 HZ
       err = await dev.AHRS_open_async(port)
       print(f"AHRS_open_async in port {port}: {err}")
-
-      ## Set period
-      err = await dev.AHRS_setSamplingPeriod_async(port, sampling_period)
-      print(f"AHRS_setSamplingPeriod_async in port {port}: {err}")
 
       ## Start AHRS
       err = await dev.AHRS_start_async(port)

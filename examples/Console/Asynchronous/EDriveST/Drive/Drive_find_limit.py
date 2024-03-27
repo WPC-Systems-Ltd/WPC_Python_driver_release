@@ -38,11 +38,10 @@ async def main():
         ## Parameters setting
         port = 0 ## Depend on your device
         mode = 1 ## 1: forward, -1: reverse.
-        active_low = 0
         active_high = 1
-        en_forward = 0
-        en_reverse = 0
-        searching_speed = 10000
+        en_forward = 1
+        en_reverse = 1
+        searching_speed = 50000
         approaching_speed = 10000
         acceleration = 10000
         offset = 0
@@ -58,7 +57,7 @@ async def main():
         print(f"Motion_open: {err}")
 
         ## Motion config
-        err = await dev.Motion_cfgLimit_async(port, en_forward, en_reverse, active_low)
+        err = await dev.Motion_cfgLimit_async(port, en_forward, en_reverse, active_high)
         print(f"Motion_cfgLimit: {err}")
 
         ## Motion reset
@@ -76,6 +75,8 @@ async def main():
         status = 1
         while status != 0 :
             status = await dev.Motion_getProcessState_async(port)
+            if(status == 0):
+                print(f"Motion_getProcessState: {status}")
 
         ## Motion get limit status
         state_list = await dev.Motion_getLimitStatus_async(port)

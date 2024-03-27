@@ -50,7 +50,6 @@ async def main():
         ## Motion servo on
         err = await dev.Motion_enableServoOn_async(port)
         print(f"Motion_enableServoOn: {err}")
-
     except Exception as err:
         pywpc.printGenericError(err)
     except KeyboardInterrupt:

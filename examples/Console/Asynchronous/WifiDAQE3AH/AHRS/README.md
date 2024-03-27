@@ -1,4 +1,4 @@
-# AI
+# AHRS
 > **Note**
 > Make sure you are connected to correct IP or serial number.
 
@@ -21,6 +21,18 @@ Then, we take WifiDAQE3AH for example.
 ### WifiDAQE3AH
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-WifiDAQE3AH.JPG" alt="drawing" width="600"/>
+
+## Get AHRS's estimation with mode.
+
+| Mode |  Description                                                   |
+|------|----------------------------------------------------------------|
+|   0  | 3-axis of orientation                                          |
+|   1  | 3-axis of acceleration                                         |
+|   2  | 3-axis of angular velocity                                     |
+|   3  | 3-axis of orientation and acceleration                         |
+|   4  | 3-axis of orientation and angular velocity                     |
+|   5  | 3-axis of angular velocity and acceleration                    |
+|   6  | 3-axis of orientation and angular velocity and acceleration    |
 
 ## AHRS interfacing SOP
 

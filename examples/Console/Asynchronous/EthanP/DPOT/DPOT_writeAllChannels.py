@@ -52,6 +52,7 @@ async def main():
 
         ## Write all channels
         err = await dev.DPOT_writeAllChannel_async(port, resistance_ratio)
+        print(f"DPOT_writeAllChannel_async in port {port}: {err}")
 
         ## Close DPOT
         err = await dev.DPOT_close_async(port)

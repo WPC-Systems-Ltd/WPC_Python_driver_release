@@ -48,7 +48,7 @@ def main():
         DO_port = 0 ## Depend on your device
         DI_port = 2
         DO_pins = [0, 1, 2, 3]
-        DI_pins = [4, 5, 6, 7]
+        DI_pins = [0, 1, 2, 3]
         DO_value = [1, 0, 1, 0]
 
         ## Get firmware model & version

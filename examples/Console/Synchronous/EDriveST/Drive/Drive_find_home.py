@@ -37,16 +37,15 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        searching_speed = 10000
+        searching_speed = 50000
         approaching_speed = 10000
         acceleration = 10000
         search_direction = 1    ## 1: pointing to forward, -1: pointing to reverse.
         approach_direction = 1  ## 1: pointing to forward, -1: pointing to reverse.
         offset = 0
         reset_position = False
-        en_forward = 0
-        en_reverse = 0
-        active_low = 0
+        en_forward = 1
+        en_reverse = 1
         active_high = 1
         timeout = 3 ## second
 
@@ -60,7 +59,7 @@ def main():
         print(f"Motion_open: {err}")
 
         ## Motion configure
-        err = dev.Motion_cfgLimit(port, en_forward, en_reverse, active_low, timeout)
+        err = dev.Motion_cfgLimit(port, en_forward, en_reverse, active_high, timeout)
         print(f"Motion_cfgLimit: {err}")
 
         ## Motion reset
@@ -78,6 +77,8 @@ def main():
         status = 1
         while status != 0 :
             status = dev.Motion_getProcessState(port, timeout)
+            if(status == 0):
+                print(f"Motion_getProcessState: {status}")
 
         ## Motion get limit status
         state_list = dev.Motion_getLimitStatus(port, timeout)

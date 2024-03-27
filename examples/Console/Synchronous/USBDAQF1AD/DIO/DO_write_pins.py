@@ -61,8 +61,8 @@ def main():
         err = dev.DO_writePins(port, pin_index, DO_value, timeout)
         print(f"DO_writePins in port {port}: {err}")
 
-        ## Wait for 1 seconds to see led status
-        time.sleep(1) ## delay [s]
+        ## Wait for seconds to see led status
+        time.sleep(3) ## delay [s]
 
         ## Close pins with digital output
         err = dev.DO_closePins(port, pin_index, timeout)

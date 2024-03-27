@@ -59,7 +59,7 @@ async def main():
         err = await dev.DO_writePort_async(port, DO_value)
         print(f"DO_writePort_async in port {port}: {err}")
 
-        ## Wait for 3 seconds to see led status
+        ## Wait for seconds to see led status
         await asyncio.sleep(3)  ## delay [s]
 
         ## Close port with digital output

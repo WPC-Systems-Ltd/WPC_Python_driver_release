@@ -1,6 +1,0 @@
-System get USB info
-===================
-
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/USBDAQF1DSNK/System_USB/get_USB_info.py
-   :language: python
-   :linenos:

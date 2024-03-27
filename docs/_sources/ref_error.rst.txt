@@ -163,6 +163,9 @@ Error Code Table
    * - -8104
      - 
      - The relay counter index error is not valid or is not recognized.
+   * - -8105
+     - 
+     - The relay port is not available or is already occupied by another process.
    * - -8200
      - 
      - The AI channel is not available.
@@ -327,4 +330,4 @@ Error Code Table
      - The DPOT port is not available or is already occupied by another process.
    * - -9301
      - 
-     - The amount of DPOT channel is not available.
+     - The DPOT channel is not available.

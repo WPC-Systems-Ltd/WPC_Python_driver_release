@@ -52,6 +52,7 @@ def main():
 
         ## Write all channels
         err = dev.DPOT_writeAllChannel(port, resistance_ratio, timeout)
+        print(f"DPOT_writeAllChannel in port {port}: {err}")
 
         ## Close DPOT
         err = dev.DPOT_close(port, timeout)

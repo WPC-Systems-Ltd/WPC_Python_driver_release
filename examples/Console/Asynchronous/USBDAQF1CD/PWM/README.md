@@ -1,10 +1,10 @@
-# DIO
+# PWM
 > **Note**
 > Make sure you are connected to correct IP or serial number.
 
 ## Overview
 
-This example project demonstrates how to use WPC python driver to control motion
+This example project demonstrates how to use WPC python driver to communication with PWM
 
 In order to use API correctly, please refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
@@ -14,7 +14,7 @@ If you'd like to create your own application, start by using this simple templat
 
 ### Hardware Requirement
 
-In order to run this example, you should get USBDAQF1CD product, which contains motion function.
+In order to run this example, you should get USBDAQF1CD product, which contains PWM function.
 
 Then, we take `USBDAQF1CD` for example.
 

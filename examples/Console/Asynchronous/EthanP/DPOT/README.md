@@ -1,4 +1,4 @@
-# DIO
+# DPOT
 > **Note**
 > Make sure you are connected to correct IP or serial number.
 
@@ -24,7 +24,7 @@ Then, we take `EthanP` for example.
 
 ## DPOT interfacing SOP
 
-# DO
+# DPOT
 Create device handle -> Connect to device -> Open DPOT -> Read/Write digital potentiometer resistance-> Close DPOT -> Disconnect device -> Release device handle.
 
 If function return value is 0, it represents communication with `EthanP` successfully.

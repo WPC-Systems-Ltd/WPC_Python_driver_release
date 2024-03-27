@@ -60,7 +60,7 @@ def main():
         err = dev.DO_writePort(port, DO_value, timeout)
         print(f"DO_writePort in port {port}: {err}")
 
-        ## Wait for 3 seconds to see led status
+        ## Wait for seconds to see led status
         time.sleep(3) ## delay [s]
 
         ## Close port with digital output

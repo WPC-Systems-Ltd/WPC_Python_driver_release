@@ -37,14 +37,13 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        speed = 10000
+        speed = 50000
+        dir = 1
         acceleration = 10000
         deceleration = 10000
-        direction = 1   ## 1: pointing to forward, -1: pointing to reverse.
-        active_low = 0
         active_high = 1
-        en_forward = 0
-        en_reverse = 0
+        en_forward = 1
+        en_reverse = 1
         timeout = 3 ## second
 
         ## Get firmware model & version
@@ -57,7 +56,7 @@ def main():
         print(f"Motion_open: {err}")
 
         ## Motion configure
-        err = dev.Motion_cfgLimit(port, en_forward, en_reverse, active_low, timeout)
+        err = dev.Motion_cfgLimit(port, en_forward, en_reverse, active_high, timeout)
         print(f"Motion_cfgLimit: {err}")
 
         ## Motion reset
@@ -69,20 +68,23 @@ def main():
         print(f"Motion_enableServoOn: {err}")
 
         ## Motion start
-        err = dev.Motion_startVelocticyMove(port, speed, acceleration, deceleration, direction, timeout)
+        err = dev.Motion_startVelocticyMove(port, speed, dir, acceleration, deceleration, timeout)
         print(f"Motion_startVelocticyMove: {err}")
 
         ## Wait for seconds for moving
-        time.sleep(1) ## delay [s]
+        time.sleep(3) ## delay [s]
 
         ## Motion start
-        new_speed = 2000
-        new_acceleration = 1000
-        new_deceleration = 1000
+        new_speed = 10000
+        new_dir = -1
+        new_acceleration = 20000
+        new_deceleration = 20000
 
-        err = dev.Motion_startVelocticyMove(port, new_speed, new_acceleration, new_deceleration, direction, timeout)
+        err = dev.Motion_startVelocticyMove(port, new_speed, new_dir, new_acceleration, new_deceleration, timeout)
         print(f"Motion_startVelocticyMove: {err}")
 
+        ## Wait for seconds for moving
+        time.sleep(3) ## delay [s]
     except Exception as err:
         pywpc.printGenericError(err)
     except KeyboardInterrupt:

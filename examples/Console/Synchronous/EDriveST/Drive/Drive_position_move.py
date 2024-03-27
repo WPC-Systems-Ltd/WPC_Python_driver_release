@@ -37,15 +37,14 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        position = 10000
-        speed = 10000
+        position = 50000
+        speed = 50000
         acceleration = 10000
         deceleration = 10000
-        mode = 1    ## 0: absolute, 1: relative.
-        active_low = 0
+        mode = 1 ## 0: absolute, 1: relative.
         active_high = 1
-        en_forward = 0
-        en_reverse = 0
+        en_forward = 1
+        en_reverse = 1
         timeout = 3 ## second
 
         ## Get firmware model & version
@@ -58,7 +57,7 @@ def main():
         print(f"Motion_open: {err}")
 
         ## Motion configure
-        err = dev.Motion_cfgLimit(port, en_forward, en_reverse, active_low, timeout)
+        err = dev.Motion_cfgLimit(port, en_forward, en_reverse, active_high, timeout)
         print(f"Motion_cfgLimit: {err}")
 
         ## Motion reset
@@ -76,7 +75,8 @@ def main():
         status = 1
         while status != 0 :
             status = dev.Motion_getProcessState(port, timeout)
-
+            if(status == 0):
+                print(f"Motion_getProcessState: {status}")
     except Exception as err:
         pywpc.printGenericError(err)
     except KeyboardInterrupt:
