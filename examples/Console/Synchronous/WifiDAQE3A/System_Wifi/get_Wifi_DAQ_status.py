@@ -48,7 +48,6 @@ def main():
         ## Get RSSI, battery and thermo
         rssi = dev.Wifi_readRSSI(timeout)
         battery = dev.Wifi_readBattery(timeout)
-        thermo = dev.Wifi_readThermo(timeout)
 
         ## Get power & charge status
         power_status  = dev.Wifi_getPowerGoodStatus(timeout)
@@ -56,7 +55,6 @@ def main():
 
         print(f"RSSI: {rssi} dBm")
         print(f"Battery: {battery} mV")
-        print(f"Thermo: {thermo} °C")
         print(f"Power status: {power_status}")
         print(f"Charge status: {charge_status}")
     except Exception as err:
