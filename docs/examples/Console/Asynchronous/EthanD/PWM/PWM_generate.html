@@ -194,7 +194,7 @@
 <span class="linenos">54</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">PWM_open_async</span><span class="p">(</span><span class="n">channel</span><span class="p">)</span>
 <span class="linenos">55</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;PWM_open_async in channel </span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">56</span>
-<span class="linenos">57</span>        <span class="c1">## Set frequency and duty_cycle</span>
+<span class="linenos">57</span>        <span class="c1">## Set frequency</span>
 <span class="linenos">58</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">PWM_setFrequency_async</span><span class="p">(</span><span class="n">channel</span><span class="p">,</span> <span class="n">frequency</span><span class="p">)</span>
 <span class="linenos">59</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;PWM_setFrequency_async in channel </span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">60</span>

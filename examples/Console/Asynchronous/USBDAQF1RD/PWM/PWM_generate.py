@@ -54,7 +54,7 @@ async def main():
         err = await dev.PWM_open_async(channel)
         print(f"PWM_open_async in channel {channel}: {err}")
 
-        ## Set frequency and duty_cycle
+        ## Set frequency
         err = await dev.PWM_setFrequency_async(channel, frequency)
         print(f"PWM_setFrequency_async in channel {channel}: {err}")
 
