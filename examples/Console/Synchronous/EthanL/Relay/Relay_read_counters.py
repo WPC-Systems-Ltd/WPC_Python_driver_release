@@ -49,7 +49,7 @@ def main():
 
         ## Open relay
         err = dev.Relay_open(port, timeout)
-        print(f"Relay_open in port {port}: {err}")
+        print(f"Relay_open in port {port}, status: {err}")
 
         ## Read counters
         counter = dev.Relay_read(port, index, timeout)
@@ -57,7 +57,7 @@ def main():
 
         ## Close relay
         err = dev.Relay_close(port, timeout)
-        print(f"Relay_close in port {port}: {err}")
+        print(f"Relay_close in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

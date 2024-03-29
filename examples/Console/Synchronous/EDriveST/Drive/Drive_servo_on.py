@@ -46,11 +46,11 @@ def main():
 
         ## Motion open
         err = dev.Motion_open(port, timeout)
-        print(f"Motion_open: {err}")
+        print(f"Motion_open, status: {err}")
 
         ## Motion servo on
         err = dev.Motion_enableServoOn(port, timeout)
-        print(f"Motion_enableServoOn: {err}")
+        print(f"Motion_enableServoOn, status: {err}")
 
     except Exception as err:
         pywpc.printGenericError(err)
@@ -59,15 +59,15 @@ def main():
     finally:
         ## Motion stop
         err = dev.Motion_stopProcess(port, timeout)
-        print(f"Motion_stopProcess: {err}")
+        print(f"Motion_stopProcess, status: {err}")
 
         ## Motion Servo off
         err = dev.Motion_enableServoOff(port, timeout)
-        print(f"Motion_enableServoOff: {err}")
+        print(f"Motion_enableServoOff, status: {err}")
 
         ## Motion close
         err = dev.Motion_close(port, timeout)
-        print(f"Motion_close: {err}")
+        print(f"Motion_close, status: {err}")
 
     ## Disconnect device
     dev.disconnect()

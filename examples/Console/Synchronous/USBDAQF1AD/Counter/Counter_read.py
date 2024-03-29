@@ -48,11 +48,11 @@ def main():
 
         ## Open counter
         err = dev.Counter_open(channel, timeout)
-        print(f"Counter_open in channel {channel}: {err}")
+        print(f"Counter_open in channel {channel}, status: {err}")
 
         ## Start counter
         err = dev.Counter_start(channel, timeout)
-        print(f"Counter_start in channel {channel}: {err}")
+        print(f"Counter_start in channel {channel}, status: {err}")
 
         ## Read counter
         for i in range(10):
@@ -61,11 +61,11 @@ def main():
 
         ## Stop counter
         err = dev.Counter_stop(channel, timeout)
-        print(f"Counter_stop in channel {channel}: {err}")
+        print(f"Counter_stop in channel {channel}, status: {err}")
 
         ## Close counter
         err = dev.Counter_close(channel, timeout)
-        print(f"Counter_close in channel {channel}: {err}")
+        print(f"Counter_close in channel {channel}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

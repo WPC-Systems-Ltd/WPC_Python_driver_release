@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Motion 1axis move with config file &mdash; WPC Python driver 3.0.21 documentation</title>
+  <title>Motion 1axis move with config file &mdash; WPC Python driver 3.0.23 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/custom_sphinx.css?v=20c2511c" />
@@ -17,7 +17,7 @@
   
         <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../../../_static/documentation_options.js?v=dba2ad10"></script>
+        <script src="../../../../../_static/documentation_options.js?v=4822a363"></script>
         <script src="../../../../../_static/doctools.js?v=888ff710"></script>
         <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../_static/js/theme.js"></script>
@@ -40,7 +40,7 @@
               <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.21
+                3.0.23
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -204,30 +204,30 @@
 <span class="linenos"> 48</span>
 <span class="linenos"> 49</span>        <span class="c1">## Motion open</span>
 <span class="linenos"> 50</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_open_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos"> 51</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;open_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 51</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;open_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 52</span>
 <span class="linenos"> 53</span>        <span class="c1">## Motion open configuration file</span>
 <span class="linenos"> 54</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_openCfgFile_async</span><span class="p">(</span><span class="s1">&#39;C:/Users/user/Desktop/3AxisStage_2P.ini&#39;</span><span class="p">)</span>
-<span class="linenos"> 55</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;openCfgFile_async: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 55</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;openCfgFile_async, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 56</span>
 <span class="linenos"> 57</span>        <span class="c1">## Motion load configuration file</span>
 <span class="linenos"> 58</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_loadCfgFile_async</span><span class="p">()</span>
-<span class="linenos"> 59</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;loadCfgFile_async: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 59</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;loadCfgFile_async, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 60</span>
 <span class="linenos"> 61</span>        <span class="c1">## Motion configure</span>
 <span class="linenos"> 62</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_cfgAxisMove_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">rel_posi_mode</span><span class="p">,</span> <span class="n">target_posi</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">velo</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">accel</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span> <span class="n">decel</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span>
-<span class="linenos"> 63</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cfgAxisMove_async in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 63</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cfgAxisMove_async in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 64</span>
 <span class="linenos"> 65</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_rstEncoderPosi_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">encoder_posi</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="linenos"> 66</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;rstEncoderPosi_async in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 66</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;rstEncoderPosi_async in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 67</span>
 <span class="linenos"> 68</span>        <span class="c1">## Servo on</span>
 <span class="linenos"> 69</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_enableServoOn_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">)</span>
-<span class="linenos"> 70</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;enableServoOn_async in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 70</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;enableServoOn_async in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 71</span>
 <span class="linenos"> 72</span>        <span class="c1">## Motion start</span>
 <span class="linenos"> 73</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_startSingleAxisMove_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">)</span>
-<span class="linenos"> 74</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;startSingleAxisMove_async in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 74</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;startSingleAxisMove_async in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 75</span>
 <span class="linenos"> 76</span>        <span class="n">move_status</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="linenos"> 77</span>        <span class="k">while</span> <span class="n">move_status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -236,15 +236,15 @@
 <span class="linenos"> 80</span>
 <span class="linenos"> 81</span>        <span class="c1">## Motion stop</span>
 <span class="linenos"> 82</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_stop_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">stop_decel</span><span class="p">)</span>
-<span class="linenos"> 83</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;stop_async in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 83</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;stop_async in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 84</span>
 <span class="linenos"> 85</span>        <span class="c1">## Servo off</span>
 <span class="linenos"> 86</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_enableServoOff_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">)</span>
-<span class="linenos"> 87</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;enableServoOff_async in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 87</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;enableServoOff_async in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 88</span>
 <span class="linenos"> 89</span>        <span class="c1">## Motion close</span>
 <span class="linenos"> 90</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_close_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos"> 91</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;close_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 91</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;close_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 92</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos"> 93</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="linenos"> 94</span>

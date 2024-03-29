@@ -48,7 +48,7 @@ async def main():
 
         ## Open relay
         err = await dev.Relay_open_async(port)
-        print(f"Relay_open_async in port {port}: {err}")
+        print(f"Relay_open_async in port {port}, status: {err}")
 
         ## Toggle digital state for 10 times. Each times delay for 0.5 second
         for i in range(10):
@@ -65,7 +65,7 @@ async def main():
 
         ## Close relay
         err = await dev.Relay_close_async(port)
-        print(f"Relay_close_async in port {port}: {err}")
+        print(f"Relay_close_async in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

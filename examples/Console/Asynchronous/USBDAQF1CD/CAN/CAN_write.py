@@ -52,40 +52,40 @@ async def main():
 
         ## Open CAN
         err = await dev.CAN_open_async(port)
-        print(f"CAN_open_async in port {port}: {err}")
+        print(f"CAN_open_async in port {port}, status: {err}")
 
         ## Set CAN port and set speed to 0
         err = await dev.CAN_setSpeed_async(port, speed)
-        print(f"CAN_setSpeed_async in port {port}: {err}")
+        print(f"CAN_setSpeed_async in port {port}, status: {err}")
 
         ## Set CAN port and start CAN
         err = await dev.CAN_start_async(port)
-        print(f"CAN_start_async in port {port}: {err}")
+        print(f"CAN_start_async in port {port}, status: {err}")
 
         ## CAN_length: True: Extended, False: Standard
         ## CAN_type:   True: Remote, False: Data
 
         ## ID: 10, data with 8 bytes, Standard & Data
         err = await dev.CAN_write_async(port, 10, [33, 22, 11, 88, 77, 55, 66, 22], False, False)
-        print(f"CAN_write_async in port {port}: {err}")
+        print(f"CAN_write_async in port {port}, status: {err}")
 
         ## Wait for 1 sec
         await asyncio.sleep(1) ## delay [s]
 
         ## ID: 20, data less than 8 bytes, Standard & Data
         err = await dev.CAN_write_async(port, 20, [1, 2, 3], False, False)
-        print(f"CAN_write_async in port {port}: {err}")
+        print(f"CAN_write_async in port {port}, status: {err}")
 
         ## Wait for 1 sec
         await asyncio.sleep(1) ## delay [s]
 
         ## Set CAN port and stop CAN
         err = await dev.CAN_stop_async(port)
-        print(f"CAN_stop_async in port {port}: {err}")
+        print(f"CAN_stop_async in port {port}, status: {err}")
 
         ## Close CAN
         err = await dev.CAN_close_async(port)
-        print(f"CAN_close_async in port {port}: {err}")
+        print(f"CAN_close_async in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

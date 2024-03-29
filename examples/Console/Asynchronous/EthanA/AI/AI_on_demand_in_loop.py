@@ -56,12 +56,12 @@ async def main():
 
         ## Open AI
         err = await dev.AI_open_async(port)
-        print(f"AI_open_async in port {port}: {err}")
+        print(f"AI_open_async in port {port}, status: {err}")
         
 
         ## Set AI acquisition mode to on demand mode (0)
         err = await dev.AI_setMode_async(port, mode)
-        print(f"AI_setMode_async {mode} in port {port}: {err}")
+        print(f"AI_setMode_async {mode} in port {port}, status: {err}")
 
         ## Read AI
         for i in range(5):
@@ -70,7 +70,7 @@ async def main():
 
         ## Close AI
         err = await dev.AI_close_async(port)
-        print(f"AI_close_async in port {port}: {err}")
+        print(f"AI_close_async in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

@@ -57,23 +57,23 @@ async def main():
 
         ## Open UART
         err = await dev.UART_open_async(port)
-        print(f"UART_open_async in port {port}: {err}")
+        print(f"UART_open_async in port {port}, status: {err}")
 
         ## Set UART port and set baudrate to 9600
         err = await dev.UART_setBaudRate_async(port, baudrate)
-        print(f"UART_setBaudRate_async in port {port}: {err}")
+        print(f"UART_setBaudRate_async in port {port}, status: {err}")
 
         ## Set UART port and set data bit to 8-bit data
         err = await dev.UART_setDataBit_async(port, data_bit_mode)
-        print(f"UART_setDataBit_async in port {port}: {err}")
+        print(f"UART_setDataBit_async in port {port}, status: {err}")
 
         ## Set UART port and set parity to None
         err = await dev.UART_setParity_async(port, parity_mode)
-        print(f"UART_setParity_async in port {port}: {err}")
+        print(f"UART_setParity_async in port {port}, status: {err}")
 
         ## Set UART port and set stop bit to 8-bit data
         err = await dev.UART_setNumStopBit_async(port, stop_bit_mode)
-        print(f"UART_setNumStopBit_async in port {port}: {err}")
+        print(f"UART_setNumStopBit_async in port {port}, status: {err}")
 
         ## Print informaion
         print("Wait for 10 seconds to receive data from other devices")
@@ -87,7 +87,7 @@ async def main():
 
         ## Close UART
         err = await dev.UART_close_async(port)
-        print(f"UART_close_async in port {port}: {err}")
+        print(f"UART_close_async in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

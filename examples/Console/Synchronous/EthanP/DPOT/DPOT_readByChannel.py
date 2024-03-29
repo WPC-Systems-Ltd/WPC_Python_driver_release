@@ -47,7 +47,7 @@ def main():
 
         ## Open DPOT
         err = dev.DPOT_open(port, timeout)
-        print(f"DPOT_open in port {port}: {err}")
+        print(f"DPOT_open in port {port}, status: {err}")
 
         ## Read all channels by for loop
         for i in range(4):
@@ -56,7 +56,7 @@ def main():
 
         ## Close DPOT
         err = dev.DPOT_close(port, timeout)
-        print(f"DPOT_close in port {port}: {err}")
+        print(f"DPOT_close in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

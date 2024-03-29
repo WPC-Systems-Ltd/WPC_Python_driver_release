@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI N samples once &mdash; WPC Python driver 3.0.21 documentation</title>
+  <title>AI N samples once &mdash; WPC Python driver 3.0.23 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/custom_sphinx.css?v=20c2511c" />
@@ -17,7 +17,7 @@
   
         <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../../../_static/documentation_options.js?v=dba2ad10"></script>
+        <script src="../../../../../_static/documentation_options.js?v=4822a363"></script>
         <script src="../../../../../_static/doctools.js?v=888ff710"></script>
         <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../_static/js/theme.js"></script>
@@ -40,7 +40,7 @@
               <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.21
+                3.0.23
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -200,24 +200,24 @@
 <span class="linenos"> 59</span>
 <span class="linenos"> 60</span>        <span class="c1">## Open AI</span>
 <span class="linenos"> 61</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_open_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos"> 62</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_open_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 62</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_open_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 63</span>        
 <span class="linenos"> 64</span>
 <span class="linenos"> 65</span>        <span class="c1">## Set AI acquisition mode to N-samples mode (1)</span>
 <span class="linenos"> 66</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_setMode_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
-<span class="linenos"> 67</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_setMode_async </span><span class="si">{</span><span class="n">mode</span><span class="si">}</span><span class="s2"> in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 67</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_setMode_async </span><span class="si">{</span><span class="n">mode</span><span class="si">}</span><span class="s2"> in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 68</span>
 <span class="linenos"> 69</span>        <span class="c1">## Set AI sampling rate</span>
 <span class="linenos"> 70</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_setSamplingRate_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">sampling_rate</span><span class="p">)</span>
-<span class="linenos"> 71</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_setSamplingRate_async </span><span class="si">{</span><span class="n">sampling_rate</span><span class="si">}</span><span class="s2"> in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 71</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_setSamplingRate_async </span><span class="si">{</span><span class="n">sampling_rate</span><span class="si">}</span><span class="s2"> in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 72</span>
 <span class="linenos"> 73</span>        <span class="c1">## Set AI # of samples</span>
 <span class="linenos"> 74</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_setNumSamples_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">samples</span><span class="p">)</span>
-<span class="linenos"> 75</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_setNumSamples_async </span><span class="si">{</span><span class="n">samples</span><span class="si">}</span><span class="s2"> in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 75</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_setNumSamples_async </span><span class="si">{</span><span class="n">samples</span><span class="si">}</span><span class="s2"> in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 76</span>
 <span class="linenos"> 77</span>        <span class="c1">## Start AI</span>
 <span class="linenos"> 78</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_start_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos"> 79</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_start_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 79</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_start_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 80</span>
 <span class="linenos"> 81</span>        <span class="c1">## Read AI</span>
 <span class="linenos"> 82</span>        <span class="n">ai_2Dlist</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_readStreaming_async</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">read_points</span><span class="p">,</span> <span class="n">read_delay</span><span class="p">)</span>
@@ -236,11 +236,11 @@
 <span class="linenos"> 95</span>
 <span class="linenos"> 96</span>        <span class="c1">## Stop AI</span>
 <span class="linenos"> 97</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_stop_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos"> 98</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_stop_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 98</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_stop_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 99</span>
 <span class="linenos">100</span>        <span class="c1">## Close AI</span>
 <span class="linenos">101</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">AI_close_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-<span class="linenos">102</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_close_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">102</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI_close_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">103</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos">104</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="linenos">105</span>

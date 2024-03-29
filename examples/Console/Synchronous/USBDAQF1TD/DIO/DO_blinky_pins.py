@@ -54,7 +54,7 @@ def main():
 
         ## Open pins with digital output
         err = dev.DO_openPins(port, pinindex, timeout)
-        print(f"DO_openPins in port {port}: {err}")
+        print(f"DO_openPins in port {port}, status: {err}")
 
         ## Toggle digital state for 10 times. Each times delay for 0.5 second
         for i in range(10):
@@ -66,7 +66,7 @@ def main():
 
         ## Close pins with digital output
         err = dev.DO_closePins(port, pinindex, timeout)
-        print(f"DO_closePins in port {port}: {err}")
+        print(f"DO_closePins in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

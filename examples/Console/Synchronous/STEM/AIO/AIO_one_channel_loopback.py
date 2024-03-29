@@ -77,7 +77,7 @@ def main():
         ## If the slot mode is not set to "AIO", set the slot mode to "AIO"
         if slot_mode != "AIO":
             err = dev.Sys_setAIOMode(slot, timeout)
-            print(f"Sys_setAIOMode in slot {slot}: {err}")
+            print(f"Sys_setAIOMode in slot {slot}, status: {err}")
 
         ## Get slot mode
         slot_mode = dev.Sys_getMode(slot, timeout)
@@ -85,15 +85,15 @@ def main():
 
         ## Open AI
         err = dev.AI_open(slot, timeout)
-        print(f"AI_open in slot {slot}: {err}")
+        print(f"AI_open in slot {slot}, status: {err}")
 
         ## Enable CS
         err = dev.AI_enableCS(slot, chip_select, timeout)
-        print(f"AI_enableCS in slot {slot}: {err}")
+        print(f"AI_enableCS in slot {slot}, status: {err}")
 
         ## Open AO
         err = dev.AO_open(slot, timeout)
-        print(f"AO_open in slot {slot}: {err}")
+        print(f"AO_open in slot {slot}, status: {err}")
 
         ## Read data acquisition
         ai_list = dev.AI_readOnDemand(slot, timeout)
@@ -101,19 +101,19 @@ def main():
 
         ## Write AO vaule in channel 0
         err = dev.AO_writeOneChannel(slot, 0, ao_value_list[0], timeout)
-        print(f"In slot {slot} channel 0, the AO value is {ao_value_list[0]}: {err}")
+        print(f"In slot {slot} channel 0, the AO value is {ao_value_list[0]}, status: {err}")
 
         ## Write AO vaule in channel 1
         err = dev.AO_writeOneChannel(slot, 1, ao_value_list[1], timeout)
-        print(f"In slot {slot} channel 1, the AO value is {ao_value_list[1]}: {err}")
+        print(f"In slot {slot} channel 1, the AO value is {ao_value_list[1]}, status: {err}")
 
         ## Write AO vaule in channel 2
         err = dev.AO_writeOneChannel(slot, 2, ao_value_list[2], timeout)
-        print(f"In slot {slot} channel 2, the AO value is {ao_value_list[2]}: {err}")
+        print(f"In slot {slot} channel 2, the AO value is {ao_value_list[2]}, status: {err}")
 
         ## Write AO vaule in channel 3
         err = dev.AO_writeOneChannel(slot, 3, ao_value_list[3], timeout)
-        print(f"In slot {slot} channel 3, the AO value is {ao_value_list[3]}: {err}")
+        print(f"In slot {slot} channel 3, the AO value is {ao_value_list[3]}, status: {err}")
 
         ## Read data acquisition
         ai_list = dev.AI_readOnDemand(slot, timeout)
@@ -121,11 +121,11 @@ def main():
 
         ## Close AI
         err = dev.AI_close(slot, timeout)
-        print(f"AI_close in slot {slot}: {err}")
+        print(f"AI_close in slot {slot}, status: {err}")
 
         ## Close AO
         err = dev.AO_close(slot, timeout)
-        print(f"AO_close in slot {slot}: {err}")
+        print(f"AO_close in slot {slot}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

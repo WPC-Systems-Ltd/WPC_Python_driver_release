@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UART write &mdash; WPC Python driver 3.0.21 documentation</title>
+  <title>UART write &mdash; WPC Python driver 3.0.23 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/custom_sphinx.css?v=20c2511c" />
@@ -17,7 +17,7 @@
   
         <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../../../_static/documentation_options.js?v=dba2ad10"></script>
+        <script src="../../../../../_static/documentation_options.js?v=4822a363"></script>
         <script src="../../../../../_static/doctools.js?v=888ff710"></script>
         <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../_static/js/theme.js"></script>
@@ -40,7 +40,7 @@
               <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.21
+                3.0.23
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -208,39 +208,39 @@
 <span class="linenos"> 56</span>
 <span class="linenos"> 57</span>        <span class="c1">## Open UART</span>
 <span class="linenos"> 58</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_open</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 59</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;UART_open in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 59</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;UART_open in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 60</span>
 <span class="linenos"> 61</span>        <span class="c1">## Set UART port and set baudrate to 9600</span>
 <span class="linenos"> 62</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_setBaudRate</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">baudrate</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 63</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;UART_setBaudRate in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 63</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;UART_setBaudRate in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 64</span>
 <span class="linenos"> 65</span>        <span class="c1">## Set UART port and set data bit to 8-bit data</span>
 <span class="linenos"> 66</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_setDataBit</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">data_bit_mode</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 67</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;UART_setDataBit in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 67</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;UART_setDataBit in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 68</span>
 <span class="linenos"> 69</span>        <span class="c1">## Set UART port and set parity to None</span>
 <span class="linenos"> 70</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_setParity</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">parity_mode</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 71</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;UART_setParity in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 71</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;UART_setParity in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 72</span>
 <span class="linenos"> 73</span>        <span class="c1">## Set UART port and set stop bit to 1 bit</span>
 <span class="linenos"> 74</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_setNumStopBit</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">stop_bit_mode</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 75</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;UART_setNumStopBit in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 75</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;UART_setNumStopBit in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 76</span>
 <span class="linenos"> 77</span>        <span class="c1">## Set UART port and and write &quot;12345&quot; to device in string format</span>
 <span class="linenos"> 78</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_write</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="s2">&quot;12345&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 79</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;UART_write in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 79</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;UART_write in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 80</span>
 <span class="linenos"> 81</span>        <span class="c1">## Set UART port and and write &quot;chunglee people&quot; to device</span>
 <span class="linenos"> 82</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_write</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="s2">&quot;chunglee people&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 83</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;UART_write in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 83</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;UART_write in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 84</span>
 <span class="linenos"> 85</span>        <span class="c1">## Set UART port and and write &quot;12345&quot; to device in list format</span>
 <span class="linenos"> 86</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_write</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="s2">&quot;3&quot;</span><span class="p">,</span><span class="s2">&quot;4&quot;</span><span class="p">,</span><span class="s2">&quot;5&quot;</span><span class="p">],</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 87</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;UART_write in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 87</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;UART_write in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 88</span>
 <span class="linenos"> 89</span>        <span class="c1">## Close UART</span>
 <span class="linenos"> 90</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">UART_close</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 91</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;UART_close in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 91</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;UART_close in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 92</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos"> 93</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="linenos"> 94</span>

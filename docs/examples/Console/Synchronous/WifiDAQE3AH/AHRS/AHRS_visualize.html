@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AHRS visualize &mdash; WPC Python driver 3.0.21 documentation</title>
+  <title>AHRS visualize &mdash; WPC Python driver 3.0.23 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/custom_sphinx.css?v=20c2511c" />
@@ -17,7 +17,7 @@
   
         <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../../../_static/documentation_options.js?v=dba2ad10"></script>
+        <script src="../../../../../_static/documentation_options.js?v=4822a363"></script>
         <script src="../../../../../_static/doctools.js?v=888ff710"></script>
         <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../_static/js/theme.js"></script>
@@ -40,7 +40,7 @@
               <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.21
+                3.0.23
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -444,11 +444,11 @@
 <span class="linenos">302</span>
 <span class="linenos">303</span>      <span class="c1">## Open AHRS and update rate is 333 HZ</span>
 <span class="linenos">304</span>      <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AHRS_open</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">305</span>      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AHRS_open in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">305</span>      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AHRS_open in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">306</span>
 <span class="linenos">307</span>      <span class="c1">## Start AHRS</span>
 <span class="linenos">308</span>      <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AHRS_start</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">309</span>      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AHRS_start in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">309</span>      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AHRS_start in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">310</span>
 <span class="linenos">311</span>      <span class="k">while</span> <span class="n">plt</span><span class="o">.</span><span class="n">fignum_exists</span><span class="p">(</span><span class="n">fig</span><span class="o">.</span><span class="n">number</span><span class="p">):</span>
 <span class="linenos">312</span>          <span class="n">ahrs_list</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AHRS_getEstimate</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
@@ -470,11 +470,11 @@
 <span class="linenos">328</span>    <span class="k">finally</span><span class="p">:</span>
 <span class="linenos">329</span>      <span class="c1">## Stop AHRS</span>
 <span class="linenos">330</span>      <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AHRS_stop</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">331</span>      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AHRS_stop in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">331</span>      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AHRS_stop in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">332</span>
 <span class="linenos">333</span>      <span class="c1">## Close AHRS</span>
 <span class="linenos">334</span>      <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">AHRS_close</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">335</span>      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AHRS_close in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">335</span>      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AHRS_close in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">336</span>
 <span class="linenos">337</span>      <span class="c1">## Disconnect device</span>
 <span class="linenos">338</span>      <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>

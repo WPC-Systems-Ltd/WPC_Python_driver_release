@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DIO loopback pins &mdash; WPC Python driver 3.0.21 documentation</title>
+  <title>DIO loopback pins &mdash; WPC Python driver 3.0.23 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/custom_sphinx.css?v=20c2511c" />
@@ -17,7 +17,7 @@
   
         <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../../../_static/documentation_options.js?v=dba2ad10"></script>
+        <script src="../../../../../_static/documentation_options.js?v=4822a363"></script>
         <script src="../../../../../_static/doctools.js?v=888ff710"></script>
         <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../_static/js/theme.js"></script>
@@ -40,7 +40,7 @@
               <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.21
+                3.0.23
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -224,7 +224,7 @@
 <span class="linenos"> 73</span>        <span class="c1">## If the slot mode is not set to &quot;DIO&quot;, set the slot mode to &quot;DIO&quot;</span>
 <span class="linenos"> 74</span>        <span class="k">if</span> <span class="n">slot_mode</span> <span class="o">!=</span> <span class="s2">&quot;DIO&quot;</span><span class="p">:</span>
 <span class="linenos"> 75</span>            <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_setDIOMode_async</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
-<span class="linenos"> 76</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sys_setDIOMode_async in slot </span><span class="si">{</span><span class="n">slot</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 76</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sys_setDIOMode_async in slot </span><span class="si">{</span><span class="n">slot</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 77</span>
 <span class="linenos"> 78</span>        <span class="c1">## Get slot mode</span>
 <span class="linenos"> 79</span>        <span class="n">slot_mode</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getMode_async</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
@@ -238,7 +238,7 @@
 <span class="linenos"> 87</span>
 <span class="linenos"> 88</span>        <span class="c1">## Write pins to high or low</span>
 <span class="linenos"> 89</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DO_writePins_async</span><span class="p">(</span><span class="n">DO_port</span><span class="p">,</span> <span class="n">DO_pins</span><span class="p">,</span> <span class="n">DO_value</span><span class="p">)</span>
-<span class="linenos"> 90</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DO_writePins_async in DO_port </span><span class="si">{</span><span class="n">DO_port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 90</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DO_writePins_async in DO_port </span><span class="si">{</span><span class="n">DO_port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 91</span>
 <span class="linenos"> 92</span>        <span class="c1">## Read pins state</span>
 <span class="linenos"> 93</span>        <span class="n">state_list</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">DI_readPins_async</span><span class="p">(</span><span class="n">DI_port</span><span class="p">,</span> <span class="n">DI_pins</span><span class="p">)</span>

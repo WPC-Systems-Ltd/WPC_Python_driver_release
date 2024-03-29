@@ -54,18 +54,18 @@ async def main():
 
         ## Open pins with digital output
         err = await dev.DO_openPins_async(port, pin_index)
-        print(f"DO_openPins_async in port {port}: {err}")
+        print(f"DO_openPins_async in port {port}, status: {err}")
 
         ## Write pins to high or low
         err = await dev.DO_writePins_async(port, pin_index, DO_value)
-        print(f"DO_writePins_async in port {port}: {err}")
+        print(f"DO_writePins_async in port {port}, status: {err}")
 
         ## Wait for seconds to see led status
         await asyncio.sleep(3) ## delay [s]
 
         ## Close pins with digital output
         err = await dev.DO_closePins_async(port, pin_index)
-        print(f"DO_closePins_async in port {port}: {err}")
+        print(f"DO_closePins_async in port {port}, status: {err}")
 
     except Exception as err:
         pywpc.printGenericError(err)

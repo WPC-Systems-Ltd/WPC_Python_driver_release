@@ -302,11 +302,11 @@ def main():
 
       ## Open AHRS and update rate is 333 HZ
       err = dev.AHRS_open(port, timeout)
-      print(f"AHRS_open in port {port}: {err}")
+      print(f"AHRS_open in port {port}, status: {err}")
 
       ## Start AHRS
       err = dev.AHRS_start(port, timeout)
-      print(f"AHRS_start in port {port}: {err}")
+      print(f"AHRS_start in port {port}, status: {err}")
 
       while plt.fignum_exists(fig.number):
           ahrs_list = dev.AHRS_getEstimate(port, mode, timeout)
@@ -328,11 +328,11 @@ def main():
     finally:
       ## Stop AHRS
       err = dev.AHRS_stop(port, timeout)
-      print(f"AHRS_stop in port {port}: {err}")
+      print(f"AHRS_stop in port {port}, status: {err}")
 
       ## Close AHRS
       err = dev.AHRS_close(port, timeout)
-      print(f"AHRS_close in port {port}: {err}")
+      print(f"AHRS_close in port {port}, status: {err}")
 
       ## Disconnect device
       dev.disconnect()

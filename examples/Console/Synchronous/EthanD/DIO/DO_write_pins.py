@@ -55,18 +55,18 @@ def main():
 
         ## Open pins with digital output
         err = dev.DO_openPins(port, pin_index, timeout)
-        print(f"DO_openPins in port {port}: {err}")
+        print(f"DO_openPins in port {port}, status: {err}")
 
         ## Write pins to high or low
         err = dev.DO_writePins(port, pin_index, DO_value, timeout)
-        print(f"DO_writePins in port {port}: {err}")
+        print(f"DO_writePins in port {port}, status: {err}")
 
         ## Wait for seconds to see led status
         time.sleep(3) ## delay [s]
 
         ## Close pins with digital output
         err = dev.DO_closePins(port, pin_index, timeout)
-        print(f"DO_closePins in port {port}: {err}")
+        print(f"DO_closePins in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

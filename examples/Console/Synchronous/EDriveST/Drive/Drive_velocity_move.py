@@ -53,23 +53,23 @@ def main():
 
         ## Motion open
         err = dev.Motion_open(port, timeout)
-        print(f"Motion_open: {err}")
+        print(f"Motion_open, status: {err}")
 
         ## Motion configure
         err = dev.Motion_cfgLimit(port, en_forward, en_reverse, active_high, timeout)
-        print(f"Motion_cfgLimit: {err}")
+        print(f"Motion_cfgLimit, status: {err}")
 
         ## Motion reset
         err = dev.Motion_rstEncoderPosi(port, timeout)
-        print(f"Motion_resetEncoderPosi: {err}")
+        print(f"Motion_resetEncoderPosi, status: {err}")
 
         ## Motion Servo on
         err = dev.Motion_enableServoOn(port, timeout)
-        print(f"Motion_enableServoOn: {err}")
+        print(f"Motion_enableServoOn, status: {err}")
 
         ## Motion start
         err = dev.Motion_startVelocticyMove(port, speed, dir, acceleration, deceleration, timeout)
-        print(f"Motion_startVelocticyMove: {err}")
+        print(f"Motion_startVelocticyMove, status: {err}")
 
         ## Wait for seconds for moving
         time.sleep(3) ## delay [s]
@@ -80,15 +80,15 @@ def main():
     finally:
         ## Motion stop
         err = dev.Motion_stopProcess(port, timeout)
-        print(f"Motion_stopProcess: {err}")
+        print(f"Motion_stopProcess, status: {err}")
 
         ## Motion Servo off
         err = dev.Motion_enableServoOff(port, timeout)
-        print(f"Motion_enableServoOff: {err}")
+        print(f"Motion_enableServoOff, status: {err}")
 
         ## Motion close
         err = dev.Motion_close(port, timeout)
-        print(f"Motion_close: {err}")
+        print(f"Motion_close, status: {err}")
 
     ## Disconnect device
     dev.disconnect()

@@ -57,7 +57,7 @@ def main():
 
         ## Open RTD
         err = dev.Thermal_open(port, timeout)
-        print(f"Thermal_open in port {port}: {err}")
+        print(f"Thermal_open in port {port}, status: {err}")
 
         ## Set RTD port and get status in channel 0
         status = dev.Thermal_getStatus(port, ch0, timeout)
@@ -69,7 +69,7 @@ def main():
 
         ## Close RTD
         err = dev.Thermal_close(port, timeout)
-        print(f"Thermal_close in port {port}: {err}")
+        print(f"Thermal_close in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

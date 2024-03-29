@@ -53,18 +53,18 @@ async def main():
 
         ## Open port with digital output
         err = await dev.DO_openPort_async(port)
-        print(f"DO_openPort_async in port {port}: {err}")
+        print(f"DO_openPort_async in port {port}, status: {err}")
 
         ## Write port to high or low
         err = await dev.DO_writePort_async(port, DO_value)
-        print(f"DO_writePort_async in port {port}: {err}")
+        print(f"DO_writePort_async in port {port}, status: {err}")
 
         ## Wait for seconds to see led status
         await asyncio.sleep(3)  ## delay [s]
 
         ## Close port with digital output
         err = await dev.DO_closePort_async(port)
-        print(f"DO_closePort_async in port {port}: {err}")
+        print(f"DO_closePort_async in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

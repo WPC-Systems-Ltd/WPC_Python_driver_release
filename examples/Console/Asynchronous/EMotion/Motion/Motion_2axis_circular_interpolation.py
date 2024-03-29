@@ -61,39 +61,39 @@ async def main():
 
         ## Motion open
         err = await dev.Motion_open_async(port)
-        print(f"open_async in port {port}: {err}")
+        print(f"open_async in port {port}, status: {err}")
 
         ## Motion open configuration file
         err = await dev.Motion_openCfgFile_async('C:/Users/user/Desktop/3AxisStage_2P.ini')
-        print(f"openCfgFile_async: {err}")
+        print(f"openCfgFile_async, status: {err}")
 
         ## Motion load configuration file
         err = await dev.Motion_loadCfgFile_async()
-        print(f"loadCfgFile_async: {err}")
+        print(f"loadCfgFile_async, status: {err}")
 
         ## Motion configure
         err = await dev.Motion_cfgCircularInterpo_async(port, x_axis, y_axis, center_point_x, center_point_y, finish_point_x, finish_point_y, circular_dir_cw, speed=1000, accel=100000, decel=100000)
-        print(f"cfgCircularInterpo_async in port {port}: {err}")
+        print(f"cfgCircularInterpo_async in port {port}, status: {err}")
 
         err = await dev.Motion_startCircularInterpo_async(port)
-        print(f"startCircularInterpo_async in axis{axis}: {err}")
+        print(f"startCircularInterpo_async in axis{axis}, status: {err}")
 
         err = await dev.Motion_cfgAxisMove_async(port, axis, rel_posi_mode, target_posi=5000, velo=10000, accel=100000, decel=100000)
-        print(f"cfgAxisMove_async in axis{axis}: {err}")
+        print(f"cfgAxisMove_async in axis{axis}, status: {err}")
 
         err = await dev.Motion_cfgJerkAndAccelMode_async(port, axis, jerk, scurve)
-        print(f"cfgJerkAndAccelMode_async in axis{axis}: {err}")
+        print(f"cfgJerkAndAccelMode_async in axis{axis}, status: {err}")
 
         err = await dev.Motion_rstEncoderPosi_async(port, axis, encoder_posi=0)
-        print(f"rstEncoderPosi_async in axis{axis}: {err}")
+        print(f"rstEncoderPosi_async in axis{axis}, status: {err}")
 
         for i in range(4):
             err = await dev.Motion_enableServoOn_async(port, i)
-            print(f"enableServoOn_async in axis{i}: {err}")
+            print(f"enableServoOn_async in axis{i}, status: {err}")
 
         ## Motion start
         err = await dev.Motion_startSingleAxisMove_async(port, axis)
-        print(f"startSingleAxisMove_async in axis{axis}: {err}")
+        print(f"startSingleAxisMove_async in axis{axis}, status: {err}")
 
         move_status = 0
         while move_status == 0:
@@ -107,15 +107,15 @@ async def main():
 
         ## Motion stop
         err = await dev.Motion_stop_async(port, axis, stop_decel)
-        print(f"stop_async in axis{axis}: {err}")
+        print(f"stop_async in axis{axis}, status: {err}")
 
         for i in range(4):
             err = await dev.Motion_enableServoOff_async(port, i)
-            print(f"enableServoOff_async in axis{i}: {err}")
+            print(f"enableServoOff_async in axis{i}, status: {err}")
 
         ## Motion close
         err = await dev.Motion_close_async(port)
-        print(f"close_async in port {port}: {err}")
+        print(f"close_async in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

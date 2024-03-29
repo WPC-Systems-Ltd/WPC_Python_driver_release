@@ -56,15 +56,15 @@ def main():
 
         ## Open DO port with digital output
         err = dev.DO_openPort(DO_port, timeout)
-        print(f"DO_openPort in DO_port {DO_port}: {err}")
+        print(f"DO_openPort in DO_port {DO_port}, status: {err}")
 
         ## Open DI port with digital input
         err = dev.DI_openPort(DI_port, timeout)
-        print(f"DI_openPort in DI_port {DI_port}: {err}")
+        print(f"DI_openPort in DI_port {DI_port}, status: {err}")
 
         ## Write DO port to high or low
         err = dev.DO_writePort(DO_port, DO_value, timeout)
-        print(f"DO_writePort in DO_port {DO_port}: {err}")
+        print(f"DO_writePort in DO_port {DO_port}, status: {err}")
 
         ## Read DI port state
         state_list = dev.DI_readPort(DI_port, timeout)
@@ -72,11 +72,11 @@ def main():
 
         ## Close DO port with digital output
         err = dev.DO_closePort(DO_port, timeout)
-        print(f"DO_closePort in DO_port {DO_port}: {err}")
+        print(f"DO_closePort in DO_port {DO_port}, status: {err}")
 
         ## Close DI port with digital input
         err = dev.DI_closePort(DI_port, timeout)
-        print(f"DI_closePort in DI_port {DI_port}: {err}")
+        print(f"DI_closePort in DI_port {DI_port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

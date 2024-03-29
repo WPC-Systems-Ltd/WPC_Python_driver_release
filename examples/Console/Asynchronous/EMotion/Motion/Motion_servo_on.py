@@ -46,22 +46,22 @@ async def main():
 
         ## Motion open
         err = await dev.Motion_open_async(port)
-        print(f"open_async in port {port}: {err}")
+        print(f"open_async in port {port}, status: {err}")
 
         ## Servo on
         err = await dev.Motion_enableServoOn_async(port, axis)
-        print(f"enableServoOn_async in axis{axis}: {err}")
+        print(f"enableServoOn_async in axis{axis}, status: {err}")
 
         ## Wait
         await asyncio.sleep(5)  ## delay [s]
 
         ## Servo off
         err = await dev.Motion_enableServoOff_async(port, axis)
-        print(f"enableServoOff_async in axis{axis}: {err}")
+        print(f"enableServoOff_async in axis{axis}, status: {err}")
 
         ## Motion close
         err = await dev.Motion_close_async(port)
-        print(f"close_async in port {port}: {err}")
+        print(f"close_async in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

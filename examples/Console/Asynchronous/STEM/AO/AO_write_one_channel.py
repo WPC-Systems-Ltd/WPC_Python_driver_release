@@ -59,7 +59,7 @@ async def main():
         ## If the slot mode is not set to "AIO", set the slot mode to "AIO"
         if slot_mode != "AIO":
             err = await dev.Sys_setAIOMode_async(slot)
-            print(f"Sys_setAIOMode_async in slot {slot}: {err}")
+            print(f"Sys_setAIOMode_async in slot {slot}, status: {err}")
 
         ## Get slot mode
         slot_mode = await dev.Sys_getMode_async(slot)
@@ -67,27 +67,27 @@ async def main():
 
         ## Open AO
         err = await dev.AO_open_async(slot)
-        print(f"AO_open_async in slot {slot}: {err}")
+        print(f"AO_open_async in slot {slot}, status: {err}")
 
         ## Write AO vaule in channel 0
         err = await dev.AO_writeOneChannel_async(slot, 0, ao_value_list[0])
-        print(f"In slot {slot} channel 0, the AO value is {ao_value_list[0]}: {err}")
+        print(f"In slot {slot} channel 0, the AO value is {ao_value_list[0]}, status: {err}")
 
         ## Write AO vaule in channel 1
         err = await dev.AO_writeOneChannel_async(slot, 1, ao_value_list[1])
-        print(f"In slot {slot} channel 1, the AO value is {ao_value_list[1]}: {err}")
+        print(f"In slot {slot} channel 1, the AO value is {ao_value_list[1]}, status: {err}")
 
         ## Write AO vaule in channel 2
         err = await dev.AO_writeOneChannel_async(slot, 2, ao_value_list[2])
-        print(f"In slot {slot} channel 2, the AO value is {ao_value_list[2]}: {err}")
+        print(f"In slot {slot} channel 2, the AO value is {ao_value_list[2]}, status: {err}")
 
         ## Write AO vaule in channel 3
         err = await dev.AO_writeOneChannel_async(slot, 3, ao_value_list[3])
-        print(f"In slot {slot} channel 3, the AO value is {ao_value_list[3]}: {err}")
+        print(f"In slot {slot} channel 3, the AO value is {ao_value_list[3]}, status: {err}")
 
         ## Close AO
         err = await dev.AO_close_async(slot)
-        print(f"AO_close_async in slot {slot}: {err}")
+        print(f"AO_close_async in slot {slot}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

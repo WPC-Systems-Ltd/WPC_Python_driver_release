@@ -58,15 +58,15 @@ def main():
 
         ## Open pins with digital output
         err = dev.DO_openPins(DO_port, DO_pins, timeout)
-        print(f"DO_openPins in DO_port {DO_port}: {err}")
+        print(f"DO_openPins in DO_port {DO_port}, status: {err}")
 
         ## Write pins to high or low
         err = dev.DO_writePins(DO_port, DO_pins, DO_value, timeout)
-        print(f"DO_writePins in {DO_port}: {err}")
+        print(f"DO_writePins in {DO_port}, status: {err}")
 
         ## Open pins with digital iutput
         err = dev.DI_openPins(DI_port, DI_pins, timeout)
-        print(f"DI_openPins in DI_port {DI_port}: {err}")
+        print(f"DI_openPins in DI_port {DI_port}, status: {err}")
 
         ## Read pins state
         state_list = dev.DI_readPins(DI_port, DI_pins, timeout)
@@ -74,11 +74,11 @@ def main():
 
         ## Close pins with digital output
         err = dev.DO_closePins(DO_port, DO_pins, timeout)
-        print(f"DO_closePins in DO_port {DO_port}: {err}")
+        print(f"DO_closePins in DO_port {DO_port}, status: {err}")
 
         ## Close pins with digital input
         err = dev.DI_closePins(DI_port, DI_pins, timeout)
-        print(f"DI_closePins in DI_port {DI_port}: {err}")
+        print(f"DI_closePins in DI_port {DI_port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

@@ -46,19 +46,19 @@ def main():
 
         ## Motion open
         err = dev.Motion_open(port, timeout)
-        print(f"Motion_open in port {port}: {err}")
+        print(f"Motion_open in port {port}, status: {err}")
 
         ## Motion open configuration file
         err = dev.Motion_openCfgFile('C:/Users/user/Desktop/3AxisStage_2P.ini')
-        print(f"Motion_openCfgFile: {err}")
+        print(f"Motion_openCfgFile, status: {err}")
 
         ## Motion load configuration file
         err = dev.Motion_loadCfgFile(timeout)
-        print(f"Motion_loadCfgFile: {err}")
+        print(f"Motion_loadCfgFile, status: {err}")
 
         ## Motion close
         err = dev.Motion_close(port, timeout)
-        print(f"Motion_close in port {port}: {err}")
+        print(f"Motion_close in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

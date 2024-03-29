@@ -59,27 +59,27 @@ async def main():
 
         ## Open AI
         err = await dev.AI_open_async(port)
-        print(f"AI_open_async in port {port}: {err}")
+        print(f"AI_open_async in port {port}, status: {err}")
         
         ## Set AI channel
         err = await dev.AI_enableChannel_async(port, channel)
-        print(f"AI_enableChannel_async in port {port}: {err}")
+        print(f"AI_enableChannel_async in port {port}, status: {err}")
 
         ## Set AI acquisition mode to N-samples mode (1)
         err = await dev.AI_setMode_async(port, mode)
-        print(f"AI_setMode_async {mode} in port {port}: {err}")
+        print(f"AI_setMode_async {mode} in port {port}, status: {err}")
 
         ## Set AI sampling rate
         err = await dev.AI_setSamplingRate_async(port, sampling_rate)
-        print(f"AI_setSamplingRate_async {sampling_rate} in port {port}: {err}")
+        print(f"AI_setSamplingRate_async {sampling_rate} in port {port}, status: {err}")
 
         ## Set AI # of samples
         err = await dev.AI_setNumSamples_async(port, samples)
-        print(f"AI_setNumSamples_async {samples} in port {port}: {err}")
+        print(f"AI_setNumSamples_async {samples} in port {port}, status: {err}")
 
         ## Start AI
         err = await dev.AI_start_async(port)
-        print(f"AI_start_async in port {port}: {err}")
+        print(f"AI_start_async in port {port}, status: {err}")
 
         ## Read AI
         ai_2Dlist = await dev.AI_readStreaming_async(port, read_points, read_delay)
@@ -98,11 +98,11 @@ async def main():
 
         ## Stop AI
         err = await dev.AI_stop_async(port)
-        print(f"AI_stop_async in port {port}: {err}")
+        print(f"AI_stop_async in port {port}, status: {err}")
 
         ## Close AI
         err = await dev.AI_close_async(port)
-        print(f"AI_close_async in port {port}: {err}")
+        print(f"AI_close_async in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

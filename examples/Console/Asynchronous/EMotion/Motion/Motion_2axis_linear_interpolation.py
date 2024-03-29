@@ -52,23 +52,23 @@ async def main():
 
         ## Motion open
         err = await dev.Motion_open_async(port)
-        print(f"open_async in port {port}: {err}")
+        print(f"open_async in port {port}, status: {err}")
 
         ## Motion open configuration file
         err = await dev.Motion_openCfgFile_async('C:/Users/user/Desktop/3AxisStage_2P.ini')
-        print(f"openCfgFile_async: {err}")
+        print(f"openCfgFile_async, status: {err}")
 
         ## Motion load configuration file
         err = await dev.Motion_loadCfgFile_async()
-        print(f"loadCfgFile_async: {err}")
+        print(f"loadCfgFile_async, status: {err}")
 
         ## Motion configure
         err = await dev.Motion_cfg2AxisLinearInterpo_async(port, axis1, dest_posi1, axis2, dest_posi2, speed=2000, accel=100000, decel=100000)
-        print(f"cfg2AxisLinearInterpo_async in axis{axis1} and {axis2}: {err}")
+        print(f"cfg2AxisLinearInterpo_async in axis{axis1} and {axis2}, status: {err}")
 
         ## Motion start
         err = await dev.Motion_startLinearInterpo_async(port)
-        print(f"startLinearInterpo_async in port {port}: {err}")
+        print(f"startLinearInterpo_async in port {port}, status: {err}")
 
         move_status = 0
         while move_status == 0:
@@ -83,11 +83,11 @@ async def main():
         ## Motion stop
         for i in [axis1, axis2]:
             err = await dev.Motion_stop_async(port, i, stop_decel)
-            print(f"stop_async axis{i}: {err}")
+            print(f"stop_async axis{i}, status: {err}")
 
         ## Motion close
         err = await dev.Motion_close_async(port)
-        print(f"close_async in port {port}: {err}")
+        print(f"close_async in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

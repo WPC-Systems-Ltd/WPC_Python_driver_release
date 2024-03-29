@@ -46,7 +46,7 @@ async def main():
 
         ## Open DPOT
         err = await dev.DPOT_open_async(port)
-        print(f"DPOT_open_async in port {port}: {err}")
+        print(f"DPOT_open_async in port {port}, status: {err}")
 
         ## Read all channels by for loop
         for i in range(4):
@@ -55,7 +55,7 @@ async def main():
 
         ## Close DPOT
         err = await dev.DPOT_close_async(port)
-        print(f"DPOT_close_async in port {port}: {err}")
+        print(f"DPOT_close_async in port {port}, status: {err}")
 
     except Exception as err:
         pywpc.printGenericError(err)

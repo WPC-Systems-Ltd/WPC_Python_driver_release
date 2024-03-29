@@ -47,18 +47,18 @@ def main():
 
         ## Motion open
         err = dev.Motion_open(port, timeout)
-        print(f"Motion_open in port {port}: {err}")
+        print(f"Motion_open in port {port}, status: {err}")
 
         for i in range(100):
             err = dev.Motion_setLogicalPosi(port, axis, i, timeout)
             if err != 0:
-                print(f"Motion_setLogicalPosi in axis{axis}: {err}")
+                print(f"Motion_setLogicalPosi in axis{axis}, status: {err}")
             posi = dev.Motion_getLogicalPosi(port, axis, timeout)
             print(f"Motion_getLogicalPosi in axis{axis}: {posi}")
 
         ## Motion close
         err = dev.Motion_close(port, timeout)
-        print(f"Motion_close in port {port}: {err}")
+        print(f"Motion_close in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

@@ -49,7 +49,7 @@ async def main():
 
         ## Open AI
         err = await dev.AI_open_async(port)
-        print(f"AI_open_async in port {port}: {err}")
+        print(f"AI_open_async in port {port}, status: {err}")
 
         ## Data acquisition
         data = await dev.AI_readOnDemand_async(port)
@@ -58,7 +58,7 @@ async def main():
 
         ## Close AI
         err = await dev.AI_close_async(port)
-        print(f"AI_close_async in port {port}: {err}")
+        print(f"AI_close_async in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

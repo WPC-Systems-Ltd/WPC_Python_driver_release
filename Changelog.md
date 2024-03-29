@@ -1,6 +1,11 @@
 WPC Python driver release changelog
 ===================================
 
+v3.0.23 Date: 2024/03/29, Developer: Chunglee_people
+----------------------------------------------------
+### Fixed
+- Unify example code's printf style
+
 v3.0.22 Date: 2024/03/28, Developer: Chunglee_people
 ----------------------------------------------------
 ### Added

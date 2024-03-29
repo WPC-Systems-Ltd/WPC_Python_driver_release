@@ -302,11 +302,11 @@ async def main():
 
       ## Open AHRS and update rate is 333 HZ
       err = await dev.AHRS_open_async(port)
-      print(f"AHRS_open_async in port {port}: {err}")
+      print(f"AHRS_open_async in port {port}, status: {err}")
 
       ## Start AHRS
       err = await dev.AHRS_start_async(port)
-      print(f"AHRS_start_async in port {port}: {err}")
+      print(f"AHRS_start_async in port {port}, status: {err}")
 
       while plt.fignum_exists(fig.number):
           ahrs_list = await dev.AHRS_getEstimate_async(port, mode)
@@ -328,11 +328,11 @@ async def main():
     finally:
       ## Stop AHRS
       err = await dev.AHRS_stop_async(port)
-      print(f"AHRS_stop_async in port {port}: {err}")
+      print(f"AHRS_stop_async in port {port}, status: {err}")
 
       ## Close AHRS
       err = await dev.AHRS_close_async(port)
-      print(f"AHRS_close_async in port {port}: {err}")
+      print(f"AHRS_close_async in port {port}, status: {err}")
 
       ## Disconnect device
       dev.disconnect()

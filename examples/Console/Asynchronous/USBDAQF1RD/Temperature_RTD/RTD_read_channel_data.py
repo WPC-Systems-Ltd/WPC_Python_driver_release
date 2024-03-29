@@ -53,22 +53,22 @@ async def main():
 
         ## Open RTD
         err = await dev.Thermal_open_async(port)
-        print(f"Thermal_open_async in port {port}: {err}")
+        print(f"Thermal_open_async in port {port}, status: {err}")
 
         ## Wait for at least 100 ms
         await asyncio.sleep(0.1) ## delay [s]
 
         ## Set RTD port and read RTD in channel 0
         data0 = await dev.Thermal_readSensor_async(port, ch0)
-        print(f"Read sensor in channel {ch0} in port {port}: {data0}°C")
+        print(f"Read sensor in channel {ch0} in port {port}: {data0} deg C")
 
         ## Set RTD port and read RTD in channel 1
         data1 = await dev.Thermal_readSensor_async(port, ch1)
-        print(f"Read sensor in channel {ch1} in port {port}: {data1}°C")
+        print(f"Read sensor in channel {ch1} in port {port}: {data1} deg C")
 
         ## Close RTD
         err = await dev.Thermal_close_async(port)
-        print(f"Thermal_close_async in port {port}: {err}")
+        print(f"Thermal_close_async in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

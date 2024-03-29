@@ -72,7 +72,7 @@ def main():
         ## If the slot mode is not set to "DIO", set the slot mode to "DIO"
         if slot_mode != "DIO":
             err = dev.Sys_setDIOMode(slot, timeout)
-            print(f"Sys_setDIOMode in slot {slot}: {err}")
+            print(f"Sys_setDIOMode in slot {slot}, status: {err}")
 
         ## Get slot mode
         slot_mode = dev.Sys_getMode(slot, timeout)
@@ -86,7 +86,7 @@ def main():
 
         ## Write DO port to high or low
         err = dev.DO_writePort(DO_port, DO_value, timeout)
-        print(f"DO_writePort in DO_port {DO_port}: {err}")
+        print(f"DO_writePort in DO_port {DO_port}, status: {err}")
 
         ## Read DI port state
         state_list = dev.DI_readPort(DI_port, timeout)
