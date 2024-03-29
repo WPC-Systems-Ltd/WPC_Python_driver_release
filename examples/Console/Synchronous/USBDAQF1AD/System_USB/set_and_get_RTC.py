@@ -38,7 +38,6 @@ def main():
 
     try:
         ## Parameters setting
-        port = None ## Depend on your device
         delay = 1 ## second
         timeout = 3 ## second
 
@@ -48,13 +47,12 @@ def main():
         print("Firmware version: " + driver_info[-1])
 
         ## Set RTC
-        status = dev.Sys_setRTC(2023, 5, 8, 15, 8, 7, timeout)
-        print(f"Set RTC status: {status}")
+        err = dev.Sys_setRTC(2023, 5, 8, 15, 8, 7, timeout)
+        print(f"Set RTC to 2023-05-08, 15:08:07 , status: {err}")
 
         for i in range(10):
             ## Get RTC
             print(f"Get RTC: {dev.Sys_getRTC()}")
-
             time.sleep(delay) ## delay [s]
 
     except Exception as err:

@@ -44,8 +44,8 @@ def main():
         ## Parameters setting
         port = 0 ## Depend on your device
         mode = 2 ## 0: on demand, 1: N-samples, 2: Continuous
-        sampling_rate = 10000
-        number_of_sample = 10000
+        sampling_rate = 1000
+        number_of_sample = 1000
         form_mode = 3 ##  0:DC voltage, 1: retangular, 2: triangular, 3: sine.
         amplitude = 1
         offset = 0.1
@@ -60,58 +60,58 @@ def main():
 
         ## Open AO
         err = dev.AO_open(port, timeout)
-        print(f"AO_open in port {port}: {err}")
+        print(f"AO_open in port {port}, status: {err}")
 
         ## Set AO generation mode
         err = dev.AO_setMode(port, mode, timeout)
-        print(f"AO_setMode in port {port}: {err}")
+        print(f"AO_setMode in port {port}, status: {err}")
 
         ## Set AO sampling rate to 10k (Hz)
         err = dev.AO_setSamplingRate(port, sampling_rate, timeout)
-        print(f"AO_setSamplingRate in port {port}: {err}")
+        print(f"AO_setSamplingRate in port {port}, status: {err}")
 
         ## Set AO NumSamples to 10000
         err = dev.AO_setNumSamples(port, number_of_sample, timeout)
-        print(f"AO_setNumSamples in port {port}: {err}")
+        print(f"AO_setNumSamples in port {port}, status: {err}")
 
         ## Set AO enabled channels
         err = dev.AO_setEnableChannels(port, [0, 1], timeout)
-        print(f"AO_setEnableChannels in port {port}: {err}")
+        print(f"AO_setEnableChannels in port {port}, status: {err}")
 
         ## Set AO form in channel 0
         err = dev.AO_setForm(port, 0, form_mode, timeout)
-        print(f"AO_setForm in channel 0 in port {port}: {err}")
+        print(f"AO_setForm in channel 0 in port {port}, status: {err}")
 
         ## Set AO form in channel 1
         err = dev.AO_setForm(port, 1, form_mode, timeout)
-        print(f"AO_setForm in channel 1 in port {port}: {err}")
+        print(f"AO_setForm in channel 1 in port {port}, status: {err}")
 
         ## Set Channel 0 form parameters
         err = dev.AO_setFormParam(port, 0, amplitude, offset, freq_0, timeout)
-        print(f"AO_setFormParam in channel 0 in port {port}: {err}")
+        print(f"AO_setFormParam in channel 0 in port {port}, status: {err}")
 
         ## Set Channel 1 form parameters
         err = dev.AO_setFormParam(port, 1, amplitude, offset, freq_1, timeout)
-        print(f"AO_setFormParam in channel 1 in port {port}: {err}")
+        print(f"AO_setFormParam in channel 1 in port {port}, status: {err}")
 
         ## Open AO streaming
         info = dev.AO_openStreaming(port, timeout)
-        print(f"mode {info[0]}, sampling rate {info[1]}")
+        print(f"Mode {info[0]}, sampling rate {info[1]}")
 
         ## Start AO streaming
         err = dev.AO_startStreaming(port)
-        print(f"AO_startStreaming in port {port}: {err}")
+        print(f"AO_startStreaming in port {port}, status: {err}")
 
         ## Wait for 10 seconds to generate form
         time.sleep(10) ## delay [s]
 
         ## Close AO streaming
         err = dev.AO_closeStreaming(port, timeout)
-        print(f"AO_closeStreaming in port {port}: {err}")
+        print(f"AO_closeStreaming in port {port}, status: {err}")
 
         ## Close AO
         err = dev.AO_close(port)
-        print(f"AO_close in port {port}: {err}")
+        print(f"AO_close in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

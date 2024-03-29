@@ -21,8 +21,7 @@ import time
 
 ## WPC
 
-def main():
-    ## STEM has not supported yet
+from wpcsys import pywpc
 
 
 def main():
@@ -54,15 +53,15 @@ def main():
 
         ## Open AO
         err = dev.AO_open(port, timeout)
-        print(f"AO_open in port {port}: {err}")
+        print(f"AO_open in port {port}, status: {err}")
 
         ## Write AO value simultaneously
         err = dev.AO_writeAllChannels(port, ao_value_list, timeout)
-        print(f"In port {port} the AO value is {ao_value_list}: {err}")
+        print(f"In port {port} the AO value is {ao_value_list}, status: {err}")
 
         ## Close AO
         err = dev.AO_close(port)
-        print(f"AO_close in port {port}: {err}")
+        print(f"AO_close in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

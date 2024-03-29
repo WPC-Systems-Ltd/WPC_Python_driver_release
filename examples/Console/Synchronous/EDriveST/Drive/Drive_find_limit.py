@@ -38,11 +38,10 @@ def main():
         ## Parameters setting
         port = 0 ## Depend on your device
         mode = 1 ## 1: forward, -1: reverse.
-        active_low = 0
+        en_forward = 1
+        en_reverse = 1
         active_high = 1
-        en_forward = 0
-        en_reverse = 0
-        searching_speed = 10000
+        searching_speed = 50000
         approaching_speed = 10000
         acceleration = 10000
         offset = 0
@@ -56,27 +55,29 @@ def main():
 
         ## Motion open
         err = dev.Motion_open(port, timeout)
-        print(f"Motion_open: {err}")
+        print(f"Motion_open, status: {err}")
 
         ## Motion config
-        err = dev.Motion_cfgLimit(port, en_forward, en_reverse, active_low, timeout)
-        print(f"Motion_cfgLimit: {err}")
+        err = dev.Motion_cfgLimit(port, en_forward, en_reverse, active_high, timeout)
+        print(f"Motion_cfgLimit, status: {err}")
 
         ## Motion reset
         err = dev.Motion_rstEncoderPosi(port, timeout)
-        print(f"Motion_resetEncoderPosi: {err}")
+        print(f"Motion_resetEncoderPosi, status: {err}")
 
         ## Motion Servo on
         err = dev.Motion_enableServoOn(port, timeout)
-        print(f"Motion_enableServoOn: {err}")
+        print(f"Motion_enableServoOn, status: {err}")
 
         ## Motion find limit
         err = dev.Motion_startFindLimit(port, mode, searching_speed, approaching_speed, acceleration, offset, reset_position, timeout)
-        print(f"Motion_startFindLimit: {err}")
+        print(f"Motion_startFindLimit, status: {err}")
 
         status = 1
         while status != 0 :
             status = dev.Motion_getProcessState(port, timeout)
+            if(status == 0):
+                print(f"Motion_getProcessState: {status}")
 
         ## Motion get limit status
         state_list = dev.Motion_getLimitStatus(port, timeout)
@@ -91,15 +92,15 @@ def main():
     finally:
         ## Motion stop
         err = dev.Motion_stopProcess(port, timeout)
-        print(f"Motion_stopProcess: {err}")
+        print(f"Motion_stopProcess, status: {err}")
 
         ## Motion Servo off
         err = dev.Motion_enableServoOff(port, timeout)
-        print(f"Motion_enableServoOff: {err}")
+        print(f"Motion_enableServoOff, status: {err}")
 
         ## Motion close
         err = dev.Motion_close(port, timeout)
-        print(f"Motion_close: {err}")
+        print(f"Motion_close, status: {err}")
 
     ## Disconnect device
     dev.disconnect()

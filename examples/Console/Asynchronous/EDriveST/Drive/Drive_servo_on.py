@@ -45,12 +45,11 @@ async def main():
 
         ## Motion open
         err = await dev.Motion_open_async(port)
-        print(f"Motion_open: {err}")
+        print(f"Motion_open, status: {err}")
 
         ## Motion servo on
         err = await dev.Motion_enableServoOn_async(port)
-        print(f"Motion_enableServoOn: {err}")
-
+        print(f"Motion_enableServoOn, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
     except KeyboardInterrupt:
@@ -58,15 +57,15 @@ async def main():
     finally:
         ## Motion stop
         err = await dev.Motion_stopProcess_async(port)
-        print(f"Motion_stopProcess: {err}")
+        print(f"Motion_stopProcess, status: {err}")
 
         ## Motion Servo off
         err = await dev.Motion_enableServoOff_async(port)
-        print(f"Motion_enableServoOff: {err}")
+        print(f"Motion_enableServoOff, status: {err}")
 
         ## Motion close
         err = await dev.Motion_close_async(port)
-        print(f"Motion_close: {err}")
+        print(f"Motion_close, status: {err}")
 
     ## Disconnect device
     dev.disconnect()

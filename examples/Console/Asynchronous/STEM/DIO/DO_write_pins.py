@@ -70,7 +70,7 @@ async def main():
         ## If the slot mode is not set to "DIO", set the slot mode to "DIO"
         if slot_mode != "DIO":
             err = await dev.Sys_setDIOMode_async(slot)
-            print(f"Sys_setDIOMode_async in slot {slot}: {err}")
+            print(f"Sys_setDIOMode_async in slot {slot}, status: {err}")
 
         ## Get slot mode
         slot_mode = await dev.Sys_getMode_async(slot)
@@ -84,7 +84,7 @@ async def main():
 
         ## Write pins to high or low
         err = await dev.DO_writePins_async(DO_port, pin_index, DO_value)
-        print(f"DO_writePins_async in DO_port {DO_port}: {err}")
+        print(f"DO_writePins_async in DO_port {DO_port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

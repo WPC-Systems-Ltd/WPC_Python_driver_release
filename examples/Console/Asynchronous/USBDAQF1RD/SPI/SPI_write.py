@@ -75,15 +75,15 @@ async def main():
 
         ## Open pin0 with digital output
         err = await dev.DO_openPins_async(DO_port, DO_index)
-        print(f"DO_openPins_async in port {DO_port}: {err}")
+        print(f"DO_openPins_async in port {DO_port}, status: {err}")
 
         ## Open SPI
         err = await dev.SPI_open_async(port)
-        print(f"SPI_open_async in port {port}: {err}")
+        print(f"SPI_open_async in port {port}, status: {err}")
 
         ## Set CS(pin0) to high
         err = await dev.DO_writePins_async(DO_port, DO_index, [1])
-        print(f"DO_writePins_async in port {DO_port}: {err}")
+        print(f"DO_writePins_async in port {DO_port}, status: {err}")
 
         '''
         Set SPI parameter
@@ -91,19 +91,19 @@ async def main():
 
         ## Set SPI port and set datasize to 8-bits data
         err = await dev.SPI_setDataSize_async(port, datasize)
-        print(f"SPI_setDataSize_async in port {port}: {err}")
+        print(f"SPI_setDataSize_async in port {port}, status: {err}")
 
         ## Set SPI port and set first_bit to MSB first
         err = await dev.SPI_setFirstBit_async(port, first_bit)
-        print(f"SPI_setFirstBit_async in port {port}: {err}")
+        print(f"SPI_setFirstBit_async in port {port}, status: {err}")
 
         ## Set SPI port and set prescaler to 64
         err = await dev.SPI_setPrescaler_async(port, prescaler)
-        print(f"SPI_setPrescaler_async in port {port}: {err}")
+        print(f"SPI_setPrescaler_async in port {port}, status: {err}")
 
         ## Set SPI port and set CPOL and CPHA to 0 (mode 0)
         err = await dev.SPI_setMode_async(port, mode)
-        print(f"SPI_setMode_async in port {port}: {err}")
+        print(f"SPI_setMode_async in port {port}, status: {err}")
 
         '''
         Write data via SPI
@@ -111,15 +111,15 @@ async def main():
 
         ## Set CS(pin0) to low
         err = await dev.DO_writePins_async(DO_port, DO_index, [0])
-        print(f"DO_writePins_async in port {DO_port}: {err}")
+        print(f"DO_writePins_async in port {DO_port}, status: {err}")
 
         ## Write WREN byte
         err = await dev.SPI_write_async(port, [WREN])
-        print(f"SPI_write_async in port {port}: {err}")
+        print(f"SPI_write_async in port {port}, status: {err}")
 
         ## Set CS(pin0) to high
         err = await dev.DO_writePins_async(DO_port, DO_index, [1])
-        print(f"DO_writePins_async in port {DO_port}: {err}")
+        print(f"DO_writePins_async in port {DO_port}, status: {err}")
 
         '''
         Write data via SPI
@@ -127,15 +127,15 @@ async def main():
 
         ## Set CS(pin0) to low
         err = await dev.DO_writePins_async(DO_port, DO_index, [0])
-        print(f"DO_writePins_async in port {DO_port}: {err}")
+        print(f"DO_writePins_async in port {DO_port}, status: {err}")
 
         ## Write data byte 0x55 in to address 0x0002
         err = await dev.SPI_write_async(port, [WRITE, 0x00, 0x02, 0x55])
-        print(f"SPI_write_async in port {port}: {err}")
+        print(f"SPI_write_async in port {port}, status: {err}")
 
         ## Set CS(pin0) to high
         err = await dev.DO_writePins_async(DO_port, DO_index, [1])
-        print(f"DO_writePins_async in port {DO_port}: {err}")
+        print(f"DO_writePins_async in port {DO_port}, status: {err}")
 
         '''
         Close DO pins and SPI port
@@ -143,11 +143,11 @@ async def main():
 
         ## Close SPI
         err = await dev.SPI_close_async(port)
-        print(f"SPI_close_async in port {port}: {err}")
+        print(f"SPI_close_async in port {port}, status: {err}")
 
         ## Close pin0 with digital output
         err = await dev.DO_closePins_async(DO_port, DO_index)
-        print(f"DO_closePins_async in port {DO_port}: {err}")
+        print(f"DO_closePins_async in port {DO_port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

@@ -47,7 +47,7 @@ async def main():
         DO_port = 0 ## Depend on your device
         DI_port = 2
         DO_pins = [0, 1, 2, 3]
-        DI_pins = [4, 5, 6, 7]
+        DI_pins = [0, 1, 2, 3]
         DO_value = [1, 0, 1, 0]
 
         ## Get firmware model & version
@@ -57,15 +57,15 @@ async def main():
 
         ## Open pins with digital output
         err = await dev.DO_openPins_async(DO_port, DO_pins)
-        print(f"DO_openPins_async in DO_port {DO_port}: {err}")
+        print(f"DO_openPins_async in DO_port {DO_port}, status: {err}")
 
         ## Write pins to high or low
         err = await dev.DO_writePins_async(DO_port, DO_pins, DO_value)
-        print(f"DO_writePins_async in DO_port {DO_port}: {err}")
+        print(f"DO_writePins_async in DO_port {DO_port}, status: {err}")
 
         ## Open pins with digital iutput
         err = await dev.DI_openPins_async(DI_port, DI_pins)
-        print(f"DI_openPins_async in DI_port {DI_port}: {err}")
+        print(f"DI_openPins_async in DI_port {DI_port}, status: {err}")
 
         ## Read pins state
         state_list = await dev.DI_readPins_async(DI_port, DI_pins)
@@ -73,11 +73,11 @@ async def main():
 
         ## Close pins with digital output
         err = await dev.DO_closePins_async(DO_port, DO_pins)
-        print(f"DO_closePins_async in DO_port {DO_port}: {err}")
+        print(f"DO_closePins_async in DO_port {DO_port}, status: {err}")
 
         ## Close pins with digital input
         err = await dev.DI_closePins_async(DI_port, DI_pins)
-        print(f"DI_closePins_async in DI_port {DI_port}: {err}")
+        print(f"DI_closePins_async in DI_port {DI_port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

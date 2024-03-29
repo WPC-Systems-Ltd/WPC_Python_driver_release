@@ -38,6 +38,7 @@ async def main():
 
     try:
         ## Parameters setting
+        port = 0 ## Depend on your device
         DO_port = 0
 
         ## Get firmware model & version
@@ -45,9 +46,9 @@ async def main():
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## Relay open
-        err = await dev.Relay_open_async()
-        print(f"Relay_open_async: {err}")
+        ## Open relay
+        err = await dev.Relay_open_async(port)
+        print(f"Relay_open_async in port {port}, status: {err}")
 
         ## Toggle digital state for 10 times. Each times delay for 0.5 second
         for i in range(10):
@@ -62,9 +63,9 @@ async def main():
             ## Wait
             await asyncio.sleep(0.5)  ## delay [s]
 
-        ## Relay close
-        err = await dev.Relay_close_async()
-        print(f"Relay_close_async: {err}")
+        ## Close relay
+        err = await dev.Relay_close_async(port)
+        print(f"Relay_close_async in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

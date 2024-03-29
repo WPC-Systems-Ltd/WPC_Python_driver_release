@@ -55,15 +55,15 @@ async def main():
 
         ## Open DO port with digital output
         err = await dev.DO_openPort_async(DO_port)
-        print(f"DO_openPort_async in DO_port {DO_port}: {err}")
+        print(f"DO_openPort_async in DO_port {DO_port}, status: {err}")
 
         ## Open DI port with digital input
         err = await dev.DI_openPort_async(DI_port)
-        print(f"DI_openPort_async in DI_port {DI_port}: {err}")
+        print(f"DI_openPort_async in DI_port {DI_port}, status: {err}")
 
         ## Write DO port to high or low
         err = await dev.DO_writePort_async(DO_port, DO_value)
-        print(f"DO_writePort_async in DO_port {DO_port}: {err}")
+        print(f"DO_writePort_async in DO_port {DO_port}, status: {err}")
 
         ## Read DI port state
         state_list = await dev.DI_readPort_async(DI_port)
@@ -71,11 +71,11 @@ async def main():
 
         ## Close DO port with digital output
         err = await dev.DO_closePort_async(DO_port)
-        print(f"DO_closePort_async in DO_port {DO_port}: {err}")
+        print(f"DO_closePort_async in DO_port {DO_port}, status: {err}")
 
         ## Close DI port with digital input
         err = await dev.DI_closePort_async(DI_port)
-        print(f"DI_closePort_async in DI_port {DI_port}: {err}")
+        print(f"DI_closePort_async in DI_port {DI_port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

@@ -1,0 +1,6 @@
+Get serial number
+=================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/WifiDAQE3A/System_Wifi/get_serial_number.py
+   :language: python
+   :linenos:

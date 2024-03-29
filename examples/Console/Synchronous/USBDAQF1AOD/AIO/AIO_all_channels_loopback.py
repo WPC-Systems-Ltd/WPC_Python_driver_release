@@ -58,15 +58,15 @@ def main():
 
         ## Open AI
         err = dev.AI_open(port, timeout)
-        print(f"AI_open in port {port}: {err}")
+        print(f"AI_open in port {port}, status: {err}")
         
         ## Set AI channel
         err = dev.AI_enableChannel(port, channel, timeout)
-        print(f"AI_enableChannel in port {port}: {err}")
+        print(f"AI_enableChannel in port {port}, status: {err}")
 
         ## Open AO
         err = dev.AO_open(port, timeout)
-        print(f"AO_open in port {port}: {err}")
+        print(f"AO_open in port {port}, status: {err}")
 
         ## Read data acquisition
         ai_list = dev.AI_readOnDemand(port, timeout)
@@ -74,7 +74,7 @@ def main():
 
         ## Write AO value simultaneously
         err = dev.AO_writeAllChannels(port, ao_value_list, timeout)
-        print(f"In port {port} the AO value is {ao_value_list}: {err}")
+        print(f"In port {port} the AO value is {ao_value_list}, status: {err}")
 
         ## Read data acquisition
         ai_list = dev.AI_readOnDemand(port, timeout)
@@ -82,11 +82,11 @@ def main():
 
         ## Close AI
         err = dev.AI_close(port, timeout)
-        print(f"AI_close in port {port}: {err}")
+        print(f"AI_close in port {port}, status: {err}")
 
         ## Close AO
         err = dev.AO_close(port, timeout)
-        print(f"AO_close in port {port}: {err}")
+        print(f"AO_close in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

@@ -49,29 +49,29 @@ def main():
         for i in range(3):
             ## Reset LED status
             err = dev.Wifi_resetLED(timeout)
-            print(f"Wifi_resetLED: {err}")
+            print(f"Wifi_resetLED, status: {err}")
 
             ## Set green LED status
             err = dev.Wifi_setGreenLED(value, timeout)
-            print(f"Wifi_setGreenLED: {err}")
+            print(f"Wifi_setGreenLED, status: {err}")
             time.sleep(1) ## delay [s]
 
             ## Reset LED status
             err = dev.Wifi_resetLED(timeout)
-            print(f"Wifi_resetLED: {err}")
+            print(f"Wifi_resetLED, status: {err}")
 
             ## Set blue LED status
             err = dev.Wifi_setBlueLED(value, timeout)
-            print(f"Wifi_setBluLeED: {err}")
+            print(f"Wifi_setBluLeED, status: {err}")
             time.sleep(1) ## delay [s]
 
             ## Reset LED status
             err = dev.Wifi_resetLED(timeout)
-            print(f"Wifi_resetLED: {err}")
+            print(f"Wifi_resetLED, status: {err}")
 
             ## Set red LED status
             err = dev.Wifi_setRedLED(value, timeout)
-            print(f"Wifi_setRedLED: {err}")
+            print(f"Wifi_setRedLED, status: {err}")
             time.sleep(1) ## delay [s]
 
             print("")

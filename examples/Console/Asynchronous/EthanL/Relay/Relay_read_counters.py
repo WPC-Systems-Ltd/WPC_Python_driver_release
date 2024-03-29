@@ -38,24 +38,25 @@ async def main():
 
     try:
         ## Parameters setting
-        index = -1
+        port = 0 ## Depend on your device
+        index = -1 ## Read all the relay counters
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
-        ## Relay open
-        err = await dev.Relay_open_async()
-        print(f"Relay_open_async: {err}")
+        ## open relay
+        err = await dev.Relay_open_async(port)
+        print(f"Relay_open_async in port {port}, status: {err}")
 
         ## Read counters
-        counter = await dev.Relay_read_async(index=index)
-        print(f"Relay_read_async: {counter}")
+        counter = await dev.Relay_read_async(port, index)
+        print(f"Relay_read_async in port {port}: {counter}")
 
-        ## Relay close
-        err = await dev.Relay_close_async()
-        print(f"Relay_close_async: {err}")
+        ## Close relay
+        err = await dev.Relay_close_async(port)
+        print(f"Relay_close_async in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

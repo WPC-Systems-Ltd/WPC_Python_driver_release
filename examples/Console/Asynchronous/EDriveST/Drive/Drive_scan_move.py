@@ -37,13 +37,12 @@ async def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        active_low = 0
         active_high = 1
-        en_forward = 0
-        en_reverse = 0
-        position_0 = 10000
-        position_1 = 20000
-        speed = 10000
+        en_forward = 1
+        en_reverse = 1
+        position_0 = 30000
+        position_1 = -30000
+        speed = 30000
         acceleration = 10000
 
         ## Get firmware model & version
@@ -53,20 +52,22 @@ async def main():
 
         ## Motion open
         err = await dev.Motion_open_async(port)
-        print(f"Motion_open: {err}")
+        print(f"Motion_open, status: {err}")
 
         ## Motion configure
-        err = await dev.Motion_cfgLimit_async(port, en_forward, en_reverse, active_low)
-        print(f"Motion_cfgLimit: {err}")
+        err = await dev.Motion_cfgLimit_async(port, en_forward, en_reverse, active_high)
+        print(f"Motion_cfgLimit, status: {err}")
 
         ## Motion Servo on
         err = await dev.Motion_enableServoOn_async(port)
-        print(f"Motion_enableServoOn: {err}")
+        print(f"Motion_enableServoOn, status: {err}")
 
         ## Motion start
         err = await dev.Motion_startScanMove_async(port, position_0, position_1, speed, acceleration)
-        print(f"Motion_startScanMove: {err}")
+        print(f"Motion_startScanMove, status: {err}")
 
+        ## Wait for seconds for moving
+        await asyncio.sleep(10) ## delay [s]
     except Exception as err:
         pywpc.printGenericError(err)
     except KeyboardInterrupt:
@@ -74,15 +75,15 @@ async def main():
     finally:
         ## Motion stop
         err = await dev.Motion_stopProcess_async(port)
-        print(f"Motion_stopProcess: {err}")
+        print(f"Motion_stopProcess, status: {err}")
 
         ## Motion Servo off
         err = await dev.Motion_enableServoOff_async(port)
-        print(f"Motion_enableServoOff: {err}")
+        print(f"Motion_enableServoOff, status: {err}")
 
         ## Motion close
         err = await dev.Motion_close_async(port)
-        print(f"Motion_close: {err}")
+        print(f"Motion_close, status: {err}")
 
     ## Disconnect device
     dev.disconnect()

@@ -70,7 +70,7 @@ def main():
         ## If the slot mode is not set to "DIO", set the slot mode to "DIO"
         if slot_mode != "DIO":
             err = dev.Sys_setDIOMode(slot, timeout)
-            print(f"Sys_setDIOMode in slot {slot}: {err}")
+            print(f"Sys_setDIOMode in slot {slot}, status: {err}")
 
         ## Get slot mode
         slot_mode = dev.Sys_getMode(slot, timeout)

@@ -53,29 +53,30 @@ def main():
 
         ## Open PWM
         err = dev.PWM_open(channel, timeout)
-        print(f"PWM_open in channel {channel}: {err}")
+        print(f"PWM_open in channel {channel}, status: {err}")
 
-        ## Set frequency and duty_cycle
+        ## Set frequency
         err = dev.PWM_setFrequency(channel, frequency, timeout)
-        print(f"PWM_setFrequency in channel {channel}: {err}")
+        print(f"PWM_setFrequency in channel {channel}, status: {err}")
 
+        ## Set duty cycle
         err = dev.PWM_setDutyCycle(channel, duty_cycle, timeout)
-        print(f"PWM_setDutyCycle in channel {channel}: {err}")
+        print(f"PWM_setDutyCycle in channel {channel}, status: {err}")
 
         ## Start PWM
         err = dev.PWM_start(channel, timeout)
-        print(f"PWM_start in channel {channel}: {err}")
+        print(f"PWM_start in channel {channel}, status: {err}")
 
-        ## delay for 5 seconds
+        ## Wait for seconds for generating signal
         time.sleep(5) ## delay [s]
 
         ## Stop PWM
         err = dev.PWM_stop(channel, timeout)
-        print(f"PWM_stop in channel {channel}: {err}")
+        print(f"PWM_stop in channel {channel}, status: {err}")
 
         ## Close PWM
         err = dev.PWM_close(channel, timeout)
-        print(f"PWM_close in channel {channel}: {err}")
+        print(f"PWM_close in channel {channel}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

@@ -38,6 +38,7 @@ def main():
 
     try:
         ## Parameters setting
+        port = 0 ## Depend on your device
         DO_port = 0
         timeout = 3 ## second
 
@@ -47,8 +48,8 @@ def main():
         print("Firmware version: " + driver_info[-1])
 
         ## Relay open
-        err = dev.Relay_open(timeout)
-        print(f"Relay_open: {err}")
+        err = dev.Relay_open(port, timeout)
+        print(f"Relay_open in port {port}, status: {err}")
 
         ## Toggle digital state for 10 times. Each times delay for 0.5 second
         for i in range(10):
@@ -64,8 +65,8 @@ def main():
             time.sleep(0.5)  ## delay [s]
 
         ## Relay close
-        err = dev.Relay_close(timeout)
-        print(f"Relay_close: {err}")
+        err = dev.Relay_close(port, timeout)
+        print(f"Relay_close in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

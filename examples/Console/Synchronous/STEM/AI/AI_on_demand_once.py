@@ -75,7 +75,7 @@ def main():
         ## If the slot mode is not set to "AIO", set the slot mode to "AIO"
         if slot_mode != "AIO":
             err = dev.Sys_setAIOMode(slot, timeout)
-            print(f"Sys_setAIOMode in slot {slot}: {err}")
+            print(f"Sys_setAIOMode in slot {slot}, status: {err}")
 
         ## Get slot mode
         slot_mode = dev.Sys_getMode(slot, timeout)
@@ -83,15 +83,15 @@ def main():
 
         ## Open AI
         err = dev.AI_open(slot, timeout)
-        print(f"AI_open in slot {slot}: {err}")
+        print(f"AI_open in slot {slot}, status: {err}")
 
         ## Enable CS
         err = dev.AI_enableCS(slot, chip_select, timeout)
-        print(f"AI_enableCS in slot {slot}: {err}")
+        print(f"AI_enableCS in slot {slot}, status: {err}")
 
         ## Set AI acquisition mode to on demand mode (0)
         err = dev.AI_setMode(slot, mode, timeout)
-        print(f"AI_setMode {mode} in slot {slot}: {err}")
+        print(f"AI_setMode {mode} in slot {slot}, status: {err}")
 
         ## Read AI
         ai_list = dev.AI_readOnDemand(slot, timeout)
@@ -99,7 +99,7 @@ def main():
 
         ## Close AI
         err = dev.AI_close(slot, timeout)
-        print(f"AI_close in slot {slot}: {err}")
+        print(f"AI_close in slot {slot}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

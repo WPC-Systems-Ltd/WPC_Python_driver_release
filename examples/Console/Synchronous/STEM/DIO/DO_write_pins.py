@@ -71,7 +71,7 @@ def main():
         ## If the slot mode is not set to "DIO", set the slot mode to "DIO"
         if slot_mode != "DIO":
             err = dev.Sys_setDIOMode(slot, timeout)
-            print(f"Sys_setDIOMode in slot {slot}: {err}")
+            print(f"Sys_setDIOMode in slot {slot}, status: {err}")
 
         ## Get slot mode
         slot_mode = dev.Sys_getMode(slot, timeout)
@@ -85,7 +85,7 @@ def main():
 
         ## Write pins to high or low
         err = dev.DO_writePins(DO_port, pin_index, DO_value, timeout)
-        print(f"DO_writePins in port {DO_port}: {err}")
+        print(f"DO_writePins in port {DO_port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

@@ -37,7 +37,7 @@ async def main():
         return
 
     try:
-        for i in range(10, -0, -1):
+        for i in range(10, 0, -1):
             print(f"Restarting in {i} seconds...")
             await asyncio.sleep(1) ## delay [s]
 

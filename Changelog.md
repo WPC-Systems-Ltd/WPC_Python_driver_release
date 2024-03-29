@@ -1,6 +1,35 @@
 WPC Python driver release changelog
 ===================================
 
+v3.0.23 Date: 2024/03/29, Developer: Chunglee_people
+----------------------------------------------------
+### Fixed
+- Unify example code's printf style
+
+v3.0.22 Date: 2024/03/28, Developer: Chunglee_people
+----------------------------------------------------
+### Added
+- Verify EDriveST example code
+- Add the argument of `port` in relay relatie API
+- Example code: get_serial_number.py, AHRS_getAcceleration.py, AHRS_getAngularVelocity.py
+AHRS_getEstimation.py, AHRS_getOrientation.py
+- Error code: -8105 (relay port)
+- image: product-EthanIA.jpg
+- API: AHRS_getAcceleration, AHRS_getAngularVelocity
+
+### Fixed
+- Sync API description with C#
+- Product summary
+- Bug of using wrong `Sys_getDriverInfo` API in async example code
+- Modify the API description of Motion_cfgLimit `en_forward` and `en_reverse`
+- Modify the API description of Motion_getProcessState
+- README.md: AHRS, AI24bit, DPOT, Motion, Drive
+- Error code: The error code `-9301` description
+- Example code: DI pin index in DIO_loopback_pins
+
+### Removed
+- Example code: get_USB_info, AHRS_read
+- API: AHRS_setSamplingPeriod, Motion_getParameters, Motion_loadParameters, Motion_saveParameters
 
 v3.0.19 Date: 2024/03/01, Developer: Chunglee_people
 ----------------------------------------------------

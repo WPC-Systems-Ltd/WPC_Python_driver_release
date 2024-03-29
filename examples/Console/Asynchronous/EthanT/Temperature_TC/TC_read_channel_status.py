@@ -53,7 +53,7 @@ async def main():
 
         ## Open thermo
         err = await dev.Thermal_open_async(port)
-        print(f"Thermal_open_async in port {port}: {err}")
+        print(f"Thermal_open_async in port {port}, status: {err}")
 
         ## Set thermo port and get status in channel 0
         status = await dev.Thermal_getStatus_async(port, ch0)
@@ -65,7 +65,7 @@ async def main():
 
         ## Close thermo
         err = await dev.Thermal_close_async(port)
-        print(f"Thermal_close_async in port {port}: {err}")
+        print(f"Thermal_close_async in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

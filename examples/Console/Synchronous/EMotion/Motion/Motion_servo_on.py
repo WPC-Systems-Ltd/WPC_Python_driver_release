@@ -47,22 +47,22 @@ def main():
 
         ## Motion open
         err = dev.Motion_open(port, timeout)
-        print(f"Motion_open in port {port}: {err}")
+        print(f"Motion_open in port {port}, status: {err}")
 
         ## servo on
         err = dev.Motion_enableServoOn(port, axis, timeout)
-        print(f"Motion_enableServoOn in axis{axis}: {err}")
+        print(f"Motion_enableServoOn in axis{axis}, status: {err}")
 
         ## Wait
         time.sleep(5) ## delay [s]
 
         ## servo off
         err = dev.Motion_enableServoOff(port, axis, timeout)
-        print(f"Motion_enableServoOff in axis{axis}: {err}")
+        print(f"Motion_enableServoOff in axis{axis}, status: {err}")
 
         ## Motion close
         err = dev.Motion_close(port, timeout)
-        print(f"Motion_close in port {port}: {err}")
+        print(f"Motion_close in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

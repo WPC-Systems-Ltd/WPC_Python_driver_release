@@ -38,11 +38,10 @@ async def main():
         ## Parameters setting
         port = 0 ## Depend on your device
         mode = 1 ## 1: forward, -1: reverse.
-        active_low = 0
         active_high = 1
-        en_forward = 0
-        en_reverse = 0
-        searching_speed = 10000
+        en_forward = 1
+        en_reverse = 1
+        searching_speed = 50000
         approaching_speed = 10000
         acceleration = 10000
         offset = 0
@@ -55,27 +54,29 @@ async def main():
 
         ## Motion open
         err = await dev.Motion_open_async(port)
-        print(f"Motion_open: {err}")
+        print(f"Motion_open, status: {err}")
 
         ## Motion config
-        err = await dev.Motion_cfgLimit_async(port, en_forward, en_reverse, active_low)
-        print(f"Motion_cfgLimit: {err}")
+        err = await dev.Motion_cfgLimit_async(port, en_forward, en_reverse, active_high)
+        print(f"Motion_cfgLimit, status: {err}")
 
         ## Motion reset
         err = await dev.Motion_rstEncoderPosi_async(port)
-        print(f"Motion_resetEncoder: {err}")
+        print(f"Motion_resetEncoder, status: {err}")
 
         ## Motion Servo on
         err = await dev.Motion_enableServoOn_async(port)
-        print(f"Motion_enableServoOn: {err}")
+        print(f"Motion_enableServoOn, status: {err}")
 
         ## Motion find reference
         err = await dev.Motion_startFindLimit_async(port, mode, searching_speed, approaching_speed, acceleration, offset, reset_position)
-        print(f"Motion_startFindLimit: {err}")
+        print(f"Motion_startFindLimit, status: {err}")
 
         status = 1
         while status != 0 :
             status = await dev.Motion_getProcessState_async(port)
+            if(status == 0):
+                print(f"Motion_getProcessState: {status}")
 
         ## Motion get limit status
         state_list = await dev.Motion_getLimitStatus_async(port)
@@ -90,15 +91,15 @@ async def main():
     finally:
         ## Motion stop
         err = await dev.Motion_stopProcess_async(port)
-        print(f"Motion_stopProcess: {err}")
+        print(f"Motion_stopProcess, status: {err}")
 
         ## Motion Servo off
         err = await dev.Motion_enableServoOff_async(port)
-        print(f"Motion_enableServoOff: {err}")
+        print(f"Motion_enableServoOff, status: {err}")
 
         ## Motion close
         err = await dev.Motion_close_async(port)
-        print(f"Motion_close: {err}")
+        print(f"Motion_close, status: {err}")
 
     ## Disconnect device
     dev.disconnect()

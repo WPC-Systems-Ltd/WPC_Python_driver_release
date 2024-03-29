@@ -1,0 +1,6 @@
+AHRS getAngularVelocity
+=======================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/WifiDAQE3AH/AHRS/AHRS_getAngularVelocity.py
+   :language: python
+   :linenos:
