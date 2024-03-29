@@ -54,18 +54,18 @@ def main():
 
         ## Open port to digital output
         err = dev.DO_openPort(port, timeout)
-        print(f"DO_openPort in port {port}: {err}")
+        print(f"DO_openPort in port {port}, status: {err}")
 
         ## Write port to high or low
         err = dev.DO_writePort(port, DO_value, timeout)
-        print(f"DO_writePort in port {port}: {err}")
+        print(f"DO_writePort in port {port}, status: {err}")
 
-        ## Wait for 3 seconds to see led status
+        ## Wait for seconds to see led status
         time.sleep(3) ## delay [s]
 
         ## Close port with digital output
         err = dev.DO_closePort(port, timeout)
-        print(f"DO_closePort in port {port}: {err}")
+        print(f"DO_closePort in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

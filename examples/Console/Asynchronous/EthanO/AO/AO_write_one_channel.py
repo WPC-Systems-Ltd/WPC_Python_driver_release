@@ -52,27 +52,27 @@ async def main():
 
         ## Open AO
         err = await dev.AO_open_async(port)
-        print(f"AO_open_async in port {port}: {err}")
+        print(f"AO_open_async in port {port}, status: {err}")
 
         ## Write AO vaule in channel 0
         err = await dev.AO_writeOneChannel_async(port, 0, ao_value_list[0])
-        print(f"In port {port} channel 0, the AO value is {ao_value_list[0]}: {err}")
+        print(f"In port {port} channel 0, the AO value is {ao_value_list[0]}, status: {err}")
 
         ## Write AO vaule in channel 1
         err = await dev.AO_writeOneChannel_async(port, 1, ao_value_list[1])
-        print(f"In port {port} channel 1, the AO value is {ao_value_list[1]}: {err}")
+        print(f"In port {port} channel 1, the AO value is {ao_value_list[1]}, status: {err}")
 
         ## Write AO vaule in channel 2
         err = await dev.AO_writeOneChannel_async(port, 2, ao_value_list[2])
-        print(f"In port {port} channel 2, the AO value is {ao_value_list[2]}: {err}")
+        print(f"In port {port} channel 2, the AO value is {ao_value_list[2]}, status: {err}")
 
         ## Write AO vaule in channel 3
         err = await dev.AO_writeOneChannel_async(port, 3, ao_value_list[3])
-        print(f"In port {port} channel 3, the AO value is {ao_value_list[3]}: {err}")
+        print(f"In port {port} channel 3, the AO value is {ao_value_list[3]}, status: {err}")
 
         ## Close AO
         err = await dev.AO_close_async(port)
-        print(f"AO_close_async in port {port}: {err}")
+        print(f"AO_close_async in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

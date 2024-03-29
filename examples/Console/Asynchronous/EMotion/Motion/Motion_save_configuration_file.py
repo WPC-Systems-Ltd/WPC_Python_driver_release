@@ -56,26 +56,26 @@ async def main():
 
         ## Motion open
         err = await dev.Motion_open_async(port)
-        print(f"open_async in port {port}: {err}")
+        print(f"open_async in port {port}, status: {err}")
 
         ## Motion open configuration file
         err = await dev.Motion_openCfgFile_async('C:/Users/user/Desktop/3AxisStage_2P.ini')
-        print(f"openCfgFile_async: {err}")
+        print(f"openCfgFile_async, status: {err}")
 
         ## Motion configure
         err = await dev.Motion_cfgAxis_async(port, axis, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low)
-        print(f"cfgAxis_async in axis{axis}: {err}")
+        print(f"cfgAxis_async in axis{axis}, status: {err}")
 
         err = await dev.Motion_cfgAxisMove_async(port, axis, rel_posi_mode, target_posi=5000, velo=10000, accel=100000, decel=100000)
-        print(f"cfgAxisMove_async in axis{axis}: {err}")
+        print(f"cfgAxisMove_async in axis{axis}, status: {err}")
 
         ## Motion save configuration file
         err = await dev.Motion_saveCfgFile_async()
-        print(f"saveCfgFile_async: {err}")
+        print(f"saveCfgFile_async, status: {err}")
 
         ## Motion close
         err = await dev.Motion_close_async(port)
-        print(f"close_async in port {port}: {err}")
+        print(f"close_async in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

@@ -11,12 +11,12 @@ Products Feature
    * -
       **Emotion**
          - Ethernet based motion controller modular inter-connection
-         - board: Easy and quick connect to Servo amplifier (Yaskawa, Panasonic, Mitsubishi, Delta...etc)
+         - Easy and quick connect to Servo amplifier
          - Pulse/Direction or CW/CCW output mode
          - Differential output (Max: 8MPPS)
          - Encoder ABZ input (Max: 12MHz)
-         - Break-point / Capture
-         - Linear / Circular / helical interpolation / Multi-axes sync move S-Curve
+         - Break-point/Capture
+         - Linear/Circular/helical interpolation/Multi-axes sync move S-Curve
          - Support Python, C# and LabVIEW
      -
       .. image:: images/Products/product-Emotion.jpg
@@ -24,16 +24,16 @@ Products Feature
          :alt: product-Emotion.jpg
 
    * -
-      **Edrive-ST**
-         - Motor Type: 2-phase stepper motor
-         - Microstepping Resolution: 51,200 steps/revolution (adjustable)
-         - Maximum Power Supply Voltage: 36V (max)
-         - Maximum Output Current: 2.1A (max)
-         - Maximum Peak Current: 5A (max)
-         - Limit Switches: FWD, REV (without Home)
+      **EDrive-ST**
+         - 2-phase stepper motor
+         - 51,200 steps/revolutio
+         - 36v maximum power supply
+         - 2.1A maximum output current
+         - 5A maximum peak current
+         - Limit Switches: FWD, REV
          - Encoder: ABZ (Nominal: 8MHz)
-         - Features: Stall detection / Intelligent energy-saving / Diagnostic functions
-         - 8-Points Ramp for Smooth Acceleration
+         - Stall detection/intelligent energy-saving/diagnostic functions
+         - 8-points ramp for smooth acceleration
          - Support Python, C# and LabVIEW
      -
       .. image:: images/Products/product-EdriveST.jpg
@@ -41,10 +41,10 @@ Products Feature
          :alt: product-EdriveST.jpg
    * -
       **STEM**
+         - 10/100 T-based Ethernet interface
          - 4-slot IDC-50P 3.3V DIO
          - Support modules: 24ch-24V-DI/ 24ch-24V-DO/ 12-12ch-24V-DIO/ 24ch-5V-TTL/ 24ch-AIO
-         - 24ch-2-wire-Multiplexer/ 4x6-Matrix switch
-         - 10/100M Ethernet/ TCP command sets
+         - 24ch-2-wire-Multiplexer/4x6-Matrix switch
          - Support Python, C# and LabVIEW
      -
       .. image:: images/Products/product-STEM.jpg
@@ -101,7 +101,7 @@ Products Feature
          - 10/100 T-based Ethernet interface
          - 8ch 24-bit input
          - Current: +/-20mA input range
-         - Voltage: +/-10V  input range
+         - Voltage: +/-10V input range
          - Power input: 24VDC
          - Support Python, C# and LabVIEW
      -
@@ -183,9 +183,9 @@ Products Feature
          :alt: product-USBDAQAD.jpg
    * -
       **USBDAQF1DSNK**
-         - 24V 12ch DO / 14ch DI
+         - 24V 12ch DO/14ch DI
          - Industrial isolated DIO
-         - Sinking output / Sourcing input
+         - Sinking output/Sourcing input
          - External 24VDC power required
          - USB 2.0 full-speed bus powered
          - Support Python, C# and LabVIEW

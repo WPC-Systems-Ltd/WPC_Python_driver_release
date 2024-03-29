@@ -48,14 +48,15 @@ def main():
 
         ## Open DPOT
         err = dev.DPOT_open(port, timeout)
-        print(f"DPOT_open in port {port}: {err}")
+        print(f"DPOT_open in port {port}, status: {err}")
 
         ## Write all channels
         err = dev.DPOT_writeAllChannel(port, resistance_ratio, timeout)
+        print(f"DPOT_writeAllChannel in port {port}, status: {err}")
 
         ## Close DPOT
         err = dev.DPOT_close(port, timeout)
-        print(f"DPOT_close in port {port}: {err}")
+        print(f"DPOT_close in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

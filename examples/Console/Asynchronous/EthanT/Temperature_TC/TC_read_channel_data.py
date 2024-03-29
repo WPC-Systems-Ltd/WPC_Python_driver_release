@@ -55,26 +55,26 @@ async def main():
 
         ## Open thermo
         err = await dev.Thermal_open_async(port)
-        print(f"Thermal_open_async in port {port}: {err}")
+        print(f"Thermal_open_async in port {port}, status: {err}")
 
         ## Set thermo port and set over-sampling mode to no over-sampling in channel 1
         err = await dev.Thermal_setOverSampling_async(port, ch, over_sampling_mode)
-        print(f"Thermal_setOverSampling_async in port {port}: {err}")
+        print(f"Thermal_setOverSampling_async in port {port}, status: {err}")
 
         ## Set thermo port and set K type in channel 1
         err = await dev.Thermal_setType_async(port, ch, thermo_type)
-        print(f"Thermal_setType_async in port {port}: {err}")
+        print(f"Thermal_setType_async in port {port}, status: {err}")
 
         ## Wait for at least 500 ms after setting type or oversampling
         await asyncio.sleep(0.5) ## delay [s]
 
         ## Set thermo port and read thermo in channel 1
         data = await dev.Thermal_readSensor_async(port, ch)
-        print(f"Read sensor in channel {ch} in port {port}: {data}°C")
+        print(f"Read sensor in channel {ch} in port {port}: {data} deg C")
 
         ## Close thermo
         err = await dev.Thermal_close_async(port)
-        print(f"Thermal_close_async in port {port}: {err}")
+        print(f"Thermal_close_async in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

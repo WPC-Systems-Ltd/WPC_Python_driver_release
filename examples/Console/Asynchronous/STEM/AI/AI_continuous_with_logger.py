@@ -72,11 +72,11 @@ async def main():
 
         ## Open file with WPC_test.csv
         err = dev.Logger_openFile("WPC_test.csv")
-        print(f"Logger_openFile: {err}")
+        print(f"Logger_openFile, status: {err}")
 
         ## Write header into CSV file
         err = dev.Logger_writeHeader(["CH0","CH1","CH2","CH3","CH4","CH5","CH6","CH7"])
-        print(f"Logger_writeHeader: {err}")
+        print(f"Logger_writeHeader, status: {err}")
 
         ## Get slot mode
         slot_mode = await dev.Sys_getMode_async(slot)
@@ -85,7 +85,7 @@ async def main():
         ## If the slot mode is not set to "AIO", set the slot mode to "AIO"
         if slot_mode != "AIO":
             err = await dev.Sys_setAIOMode_async(slot)
-            print(f"Sys_setAIOMode_async in slot {slot}: {err}")
+            print(f"Sys_setAIOMode_async in slot {slot}, status: {err}")
 
         ## Get slot mode
         slot_mode = await dev.Sys_getMode_async(slot)
@@ -93,30 +93,30 @@ async def main():
 
         ## Open AI
         err = await dev.AI_open_async(slot)
-        print(f"AI_open_async in slot {slot}: {err}")
+        print(f"AI_open_async in slot {slot}, status: {err}")
 
         ## Enable CS
         err = await dev.AI_enableCS_async(slot, chip_select)
-        print(f"AI_enableCS_async in slot {slot}: {err}")
+        print(f"AI_enableCS_async in slot {slot}, status: {err}")
 
         ## Set AI acquisition mode to continuous mode (2)
         err = await dev.AI_setMode_async(slot, mode)
-        print(f"AI_setMode_async {mode} in slot {slot}: {err}")
+        print(f"AI_setMode_async {mode} in slot {slot}, status: {err}")
 
         ## Set AI sampling rate
         err = await dev.AI_setSamplingRate_async(slot, sampling_rate)
-        print(f"AI_setSamplingRate_async {sampling_rate} in slot {slot}: {err}")
+        print(f"AI_setSamplingRate_async {sampling_rate} in slot {slot}, status: {err}")
 
         ## Start AI
         err = await dev.AI_start_async(slot)
-        print(f"AI_start_async in slot {slot}: {err}")
+        print(f"AI_start_async in slot {slot}, status: {err}")
 
         ## Wait for acquisition
         await asyncio.sleep(1) ## delay [s]
 
         ## Stop AI
         err = await dev.AI_stop_async(slot)
-        print(f"AI_stop_async in slot {slot}: {err}")
+        print(f"AI_stop_async in slot {slot}, status: {err}")
 
         data_len = 1
         while data_len > 0:
@@ -132,7 +132,7 @@ async def main():
 
         ## Close AI
         err = await dev.AI_close_async(slot)
-        print(f"AI_close_async in slot {slot}: {err}")
+        print(f"AI_close_async in slot {slot}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

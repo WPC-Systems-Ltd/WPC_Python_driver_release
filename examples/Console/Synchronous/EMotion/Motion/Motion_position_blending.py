@@ -62,46 +62,46 @@ def main():
 
         ## Motion open
         err = dev.Motion_open(port, timeout)
-        print(f"Motion_open in port {port}: {err}")
+        print(f"Motion_open in port {port}, status: {err}")
 
         '''
         ## Motion open configuration file
         err = dev.Motion_openCfgFile('C:/Users/user/Desktop/3AxisStage_2P.ini')
-        print(f"openCfgFile: {err}")
+        print(f"openCfgFile, status: {err}")
 
         ## Motion load configuration file
         err = dev.Motion_loadCfgFile()
-        print(f"loadCfgFile: {err}")
+        print(f"loadCfgFile, status: {err}")
         '''
 
         ## Motion configure
         err = dev.Motion_cfgAxis(port, axis, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low, timeout)
-        print(f"Motion_cfgAxis in axis{axis}: {err}")
+        print(f"Motion_cfgAxis in axis{axis}, status: {err}")
 
         err = dev.Motion_cfgLimit(port, axis, forward_enable_true, reverse_enable_true, active_low, timeout)
-        print(f"Motion_cfgLimit in axis{axis}: {err}")
+        print(f"Motion_cfgLimit in axis{axis}, status: {err}")
 
         err = dev.Motion_cfgHome(port, axis, home_enable_false, active_low, timeout)
-        print(f"Motion_cfgHome in axis{axis}: {err}")
+        print(f"Motion_cfgHome in axis{axis}, status: {err}")
 
         err = dev.Motion_cfgAxisMove(port, axis, rel_posi_mode, target_posi=5000, velo=10000, accel=100000, decel=100000, timeout=timeout)
-        print(f"Motion_cfgAxisMove in axis{axis}: {err}")
+        print(f"Motion_cfgAxisMove in axis{axis}, status: {err}")
 
         err = dev.Motion_rstEncoderPosi(port, axis, encoder_posi=0, timeout=timeout)
-        print(f"Motion_rstEncoderPosi in axis{axis}: {err}")
+        print(f"Motion_rstEncoderPosi in axis{axis}, status: {err}")
 
         ## Servo on
         err = dev.Motion_enableServoOn(port, axis, timeout)
-        print(f"Motion_enableServoOn in axis{axis}: {err}")
+        print(f"Motion_enableServoOn in axis{axis}, status: {err}")
 
         ## Motion start
         err = dev.Motion_startSingleAxisMove(port, axis, timeout)
-        print(f"Motion_startSingleAxisMove in axis{axis}: {err}")
+        print(f"Motion_startSingleAxisMove in axis{axis}, status: {err}")
 
         move_status = 0
         while move_status == 0:
             err = dev.Motion_overrideAxisPosi(port, axis, new_position, timeout)
-            # print(f"Motion_overrideAxisPosi in axis{axis}: {err}")
+            # print(f"Motion_overrideAxisPosi in axis{axis}, status: {err}")
             move_status = dev.Motion_getMoveStatus(port, axis, timeout)
             logical_posi = dev.Motion_getLogicalPosi(port, axis, timeout)
             encoder_posi = dev.Motion_getEncoderPosi(port, axis, timeout)
@@ -109,15 +109,15 @@ def main():
 
         ## Motion stop
         err = dev.Motion_stop(port, axis, stop_decel, timeout)
-        print(f"Motion_stop in axis{axis}: {err}")
+        print(f"Motion_stop in axis{axis}, status: {err}")
 
         ## Servo off
         err = dev.Motion_enableServoOff(port, axis, timeout)
-        print(f"Motion_enableServoOff in axis{axis}: {err}")
+        print(f"Motion_enableServoOff in axis{axis}, status: {err}")
 
         ## Motion close
         err = dev.Motion_close(port, timeout)
-        print(f"Motion_close in port {port}: {err}")
+        print(f"Motion_close in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

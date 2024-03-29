@@ -41,17 +41,17 @@ async def main():
         channel = 1 ## Depend on your device
 
         ## Get firmware model & version
-        driver_info = await dev.Sys_getDriverInfo()
+        driver_info = await dev.Sys_getDriverInfo_async()
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
 
         ## Open counter
         err = await dev.Counter_open_async(channel)
-        print(f"Counter_open_async in channel {channel}: {err}")
+        print(f"Counter_open_async in channel {channel}, status: {err}")
 
         ## Start counter
         err = await dev.Counter_start_async(channel)
-        print(f"Counter_start_async in channel {channel}: {err}")
+        print(f"Counter_start_async in channel {channel}, status: {err}")
 
         ## Read counter
         for i in range(10):
@@ -60,11 +60,11 @@ async def main():
 
         ## Stop counter
         err = await dev.Counter_stop_async(channel)
-        print(f"Counter_stop_async in channel {channel}: {err}")
+        print(f"Counter_stop_async in channel {channel}, status: {err}")
 
         ## Close counter
         err = await dev.Counter_close_async(channel)
-        print(f"Counter_close_async in channel {channel}: {err}")
+        print(f"Counter_close_async in channel {channel}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../../../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Motion 1axis move with inposition &mdash; WPC Python driver 3.0.19 documentation</title>
-      <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
+  <title>Motion 1axis move with inposition &mdash; WPC Python driver 3.0.23 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/custom_sphinx.css?v=20c2511c" />
+
+  
     <link rel="shortcut icon" href="../../../../../_static/WPC-trademark.jpg"/>
   <!--[if lt IE 9]>
     <script src="../../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
-        <script src="../../../../../_static/jquery.js"></script>
-        <script src="../../../../../_static/underscore.js"></script>
-        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../../../../_static/doctools.js"></script>
-        <script src="../../../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../../_static/documentation_options.js?v=4822a363"></script>
+        <script src="../../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -31,15 +32,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../../../../index.html" class="icon icon-home"> WPC Python driver
-            <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../../../../index.html" class="icon icon-home">
+            WPC Python driver
+              <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.19
+                3.0.23
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -83,6 +88,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../System_ETH/get_serial_number.html">Get serial number</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../examples_console_Synchronous.html#ethan-a">Ethan-A</a></li>
@@ -131,9 +137,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../../../../examples_console_Synchronous.html">Example Codes - Console (sync)</a> &raquo;</li>
-      <li>Motion 1axis move with inposition</li>
+      <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../../examples_console_Synchronous.html">Example Codes - Console (sync)</a></li>
+      <li class="breadcrumb-item active">Motion 1axis move with inposition</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -143,7 +149,7 @@
            <div itemprop="articleBody">
              
   <section id="motion-1axis-move-with-inposition">
-<h1>Motion 1axis move with inposition<a class="headerlink" href="#motion-1axis-move-with-inposition" title="Permalink to this heading"></a></h1>
+<h1>Motion 1axis move with inposition<a class="headerlink" href="#motion-1axis-move-with-inposition" title="Link to this heading"></a></h1>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos">  2</span><span class="sd">Motion - Motion_1axis_move_with_inposition.py with synchronous mode.</span>
 <span class="linenos">  3</span>
@@ -207,42 +213,42 @@
 <span class="linenos"> 61</span>
 <span class="linenos"> 62</span>        <span class="c1">## Motion open</span>
 <span class="linenos"> 63</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_open</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 64</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_open in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 64</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_open in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 65</span>
 <span class="linenos"> 66</span>
-<span class="linenos"> 67</span>        <span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos"> 67</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos"> 68</span><span class="sd">        ## Motion open configuration file</span>
 <span class="linenos"> 69</span><span class="sd">        err = dev.Motion_openCfgFile(&#39;C:/Users/user/Desktop/3AxisStage_2P.ini&#39;)</span>
-<span class="linenos"> 70</span><span class="sd">        print(f&quot;openCfgFile: {err}&quot;)</span>
+<span class="linenos"> 70</span><span class="sd">        print(f&quot;openCfgFile, status: {err}&quot;)</span>
 <span class="linenos"> 71</span>
 <span class="linenos"> 72</span><span class="sd">        ## Motion load configuration file</span>
 <span class="linenos"> 73</span><span class="sd">        err = dev.Motion_loadCfgFile()</span>
-<span class="linenos"> 74</span><span class="sd">        print(f&quot;loadCfgFile: {err}&quot;)</span>
+<span class="linenos"> 74</span><span class="sd">        print(f&quot;loadCfgFile, status: {err}&quot;)</span>
 <span class="linenos"> 75</span><span class="sd">        &#39;&#39;&#39;</span>
 <span class="linenos"> 76</span>
 <span class="linenos"> 77</span>        <span class="c1">## Motion configure</span>
 <span class="linenos"> 78</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_cfgAxis</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">two_pulse_mode</span><span class="p">,</span> <span class="n">axis_dir_cw</span><span class="p">,</span> <span class="n">encoder_dir_cw</span><span class="p">,</span> <span class="n">active_low</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 79</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_cfgAxis in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 79</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_cfgAxis in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 80</span>
 <span class="linenos"> 81</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_cfgLimit</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">forward_enable_true</span><span class="p">,</span> <span class="n">reverse_enable_true</span><span class="p">,</span> <span class="n">active_low</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 82</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_cfgLimit in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 82</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_cfgLimit in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 83</span>
 <span class="linenos"> 84</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_cfgInposi</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">inposi_enable_false</span><span class="p">,</span> <span class="n">active_low</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 85</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_cfgInposi in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 85</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_cfgInposi in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 86</span>
 <span class="linenos"> 87</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_cfgAxisMove</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">rel_posi_mode</span><span class="p">,</span> <span class="n">target_posi</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">velo</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">accel</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span> <span class="n">decel</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 88</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_cfgAxisMove in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 88</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_cfgAxisMove in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 89</span>
 <span class="linenos"> 90</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_rstEncoderPosi</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">encoder_posi</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 91</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_rstEncoderPosi in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 91</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_rstEncoderPosi in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 92</span>
 <span class="linenos"> 93</span>        <span class="c1">## Servo on</span>
 <span class="linenos"> 94</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_enableServoOn</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 95</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_enableServoOn in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 95</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_enableServoOn in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 96</span>
 <span class="linenos"> 97</span>        <span class="c1">## Motion start</span>
 <span class="linenos"> 98</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_startSingleAxisMove</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 99</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_startSingleAxisMove in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 99</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_startSingleAxisMove in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">100</span>
 <span class="linenos">101</span>        <span class="n">move_status</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="linenos">102</span>        <span class="k">while</span> <span class="n">move_status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -251,15 +257,15 @@
 <span class="linenos">105</span>
 <span class="linenos">106</span>        <span class="c1">## Motion stop</span>
 <span class="linenos">107</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_stop</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">stop_decel</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">108</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_stop in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">108</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_stop in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">109</span>
 <span class="linenos">110</span>        <span class="c1">## Servo off</span>
 <span class="linenos">111</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_enableServoOff</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">112</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_enableServoOff in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">112</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_enableServoOff in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">113</span>
 <span class="linenos">114</span>        <span class="c1">## Motion close</span>
 <span class="linenos">115</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_close</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">116</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_close in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">116</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_close in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">117</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos">118</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="linenos">119</span>

@@ -59,7 +59,7 @@ async def main():
         ## If the slot mode is not set to "AIO", set the slot mode to "AIO"
         if slot_mode != "AIO":
             err = await dev.Sys_setAIOMode_async(slot)
-            print(f"Sys_setAIOMode_async in slot {slot}: {err}")
+            print(f"Sys_setAIOMode_async in slot {slot}, status: {err}")
 
         ## Get slot mode
         slot_mode = await dev.Sys_getMode_async(slot)
@@ -67,15 +67,15 @@ async def main():
 
         ## Open AO
         err = await dev.AO_open_async(slot)
-        print(f"AO_open_async in slot {slot}: {err}")
+        print(f"AO_open_async in slot {slot}, status: {err}")
 
         ## Write AO value simultaneously
         err = await dev.AO_writeAllChannels_async(slot, ao_value_list)
-        print(f"In slot {slot} the AO value is {ao_value_list}: {err}")
+        print(f"In slot {slot} the AO value is {ao_value_list}, status: {err}")
 
         ## Close AO
         err = await dev.AO_close_async(slot)
-        print(f"AO_close_async in slot {slot}: {err}")
+        print(f"AO_close_async in slot {slot}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

@@ -60,24 +60,24 @@ def main():
 
         ## Motion open
         err = dev.Motion_open(port, timeout)
-        print(f"Motion_open in port {port}: {err}")
+        print(f"Motion_open in port {port}, status: {err}")
 
         ## Motion open configuration file
         err = dev.Motion_openCfgFile('C:/Users/user/Desktop/3AxisStage_2P.ini')
-        print(f"Motion_openCfgFile: {err}")
+        print(f"Motion_openCfgFile, status: {err}")
 
         ## Motion load configuration file
         err = dev.Motion_loadCfgFile(timeout)
-        print(f"Motion_loadCfgFile: {err}")
+        print(f"Motion_loadCfgFile, status: {err}")
 
         ## Motion configure
         err = dev.Motion_cfgHelicalInterpo(port, center_x, center_y, finish_x, finish_y, int(False), pitch_axis3, int(False), pitch_axis4, rotation_num,
         speed, helical_dir_cw, cal_timeout, timeout)
-        print(f"Motion_cfgHelicalInterpo in axis{axis}: {err}")
+        print(f"Motion_cfgHelicalInterpo in axis{axis}, status: {err}")
 
         ## Motion start
         err = dev.Motion_startHelicalInterpo(port, timeout)
-        print(f"Motion_startHelicalInterpo in axis{axis}: {err}")
+        print(f"Motion_startHelicalInterpo in axis{axis}, status: {err}")
 
         move_status = 0
         while move_status == 0:
@@ -88,11 +88,11 @@ def main():
 
         ## Motion stop
         err = dev.Motion_stop(port, axis, stop_decel, timeout)
-        print(f"Motion_stop in axis{axis}: {err}")
+        print(f"Motion_stop in axis{axis}, status: {err}")
 
         ## Motion close
         err = dev.Motion_close(port, timeout)
-        print(f"Motion_close in port {port}: {err}")
+        print(f"Motion_close in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

@@ -1,0 +1,6 @@
+Get serial number
+=================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/STEM/System_ETH/get_serial_number.py
+   :language: python
+   :linenos:

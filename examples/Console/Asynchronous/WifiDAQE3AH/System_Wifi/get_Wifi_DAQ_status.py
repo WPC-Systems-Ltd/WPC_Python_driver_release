@@ -45,7 +45,6 @@ async def main():
         ## Get RSSI, battery and thermo
         rssi = await dev.Wifi_readRSSI_async()
         battery = await dev.Wifi_readBattery_async()
-        thermo = await dev.Wifi_readThermo_async()
 
         ## Get power & charge status
         power_status  = await dev.Wifi_getPowerGoodStatus_async()
@@ -53,7 +52,6 @@ async def main():
 
         print(f"RSSI: {rssi} dBm")
         print(f"Battery: {battery} mV")
-        print(f"Thermo: {thermo} °C")
         print(f"Power status: {power_status}")
         print(f"Charge status: {charge_status}")
     except Exception as err:

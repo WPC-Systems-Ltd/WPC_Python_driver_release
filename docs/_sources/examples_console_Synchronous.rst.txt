@@ -58,6 +58,8 @@ STEM
 
    examples/Console/Synchronous/STEM/System_ETH/set_and_get_RTC.rst
 
+   examples/Console/Synchronous/STEM/System_ETH/get_serial_number.rst
+
 
 EDrive-ST
 ---------
@@ -86,6 +88,8 @@ EDrive-ST
    examples/Console/Synchronous/EDriveST/System_ETH/hello_world.rst
 
    examples/Console/Synchronous/EDriveST/System_ETH/set_and_get_RTC.rst
+
+   examples/Console/Synchronous/EDriveST/System_ETH/get_serial_number.rst
 
 
 EMotion
@@ -146,6 +150,8 @@ EMotion
 
    examples/Console/Synchronous/EMotion/System_ETH/set_and_get_RTC.rst
 
+   examples/Console/Synchronous/EMotion/System_ETH/get_serial_number.rst
+
 
 Ethan-A
 -------
@@ -170,6 +176,8 @@ Ethan-A
    examples/Console/Synchronous/EthanA/System_ETH/hello_world.rst
 
    examples/Console/Synchronous/EthanA/System_ETH/set_and_get_RTC.rst
+
+   examples/Console/Synchronous/EthanA/System_ETH/get_serial_number.rst
 
 
 Ethan-D
@@ -198,6 +206,8 @@ Ethan-D
 
    examples/Console/Synchronous/EthanD/System_ETH/set_and_get_RTC.rst
 
+   examples/Console/Synchronous/EthanD/System_ETH/get_serial_number.rst
+
 
 Ethan-EX-D
 ----------
@@ -223,6 +233,8 @@ Ethan-EX-D
 
    examples/Console/Synchronous/EthanEXD/System_ETH/set_and_get_RTC.rst
 
+   examples/Console/Synchronous/EthanEXD/System_ETH/get_serial_number.rst
+
 
 Ethan-I
 -------
@@ -238,6 +250,8 @@ Ethan-I
 
    examples/Console/Synchronous/EthanI/System_ETH/set_and_get_RTC.rst
 
+   examples/Console/Synchronous/EthanI/System_ETH/get_serial_number.rst
+
 
 Ethan-IA
 --------
@@ -252,6 +266,8 @@ Ethan-IA
    examples/Console/Synchronous/EthanIA/System_ETH/hello_world.rst
 
    examples/Console/Synchronous/EthanIA/System_ETH/set_and_get_RTC.rst
+
+   examples/Console/Synchronous/EthanIA/System_ETH/get_serial_number.rst
 
 
 Ethan-L
@@ -269,6 +285,8 @@ Ethan-L
    examples/Console/Synchronous/EthanL/System_ETH/hello_world.rst
 
    examples/Console/Synchronous/EthanL/System_ETH/set_and_get_RTC.rst
+
+   examples/Console/Synchronous/EthanL/System_ETH/get_serial_number.rst
 
 
 Ethan-O
@@ -289,6 +307,8 @@ Ethan-O
 
    examples/Console/Synchronous/EthanO/System_ETH/set_and_get_RTC.rst
 
+   examples/Console/Synchronous/EthanO/System_ETH/get_serial_number.rst
+
 
 Ethan-P
 -------
@@ -305,6 +325,8 @@ Ethan-P
    examples/Console/Synchronous/EthanP/System_ETH/hello_world.rst
 
    examples/Console/Synchronous/EthanP/System_ETH/set_and_get_RTC.rst
+
+   examples/Console/Synchronous/EthanP/System_ETH/get_serial_number.rst
 
 
 Ethan-T
@@ -324,6 +346,8 @@ Ethan-T
    examples/Console/Synchronous/EthanT/System_ETH/hello_world.rst
 
    examples/Console/Synchronous/EthanT/System_ETH/set_and_get_RTC.rst
+
+   examples/Console/Synchronous/EthanT/System_ETH/get_serial_number.rst
 
 
 USB-DAQ-F1-AD
@@ -372,11 +396,11 @@ USB-DAQ-F1-AD
 
    examples/Console/Synchronous/USBDAQF1AD/System_USB/get_pin_mode.rst
 
-   examples/Console/Synchronous/USBDAQF1AD/System_USB/get_USB_info.rst
-
    examples/Console/Synchronous/USBDAQF1AD/System_USB/hello_world.rst
 
    examples/Console/Synchronous/USBDAQF1AD/System_USB/set_and_get_RTC.rst
+
+   examples/Console/Synchronous/USBDAQF1AD/System_USB/get_serial_number.rst
 
 
 USB-DAQ-F1-AOD
@@ -433,11 +457,11 @@ USB-DAQ-F1-AOD
 
    examples/Console/Synchronous/USBDAQF1AOD/System_USB/get_pin_mode.rst
 
-   examples/Console/Synchronous/USBDAQF1AOD/System_USB/get_USB_info.rst
-
    examples/Console/Synchronous/USBDAQF1AOD/System_USB/hello_world.rst
 
    examples/Console/Synchronous/USBDAQF1AOD/System_USB/set_and_get_RTC.rst
+
+   examples/Console/Synchronous/USBDAQF1AOD/System_USB/get_serial_number.rst
 
 
 USB-DAQ-F1-CD
@@ -478,11 +502,11 @@ USB-DAQ-F1-CD
 
    examples/Console/Synchronous/USBDAQF1CD/System_USB/get_pin_mode.rst
 
-   examples/Console/Synchronous/USBDAQF1CD/System_USB/get_USB_info.rst
-
    examples/Console/Synchronous/USBDAQF1CD/System_USB/hello_world.rst
 
    examples/Console/Synchronous/USBDAQF1CD/System_USB/set_and_get_RTC.rst
+
+   examples/Console/Synchronous/USBDAQF1CD/System_USB/get_serial_number.rst
 
 
 USB-DAQ-F1-D
@@ -519,11 +543,11 @@ USB-DAQ-F1-D
 
    examples/Console/Synchronous/USBDAQF1D/System_USB/get_pin_mode.rst
 
-   examples/Console/Synchronous/USBDAQF1D/System_USB/get_USB_info.rst
-
    examples/Console/Synchronous/USBDAQF1D/System_USB/hello_world.rst
 
    examples/Console/Synchronous/USBDAQF1D/System_USB/set_and_get_RTC.rst
+
+   examples/Console/Synchronous/USBDAQF1D/System_USB/get_serial_number.rst
 
 
 USB-DAQ-F1-D-SNK
@@ -550,11 +574,11 @@ USB-DAQ-F1-D-SNK
 
    examples/Console/Synchronous/USBDAQF1DSNK/System_USB/get_pin_mode.rst
 
-   examples/Console/Synchronous/USBDAQF1DSNK/System_USB/get_USB_info.rst
-
    examples/Console/Synchronous/USBDAQF1DSNK/System_USB/hello_world.rst
 
    examples/Console/Synchronous/USBDAQF1DSNK/System_USB/set_and_get_RTC.rst
+
+   examples/Console/Synchronous/USBDAQF1DSNK/System_USB/get_serial_number.rst
 
 
 USB-DAQ-F1-RD
@@ -597,11 +621,11 @@ USB-DAQ-F1-RD
 
    examples/Console/Synchronous/USBDAQF1RD/System_USB/get_pin_mode.rst
 
-   examples/Console/Synchronous/USBDAQF1RD/System_USB/get_USB_info.rst
-
    examples/Console/Synchronous/USBDAQF1RD/System_USB/hello_world.rst
 
    examples/Console/Synchronous/USBDAQF1RD/System_USB/set_and_get_RTC.rst
+
+   examples/Console/Synchronous/USBDAQF1RD/System_USB/get_serial_number.rst
 
 
 USB-DAQ-F1-TD
@@ -644,11 +668,11 @@ USB-DAQ-F1-TD
 
    examples/Console/Synchronous/USBDAQF1TD/System_USB/get_pin_mode.rst
 
-   examples/Console/Synchronous/USBDAQF1TD/System_USB/get_USB_info.rst
-
    examples/Console/Synchronous/USBDAQF1TD/System_USB/hello_world.rst
 
    examples/Console/Synchronous/USBDAQF1TD/System_USB/set_and_get_RTC.rst
+
+   examples/Console/Synchronous/USBDAQF1TD/System_USB/get_serial_number.rst
 
 
 Wifi-DAQ-E3-A
@@ -679,6 +703,8 @@ Wifi-DAQ-E3-A
 
    examples/Console/Synchronous/WifiDAQE3A/System_Wifi/set_LED_status.rst
 
+   examples/Console/Synchronous/WifiDAQE3A/System_Wifi/get_serial_number.rst
+
 
 Wifi-DAQ-E3-AH
 --------------
@@ -698,7 +724,13 @@ Wifi-DAQ-E3-AH
 
    examples/Console/Synchronous/WifiDAQE3AH/AI/AI_continuous_multi_slot.rst
 
-   examples/Console/Synchronous/WifiDAQE3AH/AHRS/AHRS_read.rst
+   examples/Console/Synchronous/WifiDAQE3AH/AHRS/AHRS_getAcceleration.rst
+
+   examples/Console/Synchronous/WifiDAQE3AH/AHRS/AHRS_getEstimation.rst
+
+   examples/Console/Synchronous/WifiDAQE3AH/AHRS/AHRS_getAngularVelocity.rst
+
+   examples/Console/Synchronous/WifiDAQE3AH/AHRS/AHRS_getOrientation.rst
 
    examples/Console/Synchronous/WifiDAQE3AH/AHRS/AHRS_visualize.rst
 
@@ -711,6 +743,8 @@ Wifi-DAQ-E3-AH
    examples/Console/Synchronous/WifiDAQE3AH/System_Wifi/set_and_get_RTC.rst
 
    examples/Console/Synchronous/WifiDAQE3AH/System_Wifi/set_LED_status.rst
+
+   examples/Console/Synchronous/WifiDAQE3AH/System_Wifi/get_serial_number.rst
 
 
 Wifi-DAQ-F4-A
@@ -740,4 +774,6 @@ Wifi-DAQ-F4-A
    examples/Console/Synchronous/WifiDAQF4A/System_Wifi/set_and_get_RTC.rst
 
    examples/Console/Synchronous/WifiDAQF4A/System_Wifi/set_LED_status.rst
+
+   examples/Console/Synchronous/WifiDAQF4A/System_Wifi/get_serial_number.rst
 

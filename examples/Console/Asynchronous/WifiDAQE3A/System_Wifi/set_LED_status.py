@@ -48,29 +48,29 @@ async def main():
         for i in range(3):
             ## Reset LED status
             err = await dev.Wifi_resetLED_async()
-            print(f"Wifi_resetLED_async: {err}")
+            print(f"Wifi_resetLED_async, status: {err}")
 
             ## Set green LED status
             err = await dev.Wifi_setGreenLED_async(value)
-            print(f"Wifi_setGreenLED_async: {err}")
+            print(f"Wifi_setGreenLED_async, status: {err}")
             await asyncio.sleep(1) ## delay [s]
 
             ## Reset LED status
             err = await dev.Wifi_resetLED_async()
-            print(f"Wifi_resetLED_async: {err}")
+            print(f"Wifi_resetLED_async, status: {err}")
 
             ## Set blue LED status
             err = await dev.Wifi_setBlueLED_async(value)
-            print(f"Wifi_setBlueLED_async: {err}")
+            print(f"Wifi_setBlueLED_async, status: {err}")
             await asyncio.sleep(1) ## delay [s]
 
             ## Reset LED status
             err = await dev.Wifi_resetLED_async()
-            print(f"Wifi_resetLED_async: {err}")
+            print(f"Wifi_resetLED_async, status: {err}")
 
             ## Set red LED status
             err = await dev.Wifi_setRedLED_async(value)
-            print(f"Wifi_setRedLED_async: {err}")
+            print(f"Wifi_setRedLED_async, status: {err}")
             await asyncio.sleep(1) ## delay [s]
 
             print("")

@@ -53,7 +53,7 @@ def main():
 
         ## Open port with digital output
         err = dev.DO_openPort(port, timeout)
-        print(f"DO_openPort in port {port}: {err}")
+        print(f"DO_openPort in port {port}, status: {err}")
 
         ## Toggle digital state for 10 times. Each times delay for 0.5 second
         for i in range(10):
@@ -65,7 +65,7 @@ def main():
 
         ## Close port with digital output
         err = dev.DO_closePort(port, timeout)
-        print(f"DO_closePort in port {port}: {err}")
+        print(f"DO_closePort in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

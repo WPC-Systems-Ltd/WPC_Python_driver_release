@@ -39,10 +39,8 @@ def main():
         dev.close()
         return
 
-    ## Perform DAQ basic information
     try:
         ## Parameters setting
-        port = None ## Depend on your device
         timeout = 3 ## second
 
         ## Get firmware model & version

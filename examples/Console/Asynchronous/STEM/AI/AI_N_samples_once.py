@@ -78,7 +78,7 @@ async def main():
         ## If the slot mode is not set to "AIO", set the slot mode to "AIO"
         if slot_mode != "AIO":
             err = await dev.Sys_setAIOMode_async(slot)
-            print(f"Sys_setAIOMode_async in slot {slot}: {err}")
+            print(f"Sys_setAIOMode_async in slot {slot}, status: {err}")
 
         ## Get slot mode
         slot_mode = await dev.Sys_getMode_async(slot)
@@ -86,27 +86,27 @@ async def main():
 
         ## Open AI
         err = await dev.AI_open_async(slot)
-        print(f"AI_open_async in slot {slot}: {err}")
+        print(f"AI_open_async in slot {slot}, status: {err}")
 
         ## Enable CS
         err = await dev.AI_enableCS_async(slot, chip_select)
-        print(f"AI_enableCS_async in slot {slot}: {err}")
+        print(f"AI_enableCS_async in slot {slot}, status: {err}")
 
         ## Set AI acquisition mode to N-samples mode (1)
         err = await dev.AI_setMode_async(slot, mode)
-        print(f"AI_setMode_async {mode} in slot {slot}: {err}")
+        print(f"AI_setMode_async {mode} in slot {slot}, status: {err}")
 
         ## Set AI sampling rate
         err = await dev.AI_setSamplingRate_async(slot, sampling_rate)
-        print(f"AI_setSamplingRate_async {sampling_rate} in slot {slot}: {err}")
+        print(f"AI_setSamplingRate_async {sampling_rate} in slot {slot}, status: {err}")
 
         ## Set AI # of samples
         err = await dev.AI_setNumSamples_async(slot, samples)
-        print(f"AI_setNumSamples_async {samples} in slot {slot}: {err}")
+        print(f"AI_setNumSamples_async {samples} in slot {slot}, status: {err}")
 
         ## Start AI
         err = await dev.AI_start_async(slot)
-        print(f"AI_start_async in slot {slot}: {err}")
+        print(f"AI_start_async in slot {slot}, status: {err}")
 
         ## Read AI
         ai_2Dlist = await dev.AI_readStreaming_async(slot, read_points, read_delay)
@@ -125,11 +125,11 @@ async def main():
 
         ## Stop AI
         err = await dev.AI_stop_async(slot)
-        print(f"AI_stop_async in port {slot}: {err}")
+        print(f"AI_stop_async in port {slot}, status: {err}")
 
         ## Close AI
         err = await dev.AI_close_async(slot)
-        print(f"AI_close_async in slot {slot}: {err}")
+        print(f"AI_close_async in slot {slot}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

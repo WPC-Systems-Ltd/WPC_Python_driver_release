@@ -43,15 +43,13 @@ async def main():
         print("Firmware version: " + driver_info[-1])
 
         ## Set RTC
-        status = await dev.Sys_setRTC_async(2023, 5, 8, 15, 8, 7)
-        print(f"Set RTC status: {status}")
+        err = await dev.Sys_setRTC_async(2023, 5, 8, 15, 8, 7)
+        print(f"Set RTC to 2023-05-08, 15:08:07 , status: {err}")
 
+        ## Get RTC
         for i in range(10):
-            ## Get RTC
             print(f"Get RTC: {await dev.Sys_getRTC_async()}")
-
             await asyncio.sleep(1)  ## delay [s]
-
     except Exception as err:
         pywpc.printGenericError(err)
 

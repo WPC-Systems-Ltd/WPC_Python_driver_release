@@ -106,72 +106,72 @@ async def main():
 
         ## Motion open
         err = await dev.Motion_open_async(port)
-        print(f"open_async in port {port}: {err}")
+        print(f"open_async in port {port}, status: {err}")
 
         '''
         ## Motion open configuration file
         err = await dev.Motion_openCfgFile_async('C:/Users/user/Desktop/3AxisStage_2P.ini')
-        print(f"openCfgFile_async: {err}")
+        print(f"openCfgFile_async, status: {err}")
 
         ## Motion load configuration file
         err = await dev.Motion_loadCfgFile_async()
-        print(f"loadCfgFile_async: {err}")
+        print(f"loadCfgFile_async, status: {err}")
         '''
 
         ## Motion configure for axis1
         err = await dev.Motion_cfgAxis_async(port, axis1, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low)
-        print(f"cfgAxis_async in axis{axis1}: {err}")
+        print(f"cfgAxis_async in axis{axis1}, status: {err}")
 
         err = await dev.Motion_cfgLimit_async(port, axis1, forward_enable_false, reverse_enable_false, active_low)
-        print(f"cfgLimit_async in axis{axis1}: {err}")
+        print(f"cfgLimit_async in axis{axis1}, status: {err}")
 
         err = await dev.Motion_rstEncoderPosi_async(port, axis1, encoder_posi=0)
-        print(f"rstEncoderPosi_async in axis{axis1}: {err}")
+        print(f"rstEncoderPosi_async in axis{axis1}, status: {err}")
 
         err = await dev.Motion_cfgAxisMove_async(port, axis1, rel_posi_mode, target_posi=1000, velo=10000, accel=100000, decel=100000)
-        print(f"cfgAxisMove_async in axis{axis1}: {err}")
+        print(f"cfgAxisMove_async in axis{axis1}, status: {err}")
 
         ## Servo on
         err = await dev.Motion_enableServoOn_async(port, axis1)
-        print(f"ServoOn in axis{axis1}: {err}")
+        print(f"ServoOn in axis{axis1}, status: {err}")
 
         ## Motion configure for axis2
         err = await dev.Motion_cfgAxis_async(port, axis2, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low)
-        print(f"cfgAxis_async in axis{axis2}: {err}")
+        print(f"cfgAxis_async in axis{axis2}, status: {err}")
 
         err = await dev.Motion_cfgLimit_async(port, axis2, forward_enable_false, reverse_enable_false, active_low)
-        print(f"cfgLimit_async in axis{axis2}: {err}")
+        print(f"cfgLimit_async in axis{axis2}, status: {err}")
 
         err = await dev.Motion_rstEncoderPosi_async(port, axis2, encoder_posi=0)
-        print(f"rstEncoderPosi_async in axis{axis2}: {err}")
+        print(f"rstEncoderPosi_async in axis{axis2}, status: {err}")
 
         err = await dev.Motion_cfgAxisMove_async(port, axis2, rel_posi_mode, target_posi=1000, velo=10000, accel=100000, decel=100000)
-        print(f"cfgAxisMove_async in axis{axis2}: {err}")
+        print(f"cfgAxisMove_async in axis{axis2}, status: {err}")
 
         ## Servo on
         err = await dev.Motion_enableServoOn_async(port, axis2)
-        print(f"ServoOn in axis{axis2}: {err}")
+        print(f"ServoOn in axis{axis2}, status: {err}")
 
         ## Motion configure for axis3
         err = await dev.Motion_cfgAxis_async(port, axis3, two_pulse_mode, axis_dir_cw, encoder_dir_cw, active_low)
-        print(f"cfgAxis_async in axis{axis3}: {err}")
+        print(f"cfgAxis_async in axis{axis3}, status: {err}")
 
         err = await dev.Motion_cfgLimit_async(port, axis3, forward_enable_false, reverse_enable_false, active_low)
-        print(f"cfgLimit_async in axis{axis3}: {err}")
+        print(f"cfgLimit_async in axis{axis3}, status: {err}")
 
         err = await dev.Motion_rstEncoderPosi_async(port, axis3, encoder_posi=0)
-        print(f"rstEncoderPosi_async in axis{axis3}: {err}")
+        print(f"rstEncoderPosi_async in axis{axis3}, status: {err}")
 
         err = await dev.Motion_cfgAxisMove_async(port, axis3, rel_posi_mode, target_posi=-5000, velo=10000, accel=100000, decel=100000)
-        print(f"cfgAxisMove_async in axis{axis3}: {err}")
+        print(f"cfgAxisMove_async in axis{axis3}, status: {err}")
 
         ## Servo on
         err = await dev.Motion_enableServoOn_async(port, axis3)
-        print(f"ServoOn in axis{axis3}: {err}")
+        print(f"ServoOn in axis{axis3}, status: {err}")
 
         ## Motion start
         err = await dev.Motion_startMultiAxisMove_async(port, [axis1, axis2, axis3])
-        print(f"startMultiAxisMove_async in port {port}: {err}")
+        print(f"startMultiAxisMove_async in port {port}, status: {err}")
 
         ## Wait for thread completion
         thread_1.join()
@@ -186,16 +186,16 @@ async def main():
         ## Servo off
         for i in [axis1, axis2, axis3]:
             err = await dev.Motion_enableServoOff_async(port, i)
-            print(f"ServoOff in axis{i}: {err}")
+            print(f"ServoOff in axis{i}, status: {err}")
 
         ## Motion stop
         for i in [axis1, axis2, axis3]:
             err = await dev.Motion_stop_async(port, i, stop_decel)
-            print(f"stop_async in axis{i}: {err}")
+            print(f"stop_async in axis{i}, status: {err}")
 
         ## Motion close
         err = await dev.Motion_close_async(port)
-        print(f"close_async in port {port}: {err}")
+        print(f"close_async in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

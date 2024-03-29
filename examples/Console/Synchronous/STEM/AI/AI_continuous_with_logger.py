@@ -73,11 +73,11 @@ def main():
 
         ## Open file with WPC_test.csv
         err = dev.Logger_openFile("WPC_test.csv")
-        print(f"Logger_openFile: {err}")
+        print(f"Logger_openFile, status: {err}")
 
         ## Write header into CSV file
         err = dev.Logger_writeHeader(["CH0","CH1","CH2","CH3","CH4","CH5","CH6","CH7"])
-        print(f"Logger_writeHeader: {err}")
+        print(f"Logger_writeHeader, status: {err}")
 
         ## Get slot mode
         slot_mode = dev.Sys_getMode(slot, timeout)
@@ -86,7 +86,7 @@ def main():
         ## If the slot mode is not set to "AIO", set the slot mode to "AIO"
         if slot_mode != "AIO":
             err = dev.Sys_setAIOMode(slot, timeout)
-            print(f"Sys_setAIOMode in slot {slot}: {err}")
+            print(f"Sys_setAIOMode in slot {slot}, status: {err}")
 
         ## Get slot mode
         slot_mode = dev.Sys_getMode(slot, timeout)
@@ -94,30 +94,30 @@ def main():
 
         ## Open AI
         err = dev.AI_open(slot, timeout)
-        print(f"AI_open in slot {slot}: {err}")
+        print(f"AI_open in slot {slot}, status: {err}")
 
         ## Enable CS
         err = dev.AI_enableCS(slot, chip_select, timeout)
-        print(f"AI_enableCS in slot {slot}: {err}")
+        print(f"AI_enableCS in slot {slot}, status: {err}")
 
         ## Set AI acquisition mode to continuous mode (2)
         err = dev.AI_setMode(slot, mode, timeout)
-        print(f"AI_setMode {mode} in slot {slot}: {err}")
+        print(f"AI_setMode {mode} in slot {slot}, status: {err}")
 
         ## Set AI sampling rate
         err = dev.AI_setSamplingRate(slot, sampling_rate, timeout)
-        print(f"AI_setSamplingRate {sampling_rate} in slot {slot}: {err}")
+        print(f"AI_setSamplingRate {sampling_rate} in slot {slot}, status: {err}")
 
         ## Start AI
         err = dev.AI_start(slot, timeout)
-        print(f"AI_start in slot {slot}: {err}")
+        print(f"AI_start in slot {slot}, status: {err}")
 
         ## Wait a while for data acquisition
         time.sleep(1) ## delay [s]
 
         ## Stop AI
         err = dev.AI_stop(slot, timeout)
-        print(f"AI_stop in slot {slot}: {err}")
+        print(f"AI_stop in slot {slot}, status: {err}")
 
         data_len = 1
         while data_len > 0:
@@ -133,7 +133,7 @@ def main():
 
         ## Close AI
         err = dev.AI_close(slot, timeout)
-        print(f"AI_close in slot {slot}: {err}")
+        print(f"AI_close in slot {slot}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

@@ -56,20 +56,20 @@ def main():
 
         ## Open AI
         err = dev.AI_open(port, timeout)
-        print(f"AI_open in port {port}: {err}")
+        print(f"AI_open in port {port}, status: {err}")
         
 
         ## Set AI acquisition mode to on demand mode (0)
         err = dev.AI_setMode(port, mode, timeout)
-        print(f"AI_setMode {mode} in port {port}: {err}")
+        print(f"AI_setMode {mode} in port {port}, status: {err}")
 
         ## Read AI
         ai_list = dev.AI_readOnDemand(port, timeout)
-        print(f"data in port {port}: {ai_list}")
+        print(f"Data in port {port}: {ai_list}")
 
         ## Close AI
         err = dev.AI_close(port, timeout)
-        print(f"AI_close in port {port}: {err}")
+        print(f"AI_close in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

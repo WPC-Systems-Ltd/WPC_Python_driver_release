@@ -77,7 +77,7 @@ def main():
         ## If the slot mode is not set to "AIO", set the slot mode to "AIO"
         if slot_mode != "AIO":
             err = dev.Sys_setAIOMode(slot, timeout)
-            print(f"Sys_setAIOMode in slot {slot}: {err}")
+            print(f"Sys_setAIOMode in slot {slot}, status: {err}")
 
         ## Get slot mode
         slot_mode = dev.Sys_getMode(slot, timeout)
@@ -85,27 +85,27 @@ def main():
 
         ## Open AO
         err = dev.AO_open(slot, timeout)
-        print(f"AO_open in slot {slot}: {err}")
+        print(f"AO_open in slot {slot}, status: {err}")
 
         ## Open AI
         err = dev.AI_open(slot, timeout)
-        print(f"AI_open in slot {slot}: {err}")
+        print(f"AI_open in slot {slot}, status: {err}")
 
         ## Set AI acquisition mode to continuous mode (2)
         err = dev.AI_setMode(slot, mode, timeout)
-        print(f"AI_setMode {mode} in slot {slot}: {err}")
+        print(f"AI_setMode {mode} in slot {slot}, status: {err}")
 
         ## Set AI sampling rate
         err = dev.AI_setSamplingRate(slot, sampling_rate, timeout)
-        print(f"AI_setSamplingRate {sampling_rate} in slot {slot}: {err}")
+        print(f"AI_setSamplingRate {sampling_rate} in slot {slot}, status: {err}")
 
         ## Enable CS
         err = dev.AI_enableCS(slot, chip_select, timeout)
-        print(f"AI_enableCS in slot {slot}: {err}")
+        print(f"AI_enableCS in slot {slot}, status: {err}")
 
         ## Start AI
         err = dev.AI_start(slot, timeout)
-        print(f"AI_start in slot {slot}: {err}")
+        print(f"AI_start in slot {slot}, status: {err}")
 
         counter = 0
         data_len = 1
@@ -126,7 +126,7 @@ def main():
 
                 ## Write AO vaule in channel 0
                 err = dev.AO_writeOneChannel(slot, 0, ao_value, timeout)
-                print(f"In slot {slot} channel 0, the AO value is {ao_value}: {err}")
+                print(f"In slot {slot} channel 0, the AO value is {ao_value}, status: {err}")
 
     except Exception as err:
         pywpc.printGenericError(err)
@@ -135,15 +135,15 @@ def main():
     finally:
         ## Stop AI
         err = dev.AI_stop(slot, timeout)
-        print(f"AI_stop in slot {slot}: {err}")
+        print(f"AI_stop in slot {slot}, status: {err}")
 
         ## Close AI
         err = dev.AI_close(slot, timeout)
-        print(f"AI_close in slot {slot}: {err}")
+        print(f"AI_close in slot {slot}, status: {err}")
 
         ## Close AO
         err = dev.AO_close(slot, timeout)
-        print(f"AO_close in slot {slot}: {err}")
+        print(f"AO_close in slot {slot}, status: {err}")
 
         ## Disconnect device
         dev.disconnect()

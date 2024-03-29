@@ -52,15 +52,15 @@ async def main():
 
         ## Open AO
         err = await dev.AO_open_async(port)
-        print(f"AO_open_async in port {port}: {err}")
+        print(f"AO_open_async in port {port}, status: {err}")
 
         ## Write AO value simultaneously
         err = await dev.AO_writeAllChannels_async(port, ao_value_list)
-        print(f"In port {port} the AO value is {ao_value_list}: {err}")
+        print(f"In port {port} the AO value is {ao_value_list}, status: {err}")
 
         ## Close AO
         err = await dev.AO_close_async(port)
-        print(f"AO_close_async in port {port}: {err}")
+        print(f"AO_close_async in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

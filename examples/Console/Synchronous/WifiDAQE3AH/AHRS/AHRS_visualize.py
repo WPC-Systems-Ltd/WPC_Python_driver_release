@@ -292,7 +292,6 @@ def main():
     try:
       ## Parameters setting
       port = 0 ## Depend on your device
-      sampling_period = 0.003
       mode = 0 ## 0: Orientation, 1: Acceleration, 2: Orientation + Acceleration
       timeout = 3 ## second
 
@@ -301,17 +300,13 @@ def main():
       print("Model name: " + driver_info[0])
       print("Firmware version: " + driver_info[-1])
 
-      ## Open port
+      ## Open AHRS and update rate is 333 HZ
       err = dev.AHRS_open(port, timeout)
-      print(f"AHRS_open in port {port}: {err}")
-
-      ## Set period
-      err = dev.AHRS_setSamplingPeriod(port, sampling_period, timeout)
-      print(f"AHRS_setSamplingPeriod in port {port}: {err}")
+      print(f"AHRS_open in port {port}, status: {err}")
 
       ## Start AHRS
       err = dev.AHRS_start(port, timeout)
-      print(f"AHRS_start in port {port}: {err}")
+      print(f"AHRS_start in port {port}, status: {err}")
 
       while plt.fignum_exists(fig.number):
           ahrs_list = dev.AHRS_getEstimate(port, mode, timeout)
@@ -333,11 +328,11 @@ def main():
     finally:
       ## Stop AHRS
       err = dev.AHRS_stop(port, timeout)
-      print(f"AHRS_stop in port {port}: {err}")
+      print(f"AHRS_stop in port {port}, status: {err}")
 
       ## Close AHRS
       err = dev.AHRS_close(port, timeout)
-      print(f"AHRS_close in port {port}: {err}")
+      print(f"AHRS_close in port {port}, status: {err}")
 
       ## Disconnect device
       dev.disconnect()

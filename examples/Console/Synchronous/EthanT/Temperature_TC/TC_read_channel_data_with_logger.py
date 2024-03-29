@@ -59,34 +59,34 @@ def main():
 
         ## Write header into CSV file
         err = dev.Logger_writeHeader(["Thermo CH1"])
-        print(f"Logger_writeHeader: {err}")
+        print(f"Logger_writeHeader, status: {err}")
 
         ## Open thermo
         err = dev.Thermal_open(port, timeout)
-        print(f"Thermal_open in port {port}: {err}")
+        print(f"Thermal_open in port {port}, status: {err}")
 
         ## Set thermo port and set over-sampling mode to no over-sampling in channel 1
         err = dev.Thermal_setOverSampling(port, ch, over_sampling_mode, timeout)
-        print(f"Thermal_setOverSampling in channel {ch} in port {port}: {err}")
+        print(f"Thermal_setOverSampling in channel {ch} in port {port}, status: {err}")
 
         ## Set thermo port and set K type in channel 1
         err = dev.Thermal_setType(port, ch, thermo_type, timeout)
-        print(f"Thermal_setType in channel {ch} in port {port}: {err}")
+        print(f"Thermal_setType in channel {ch} in port {port}, status: {err}")
 
         ## Wait for at least 500 ms after setting type or oversampling
         time.sleep(0.5) ## delay [s]
 
         ## Set thermo port and read thermo in channel 1
         data = dev.Thermal_readSensor(port, ch, timeout)
-        print(f"Read sensor in channel {ch} in port {port}: {data}°C")
+        print(f"Read sensor in channel {ch} in port {port}: {data} deg C")
 
         ## Write data into CSV file
         err = dev.Logger_writeValue(data)
-        print(f"Logger_writeValue: {err}")
+        print(f"Logger_writeValue, status: {err}")
 
         ## Close thermo
         err = dev.Thermal_close(port, timeout)
-        print(f"Thermal_close in port {port}: {err}")
+        print(f"Thermal_close in port {port}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 
