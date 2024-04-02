@@ -319,6 +319,58 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanP.DPOT_writeByChannel">
+<span class="sig-name descname"><span class="pre">DPOT_writeByChannel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resistance_ratio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanP.DPOT_writeByChannel" title="Link to this definition"></a></dt>
+<dd><p>Write digital potentiometer resistance on the specific channel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>channel</strong><span class="classifier">int</span></dt><dd><p>The channel could be set from 0 to 3.</p>
+</dd>
+<dt><strong>resistance ratio</strong><span class="classifier">float</span></dt><dd><p>Resistance ratio.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify the time (sec) to wait before reporting a timeout error. The default is 3 s.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.EthanP.DPOT_writeByChannel_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DPOT_writeByChannel_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resistance_ratio</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanP.DPOT_writeByChannel_async" title="Link to this definition"></a></dt>
+<dd><p>Write digital potentiometer resistance on the specific channel with async mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>channel</strong><span class="classifier">int</span></dt><dd><p>The channel could be set from 0 to 3.</p>
+</dd>
+<dt><strong>resistance ratio</strong><span class="classifier">float</span></dt><dd><p>Resistance ratio.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.EthanP.Logger_openFile">
 <span class="sig-name descname"><span class="pre">Logger_openFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear_old</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.EthanP.Logger_openFile" title="Link to this definition"></a></dt>
 <dd><p>Open CSV file.</p>

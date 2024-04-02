@@ -1,0 +1,6 @@
+DPOT write by channel
+=====================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/EthanP/DPOT/DPOT_writeByChannel.py
+   :language: python
+   :linenos:

@@ -400,6 +400,8 @@ Ethan-P
 
    examples/Console/Asynchronous/EthanP/DPOT/DPOT_writeAllChannels.rst
 
+   examples/Console/Asynchronous/EthanP/DPOT/DPOT_writeByChannel.rst
+
    examples/Console/Asynchronous/EthanP/System_ETH/get_network_info.rst
 
    examples/Console/Asynchronous/EthanP/System_ETH/hello_world.rst
