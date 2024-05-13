@@ -171,6 +171,12 @@ Ethan-A
 
    examples/Console/Synchronous/EthanA/AI/AI_continuous_multi_slot.rst
 
+   examples/Console/Synchronous/EthanA/RTC_AI/RTC_trigger_AI_continuous.rst
+
+   examples/Console/Synchronous/EthanA/RTC_AI/RTC_trigger_AI_N_samples.rst
+
+   examples/Console/Synchronous/EthanA/RTC_AI/RTC_trigger_AI_on_demand.rst
+
    examples/Console/Synchronous/EthanA/System_ETH/get_network_info.rst
 
    examples/Console/Synchronous/EthanA/System_ETH/hello_world.rst
@@ -178,6 +184,35 @@ Ethan-A
    examples/Console/Synchronous/EthanA/System_ETH/set_and_get_RTC.rst
 
    examples/Console/Synchronous/EthanA/System_ETH/get_serial_number.rst
+
+
+Ethan-A2
+--------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/Synchronous/EthanA2/AI/AI_continuous.rst
+
+   examples/Console/Synchronous/EthanA2/AI/AI_continuous_with_logger.rst
+
+   examples/Console/Synchronous/EthanA2/AI/AI_N_samples_once.rst
+
+   examples/Console/Synchronous/EthanA2/AI/AI_on_demand_in_loop.rst
+
+   examples/Console/Synchronous/EthanA2/AI/AI_on_demand_once.rst
+
+   examples/Console/Synchronous/EthanA2/AI/AI_continuous_multi_slot.rst
+
+   examples/Console/Synchronous/EthanA2/AI24Bit/AI_on_demand_once.rst
+
+   examples/Console/Synchronous/EthanA2/System_ETH/get_network_info.rst
+
+   examples/Console/Synchronous/EthanA2/System_ETH/hello_world.rst
+
+   examples/Console/Synchronous/EthanA2/System_ETH/set_and_get_RTC.rst
+
+   examples/Console/Synchronous/EthanA2/System_ETH/get_serial_number.rst
 
 
 Ethan-D
@@ -320,6 +355,8 @@ Ethan-P
 
    examples/Console/Synchronous/EthanP/DPOT/DPOT_writeAllChannels.rst
 
+   examples/Console/Synchronous/EthanP/DPOT/DPOT_writeByChannel.rst
+
    examples/Console/Synchronous/EthanP/System_ETH/get_network_info.rst
 
    examples/Console/Synchronous/EthanP/System_ETH/hello_world.rst
@@ -381,6 +418,8 @@ USB-DAQ-F1-AD
    examples/Console/Synchronous/USBDAQF1AD/DIO/DO_write_pins.rst
 
    examples/Console/Synchronous/USBDAQF1AD/DIO/DO_write_port.rst
+
+   examples/Console/Synchronous/USBDAQF1AD/Encoder/Encoder_read.rst
 
    examples/Console/Synchronous/USBDAQF1AD/I2C/I2C_write_read.rst
 
@@ -447,6 +486,8 @@ USB-DAQ-F1-AOD
 
    examples/Console/Synchronous/USBDAQF1AOD/DIO/DO_write_port.rst
 
+   examples/Console/Synchronous/USBDAQF1AOD/Encoder/Encoder_read.rst
+
    examples/Console/Synchronous/USBDAQF1AOD/I2C/I2C_write_read.rst
 
    examples/Console/Synchronous/USBDAQF1AOD/PWM/PWM_generate.rst
@@ -483,6 +524,8 @@ USB-DAQ-F1-CD
    examples/Console/Synchronous/USBDAQF1CD/DIO/DO_write_pins.rst
 
    examples/Console/Synchronous/USBDAQF1CD/DIO/DO_write_port.rst
+
+   examples/Console/Synchronous/USBDAQF1CD/Encoder/Encoder_read.rst
 
    examples/Console/Synchronous/USBDAQF1CD/I2C/I2C_write_read.rst
 
@@ -529,6 +572,8 @@ USB-DAQ-F1-D
 
    examples/Console/Synchronous/USBDAQF1D/DIO/DO_write_port.rst
 
+   examples/Console/Synchronous/USBDAQF1D/Encoder/Encoder_read.rst
+
    examples/Console/Synchronous/USBDAQF1D/I2C/I2C_write_read.rst
 
    examples/Console/Synchronous/USBDAQF1D/SPI/SPI_read_and_write.rst
@@ -570,6 +615,8 @@ USB-DAQ-F1-D-SNK
 
    examples/Console/Synchronous/USBDAQF1DSNK/DIO/DO_write_port.rst
 
+   examples/Console/Synchronous/USBDAQF1DSNK/Encoder/Encoder_read.rst
+
    examples/Console/Synchronous/USBDAQF1DSNK/PWM/PWM_generate.rst
 
    examples/Console/Synchronous/USBDAQF1DSNK/System_USB/get_pin_mode.rst
@@ -600,6 +647,8 @@ USB-DAQ-F1-RD
    examples/Console/Synchronous/USBDAQF1RD/DIO/DO_write_pins.rst
 
    examples/Console/Synchronous/USBDAQF1RD/DIO/DO_write_port.rst
+
+   examples/Console/Synchronous/USBDAQF1RD/Encoder/Encoder_read.rst
 
    examples/Console/Synchronous/USBDAQF1RD/I2C/I2C_write_read.rst
 
@@ -647,6 +696,8 @@ USB-DAQ-F1-TD
    examples/Console/Synchronous/USBDAQF1TD/DIO/DO_write_pins.rst
 
    examples/Console/Synchronous/USBDAQF1TD/DIO/DO_write_port.rst
+
+   examples/Console/Synchronous/USBDAQF1TD/Encoder/Encoder_read.rst
 
    examples/Console/Synchronous/USBDAQF1TD/I2C/I2C_write_read.rst
 
@@ -734,6 +785,10 @@ Wifi-DAQ-E3-AH
 
    examples/Console/Synchronous/WifiDAQE3AH/AHRS/AHRS_visualize.rst
 
+   examples/Console/Synchronous/WifiDAQE3AH/SD/SD_read.rst
+
+   examples/Console/Synchronous/WifiDAQE3AH/SD/SD_write.rst
+
    examples/Console/Synchronous/WifiDAQE3AH/System_Wifi/get_network_info.rst
 
    examples/Console/Synchronous/WifiDAQE3AH/System_Wifi/get_Wifi_DAQ_status.rst
@@ -776,4 +831,51 @@ Wifi-DAQ-F4-A
    examples/Console/Synchronous/WifiDAQF4A/System_Wifi/set_LED_status.rst
 
    examples/Console/Synchronous/WifiDAQF4A/System_Wifi/get_serial_number.rst
+
+
+Wifi-DAQ-E3-AOD
+---------------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/Synchronous/WifiDAQE3AOD/AI/AI_continuous.rst
+
+   examples/Console/Synchronous/WifiDAQE3AOD/AI/AI_continuous_with_logger.rst
+
+   examples/Console/Synchronous/WifiDAQE3AOD/AI/AI_N_samples_once.rst
+
+   examples/Console/Synchronous/WifiDAQE3AOD/AI/AI_on_demand_in_loop.rst
+
+   examples/Console/Synchronous/WifiDAQE3AOD/AI/AI_on_demand_once.rst
+
+   examples/Console/Synchronous/WifiDAQE3AOD/AI/AI_continuous_multi_slot.rst
+
+   examples/Console/Synchronous/WifiDAQE3AOD/AO/AO_write_all_channels.rst
+
+   examples/Console/Synchronous/WifiDAQE3AOD/AO/AO_write_one_channel.rst
+
+   examples/Console/Synchronous/WifiDAQE3AOD/AO/AO_waveform_gen.rst
+
+   examples/Console/Synchronous/WifiDAQE3AOD/AIO/AIO_one_channel_loopback.rst
+
+   examples/Console/Synchronous/WifiDAQE3AOD/AIO/AIO_all_channels_loopback.rst
+
+   examples/Console/Synchronous/WifiDAQE3AOD/AIO/AO_output_while_AI_streaming.rst
+
+   examples/Console/Synchronous/WifiDAQE3AOD/SD/SD_read.rst
+
+   examples/Console/Synchronous/WifiDAQE3AOD/SD/SD_write.rst
+
+   examples/Console/Synchronous/WifiDAQE3AOD/System_Wifi/get_network_info.rst
+
+   examples/Console/Synchronous/WifiDAQE3AOD/System_Wifi/get_Wifi_DAQ_status.rst
+
+   examples/Console/Synchronous/WifiDAQE3AOD/System_Wifi/hello_world.rst
+
+   examples/Console/Synchronous/WifiDAQE3AOD/System_Wifi/set_and_get_RTC.rst
+
+   examples/Console/Synchronous/WifiDAQE3AOD/System_Wifi/set_LED_status.rst
+
+   examples/Console/Synchronous/WifiDAQE3AOD/System_Wifi/get_serial_number.rst
 

@@ -1,0 +1,6 @@
+AI N samples once
+=================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/EthanA2/AI/AI_N_samples_once.py
+   :language: python
+   :linenos:
