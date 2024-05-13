@@ -195,6 +195,12 @@ Ethan-A
 
    examples/Console/Asynchronous/EthanA/AI/AI_continuous_multi_slot.rst
 
+   examples/Console/Asynchronous/EthanA/RTC_AI/RTC_trigger_AI_continuous.rst
+
+   examples/Console/Asynchronous/EthanA/RTC_AI/RTC_trigger_AI_N_samples.rst
+
+   examples/Console/Asynchronous/EthanA/RTC_AI/RTC_trigger_AI_on_demand.rst
+
    examples/Console/Asynchronous/EthanA/System_ETH/get_network_info.rst
 
    examples/Console/Asynchronous/EthanA/System_ETH/hello_world.rst
@@ -210,6 +216,43 @@ Ethan-A
    examples/Console/Asynchronous/EthanA/Tutorial/multiple_loops_thread.rst
 
    examples/Console/Asynchronous/EthanA/Tutorial/multiple_loops_async.rst
+
+
+Ethan-A2
+--------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/Asynchronous/EthanA2/AI/AI_continuous.rst
+
+   examples/Console/Asynchronous/EthanA2/AI/AI_continuous_with_logger.rst
+
+   examples/Console/Asynchronous/EthanA2/AI/AI_N_samples_once.rst
+
+   examples/Console/Asynchronous/EthanA2/AI/AI_on_demand_in_loop.rst
+
+   examples/Console/Asynchronous/EthanA2/AI/AI_on_demand_once.rst
+
+   examples/Console/Asynchronous/EthanA2/AI/AI_continuous_multi_slot.rst
+
+   examples/Console/Asynchronous/EthanA2/AI24Bit/AI_on_demand_once.rst
+
+   examples/Console/Asynchronous/EthanA2/System_ETH/get_network_info.rst
+
+   examples/Console/Asynchronous/EthanA2/System_ETH/hello_world.rst
+
+   examples/Console/Asynchronous/EthanA2/System_ETH/set_and_get_RTC.rst
+
+   examples/Console/Asynchronous/EthanA2/System_ETH/get_serial_number.rst
+
+   examples/Console/Asynchronous/EthanA2/Tutorial/single_loop_thread.rst
+
+   examples/Console/Asynchronous/EthanA2/Tutorial/single_loop_async.rst
+
+   examples/Console/Asynchronous/EthanA2/Tutorial/multiple_loops_thread.rst
+
+   examples/Console/Asynchronous/EthanA2/Tutorial/multiple_loops_async.rst
 
 
 Ethan-D
@@ -480,6 +523,8 @@ USB-DAQ-F1-AD
 
    examples/Console/Asynchronous/USBDAQF1AD/DIO/DO_write_port.rst
 
+   examples/Console/Asynchronous/USBDAQF1AD/Encoder/Encoder_read.rst
+
    examples/Console/Asynchronous/USBDAQF1AD/I2C/I2C_write_read.rst
 
    examples/Console/Asynchronous/USBDAQF1AD/SPI/SPI_read_and_write.rst
@@ -553,6 +598,8 @@ USB-DAQ-F1-AOD
 
    examples/Console/Asynchronous/USBDAQF1AOD/DIO/DO_write_port.rst
 
+   examples/Console/Asynchronous/USBDAQF1AOD/Encoder/Encoder_read.rst
+
    examples/Console/Asynchronous/USBDAQF1AOD/I2C/I2C_write_read.rst
 
    examples/Console/Asynchronous/USBDAQF1AOD/PWM/PWM_generate.rst
@@ -597,6 +644,8 @@ USB-DAQ-F1-CD
    examples/Console/Asynchronous/USBDAQF1CD/DIO/DO_write_pins.rst
 
    examples/Console/Asynchronous/USBDAQF1CD/DIO/DO_write_port.rst
+
+   examples/Console/Asynchronous/USBDAQF1CD/Encoder/Encoder_read.rst
 
    examples/Console/Asynchronous/USBDAQF1CD/I2C/I2C_write_read.rst
 
@@ -651,6 +700,8 @@ USB-DAQ-F1-D
 
    examples/Console/Asynchronous/USBDAQF1D/DIO/DO_write_port.rst
 
+   examples/Console/Asynchronous/USBDAQF1D/Encoder/Encoder_read.rst
+
    examples/Console/Asynchronous/USBDAQF1D/I2C/I2C_write_read.rst
 
    examples/Console/Asynchronous/USBDAQF1D/SPI/SPI_read_and_write.rst
@@ -700,6 +751,8 @@ USB-DAQ-F1-D-SNK
 
    examples/Console/Asynchronous/USBDAQF1DSNK/DIO/DO_write_port.rst
 
+   examples/Console/Asynchronous/USBDAQF1DSNK/Encoder/Encoder_read.rst
+
    examples/Console/Asynchronous/USBDAQF1DSNK/PWM/PWM_generate.rst
 
    examples/Console/Asynchronous/USBDAQF1DSNK/System_USB/get_pin_mode.rst
@@ -738,6 +791,8 @@ USB-DAQ-F1-RD
    examples/Console/Asynchronous/USBDAQF1RD/DIO/DO_write_pins.rst
 
    examples/Console/Asynchronous/USBDAQF1RD/DIO/DO_write_port.rst
+
+   examples/Console/Asynchronous/USBDAQF1RD/Encoder/Encoder_read.rst
 
    examples/Console/Asynchronous/USBDAQF1RD/I2C/I2C_write_read.rst
 
@@ -793,6 +848,8 @@ USB-DAQ-F1-TD
    examples/Console/Asynchronous/USBDAQF1TD/DIO/DO_write_pins.rst
 
    examples/Console/Asynchronous/USBDAQF1TD/DIO/DO_write_port.rst
+
+   examples/Console/Asynchronous/USBDAQF1TD/Encoder/Encoder_read.rst
 
    examples/Console/Asynchronous/USBDAQF1TD/I2C/I2C_write_read.rst
 
@@ -896,6 +953,10 @@ Wifi-DAQ-E3-AH
 
    examples/Console/Asynchronous/WifiDAQE3AH/AHRS/AHRS_visualize.rst
 
+   examples/Console/Asynchronous/WifiDAQE3AH/SD/SD_read.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AH/SD/SD_write.rst
+
    examples/Console/Asynchronous/WifiDAQE3AH/System_Wifi/get_network_info.rst
 
    examples/Console/Asynchronous/WifiDAQE3AH/System_Wifi/get_Wifi_DAQ_status.rst
@@ -954,4 +1015,59 @@ Wifi-DAQ-F4-A
    examples/Console/Asynchronous/WifiDAQF4A/Tutorial/multiple_loops_thread.rst
 
    examples/Console/Asynchronous/WifiDAQF4A/Tutorial/multiple_loops_async.rst
+
+
+Wifi-DAQ-E3-AOD
+---------------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/AI/AI_continuous.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/AI/AI_continuous_with_logger.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/AI/AI_N_samples_once.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/AI/AI_on_demand_in_loop.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/AI/AI_on_demand_once.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/AI/AI_continuous_multi_slot.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/AO/AO_write_all_channels.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/AO/AO_write_one_channel.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/AO/AO_waveform_gen.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/AIO/AIO_one_channel_loopback.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/AIO/AIO_all_channels_loopback.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/AIO/AO_output_while_AI_streaming.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/SD/SD_read.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/SD/SD_write.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/System_Wifi/get_network_info.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/System_Wifi/get_Wifi_DAQ_status.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/System_Wifi/hello_world.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/System_Wifi/set_and_get_RTC.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/System_Wifi/set_LED_status.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/System_Wifi/get_serial_number.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/Tutorial/single_loop_thread.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/Tutorial/single_loop_async.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/Tutorial/multiple_loops_thread.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/Tutorial/multiple_loops_async.rst
 

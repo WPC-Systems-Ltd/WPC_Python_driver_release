@@ -1,0 +1,6 @@
+RTC trigger AI on demand
+========================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/EthanA/RTC_AI/RTC_trigger_AI_on_demand.py
+   :language: python
+   :linenos:

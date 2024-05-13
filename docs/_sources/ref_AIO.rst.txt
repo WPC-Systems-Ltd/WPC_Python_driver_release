@@ -3,7 +3,7 @@ AI Max Sampling Rate Table
 
 .. _AIO_table:
 
-- The max sampling rate is dependent on the number of enabled channels.
+- The max sampling rate depends on the number of enabled channels.
 
 +-----------------+-----+-----+-----+-----+-----+-----+-----+-----+
 | Product/channel | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   |
@@ -13,7 +13,7 @@ AI Max Sampling Rate Table
 | USB-DAQ-F1-AOD  | 16k | 8k  | 5.3k| 4k  | 3.2k| 2.6k| 2.2k| 2.0k|
 +-----------------+-----+-----+-----+-----+-----+-----+-----+-----+
 
-- The max sampling rate is dependent on the number of enabled chip-selects.
+- The max sampling rate depends on the number of enabled chip-selects.
 
 +-------------+----+----+----+
 | Product/CS  | 1  | 2  |3   |
@@ -21,7 +21,7 @@ AI Max Sampling Rate Table
 | STEM        |12k |6k  |4k  |
 +-------------+----+----+----+
 
-- The max sampling rate is fixed.
+- The sampling rate is fixed.
 
 +----------------+-------------+
 | Product        |Sampling rate|
@@ -33,6 +33,8 @@ AI Max Sampling Rate Table
 | Wifi-DAQ-F4-A  | 20k         |
 +----------------+-------------+
 | Ethan-A        | 20k         |
++----------------+-------------+
+| Ethan-A2       | 10k         |
 +----------------+-------------+
 
 - For STEM, AO writing can be called while AI is streaming under a specific speed.

@@ -1,0 +1,19 @@
+Ethan-A2
+========
+
+
+Device pinout 
+-------------
+
+.. image:: ../images/Pinouts/pinout-EthanA2.JPG
+   :width: 90%
+   :alt: EthanA2
+
+
+API function description 
+------------------------
+
+.. autoclass:: pywpc.EthanA2
+   :members:
+   :undoc-members:
+   :inherited-members:

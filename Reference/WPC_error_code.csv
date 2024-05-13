@@ -51,6 +51,7 @@ Error code,Error message
 -8103,The counter channel is not available.
 -8104,The relay counter index error is not valid or is not recognized.
 -8105,The relay port is not available or is already occupied by another process.
+-8106,The encoder channel is not available
 -8200,The AI channel is not available.
 -8201,The AI port is not available or is already occupied by another process.
 -8202,The AI chip is not valid or is not recognized.

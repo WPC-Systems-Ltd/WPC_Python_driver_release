@@ -1,0 +1,6 @@
+Encoder read
+============
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/USBDAQF1DSNK/Encoder/Encoder_read.py
+   :language: python
+   :linenos:

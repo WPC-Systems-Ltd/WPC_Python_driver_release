@@ -58,9 +58,9 @@ async def main():
         err = await dev.AHRS_start_async(port)
         print(f"AHRS_start_async in port {port}, status: {err}")
 
-        ## Get three axis angular velocity
+        ## Get three axis orientation
         while True:
-            ahrs_list = await dev.AHRS_getAngularVelocity_async(port)
+            ahrs_list = await dev.AHRS_getOrientation_async(port)
             print(ahrs_list)
     except KeyboardInterrupt:
         print("Press keyboard")

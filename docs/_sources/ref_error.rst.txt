@@ -166,6 +166,9 @@ Error Code Table
    * - -8105
      - 
      - The relay port is not available or is already occupied by another process.
+   * - -8106
+     - 
+     - The encoder channel is not available
    * - -8200
      - 
      - The AI channel is not available.
