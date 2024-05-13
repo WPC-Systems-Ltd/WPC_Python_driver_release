@@ -18,6 +18,7 @@ Wifi devices
    products/WifiDAQE3A
    products/WifiDAQE3AH
    products/WifiDAQF4A
+   products/WifiDAQE3AOD
 
 Ethernet devices
 ----------------
@@ -29,6 +30,7 @@ Ethernet devices
    products/EDriveST
    products/EMotion
    products/EthanA
+   products/EthanA2
    products/EthanD
    products/EthanEXD
    products/EthanI

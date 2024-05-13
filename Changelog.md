@@ -1,6 +1,15 @@
 WPC Python driver release changelog
 ===================================
 
+v3.0.26 Date: 2024/05/13, Developer: Chunglee_people
+---------------------------------------------------
+### Added
+- New product: EthanA2
+- Add encoder, SD function
+- error code: 8106,The counter channel is not available
+- example code: Encoder_read, SD_read, SD_write, RTC_trigger_AI_continuous, RTC_trigger_AI_N_samples, RTC_trigger_AI_on_demand, DPOT_writeByChannel
+- API: DPOT_writeByChannel, AI_getData, Sys_startRTCAlarm, Sys_stopRTCAlarm
+
 v3.0.23 Date: 2024/03/29, Developer: Chunglee_people
 ----------------------------------------------------
 ### Fixed

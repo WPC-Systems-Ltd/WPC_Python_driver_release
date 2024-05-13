@@ -26,7 +26,7 @@ Products Feature
    * -
       **EDrive-ST**
          - 2-phase stepper motor
-         - 51,200 steps/revolutio
+         - 51, 200 steps/revolution
          - 36v maximum power supply
          - 2.1A maximum output current
          - 5A maximum peak current
@@ -52,11 +52,23 @@ Products Feature
          :alt: product-STEM.jpg
    * -
       **EthanA**
-         - 10/100 T-based Ethernet interface
-         - 8ch simultaneous voltage input
-         - Max sampling rate: 20KHz
-         - +/-10V voltage input range
          - Power input: 24VDC
+         - 10/100 T-based Ethernet interface
+         - Analog input: 8ch simultaneous and 16-bit single-ended
+         - Max. sampling rate: 20kHz
+         - Input range: +/-10V
+         - Support Python, C# and LabVIEW
+     -
+      .. image:: images/Products/product-EthanA.jpg
+         :width: 100%
+         :alt: product-EthanA.jpg
+   * -
+      **EthanA2**
+         - Power input: 24VDC
+         - 10/100 T-based Ethernet interface
+         - Analog input: 8ch simultaneous and 24-bit single-ended
+         - Max. sampling rate: 10kHz
+         - Input range: +/-13.75V
          - Support Python, C# and LabVIEW
      -
       .. image:: images/Products/product-EthanA.jpg
@@ -64,10 +76,11 @@ Products Feature
          :alt: product-EthanA.jpg
    * -
       **EthanD**
-         - 10/100 T-based Ethernet interface
-         - 6ch opto isolated digital output (DO)
-         - 8ch opto isolated digital input (DI)
          - Power input: 24VDC
+         - 10/100 T-based Ethernet interface
+         - Digital output: 6ch NPN/PNP, opto-isolated 24V
+         - Digital input: 8ch NPN/PNP, opto-isolated 24V
+         - 2ch PWM output
          - Support Python, C# and LabVIEW
      -
       .. image:: images/Products/product-EthanD.jpg
@@ -75,10 +88,11 @@ Products Feature
          :alt: product-EthanD.jpg
    * -
       **EthanEX_D**
-         - 10/100 T-based Ethernet interface
-         - 16ch opto isolated digital output (DO)
-         - 16ch opto isolated digital input (DI)
          - Power input: 24VDC
+         - 10/100 T-based Ethernet interface
+         - Digital output: 16ch NPN/PNP, opto-isolated 24V
+         - Digital input: 16ch NPN/PNP, opto-isolated 24V
+         - 2ch PWM output
          - Support Python, C# and LabVIEW
      -
       .. image:: images/Products/product-EthanEXD.jpg
@@ -86,11 +100,11 @@ Products Feature
          :alt: product-EthanEXD.jpg
    * -
       **EthanI**
-         - 10/100 T-based Ethernet interface
-         - 8ch 24-bit current input
-         - Max sampling rate: 1KHz
-         - +/-20mA input range
          - Power input: 24VDC
+         - 10/100 T-based Ethernet interface
+         - Current input: 8ch non-simultaneous and 24-bit
+         - Max. update rate: 1.2kHz (1ch)
+         - +/-20mA input range
          - Support Python, C# and LabVIEW
      -
       .. image:: images/Products/product-EthanI.jpg
@@ -98,11 +112,13 @@ Products Feature
          :alt: product-EthanI.jpg
    * -
       **EthanIA**
-         - 10/100 T-based Ethernet interface
-         - 8ch 24-bit input
-         - Current: +/-20mA input range
-         - Voltage: +/-10V input range
          - Power input: 24VDC
+         - 10/100 T-based Ethernet interface
+         - Current input: 8ch non-simultaneous and 24-bit
+         - Voltage input: 8ch non-simultaneous and 24-bit
+         - Max. update rate: 600Hz (1ch)
+         - Current input range: +/-20mA
+         - Voltage input range: +/-25V
          - Support Python, C# and LabVIEW
      -
       .. image:: images/Products/product-EthanI.jpg
@@ -110,14 +126,13 @@ Products Feature
          :alt: product-EthanI.jpg
    * -
       **EthanL**
+         - Power input: 24VDC
          - 10/100 T-based Ethernet interface
          - 6ch high quality mechanical relay
          - 4ch Form-A (NO), 2ch Form-C (NO+NC)
-         - Max voltage: 220Vdc/250 Vac
          - Max current: 1A
          - Operating time: 2ms (excluding bounce)
          - Release time: 1ms (excluding bounce)
-         - Power input: 24VDC
          - Support Python, C# and LabVIEW
      -
       .. image:: images/Products/product-EthanL.jpg
@@ -125,11 +140,12 @@ Products Feature
          :alt: product-EthanL.jpg
    * -
       **EthanO**
-         - 10/100 T-based Ethernet interface
-         - 8ch voltage output
-         - +/-10V voltage output range
-         - Max update rate: 1KHz
          - Power input: 24VDC
+         - 10/100 T-based Ethernet interface
+         - Analog output: 8ch simultaneous and 16-bit single-ended
+         - Output range: +/-10V
+         - Max. update rate: 1kHz
+         - Function generation
          - Support Python, C# and LabVIEW
      -
       .. image:: images/Products/product-EthanO.jpg
@@ -138,11 +154,11 @@ Products Feature
 
    * -
       **EthanP**
-         - 10/100 T-based Ethernet interface
-         - 4ch digital variable resistor output
-         - 300 to 50k ohm output range
-         - Max update rate: 1KHz
          - Power input: 24VDC
+         - 10/100 T-based Ethernet interface
+         - 4ch variable digital resistor output
+         - Output range: 300Ω to 50kΩ
+         - Max. update rate: 500Hz
          - Support Python, C# and LabVIEW
      -
       .. image:: images/Products/product-EthanP.jpg
@@ -150,11 +166,11 @@ Products Feature
          :alt: product-EthanP.jpg
    * -
       **EthanT**
+         - Power input: 24VDC
          - 10/100 T-based Ethernet interface
          - 7ch thermocouple input
-         - Sensor type: (K, J, N, R, S, T, E, B)
+         - Sensor type: K, J, N, R, S, T, E, and B
          - Settling time: 160ms (1ch)
-         - Power input: 24VDC
          - Support Python, C# and LabVIEW
      -
       .. image:: images/Products/product-EthanT.jpg
@@ -163,8 +179,10 @@ Products Feature
 
    * -
       **USBDAQF1D**
-         - 26ch 3.3V DIO/I2C/SPI
-         - I2C: 400KHz (max)
+         - 3.3V digital I/O
+         - 26ch 3.3V (5V-tolerant)
+         - DIO/I2C/SPI/UART/PWM/pulse counter/encoder counter
+         - I2C: max. 400KHz
          - USB 2.0 full-speed bus powered
          - Support Python, C# and LabVIEW
      -
@@ -173,8 +191,12 @@ Products Feature
          :alt: product-USBDAQD.jpg
    * -
       **USBDAQF1AD**
-         - 20ch 3.3V DIO/I2C/SPI
-         - 8ch 16-bit analog input
+         - Digital+AI
+         - 20ch 3.3V (5V-tolerant)
+         - DIO/I2C/SPI/UART/PWM/pulse counter/encoder counter
+         - Analog input: 8ch simultaneous and 16-bit single-ended
+         - Max. sampling rate: 16kHz (1ch)
+         - Input range: +/-10V
          - USB 2.0 full-speed bus powered
          - Support Python, C# and LabVIEW
      -
@@ -183,9 +205,10 @@ Products Feature
          :alt: product-USBDAQAD.jpg
    * -
       **USBDAQF1DSNK**
-         - 24V 12ch DO/14ch DI
-         - Industrial isolated DIO
-         - Sinking output/Sourcing input
+         - 24V digital I/O
+         - Digital output: 12ch NPN, opto-isolated 24V
+         - Digital output: 12ch NPN, opto-isolated 24V
+         - PWM/pulse counter/encoder counter
          - External 24VDC power required
          - USB 2.0 full-speed bus powered
          - Support Python, C# and LabVIEW
@@ -195,9 +218,11 @@ Products Feature
          :alt: product-USBDAQADSNK.jpg
    * -
       **USBDAQF1TD**
-         - 21ch 3.3V DIO/I2C/SPI
-         - 2ch thermocouple input
-         - Sensor type: (K, J, N, R, S, T, E, B)
+         - Digital+Thermocouple
+         - 21ch 3.3V (5V-tolerant)
+         - DIO/I2C/SPI/UART/PWM/pulse counter/encoder counter
+         - 2ch thermocouple inputs
+         - Sensor type: K, J, N, R, S, T, E, and B
          - USB 2.0 full-speed bus powered
          - Support Python, C# and LabVIEW
      -
@@ -206,9 +231,11 @@ Products Feature
          :alt: product-USBDAQTD.jpg
    * -
       **USBDAQF1RD**
-         - 21ch 3.3V DIO/I2C/SPI
-         - 2ch thermocouple input
-         - PT-100 or PT-1000 (different model)
+         - Digital+RTD
+         - 21ch 3.3V (5V-tolerant)
+         - DIO/I2C/SPI/UART/PWM/pulse counter/encoder counter
+         - 2ch RTD inputs
+         - PT-100/PT-1000 (different models)
          - USB 2.0 full-speed bus powered
          - Support Python, C# and LabVIEW
      -
@@ -217,8 +244,10 @@ Products Feature
          :alt: product-USBDAQRD.jpg
    * -
       **USBDAQF1CD**
-         - 20ch 3.3V DIO/I2C/SPI
-         - 1ch 1Mbps CAN V2.0B
+         - Digital+CAN
+         - 20ch 3.3V (5V-tolerant)
+         - DIO/I2C/SPI/UART/PWM/pulse counter/encoder counter
+         - CAN V2.0B at 1Mb/sec
          - USB 2.0 full-speed bus powered
          - Support Python, C# and LabVIEW
      -
@@ -227,9 +256,14 @@ Products Feature
          :alt: product-USBDAQCD.jpg
    * -
       **USBDAQF1AOD**
-         - 16ch 3.3V DIO/I2C/SPI
-         - 8ch 16-bit analog input
-         - 8ch 16-bit analog output (on-demand)
+         - Digital+AI+AO
+         - 16ch 3.3V (5V-tolerant)
+         - DIO/I2C/SPI/UART/PWM/pulse counter/encoder counter
+         - Analog input: 8ch simultaneous and 16-bit single-ended
+         - Max. sampling rate: 16kHz (1ch)
+         - Input range: +/-10V
+         - Analog output: 8ch simultaneous and 16-bit single-ended
+         - Output range: 0V to 5V
          - USB 2.0 full-speed bus powered
          - Support Python, C# and LabVIEW
      -
@@ -238,8 +272,9 @@ Products Feature
          :alt: product-USBDAQAOD.jpg
    * -
       **WifiDAQE3A**
-         - 8ch 16-bit +/-10V analog input
-         - Max sampling rate is 10KHz
+         - Analog input: 8ch simultaneous and 16-bit single-ended
+         - Max. sampling rate: 10kHz
+         - Input range: +/-10V
          - Web-based configurator
          - 802.11 b/g/n WiFi
          - 2.4 GHz to 2.5 GHz
@@ -250,9 +285,10 @@ Products Feature
          :alt: product-WIFIDAQE3A.jpg
    * -
       **WifiDAQE3AH**
-         - 8ch 16-bit +/-10V analog input
-         - Max sampling rate is 10KHz
-         - Built in 9DoF IMU with posture est.
+         - Analog input: 8ch simultaneous and 16-bit single-ended
+         - Max. sampling rate: 10kHz
+         - Input range: +/-10V
+         - Built-in 9DoF IMU with posture estimation
          - Web-based configurator
          - 802.11 b/g/n WiFi
          - 2.4 GHz to 2.5 GHz
@@ -263,8 +299,9 @@ Products Feature
          :alt: product-WIFIDAQE3AH.jpg
    * -
       **WifiDAQF4A**
-         - 8ch 16-bit +/-10V analog input
-         - Max sampling rate is 20KHz.
+         - Analog input: 8ch simultaneous and 16-bit single-ended
+         - Max. sampling rate: 20kHz
+         - Input range: +/-10V
          - Web-based configurator
          - 802.11 b/g/n WiFi
          - 2.4 GHz to 2.5 GHz
