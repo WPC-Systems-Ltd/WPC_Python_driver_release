@@ -39,6 +39,9 @@ async def main():
     try:
         ## Parameters setting
         channel = 1 ## Depend on your device
+        edge = 0 ##  0: Falling edge, 1: Rising edge
+        window_size = 100
+        position = 0
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -49,15 +52,33 @@ async def main():
         err = await dev.Counter_open_async(channel)
         print(f"Counter_open_async in channel {channel}, status: {err}")
 
+        ## Set counter edge
+        err = await dev.Counter_setEdge_async(channel, edge)
+        print(f"Counter_setEdge in channel {channel}, status: {err}")
+
+        ## Set counter frequency window size
+        err = await dev.Counter_setFreqWindow_async(channel, window_size)
+        print(f"Counter_setFreqWindow in channel {channel}, status: {err}")
+
+        ## Set counter position
+        err = await dev.Counter_setPosition_async(channel, position)
+        print(f"Counter_setPosition_async in channel {channel}, status: {err}")
+
         ## Start counter
         err = await dev.Counter_start_async(channel)
         print(f"Counter_start_async in channel {channel}, status: {err}")
 
-        ## Read counter
-        for i in range(10):
-            counter = await dev.Counter_read_async(channel)
-            print(f"Read counter in channel {channel}: {counter}")
+        ## Read counter position
+        while True:
+            posi = await dev.Counter_readPosition_async(channel)
+            print(f"Read counter position in channel {channel}: {posi}")
+    except KeyboardInterrupt:
+        print("Press keyboard")
 
+    except Exception as err:
+        pywpc.printGenericError(err)
+
+    finally:
         ## Stop counter
         err = await dev.Counter_stop_async(channel)
         print(f"Counter_stop_async in channel {channel}, status: {err}")
@@ -65,14 +86,12 @@ async def main():
         ## Close counter
         err = await dev.Counter_close_async(channel)
         print(f"Counter_close_async in channel {channel}, status: {err}")
-    except Exception as err:
-        pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
     return
 

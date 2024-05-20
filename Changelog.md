@@ -1,6 +1,11 @@
 WPC Python driver release changelog
 ===================================
 
+v3.0.27 Date: 2024/05/20, Developer: Chunglee_people
+---------------------------------------------------
+### Added
+- Fix the bug of couner and encoder
+
 v3.0.26 Date: 2024/05/13, Developer: Chunglee_people
 ---------------------------------------------------
 ### Added

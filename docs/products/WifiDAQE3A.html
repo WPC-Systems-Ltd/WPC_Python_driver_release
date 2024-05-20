@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wifi-DAQ-E3-A &mdash; WPC Python driver 3.0.26 documentation</title>
+  <title>Wifi-DAQ-E3-A &mdash; WPC Python driver 3.0.27 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/custom_sphinx.css?v=20c2511c" />
@@ -17,7 +17,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=102b3ddd"></script>
+        <script src="../_static/documentation_options.js?v=b453b9c4"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -40,7 +40,7 @@
               <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.26
+                3.0.27
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -277,52 +277,6 @@ If this parameter is set to 4, it means the AI channel is open from channel 0 to
 <dd class="field-even"><dl class="simple">
 <dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
 See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AI_getData">
-<span class="sig-name descname"><span class="pre">AI_getData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AI_getData" title="Link to this definition"></a></dt>
-<dd><p>Read one sample from a given port.
-This should only be used in the RTC “on demand” mode.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
-See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify the time (sec) to wait before reporting a timeout error. The default is 3 s.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>sample</strong><span class="classifier">list of float</span></dt><dd><p>List of AI values in volt that are measured on enabled channels.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="pywpc.WifiDAQE3A.AI_getData_async">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AI_getData_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3A.AI_getData_async" title="Link to this definition"></a></dt>
-<dd><p>Read one sample from a given port with async mode.
-This should only be used in the RTC “on demand” mode.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
-See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>sample</strong><span class="classifier">list of float</span></dt><dd><p>List of AI values in volt that are measured on enabled channels.</p>
 </dd>
 </dl>
 </dd>
@@ -1758,7 +1712,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><p>0: Day value interpreted as calendar day.
 1: Day value interpreted as weekday.</p>
 </dd>
-<dt><strong>day</strong><span class="classifier">int</span></dt><dd><p>Celendar day (1~31)/ Weekday (1~7)</p>
+<dt><strong>day</strong><span class="classifier">int</span></dt><dd><p>Celendar day (1~31)/ Weekday (1~7).</p>
 </dd>
 <dt><strong>hour</strong><span class="classifier">int</span></dt><dd><p>hour (24-hour clock) (0~23).</p>
 </dd>
@@ -1790,7 +1744,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt><strong>mode</strong><span class="classifier">int</span></dt><dd><p>0: Day value interpreted as calendar day.
 1: Day value interpreted as weekday.</p>
 </dd>
-<dt><strong>day</strong><span class="classifier">int</span></dt><dd><p>Celendar day (1~31)/ Weekday (1~7)</p>
+<dt><strong>day</strong><span class="classifier">int</span></dt><dd><p>Celendar day (1~31)/ Weekday (1~7).</p>
 </dd>
 <dt><strong>hour</strong><span class="classifier">int</span></dt><dd><p>hour (24-hour clock) (0~23).</p>
 </dd>

@@ -71,11 +71,11 @@ async def main():
 
         ## Set RTC
         err = await dev.Sys_setRTC_async(2024, month, day, hour, minute, second-10)
-        print(f"Set RTC to 2024-{month}-{day}, {hour}:{minute}:{second-10} , status: {err}")
+        print(f"Set RTC to 2024-{month}-{day}, {hour}:{minute}:{second-10}, status: {err}")
 
         ## Start RTC alarm after 10 seconds
         err = await dev.Sys_startRTCAlarm_async(mode_alarm, day, hour, minute, second)
-        print(f"Alarm RTC to 2024-{month}-{day}, {hour}:{minute}:{second} , status: {err}")
+        print(f"Alarm RTC to 2024-{month}-{day}, {hour}:{minute}:{second}, status: {err}")
 
         stop_flag = 1
         for i in range(15):
