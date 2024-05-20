@@ -61,18 +61,18 @@ def main():
 
         ## Set RTC
         err = dev.Sys_setRTC(2024, month, day, hour, minute, second-10, timeout)
-        print(f"Set RTC to 2024-{month}-{day}, {hour}:{minute}:{second-10} , status: {err}")
+        print(f"Set RTC to 2024-{month}-{day}, {hour}:{minute}:{second-10}, status: {err}")
 
         ## Start RTC alarm
         err = dev.Sys_startRTCAlarm(mode_alarm, day, hour, minute, second, timeout)
-        print(f"Alarm RTC to 2024-{month}-{day}, {hour}:{minute}:{second} , status: {err}")
+        print(f"Alarm RTC to 2024-{month}-{day}, {hour}:{minute}:{second}, status: {err}")
 
         for i in range(15):
             print(f"Get RTC {dev.Sys_getRTC()}")
             time.sleep(1)
 
         ## Read AI
-        ai_list = dev.AI_getData(port, timeout)
+        ai_list = dev.AI_readOnDemand(port, timeout)
         print(f"Data in port {port}: {ai_list}")
 
         ## Close AI

@@ -40,6 +40,7 @@ def main():
         ## Parameters setting
         channel = 0 ## Depend on your device
         timeout = 3 ## second
+        position = 0
         direction = 1  ## 1 : Forward, -1 : Reverse
         window_size = 100
 
@@ -56,6 +57,10 @@ def main():
         err = dev.Encoder_setDirection(channel, direction, timeout)
         print(f"Encoder_setDirection in channel {channel}, status: {err}")
 
+        ## Set encoder position
+        err = dev.Encoder_setPosition(channel, position, timeout)
+        print(f"Encoder_setPosition in channel {channel}, status: {err}")
+
         ## Set encoder frequency window size
         err = dev.Encoder_setFreqWindow(channel, window_size, timeout)
         print(f"Encoder_setFreqWindow in channel {channel}, status: {err}")
@@ -64,11 +69,17 @@ def main():
         err = dev.Encoder_start(channel, timeout)
         print(f"Encoder_start in channel {channel}, status: {err}")
 
-        ## Read encoder
-        for i in range(10):
-            encoder_list = dev.Encoder_read(channel, timeout)
-            print(f"Read encoder in channel {channel}: {encoder_list}")
+        ## Read encoder position
+        while True:
+            position = dev.Encoder_readPosition(channel, timeout)
+            print(f"Encoder position in channel {channel}: {position}")
+    except KeyboardInterrupt:
+        print("Press keyboard")
 
+    except Exception as err:
+        pywpc.printGenericError(err)
+
+    finally:
         ## Stop encoder
         err = dev.Encoder_stop(channel, timeout)
         print(f"Encoder_stop in channel {channel}, status: {err}")
@@ -76,15 +87,12 @@ def main():
         ## Close encoder
         err = dev.Encoder_close(channel, timeout)
         print(f"Encoder_close in channel {channel}, status: {err}")
-    except Exception as err:
-        pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
-
+        ## Release device handle
+        dev.close()
     return
 
 if __name__ == '__main__':

@@ -68,11 +68,11 @@ def main():
 
         ## Set RTC
         err = dev.Sys_setRTC(2024, month, day, hour, minute, second-10, timeout)
-        print(f"Set RTC to 2024-{month}-{day}, {hour}:{minute}:{second-10} , status: {err}")
+        print(f"Set RTC to 2024-{month}-{day}, {hour}:{minute}:{second-10}, status: {err}")
 
         ## Start RTC alarm after 10 seconds
         err = dev.Sys_startRTCAlarm(mode_alarm, day, hour, minute, second, timeout)
-        print(f"Alarm RTC to 2024-{month}-{day}, {hour}:{minute}:{second} , status: {err}")
+        print(f"Alarm RTC to 2024-{month}-{day}, {hour}:{minute}:{second}, status: {err}")
 
         stop_flag = 1
         for i in range(15):
