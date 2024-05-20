@@ -41,24 +41,23 @@ def main():
         filename = "WPC_test.txt"
         read_bytes = 5
         mode = 1 ## 0 : write, 1 : read
-
         timeout = 3 ## second
 
         ## Open file in sdcard
         err = dev.SD_openFile(filename, mode, timeout)
-        print(f"SD_openFile_async, status: {err}")
+        print(f"SD_openFile, status: {err}")
 
         ## Get sdcard storage
         storage = dev.SD_getStorage(timeout)
-        print(f"SD_getStorage_async: {storage}")
+        print(f"SD_getStorage: {storage}")
 
         ## Read data form sdcard
         read_data = dev.SD_readFile(read_bytes, timeout)
-        print(f"SD_readFile_async, data: {read_data}")
+        print(f"SD_readFile, data: {read_data}")
 
         ## Close file in sdcard
         err = dev.SD_closeFile(timeout)
-        print(f"SD_closeFile_async, status: {err}")
+        print(f"SD_closeFile, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

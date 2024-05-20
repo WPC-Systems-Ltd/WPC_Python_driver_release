@@ -40,6 +40,7 @@ async def main():
         ## Parameters setting
         channel = 0 ## Depend on your device
         direction = 1  ## 1 : Forward, -1 : Reverse
+        position = 0
         window_size = 100
 
         ## Get firmware model & version
@@ -55,6 +56,10 @@ async def main():
         err = await dev.Encoder_setDirection_async(channel, direction)
         print(f"Encoder_setDirection_async in channel {channel}, status: {err}")
 
+        ## Set encoder position
+        err = await dev.Encoder_setPosition_async(channel, position)
+        print(f"Encoder_setPosition_async in channel {channel}, status: {err}")
+
         ## Set encoder frequency window size
         err = await dev.Encoder_setFreqWindow_async(channel, window_size)
         print(f"Encoder_setFreqWindow_async in channel {channel}, status: {err}")
@@ -63,11 +68,17 @@ async def main():
         err = await dev.Encoder_start_async(channel)
         print(f"Encoder_start_async in channel {channel}, status: {err}")
 
-        ## Read encoder
-        for i in range(10):
-            encoder_list = await dev.Encoder_read_async(channel)
-            print(f"Read encoder in channel {channel}: {encoder_list}")
+        ## Read encoder position
+        while True:
+            posi = await dev.Encoder_readPosition_async(channel)
+            print(f"Encoder position in channel {channel}: {posi}")
+    except KeyboardInterrupt:
+        print("Press keyboard")
 
+    except Exception as err:
+        pywpc.printGenericError(err)
+
+    finally:
         ## Stop encoder
         err = await dev.Encoder_stop_async(channel)
         print(f"Encoder_stop_async in channel {channel}, status: {err}")
@@ -75,14 +86,12 @@ async def main():
         ## Close encoder
         err = await dev.Encoder_close_async(channel)
         print(f"Encoder_close_async in channel {channel}, status: {err}")
-    except Exception as err:
-        pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
     return
 

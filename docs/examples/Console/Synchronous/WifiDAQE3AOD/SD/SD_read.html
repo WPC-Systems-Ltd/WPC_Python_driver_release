@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SD read &mdash; WPC Python driver 3.0.26 documentation</title>
+  <title>SD read &mdash; WPC Python driver 3.0.27 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/custom_sphinx.css?v=20c2511c" />
@@ -17,7 +17,7 @@
   
         <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../../../_static/documentation_options.js?v=102b3ddd"></script>
+        <script src="../../../../../_static/documentation_options.js?v=b453b9c4"></script>
         <script src="../../../../../_static/doctools.js?v=888ff710"></script>
         <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../_static/js/theme.js"></script>
@@ -40,7 +40,7 @@
               <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.26
+                3.0.27
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -188,36 +188,35 @@
 <span class="linenos">41</span>        <span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;WPC_test.txt&quot;</span>
 <span class="linenos">42</span>        <span class="n">read_bytes</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="linenos">43</span>        <span class="n">mode</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">## 0 : write, 1 : read</span>
-<span class="linenos">44</span>
-<span class="linenos">45</span>        <span class="n">timeout</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1">## second</span>
-<span class="linenos">46</span>
-<span class="linenos">47</span>        <span class="c1">## Open file in sdcard</span>
-<span class="linenos">48</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">SD_openFile</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">49</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SD_openFile_async, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">50</span>
-<span class="linenos">51</span>        <span class="c1">## Get sdcard storage</span>
-<span class="linenos">52</span>        <span class="n">storage</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">SD_getStorage</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">53</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SD_getStorage_async: </span><span class="si">{</span><span class="n">storage</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">54</span>
-<span class="linenos">55</span>        <span class="c1">## Read data form sdcard</span>
-<span class="linenos">56</span>        <span class="n">read_data</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">SD_readFile</span><span class="p">(</span><span class="n">read_bytes</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">57</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SD_readFile_async, data: </span><span class="si">{</span><span class="n">read_data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">58</span>
-<span class="linenos">59</span>        <span class="c1">## Close file in sdcard</span>
-<span class="linenos">60</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">SD_closeFile</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">61</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SD_closeFile_async, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">62</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos">63</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="linenos">64</span>
-<span class="linenos">65</span>    <span class="c1">## Disconnect network device</span>
-<span class="linenos">66</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
-<span class="linenos">67</span>
-<span class="linenos">68</span>    <span class="c1">## Release device handle</span>
-<span class="linenos">69</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="linenos">70</span>
-<span class="linenos">71</span>    <span class="k">return</span>
-<span class="linenos">72</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">73</span>    <span class="n">main</span><span class="p">()</span>
+<span class="linenos">44</span>        <span class="n">timeout</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1">## second</span>
+<span class="linenos">45</span>
+<span class="linenos">46</span>        <span class="c1">## Open file in sdcard</span>
+<span class="linenos">47</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">SD_openFile</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">48</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SD_openFile, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">49</span>
+<span class="linenos">50</span>        <span class="c1">## Get sdcard storage</span>
+<span class="linenos">51</span>        <span class="n">storage</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">SD_getStorage</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">52</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SD_getStorage: </span><span class="si">{</span><span class="n">storage</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">53</span>
+<span class="linenos">54</span>        <span class="c1">## Read data form sdcard</span>
+<span class="linenos">55</span>        <span class="n">read_data</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">SD_readFile</span><span class="p">(</span><span class="n">read_bytes</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">56</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SD_readFile, data: </span><span class="si">{</span><span class="n">read_data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">57</span>
+<span class="linenos">58</span>        <span class="c1">## Close file in sdcard</span>
+<span class="linenos">59</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">SD_closeFile</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">60</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SD_closeFile, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">61</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos">62</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">63</span>
+<span class="linenos">64</span>    <span class="c1">## Disconnect network device</span>
+<span class="linenos">65</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+<span class="linenos">66</span>
+<span class="linenos">67</span>    <span class="c1">## Release device handle</span>
+<span class="linenos">68</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos">69</span>
+<span class="linenos">70</span>    <span class="k">return</span>
+<span class="linenos">71</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">72</span>    <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>
