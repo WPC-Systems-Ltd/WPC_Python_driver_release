@@ -1,17 +1,17 @@
 # AI
 > **Note**
-> Make sure you are connected to correct IP or serial number.
+> Ensure you are connected to the correct IP address or serial number.
 
 ## Overview
 
-This example project demonstrates how to use WPC Python driver to acquire multi-channel AI data simultaneously.
-Also, we show how to perform data acquisition in on-demand, N samples and continuous mode individually.
+This project demonstrates how to use the WPC Python driver to acquire multi-channel AI data simultaneously.
+The example covers data acquisition in on-demand, N samples, and continuous modes.
 
-In order to use API correctly, please refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
+For detailed API usage, refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-If you'd like to create your own application, start by using this simple template, and then include your own code.
+To create your own application, start with this simple template and then include your custom code.
 
-## How to use this example
+## How To Use This Example
 
 ### Sampling rate
 
@@ -30,28 +30,41 @@ If you'd like to create your own application, start by using this simple templat
 
 #### The max sampling rate is fixed.
 
-| Product       |Sampling rate|
-|:-------------:|:-----------:|
-| Wifi-DAQ-E3-A | 10k         |
-| Wifi-DAQ-F4-A | 20k         |
-| Ethan-A       | 20k         |
+| Product         |Sampling rate|
+|:---------------:|:-----------:|
+| Wifi-DAQ-E3-A   | 10k         |
+| Wifi-DAQ-E3-AH  | 10k         |
+| Wifi-DAQ-E3-AOD | 10k         |
+| Wifi-DAQ-F4-A   | 20k         |
+| Ethan-A         | 20k         |
+| Ethan-A2        | 10k         |
 
-### Hardware requirement
+### Hardware Requirements
 
-In order to run this example, you should get WifiDAQE3AOD product, which contains AI function.
+To run this example, you will need a WifiDAQE3AOD product, which contains AI function.
 
-Then, we take WifiDAQE3AOD for example.
+Here we use WifiDAQE3AOD as an example.
 
 ### WifiDAQE3AOD
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-WifiDAQE3AOD.JPG" alt="drawing" width="600"/>
 
-## AI interfacing SOP
+## AI Interfacing SOP
 
-Create device handle -> Connect to device -> Open AI port -> Read AI data -> Close AI port -> Disconnect device -> Release device handle.
+1. Create device handle
+2. Connect to device
+3. Open AI port
+4. Configure AI
+5. Open AI streaming
+6. Start AI streaming
+7. Read AI streaming
+8. Close AI streaming
+9. Close AI port
+10. Disconnect device
+11. Release device handle
 
-If function return value is 0, it represents communication with `WifiDAQE3AOD` successfully.
+A return value of 0 indicates successful communication with the WifiDAQE3AOD.
 
 ## Troubleshooting
 
-For any technical support, please register new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.

@@ -45,12 +45,12 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        channel = 8
         mode = 2 ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 200
         read_points = 200
         read_delay = 0.2 ## second
         timeout = 3 ## second
+        channel = 8
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
@@ -81,16 +81,20 @@ def main():
         err = dev.AI_setSamplingRate(port, sampling_rate, timeout)
         print(f"AI_setSamplingRate {sampling_rate} in port {port}, status: {err}")
 
-        ## Start AI
-        err = dev.AI_start(port, timeout)
-        print(f"AI_start in port {port}, status: {err}")
+        ## Open AI streaming
+        err = dev.AI_openStreaming(port, timeout)
+        print(f"AI_openStreaming in port {port}, status: {err}")
+
+        ## Start AI streaming
+        err = dev.AI_startStreaming(port, timeout)
+        print(f"AI_startStreaming in port {port}, status: {err}")
 
         ## Wait a while for data acquisition
         time.sleep(1) ## delay [s]
 
-        ## Stop AI
-        err = dev.AI_stop(port, timeout)
-        print(f"AI_stop in port {port}, status: {err}")
+        ## Close AI streaming
+        err = dev.AI_closeStreaming(port, timeout)
+        print(f"AI_closeStreaming in port {port}, status: {err}")
 
         data_len = 1
         while data_len > 0:

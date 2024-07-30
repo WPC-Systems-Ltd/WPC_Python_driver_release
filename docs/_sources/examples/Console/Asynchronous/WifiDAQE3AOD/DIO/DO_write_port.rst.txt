@@ -1,0 +1,6 @@
+DO write port
+=============
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/WifiDAQE3AOD/DIO/DO_write_port.py
+   :language: python
+   :linenos:

@@ -4,16 +4,16 @@
 
 This example demonstrates how to find all available USB and ethernet devices.
 
-In order to use API correctly, please refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
+For detailed API usage, refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-If you'd like to create your own application, start by using this simple template, and then include your own code.
+To create your own application, start with this simple template and then include your custom code.
 
-## How to use this example
+## How To Use This Example
 
-### Hardware Requirement
+### Hardware Requirements
 
 In order to run this example, you should get one of WPC product.
 
 ## Troubleshooting
 
-For any technical support, please register new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.

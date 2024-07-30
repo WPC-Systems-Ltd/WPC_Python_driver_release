@@ -102,9 +102,13 @@ async def main():
         err = await dev.AI_enableCS_async(slot, chip_select)
         print(f"AI_enableCS_async in slot {slot}, status: {err}")
 
-        ## Start AI
-        err = await dev.AI_start_async(slot)
-        print(f"AI_start_async in slot {slot}, status: {err}")
+        ## Open AI streaming
+        err = await dev.AI_openStreaming_async(slot)
+        print(f"AI_openStreaming_async in slot {slot}, status: {err}")
+
+        ## Start AI streaming
+        err = await dev.AI_startStreaming_async(slot)
+        print(f"AI_startStreaming_async in slot {slot}, status: {err}")
 
         counter = 0
         data_len = 1
@@ -132,9 +136,9 @@ async def main():
     except KeyboardInterrupt:
         print("Press keyboard")
     finally:
-        ## Stop AI
-        err = await dev.AI_stop_async(slot)
-        print(f"AI_stop_async in slot {slot}, status: {err}")
+        ## Close AI streaming
+        err = await dev.AI_closeStreaming_async(slot)
+        print(f"AI_closeStreaming_async in slot {slot}, status: {err}")
 
         ## Close AI
         err = await dev.AI_close_async(slot)

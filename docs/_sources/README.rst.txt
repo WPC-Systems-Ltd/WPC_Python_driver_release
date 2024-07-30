@@ -26,7 +26,7 @@ In general, synchronous mode is easier to understand and debug, while asynchrono
     :target: https://pypi.org/project/wpcsys/
     :alt: PyPI
 
-.. image:: https://img.shields.io/badge/Python-3.8%20|%203.9%20|%203.10-blue.svg
+.. image:: https://img.shields.io/badge/Python-3.8%20to%203.12%20-blue.svg
     :target: https://pypi.org/project/wpcsys/
     :alt: Python
 

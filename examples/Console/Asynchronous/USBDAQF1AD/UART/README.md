@@ -1,6 +1,6 @@
 # UART
 > **Note**
-> Make sure you are connected to correct IP or serial number.
+> Ensure you are connected to the correct IP address or serial number.
 
 ## Overview
 
@@ -10,15 +10,15 @@ In order to verify, please take another WPC USB DAQ device or other device which
 
 We connect two device via UART so that can communicate data.
 
-In order to use API correctly, please refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
+For detailed API usage, refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-If you'd like to create your own application, start by using this simple template, and then include your own code.
+To create your own application, start with this simple template and then include your custom code.
 
-## How to use this example
+## How To Use This Example
 
-### Hardware Requirement
+### Hardware Requirements
 
-In order to run this example, you should get USBDAQF1AD product, which contains UART function.
+To run this example, you will need a USBDAQF1AD product, which contains UART function.
 
 Then, we take `USBDAQF1AD` for example.
 
@@ -30,12 +30,12 @@ Then, we take `USBDAQF1AD` for example.
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-USBDAQF1AD.JPG" alt="drawing" width="600"/>
 
-## UART interfacing SOP
+## UART Interfacing SOP
 
 Create device handle -> Connect to device -> Open UART port -> Set UART parameters -> Write data via UART -> Read data via UART -> Close UART port -> Disconnect device -> Release device handle.
 
-If function return value is 0, it represents communication with `USBDAQF1AD` successfully.
+A return value of 0 indicates successful communication with the USBDAQF1AD.
 
 ## Troubleshooting
 
-For any technical support, please register new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.

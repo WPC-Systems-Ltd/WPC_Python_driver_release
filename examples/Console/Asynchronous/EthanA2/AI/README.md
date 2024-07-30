@@ -1,17 +1,17 @@
 # AI
 > **Note**
-> Make sure you are connected to correct IP or serial number.
+> Ensure you are connected to the correct IP address or serial number.
 
 ## Overview
 
 This example project demonstrates how to use WPC Python driver to acquire multi-channel AI data simultaneously.
 Also, we show how to perform data acquisition in on-demand, N samples and continuous mode individually.
 
-In order to use API correctly, please refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
+For detailed API usage, refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-If you'd like to create your own application, start by using this simple template, and then include your own code.
+To create your own application, start with this simple template and then include your custom code.
 
-## How to use this example
+## How To Use This Example
 
 ### Sampling rate
 
@@ -30,28 +30,31 @@ If you'd like to create your own application, start by using this simple templat
 
 #### The max sampling rate is fixed.
 
-| Product       |Sampling rate|
-|:-------------:|:-----------:|
-| Wifi-DAQ-E3-A | 10k         |
-| Wifi-DAQ-F4-A | 20k         |
-| Ethan-A       | 20k         |
+| Product         |Sampling rate|
+|:---------------:|:-----------:|
+| Wifi-DAQ-E3-A   | 10k         |
+| Wifi-DAQ-E3-AH  | 10k         |
+| Wifi-DAQ-E3-AOD | 10k         |
+| Wifi-DAQ-F4-A   | 20k         |
+| Ethan-A         | 20k         |
+| Ethan-A2        | 10k         |
 
-### Hardware requirement
+### Hardware Requirements
 
-In order to run this example, you should get EthanA2 product, which contains AI function.
+To run this example, you will need a EthanA2 product, which contains AI function.
 
-Then, we take EthanA2 for example.
+Here we use EthanA2 as an example.
 
 ### EthanA2
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-EthanA2.JPG" alt="drawing" width="600"/>
 
-## AI interfacing SOP
+## AI Interfacing SOP
 
-Create device handle -> Connect to device -> Open AI port -> Read AI data -> Close AI port -> Disconnect device -> Release device handle.
+Create device handle -> Connect to device -> Open AI port -> Configure AI -> Open AI streaming -> Read AI streaming -> Close AI streaming -> Close AI port -> Disconnect device -> Release device handle.
 
-If function return value is 0, it represents communication with `EthanA2` successfully.
+A return value of 0 indicates successful communication with the EthanA2.
 
 ## Troubleshooting
 
-For any technical support, please register new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.

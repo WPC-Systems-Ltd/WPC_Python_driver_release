@@ -1,0 +1,6 @@
+Get device alias
+================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/EthanO/System_ETH/get_device_alias.py
+   :language: python
+   :linenos:

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Products Feature &mdash; WPC Python driver 3.0.27 documentation</title>
+  <title>Products Feature &mdash; WPC Python driver 3.1.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="_static/custom_sphinx.css?v=20c2511c" />
@@ -17,7 +17,7 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=b453b9c4"></script>
+        <script src="_static/documentation_options.js?v=796a81b5"></script>
         <script src="_static/doctools.js?v=888ff710"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -40,7 +40,7 @@
               <img src="_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.27
+                3.1.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -108,13 +108,16 @@
 <tbody>
 <tr class="row-even"><td><dl class="simple">
 <dt><strong>Emotion</strong></dt><dd><ul class="simple">
-<li><p>Ethernet based motion controller modular inter-connection</p></li>
-<li><p>Easy and quick connect to Servo amplifier</p></li>
-<li><p>Pulse/Direction or CW/CCW output mode</p></li>
-<li><p>Differential output (Max: 8MPPS)</p></li>
-<li><p>Encoder ABZ input (Max: 12MHz)</p></li>
-<li><p>Break-point/Capture</p></li>
-<li><p>Linear/Circular/helical interpolation/Multi-axes sync move S-Curve</p></li>
+<li><p>Power input: 24VDC</p></li>
+<li><p>10/100 T-based Ethernet interface</p></li>
+<li><p>Pulse/Direction or CW/CCW</p></li>
+<li><p>Differential output (max. 8MPPS)</p></li>
+<li><p>Encoder ABZ (max. 12MHz)</p></li>
+<li><p>Home/FWD/REV limit inputs</p></li>
+<li><p>Servo On/Alarm Clear outputs</p></li>
+<li><p>Breakpoint/Position Capture functions</p></li>
+<li><p>Trapezoidal and S-curve velocity profile</p></li>
+<li><p>Linear/circular/helical interpolation &amp; multi-axes sync move</p></li>
 <li><p>Support Python, C# and LabVIEW</p></li>
 </ul>
 </dd>
@@ -125,15 +128,16 @@
 </tr>
 <tr class="row-odd"><td><dl class="simple">
 <dt><strong>EDrive-ST</strong></dt><dd><ul class="simple">
-<li><p>2-phase stepper motor</p></li>
-<li><p>51, 200 steps/revolution</p></li>
-<li><p>36v maximum power supply</p></li>
-<li><p>2.1A maximum output current</p></li>
-<li><p>5A maximum peak current</p></li>
-<li><p>Limit Switches: FWD, REV</p></li>
-<li><p>Encoder: ABZ (Nominal: 8MHz)</p></li>
-<li><p>Stall detection/intelligent energy-saving/diagnostic functions</p></li>
-<li><p>8-points ramp for smooth acceleration</p></li>
+<li><p>Power input: 24VDC</p></li>
+<li><p>10/100 T-based Ethernet interface</p></li>
+<li><p>For 2-phase stepper motor</p></li>
+<li><p>Microstepping: 51200 steps/rev (adjustable)</p></li>
+<li><p>Max. supply voltage: 36V</p></li>
+<li><p>Max. current: output 2.1A, peak 5A</p></li>
+<li><p>Encoder ABZ (nominal: 8MHz)</p></li>
+<li><p>Home/FWD/REV limit inputs</p></li>
+<li><p>Stall detection/intelligent energy saving/diagnostic function</p></li>
+<li><p>8-pt ramp acceleration smoothing</p></li>
 <li><p>Support Python, C# and LabVIEW</p></li>
 </ul>
 </dd>
@@ -160,7 +164,7 @@
 <dt><strong>EthanA</strong></dt><dd><ul class="simple">
 <li><p>Power input: 24VDC</p></li>
 <li><p>10/100 T-based Ethernet interface</p></li>
-<li><p>Analog input: 8ch simultaneous and 16-bit single-ended</p></li>
+<li><p>AI: 8ch simultaneous &amp; 16-bit single-ended</p></li>
 <li><p>Max. sampling rate: 20kHz</p></li>
 <li><p>Input range: +/-10V</p></li>
 <li><p>Support Python, C# and LabVIEW</p></li>
@@ -175,7 +179,7 @@
 <dt><strong>EthanA2</strong></dt><dd><ul class="simple">
 <li><p>Power input: 24VDC</p></li>
 <li><p>10/100 T-based Ethernet interface</p></li>
-<li><p>Analog input: 8ch simultaneous and 24-bit single-ended</p></li>
+<li><p>AI: 8ch simultaneous &amp; 24-bit single-ended</p></li>
 <li><p>Max. sampling rate: 10kHz</p></li>
 <li><p>Input range: +/-13.75V</p></li>
 <li><p>Support Python, C# and LabVIEW</p></li>
@@ -190,9 +194,9 @@
 <dt><strong>EthanD</strong></dt><dd><ul class="simple">
 <li><p>Power input: 24VDC</p></li>
 <li><p>10/100 T-based Ethernet interface</p></li>
-<li><p>Digital output: 6ch NPN/PNP, opto-isolated 24V</p></li>
-<li><p>Digital input: 8ch NPN/PNP, opto-isolated 24V</p></li>
-<li><p>2ch PWM output</p></li>
+<li><p>DO: 6ch NPN/PNP, opto-isolated 24V</p></li>
+<li><p>DI: 8ch NPN/PNP, opto-isolated 24V</p></li>
+<li><p>2ch PWM outputs</p></li>
 <li><p>Support Python, C# and LabVIEW</p></li>
 </ul>
 </dd>
@@ -205,9 +209,10 @@
 <dt><strong>EthanEX_D</strong></dt><dd><ul class="simple">
 <li><p>Power input: 24VDC</p></li>
 <li><p>10/100 T-based Ethernet interface</p></li>
-<li><p>Digital output: 16ch NPN/PNP, opto-isolated 24V</p></li>
-<li><p>Digital input: 16ch NPN/PNP, opto-isolated 24V</p></li>
-<li><p>2ch PWM output</p></li>
+<li><p>DO: 16ch NPN/PNP, opto-isolated 24V</p></li>
+<li><p>DI: 16ch NPN/PNP, opto-isolated 24V</p></li>
+<li><p>2ch PWM outputs</p></li>
+<li><p>2ch counter</p></li>
 <li><p>Support Python, C# and LabVIEW</p></li>
 </ul>
 </dd>
@@ -220,9 +225,9 @@
 <dt><strong>EthanI</strong></dt><dd><ul class="simple">
 <li><p>Power input: 24VDC</p></li>
 <li><p>10/100 T-based Ethernet interface</p></li>
-<li><p>Current input: 8ch non-simultaneous and 24-bit</p></li>
-<li><p>Max. update rate: 1.2kHz (1ch)</p></li>
-<li><p>+/-20mA input range</p></li>
+<li><p>Current input: 8ch multiplexed &amp; 24-bit</p></li>
+<li><p>Update rate: 1.2kHz (1ch)</p></li>
+<li><p>Input range: +/-20mA</p></li>
 <li><p>Support Python, C# and LabVIEW</p></li>
 </ul>
 </dd>
@@ -235,10 +240,10 @@
 <dt><strong>EthanIA</strong></dt><dd><ul class="simple">
 <li><p>Power input: 24VDC</p></li>
 <li><p>10/100 T-based Ethernet interface</p></li>
-<li><p>Current input: 8ch non-simultaneous and 24-bit</p></li>
-<li><p>Voltage input: 8ch non-simultaneous and 24-bit</p></li>
-<li><p>Max. update rate: 600Hz (1ch)</p></li>
-<li><p>Current input range: +/-20mA</p></li>
+<li><p>Current input: 8ch multiplexed &amp; 24-bit</p></li>
+<li><p>Voltage input: 8ch multiplexed &amp; 24-bit</p></li>
+<li><p>Update rate: 600Hz (1ch)</p></li>
+<li><p>Current input range: +/-20mA</p></li>
 <li><p>Voltage input range: +/-25V</p></li>
 <li><p>Support Python, C# and LabVIEW</p></li>
 </ul>
@@ -252,9 +257,9 @@
 <dt><strong>EthanL</strong></dt><dd><ul class="simple">
 <li><p>Power input: 24VDC</p></li>
 <li><p>10/100 T-based Ethernet interface</p></li>
-<li><p>6ch high quality mechanical relay</p></li>
-<li><p>4ch Form-A (NO), 2ch Form-C (NO+NC)</p></li>
-<li><p>Max current: 1A</p></li>
+<li><p>6ch high-quality mechanical relay</p></li>
+<li><p>4ch form-A (NO) + 2ch form-C (NO+NC)</p></li>
+<li><p>Max. current: 1A</p></li>
 <li><p>Operating time: 2ms (excluding bounce)</p></li>
 <li><p>Release time: 1ms (excluding bounce)</p></li>
 <li><p>Support Python, C# and LabVIEW</p></li>
@@ -269,10 +274,10 @@
 <dt><strong>EthanO</strong></dt><dd><ul class="simple">
 <li><p>Power input: 24VDC</p></li>
 <li><p>10/100 T-based Ethernet interface</p></li>
-<li><p>Analog output: 8ch simultaneous and 16-bit single-ended</p></li>
+<li><p>AO: 8ch simultaneous &amp; 16-bit single-ended</p></li>
 <li><p>Output range: +/-10V</p></li>
 <li><p>Max. update rate: 1kHz</p></li>
-<li><p>Function generation</p></li>
+<li><p>Support function generation</p></li>
 <li><p>Support Python, C# and LabVIEW</p></li>
 </ul>
 </dd>
@@ -285,8 +290,8 @@
 <dt><strong>EthanP</strong></dt><dd><ul class="simple">
 <li><p>Power input: 24VDC</p></li>
 <li><p>10/100 T-based Ethernet interface</p></li>
-<li><p>4ch variable digital resistor output</p></li>
-<li><p>Output range: 300Ω to 50kΩ</p></li>
+<li><p>4ch variable digital potentiometers</p></li>
+<li><p>Output range: 300-50kΩ</p></li>
 <li><p>Max. update rate: 500Hz</p></li>
 <li><p>Support Python, C# and LabVIEW</p></li>
 </ul>
@@ -300,8 +305,8 @@
 <dt><strong>EthanT</strong></dt><dd><ul class="simple">
 <li><p>Power input: 24VDC</p></li>
 <li><p>10/100 T-based Ethernet interface</p></li>
-<li><p>7ch thermocouple input</p></li>
-<li><p>Sensor type: K, J, N, R, S, T, E, and B</p></li>
+<li><p>7ch thermocouple inputs</p></li>
+<li><p>Sensor type: K, J, N, R, S, T, E, &amp; B</p></li>
 <li><p>Settling time: 160ms (1ch)</p></li>
 <li><p>Support Python, C# and LabVIEW</p></li>
 </ul>
@@ -313,11 +318,9 @@
 </tr>
 <tr class="row-odd"><td><dl class="simple">
 <dt><strong>USBDAQF1D</strong></dt><dd><ul class="simple">
-<li><p>3.3V digital I/O</p></li>
-<li><p>26ch 3.3V (5V-tolerant)</p></li>
-<li><p>DIO/I2C/SPI/UART/PWM/pulse counter/encoder counter</p></li>
-<li><p>I2C: max. 400KHz</p></li>
 <li><p>USB 2.0 full-speed bus powered</p></li>
+<li><p>26ch 3.3V DIO (5V-tolerant)</p></li>
+<li><p>I2C/SPI/UART/PWM/counter</p></li>
 <li><p>Support Python, C# and LabVIEW</p></li>
 </ul>
 </dd>
@@ -328,13 +331,12 @@
 </tr>
 <tr class="row-even"><td><dl class="simple">
 <dt><strong>USBDAQF1AD</strong></dt><dd><ul class="simple">
-<li><p>Digital+AI</p></li>
-<li><p>20ch 3.3V (5V-tolerant)</p></li>
-<li><p>DIO/I2C/SPI/UART/PWM/pulse counter/encoder counter</p></li>
-<li><p>Analog input: 8ch simultaneous and 16-bit single-ended</p></li>
+<li><p>USB 2.0 full-speed bus powered</p></li>
+<li><p>20ch 3.3V DIO (5V-tolerant)</p></li>
+<li><p>I2C/SPI/UART/PWM/counter</p></li>
+<li><p>AI: 8ch simultaneous &amp; 16-bit single-ended</p></li>
 <li><p>Max. sampling rate: 16kHz (1ch)</p></li>
 <li><p>Input range: +/-10V</p></li>
-<li><p>USB 2.0 full-speed bus powered</p></li>
 <li><p>Support Python, C# and LabVIEW</p></li>
 </ul>
 </dd>
@@ -345,12 +347,11 @@
 </tr>
 <tr class="row-odd"><td><dl class="simple">
 <dt><strong>USBDAQF1DSNK</strong></dt><dd><ul class="simple">
-<li><p>24V digital I/O</p></li>
-<li><p>Digital output: 12ch NPN, opto-isolated 24V</p></li>
-<li><p>Digital output: 12ch NPN, opto-isolated 24V</p></li>
-<li><p>PWM/pulse counter/encoder counter</p></li>
-<li><p>External 24VDC power required</p></li>
 <li><p>USB 2.0 full-speed bus powered</p></li>
+<li><p>DO: 12ch NPN, opto-isolated 24V</p></li>
+<li><p>DI: 14ch NPN, opto-isolated 24V</p></li>
+<li><p>PWM/counter</p></li>
+<li><p>External 24VDC power required</p></li>
 <li><p>Support Python, C# and LabVIEW</p></li>
 </ul>
 </dd>
@@ -361,12 +362,11 @@
 </tr>
 <tr class="row-even"><td><dl class="simple">
 <dt><strong>USBDAQF1TD</strong></dt><dd><ul class="simple">
-<li><p>Digital+Thermocouple</p></li>
-<li><p>21ch 3.3V (5V-tolerant)</p></li>
-<li><p>DIO/I2C/SPI/UART/PWM/pulse counter/encoder counter</p></li>
-<li><p>2ch thermocouple inputs</p></li>
-<li><p>Sensor type: K, J, N, R, S, T, E, and B</p></li>
 <li><p>USB 2.0 full-speed bus powered</p></li>
+<li><p>21ch 3.3V DIO (5V-tolerant)</p></li>
+<li><p>I2C/SPI/UART/PWM/counter</p></li>
+<li><p>2ch thermocouple inputs</p></li>
+<li><p>Sensor type: K, J, N, R, S, T, E, &amp; B</p></li>
 <li><p>Support Python, C# and LabVIEW</p></li>
 </ul>
 </dd>
@@ -377,12 +377,11 @@
 </tr>
 <tr class="row-odd"><td><dl class="simple">
 <dt><strong>USBDAQF1RD</strong></dt><dd><ul class="simple">
-<li><p>Digital+RTD</p></li>
-<li><p>21ch 3.3V (5V-tolerant)</p></li>
-<li><p>DIO/I2C/SPI/UART/PWM/pulse counter/encoder counter</p></li>
-<li><p>2ch RTD inputs</p></li>
-<li><p>PT-100/PT-1000 (different models)</p></li>
 <li><p>USB 2.0 full-speed bus powered</p></li>
+<li><p>21ch 3.3V DIO (5V-tolerant)</p></li>
+<li><p>I2C/SPI/UART/PWM/counter</p></li>
+<li><p>2ch RTD inputs</p></li>
+<li><p>Support PT-100 or PT-1000</p></li>
 <li><p>Support Python, C# and LabVIEW</p></li>
 </ul>
 </dd>
@@ -393,11 +392,10 @@
 </tr>
 <tr class="row-even"><td><dl class="simple">
 <dt><strong>USBDAQF1CD</strong></dt><dd><ul class="simple">
-<li><p>Digital+CAN</p></li>
-<li><p>20ch 3.3V (5V-tolerant)</p></li>
-<li><p>DIO/I2C/SPI/UART/PWM/pulse counter/encoder counter</p></li>
-<li><p>CAN V2.0B at 1Mb/sec</p></li>
 <li><p>USB 2.0 full-speed bus powered</p></li>
+<li><p>20ch 3.3V DIO (5V-tolerant)</p></li>
+<li><p>I2C/SPI/UART/PWM/counter</p></li>
+<li><p>CAN V2.0B at 1Mb/sec</p></li>
 <li><p>Support Python, C# and LabVIEW</p></li>
 </ul>
 </dd>
@@ -408,15 +406,14 @@
 </tr>
 <tr class="row-odd"><td><dl class="simple">
 <dt><strong>USBDAQF1AOD</strong></dt><dd><ul class="simple">
-<li><p>Digital+AI+AO</p></li>
-<li><p>16ch 3.3V (5V-tolerant)</p></li>
-<li><p>DIO/I2C/SPI/UART/PWM/pulse counter/encoder counter</p></li>
-<li><p>Analog input: 8ch simultaneous and 16-bit single-ended</p></li>
+<li><p>USB 2.0 full-speed bus powered</p></li>
+<li><p>16ch 3.3V DIO (5V-tolerant)</p></li>
+<li><p>I2C/SPI/UART/PWM/counter</p></li>
+<li><p>AI: 8ch simultaneous &amp; 16-bit single-ended</p></li>
 <li><p>Max. sampling rate: 16kHz (1ch)</p></li>
 <li><p>Input range: +/-10V</p></li>
-<li><p>Analog output: 8ch simultaneous and 16-bit single-ended</p></li>
-<li><p>Output range: 0V to 5V</p></li>
-<li><p>USB 2.0 full-speed bus powered</p></li>
+<li><p>AO: 8ch simultaneous &amp; 16-bit single-ended</p></li>
+<li><p>Output range: 0-5V</p></li>
 <li><p>Support Python, C# and LabVIEW</p></li>
 </ul>
 </dd>
@@ -427,7 +424,7 @@
 </tr>
 <tr class="row-even"><td><dl class="simple">
 <dt><strong>WifiDAQE3A</strong></dt><dd><ul class="simple">
-<li><p>Analog input: 8ch simultaneous and 16-bit single-ended</p></li>
+<li><p>AI: 8ch simultaneous &amp; 16-bit single-ended</p></li>
 <li><p>Max. sampling rate: 10kHz</p></li>
 <li><p>Input range: +/-10V</p></li>
 <li><p>Web-based configurator</p></li>
@@ -443,7 +440,7 @@
 </tr>
 <tr class="row-odd"><td><dl class="simple">
 <dt><strong>WifiDAQE3AH</strong></dt><dd><ul class="simple">
-<li><p>Analog input: 8ch simultaneous and 16-bit single-ended</p></li>
+<li><p>AI: 8ch simultaneous &amp; 16-bit single-ended</p></li>
 <li><p>Max. sampling rate: 10kHz</p></li>
 <li><p>Input range: +/-10V</p></li>
 <li><p>Built-in 9DoF IMU with posture estimation</p></li>
@@ -459,8 +456,28 @@
 </td>
 </tr>
 <tr class="row-even"><td><dl class="simple">
+<dt><strong>WifiDAQE3AOD</strong></dt><dd><ul class="simple">
+<li><p>AI: 8ch simultaneous &amp; 16-bit single-ended</p></li>
+<li><p>Max. sampling rate: 10kHz</p></li>
+<li><p>Input range: +/-10V</p></li>
+<li><p>AO: 8ch simultaneous &amp; 16-bit single-ended</p></li>
+<li><p>Output range: 0-5V</p></li>
+<li><p>DO: 8ch NPN, opto-isolated 24V</p></li>
+<li><p>DI: 8ch NPN, opto-isolated 24V</p></li>
+<li><p>Web-based configurator</p></li>
+<li><p>802.11 b/g/n WiFi</p></li>
+<li><p>2.4 GHz to 2.5 GHz</p></li>
+<li><p>Support Python, C# and LabVIEW</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><a class="reference internal image-reference" href="_images/product-WIFIDAQE3AOD.jpg"><img alt="product-WifiDAQE3AOD.jpg" src="_images/product-WIFIDAQE3AOD.jpg" style="width: 100%;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td><dl class="simple">
 <dt><strong>WifiDAQF4A</strong></dt><dd><ul class="simple">
-<li><p>Analog input: 8ch simultaneous and 16-bit single-ended</p></li>
+<li><p>AI: 8ch simultaneous &amp; 16-bit single-ended</p></li>
 <li><p>Max. sampling rate: 20kHz</p></li>
 <li><p>Input range: +/-10V</p></li>
 <li><p>Web-based configurator</p></li>

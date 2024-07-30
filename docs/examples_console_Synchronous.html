@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Example Codes - Console (sync) &mdash; WPC Python driver 3.0.27 documentation</title>
+  <title>Example Codes - Console (sync) &mdash; WPC Python driver 3.1.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="_static/custom_sphinx.css?v=20c2511c" />
@@ -17,7 +17,7 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=b453b9c4"></script>
+        <script src="_static/documentation_options.js?v=796a81b5"></script>
         <script src="_static/doctools.js?v=888ff710"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -40,7 +40,7 @@
               <img src="_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.0.27
+                3.1.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -60,6 +60,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Example Codes - Console (sync)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#device-finder">Device finder</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/DeviceFinder/Find_devices/find_all_devices.html">Find all devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/DeviceFinder/Find_devices/find_networkdevices_blink.html">Find network devices and blink</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#stem">STEM</a><ul>
@@ -85,6 +86,8 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/STEM/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/STEM/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/STEM/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/STEM/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/STEM/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#edrive-st">EDrive-ST</a><ul>
@@ -100,6 +103,8 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EDriveST/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EDriveST/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EDriveST/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EDriveST/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EDriveST/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#emotion">EMotion</a><ul>
@@ -130,6 +135,8 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EMotion/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EMotion/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EMotion/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EMotion/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EMotion/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ethan-a">Ethan-A</a><ul>
@@ -141,11 +148,12 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanA/AI/AI_continuous_multi_slot.html">AI continuous multi slot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanA/RTC_AI/RTC_trigger_AI_continuous.html">RTC trigger AI continuous</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanA/RTC_AI/RTC_trigger_AI_N_samples.html">RTC trigger AI N samples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanA/RTC_AI/RTC_trigger_AI_on_demand.html">RTC trigger AI on demand</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanA/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanA/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanA/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanA/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanA/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanA/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ethan-a2">Ethan-A2</a><ul>
@@ -156,10 +164,14 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanA2/AI/AI_on_demand_once.html">AI on demand once</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanA2/AI/AI_continuous_multi_slot.html">AI continuous multi slot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanA2/AI24Bit/AI_on_demand_once.html">AI on demand once</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanA2/RTC_AI/RTC_trigger_AI_continuous.html">RTC trigger AI continuous</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanA2/RTC_AI/RTC_trigger_AI_N_samples.html">RTC trigger AI N samples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanA2/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanA2/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanA2/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanA2/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanA2/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanA2/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ethan-d">Ethan-D</a><ul>
@@ -174,6 +186,8 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanD/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanD/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanD/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanD/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanD/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ethan-ex-d">Ethan-EX-D</a><ul>
@@ -187,6 +201,8 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanEXD/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanEXD/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanEXD/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanEXD/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanEXD/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ethan-i">Ethan-I</a><ul>
@@ -195,6 +211,8 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanI/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanI/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanI/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanI/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanI/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ethan-ia">Ethan-IA</a><ul>
@@ -203,6 +221,8 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanIA/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanIA/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanIA/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanIA/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanIA/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ethan-l">Ethan-L</a><ul>
@@ -212,6 +232,8 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanL/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanL/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanL/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanL/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanL/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ethan-o">Ethan-O</a><ul>
@@ -222,6 +244,8 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanO/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanO/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanO/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanO/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanO/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ethan-p">Ethan-P</a><ul>
@@ -232,6 +256,8 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanP/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanP/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanP/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanP/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanP/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ethan-t">Ethan-T</a><ul>
@@ -242,6 +268,8 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanT/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanT/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanT/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanT/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/EthanT/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#usb-daq-f1-ad">USB-DAQ-F1-AD</a><ul>
@@ -269,6 +297,8 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1AD/System_USB/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1AD/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1AD/System_USB/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1AD/System_USB/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1AD/System_USB/set_device_alias.html">Set device alias</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#usb-daq-f1-aod">USB-DAQ-F1-AOD</a><ul>
@@ -300,6 +330,8 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1AOD/System_USB/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1AOD/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1AOD/System_USB/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1AOD/System_USB/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1AOD/System_USB/set_device_alias.html">Set device alias</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#usb-daq-f1-cd">USB-DAQ-F1-CD</a><ul>
@@ -323,6 +355,8 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1CD/System_USB/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1CD/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1CD/System_USB/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1CD/System_USB/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1CD/System_USB/set_device_alias.html">Set device alias</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#usb-daq-f1-d">USB-DAQ-F1-D</a><ul>
@@ -344,6 +378,8 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1D/System_USB/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1D/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1D/System_USB/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1D/System_USB/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1D/System_USB/set_device_alias.html">Set device alias</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#usb-daq-f1-d-snk">USB-DAQ-F1-D-SNK</a><ul>
@@ -360,6 +396,8 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1DSNK/System_USB/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1DSNK/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1DSNK/System_USB/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1DSNK/System_USB/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1DSNK/System_USB/set_device_alias.html">Set device alias</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#usb-daq-f1-rd">USB-DAQ-F1-RD</a><ul>
@@ -384,6 +422,8 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1RD/System_USB/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1RD/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1RD/System_USB/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1RD/System_USB/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1RD/System_USB/set_device_alias.html">Set device alias</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#usb-daq-f1-td">USB-DAQ-F1-TD</a><ul>
@@ -408,6 +448,8 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1TD/System_USB/hello_world.html">System hello world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1TD/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1TD/System_USB/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1TD/System_USB/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1TD/System_USB/set_device_alias.html">Set device alias</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#wifi-daq-e3-a">Wifi-DAQ-E3-A</a><ul>
@@ -475,6 +517,12 @@
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/AIO/AIO_one_channel_loopback.html">AIO one channel loopback</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/AIO/AIO_all_channels_loopback.html">AIO all channels loopback</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/AIO/AO_output_while_AI_streaming.html">AO output while AI streaming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/DIO/DO_blinky_pins.html">DO blinky pins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/DIO/DO_blinky_port.html">DO blinky port</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/DIO/DIO_loopback_pins.html">DIO loopback pins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/DIO/DIO_loopback_port.html">DIO loopback port</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/DIO/DO_write_pins.html">DO write pins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/DIO/DO_write_port.html">DO write port</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/SD/SD_read.html">SD read</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/SD/SD_write.html">SD write</a></li>
 <li class="toctree-l3"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/System_Wifi/get_network_info.html">System get network info</a></li>
@@ -529,6 +577,7 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/DeviceFinder/Find_devices/find_all_devices.html">Find all devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/DeviceFinder/Find_devices/find_networkdevices_blink.html">Find network devices and blink</a></li>
 </ul>
 </div>
 </section>
@@ -558,6 +607,8 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/STEM/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/STEM/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/STEM/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/STEM/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/STEM/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </div>
 </section>
@@ -577,6 +628,8 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EDriveST/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EDriveST/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EDriveST/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EDriveST/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EDriveST/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </div>
 </section>
@@ -611,6 +664,8 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EMotion/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EMotion/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EMotion/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EMotion/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EMotion/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </div>
 </section>
@@ -626,11 +681,12 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanA/AI/AI_continuous_multi_slot.html">AI continuous multi slot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanA/RTC_AI/RTC_trigger_AI_continuous.html">RTC trigger AI continuous</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanA/RTC_AI/RTC_trigger_AI_N_samples.html">RTC trigger AI N samples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanA/RTC_AI/RTC_trigger_AI_on_demand.html">RTC trigger AI on demand</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanA/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanA/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanA/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanA/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanA/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanA/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </div>
 </section>
@@ -645,10 +701,14 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanA2/AI/AI_on_demand_once.html">AI on demand once</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanA2/AI/AI_continuous_multi_slot.html">AI continuous multi slot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanA2/AI24Bit/AI_on_demand_once.html">AI on demand once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanA2/RTC_AI/RTC_trigger_AI_continuous.html">RTC trigger AI continuous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanA2/RTC_AI/RTC_trigger_AI_N_samples.html">RTC trigger AI N samples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanA2/System_ETH/get_network_info.html">System get network info</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanA2/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanA2/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanA2/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanA2/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanA2/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </div>
 </section>
@@ -667,6 +727,8 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanD/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanD/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanD/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanD/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanD/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </div>
 </section>
@@ -684,6 +746,8 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanEXD/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanEXD/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanEXD/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanEXD/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanEXD/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </div>
 </section>
@@ -696,6 +760,8 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanI/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanI/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanI/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanI/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanI/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </div>
 </section>
@@ -708,6 +774,8 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanIA/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanIA/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanIA/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanIA/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanIA/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </div>
 </section>
@@ -721,6 +789,8 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanL/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanL/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanL/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanL/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanL/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </div>
 </section>
@@ -735,6 +805,8 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanO/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanO/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanO/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanO/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanO/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </div>
 </section>
@@ -749,6 +821,8 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanP/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanP/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanP/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanP/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanP/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </div>
 </section>
@@ -763,6 +837,8 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanT/System_ETH/hello_world.html">System hello world</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanT/System_ETH/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanT/System_ETH/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanT/System_ETH/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/EthanT/System_ETH/set_device_alias.html">Set device alias</a></li>
 </ul>
 </div>
 </section>
@@ -794,6 +870,8 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1AD/System_USB/hello_world.html">System hello world</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1AD/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1AD/System_USB/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1AD/System_USB/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1AD/System_USB/set_device_alias.html">Set device alias</a></li>
 </ul>
 </div>
 </section>
@@ -829,6 +907,8 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1AOD/System_USB/hello_world.html">System hello world</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1AOD/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1AOD/System_USB/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1AOD/System_USB/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1AOD/System_USB/set_device_alias.html">Set device alias</a></li>
 </ul>
 </div>
 </section>
@@ -856,6 +936,8 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1CD/System_USB/hello_world.html">System hello world</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1CD/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1CD/System_USB/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1CD/System_USB/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1CD/System_USB/set_device_alias.html">Set device alias</a></li>
 </ul>
 </div>
 </section>
@@ -881,6 +963,8 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1D/System_USB/hello_world.html">System hello world</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1D/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1D/System_USB/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1D/System_USB/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1D/System_USB/set_device_alias.html">Set device alias</a></li>
 </ul>
 </div>
 </section>
@@ -901,6 +985,8 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1DSNK/System_USB/hello_world.html">System hello world</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1DSNK/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1DSNK/System_USB/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1DSNK/System_USB/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1DSNK/System_USB/set_device_alias.html">Set device alias</a></li>
 </ul>
 </div>
 </section>
@@ -929,6 +1015,8 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1RD/System_USB/hello_world.html">System hello world</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1RD/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1RD/System_USB/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1RD/System_USB/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1RD/System_USB/set_device_alias.html">Set device alias</a></li>
 </ul>
 </div>
 </section>
@@ -957,6 +1045,8 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1TD/System_USB/hello_world.html">System hello world</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1TD/System_USB/set_and_get_RTC.html">Set and get RTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1TD/System_USB/get_serial_number.html">Get serial number</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1TD/System_USB/get_device_alias.html">Get device alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/USBDAQF1TD/System_USB/set_device_alias.html">Set device alias</a></li>
 </ul>
 </div>
 </section>
@@ -1040,6 +1130,12 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/AIO/AIO_one_channel_loopback.html">AIO one channel loopback</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/AIO/AIO_all_channels_loopback.html">AIO all channels loopback</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/AIO/AO_output_while_AI_streaming.html">AO output while AI streaming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/DIO/DO_blinky_pins.html">DO blinky pins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/DIO/DO_blinky_port.html">DO blinky port</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/DIO/DIO_loopback_pins.html">DIO loopback pins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/DIO/DIO_loopback_port.html">DIO loopback port</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/DIO/DO_write_pins.html">DO write pins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/DIO/DO_write_port.html">DO write port</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/SD/SD_read.html">SD read</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/SD/SD_write.html">SD write</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/Console/Synchronous/WifiDAQE3AOD/System_Wifi/get_network_info.html">System get network info</a></li>

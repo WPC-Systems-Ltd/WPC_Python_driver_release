@@ -169,6 +169,12 @@ Error Code Table
    * - -8106
      - 
      - The encoder channel is not available
+   * - -8107
+     - 
+     - The DI channel is not available
+   * - -8108
+     - 
+     - The DO channel is not available
    * - -8200
      - 
      - The AI channel is not available.
@@ -184,6 +190,9 @@ Error Code Table
    * - -8204
      - 
      - The AI sampling rate is not valid or is not recognized.
+   * - -8205
+     - 
+     - The AI trigger mode is not valid or is not recognized.
    * - -8300
      - 
      - The AO port is not available or is already occupied by another process.

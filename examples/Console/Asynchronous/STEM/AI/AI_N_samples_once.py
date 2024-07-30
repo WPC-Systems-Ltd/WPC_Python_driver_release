@@ -104,9 +104,13 @@ async def main():
         err = await dev.AI_setNumSamples_async(slot, samples)
         print(f"AI_setNumSamples_async {samples} in slot {slot}, status: {err}")
 
-        ## Start AI
-        err = await dev.AI_start_async(slot)
-        print(f"AI_start_async in slot {slot}, status: {err}")
+        ## Open AI streaming
+        err = await dev.AI_openStreaming_async(slot)
+        print(f"AI_openStreaming_async in slot {slot}, status: {err}")
+
+        ## Start AI streaming
+        err = await dev.AI_startStreaming_async(slot)
+        print(f"AI_startStreaming_async in slot {slot}, status: {err}")
 
         ## Read AI
         ai_2Dlist = await dev.AI_readStreaming_async(slot, read_points, read_delay)
@@ -123,9 +127,9 @@ async def main():
         else:
             print('NG')
 
-        ## Stop AI
-        err = await dev.AI_stop_async(slot)
-        print(f"AI_stop_async in port {slot}, status: {err}")
+        ## Close AI streaming
+        err = await dev.AI_closeStreaming_async(slot)
+        print(f"AI_closeStreaming_async in slot {slot}, status: {err}")
 
         ## Close AI
         err = await dev.AI_close_async(slot)
