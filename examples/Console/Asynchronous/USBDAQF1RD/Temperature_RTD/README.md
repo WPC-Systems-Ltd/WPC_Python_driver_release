@@ -16,7 +16,7 @@ To create your own application, start with this simple template and then include
 
 In order to run this example, you should get `USBDAQF1RD` product, which contains RTD sensor and its function.
 
-It support PT100 and PT1000 resistance thermometers, also called resistance temperature detectors (RTDs)
+It supports PT100 and PT1000 resistance thermometers, also called resistance temperature detectors (RTDs)
 
 Then, we take `USBDAQF1RD` for example.
 
@@ -26,10 +26,21 @@ Then, we take `USBDAQF1RD` for example.
 
 ## RTD Interfacing SOP
 
-Create device handle -> Connect to device -> Open Thermal port -> Set Thermal parameters -> Read RTD data -> Close Thermal port -> Disconnect device -> Release device handle.
-
-A return value of 0 indicates successful communication with the USBDAQF1RD.
+1. Create device handle
+2. Connect to device
+3. Open thermal port
+4. Set thermal parameters
+5. Read RTD data
+6. Close thermal port
+7. Disconnect device
+8. Release device handle
 
 ## Troubleshooting
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+
+## Reference
+
+1. [WPC official website](https://www.wpc.com.tw/)
+2. [WPC technical support center](https://wpc.super.site/)
+3. [WPC Python driver documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)

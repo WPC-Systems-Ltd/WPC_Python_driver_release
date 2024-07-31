@@ -4,11 +4,11 @@
 
 ## Overview
 
-This example project demonstrates how to use WPC python driver to communication with PWM
+This example project demonstrates how to use WPC python driver with PWM
 
 For detailed API usage, refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-To create your own application, start with this simple template and then include your custom code.
+If you want to build your own PWM application, try to use this as a basic template, then add your own code.
 
 ## How To Use This Example
 
@@ -22,8 +22,24 @@ Then, we take `USBDAQF1D` for example.
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-USBDAQF1D.JPG" alt="drawing" width="600"/>
 
-A return value of 0 indicates successful communication with the USBDAQF1D.
+## PWM Interfacing SOP
+
+1. Create device handle
+2. Connect to device
+3. Open PWM
+4. Set PWM parameters
+5. Start PWM
+6. Stop PWM
+7. Close PWM
+8. Disconnect device
+9. Release device handle
 
 ## Troubleshooting
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+
+## Reference
+
+1. [WPC official website](https://www.wpc.com.tw/)
+2. [WPC technical support center](https://wpc.super.site/)
+3. [WPC Python driver documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)

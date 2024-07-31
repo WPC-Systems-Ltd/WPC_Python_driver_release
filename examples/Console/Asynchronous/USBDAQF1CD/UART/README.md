@@ -32,10 +32,22 @@ Then, we take `USBDAQF1CD` for example.
 
 ## UART Interfacing SOP
 
-Create device handle -> Connect to device -> Open UART port -> Set UART parameters -> Write data via UART -> Read data via UART -> Close UART port -> Disconnect device -> Release device handle.
-
-A return value of 0 indicates successful communication with the USBDAQF1CD.
+1. Create device handle
+2. Connect to device
+3. Open UART port
+4. Set UART parameters
+5. Write data via UART
+6. Read data via UART
+7. Close UART port
+8. Disconnect device
+9. Release device handle
 
 ## Troubleshooting
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+
+## Reference
+
+1. [WPC official website](https://www.wpc.com.tw/)
+2. [WPC technical support center](https://wpc.super.site/)
+3. [WPC Python driver documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)

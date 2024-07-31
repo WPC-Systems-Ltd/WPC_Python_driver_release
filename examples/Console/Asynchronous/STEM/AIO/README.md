@@ -12,7 +12,7 @@ To create your own application, start with this simple template and then include
 
 ## How To Use This Example
 
-### The limitation of the sampling rate.
+### The Limitation Of The Sampling Rate.
 
 - For STEM, AO writing can be called while AI is streaming under a specific speed.
 - This speed depends on the number of enabled chip-selects.
@@ -32,16 +32,30 @@ Then, we take `STEM` for example.
 
 ### STEM
 
-- AO0 <-----> AI0, AO1 <-----> AI1, AO2 <-----> AI2, ........, AO6 <-----> AI6, AO7 <-----> AI7
-
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-STEM.JPG" alt="drawing" width="600"/>
 
 ## AIO Interfacing SOP
 
-Create device handle -> Connect to device -> Open AI & AO port -> Write AO signal -> Read AI signal -> Close AI & AO port -> Disconnect device -> Release device handle.
-
-A return value of 0 indicates successful communication with the STEM.
+1. Create device handle
+2. Connect to device
+3. Open AI & AO port
+4. Configure AI & AO parameters
+5. Write AO signal
+6  Read AI on demand (Depends)
+7. Open AI streaming (Depends)
+8. Start AI streaming (Depends)
+9 Read AI streaming (Depends)
+10. Close AI streaming (Depends)
+11. Close AI & AO port
+12. Disconnect device
+13. Release device handle
 
 ## Troubleshooting
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+
+## Reference
+
+1. [WPC official website](https://www.wpc.com.tw/)
+2. [WPC technical support center](https://wpc.super.site/)
+3. [WPC Python driver documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)

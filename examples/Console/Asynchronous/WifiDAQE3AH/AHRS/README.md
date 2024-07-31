@@ -22,24 +22,25 @@ Here we use WifiDAQE3AH as an example.
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-WifiDAQE3AH.JPG" alt="drawing" width="600"/>
 
-## Get AHRS's estimation with mode.
-
-| Mode |  Description                                                   |
-|------|----------------------------------------------------------------|
-|   0  | 3-axis of orientation                                          |
-|   1  | 3-axis of acceleration                                         |
-|   2  | 3-axis of angular velocity                                     |
-|   3  | 3-axis of orientation and acceleration                         |
-|   4  | 3-axis of orientation and angular velocity                     |
-|   5  | 3-axis of angular velocity and acceleration                    |
-|   6  | 3-axis of orientation and angular velocity and acceleration    |
 
 ## AHRS Interfacing SOP
 
-Create device handle -> Connect to device -> Open AHRS port -> Read AHRS data -> Close AHRS port -> Disconnect device -> Release device handle.
-
-A return value of 0 indicates successful communication with the WifiDAQE3AH.
+1. Create device handle
+2. Connect to device
+3. Open AHRS port
+4. Start AHRS
+5. Get AHRS data
+6. Stop AHRS
+7. Close AHRS port
+8. Disconnect device
+9. Release device handle
 
 ## Troubleshooting
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+
+## Reference
+
+1. [WPC official website](https://www.wpc.com.tw/)
+2. [WPC technical support center](https://wpc.super.site/)
+3. [WPC Python driver documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)

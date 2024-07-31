@@ -25,13 +25,24 @@ Both connect CAN_H to CAN_H and CAN_L to CAN_L then short pin35, pin36 together 
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-USBDAQF1CD.JPG" alt="drawing" width="600"/>
 
-
 ## CAN Interfacing SOP
 
-Create device handle -> Connect to device -> Open CAN port -> Set CAN parameters -> Write data via CAN -> Read data via CAN -> Close CAN port -> Disconnect device -> Release device handle.
-
-A return value of 0 indicates successful communication with the USBDAQF1CD.
+1. Create device handle
+2. Connect to device
+3. Open CAN port
+4. Set CAN parameters
+5. Write data via CAN
+6. Read data via CAN
+7. Close CAN port
+8. Disconnect device
+7. Release device handle
 
 ## Troubleshooting
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+
+## Reference
+
+1. [WPC official website](https://www.wpc.com.tw/)
+2. [WPC technical support center](https://wpc.super.site/)
+3. [WPC Python driver documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)

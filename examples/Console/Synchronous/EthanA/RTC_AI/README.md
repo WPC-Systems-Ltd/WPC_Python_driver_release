@@ -36,8 +36,12 @@ Then, we take `EthanA` for example.
 12. Disconnect device
 13. Release device handle
 
-A return value of 0 indicates successful communication with the EthanA.
-
 ## Troubleshooting
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+
+## Reference
+
+1. [WPC official website](https://www.wpc.com.tw/)
+2. [WPC technical support center](https://wpc.super.site/)
+3. [WPC Python driver documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)

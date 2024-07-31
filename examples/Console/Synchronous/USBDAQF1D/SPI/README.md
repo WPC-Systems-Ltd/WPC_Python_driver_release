@@ -51,9 +51,7 @@ For more information, please refer to datasheet of the [25LC640 EEPROM](https://
 8. Close DO pins
 9. Close SPI port
 10 Disconnect device
-11. Release device handle.
-
-A return value of 0 indicates successful communication with the USBDAQF1D.
+11. Release device handle
 
 ## SPI Write
 1. CS low
@@ -71,3 +69,9 @@ A return value of 0 indicates successful communication with the USBDAQF1D.
 ## Troubleshooting
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+
+## Reference
+
+1. [WPC official website](https://www.wpc.com.tw/)
+2. [WPC technical support center](https://wpc.super.site/)
+3. [WPC Python driver documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)

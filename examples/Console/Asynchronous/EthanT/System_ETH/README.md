@@ -5,7 +5,6 @@
 ## Overview
 
 This example project demonstrates how to use WPC python driver to get basic ethernet information from EthanT.
-such as IP, submask and MAC.
 
 For detailed API usage, refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
@@ -20,3 +19,9 @@ To run this example, you will need a EthanT product.
 ## Troubleshooting
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+
+## Reference
+
+1. [WPC official website](https://www.wpc.com.tw/)
+2. [WPC technical support center](https://wpc.super.site/)
+3. [WPC Python driver documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)

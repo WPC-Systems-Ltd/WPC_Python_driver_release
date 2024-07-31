@@ -43,10 +43,22 @@ For more information, please refer to datasheet of the [24C08C EEPROM](https://g
 
 ## I2C Interfacing SOP
 
-Create device handle -> Connect to device -> Open I2C port -> Set I2C parameters -> Write data via I2C -> Read data via I2C -> Close I2C port -> Disconnect device -> Release device handle.
-
-A return value of 0 indicates successful communication with the USBDAQF1TD.
+1. Create device handle
+2. Connect to device
+3. Open I2C port
+4. Set I2C parameters
+5. Write data via I2C
+6. Read data via I2C
+7. Close I2C port
+8. Disconnect device
+9. Release device handle
 
 ## Troubleshooting
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+
+## Reference
+
+1. [WPC official website](https://www.wpc.com.tw/)
+2. [WPC technical support center](https://wpc.super.site/)
+3. [WPC Python driver documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)

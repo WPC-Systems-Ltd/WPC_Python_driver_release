@@ -22,16 +22,31 @@ Then, we take `USBDAQF1RD` for example.
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-USBDAQF1RD.JPG" alt="drawing" width="600"/>
 
-## DIO Interfacing SOP
+## DO Interfacing SOP
 
-# DO
-Create device handle -> Connect to device -> Open DO port / pins -> Write high or low to digital output -> Close DO port / pins -> Disconnect device -> Release device handle.
+1. Create device handle
+2. Connect to device
+3. Open DO port/pins
+4. Write high or low value
+5. Close DO port/pins
+6. Disconnect device
+7. Release device handle
 
-# DI
-Create device handle -> Connect to device -> Open DI port / pins -> Read high or low from digital input -> Close DI port / pins -> Disconnect device -> Release device handle.
-
-A return value of 0 indicates successful communication with the USBDAQF1RD.
+## DI Interfacing SOP
+1. Create device handle
+2. Connect to device
+3. Open DI port/pins
+4. Read high or low value
+5. Close DI port/pins
+6. Disconnect device
+7. Release device handle
 
 ## Troubleshooting
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+
+## Reference
+
+1. [WPC official website](https://www.wpc.com.tw/)
+2. [WPC technical support center](https://wpc.super.site/)
+3. [WPC Python driver documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)

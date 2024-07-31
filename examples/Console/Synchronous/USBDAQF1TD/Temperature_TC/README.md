@@ -31,10 +31,14 @@ Then, we take `USBDAQF1TD` for example.
 5. Read thermocouple data
 6. Close thermal port
 7. Disconnect device
-8. Release device handle.
-
-A return value of 0 indicates successful communication with the USBDAQF1TD.
+8. Release device handle
 
 ## Troubleshooting
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+
+## Reference
+
+1. [WPC official website](https://www.wpc.com.tw/)
+2. [WPC technical support center](https://wpc.super.site/)
+3. [WPC Python driver documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)

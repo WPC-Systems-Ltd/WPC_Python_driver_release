@@ -41,16 +41,37 @@ For more information, please refer to datasheet of the [25LC640 EEPROM](https://
 
 ## SPI Interfacing SOP
 
-Create device handle -> Connect to device -> Open DO pins -> Open SPI port -> Set SPI parameters -> Write data via SPI -> Read data via SPI -> Close DO pins -> Close SPI port -> Disconnect device -> Release device handle.
+1. Create device handle
+2. Connect to device
+3. Open DO pins
+4. Open SPI port
+5. Set SPI parameters
+6. Write data via SPI
+7. Read data via SPI
+8. Close DO pins
+9. Close SPI port
+10 Disconnect device
+11. Release device handle
 
-A return value of 0 indicates successful communication with the USBDAQF1D.
+## SPI Write
+1. CS low
+2. Write `WREN` bytes
+3. CS high
+4. CS low
+5. Write bytes into address
+6. CS high
 
-## SPI write
-CS low -> write `WREN` bytes -> CS High -> CS low -> Write bytes into address -> CS High
-
-## SPI read
-CS low -> Read bytes from address -> CS High
+## SPI Read
+1. CS low
+2. Read bytes from address
+3. CS high
 
 ## Troubleshooting
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+
+## Reference
+
+1. [WPC official website](https://www.wpc.com.tw/)
+2. [WPC technical support center](https://wpc.super.site/)
+3. [WPC Python driver documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)

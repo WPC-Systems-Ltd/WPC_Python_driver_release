@@ -24,10 +24,21 @@ Then, we take `USBDAQF1TD` for example.
 
 ## Thermocouple Interfacing SOP
 
-Create device handle -> Connect to device -> Open Thermal port -> Set Thermal parameters ->  Read thermocouple data -> Close Thermal port -> Disconnect device -> Release device handle.
-
-A return value of 0 indicates successful communication with the USBDAQF1TD.
+1. Create device handle
+2. Connect to device
+3. Open thermal port
+4. Set thermal parameters
+5. Read thermocouple data
+6. Close thermal port
+7. Disconnect device
+8. Release device handle
 
 ## Troubleshooting
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+
+## Reference
+
+1. [WPC official website](https://www.wpc.com.tw/)
+2. [WPC technical support center](https://wpc.super.site/)
+3. [WPC Python driver documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)
