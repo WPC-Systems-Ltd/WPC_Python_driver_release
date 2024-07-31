@@ -1,6 +1,34 @@
 WPC Python driver release changelog
 ===================================
 
+v3.1.2 Date: 2024/07/31, Developer: Chunglee_people
+---------------------------------------------------
+### Fixed
+- Verify example code with python 3.11 & 3.12
+- Copy `pinout & product` folder into WPC Python driver release
+
+v3.1.1 Date: 2024/07/31, Developer: Chunglee_people
+---------------------------------------------------
+### Added
+- Support Python 3.11, 3.12
+- error code: 8107 - The DI channel is not available
+- error code: 8108 - The DO channel is not available
+- error code: 8205 - The AI trigger mode is not valid or is not recognized
+- DIO example code in Wifi-DAQ-E3-AOD
+- RTC example code: RTC_trigger_AI_N_samples, RTC_trigger_AI_continuous
+- Broadcast example code: find_networkdevices_blink
+- system example code: get_device_alias, set_device_alias
+- SNTP example code: SNTP configure
+- AI API: AI_openStreaming, AI_startStreaming, AI_closeStreaming, AI_setTriggerMode, get_device_alias, set_device_alias, Bcst_checkMACAndRing
+- Ethan series devices support `SNTP` module
+- EthanA & EthanA2 support `RTC_AI` module
+
+### Changed
+- Rename AI API name: AI_stop -> AI_closeStreaming, AI_start -> AI_startStreaming
+
+### Fixed
+- Synchronize product feature with DM
+
 v3.0.27 Date: 2024/05/20, Developer: Chunglee_people
 ---------------------------------------------------
 ### Added

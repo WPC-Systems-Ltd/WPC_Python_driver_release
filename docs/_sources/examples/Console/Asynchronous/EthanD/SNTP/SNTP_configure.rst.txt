@@ -1,0 +1,6 @@
+SNTP configure
+==============
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/EthanD/SNTP/SNTP_configure.py
+   :language: python
+   :linenos:
