@@ -1,21 +1,28 @@
 # Relay
 > **Note**
-> Make sure you are connected to correct IP or serial number.
+> Ensure you are connected to the correct IP address or serial number.
 
 ## Overview
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-EthanL.JPG" alt="drawing" width="600"/>
 
-In order to use API correctly, please refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
+## Relay Interfacing SOP
 
-If you'd like to create your own application, start by using this simple template, and then include your own code.
-
-## Relay interfacing SOP
-
-Create device handle -> Connect to device -> Open Relay -> Write DO -> Close Relay -> Disconnect device -> Release device handle.
-
-If function return value is 0, it represents communication with `EthanL` successfully.
+1. Create device handle
+2. Connect to device
+3. Open relay
+4. Write DO
+5. Read relay counter
+6. Close relay
+7. Disconnect device
+8. Release device handle
 
 ## Troubleshooting
 
-For any technical support, please register new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+
+## Reference
+
+1. [WPC official website](https://www.wpc.com.tw/)
+2. [WPC technical support center](https://wpc.super.site/)
+3. [WPC Python driver documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)

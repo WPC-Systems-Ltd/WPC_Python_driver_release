@@ -1,0 +1,6 @@
+Set device alias
+================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/EthanL/System_ETH/set_device_alias.py
+   :language: python
+   :linenos:

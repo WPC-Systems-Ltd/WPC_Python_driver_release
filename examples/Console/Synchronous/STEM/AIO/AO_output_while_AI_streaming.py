@@ -103,9 +103,13 @@ def main():
         err = dev.AI_enableCS(slot, chip_select, timeout)
         print(f"AI_enableCS in slot {slot}, status: {err}")
 
-        ## Start AI
-        err = dev.AI_start(slot, timeout)
-        print(f"AI_start in slot {slot}, status: {err}")
+        ## Open AI streaming
+        err = dev.AI_openStreaming(slot, timeout)
+        print(f"AI_openStreaming in slot {slot}, status: {err}")
+
+        ## Start AI streaming
+        err = dev.AI_startStreaming(slot, timeout)
+        print(f"AI_startStreaming in slot {slot}, status: {err}")
 
         counter = 0
         data_len = 1
@@ -133,9 +137,9 @@ def main():
     except KeyboardInterrupt:
         print("Press keyboard")
     finally:
-        ## Stop AI
-        err = dev.AI_stop(slot, timeout)
-        print(f"AI_stop in slot {slot}, status: {err}")
+        ## Close AI streaming
+        err = dev.AI_closeStreaming(slot, timeout)
+        print(f"AI_closeStreaming in slot {slot}, status: {err}")
 
         ## Close AI
         err = dev.AI_close(slot, timeout)

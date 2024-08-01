@@ -45,11 +45,11 @@ async def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        channel = 8
         mode = 2 ## 0 : On demand, 1 : N-samples, 2 : Continuous.
         sampling_rate = 200
         read_points = 200
         read_delay = 0.2 ## second
+        
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
@@ -77,16 +77,20 @@ async def main():
         err = await dev.AI_setSamplingRate_async(port, sampling_rate)
         print(f"AI_setSamplingRate_async {sampling_rate} in port {port}, status: {err}")
 
-        ## Start AI
-        err = await dev.AI_start_async(port)
-        print(f"AI_start_async in port {port}, status: {err}")
+        ## Open AI streaming
+        err = await dev.AI_openStreaming_async(port)
+        print(f"AI_openStreaming_async in port {port}, status: {err}")
+
+        ## Start AI streaming
+        err = await dev.AI_startStreaming_async(port)
+        print(f"AI_startStreaming_async in port {port}, status: {err}")
 
         ## Wait for acquisition
         await asyncio.sleep(1) ## delay [s]
 
-        ## Stop AI
-        err = await dev.AI_stop_async(port)
-        print(f"AI_stop_async in port {port}, status: {err}")
+        ## Close AI streaming
+        err = await dev.AI_closeStreaming_async(port)
+        print(f"AI_closeStreaming_async in port {port}, status: {err}")
 
         data_len = 1
         while data_len > 0:

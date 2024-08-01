@@ -1,0 +1,6 @@
+Get device alias
+================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/USBDAQF1AD/System_USB/get_device_alias.py
+   :language: python
+   :linenos:
