@@ -105,9 +105,13 @@ def main():
         err = dev.AI_setNumSamples(slot, samples, timeout)
         print(f"AI_setNumSamples {samples} in slot {slot}, status: {err}")
 
-        ## Start AI
-        err = dev.AI_start(slot, timeout)
-        print(f"AI_start in slot {slot}, status: {err}")
+        ## Open AI streaming
+        err = dev.AI_openStreaming(slot, timeout)
+        print(f"AI_openStreaming in slot {slot}, status: {err}")
+
+        ## Start AI streaming
+        err = dev.AI_startStreaming(slot, timeout)
+        print(f"AI_startStreaming in slot {slot}, status: {err}")
 
         ## Read AI data
         ai_2Dlist = dev.AI_readStreaming(slot, read_points, read_delay)
@@ -124,9 +128,9 @@ def main():
         else:
             print('NG')
 
-        ## Stop AI
-        err = dev.AI_stop(slot, timeout)
-        print(f"AI_stop in slot {slot}, status: {err}")
+        ## Close AI streaming
+        err = dev.AI_closeStreaming(slot, timeout)
+        print(f"AI_closeStreaming in slot {slot}, status: {err}")
 
         ## Close AI
         err = dev.AI_close(slot, timeout)

@@ -1,18 +1,18 @@
 # RTC-AI
 > **Note**
-> Make sure you are connected to correct IP or serial number.
+> Ensure you are connected to the correct IP address or serial number.
 
 ## Overview
 
-This example project demonstrates how to use WPC python driver to use RTC-AI
+This example project demonstrates how to use RTC-AI with WPC python driver.
 
-In order to use API correctly, please refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
+For detailed API usage, refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-If you'd like to create your own application, start by using this simple template, and then include your own code.
+To create your own application, start with this simple template and then include your custom code.
 
-### Hardware Requirement
+### Hardware Requirements
 
-In order to run this example, you should get EthanA product, which contains RTC-AI function
+To run this example, you will need a EthanA product, which contains RTC-AI function
 
 Then, we take `EthanA` for example.
 
@@ -20,12 +20,28 @@ Then, we take `EthanA` for example.
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-EthanA.JPG" alt="drawing" width="600"/>
 
-## RTC-AI interfacing SOP
+## RTC-AI Interfacing SOP
 
-Create device handle -> Connect to device -> Open AI port -> Set RTC-AI mode -> Set RTC -> Start RTC alarm -> Read AI data -> Close AI port -> Disconnect device -> Release device handle.
-
-If function return value is 0, it represents communication with `EthanA` successfully.
+1. Create device handle
+2. Connect to device
+3. Open AI port
+4. Set AI parameters
+5. Set AI trigger mode
+6. Set RTC
+7. Open AI streaming
+8. Start RTC alarm
+9. Read AI streaming
+10. Close AI streaming
+11. Close AI port
+12. Disconnect device
+13. Release device handle
 
 ## Troubleshooting
 
-For any technical support, please register new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+
+## Reference
+
+1. [WPC official website](https://www.wpc.com.tw/)
+2. [WPC technical support center](https://wpc.super.site/)
+3. [WPC Python driver documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)

@@ -99,9 +99,13 @@ async def main():
             err = await dev.AI_setSamplingRate_async(slot, sampling_rate)
             print(f"AI_setSamplingRate_async {sampling_rate} in slot {slot}, status: {err}")
 
-            ## Start AI
-            err = await dev.AI_start_async(slot)
-            print(f"AI_start_async in slot {slot}, status: {err}")
+            ## Open AI streaming
+            err = await dev.AI_openStreaming_async(slot)
+            print(f"AI_openStreaming_async in slot {slot}, status: {err}")
+
+            ## Start AI streaming
+            err = await dev.AI_startStreaming_async(slot)
+            print(f"AI_startStreaming_async in slot {slot}, status: {err}")
 
             ## Wait for acquisition
             await asyncio.sleep(1) ## delay [s]
@@ -122,9 +126,9 @@ async def main():
         print("Press keyboard")
     finally:
         for slot in slot_list:
-            ## Stop AI
-            err = await dev.AI_stop_async(slot)
-            print(f"AI_stop_async in slot {slot}, status: {err}")
+            ## Close AI streaming
+            err = await dev.AI_closeStreaming_async(slot)
+            print(f"AI_closeStreaming_async in slot {slot}, status: {err}")
 
             ## Close AI
             err = await dev.AI_close_async(slot)

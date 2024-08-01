@@ -1,0 +1,6 @@
+RTC trigger AI N samples
+========================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/EthanA2/RTC_AI/RTC_trigger_AI_N_samples.py
+   :language: python
+   :linenos:

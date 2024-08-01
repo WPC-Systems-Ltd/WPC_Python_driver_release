@@ -58,7 +58,7 @@ def main():
     try:
         ## Parameters setting
         slot = 1 ## Connect AIO module to slot
-        mode = 2 ## 0 : On demand, 1 : N-samples, 2 : Continuous.
+        mode = 2 ## 0 : On demand, 1 : N-samples, 2 : Continuous
         sampling_rate = 200
         read_points = 200
         read_delay = 0.2 ## second
@@ -99,9 +99,13 @@ def main():
         err = dev.AI_setSamplingRate(slot, sampling_rate, timeout)
         print(f"AI_setSamplingRate {sampling_rate} in slot {slot}, status: {err}")
 
-        ## Start AI
-        err = dev.AI_start(slot, timeout)
-        print(f"AI_start in slot {slot}, status: {err}")
+        ## Open AI streaming
+        err = dev.AI_openStreaming(slot, timeout)
+        print(f"AI_openStreaming in slot {slot}, status: {err}")
+
+        ## Start AI streaming
+        err = dev.AI_startStreaming(slot, timeout)
+        print(f"AI_startStreaming in slot {slot}, status: {err}")
 
         ## Wait a while for data acquisition
         time.sleep(1) ## delay [s]
@@ -119,9 +123,9 @@ def main():
             ## Update data len
             data_len = len(ai_2Dlist)
 
-        ## Close AI
-        err = dev.AI_close(slot, timeout)
-        print(f"AI_close in slot {slot}, status: {err}")
+        ## Close AI streaming
+        err = dev.AI_closeStreaming(slot, timeout)
+        print(f"AI_closeStreaming in slot {slot}, status: {err}")
     except Exception as err:
         pywpc.printGenericError(err)
 

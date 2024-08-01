@@ -45,9 +45,8 @@ async def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        channel = 8
         mode = 0
-        chip_select = [0, 1]
+        channel = 8
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()

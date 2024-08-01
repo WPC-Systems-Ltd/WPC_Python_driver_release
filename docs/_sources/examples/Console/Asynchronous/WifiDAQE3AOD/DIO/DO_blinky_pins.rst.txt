@@ -1,0 +1,6 @@
+DO blinky pins
+==============
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/WifiDAQE3AOD/DIO/DO_blinky_pins.py
+   :language: python
+   :linenos:

@@ -40,12 +40,14 @@ async def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        mode = 4 ## 3 : RTC On demand, 4 : RTC N-samples, 5 : RTC Continuous
+        mode = 1 ## 1 : N-samples, 2 : Continuous
+        trigger_mode = 1 ## 1 : Use RTC to start AI streaming
         sampling_rate = 200
         samples = 200
         read_points = 200
         read_delay = 0.5 ## second
         mode_alarm = 0
+        year = 2024
         month = 4
         day = 2
         hour = 15
@@ -65,6 +67,10 @@ async def main():
         err = await dev.AI_setMode_async(port, mode)
         print(f"AI_setMode_async {mode} in port {port}, status: {err}")
 
+        ## Set AI trigger mode
+        err = await dev.AI_setTriggerMode_async(port, trigger_mode)
+        print(f"AI_setTriggerMode {trigger_mode} in port {port}, status: {err}")
+
         ## Set AI sampling rate
         err = await dev.AI_setSamplingRate_async(port, sampling_rate)
         print(f"AI_setSamplingRate_async {sampling_rate} in port {port}, status: {err}")
@@ -74,18 +80,26 @@ async def main():
         print(f"AI_setNumSamples_async {samples} in port {port}, status: {err}")
 
         ## Set RTC
-        err = await dev.Sys_setRTC_async(2024, month, day, hour, minute, second-10)
-        print(f"Set RTC to 2024-{month}-{day}, {hour}:{minute}:{second-10}, status: {err}")
+        err = await dev.Sys_setRTC_async(year, month, day, hour, minute, second-10)
+        print(f"Set RTC to {year}-{month}-{day}, {hour}:{minute}:{second-10}, status: {err}")
+
+        ## Open AI streaming
+        err = await dev.AI_openStreaming_async(port)
+        print(f"AI_openStreaming_async in port {port}, status: {err}")
 
         ## Start RTC alarm after 10 seconds
         err = await dev.Sys_startRTCAlarm_async(mode_alarm, day, hour, minute, second)
-        print(f"Alarm RTC to 2024-{month}-{day}, {hour}:{minute}:{second}, status: {err}")
+        print(f"Alarm RTC to {year}-{month}-{day}, {hour}:{minute}:{second}, status: {err}")
 
         for i in range(15):
             ## Read data acquisition
             ai_2Dlist = await dev.AI_readStreaming_async(port, read_points, read_delay)
             print(f"len: {len(ai_2Dlist)}, {await dev.Sys_getRTC_async()}")
             await asyncio.sleep(1) ## delay [s]
+
+        ## Close AI streaming
+        err = await dev.AI_closeStreaming_async(port)
+        print(f"AI_closeStreaming_async in port {port}, status: {err}")
 
         ## Close AI
         err = await dev.AI_close_async(port)

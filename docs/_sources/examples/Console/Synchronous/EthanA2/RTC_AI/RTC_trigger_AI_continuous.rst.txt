@@ -1,0 +1,6 @@
+RTC trigger AI continuous
+=========================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/EthanA2/RTC_AI/RTC_trigger_AI_continuous.py
+   :language: python
+   :linenos:

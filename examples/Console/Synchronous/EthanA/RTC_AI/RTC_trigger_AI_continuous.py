@@ -37,12 +37,14 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        mode = 5 ## 3 : RTC On demand, 4 : RTC N-samples, 5 : RTC Continuous
+        mode = 2 ## 1 : N-samples, 2 : Continuous
+        trigger_mode = 1 ## 1 : Use RTC to start AI streaming
         sampling_rate = 1000
         read_points = 200
         read_delay = 0.5 ## second
         timeout = 3 ## second
         mode_alarm = 0
+        year = 2024
         month = 4
         day = 2
         hour = 15
@@ -62,17 +64,25 @@ def main():
         err = dev.AI_setMode(port, mode, timeout)
         print(f"AI_setMode {mode} in port {port}, status: {err}")
 
+        ## Set AI trigger mode
+        err = dev.AI_setTriggerMode(port, trigger_mode, timeout)
+        print(f"AI_setTriggerMode {trigger_mode} in port {port}, status: {err}")
+
         ## Set AI sampling rate
         err = dev.AI_setSamplingRate(port, sampling_rate, timeout)
         print(f"AI_setSamplingRate {sampling_rate} in port {port}, status: {err}")
 
         ## Set RTC
-        err = dev.Sys_setRTC(2024, month, day, hour, minute, second-10, timeout)
-        print(f"Set RTC to 2024-{month}-{day}, {hour}:{minute}:{second-10}, status: {err}")
+        err = dev.Sys_setRTC(year, month, day, hour, minute, second-10, timeout)
+        print(f"Set RTC to {year}-{month}-{day}, {hour}:{minute}:{second-10}, status: {err}")
+
+        ## Open AI streaming
+        err = dev.AI_openStreaming(port, timeout)
+        print(f"AI_openStreaming in port {port}, status: {err}")
 
         ## Start RTC alarm after 10 seconds
         err = dev.Sys_startRTCAlarm(mode_alarm, day, hour, minute, second, timeout)
-        print(f"Alarm RTC to 2024-{month}-{day}, {hour}:{minute}:{second}, status: {err}")
+        print(f"Alarm RTC to {year}-{month}-{day}, {hour}:{minute}:{second}, status: {err}")
 
         stop_flag = 1
         for i in range(15):
@@ -80,10 +90,9 @@ def main():
             ai_2Dlist = dev.AI_readStreaming(port, read_points, read_delay)
             print(f"len: {len(ai_2Dlist)}, {dev.Sys_getRTC()}" )
             if len(ai_2Dlist)> 0 and stop_flag == 1 :
-                ## Stop AI
-                err = dev.AI_stop(port, timeout)
-                print(f"AI_stop in port {port}, status: {err}")
-
+                ## Close AI streaming
+                err = dev.AI_closeStreaming(port, timeout)
+                print(f"AI_closeStreaming in port {port}, status: {err}")
                 stop_flag = 0
             time.sleep(1)
 

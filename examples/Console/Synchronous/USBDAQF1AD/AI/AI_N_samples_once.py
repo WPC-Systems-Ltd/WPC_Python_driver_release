@@ -45,8 +45,8 @@ def main():
     try:
         ## Parameters setting
         port = 0 ## Depend on your device
-        channel = 8
         mode = 1 ## 0 : On demand, 1 : N-samples, 2 : Continuous
+        channel = 8
         sampling_rate = 1000
         samples = 200
         read_points = 200
@@ -62,6 +62,7 @@ def main():
         err = dev.AI_open(port, timeout)
         print(f"AI_open in port {port}, status: {err}")
         
+
         ## Set AI channel
         err = dev.AI_enableChannel(port, channel, timeout)
         print(f"AI_enableChannel in port {port}, status: {err}")
@@ -78,9 +79,13 @@ def main():
         err = dev.AI_setNumSamples(port, samples, timeout)
         print(f"AI_setNumSamples {samples} in port {port}, status: {err}")
 
-        ## Start AI
-        err = dev.AI_start(port, timeout)
-        print(f"AI_start in port {port}, status: {err}")
+        ## Open AI streaming
+        err = dev.AI_openStreaming(port, timeout)
+        print(f"AI_openStreaming in port {port}, status: {err}")
+
+        ## Start AI streaming
+        err = dev.AI_startStreaming(port, timeout)
+        print(f"AI_startStreaming in port {port}, status: {err}")
 
         ## Read AI
         ai_2Dlist = dev.AI_readStreaming(port, read_points, read_delay)
@@ -97,9 +102,9 @@ def main():
         else:
             print('Error: at least 1 sample has wrong length')
 
-        ## Stop AI
-        err = dev.AI_stop(port, timeout)
-        print(f"AI_stop in port {port}, status: {err}")
+        ## Close AI streaming
+        err = dev.AI_closeStreaming(port, timeout)
+        print(f"AI_closeStreaming in port {port}, status: {err}")
 
         ## Close AI
         err = dev.AI_close(port, timeout)

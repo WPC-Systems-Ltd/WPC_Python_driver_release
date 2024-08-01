@@ -52,11 +52,14 @@ Error code,Error message
 -8104,The relay counter index error is not valid or is not recognized.
 -8105,The relay port is not available or is already occupied by another process.
 -8106,The encoder channel is not available
+-8107,The DI channel is not available
+-8108,The DO channel is not available
 -8200,The AI channel is not available.
 -8201,The AI port is not available or is already occupied by another process.
 -8202,The AI chip is not valid or is not recognized.
 -8203,The AI mode is not valid or is not recognized.
 -8204,The AI sampling rate is not valid or is not recognized.
+-8205,The AI trigger mode is not valid or is not recognized.
 -8300,The AO port is not available or is already occupied by another process.
 -8301,The AO generation mode is not valid or is not recognized.
 -8302,The AO span mode is not valid or is not recognized.

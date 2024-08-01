@@ -9,6 +9,8 @@ Device finder
 
    examples/Console/Asynchronous/DeviceFinder/Find_devices/find_all_devices.rst
 
+   examples/Console/Asynchronous/DeviceFinder/Find_devices/find_networkdevices_blink.rst
+
 
 STEM
 ----
@@ -60,6 +62,10 @@ STEM
 
    examples/Console/Asynchronous/STEM/System_ETH/get_serial_number.rst
 
+   examples/Console/Asynchronous/STEM/System_ETH/get_device_alias.rst
+
+   examples/Console/Asynchronous/STEM/System_ETH/set_device_alias.rst
+
    examples/Console/Asynchronous/STEM/Tutorial/single_loop_thread.rst
 
    examples/Console/Asynchronous/STEM/Tutorial/single_loop_async.rst
@@ -98,6 +104,10 @@ EDrive-ST
    examples/Console/Asynchronous/EDriveST/System_ETH/set_and_get_RTC.rst
 
    examples/Console/Asynchronous/EDriveST/System_ETH/get_serial_number.rst
+
+   examples/Console/Asynchronous/EDriveST/System_ETH/get_device_alias.rst
+
+   examples/Console/Asynchronous/EDriveST/System_ETH/set_device_alias.rst
 
    examples/Console/Asynchronous/EDriveST/Tutorial/single_loop_thread.rst
 
@@ -168,6 +178,10 @@ EMotion
 
    examples/Console/Asynchronous/EMotion/System_ETH/get_serial_number.rst
 
+   examples/Console/Asynchronous/EMotion/System_ETH/get_device_alias.rst
+
+   examples/Console/Asynchronous/EMotion/System_ETH/set_device_alias.rst
+
    examples/Console/Asynchronous/EMotion/Tutorial/single_loop_thread.rst
 
    examples/Console/Asynchronous/EMotion/Tutorial/single_loop_async.rst
@@ -199,7 +213,7 @@ Ethan-A
 
    examples/Console/Asynchronous/EthanA/RTC_AI/RTC_trigger_AI_N_samples.rst
 
-   examples/Console/Asynchronous/EthanA/RTC_AI/RTC_trigger_AI_on_demand.rst
+   examples/Console/Asynchronous/EthanA/SNTP/SNTP_configure.rst
 
    examples/Console/Asynchronous/EthanA/System_ETH/get_network_info.rst
 
@@ -208,6 +222,10 @@ Ethan-A
    examples/Console/Asynchronous/EthanA/System_ETH/set_and_get_RTC.rst
 
    examples/Console/Asynchronous/EthanA/System_ETH/get_serial_number.rst
+
+   examples/Console/Asynchronous/EthanA/System_ETH/get_device_alias.rst
+
+   examples/Console/Asynchronous/EthanA/System_ETH/set_device_alias.rst
 
    examples/Console/Asynchronous/EthanA/Tutorial/single_loop_thread.rst
 
@@ -238,6 +256,12 @@ Ethan-A2
 
    examples/Console/Asynchronous/EthanA2/AI24Bit/AI_on_demand_once.rst
 
+   examples/Console/Asynchronous/EthanA2/RTC_AI/RTC_trigger_AI_continuous.rst
+
+   examples/Console/Asynchronous/EthanA2/RTC_AI/RTC_trigger_AI_N_samples.rst
+
+   examples/Console/Asynchronous/EthanA2/SNTP/SNTP_configure.rst
+
    examples/Console/Asynchronous/EthanA2/System_ETH/get_network_info.rst
 
    examples/Console/Asynchronous/EthanA2/System_ETH/hello_world.rst
@@ -245,6 +269,10 @@ Ethan-A2
    examples/Console/Asynchronous/EthanA2/System_ETH/set_and_get_RTC.rst
 
    examples/Console/Asynchronous/EthanA2/System_ETH/get_serial_number.rst
+
+   examples/Console/Asynchronous/EthanA2/System_ETH/get_device_alias.rst
+
+   examples/Console/Asynchronous/EthanA2/System_ETH/set_device_alias.rst
 
    examples/Console/Asynchronous/EthanA2/Tutorial/single_loop_thread.rst
 
@@ -275,6 +303,8 @@ Ethan-D
 
    examples/Console/Asynchronous/EthanD/PWM/PWM_generate.rst
 
+   examples/Console/Asynchronous/EthanD/SNTP/SNTP_configure.rst
+
    examples/Console/Asynchronous/EthanD/System_ETH/get_network_info.rst
 
    examples/Console/Asynchronous/EthanD/System_ETH/hello_world.rst
@@ -282,6 +312,10 @@ Ethan-D
    examples/Console/Asynchronous/EthanD/System_ETH/set_and_get_RTC.rst
 
    examples/Console/Asynchronous/EthanD/System_ETH/get_serial_number.rst
+
+   examples/Console/Asynchronous/EthanD/System_ETH/get_device_alias.rst
+
+   examples/Console/Asynchronous/EthanD/System_ETH/set_device_alias.rst
 
    examples/Console/Asynchronous/EthanD/Tutorial/single_loop_thread.rst
 
@@ -310,6 +344,8 @@ Ethan-EX-D
 
    examples/Console/Asynchronous/EthanEXD/DIO/DO_write_port.rst
 
+   examples/Console/Asynchronous/EthanEXD/SNTP/SNTP_configure.rst
+
    examples/Console/Asynchronous/EthanEXD/System_ETH/get_network_info.rst
 
    examples/Console/Asynchronous/EthanEXD/System_ETH/hello_world.rst
@@ -317,6 +353,10 @@ Ethan-EX-D
    examples/Console/Asynchronous/EthanEXD/System_ETH/set_and_get_RTC.rst
 
    examples/Console/Asynchronous/EthanEXD/System_ETH/get_serial_number.rst
+
+   examples/Console/Asynchronous/EthanEXD/System_ETH/get_device_alias.rst
+
+   examples/Console/Asynchronous/EthanEXD/System_ETH/set_device_alias.rst
 
    examples/Console/Asynchronous/EthanEXD/Tutorial/single_loop_thread.rst
 
@@ -335,6 +375,8 @@ Ethan-I
 
    examples/Console/Asynchronous/EthanI/AI24Bit/AI_on_demand_once.rst
 
+   examples/Console/Asynchronous/EthanI/SNTP/SNTP_configure.rst
+
    examples/Console/Asynchronous/EthanI/System_ETH/get_network_info.rst
 
    examples/Console/Asynchronous/EthanI/System_ETH/hello_world.rst
@@ -342,6 +384,10 @@ Ethan-I
    examples/Console/Asynchronous/EthanI/System_ETH/set_and_get_RTC.rst
 
    examples/Console/Asynchronous/EthanI/System_ETH/get_serial_number.rst
+
+   examples/Console/Asynchronous/EthanI/System_ETH/get_device_alias.rst
+
+   examples/Console/Asynchronous/EthanI/System_ETH/set_device_alias.rst
 
    examples/Console/Asynchronous/EthanI/Tutorial/single_loop_thread.rst
 
@@ -360,6 +406,8 @@ Ethan-IA
 
    examples/Console/Asynchronous/EthanIA/AI24Bit/AI_on_demand_once.rst
 
+   examples/Console/Asynchronous/EthanIA/SNTP/SNTP_configure.rst
+
    examples/Console/Asynchronous/EthanIA/System_ETH/get_network_info.rst
 
    examples/Console/Asynchronous/EthanIA/System_ETH/hello_world.rst
@@ -367,6 +415,10 @@ Ethan-IA
    examples/Console/Asynchronous/EthanIA/System_ETH/set_and_get_RTC.rst
 
    examples/Console/Asynchronous/EthanIA/System_ETH/get_serial_number.rst
+
+   examples/Console/Asynchronous/EthanIA/System_ETH/get_device_alias.rst
+
+   examples/Console/Asynchronous/EthanIA/System_ETH/set_device_alias.rst
 
    examples/Console/Asynchronous/EthanIA/Tutorial/single_loop_thread.rst
 
@@ -387,6 +439,8 @@ Ethan-L
 
    examples/Console/Asynchronous/EthanL/Relay/Relay_read_counters.rst
 
+   examples/Console/Asynchronous/EthanL/SNTP/SNTP_configure.rst
+
    examples/Console/Asynchronous/EthanL/System_ETH/get_network_info.rst
 
    examples/Console/Asynchronous/EthanL/System_ETH/hello_world.rst
@@ -394,6 +448,10 @@ Ethan-L
    examples/Console/Asynchronous/EthanL/System_ETH/set_and_get_RTC.rst
 
    examples/Console/Asynchronous/EthanL/System_ETH/get_serial_number.rst
+
+   examples/Console/Asynchronous/EthanL/System_ETH/get_device_alias.rst
+
+   examples/Console/Asynchronous/EthanL/System_ETH/set_device_alias.rst
 
    examples/Console/Asynchronous/EthanL/Tutorial/single_loop_thread.rst
 
@@ -416,6 +474,8 @@ Ethan-O
 
    examples/Console/Asynchronous/EthanO/AO/AO_waveform_gen.rst
 
+   examples/Console/Asynchronous/EthanO/SNTP/SNTP_configure.rst
+
    examples/Console/Asynchronous/EthanO/System_ETH/get_network_info.rst
 
    examples/Console/Asynchronous/EthanO/System_ETH/hello_world.rst
@@ -423,6 +483,10 @@ Ethan-O
    examples/Console/Asynchronous/EthanO/System_ETH/set_and_get_RTC.rst
 
    examples/Console/Asynchronous/EthanO/System_ETH/get_serial_number.rst
+
+   examples/Console/Asynchronous/EthanO/System_ETH/get_device_alias.rst
+
+   examples/Console/Asynchronous/EthanO/System_ETH/set_device_alias.rst
 
    examples/Console/Asynchronous/EthanO/Tutorial/single_loop_thread.rst
 
@@ -445,6 +509,8 @@ Ethan-P
 
    examples/Console/Asynchronous/EthanP/DPOT/DPOT_writeByChannel.rst
 
+   examples/Console/Asynchronous/EthanP/SNTP/SNTP_configure.rst
+
    examples/Console/Asynchronous/EthanP/System_ETH/get_network_info.rst
 
    examples/Console/Asynchronous/EthanP/System_ETH/hello_world.rst
@@ -452,6 +518,10 @@ Ethan-P
    examples/Console/Asynchronous/EthanP/System_ETH/set_and_get_RTC.rst
 
    examples/Console/Asynchronous/EthanP/System_ETH/get_serial_number.rst
+
+   examples/Console/Asynchronous/EthanP/System_ETH/get_device_alias.rst
+
+   examples/Console/Asynchronous/EthanP/System_ETH/set_device_alias.rst
 
    examples/Console/Asynchronous/EthanP/Tutorial/single_loop_thread.rst
 
@@ -474,6 +544,8 @@ Ethan-T
 
    examples/Console/Asynchronous/EthanT/Temperature_TC/TC_read_channel_status.rst
 
+   examples/Console/Asynchronous/EthanT/SNTP/SNTP_configure.rst
+
    examples/Console/Asynchronous/EthanT/System_ETH/get_network_info.rst
 
    examples/Console/Asynchronous/EthanT/System_ETH/hello_world.rst
@@ -481,6 +553,10 @@ Ethan-T
    examples/Console/Asynchronous/EthanT/System_ETH/set_and_get_RTC.rst
 
    examples/Console/Asynchronous/EthanT/System_ETH/get_serial_number.rst
+
+   examples/Console/Asynchronous/EthanT/System_ETH/get_device_alias.rst
+
+   examples/Console/Asynchronous/EthanT/System_ETH/set_device_alias.rst
 
    examples/Console/Asynchronous/EthanT/Tutorial/single_loop_thread.rst
 
@@ -544,6 +620,10 @@ USB-DAQ-F1-AD
    examples/Console/Asynchronous/USBDAQF1AD/System_USB/set_and_get_RTC.rst
 
    examples/Console/Asynchronous/USBDAQF1AD/System_USB/get_serial_number.rst
+
+   examples/Console/Asynchronous/USBDAQF1AD/System_USB/get_device_alias.rst
+
+   examples/Console/Asynchronous/USBDAQF1AD/System_USB/set_device_alias.rst
 
    examples/Console/Asynchronous/USBDAQF1AD/Tutorial/single_loop_thread.rst
 
@@ -616,6 +696,10 @@ USB-DAQ-F1-AOD
 
    examples/Console/Asynchronous/USBDAQF1AOD/System_USB/get_serial_number.rst
 
+   examples/Console/Asynchronous/USBDAQF1AOD/System_USB/get_device_alias.rst
+
+   examples/Console/Asynchronous/USBDAQF1AOD/System_USB/set_device_alias.rst
+
    examples/Console/Asynchronous/USBDAQF1AOD/Tutorial/single_loop_thread.rst
 
    examples/Console/Asynchronous/USBDAQF1AOD/Tutorial/single_loop_async.rst
@@ -671,6 +755,10 @@ USB-DAQ-F1-CD
 
    examples/Console/Asynchronous/USBDAQF1CD/System_USB/get_serial_number.rst
 
+   examples/Console/Asynchronous/USBDAQF1CD/System_USB/get_device_alias.rst
+
+   examples/Console/Asynchronous/USBDAQF1CD/System_USB/set_device_alias.rst
+
    examples/Console/Asynchronous/USBDAQF1CD/Tutorial/single_loop_thread.rst
 
    examples/Console/Asynchronous/USBDAQF1CD/Tutorial/single_loop_async.rst
@@ -722,6 +810,10 @@ USB-DAQ-F1-D
 
    examples/Console/Asynchronous/USBDAQF1D/System_USB/get_serial_number.rst
 
+   examples/Console/Asynchronous/USBDAQF1D/System_USB/get_device_alias.rst
+
+   examples/Console/Asynchronous/USBDAQF1D/System_USB/set_device_alias.rst
+
    examples/Console/Asynchronous/USBDAQF1D/Tutorial/single_loop_thread.rst
 
    examples/Console/Asynchronous/USBDAQF1D/Tutorial/single_loop_async.rst
@@ -762,6 +854,10 @@ USB-DAQ-F1-D-SNK
    examples/Console/Asynchronous/USBDAQF1DSNK/System_USB/set_and_get_RTC.rst
 
    examples/Console/Asynchronous/USBDAQF1DSNK/System_USB/get_serial_number.rst
+
+   examples/Console/Asynchronous/USBDAQF1DSNK/System_USB/get_device_alias.rst
+
+   examples/Console/Asynchronous/USBDAQF1DSNK/System_USB/set_device_alias.rst
 
    examples/Console/Asynchronous/USBDAQF1DSNK/Tutorial/single_loop_thread.rst
 
@@ -820,6 +916,10 @@ USB-DAQ-F1-RD
 
    examples/Console/Asynchronous/USBDAQF1RD/System_USB/get_serial_number.rst
 
+   examples/Console/Asynchronous/USBDAQF1RD/System_USB/get_device_alias.rst
+
+   examples/Console/Asynchronous/USBDAQF1RD/System_USB/set_device_alias.rst
+
    examples/Console/Asynchronous/USBDAQF1RD/Tutorial/single_loop_thread.rst
 
    examples/Console/Asynchronous/USBDAQF1RD/Tutorial/single_loop_async.rst
@@ -876,6 +976,10 @@ USB-DAQ-F1-TD
    examples/Console/Asynchronous/USBDAQF1TD/System_USB/set_and_get_RTC.rst
 
    examples/Console/Asynchronous/USBDAQF1TD/System_USB/get_serial_number.rst
+
+   examples/Console/Asynchronous/USBDAQF1TD/System_USB/get_device_alias.rst
+
+   examples/Console/Asynchronous/USBDAQF1TD/System_USB/set_device_alias.rst
 
    examples/Console/Asynchronous/USBDAQF1TD/Tutorial/single_loop_thread.rst
 
@@ -1046,6 +1150,18 @@ Wifi-DAQ-E3-AOD
    examples/Console/Asynchronous/WifiDAQE3AOD/AIO/AIO_all_channels_loopback.rst
 
    examples/Console/Asynchronous/WifiDAQE3AOD/AIO/AO_output_while_AI_streaming.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/DIO/DO_blinky_pins.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/DIO/DO_blinky_port.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/DIO/DIO_loopback_pins.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/DIO/DIO_loopback_port.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/DIO/DO_write_pins.rst
+
+   examples/Console/Asynchronous/WifiDAQE3AOD/DIO/DO_write_port.rst
 
    examples/Console/Asynchronous/WifiDAQE3AOD/SD/SD_read.rst
 

@@ -1,0 +1,6 @@
+Find network devices and blink
+==============================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/DeviceFinder/Find_devices/find_networkdevices_blink.py
+   :language: python
+   :linenos:

@@ -100,9 +100,13 @@ def main():
             err = dev.AI_setSamplingRate(slot, sampling_rate, timeout)
             print(f"AI_setSamplingRate {sampling_rate} in slot {slot}, status: {err}")
 
-            ## Start AI
-            err = dev.AI_start(slot, timeout)
-            print(f"AI_start in slot {slot}, status: {err}")
+            ## Open AI streaming
+            err = dev.AI_openStreaming(slot, timeout)
+            print(f"AI_openStreaming in slot {slot}, status: {err}")
+
+            ## Start AI streaming
+            err = dev.AI_startStreaming(slot, timeout)
+            print(f"AI_startStreaming in slot {slot}, status: {err}")
 
         data_len = 1
         while data_len > 0:
@@ -120,9 +124,9 @@ def main():
         print("Press keyboard")
     finally:
         for slot in slot_list:
-            ## Stop AI
-            err = dev.AI_stop(slot, timeout)
-            print(f"AI_stop in slot {slot}, status: {err}")
+            ## Close AI streaming
+            err = dev.AI_closeStreaming(slot, timeout)
+            print(f"AI_closeStreaming in slot {slot}, status: {err}")
 
             ## Close AI
             err = dev.AI_close(slot, timeout)

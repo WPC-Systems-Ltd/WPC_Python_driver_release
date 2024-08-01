@@ -1,16 +1,16 @@
 # AO
 > **Note**
-> Make sure you are connected to correct IP or serial number.
+> Ensure you are connected to the correct IP address or serial number.
 
 ## Overview
 
 This example project demonstrates how to use WPC python driver to output digital signal.
 
-In order to use API correctly, please refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
+For detailed API usage, refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-If you'd like to create your own application, start by using this simple template, and then include your own code.
+To create your own application, start with this simple template and then include your custom code.
 
-## How to use this example
+## How To Use This Example
 
 ### AO output range
 
@@ -20,9 +20,9 @@ If you'd like to create your own application, start by using this simple templat
 | Ethan-O         | -10 ~ 10 V |
 | STEM            | -10 ~ 10 V |
 
-### Hardware Requirement
+### Hardware Requirements
 
-In order to run this example, you should get WifiDAQE3AOD product, which contains AO function.
+To run this example, you will need a WifiDAQE3AOD product, which contains AO function.
 
 Then, we take `WifiDAQE3AOD` for example.
 
@@ -30,12 +30,27 @@ Then, we take `WifiDAQE3AOD` for example.
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-WifiDAQE3AOD.JPG" alt="drawing" width="600"/>
 
-## AO interfacing SOP
+## AO Interfacing SOP
 
-Create device handle -> Connect to device -> Open AO port -> Write AO signal -> Close AO port -> Disconnect device -> Release device handle.
+## AI Interfacing SOP
 
-If function return value is 0, it represents communication with `WifiDAQE3AOD` successfully.
+1. Create device handle
+2. Connect to device
+3. Open AO port
+4. Configure AO parameters
+5. Open AO streaming
+6. Start AO streaming
+7. Close AO streaming
+8. Close AO port
+9. Disconnect device
+10. Release device handle
 
 ## Troubleshooting
 
-For any technical support, please register new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
+
+## Reference
+
+1. [WPC official website](https://www.wpc.com.tw/)
+2. [WPC technical support center](https://wpc.super.site/)
+3. [WPC Python driver documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/)

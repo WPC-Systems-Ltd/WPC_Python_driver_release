@@ -3,9 +3,6 @@ Find_devices - find_all_devices.py with synchronous mode.
 
 This example demonstrates how to find all available USB and ethernet devices.
 
--------------------------------------------------------------------------------------
-Please change correct serial number or IP and port number BEFORE you run example code.
-
 For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
@@ -33,18 +30,18 @@ def main():
     ## Perform USB device information
     print("Find all USB devices....")
     try:
-        dev_list = dev.Bcst_enumerateUSBDevices()
-        for device in dev_list:
-            print(device)
+        dev_2d_list = dev.Bcst_enumerateUSBDevices()
+        for device_list in dev_2d_list:
+            print(device_list)
     except Exception as err:
         pywpc.printGenericError(err)
 
     ## Perform network device information
     print("Find all network devices....")
     try:
-        dev_list = dev.Bcst_enumerateNetworkDevices()
-        for device in dev_list:
-            print(device)
+        dev_2d_list = dev.Bcst_enumerateNetworkDevices()
+        for device_list in dev_2d_list:
+            print(device_list)
     except Exception as err:
         pywpc.printGenericError(err)
 
