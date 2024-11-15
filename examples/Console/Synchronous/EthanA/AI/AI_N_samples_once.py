@@ -61,7 +61,7 @@ def main():
         ## Open AI
         err = dev.AI_open(port, timeout)
         print(f"AI_open in port {port}, status: {err}")
-
+        
 
         ## Set AI acquisition mode to N-samples mode (1)
         err = dev.AI_setMode(port, mode, timeout)
