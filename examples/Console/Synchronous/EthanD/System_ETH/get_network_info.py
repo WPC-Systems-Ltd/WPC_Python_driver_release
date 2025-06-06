@@ -13,7 +13,7 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
 
 ## Python

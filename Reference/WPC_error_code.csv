@@ -45,6 +45,7 @@ Error code,Error message
 -8009,The input value is not the acceptable range.
 -8010,The Ini file extension name is not correct.
 -8011,No such file or directory.
+-8012,Failed to connect to drone. Please check COM port.
 -8100,The DI port is not available or is already occupied by another process.
 -8101,The DO port is not available or is already occupied by another process.
 -8102,The PWM channel is not available.
@@ -110,3 +111,6 @@ Error code,Error message
 -9200,The STEM slot is not available or is already occupied by another process.
 -9300,The DPOT port is not available or is already occupied by another process.
 -9301,The DPOT channel is not available.
+-9400,The Drone flight mode is not valid or is not recognized.
+-9401,Input value is out of the allowed range (-8 to 0).
+-9402,Input value is out of the allowed range (-8 to 0).
