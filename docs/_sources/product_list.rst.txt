@@ -53,3 +53,11 @@ USB devices
    products/USBDAQF1TD
    products/USBDAQF1RD
    products/USBDAQF1CD
+
+Drone devices
+-------------
+
+.. toctree::
+   :maxdepth: 4
+
+   products/Drone

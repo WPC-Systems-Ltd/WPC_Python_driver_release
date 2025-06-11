@@ -59,11 +59,39 @@ Install and Upgrade
 
    pip install wpcsys
 
+- Only install wpcsys
+
+.. code-block:: shell
+
+   pip install wpcsys --no-deps
+
 - Upgrade
 
 .. code-block:: shell
 
    pip install --upgrade wpcsys
+
+Supported Platforms and Product Compatibility
+---------------------------------------------
+
+This module provides prebuilt binaries (.so / .pyd) for the following platforms and Python versions:
+
++----------------+-----------------------+----------------+-----------------------------+
+| Python Version | Platform              | File Format    | Supported WPC Products      |
++================+=======================+================+=============================+
+| 3.8 ~ 3.12     | x86_64 Linux          | ``.so``        | All WPC products supported  |
++----------------+-----------------------+----------------+-----------------------------+
+| 3.8 ~ 3.12     | Windows (win_amd64)   | ``.pyd``       | All WPC products supported  |
++----------------+-----------------------+----------------+-----------------------------+
+| 3.8 ~ 3.12     | aarch64 Linux         | ``.so``        | **Drone products only**     |
++----------------+-----------------------+----------------+-----------------------------+
+
+.. warning::
+
+   The Python build for ``aarch64-linux-gnu`` **only supports WPC Drone products**.
+   Using it with other WPC products may result in unexpected behavior or incompatibility.
+
+Please ensure that you use the correct binary for your platform and target application.
 
 
 Quick Start
@@ -76,7 +104,7 @@ Quick Start
    >>> pywpc.PKG_NAME
    pywpc
    >>> pywpc.HANDLE_LIST
-   ['DeviceFinder', 'EthanA', 'EthanA2', 'EthanD', 'EthanEXD', 'EthanI', 'EthanIA', 'EthanL', 'EthanO', 'EthanP', 'EthanT', 'USBDAQF1D', 'USBDAQF1DSNK', 'USBDAQF1AD', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1RD', 'USBDAQF1CD', 'WifiDAQE3A', 'WifiDAQE3AH', 'WifiDAQF4A', 'WifiDAQE3AOD', 'STEM', 'EMotion', 'EDriveST']
+   ['DeviceFinder', 'Drone', 'EthanA', 'EthanA2', 'EthanD', 'EthanEXD', 'EthanI', 'EthanIA', 'EthanL', 'EthanO', 'EthanP', 'EthanT', 'USBDAQF1D', 'USBDAQF1DSNK', 'USBDAQF1AD', 'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1RD', 'USBDAQF1CD', 'WifiDAQE3A', 'WifiDAQE3AH', 'WifiDAQF4A', 'WifiDAQE3AOD', 'STEM', 'EMotion', 'EDriveST']
 
 References
 ----------

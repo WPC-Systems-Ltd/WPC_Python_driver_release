@@ -4,10 +4,10 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta content="WPC Python driver" name="title" />
 <meta content="The easiest way to Control &amp; Data Acquisition (DAQ)" name="description" />
-<meta content="DAQ, Controller, Motion card, USB, Ethernet, Wifi" name="keywords" />
+<meta content="Drone, DAQ, Controller, Motion card, USB, Ethernet, Wifi" name="keywords" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Overview &mdash; WPC Python driver 3.1.2 documentation</title>
+  <title>Overview &mdash; WPC Python driver 3.1.7 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="_static/custom_sphinx.css?v=20c2511c" />
@@ -20,7 +20,7 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=4e920bdf"></script>
+        <script src="_static/documentation_options.js?v=169b9561"></script>
         <script src="_static/doctools.js?v=888ff710"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -42,7 +42,7 @@
               <img src="_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.1.2
+                3.1.7
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -130,11 +130,53 @@ Adding WPC Python driver to your toolkit not only simplifies tasks but also prov
 </pre></div>
 </div>
 <ul class="simple">
+<li><p>Only install wpcsys</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>wpcsys<span class="w"> </span>--no-deps
+</pre></div>
+</div>
+<ul class="simple">
 <li><p>Upgrade</p></li>
 </ul>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>wpcsys
 </pre></div>
 </div>
+</section>
+<section id="supported-platforms-and-product-compatibility">
+<h1>Supported Platforms and Product Compatibility<a class="headerlink" href="#supported-platforms-and-product-compatibility" title="Link to this heading"></a></h1>
+<p>This module provides prebuilt binaries (.so / .pyd) for the following platforms and Python versions:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Python Version</p></th>
+<th class="head"><p>Platform</p></th>
+<th class="head"><p>File Format</p></th>
+<th class="head"><p>Supported WPC Products</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3.8 ~ 3.12</p></td>
+<td><p>x86_64 Linux</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.so</span></code></p></td>
+<td><p>All WPC products supported</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.8 ~ 3.12</p></td>
+<td><p>Windows (win_amd64)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.pyd</span></code></p></td>
+<td><p>All WPC products supported</p></td>
+</tr>
+<tr class="row-even"><td><p>3.8 ~ 3.12</p></td>
+<td><p>aarch64 Linux</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.so</span></code></p></td>
+<td><p><strong>Drone products only</strong></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The Python build for <code class="docutils literal notranslate"><span class="pre">aarch64-linux-gnu</span></code> <strong>only supports WPC Drone products</strong>.
+Using it with other WPC products may result in unexpected behavior or incompatibility.</p>
+</div>
+<p>Please ensure that you use the correct binary for your platform and target application.</p>
 </section>
 <section id="quick-start">
 <h1>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading"></a></h1>
@@ -143,7 +185,7 @@ Adding WPC Python driver to your toolkit not only simplifies tasks but also prov
 <span class="go">&gt;&gt;&gt; pywpc.PKG_NAME</span>
 <span class="go">pywpc</span>
 <span class="go">&gt;&gt;&gt; pywpc.HANDLE_LIST</span>
-<span class="go">[&#39;DeviceFinder&#39;, &#39;EthanA&#39;, &#39;EthanA2&#39;, &#39;EthanD&#39;, &#39;EthanEXD&#39;, &#39;EthanI&#39;, &#39;EthanIA&#39;, &#39;EthanL&#39;, &#39;EthanO&#39;, &#39;EthanP&#39;, &#39;EthanT&#39;, &#39;USBDAQF1D&#39;, &#39;USBDAQF1DSNK&#39;, &#39;USBDAQF1AD&#39;, &#39;USBDAQF1AOD&#39;, &#39;USBDAQF1TD&#39;, &#39;USBDAQF1RD&#39;, &#39;USBDAQF1CD&#39;, &#39;WifiDAQE3A&#39;, &#39;WifiDAQE3AH&#39;, &#39;WifiDAQF4A&#39;, &#39;WifiDAQE3AOD&#39;, &#39;STEM&#39;, &#39;EMotion&#39;, &#39;EDriveST&#39;]</span>
+<span class="go">[&#39;DeviceFinder&#39;, &#39;Drone&#39;, &#39;EthanA&#39;, &#39;EthanA2&#39;, &#39;EthanD&#39;, &#39;EthanEXD&#39;, &#39;EthanI&#39;, &#39;EthanIA&#39;, &#39;EthanL&#39;, &#39;EthanO&#39;, &#39;EthanP&#39;, &#39;EthanT&#39;, &#39;USBDAQF1D&#39;, &#39;USBDAQF1DSNK&#39;, &#39;USBDAQF1AD&#39;, &#39;USBDAQF1AOD&#39;, &#39;USBDAQF1TD&#39;, &#39;USBDAQF1RD&#39;, &#39;USBDAQF1CD&#39;, &#39;WifiDAQE3A&#39;, &#39;WifiDAQE3AH&#39;, &#39;WifiDAQF4A&#39;, &#39;WifiDAQE3AOD&#39;, &#39;STEM&#39;, &#39;EMotion&#39;, &#39;EDriveST&#39;]</span>
 </pre></div>
 </div>
 </section>

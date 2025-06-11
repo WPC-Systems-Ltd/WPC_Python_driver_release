@@ -1,0 +1,6 @@
+Drone takeoff
+=============
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/Drone/Drone/Drone_takeoff.py
+   :language: python
+   :linenos:
