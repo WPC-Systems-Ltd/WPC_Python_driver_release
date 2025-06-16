@@ -35,10 +35,10 @@ Overview
 **WPC Python driver** is an easy-to-use open-source API for beginners and professionals.
 It simplifies communication with WPC products using a consistent and intuitive interface.
 
-With rich examples and simple logic—just ``open``, ``read/write``, and ``close``—you can easily access or update data.
+With rich examples and simple logic — just ``open``, ``read/write``, and ``close`` — you can easily access or update data.
 It is a practical tool for both learning and developing applications with real-world hardware.
 
-> **⚠️ Note:** Please ensure your firmware version is up-to-date to maintain compatibility.
+**⚠️ Note:** Please ensure your firmware version is up-to-date to maintain compatibility.
 
 Architecture
 ------------
@@ -86,13 +86,8 @@ This package provides prebuilt binaries (.so / .pyd) for:
 | 3.8 ~ 3.12     | aarch64 Linux         | ``.so``        | **Drone products only**     |
 +----------------+-----------------------+----------------+-----------------------------+
 
-> **⚠️ Warning:** `aarch64-linux-gnu` builds support **only WPC drone products**.\
-> Use with other products may cause errors or unexpected behavior.
-
-.. warning::
-
-   ``aarch64-linux-gnu`` builds support **only WPC drone products**.
-   Use with other products may cause errors or unexpected behavior.
+**⚠️ Warning:** `aarch64-linux-gnu` builds support **only WPC drone products**.\
+Use with other products may cause errors or unexpected behavior.
 
 Quick Start
 -----------
