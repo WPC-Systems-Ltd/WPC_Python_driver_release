@@ -1,6 +1,10 @@
 WPC Python driver release changelog
 ===================================
 
+v3.1.7.1 Date: 2025/06/16, Developer: Chunglee_people
+---------------------------------------------------
+### Added
+- Add reference folder
 
 v3.1.7 Date: 2025/06/16, Developer: Chunglee_people
 ---------------------------------------------------
