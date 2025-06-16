@@ -1,20 +1,64 @@
-# DeviceFinder
+# Find Devices (Synchronous Mode)
+> **Note**
+> Ensure you are connected to the correct IP address or serial number.
 
 ## Overview
 
-This example demonstrates how to find all available USB and ethernet devices.
+This project demonstrates how to use the WPC Python driver to discover and manage devices using synchronous mode.
+The example covers various operations including device discovery, connection management, and event handling.
+
+Synchronous mode is recommended when:
+- You need simple, sequential operations
+- You want straightforward, easy-to-understand code flow
+- You don't need concurrent operations
+- You're working with a single device
+- You prefer traditional procedural programming style
+- You need predictable timing for device discovery
+- You need precise control over operation sequence
 
 For detailed API usage, refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-To create your own application, start with this simple template and then include your custom code.
+## Installation
 
-## How To Use This Example
+```bash
+pip install wpcsys
+```
 
-### Hardware Requirements
+## Dependencies
 
-In order to run this example, you should get one of WPC product.
+- Python 3.8 or higher (up to 3.12)
+- wpcsys package
+- numpy (for data processing)
+- matplotlib (for data visualization, optional)
+
+## Hardware Requirements
+
+To run this example, you will need a DeviceFinder product.
+
+Here we use DeviceFinder as an example.
+
+### DeviceFinder
+
+<img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-DeviceFinder.JPG" alt="drawing" width="600"/>
 
 ## Troubleshooting
+
+Common issues and their solutions:
+
+1. Connection Error
+   - Solution: Check IP address or serial number
+   - Solution: Verify device connections
+   - Solution: Check power supply
+
+2. Discovery Issues
+   - Solution: Verify network settings
+   - Solution: Check device visibility
+   - Solution: Monitor discovery process
+
+3. Synchronous Operation Issues
+   - Solution: Check for blocking operations
+   - Solution: Verify proper error handling
+   - Solution: Ensure proper resource cleanup
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
 

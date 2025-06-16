@@ -1,43 +1,64 @@
-# CAN
+# CAN (Asynchronous Mode)
 > **Note**
 > Ensure you are connected to the correct IP address or serial number.
 
 ## Overview
 
-This example project demonstrates how to use WPC python driver to read and write through CAN interface.
+This project demonstrates how to use the WPC Python driver to handle Controller Area Network (CAN) communications using asynchronous mode.
+The example covers various operations including device configuration, data transfer, and event handling.
 
-In order to verify, please take another `USBDAQF1CD` or other device which support CAN interface.
-We connect two device via CAN so that can communicate data.
+Asynchronous mode is recommended when:
+- You need concurrent operations
+- You want non-blocking code execution
+- You need real-time data processing
+- You're working with multiple channels
+- You need to handle multiple events simultaneously
+- You need to maintain system responsiveness
+- You need to implement complex event-driven logic
 
-To create your own application, start with this simple template and then include your custom code.
+For detailed API usage, refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-## How To Use This Example
+## Installation
 
-### Hardware Requirements
+```bash
+pip install wpcsys
+```
 
-In order to verify, please get two USBDAQF1CD products or one with any other device which support CAN interface.
+## Dependencies
 
-Then, we take `USBDAQF1CD` for example.
+- Python 3.8 or higher (up to 3.12)
+- wpcsys package
+- numpy (for data processing)
+- matplotlib (for data visualization, optional)
+
+## Hardware Requirements
+
+To run this example, you will need a USBDAQF1CD product with CAN capability.
+
+Here we use USBDAQF1CD as an example.
 
 ### USBDAQF1CD
 
-Both connect CAN_H to CAN_H and CAN_L to CAN_L then short pin35, pin36 together for enabling termination resistor.
-
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-USBDAQF1CD.JPG" alt="drawing" width="600"/>
 
-## CAN Interfacing SOP
-
-1. Create device handle
-2. Connect to device
-3. Open CAN port
-4. Set CAN parameters
-5. Write data via CAN
-6. Read data via CAN
-7. Close CAN port
-8. Disconnect device
-7. Release device handle
-
 ## Troubleshooting
+
+Common issues and their solutions:
+
+1. Connection Error
+   - Solution: Check IP address or serial number
+   - Solution: Verify device connections
+   - Solution: Check power supply
+
+2. Communication Issues
+   - Solution: Verify CAN configuration
+   - Solution: Check baud rate settings
+   - Solution: Monitor data transfer
+
+3. Asynchronous Operation Issues
+   - Solution: Check event handlers
+   - Solution: Verify callback functions
+   - Solution: Ensure proper resource cleanup
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
 

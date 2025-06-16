@@ -87,7 +87,7 @@ This package provides prebuilt binaries (.so / .pyd) for:
 +----------------+-----------------------+----------------+-----------------------------+
 
 **⚠️ Warning:** `aarch64-linux-gnu` builds support **only WPC drone products**.\
-Use with other products may cause errors or unexpected behavior.
+ Use with other products may cause errors or unexpected behavior.
 
 Quick Start
 -----------

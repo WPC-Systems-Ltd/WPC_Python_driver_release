@@ -1,22 +1,41 @@
-# Temperature-TC
+# Temperature TC (Asynchronous Mode)
 > **Note**
 > Ensure you are connected to the correct IP address or serial number.
 
 ## Overview
 
-This example project demonstrates how to use WPC python driver to read thermocouple sensor temperature in Celcius.
+This project demonstrates how to use the WPC Python driver to handle Thermocouple (TC) temperature measurements using asynchronous mode.
+The example covers various TC operations including sensor configuration, data acquisition, and event handling.
+
+Asynchronous mode is recommended when:
+- You need concurrent operations
+- You want non-blocking code execution
+- You need real-time temperature monitoring
+- You're working with multiple sensors
+- You need to handle multiple events simultaneously
+- You want to maintain system responsiveness
+- You need to implement complex event-driven logic
 
 For detailed API usage, refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-To create your own application, start with this simple template and then include your custom code.
+## Installation
 
-## How To Use This Example
+```bash
+pip install wpcsys
+```
 
-### Hardware Requirements
+## Dependencies
 
-In order to run this example, you should get `USBDAQF1TD` product, which contains thermocouple sensor and its function.
+- Python 3.8 or higher (up to 3.12)
+- wpcsys package
+- numpy (for data processing)
+- matplotlib (for data visualization, optional)
 
-Then, we take `USBDAQF1TD` for example.
+## Hardware Requirements
+
+To run this example, you will need a USBDAQF1TD product with Thermocouple capability.
+
+Here we use USBDAQF1TD as an example.
 
 ### USBDAQF1TD
 
@@ -34,6 +53,23 @@ Then, we take `USBDAQF1TD` for example.
 8. Release device handle
 
 ## Troubleshooting
+
+Common issues and their solutions:
+
+1. Connection Error
+   - Solution: Check IP address or serial number
+   - Solution: Verify sensor connections
+   - Solution: Check power supply
+
+2. Temperature Issues
+   - Solution: Verify sensor type configuration
+   - Solution: Check cold junction compensation
+   - Solution: Monitor sensor readings
+
+3. Asynchronous Operation Issues
+   - Solution: Check event handlers
+   - Solution: Verify callback functions
+   - Solution: Ensure proper resource cleanup
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
 
