@@ -1,6 +1,10 @@
 WPC Python driver release changelog
 ===================================
 
+v3.1.7.3 Date: 2025/06/16, Developer: Chunglee_people
+---------------------------------------------------
+### Added
+- Check pinout and product file name
 
 v3.1.7.2 Date: 2025/06/16, Developer: Chunglee_people
 ---------------------------------------------------
