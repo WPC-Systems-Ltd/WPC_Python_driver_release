@@ -14,15 +14,15 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
+
+## WPC
+from wpcsys import pywpc
 
 ## Python
 import time
 
-## WPC
-
-from wpcsys import pywpc
 
 def main():
     ## Get Python driver version
@@ -33,7 +33,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("default") ## Depend on your device
+        dev.connect("default")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -42,22 +42,21 @@ def main():
 
     try:
         ## Parameters setting
-        port = 2 ## Depend on your device
+        port = 2  ## Depend on your device
         datasize = 0  ## Mode: 0 = 8-bit data, 1 = 16-bit data.
-        first_bit = 0 ## Mode: 0 = MSB first, 1 = LSB first.
+        first_bit = 0  ## Mode: 0 = MSB first, 1 = LSB first.
         prescaler = 64
-        mode = 0    ## 0 : CPOL = 0 CPHA = 0 ## 1 : CPOL = 0 CPHA = 1
-                    ## 2 : CPOL = 1 CPHA = 0 ## 3 : CPOL = 1 CPHA = 1
+        mode = 0  ## 0 : CPOL = 0 CPHA = 0, 1 : CPOL = 0 CPHA = 1, 2 : CPOL = 1 CPHA = 0, 3 : CPOL = 1 CPHA = 1
 
         if port == 1:
             DO_port = 2
-            DO_index = [0] ## CS pin
+            DO_index = [0]  ## CS pin
 
         elif port == 2:
             DO_port = 3
-            DO_index = [2] ## CS pin
+            DO_index = [2]  ## CS pin
 
-        timeout = 3 ## second
+        timeout = 3  ## [sec]
 
         WRITE = 0x02
         WREN = 0x06
@@ -68,8 +67,7 @@ def main():
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         '''
         Open DO pins & SPI port & set CS(pin0) to high
@@ -114,17 +112,17 @@ def main():
         ## Set CS(pin0) to low
         err = dev.DO_writePins(DO_port, DO_index, [0], timeout)
         print(f"DO_writePins in port {DO_port}, status: {err}")
-        time.sleep(0.01) ## delay [s]
+        time.sleep(0.01)  ## delay [sec]
 
         ## Write WREN byte
         err = dev.SPI_write(port, [WREN], timeout)
         print(f"SPI_write in port {port}, status: {err}")
-        time.sleep(0.01) ## delay [s]
+        time.sleep(0.01)  ## delay [sec]
 
         ## Set CS(pin0) to high
         err = dev.DO_writePins(DO_port, DO_index, [1], timeout)
         print(f"DO_writePins in port {DO_port}, status: {err}")
-        time.sleep(0.05) ## delay [s]
+        time.sleep(0.05)  ## delay [sec]
 
         '''
         Write data via SPI
@@ -133,12 +131,12 @@ def main():
         ## Set CS(pin0) to low
         err = dev.DO_writePins(DO_port, DO_index, [0], timeout)
         print(f"DO_writePins in port {DO_port}, status: {err}")
-        time.sleep(0.01) ## delay [s]
+        time.sleep(0.01)  ## delay [sec]
 
         ## Write data byte 0x55 in to address 0x0002
         err = dev.SPI_write(port, [WRITE, 0x00, 0x02, 0x55], timeout)
         print(f"SPI_write in port {port}, status: {err}")
-        time.sleep(0.01) ## delay [s]
+        time.sleep(0.01)  ## delay [sec]
 
         ## Set CS(pin0) to high
         err = dev.DO_writePins(DO_port, DO_index, [1], timeout)
@@ -158,13 +156,13 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+    finally:
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
 
 if __name__ == '__main__':
     main()

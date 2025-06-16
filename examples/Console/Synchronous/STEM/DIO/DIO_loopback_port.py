@@ -25,14 +25,10 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
 
-## Python
-import time
-
 ## WPC
-
 from wpcsys import pywpc
 
 
@@ -45,7 +41,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.1.110") ## Depend on your device
+        dev.connect("192.168.1.110")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -54,16 +50,15 @@ def main():
 
     try:
         ## Parameters setting
-        slot = 1 ## Connect DIO module to slot
+        slot = 1  ## Connect DIO module to slot
         DO_port = 0
         DI_port = 1
         DO_value = [1, 0, 1, 0]
-        timeout = 3 ## second
+        timeout = 3  ## [sec]
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Get slot mode
         slot_mode = dev.Sys_getMode(slot, timeout)
@@ -80,9 +75,9 @@ def main():
 
         ## Get DIO start up information
         info = dev.DIO_loadStartup(DO_port, timeout)
-        print("Enable:   ", info[0])
-        print("Direction:", info[1])
-        print("State:    ", info[2])
+        print(f"Enable: {info[0]}")
+        print(f"Direction: {info[1]}")
+        print(f"State: {info[2]}")
 
         ## Write DO port to high or low
         err = dev.DO_writePort(DO_port, DO_value, timeout)
@@ -94,13 +89,13 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+    finally:
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
 
 if __name__ == '__main__':
     main()

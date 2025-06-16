@@ -8,15 +8,12 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
 
-## Python
-import time
-
 ## WPC
-
 from wpcsys import pywpc
+
 
 def main():
     ## Get Python driver version
@@ -27,7 +24,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.1.110") ## Depend on your device
+        dev.connect("192.168.1.110")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -36,23 +33,22 @@ def main():
 
     try:
         ## Parameters setting
-        port = 0 ## Depend on your device
+        port = 0  ## Depend on your device
         searching_speed = 50000
         approaching_speed = 10000
         acceleration = 10000
-        search_direction = 1    ## 1: pointing to forward, -1: pointing to reverse.
+        search_direction = 1  ## 1: pointing to forward, -1: pointing to reverse.
         approach_direction = 1  ## 1: pointing to forward, -1: pointing to reverse.
         offset = 0
         reset_position = False
         en_forward = 1
         en_reverse = 1
         active_high = 1
-        timeout = 3 ## second
+        timeout = 3  ## [sec]
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Motion open
         err = dev.Motion_open(port, timeout)
@@ -75,9 +71,9 @@ def main():
         print(f"Motion_startFindHome, status: {err}")
 
         status = 1
-        while status != 0 :
+        while status != 0:
             status = dev.Motion_getProcessState(port, timeout)
-            if(status == 0):
+            if status == 0:
                 print(f"Motion_getProcessState: {status}")
 
         ## Motion get limit status
@@ -103,11 +99,12 @@ def main():
         err = dev.Motion_close(port, timeout)
         print(f"Motion_close, status: {err}")
 
-    ## Disconnect device
-    dev.disconnect()
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
+
 
 if __name__ == '__main__':
     main()

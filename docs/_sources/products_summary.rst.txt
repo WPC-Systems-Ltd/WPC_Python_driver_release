@@ -9,6 +9,31 @@ Products Feature
    * - Model
      - Photo
    * -
+      **Drone**
+         - Wing span: 550mm
+         - Overall length: 70cm
+         - Overall height: 26.5cm
+         - Net weight: 1.9kg
+         - Propulsion: battery & motor
+         - Max payload: 1kg
+         - Max takeoff weight: 1kg
+         - Max wind speed resistance: 17.2m/s
+         - Hovering accuracy range: 10cm
+         - Endurance: 10-20min
+         - Operating range: 3.4km
+         - Remote control communication interface: PWM
+         - SDK communication interface: UART
+         - Take off method: VTOL
+         - Recover speed: VTOL
+         - Sensor fusion update rate: 400Hz
+         - Attitude control method: 400Hz
+         - Flight recorder: USB
+         - Body material: carbon fiber
+     -
+      .. image:: images/Products/product-Drone.jpg
+         :width: 100%
+         :alt: product-Drone.jpg
+   * -
       **Emotion**
          - Power input: 24VDC
          - 10/100 T-based Ethernet interface

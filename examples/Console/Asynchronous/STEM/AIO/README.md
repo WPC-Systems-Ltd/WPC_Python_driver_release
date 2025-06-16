@@ -1,56 +1,63 @@
-# AIO
+# AIO (Asynchronous Mode)
 > **Note**
 > Ensure you are connected to the correct IP address or serial number.
 
 ## Overview
 
-This example project demonstrates how to use WPC python driver to do AIO loopback.
+This project demonstrates how to use the WPC Python driver to handle both analog input and output operations using asynchronous mode.
+The example covers simultaneous AI/AO operations in various modes.
+
+Asynchronous mode is recommended when:
+- You need to perform multiple operations concurrently
+- You want to handle I/O operations without blocking the main thread
+- You need to manage multiple devices simultaneously
+- You want to implement event-driven programming patterns
+- You need real-time data processing with minimal latency
+- You need to handle simultaneous input and output operations
 
 For detailed API usage, refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-To create your own application, start with this simple template and then include your custom code.
+## Installation
 
-## How To Use This Example
+```bash
+pip install wpcsys
+```
 
-### The Limitation Of The Sampling Rate.
+## Dependencies
 
-- For STEM, AO writing can be called while AI is streaming under a specific speed.
-- This speed depends on the number of enabled chip-selects.
-- Below is the table indicating the max AI sampling rate that allows AO writing.
+- Python 3.8 or higher (up to 3.12)
+- wpcsys package
+- numpy (for data processing)
+- matplotlib (for data visualization, optional)
+- asyncio (for asynchronous operations)
 
-| CS number  | Sampling rate|
-|:----------:|:------------:|
-|   3        | 1K           |
-|   2        | 1.5K         |
-|   1        | 3K           |
+## Hardware Requirements
 
-### Hardware Requirements
+To run this example, you will need a STEM product, which contains AIO function.
 
-To run this example, you will need a STEM product, which contains AI and AO function.
-
-Then, we take `STEM` for example.
+Here we use STEM as an example.
 
 ### STEM
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-STEM.JPG" alt="drawing" width="600"/>
 
-## AIO Interfacing SOP
-
-1. Create device handle
-2. Connect to device
-3. Open AI & AO port
-4. Configure AI & AO parameters
-5. Write AO signal
-6  Read AI on demand (Depends)
-7. Open AI streaming (Depends)
-8. Start AI streaming (Depends)
-9 Read AI streaming (Depends)
-10. Close AI streaming (Depends)
-11. Close AI & AO port
-12. Disconnect device
-13. Release device handle
-
 ## Troubleshooting
+
+Common issues and their solutions:
+
+1. Connection Error
+   - Solution: Check IP address or serial number
+   - Solution: Verify network connection
+
+2. Data Accuracy Issues
+   - Solution: Check signal conditioning
+   - Solution: Verify grounding
+   - Solution: Check for noise interference
+
+3. Asynchronous Operation Issues
+   - Solution: Ensure proper async/await syntax
+   - Solution: Check event loop handling
+   - Solution: Verify proper exception handling in async context
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
 

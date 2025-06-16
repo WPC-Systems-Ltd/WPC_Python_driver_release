@@ -1,22 +1,41 @@
-# DPOT
+# DPOT (Asynchronous Mode)
 > **Note**
 > Ensure you are connected to the correct IP address or serial number.
 
 ## Overview
 
-This example project demonstrates how to use WPC python driver to read/write digital potentiometer resistance.
+This project demonstrates how to use the WPC Python driver to handle Digital Potentiometer (DPOT) operations using asynchronous mode.
+The example covers various operations including device configuration, resistance control, and event handling.
+
+Asynchronous mode is recommended when:
+- You need concurrent operations
+- You want non-blocking code execution
+- You need real-time resistance control
+- You're working with multiple channels
+- You need to handle multiple events simultaneously
+- You need to maintain system responsiveness
+- You need to implement complex event-driven logic
 
 For detailed API usage, refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-To create your own application, start with this simple template and then include your custom code.
+## Installation
 
-## How To Use This Example
+```bash
+pip install wpcsys
+```
 
-### Hardware Requirements
+## Dependencies
 
-To run this example, you will need a EthanP product, which contains DPOT function.
+- Python 3.8 or higher (up to 3.12)
+- wpcsys package
+- numpy (for data processing)
+- matplotlib (for data visualization, optional)
 
-Then, we take `EthanP` for example.
+## Hardware Requirements
+
+To run this example, you will need a EthanP product with DPOT capability.
+
+Here we use EthanP as an example.
 
 ### EthanP
 
@@ -33,6 +52,23 @@ Then, we take `EthanP` for example.
 7. Release device handle
 
 ## Troubleshooting
+
+Common issues and their solutions:
+
+1. Connection Error
+   - Solution: Check IP address or serial number
+   - Solution: Verify device connections
+   - Solution: Check power supply
+
+2. Control Issues
+   - Solution: Verify DPOT configuration
+   - Solution: Check resistance settings
+   - Solution: Monitor resistance changes
+
+3. Asynchronous Operation Issues
+   - Solution: Check event handlers
+   - Solution: Verify callback functions
+   - Solution: Ensure proper resource cleanup
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
 

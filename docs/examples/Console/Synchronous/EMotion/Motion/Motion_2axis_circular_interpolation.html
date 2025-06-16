@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../../../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Motion 2axis circular interpo &mdash; WPC Python driver 3.1.2 documentation</title>
-      <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
+  <title>Motion 2axis circular interpo &mdash; WPC Python driver 3.1.7 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/custom_sphinx.css?v=20c2511c" />
+
+  
     <link rel="shortcut icon" href="../../../../../_static/WPC-trademark.jpg"/>
   <!--[if lt IE 9]>
     <script src="../../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
-        <script src="../../../../../_static/jquery.js"></script>
-        <script src="../../../../../_static/underscore.js"></script>
-        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../../../../_static/doctools.js"></script>
-        <script src="../../../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../../_static/documentation_options.js?v=169b9561"></script>
+        <script src="../../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -31,15 +32,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../../../../index.html" class="icon icon-home"> WPC Python driver
-            <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../../../../index.html" class="icon icon-home">
+            WPC Python driver
+              <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.1.2
+                3.1.7
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -54,6 +59,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../../../examples_console_Synchronous.html">Example Codes - Console (sync)</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../../../../examples_console_Synchronous.html#device-finder">Device finder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../examples_console_Synchronous.html#drone">Drone</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../examples_console_Synchronous.html#stem">STEM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../examples_console_Synchronous.html#edrive-st">EDrive-ST</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../../../../examples_console_Synchronous.html#emotion">EMotion</a><ul class="current">
@@ -136,9 +142,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../../../../examples_console_Synchronous.html">Example Codes - Console (sync)</a> &raquo;</li>
-      <li>Motion 2axis circular interpo</li>
+      <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../../examples_console_Synchronous.html">Example Codes - Console (sync)</a></li>
+      <li class="breadcrumb-item active">Motion 2axis circular interpo</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -148,7 +154,7 @@
            <div itemprop="articleBody">
              
   <section id="motion-2axis-circular-interpo">
-<h1>Motion 2axis circular interpo<a class="headerlink" href="#motion-2axis-circular-interpo" title="Permalink to this heading"></a></h1>
+<h1>Motion 2axis circular interpo<a class="headerlink" href="#motion-2axis-circular-interpo" title="Link to this heading"></a></h1>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos">  2</span><span class="sd">Motion - Motion_2axis_circular_interpolation.py with synchronous mode.</span>
 <span class="linenos">  3</span>
@@ -159,128 +165,124 @@
 <span class="linenos">  8</span><span class="sd">    https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples</span>
 <span class="linenos">  9</span><span class="sd">See README.md file to get detailed usage of this example.</span>
 <span class="linenos"> 10</span>
-<span class="linenos"> 11</span><span class="sd">Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.</span>
+<span class="linenos"> 11</span><span class="sd">Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.</span>
 <span class="linenos"> 12</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos"> 13</span>
-<span class="linenos"> 14</span><span class="c1">## Python</span>
-<span class="linenos"> 15</span><span class="kn">import</span> <span class="nn">time</span>
+<span class="linenos"> 14</span><span class="c1">## WPC</span>
+<span class="linenos"> 15</span><span class="kn">from</span> <span class="nn">wpcsys</span> <span class="kn">import</span> <span class="n">pywpc</span>
 <span class="linenos"> 16</span>
-<span class="linenos"> 17</span><span class="c1">## WPC</span>
-<span class="linenos"> 18</span>
-<span class="linenos"> 19</span><span class="kn">from</span> <span class="nn">wpcsys</span> <span class="kn">import</span> <span class="n">pywpc</span>
-<span class="linenos"> 20</span>
-<span class="linenos"> 21</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-<span class="linenos"> 22</span>    <span class="c1">## Get Python driver version</span>
-<span class="linenos"> 23</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_FULL_NAME</span><span class="si">}</span><span class="s1"> - Version </span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="linenos"> 17</span>
+<span class="linenos"> 18</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos"> 19</span>    <span class="c1">## Get Python driver version</span>
+<span class="linenos"> 20</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_FULL_NAME</span><span class="si">}</span><span class="s1"> - Version </span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="linenos"> 21</span>
+<span class="linenos"> 22</span>    <span class="c1">## Create device handle</span>
+<span class="linenos"> 23</span>    <span class="n">dev</span> <span class="o">=</span> <span class="n">pywpc</span><span class="o">.</span><span class="n">EMotion</span><span class="p">()</span>
 <span class="linenos"> 24</span>
-<span class="linenos"> 25</span>    <span class="c1">## Create device handle</span>
-<span class="linenos"> 26</span>    <span class="n">dev</span> <span class="o">=</span> <span class="n">pywpc</span><span class="o">.</span><span class="n">EMotion</span><span class="p">()</span>
-<span class="linenos"> 27</span>
-<span class="linenos"> 28</span>    <span class="c1">## Connect to device</span>
-<span class="linenos"> 29</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos"> 30</span>        <span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;192.168.1.110&quot;</span><span class="p">)</span> <span class="c1">## Depend on your device</span>
-<span class="linenos"> 31</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos"> 32</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="linenos"> 33</span>        <span class="c1">## Release device handle</span>
-<span class="linenos"> 34</span>        <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="linenos"> 35</span>        <span class="k">return</span>
-<span class="linenos"> 36</span>
-<span class="linenos"> 37</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos"> 38</span>        <span class="c1">## Parameters setting</span>
-<span class="linenos"> 39</span>        <span class="n">port</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">## Depend on your device</span>
-<span class="linenos"> 40</span>        <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 41</span>        <span class="n">stop_decel</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 42</span>        <span class="n">rel_posi_mode</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="linenos"> 43</span>        <span class="n">timeout</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1">## second</span>
-<span class="linenos"> 44</span>
-<span class="linenos"> 45</span>        <span class="c1">## Circular interpolation parameters</span>
-<span class="linenos"> 46</span>        <span class="n">x_axis</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 47</span>        <span class="n">y_axis</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="linenos"> 48</span>        <span class="n">center_point_x</span> <span class="o">=</span> <span class="mi">2000</span>
-<span class="linenos"> 49</span>        <span class="n">center_point_y</span> <span class="o">=</span> <span class="mi">2000</span>
-<span class="linenos"> 50</span>        <span class="n">finish_point_x</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 51</span>        <span class="n">finish_point_y</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 52</span>        <span class="n">circular_dir_cw</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos"> 53</span>
-<span class="linenos"> 54</span>        <span class="c1">## jerk and acceletation mode parameters setting</span>
-<span class="linenos"> 55</span>        <span class="n">scurve</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="linenos"> 56</span>        <span class="n">jerk</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="linenos"> 57</span>
-<span class="linenos"> 58</span>        <span class="c1">## Get firmware model &amp; version</span>
-<span class="linenos"> 59</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 60</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="linenos"> 61</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos"> 25</span>    <span class="c1">## Connect to device</span>
+<span class="linenos"> 26</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos"> 27</span>        <span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;192.168.1.110&quot;</span><span class="p">)</span>  <span class="c1">## Depend on your device</span>
+<span class="linenos"> 28</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos"> 29</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos"> 30</span>        <span class="c1">## Release device handle</span>
+<span class="linenos"> 31</span>        <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos"> 32</span>        <span class="k">return</span>
+<span class="linenos"> 33</span>
+<span class="linenos"> 34</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos"> 35</span>        <span class="c1">## Parameters setting</span>
+<span class="linenos"> 36</span>        <span class="n">port</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">## Depend on your device</span>
+<span class="linenos"> 37</span>        <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 38</span>        <span class="n">stop_decel</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 39</span>        <span class="n">rel_posi_mode</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos"> 40</span>        <span class="n">timeout</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1">## [sec]</span>
+<span class="linenos"> 41</span>
+<span class="linenos"> 42</span>        <span class="c1">## Circular interpolation parameters</span>
+<span class="linenos"> 43</span>        <span class="n">x_axis</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 44</span>        <span class="n">y_axis</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos"> 45</span>        <span class="n">center_point_x</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="linenos"> 46</span>        <span class="n">center_point_y</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="linenos"> 47</span>        <span class="n">finish_point_x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 48</span>        <span class="n">finish_point_y</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 49</span>        <span class="n">circular_dir_cw</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 50</span>
+<span class="linenos"> 51</span>        <span class="c1">## jerk and acceletation mode parameters setting</span>
+<span class="linenos"> 52</span>        <span class="n">scurve</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos"> 53</span>        <span class="n">jerk</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos"> 54</span>
+<span class="linenos"> 55</span>        <span class="c1">## Get firmware model &amp; version</span>
+<span class="linenos"> 56</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 57</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model name: </span><span class="si">{</span><span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, Firmware version: </span><span class="si">{</span><span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span>
+<span class="linenos"> 58</span>
+<span class="linenos"> 59</span>        <span class="c1">## Motion open</span>
+<span class="linenos"> 60</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_open</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 61</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_open in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 62</span>
-<span class="linenos"> 63</span>        <span class="c1">## Motion open</span>
-<span class="linenos"> 64</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_open</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 65</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_open in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 63</span>        <span class="c1">## Motion open configuration file</span>
+<span class="linenos"> 64</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_openCfgFile</span><span class="p">(</span><span class="s1">&#39;C:/Users/user/Desktop/3AxisStage_2P.ini&#39;</span><span class="p">)</span>
+<span class="linenos"> 65</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_openCfgFile, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 66</span>
-<span class="linenos"> 67</span>        <span class="c1">## Motion open configuration file</span>
-<span class="linenos"> 68</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_openCfgFile</span><span class="p">(</span><span class="s1">&#39;C:/Users/user/Desktop/3AxisStage_2P.ini&#39;</span><span class="p">)</span>
-<span class="linenos"> 69</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_openCfgFile, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 67</span>        <span class="c1">## Motion load configuration file</span>
+<span class="linenos"> 68</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_loadCfgFile</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 69</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_loadCfgFile, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 70</span>
-<span class="linenos"> 71</span>        <span class="c1">## Motion load configuration file</span>
-<span class="linenos"> 72</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_loadCfgFile</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 73</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_loadCfgFile, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 71</span>        <span class="c1">## Motion configure</span>
+<span class="linenos"> 72</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_cfgCircularInterpo</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">x_axis</span><span class="p">,</span> <span class="n">y_axis</span><span class="p">,</span> <span class="n">center_point_x</span><span class="p">,</span> <span class="n">center_point_y</span><span class="p">,</span> <span class="n">finish_point_x</span><span class="p">,</span> <span class="n">finish_point_y</span><span class="p">,</span> <span class="n">circular_dir_cw</span><span class="p">,</span> <span class="n">speed</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">accel</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span> <span class="n">decel</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 73</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_cfgCircularInterpo in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 74</span>
-<span class="linenos"> 75</span>        <span class="c1">## Motion configure</span>
-<span class="linenos"> 76</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_cfgCircularInterpo</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">x_axis</span><span class="p">,</span> <span class="n">y_axis</span><span class="p">,</span> <span class="n">center_point_x</span><span class="p">,</span> <span class="n">center_point_y</span><span class="p">,</span> <span class="n">finish_point_x</span><span class="p">,</span> <span class="n">finish_point_y</span><span class="p">,</span> <span class="n">circular_dir_cw</span><span class="p">,</span> <span class="n">speed</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">accel</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span> <span class="n">decel</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 77</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_cfgCircularInterpo in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 78</span>
-<span class="linenos"> 79</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_startCircularInterpo</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 80</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_startCircularInterpo in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 81</span>
-<span class="linenos"> 82</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_cfgAxisMove</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">rel_posi_mode</span><span class="p">,</span> <span class="n">target_posi</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">velo</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">accel</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span> <span class="n">decel</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 83</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_cfgAxisMove in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 84</span>
-<span class="linenos"> 85</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_cfgJerkAndAccelMode</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">jerk</span><span class="p">,</span> <span class="n">scurve</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 86</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_cfgJerkAndAccelMode in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 87</span>
-<span class="linenos"> 88</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_rstEncoderPosi</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">encoder_posi</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 89</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_rstEncoderPosi in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 75</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_startCircularInterpo</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 76</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_startCircularInterpo in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 77</span>
+<span class="linenos"> 78</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_cfgAxisMove</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">rel_posi_mode</span><span class="p">,</span> <span class="n">target_posi</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">velo</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">accel</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span> <span class="n">decel</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 79</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_cfgAxisMove in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 80</span>
+<span class="linenos"> 81</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_cfgJerkAndAccelMode</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">jerk</span><span class="p">,</span> <span class="n">scurve</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 82</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_cfgJerkAndAccelMode in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 83</span>
+<span class="linenos"> 84</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_rstEncoderPosi</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">encoder_posi</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 85</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_rstEncoderPosi in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 86</span>
+<span class="linenos"> 87</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="linenos"> 88</span>            <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_enableServoOn</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 89</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_enableServoOn in axis</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 90</span>
-<span class="linenos"> 91</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
-<span class="linenos"> 92</span>            <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_enableServoOn</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 93</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_enableServoOn in axis</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 91</span>        <span class="c1">## Motion start</span>
+<span class="linenos"> 92</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_startSingleAxisMove</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 93</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_startSingleAxisMove in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 94</span>
-<span class="linenos"> 95</span>        <span class="c1">## Motion start</span>
-<span class="linenos"> 96</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_startSingleAxisMove</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 97</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_startSingleAxisMove in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos"> 98</span>
-<span class="linenos"> 99</span>        <span class="n">move_status</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="linenos">100</span>        <span class="k">while</span> <span class="n">move_status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="linenos">101</span>            <span class="n">x_axis_move_status</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_getMoveStatus</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">x_axis</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">102</span>            <span class="n">y_axis_move_status</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_getMoveStatus</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">y_axis</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">103</span>            <span class="n">move_status</span> <span class="o">=</span> <span class="n">x_axis_move_status</span> <span class="o">&amp;</span> <span class="n">y_axis_move_status</span>
-<span class="linenos">104</span>            <span class="k">if</span> <span class="n">move_status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="linenos">105</span>                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Moving......&quot;</span><span class="p">)</span>
-<span class="linenos">106</span>            <span class="k">else</span><span class="p">:</span>
-<span class="linenos">107</span>                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Move completed&quot;</span><span class="p">)</span>
+<span class="linenos"> 95</span>        <span class="n">move_status</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 96</span>        <span class="k">while</span> <span class="n">move_status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos"> 97</span>            <span class="n">x_axis_move_status</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_getMoveStatus</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">x_axis</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 98</span>            <span class="n">y_axis_move_status</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_getMoveStatus</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">y_axis</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 99</span>            <span class="n">move_status</span> <span class="o">=</span> <span class="n">x_axis_move_status</span> <span class="o">&amp;</span> <span class="n">y_axis_move_status</span>
+<span class="linenos">100</span>            <span class="k">if</span> <span class="n">move_status</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos">101</span>                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Moving......&quot;</span><span class="p">)</span>
+<span class="linenos">102</span>            <span class="k">else</span><span class="p">:</span>
+<span class="linenos">103</span>                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Move completed&quot;</span><span class="p">)</span>
+<span class="linenos">104</span>
+<span class="linenos">105</span>        <span class="c1">## Motion stop</span>
+<span class="linenos">106</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_stop</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">stop_decel</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">107</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_stop in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">108</span>
-<span class="linenos">109</span>        <span class="c1">## Motion stop</span>
-<span class="linenos">110</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_stop</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">stop_decel</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">111</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_stop in axis</span><span class="si">{</span><span class="n">axis</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">109</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="linenos">110</span>            <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_enableServoOff</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">111</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_enableServoOff in axis</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">112</span>
-<span class="linenos">113</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
-<span class="linenos">114</span>            <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_enableServoOff</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">115</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_enableServoOff in axis</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">116</span>
-<span class="linenos">117</span>        <span class="c1">## Motion close</span>
-<span class="linenos">118</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_close</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">119</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_close in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">120</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos">121</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">113</span>        <span class="c1">## Motion close</span>
+<span class="linenos">114</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_close</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">115</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motion_close in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">116</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos">117</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">118</span>
+<span class="linenos">119</span>    <span class="k">finally</span><span class="p">:</span>
+<span class="linenos">120</span>        <span class="c1">## Disconnect device</span>
+<span class="linenos">121</span>        <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
 <span class="linenos">122</span>
-<span class="linenos">123</span>    <span class="c1">## Disconnect device</span>
-<span class="linenos">124</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+<span class="linenos">123</span>        <span class="c1">## Release device handle</span>
+<span class="linenos">124</span>        <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="linenos">125</span>
-<span class="linenos">126</span>    <span class="c1">## Release device handle</span>
-<span class="linenos">127</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="linenos">128</span>
-<span class="linenos">129</span>    <span class="k">return</span>
-<span class="linenos">130</span>
-<span class="linenos">131</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">132</span>    <span class="n">main</span><span class="p">()</span>
+<span class="linenos">126</span>
+<span class="linenos">127</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">128</span>    <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>

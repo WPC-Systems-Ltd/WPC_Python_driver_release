@@ -14,15 +14,15 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
+
+## WPC
+from wpcsys import pywpc
 
 ## Python
 import time
 
-## WPC
-
-from wpcsys import pywpc
 
 def main():
     ## Get Python driver version
@@ -33,7 +33,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("default") ## Depend on your device
+        dev.connect("default")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -42,22 +42,21 @@ def main():
 
     try:
         ## Parameters setting
-        port = 1 ## Depend on your device
+        port = 1  ## Depend on your device
         ch0 = 0
         ch1 = 1
-        timeout = 3 ## second
+        timeout = 3  ## [sec]
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Open file with WPC_test.csv
         err = dev.Logger_openFile("WPC_test.csv")
         print(f"Logger_openFile, status: {err}")
 
         ## Write header into CSV file
-        err = dev.Logger_writeHeader(["RTD CH0","RTD CH1"])
+        err = dev.Logger_writeHeader(["RTD CH0", "RTD CH1"])
         print(f"Logger_writeHeader, status: {err}")
 
         ## Open RTD
@@ -65,7 +64,7 @@ def main():
         print(f"Thermal_open in port {port}, status: {err}")
 
         ## Wait for at least 100 ms
-        time.sleep(0.1) ## delay [s]
+        time.sleep(0.1)  ## delay [sec]
 
         ## Set RTD port and read RTD in channel 0
         data0 = dev.Thermal_readSensor(port, ch0, timeout)
@@ -85,13 +84,13 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+    finally:
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
 
 if __name__ == '__main__':
     main()

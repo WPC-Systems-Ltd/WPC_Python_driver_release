@@ -14,15 +14,17 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
+
+## WPC
+from wpcsys import pywpc
 
 ## Python
 import asyncio
+import sys
+sys.path.insert(0, 'src/')
 
-## WPC
-
-from wpcsys import pywpc
 
 async def main():
     ## Get python driver version
@@ -33,7 +35,7 @@ async def main():
 
     ## Connect to device
     try:
-        dev.connect("default") ## Depend on your device
+        dev.connect("default")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -42,13 +44,12 @@ async def main():
 
     try:
         ## Parameters setting
-        port = 1 ## Depend on your device
-        speed = 0 ## 0 = 125 KHz, 1 = 250 kHz, 2 = 500 kHz, 3 = 1 MHz
+        port = 1  ## Depend on your device
+        speed = 0  ## 0: 125 KHz, 1: 250 kHz, 2: 500 kHz, 3: 1 MHz
 
-        ## Get Firmware model & version
+        ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Open CAN
         err = await dev.CAN_open_async(port)
@@ -70,14 +71,14 @@ async def main():
         print(f"CAN_write_async in port {port}, status: {err}")
 
         ## Wait for 1 sec
-        await asyncio.sleep(1) ## delay [s]
+        await asyncio.sleep(1)  ## delay [sec]
 
         ## ID: 20, data less than 8 bytes, Standard & Data
         err = await dev.CAN_write_async(port, 20, [1, 2, 3], False, False)
         print(f"CAN_write_async in port {port}, status: {err}")
 
         ## Wait for 1 sec
-        await asyncio.sleep(1) ## delay [s]
+        await asyncio.sleep(1)  ## delay [sec]
 
         ## Set CAN port and stop CAN
         err = await dev.CAN_stop_async(port)
@@ -89,13 +90,13 @@ async def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+    finally:
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
 
 def main_for_spyder(*args):
     if asyncio.get_event_loop().is_running():
@@ -103,7 +104,8 @@ def main_for_spyder(*args):
     else:
         return asyncio.run(main(*args))
 
+
 if __name__ == '__main__':
-    asyncio.run(main()) ## Use terminal
-    # await main() ## Use Jupyter or IPython(>=7.0)
-    # main_for_spyder() ## Use Spyder
+    asyncio.run(main())  ## Use terminal
+    # await main()  ## Use Jupyter or IPython(>=7.0)
+    # main_for_spyder()  ## Use Spyder

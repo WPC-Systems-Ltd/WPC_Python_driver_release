@@ -29,15 +29,14 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
+
+## WPC
+from wpcsys import pywpc
 
 ## Python
 import time
-
-## WPC
-
-from wpcsys import pywpc
 
 
 def main():
@@ -49,7 +48,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.1.110") ## Depend on your device
+        dev.connect("192.168.1.110")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -58,25 +57,24 @@ def main():
 
     try:
         ## Parameters setting
-        slot = 1 ## Connect AIO module to slot
-        mode = 2 ## 0 : On demand, 1 : N-samples, 2 : Continuous.
+        slot = 1  ## Connect AIO module to slot
+        mode = 2  ## 0: On demand, 1: N-samples, 2: Continuous
         sampling_rate = 200
         read_points = 200
-        read_delay = 0.2 ## second
-        timeout = 3 ## second
+        read_delay = 0.2  ## [sec]
+        timeout = 3  ## [sec]
         chip_select = [0, 1]
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Open file with WPC_test.csv
         err = dev.Logger_openFile("WPC_test.csv")
         print(f"Logger_openFile, status: {err}")
 
         ## Write header into CSV file
-        err = dev.Logger_writeHeader(["CH0","CH1","CH2","CH3","CH4","CH5","CH6","CH7"])
+        err = dev.Logger_writeHeader(["CH0", "CH1", "CH2", "CH3", "CH4", "CH5", "CH6", "CH7"])
         print(f"Logger_writeHeader, status: {err}")
 
         ## Get slot mode
@@ -117,7 +115,7 @@ def main():
         print(f"AI_startStreaming in slot {slot}, status: {err}")
 
         ## Wait a while for data acquisition
-        time.sleep(1) ## delay [s]
+        time.sleep(1)  ## delay [sec]
 
         ## Close AI streaming
         err = dev.AI_closeStreaming(slot, timeout)
@@ -127,7 +125,7 @@ def main():
         while data_len > 0:
             ## Read data acquisition
             ai_2Dlist = dev.AI_readStreaming(slot, read_points, read_delay)
-            print(f"number of samples = {len(ai_2Dlist)}" )
+            print(f"number of samples = {len(ai_2Dlist)}")
 
             ## Write data into CSV file
             dev.Logger_write2DList(ai_2Dlist)
@@ -141,12 +139,13 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+    finally:
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
-    return
+        ## Release device handle
+        dev.close()
+
 
 if __name__ == '__main__':
     main()

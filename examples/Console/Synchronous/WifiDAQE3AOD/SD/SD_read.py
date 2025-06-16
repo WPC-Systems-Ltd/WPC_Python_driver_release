@@ -10,15 +10,12 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
 
-## Python
-import time
-
 ## WPC
-
 from wpcsys import pywpc
+
 
 def main():
     ## Get Python driver version
@@ -29,7 +26,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.5.38") ## Depend on your device
+        dev.connect("192.168.5.38")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -40,8 +37,8 @@ def main():
         ## Parameters setting
         filename = "WPC_test.txt"
         read_bytes = 5
-        mode = 1 ## 0 : write, 1 : read
-        timeout = 3 ## second
+        mode = 1  ## 0 : write, 1 : read
+        timeout = 3  ## [sec]
 
         ## Open file in sdcard
         err = dev.SD_openFile(filename, mode, timeout)
@@ -61,12 +58,13 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect network device
-    dev.disconnect()
+    finally:
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
+
 if __name__ == '__main__':
     main()

@@ -1,0 +1,6 @@
+Drone simple move
+=================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/Drone/Drone/Drone_simple_move.py
+   :language: python
+   :linenos:
