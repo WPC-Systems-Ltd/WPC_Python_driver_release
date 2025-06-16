@@ -1,22 +1,41 @@
-# Counter
+# Counter (Asynchronous Mode)
 > **Note**
 > Ensure you are connected to the correct IP address or serial number.
 
 ## Overview
 
-This example project demonstrates how to use WPC python driver with counter
+This project demonstrates how to use the WPC Python driver to handle counter operations using asynchronous mode.
+The example covers various counter operations including frequency measurement, pulse counting, and quadrature encoding.
+
+Asynchronous mode is recommended when:
+- You need concurrent operations
+- You want non-blocking code execution
+- You're working with multiple devices
+- You need real-time data processing
+- You want to handle multiple tasks simultaneously
+- You need event-driven programming
+- You want to maintain responsive UI during operations
 
 For detailed API usage, refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-If you want to build your own counter application, try to use this as a basic template, then add your own code.
+## Installation
 
-## How To Use This Example
+```bash
+pip install wpcsys
+```
 
-### Hardware Requirements
+## Dependencies
 
-To run this example, you will need a USBDAQF1RD product, which contains counter function.
+- Python 3.8 or higher (up to 3.12)
+- wpcsys package
+- numpy (for data processing)
+- matplotlib (for data visualization, optional)
 
-Then, we take `USBDAQF1RD` for example.
+## Hardware Requirements
+
+To run this example, you will need a USBDAQF1RD product, which contains Counter function.
+
+Here we use USBDAQF1RD as an example.
 
 ### USBDAQF1RD
 
@@ -36,6 +55,22 @@ Then, we take `USBDAQF1RD` for example.
 9. Release device handle
 
 ## Troubleshooting
+
+Common issues and their solutions:
+
+1. Connection Error
+   - Solution: Check IP address or serial number
+   - Solution: Verify network connection
+
+2. Counter Accuracy Issues
+   - Solution: Check signal conditioning
+   - Solution: Verify input signal levels
+   - Solution: Check for noise interference
+
+3. Asynchronous Operation Issues
+   - Solution: Check for proper event handling
+   - Solution: Verify callback functions
+   - Solution: Ensure proper resource cleanup
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
 

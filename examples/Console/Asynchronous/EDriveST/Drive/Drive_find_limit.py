@@ -8,15 +8,17 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
+
+## WPC
+from wpcsys import pywpc
 
 ## Python
 import asyncio
+import sys
+sys.path.insert(0, 'src/')
 
-## WPC
-
-from wpcsys import pywpc
 
 async def main():
     ## Get Python driver version
@@ -27,7 +29,7 @@ async def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.1.110") ## Depend on your device
+        dev.connect("192.168.1.110")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -36,8 +38,8 @@ async def main():
 
     try:
         ## Parameters setting
-        port = 0 ## Depend on your device
-        mode = 1 ## 1: forward, -1: reverse.
+        port = 0  ## Depend on your device
+        mode = 1  ## 1: forward, -1: reverse.
         active_high = 1
         en_forward = 1
         en_reverse = 1
@@ -49,8 +51,7 @@ async def main():
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Motion open
         err = await dev.Motion_open_async(port)
@@ -73,9 +74,9 @@ async def main():
         print(f"Motion_startFindLimit, status: {err}")
 
         status = 1
-        while status != 0 :
+        while status != 0:
             status = await dev.Motion_getProcessState_async(port)
-            if(status == 0):
+            if status == 0:
                 print(f"Motion_getProcessState: {status}")
 
         ## Motion get limit status
@@ -101,11 +102,12 @@ async def main():
         err = await dev.Motion_close_async(port)
         print(f"Motion_close, status: {err}")
 
-    ## Disconnect device
-    dev.disconnect()
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
+
 
 def main_for_spyder(*args):
     if asyncio.get_event_loop().is_running():
@@ -113,7 +115,8 @@ def main_for_spyder(*args):
     else:
         return asyncio.run(main(*args))
 
+
 if __name__ == '__main__':
-    asyncio.run(main()) ## Use terminal
-    # await main() ## Use Jupyter or IPython(>=7.0)
-    # main_for_spyder() ## Use Spyder
+    asyncio.run(main())  ## Use terminal
+    # await main()  ## Use Jupyter or IPython(>=7.0)
+    # main_for_spyder()  ## Use Spyder

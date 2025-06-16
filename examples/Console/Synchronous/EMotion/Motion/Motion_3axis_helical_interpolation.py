@@ -8,15 +8,12 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
 
-## Python
-import time
-
 ## WPC
-
 from wpcsys import pywpc
+
 
 def main():
     ## Get Python driver version
@@ -27,7 +24,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.1.110") ## Depend on your device
+        dev.connect("192.168.1.110")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -36,10 +33,10 @@ def main():
 
     try:
         ## Parameters setting
-        port = 0 ## Depend on your device
+        port = 0  ## Depend on your device
         axis = 0
         stop_decel = 0
-        timeout = 3 ## second
+        timeout = 3  ## [sec]
 
         ## Helical parameters
         center_x = 0
@@ -55,8 +52,7 @@ def main():
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Motion open
         err = dev.Motion_open(port, timeout)
@@ -72,7 +68,7 @@ def main():
 
         ## Motion configure
         err = dev.Motion_cfgHelicalInterpo(port, center_x, center_y, finish_x, finish_y, int(False), pitch_axis3, int(False), pitch_axis4, rotation_num,
-        speed, helical_dir_cw, cal_timeout, timeout)
+                                           speed, helical_dir_cw, cal_timeout, timeout)
         print(f"Motion_cfgHelicalInterpo in axis{axis}, status: {err}")
 
         ## Motion start
@@ -96,13 +92,13 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+    finally:
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
 
 if __name__ == '__main__':
     main()

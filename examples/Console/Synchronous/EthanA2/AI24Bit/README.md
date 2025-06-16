@@ -1,20 +1,38 @@
-# AI24Bit
+# AI24Bit (Synchronous Mode)
 > **Note**
 > Ensure you are connected to the correct IP address or serial number.
 
 ## Overview
 
-This example project demonstrates how to use WPC Python driver to acquire AI current value
+This project demonstrates how to use the WPC Python driver to acquire 24-bit high-resolution analog input data using synchronous mode.
+The example covers data acquisition in various modes with high precision measurements.
+
+Synchronous mode is recommended when:
+- You need simple, sequential operations
+- You want straightforward, easy-to-understand code flow
+- You don't need concurrent operations
+- You're working with a single device
+- You prefer traditional procedural programming style
+- You need predictable timing for data acquisition
 
 For detailed API usage, refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-To create your own application, start with this simple template and then include your custom code.
+## Installation
 
-## How To Use This Example
+```bash
+pip install wpcsys
+```
 
-### Hardware Requirements
+## Dependencies
 
-To run this example, you will need a EthanA2 product, which contains AI function.
+- Python 3.8 or higher (up to 3.12)
+- wpcsys package
+- numpy (for data processing)
+- matplotlib (for data visualization, optional)
+
+## Hardware Requirements
+
+To run this example, you will need a EthanA2 product, which contains 24-bit AI function.
 
 Here we use EthanA2 as an example.
 
@@ -26,9 +44,7 @@ Here we use EthanA2 as an example.
 
 | Product |port | Description      |
 |---------|-----|------------------|
-| EthanI  | 0   | Get current (mA) |
-| EthanIA | 0   | Get current (mA) |
-| EthanIA | 1   | Get voltage (V)  |
+| EthanA2 | 0   | Get voltage (V)  |
 
 ## AI Interfacing SOP
 
@@ -41,6 +57,22 @@ Here we use EthanA2 as an example.
 7. Release device handle
 
 ## Troubleshooting
+
+Common issues and their solutions:
+
+1. Connection Error
+   - Solution: Check IP address or serial number
+   - Solution: Verify network connection
+
+2. Data Accuracy Issues
+   - Solution: Check signal conditioning
+   - Solution: Verify grounding
+   - Solution: Check for noise interference
+
+3. Synchronous Operation Issues
+   - Solution: Check for blocking operations
+   - Solution: Verify proper error handling
+   - Solution: Ensure proper resource cleanup
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
 

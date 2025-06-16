@@ -10,15 +10,15 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
+
+## WPC
+from wpcsys import pywpc
 
 ## Python
 import time
 
-## WPC
-
-from wpcsys import pywpc
 
 def main():
     ## Get Python driver version
@@ -29,7 +29,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.5.38") ## Depend on your device
+        dev.connect("192.168.5.38")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -38,13 +38,12 @@ def main():
 
     try:
         ## Parameters setting
-        timeout = 3 ## second
+        timeout = 3  ## [sec]
         value = 1
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         for i in range(3):
             ## Reset LED status
@@ -54,7 +53,7 @@ def main():
             ## Set green LED status
             err = dev.Wifi_setGreenLED(value, timeout)
             print(f"Wifi_setGreenLED, status: {err}")
-            time.sleep(1) ## delay [s]
+            time.sleep(1)  ## delay [sec]
 
             ## Reset LED status
             err = dev.Wifi_resetLED(timeout)
@@ -63,7 +62,7 @@ def main():
             ## Set blue LED status
             err = dev.Wifi_setBlueLED(value, timeout)
             print(f"Wifi_setBluLeED, status: {err}")
-            time.sleep(1) ## delay [s]
+            time.sleep(1)  ## delay [sec]
 
             ## Reset LED status
             err = dev.Wifi_resetLED(timeout)
@@ -72,19 +71,19 @@ def main():
             ## Set red LED status
             err = dev.Wifi_setRedLED(value, timeout)
             print(f"Wifi_setRedLED, status: {err}")
-            time.sleep(1) ## delay [s]
+            time.sleep(1)  ## delay [sec]
 
             print("")
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect network device
-    dev.disconnect()
+    finally:
+        ## Disconnect network device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
 
 if __name__ == '__main__':
     main()

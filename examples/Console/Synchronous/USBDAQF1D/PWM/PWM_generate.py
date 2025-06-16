@@ -13,15 +13,15 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
+
+## WPC
+from wpcsys import pywpc
 
 ## Python
 import time
 
-## WPC
-
-from wpcsys import pywpc
 
 def main():
     ## Get Python driver version
@@ -32,7 +32,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("default") ## Depend on your device
+        dev.connect("default")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -41,15 +41,14 @@ def main():
 
     try:
         ## Parameters setting
-        channel = 0 ## Depend on your device
+        channel = 0  ## Depend on your device
         frequency = 100
         duty_cycle = 50
-        timeout = 3 ## second
+        timeout = 3  ## [sec]
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Open PWM
         err = dev.PWM_open(channel, timeout)
@@ -68,7 +67,7 @@ def main():
         print(f"PWM_start in channel {channel}, status: {err}")
 
         ## Wait for seconds for generating signal
-        time.sleep(5) ## delay [s]
+        time.sleep(5)  ## delay [sec]
 
         ## Stop PWM
         err = dev.PWM_stop(channel, timeout)
@@ -80,13 +79,13 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+    finally:
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
 
 if __name__ == '__main__':
     main()

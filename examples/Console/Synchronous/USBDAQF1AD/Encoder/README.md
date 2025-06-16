@@ -1,22 +1,41 @@
-# Encoder
+# Encoder (Synchronous Mode)
 > **Note**
 > Ensure you are connected to the correct IP address or serial number.
 
 ## Overview
 
-This example project demonstrates how to use WPC python driver with encoder
+This project demonstrates how to use the WPC Python driver to handle encoder operations using synchronous mode.
+The example covers various operations including device configuration, position reading, and event handling.
+
+Synchronous mode is recommended when:
+- You need simple, sequential operations
+- You want straightforward, easy-to-understand code flow
+- You don't need concurrent operations
+- You're working with a single encoder
+- You prefer traditional procedural programming style
+- You need predictable timing for position reading
+- You need precise control over operation sequence
 
 For detailed API usage, refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-If you want to build your own encoder application, try to use this as a basic template, then add your own code.
+## Installation
 
-## How To Use This Example
+```bash
+pip install wpcsys
+```
 
-### Hardware Requirements
+## Dependencies
 
-To run this example, you will need a USBDAQF1AD product, which contains encoder function.
+- Python 3.8 or higher (up to 3.12)
+- wpcsys package
+- numpy (for data processing)
+- matplotlib (for data visualization, optional)
 
-Then, we take `USBDAQF1AD` for example.
+## Hardware Requirements
+
+To run this example, you will need a USBDAQF1AD product with encoder capability.
+
+Here we use USBDAQF1AD as an example.
 
 ### USBDAQF1AD
 
@@ -36,6 +55,23 @@ Then, we take `USBDAQF1AD` for example.
 10. Release device handle
 
 ## Troubleshooting
+
+Common issues and their solutions:
+
+1. Connection Error
+   - Solution: Check IP address or serial number
+   - Solution: Verify device connections
+   - Solution: Check power supply
+
+2. Reading Issues
+   - Solution: Verify encoder configuration
+   - Solution: Check signal connections
+   - Solution: Monitor position readings
+
+3. Synchronous Operation Issues
+   - Solution: Check for blocking operations
+   - Solution: Verify proper error handling
+   - Solution: Ensure proper resource cleanup
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
 

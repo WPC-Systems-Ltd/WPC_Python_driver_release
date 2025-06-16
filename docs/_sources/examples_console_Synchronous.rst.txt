@@ -12,6 +12,21 @@ Device finder
    examples/Console/Synchronous/DeviceFinder/Find_devices/find_networkdevices_blink.rst
 
 
+Drone
+-----
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/Synchronous/Drone/Drone/Drone_read_battery.rst
+
+   examples/Console/Synchronous/Drone/Drone/Drone_active.rst
+
+   examples/Console/Synchronous/Drone/Drone/Drone_takeoff.rst
+
+   examples/Console/Synchronous/Drone/Drone/Drone_simple_move.rst
+
+
 STEM
 ----
 

@@ -14,15 +14,15 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
+
+## WPC
+from wpcsys import pywpc
 
 ## Python
 import time
 
-## WPC
-
-from wpcsys import pywpc
 
 
 def main():
@@ -34,7 +34,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.1.110") ## Depend on your device
+        dev.connect("192.168.1.110")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -43,15 +43,14 @@ def main():
 
     try:
         ## Parameters setting
-        port = 0 ## Depend on your device
-        mode = 2 ## 0 : On demand, 1 : N-samples, 2 : Continuous.
+        port = 0  ## Depend on your device
+        mode = 2  ## 0: On demand, 1: N-samples, 2: Continuous
         sampling_rate = 200
         read_points = 200
-        read_delay = 0.2 ## second
-        timeout = 3 ## second
+        read_delay = 0.2  ## [sec]
+        timeout = 3  ## [sec]
         
-
-        # Get firmware model & version
+        ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
         print("Model name: " + driver_info[0])
         print("Firmware version: " + driver_info[-1])
@@ -78,7 +77,7 @@ def main():
         print(f"AI_startStreaming in port {port}, status: {err}")
 
         ## Wait a while for data acquisition
-        time.sleep(1) ## delay [s]
+        time.sleep(1)  ## delay [sec]
 
         ## Close AI streaming
         err = dev.AI_closeStreaming(port, timeout)
@@ -88,7 +87,7 @@ def main():
         while data_len > 0:
             ## Read data acquisition
             ai_2Dlist = dev.AI_readStreaming(port, read_points, read_delay)
-            print(f"Number of samples: {len(ai_2Dlist)}" )
+            print(f"Number of samples: {len(ai_2Dlist)}")
 
             ## Update data len
             data_len = len(ai_2Dlist)
@@ -99,13 +98,13 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+    finally:
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
 
 if __name__ == '__main__':
     main()

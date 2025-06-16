@@ -1,59 +1,64 @@
-# I2C
+# I2C (Asynchronous Mode)
 > **Note**
 > Ensure you are connected to the correct IP address or serial number.
 
 ## Overview
 
-This example project demonstrates how to use WPC python driver to read and write EEPROM (24C08C) through I2C interface.
+This project demonstrates how to use the WPC Python driver to handle I2C communications using asynchronous mode.
+The example covers various I2C operations including device scanning, data reading/writing, and event handling.
+
+Asynchronous mode is recommended when:
+- You need concurrent operations
+- You want non-blocking code execution
+- You're working with multiple devices
+- You need real-time data processing
+- You want to handle multiple tasks simultaneously
+- You need event-driven programming
+- You want to maintain responsive UI during operations
 
 For detailed API usage, refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-To create your own application, start with this simple template and then include your custom code.
+## Installation
 
-## How To Use This Example
+```bash
+pip install wpcsys
+```
 
-### Hardware Requirements
+## Dependencies
 
-To run this example, you will need a USBDAQF1TD product, which contains I2C master interface.
+- Python 3.8 or higher (up to 3.12)
+- wpcsys package
+- numpy (for data processing)
+- matplotlib (for data visualization, optional)
 
-Then, we take `USBDAQF1TD` for example and use 24C08C as I2C slave, which connect directly to `USBDAQF1TD`.
+## Hardware Requirements
 
-For more information, please refer to datasheet of the [24C08C EEPROM](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Reference/Datasheet).
+To run this example, you will need a USBDAQF1TD product with I2C capability.
 
-### USBDAQF1TD (I2C Master)
+Here we use USBDAQF1TD as an example.
 
-|  Model name      | port | Serial clock (SCL) | Serial data (SDA)|
-| -----------------|:----:|:------------------:|:----------------:|
-| USBDAQF1TD       | I2C1 |        P2.6        |   P2.7           |
-
-**Note:** External pull-up resistors (3.3 kΩ) are required for SDA/SCL pin.
+### USBDAQF1TD
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-USBDAQF1TD.JPG" alt="drawing" width="600"/>
 
-
-### EEPROM 24C08C (I2C Slave)
-
-|   EEPROM P/N     | pin8 (VCC) | pin7 (WP) | pin6 (SCL) | pin5 (SDA) | pin4 (GND) |
-|:----------------:|:----------:|:---------:|:----------:|:----------:|:----------:|
-| 24C08C           |    3.3V    |    GND    | P2.6       | P2.7       | GND        |
-
-**Note:** The pin `WP` in 24C08C should tight to ground.
-
-<img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/25C08C.JPG" alt="drawing" width="400"/>
-
-## I2C Interfacing SOP
-
-1. Create device handle
-2. Connect to device
-3. Open I2C port
-4. Set I2C parameters
-5. Write data via I2C
-6. Read data via I2C
-7. Close I2C port
-8. Disconnect device
-9. Release device handle
-
 ## Troubleshooting
+
+Common issues and their solutions:
+
+1. Connection Error
+   - Solution: Check IP address or serial number
+   - Solution: Verify I2C connections
+   - Solution: Check pull-up resistors
+
+2. Communication Issues
+   - Solution: Verify I2C address
+   - Solution: Check clock speed
+   - Solution: Monitor bus voltage
+
+3. Asynchronous Operation Issues
+   - Solution: Check for proper event handling
+   - Solution: Verify callback functions
+   - Solution: Ensure proper resource cleanup
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
 

@@ -10,15 +10,15 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
+
+## WPC
+from wpcsys import pywpc
 
 ## Python
 import time
 
-## WPC
-
-from wpcsys import pywpc
 
 def main():
     ## Get Python driver version
@@ -29,7 +29,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.1.110") ## Depend on your device
+        dev.connect("192.168.1.110")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -38,14 +38,13 @@ def main():
 
     try:
         ## Parameters setting
-        port = 0 ## Depend on your device
+        port = 0  ## Depend on your device
         DO_port = 0
-        timeout = 3 ## second
+        timeout = 3  ## [sec]
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Relay open
         err = dev.Relay_open(port, timeout)
@@ -53,7 +52,7 @@ def main():
 
         ## Toggle digital state for 10 times. Each times delay for 0.5 second
         for i in range(10):
-            if i%2 == 0:
+            if i % 2 == 0:
                 value = [0, 0, 0, 0, 0, 0]
             else:
                 value = [1, 1, 1, 1, 1, 1]
@@ -62,7 +61,7 @@ def main():
             print(f'Port: {DO_port}, digital state= {value}')
 
             ## Wait
-            time.sleep(0.5)  ## delay [s]
+            time.sleep(0.5)   ## delay [sec]
 
         ## Relay close
         err = dev.Relay_close(port, timeout)
@@ -70,13 +69,13 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+    finally:
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
 
 if __name__ == '__main__':
     main()

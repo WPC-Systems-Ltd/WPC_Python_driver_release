@@ -10,15 +10,15 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
+
+## WPC
+from wpcsys import pywpc
 
 ## Python
 import time
 
-## WPC
-
-from wpcsys import pywpc
 
 def main():
     ## Get Python driver version
@@ -29,7 +29,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("default") ## Depend on your device
+        dev.connect("default")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -38,13 +38,12 @@ def main():
 
     try:
         ## Parameters setting
-        delay = 1 ## second
-        timeout = 3 ## second
+        delay = 1  ## [sec]
+        timeout = 3  ## [sec]
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Set RTC
         err = dev.Sys_setRTC(2023, 5, 8, 15, 8, 7, timeout)
@@ -53,18 +52,18 @@ def main():
         for i in range(10):
             ## Get RTC
             print(f"Get RTC: {dev.Sys_getRTC()}")
-            time.sleep(delay) ## delay [s]
+            time.sleep(delay)  ## delay [sec]
 
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect network device
-    dev.disconnect()
+    finally:
+        ## Disconnect USB device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
 
 if __name__ == '__main__':
     main()

@@ -1,0 +1,6 @@
+Drone active
+============
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/Drone/Drone/Drone_active.py
+   :language: python
+   :linenos:

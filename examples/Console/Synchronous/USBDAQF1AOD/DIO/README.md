@@ -1,47 +1,63 @@
-# DIO
+# DIO (Synchronous Mode)
 > **Note**
 > Ensure you are connected to the correct IP address or serial number.
 
 ## Overview
 
-This example project demonstrates how to use WPC python driver to control DIO with whole port or assign pins
+This project demonstrates how to use the WPC Python driver to handle digital input/output operations using synchronous mode.
+The example covers various DIO operations including simultaneous input/output, port configuration, and event handling.
+
+Synchronous mode is recommended when:
+- You need simple, sequential operations
+- You want straightforward, easy-to-understand code flow
+- You don't need concurrent operations
+- You're working with a single device
+- You prefer traditional procedural programming style
+- You need predictable timing for data acquisition
+- You need precise control over operation sequence
 
 For detailed API usage, refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-To create your own application, start with this simple template and then include your custom code.
+## Installation
 
-## How To Use This Example
+```bash
+pip install wpcsys
+```
 
-### Hardware Requirements
+## Dependencies
+
+- Python 3.8 or higher (up to 3.12)
+- wpcsys package
+- numpy (for data processing)
+- matplotlib (for data visualization, optional)
+
+## Hardware Requirements
 
 To run this example, you will need a USBDAQF1AOD product, which contains DIO function.
 
-Then, we take `USBDAQF1AOD` for example.
+Here we use USBDAQF1AOD as an example.
 
 ### USBDAQF1AOD
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-USBDAQF1AOD.JPG" alt="drawing" width="600"/>
 
-## DO Interfacing SOP
-
-1. Create device handle
-2. Connect to device
-3. Open DO port/pins
-4. Write high or low value
-5. Close DO port/pins
-6. Disconnect device
-7. Release device handle
-
-## DI Interfacing SOP
-1. Create device handle
-2. Connect to device
-3. Open DI port/pins
-4. Read high or low value
-5. Close DI port/pins
-6. Disconnect device
-7. Release device handle
-
 ## Troubleshooting
+
+Common issues and their solutions:
+
+1. Connection Error
+   - Solution: Check IP address or serial number
+   - Solution: Verify network connection
+
+2. Signal Issues
+   - Solution: Check signal levels
+   - Solution: Verify voltage ranges
+   - Solution: Check for noise interference
+
+3. Synchronous Operation Issues
+   - Solution: Check for blocking operations
+   - Solution: Verify proper error handling
+   - Solution: Ensure proper resource cleanup
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
 

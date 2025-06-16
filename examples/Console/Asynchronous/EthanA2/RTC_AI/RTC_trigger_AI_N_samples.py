@@ -11,15 +11,17 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
+
+## WPC
+from wpcsys import pywpc
 
 ## Python
 import asyncio
+import sys
+sys.path.insert(0, 'src/')
 
-## WPC
-
-from wpcsys import pywpc
 
 async def main():
     ## Get Python driver version
@@ -30,7 +32,7 @@ async def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.1.110") ## Depend on your device
+        dev.connect("192.168.1.110")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -39,13 +41,13 @@ async def main():
 
     try:
         ## Parameters setting
-        port = 0 ## Depend on your device
-        mode = 1 ## 1 : N-samples, 2 : Continuous
-        trigger_mode = 1 ## 1 : Use RTC to start AI streaming
+        port = 0  ## Depend on your device
+        mode = 1  ## 1 : N-samples, 2 : Continuous
+        trigger_mode = 1   ## 1 : Use RTC to start AI streaming
         sampling_rate = 200
         samples = 200
         read_points = 200
-        read_delay = 0.5 ## second
+        read_delay = 0.5  ## [sec]
         mode_alarm = 0
         year = 2024
         month = 4
@@ -56,8 +58,7 @@ async def main():
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Open AI
         err = await dev.AI_open_async(port)
@@ -80,8 +81,8 @@ async def main():
         print(f"AI_setNumSamples_async {samples} in port {port}, status: {err}")
 
         ## Set RTC
-        err = await dev.Sys_setRTC_async(year, month, day, hour, minute, second-10)
-        print(f"Set RTC to {year}-{month}-{day}, {hour}:{minute}:{second-10}, status: {err}")
+        err = await dev.Sys_setRTC_async(year, month, day, hour, minute, second - 10)
+        print(f"Set RTC to {year}-{month}-{day}, {hour}:{minute}:{second - 10}, status: {err}")
 
         ## Open AI streaming
         err = await dev.AI_openStreaming_async(port)
@@ -95,7 +96,7 @@ async def main():
             ## Read data acquisition
             ai_2Dlist = await dev.AI_readStreaming_async(port, read_points, read_delay)
             print(f"len: {len(ai_2Dlist)}, {await dev.Sys_getRTC_async()}")
-            await asyncio.sleep(1) ## delay [s]
+            await asyncio.sleep(1)  ## delay [sec]
 
         ## Close AI streaming
         err = await dev.AI_closeStreaming_async(port)
@@ -107,19 +108,22 @@ async def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+    finally:
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
+
 def main_for_spyder(*args):
     if asyncio.get_event_loop().is_running():
         return asyncio.create_task(main(*args)).result()
     else:
         return asyncio.run(main(*args))
+
+
 if __name__ == '__main__':
-    asyncio.run(main()) ## Use terminal
-    # await main() ## Use Jupyter or IPython(>=7.0)
-    # main_for_spyder() ## Use Spyder
+    asyncio.run(main())  ## Use terminal
+    # await main()  ## Use Jupyter or IPython(>=7.0)
+    # main_for_spyder()  ## Use Spyder

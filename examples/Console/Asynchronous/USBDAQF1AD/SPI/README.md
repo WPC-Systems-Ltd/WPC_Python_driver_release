@@ -1,72 +1,64 @@
-# SPI
+# SPI (Asynchronous Mode)
 > **Note**
 > Ensure you are connected to the correct IP address or serial number.
 
 ## Overview
 
-This example project demonstrates how to use WPC python driver to read and write EEPROM (25LC640) through SPI interface.
+This project demonstrates how to use the WPC Python driver to handle SPI communications using asynchronous mode.
+The example covers various SPI operations including device configuration, data transfer, and event handling.
+
+Asynchronous mode is recommended when:
+- You need concurrent operations
+- You want non-blocking code execution
+- You're working with multiple devices
+- You need real-time data processing
+- You want to handle multiple tasks simultaneously
+- You need event-driven programming
+- You want to maintain responsive UI during operations
 
 For detailed API usage, refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-To create your own application, start with this simple template and then include your custom code.
+## Installation
 
-## How To Use This Example
+```bash
+pip install wpcsys
+```
 
-### Hardware Requirements
+## Dependencies
 
-To run this example, you will need a USBDAQF1AD product, which contains SPI master interface.
+- Python 3.8 or higher (up to 3.12)
+- wpcsys package
+- numpy (for data processing)
+- matplotlib (for data visualization, optional)
 
-Then, we take `USBDAQF1AD` for example and use 25LC640 as SPI slave, which connect directly to `USBDAQF1AD`.
+## Hardware Requirements
 
-For more information, please refer to datasheet of the [25LC640 EEPROM](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/Reference/Datasheet).
+To run this example, you will need a USBDAQF1AD product with SPI capability.
 
-### USBDAQF1AD (SPI Master)
+Here we use USBDAQF1AD as an example.
 
-|   Model name     | port | MOSI | MISO | SCK  |  CS  |
-| -----------------|:----:|:----:|:----:|:----:|:----:|
-| USBDAQF1AD       | SPI1 | P2.3 | P2.2 | P2.1 | P2.0 |
+### USBDAQF1AD
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-USBDAQF1AD.JPG" alt="drawing" width="600"/>
 
-
-### EEPROM 25LC640 (SPI Slave)
-
-| EEPROM P/N | pin8 (VCC) | pin7 (HOLD) | pin3 (WP) | pin5 (SI) | pin5 (SO) | pin6 (SCK) | pin1 (CS) | pin4 (Vss) |
-|:----------:|:----------:|:-----------:|:---------:|:---------:|:---------:|:----------:|:---------:|:----------:|
-|25LC640     |    3.3V    |     3.3V    |    3.3V   |   P2.2    |    P2.3   |    P2.1    |    P2.0   |    GND     |
-
-**Note:** The pin `WP` and `HOLD` in 25LC640 should tight to 3.3V or 5V.
-
-<img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/25LC640.JPG" alt="drawing" width="400"/>
-
-## SPI Interfacing SOP
-
-1. Create device handle
-2. Connect to device
-3. Open DO pins
-4. Open SPI port
-5. Set SPI parameters
-6. Write data via SPI
-7. Read data via SPI
-8. Close DO pins
-9. Close SPI port
-10 Disconnect device
-11. Release device handle
-
-## SPI Write
-1. CS low
-2. Write `WREN` bytes
-3. CS high
-4. CS low
-5. Write bytes into address
-6. CS high
-
-## SPI Read
-1. CS low
-2. Read bytes from address
-3. CS high
-
 ## Troubleshooting
+
+Common issues and their solutions:
+
+1. Connection Error
+   - Solution: Check IP address or serial number
+   - Solution: Verify SPI connections
+   - Solution: Check power supply
+
+2. Communication Issues
+   - Solution: Verify SPI mode
+   - Solution: Check clock speed
+   - Solution: Monitor signal levels
+
+3. Asynchronous Operation Issues
+   - Solution: Check for proper event handling
+   - Solution: Verify callback functions
+   - Solution: Ensure proper resource cleanup
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
 

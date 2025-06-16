@@ -10,15 +10,12 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
 
-## Python
-import time
-
 ## WPC
-
 from wpcsys import pywpc
+
 
 def main():
     ## Get Python driver version
@@ -29,7 +26,7 @@ def main():
 
     ## Connect to device    ## Connect to device
     try:
-        dev.connect("192.168.5.38") ## Depend on your device
+        dev.connect("192.168.5.38")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -38,7 +35,7 @@ def main():
 
     try:
         ## Parameters setting
-        timeout = 3 ## second
+        timeout = 3  ## [sec]
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
@@ -50,7 +47,7 @@ def main():
         battery = dev.Wifi_readBattery(timeout)
 
         ## Get power & charge status
-        power_status  = dev.Wifi_getPowerGoodStatus(timeout)
+        power_status = dev.Wifi_getPowerGoodStatus(timeout)
         charge_status = dev.Wifi_getChargeStatus(timeout)
 
         print(f"RSSI: {rssi} dBm")
@@ -60,13 +57,13 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect network device
-    dev.disconnect()
+    finally:
+        ## Disconnect network device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
 
 if __name__ == '__main__':
     main()

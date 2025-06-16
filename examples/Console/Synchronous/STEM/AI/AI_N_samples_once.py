@@ -29,14 +29,10 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
 
-## Python
-import time
-
 ## WPC
-
 from wpcsys import pywpc
 
 
@@ -49,7 +45,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.1.110") ## Depend on your device
+        dev.connect("192.168.1.110")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -58,19 +54,18 @@ def main():
 
     try:
         ## Parameters setting
-        slot = 1 ## Connect AIO module to slot
-        mode = 1 ## 0 : On demand, 1 : N-samples, 2 : Continuous
+        slot = 1  ## Connect AIO module to slot
+        mode = 1  ## 0: On demand, 1: N-samples, 2: Continuous
         sampling_rate = 1000
         samples = 200
         read_points = 200
-        read_delay = 0.5 ## second
-        timeout = 3 ## second
+        read_delay = 0.5  ## [sec]
+        timeout = 3  ## [sec]
         chip_select = [0, 1]
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Get slot mode
         slot_mode = dev.Sys_getMode(slot, timeout)
@@ -115,12 +110,12 @@ def main():
 
         ## Read AI data
         ai_2Dlist = dev.AI_readStreaming(slot, read_points, read_delay)
-        print(f"number of samples = {len(ai_2Dlist)}" )
+        print(f"number of samples = {len(ai_2Dlist)}")
 
         ok = True
         for i, ai_list in enumerate(ai_2Dlist):
             ## Check for any missing data
-            if len(ai_list) != len(chip_select)*8:
+            if len(ai_list) != len(chip_select) * 8:
                 print(i, ai_list)
                 ok = False
         if ok:
@@ -138,13 +133,13 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+    finally:
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
 
 if __name__ == '__main__':
     main()

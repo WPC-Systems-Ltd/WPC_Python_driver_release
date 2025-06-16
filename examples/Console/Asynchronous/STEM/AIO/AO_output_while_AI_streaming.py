@@ -28,16 +28,18 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
 
-## Python
-import asyncio
-import random
-
 ## WPC
-
 from wpcsys import pywpc
+
+## Python
+import random
+import asyncio
+import sys
+sys.path.insert(0, 'src/')
+
 
 async def main():
     ## Get Python driver version
@@ -48,7 +50,7 @@ async def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.1.110") ## Depend on your device
+        dev.connect("192.168.1.110")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -57,17 +59,16 @@ async def main():
 
     try:
         ## Parameters setting
-        slot = 1 ## Connect AIO module to slot
+        slot = 1  ## Connect AIO module to slot
         chip_select = [0, 1]
-        mode = 2 ## 0 : On demand, 1 : N-samples, 2 : Continuous.
+        mode = 2  ## 0: On demand, 1: N-samples, 2: Continuous
         sampling_rate = 200
         read_points = 200
-        read_delay = 2 ## second
+        read_delay = 2  ## [sec]
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Get slot mode
         slot_mode = await dev.Sys_getMode_async(slot)
@@ -117,11 +118,11 @@ async def main():
             ## Read data acquisition
             ai_2Dlist = await dev.AI_readStreaming_async(slot, read_points, read_delay)
             # print(ai_2Dlist)
-            print(f"Data len = {len(ai_2Dlist)}" )
+            print(f"Data len = {len(ai_2Dlist)}")
 
             ## Update data len and counter
             data_len = len(ai_2Dlist)
-            counter+=1
+            counter += 1
 
             if counter % 10 == 0:
                 ## Select AO random value from AO list
@@ -154,13 +155,16 @@ async def main():
         ## Release device handle
         dev.close()
 
-        return
+
 def main_for_spyder(*args):
     if asyncio.get_event_loop().is_running():
         return asyncio.create_task(main(*args)).result()
     else:
         return asyncio.run(main(*args))
+
+
 if __name__ == '__main__':
-    asyncio.run(main()) ## Use terminal
-    # await main() ## Use Jupyter or IPython(>=7.0)
-    # main_for_spyder() ## Use Spyder
+    asyncio.run(main())  ## Use terminal
+    # await main()  ## Use Jupyter or IPython(>=7.0)
+    # main_for_spyder()  ## Use Spyder
+

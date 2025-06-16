@@ -1,0 +1,19 @@
+Drone
+=====
+
+
+Device pinout 
+-------------
+
+.. image:: ../images/Pinouts/pinout-Drone.JPG
+   :width: 90%
+   :alt: Drone
+
+
+API function description 
+------------------------
+
+.. autoclass:: pywpc.Drone
+   :members:
+   :undoc-members:
+   :inherited-members:

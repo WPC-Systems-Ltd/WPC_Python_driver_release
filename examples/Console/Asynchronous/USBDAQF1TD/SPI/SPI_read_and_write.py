@@ -14,15 +14,17 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
+
+## WPC
+from wpcsys import pywpc
 
 ## Python
 import asyncio
+import sys
+sys.path.insert(0, 'src/')
 
-## WPC
-
-from wpcsys import pywpc
 
 async def main():
     ## Get Python driver version
@@ -33,7 +35,7 @@ async def main():
 
     ## Connect to device
     try:
-        dev.connect("default") ## Depend on your device
+        dev.connect("default")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -46,25 +48,24 @@ async def main():
         '''
 
         ## Parameters setting
-        port = 2 ## Depend on your device
+        port = 2  ## Depend on your device
         datasize = 0  ## Mode: 0 = 8-bit data, 1 = 16-bit data.
-        first_bit = 0 ## Mode: 0 = MSB first, 1 = LSB first.
+        first_bit = 0  ## Mode: 0 = MSB first, 1 = LSB first.
         prescaler = 64
-        mode = 0    ## 0 : CPOL = 0 CPHA = 0 ## 1 : CPOL = 0 CPHA = 1
-                    ## 2 : CPOL = 1 CPHA = 0 ## 3 : CPOL = 1 CPHA = 1
+        mode = 0  ## 0 : CPOL = 0 CPHA = 0, 1 : CPOL = 0 CPHA = 1, 2 : CPOL = 1 CPHA = 0, 3 : CPOL = 1 CPHA = 1
 
         if port == 1:
             DO_port = 2
-            DO_index = [0] ## CS pin
+            DO_index = [0]  ## CS pin
 
         elif port == 2:
             DO_port = 3
-            DO_index = [2] ## CS pin
+            DO_index = [2]  ## CS pin
 
         ## Generate random data
         import numpy as np
-        addr = np.random.randint(8) ## Generate a random address
-        value = np.random.randint(256) ## Generate a random value
+        addr = np.random.randint(8)  ## Generate a random address
+        value = np.random.randint(256)  ## Generate a random value
 
         WRITE = 0x02
         DUMMY = 0x01
@@ -73,8 +74,7 @@ async def main():
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         '''
         Open DO pins & SPI port & set CS(pin0) to high
@@ -175,13 +175,13 @@ async def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+    finally:
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
 
 def main_for_spyder(*args):
     if asyncio.get_event_loop().is_running():
@@ -189,7 +189,8 @@ def main_for_spyder(*args):
     else:
         return asyncio.run(main(*args))
 
+
 if __name__ == '__main__':
-    asyncio.run(main()) ## Use terminal
-    # await main() ## Use Jupyter or IPython(>=7.0)
-    # main_for_spyder() ## Use Spyder
+    asyncio.run(main())  ## Use terminal
+    # await main()  ## Use Jupyter or IPython(>=7.0)
+    # main_for_spyder()  ## Use Spyder

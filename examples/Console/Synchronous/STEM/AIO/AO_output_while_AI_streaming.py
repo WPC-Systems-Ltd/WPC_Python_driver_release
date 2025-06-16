@@ -28,16 +28,15 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
 
+## WPC
+from wpcsys import pywpc
+
 ## Python
-import time
 import random
 
-## WPC
-
-from wpcsys import pywpc
 
 def main():
     ## Get Python driver version
@@ -48,7 +47,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.1.110") ## Depend on your device
+        dev.connect("192.168.1.110")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -57,18 +56,17 @@ def main():
 
     try:
         ## Parameters setting
-        slot = 1 ## Connect AIO module to slot
+        slot = 1  ## Connect AIO module to slot
         chip_select = [0, 1]
-        mode = 2 ## 0 : On demand, 1 : N-samples, 2 : Continuous.
+        mode = 2  ## 0: On demand, 1: N-samples, 2: Continuous
         sampling_rate = 200
         read_points = 200
-        read_delay = 2 ## second
-        timeout = 3 ## second
+        read_delay = 2  ## [sec]
+        timeout = 3  ## [sec]
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Get slot mode
         slot_mode = dev.Sys_getMode(slot, timeout)
@@ -118,11 +116,11 @@ def main():
             ## Read data acquisition
             ai_2Dlist = dev.AI_readStreaming(slot, read_points, read_delay)
             # print(ai_2Dlist)
-            print(f"Data len = {len(ai_2Dlist)}" )
+            print(f"Data len = {len(ai_2Dlist)}")
 
             ## Update data len and counter
             data_len = len(ai_2Dlist)
-            counter+=1
+            counter += 1
 
             if counter % 10 == 0:
                 ## Select AO random value from AO list
@@ -155,7 +153,6 @@ def main():
         ## Release device handle
         dev.close()
 
-        return
 
 if __name__ == '__main__':
     main()

@@ -1,26 +1,41 @@
-# UART
+# UART (Asynchronous Mode)
 > **Note**
 > Ensure you are connected to the correct IP address or serial number.
 
 ## Overview
 
-This example project demonstrates how to use WPC python driver to read and write through UART interface.
+This project demonstrates how to use the WPC Python driver to handle UART communications using asynchronous mode.
+The example covers various UART operations including device configuration, data transfer, and event handling.
 
-In order to verify, please take another WPC USB DAQ device or other device which support UART interface.
-
-We connect two device via UART so that can communicate data.
+Asynchronous mode is recommended when:
+- You need concurrent operations
+- You want non-blocking code execution
+- You're working with multiple devices
+- You need real-time data processing
+- You want to handle multiple tasks simultaneously
+- You need event-driven programming
+- You want to maintain responsive UI during operations
 
 For detailed API usage, refer to the [documentation](https://wpc-systems-ltd.github.io/WPC_Python_driver_release/).
 
-To create your own application, start with this simple template and then include your custom code.
+## Installation
 
-## How To Use This Example
+```bash
+pip install wpcsys
+```
 
-### Hardware Requirements
+## Dependencies
 
-To run this example, you will need a USBDAQF1CD product, which contains UART function.
+- Python 3.8 or higher (up to 3.12)
+- wpcsys package
+- numpy (for data processing)
+- matplotlib (for data visualization, optional)
 
-Then, we take `USBDAQF1CD` for example.
+## Hardware Requirements
+
+To run this example, you will need a USBDAQF1CD product with UART capability.
+
+Here we use USBDAQF1CD as an example.
 
 ### USBDAQF1CD
 
@@ -43,6 +58,23 @@ Then, we take `USBDAQF1CD` for example.
 9. Release device handle
 
 ## Troubleshooting
+
+Common issues and their solutions:
+
+1. Connection Error
+   - Solution: Check IP address or serial number
+   - Solution: Verify UART connections
+   - Solution: Check power supply
+
+2. Communication Issues
+   - Solution: Verify baud rate
+   - Solution: Check data format
+   - Solution: Monitor signal levels
+
+3. Asynchronous Operation Issues
+   - Solution: Check for proper event handling
+   - Solution: Verify callback functions
+   - Solution: Ensure proper resource cleanup
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
 

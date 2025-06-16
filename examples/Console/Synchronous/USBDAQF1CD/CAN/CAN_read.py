@@ -14,15 +14,15 @@ For other examples please check:
     https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/tree/main/examples
 See README.md file to get detailed usage of this example.
 
-Copyright (c) 2022-2024 WPC Systems Ltd. All rights reserved.
+Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
+
+## WPC
+from wpcsys import pywpc
 
 ## Python
 import time
 
-## WPC
-
-from wpcsys import pywpc
 
 def main():
     ## Get python driver version
@@ -33,7 +33,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("default") ## Depend on your device
+        dev.connect("default")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -42,15 +42,14 @@ def main():
 
     try:
         ## Parameters setting
-        port = 1 ## Depend on your device
-        speed = 0 ## 0 = 125 KHz, 1 = 250 kHz, 2 = 500 kHz, 3 = 1 MHz
-        delay = 0.005 ## second
-        timeout = 3 ## second
+        port = 1  ## Depend on your device
+        speed = 0  ## 0: 125 KHz, 1: 250 kHz, 2: 500 kHz, 3: 1 MHz
+        delay = 0.005  ## [sec]
+        timeout = 3  ## [sec]
 
-        ## Get Firmware model & version
+        ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Open CAN
         err = dev.CAN_open(port, timeout)
@@ -67,12 +66,12 @@ def main():
         ## Read 5 frames for 1000 times
         for i in range(1000):
             frame_list = dev.CAN_read(port, 5, delay=delay)
-            if len(frame_list) > 0 :
+            if len(frame_list) > 0:
                 for frame in frame_list:
                     print(frame)
             else:
                 ## Wait for 0.01 seconds
-                time.sleep(0.01) ## delay [s]
+                time.sleep(0.01)  ## delay [sec]
 
         ## Set CAN port and stop CAN
         err = dev.CAN_stop(port, timeout)
@@ -84,13 +83,13 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+    finally:
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
 
 if __name__ == '__main__':
     main()
