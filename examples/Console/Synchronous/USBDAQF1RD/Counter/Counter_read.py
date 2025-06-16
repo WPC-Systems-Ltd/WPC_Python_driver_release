@@ -13,12 +13,9 @@ See README.md file to get detailed usage of this example.
 Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
 
-## Python
-import time
-
 ## WPC
-
 from wpcsys import pywpc
+
 
 def main():
     ## Get Python driver version
@@ -29,7 +26,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("default") ## Depend on your device
+        dev.connect("default")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -38,16 +35,15 @@ def main():
 
     try:
         ## Parameters setting
-        channel = 1 ## Depend on your device
-        timeout = 3 ## second
-        edge = 0 ##  0: Falling edge, 1: Rising edge
+        channel = 1  ## Depend on your device
+        timeout = 3  ## [sec]
+        edge = 0  ##  0: Falling edge, 1: Rising edge
         window_size = 100
         position = 0
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Open counter
         err = dev.Counter_open(channel, timeout)
@@ -94,7 +90,6 @@ def main():
         ## Release device handle
         dev.close()
 
-    return
 
 if __name__ == '__main__':
     main()

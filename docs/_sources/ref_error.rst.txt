@@ -351,7 +351,7 @@ Error Code Table
      - The Drone flight mode is not valid or is not recognized.
    * - -9401
      - 
-     - Input value is out of the allowed range (-8 to 0).
+     - Input value is out of the allowed range (-8 to 0)m.
    * - -9402
      - 
-     - Input value is out of the allowed range (-8 to 0).
+     - Input value is out of the allowed range (-15 to 15) degree.

@@ -14,9 +14,10 @@ Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 ## Python
 import threading
 import time
-## WPC
 
+## WPC
 from wpcsys import pywpc
+
 
 def Axis1_thread(handle, port, axis, delay=0.005):
     move_status = 0
@@ -27,7 +28,8 @@ def Axis1_thread(handle, port, axis, delay=0.005):
             return move_status
 
         ## Wait for seconds
-        time.sleep(delay) ## delay [s]
+        time.sleep(delay)  ## delay [sec]
+
 
 def Axis2_thread(handle, port, axis, delay=0.005):
     move_status = 0
@@ -38,7 +40,8 @@ def Axis2_thread(handle, port, axis, delay=0.005):
             return move_status
 
         ## Wait for seconds
-        time.sleep(delay) ## delay [s]
+        time.sleep(delay)  ## delay [sec]
+
 
 def Axis3_thread(handle, port, axis, delay=0.005):
     move_status = 0
@@ -49,7 +52,8 @@ def Axis3_thread(handle, port, axis, delay=0.005):
             return move_status
 
         ## Wait for seconds
-        time.sleep(delay) ## delay [s]
+        time.sleep(delay)  ## delay [sec]
+
 
 def main():
     ## Get Python driver version
@@ -60,7 +64,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.1.110") ## Depend on your device
+        dev.connect("192.168.1.110")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -69,14 +73,14 @@ def main():
 
     try:
         ## Parameters setting
-        port = 0 ## Depend on your device
+        port = 0  ## Depend on your device
         axis1 = 0
         axis2 = 1
         axis3 = 2
         two_pulse_mode = 1
         rel_posi_mode = 1
         stop_decel = 0
-        timeout = 3 ## second
+        timeout = 3  ## [sec]
 
         ## Axis and encoder parameters
         axis_dir_cw = 0
@@ -89,9 +93,9 @@ def main():
         reverse_enable_false = 0
 
         ## Define Axis1 ~ Axis3 thread
-        thread_1 = threading.Thread(target = Axis1_thread, args = [dev, port, axis1, 0.005])
-        thread_2 = threading.Thread(target = Axis2_thread, args = [dev, port, axis2, 0.005])
-        thread_3 = threading.Thread(target = Axis3_thread, args = [dev, port, axis3, 0.005])
+        thread_1 = threading.Thread(target=Axis1_thread, args=[dev, port, axis1, 0.005])
+        thread_2 = threading.Thread(target=Axis2_thread, args=[dev, port, axis2, 0.005])
+        thread_3 = threading.Thread(target=Axis3_thread, args=[dev, port, axis3, 0.005])
 
         ## Thread start
         thread_1.start()
@@ -100,8 +104,7 @@ def main():
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Motion open
         err = dev.Motion_open(port, timeout)
@@ -128,7 +131,7 @@ def main():
         err = dev.Motion_rstEncoderPosi(port, axis1, encoder_posi=0, timeout=timeout)
         print(f"Motion_rstEncoderPosi in axis{axis1}, status: {err}")
 
-        err = dev.Motion_cfgAxisMove(port, axis1, rel_posi_mode, target_posi=1000, velo=10000, accel=100000, decel=100000, timeout)
+        err = dev.Motion_cfgAxisMove(port, axis1, rel_posi_mode, target_posi=1000, velo=10000, accel=100000, decel=100000, timeout=timeout)
         print(f"Motion_cfgAxisMove in axis{axis1}, status: {err}")
 
         err = dev.Motion_enableServoOn(port, axis1, timeout)
@@ -203,13 +206,13 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+    finally:
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
 
 if __name__ == '__main__':
     main()

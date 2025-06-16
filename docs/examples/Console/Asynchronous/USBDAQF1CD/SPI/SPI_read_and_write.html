@@ -171,64 +171,64 @@
 <span class="linenos"> 17</span><span class="sd">Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.</span>
 <span class="linenos"> 18</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos"> 19</span>
-<span class="linenos"> 20</span><span class="c1">## Python</span>
-<span class="linenos"> 21</span><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="linenos"> 20</span><span class="c1">## WPC</span>
+<span class="linenos"> 21</span><span class="kn">from</span> <span class="nn">wpcsys</span> <span class="kn">import</span> <span class="n">pywpc</span>
 <span class="linenos"> 22</span>
-<span class="linenos"> 23</span><span class="c1">## WPC</span>
-<span class="linenos"> 24</span>
-<span class="linenos"> 25</span><span class="kn">from</span> <span class="nn">wpcsys</span> <span class="kn">import</span> <span class="n">pywpc</span>
-<span class="linenos"> 26</span>
-<span class="linenos"> 27</span><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-<span class="linenos"> 28</span>    <span class="c1">## Get Python driver version</span>
-<span class="linenos"> 29</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_FULL_NAME</span><span class="si">}</span><span class="s1"> - Version </span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="linenos"> 30</span>
-<span class="linenos"> 31</span>    <span class="c1">## Create device handle</span>
-<span class="linenos"> 32</span>    <span class="n">dev</span> <span class="o">=</span> <span class="n">pywpc</span><span class="o">.</span><span class="n">USBDAQF1CD</span><span class="p">()</span>
-<span class="linenos"> 33</span>
-<span class="linenos"> 34</span>    <span class="c1">## Connect to device</span>
-<span class="linenos"> 35</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos"> 36</span>        <span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">)</span> <span class="c1">## Depend on your device</span>
-<span class="linenos"> 37</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos"> 38</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="linenos"> 39</span>        <span class="c1">## Release device handle</span>
-<span class="linenos"> 40</span>        <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="linenos"> 41</span>        <span class="k">return</span>
-<span class="linenos"> 42</span>
-<span class="linenos"> 43</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos"> 44</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
-<span class="linenos"> 45</span><span class="sd">        Take 25LC640 for example</span>
-<span class="linenos"> 46</span><span class="sd">        &#39;&#39;&#39;</span>
-<span class="linenos"> 47</span>
-<span class="linenos"> 48</span>        <span class="c1">## Parameters setting</span>
-<span class="linenos"> 49</span>        <span class="n">port</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1">## Depend on your device</span>
-<span class="linenos"> 50</span>        <span class="n">datasize</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">## Mode: 0 = 8-bit data, 1 = 16-bit data.</span>
-<span class="linenos"> 51</span>        <span class="n">first_bit</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">## Mode: 0 = MSB first, 1 = LSB first.</span>
-<span class="linenos"> 52</span>        <span class="n">prescaler</span> <span class="o">=</span> <span class="mi">64</span>
-<span class="linenos"> 53</span>        <span class="n">mode</span> <span class="o">=</span> <span class="mi">0</span>    <span class="c1">## 0 : CPOL = 0 CPHA = 0 ## 1 : CPOL = 0 CPHA = 1</span>
-<span class="linenos"> 54</span>                    <span class="c1">## 2 : CPOL = 1 CPHA = 0 ## 3 : CPOL = 1 CPHA = 1</span>
-<span class="linenos"> 55</span>
-<span class="linenos"> 56</span>        <span class="k">if</span> <span class="n">port</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="linenos"> 57</span>            <span class="n">DO_port</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="linenos"> 58</span>            <span class="n">DO_index</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">## CS pin</span>
-<span class="linenos"> 59</span>
-<span class="linenos"> 60</span>        <span class="k">elif</span> <span class="n">port</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-<span class="linenos"> 61</span>            <span class="n">DO_port</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="linenos"> 62</span>            <span class="n">DO_index</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="c1">## CS pin</span>
-<span class="linenos"> 63</span>
-<span class="linenos"> 64</span>        <span class="c1">## Generate random data</span>
-<span class="linenos"> 65</span>        <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 66</span>        <span class="n">addr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="c1">## Generate a random address</span>
-<span class="linenos"> 67</span>        <span class="n">value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">256</span><span class="p">)</span> <span class="c1">## Generate a random value</span>
-<span class="linenos"> 68</span>
-<span class="linenos"> 69</span>        <span class="n">WRITE</span> <span class="o">=</span> <span class="mh">0x02</span>
-<span class="linenos"> 70</span>        <span class="n">DUMMY</span> <span class="o">=</span> <span class="mh">0x01</span>
-<span class="linenos"> 71</span>        <span class="n">READ</span> <span class="o">=</span> <span class="mh">0x03</span>
-<span class="linenos"> 72</span>        <span class="n">WREN</span> <span class="o">=</span> <span class="mh">0x06</span>
-<span class="linenos"> 73</span>
-<span class="linenos"> 74</span>        <span class="c1">## Get firmware model &amp; version</span>
-<span class="linenos"> 75</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo_async</span><span class="p">()</span>
-<span class="linenos"> 76</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="linenos"> 77</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos"> 23</span><span class="c1">## Python</span>
+<span class="linenos"> 24</span><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="linenos"> 25</span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="linenos"> 26</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;src/&#39;</span><span class="p">)</span>
+<span class="linenos"> 27</span>
+<span class="linenos"> 28</span>
+<span class="linenos"> 29</span><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos"> 30</span>    <span class="c1">## Get Python driver version</span>
+<span class="linenos"> 31</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_FULL_NAME</span><span class="si">}</span><span class="s1"> - Version </span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="linenos"> 32</span>
+<span class="linenos"> 33</span>    <span class="c1">## Create device handle</span>
+<span class="linenos"> 34</span>    <span class="n">dev</span> <span class="o">=</span> <span class="n">pywpc</span><span class="o">.</span><span class="n">USBDAQF1CD</span><span class="p">()</span>
+<span class="linenos"> 35</span>
+<span class="linenos"> 36</span>    <span class="c1">## Connect to device</span>
+<span class="linenos"> 37</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos"> 38</span>        <span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>  <span class="c1">## Depend on your device</span>
+<span class="linenos"> 39</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos"> 40</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos"> 41</span>        <span class="c1">## Release device handle</span>
+<span class="linenos"> 42</span>        <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos"> 43</span>        <span class="k">return</span>
+<span class="linenos"> 44</span>
+<span class="linenos"> 45</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos"> 46</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos"> 47</span><span class="sd">        Take 25LC640 for example</span>
+<span class="linenos"> 48</span><span class="sd">        &#39;&#39;&#39;</span>
+<span class="linenos"> 49</span>
+<span class="linenos"> 50</span>        <span class="c1">## Parameters setting</span>
+<span class="linenos"> 51</span>        <span class="n">port</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1">## Depend on your device</span>
+<span class="linenos"> 52</span>        <span class="n">datasize</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">## Mode: 0 = 8-bit data, 1 = 16-bit data.</span>
+<span class="linenos"> 53</span>        <span class="n">first_bit</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">## Mode: 0 = MSB first, 1 = LSB first.</span>
+<span class="linenos"> 54</span>        <span class="n">prescaler</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="linenos"> 55</span>        <span class="n">mode</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">## 0 : CPOL = 0 CPHA = 0, 1 : CPOL = 0 CPHA = 1, 2 : CPOL = 1 CPHA = 0, 3 : CPOL = 1 CPHA = 1</span>
+<span class="linenos"> 56</span>
+<span class="linenos"> 57</span>        <span class="k">if</span> <span class="n">port</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="linenos"> 58</span>            <span class="n">DO_port</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos"> 59</span>            <span class="n">DO_index</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1">## CS pin</span>
+<span class="linenos"> 60</span>
+<span class="linenos"> 61</span>        <span class="k">elif</span> <span class="n">port</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+<span class="linenos"> 62</span>            <span class="n">DO_port</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="linenos"> 63</span>            <span class="n">DO_index</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1">## CS pin</span>
+<span class="linenos"> 64</span>
+<span class="linenos"> 65</span>        <span class="c1">## Generate random data</span>
+<span class="linenos"> 66</span>        <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos"> 67</span>        <span class="n">addr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>  <span class="c1">## Generate a random address</span>
+<span class="linenos"> 68</span>        <span class="n">value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">256</span><span class="p">)</span>  <span class="c1">## Generate a random value</span>
+<span class="linenos"> 69</span>
+<span class="linenos"> 70</span>        <span class="n">WRITE</span> <span class="o">=</span> <span class="mh">0x02</span>
+<span class="linenos"> 71</span>        <span class="n">DUMMY</span> <span class="o">=</span> <span class="mh">0x01</span>
+<span class="linenos"> 72</span>        <span class="n">READ</span> <span class="o">=</span> <span class="mh">0x03</span>
+<span class="linenos"> 73</span>        <span class="n">WREN</span> <span class="o">=</span> <span class="mh">0x06</span>
+<span class="linenos"> 74</span>
+<span class="linenos"> 75</span>        <span class="c1">## Get firmware model &amp; version</span>
+<span class="linenos"> 76</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo_async</span><span class="p">()</span>
+<span class="linenos"> 77</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model name: </span><span class="si">{</span><span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, Firmware version: </span><span class="si">{</span><span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span>
 <span class="linenos"> 78</span>
 <span class="linenos"> 79</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos"> 80</span><span class="sd">        Open DO pins &amp; SPI port &amp; set CS(pin0) to high</span>
@@ -329,13 +329,13 @@
 <span class="linenos">175</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos">176</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="linenos">177</span>
-<span class="linenos">178</span>    <span class="c1">## Disconnect device</span>
-<span class="linenos">179</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
-<span class="linenos">180</span>
-<span class="linenos">181</span>    <span class="c1">## Release device handle</span>
-<span class="linenos">182</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="linenos">183</span>
-<span class="linenos">184</span>    <span class="k">return</span>
+<span class="linenos">178</span>    <span class="k">finally</span><span class="p">:</span>
+<span class="linenos">179</span>        <span class="c1">## Disconnect device</span>
+<span class="linenos">180</span>        <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+<span class="linenos">181</span>
+<span class="linenos">182</span>        <span class="c1">## Release device handle</span>
+<span class="linenos">183</span>        <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos">184</span>
 <span class="linenos">185</span>
 <span class="linenos">186</span><span class="k">def</span> <span class="nf">main_for_spyder</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
 <span class="linenos">187</span>    <span class="k">if</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">is_running</span><span class="p">():</span>
@@ -343,10 +343,11 @@
 <span class="linenos">189</span>    <span class="k">else</span><span class="p">:</span>
 <span class="linenos">190</span>        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span>
 <span class="linenos">191</span>
-<span class="linenos">192</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">193</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span> <span class="c1">## Use terminal</span>
-<span class="linenos">194</span>    <span class="c1"># await main() ## Use Jupyter or IPython(&gt;=7.0)</span>
-<span class="linenos">195</span>    <span class="c1"># main_for_spyder() ## Use Spyder</span>
+<span class="linenos">192</span>
+<span class="linenos">193</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">194</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>  <span class="c1">## Use terminal</span>
+<span class="linenos">195</span>    <span class="c1"># await main()  ## Use Jupyter or IPython(&gt;=7.0)</span>
+<span class="linenos">196</span>    <span class="c1"># main_for_spyder()  ## Use Spyder</span>
 </pre></div>
 </div>
 </section>

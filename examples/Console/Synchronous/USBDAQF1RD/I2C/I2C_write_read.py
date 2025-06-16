@@ -19,12 +19,12 @@ See README.md file to get detailed usage of this example.
 Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
 
+## WPC
+from wpcsys import pywpc
+
 ## Python
 import time
 
-## WPC
-
-from wpcsys import pywpc
 
 def main():
     ## Get Python driver version
@@ -35,7 +35,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("default") ## Depend on your device
+        dev.connect("default")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -44,15 +44,15 @@ def main():
 
     try:
         ## Parameters setting
-        port = 1 ## Depend on your device
+        port = 1  ## Depend on your device
         mode = 0
-        device_address = 0x50 ## 01010000
-        timeout = 3 ## second
+        device_address = 0x50  ## 01010000
+        timeout = 3  ## [sec]
 
         ## Generate random data
         import numpy as np
-        word_address = np.random.randint(8) ## Generate a random address
-        value = np.random.randint(256) ## Generate a random value
+        word_address = np.random.randint(8)  ## Generate a random address
+        value = np.random.randint(256)  ## Generate a random value
 
         '''
         Take 24C08C for example
@@ -60,8 +60,7 @@ def main():
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         '''
         Open I2C port
@@ -87,7 +86,7 @@ def main():
         err = dev.I2C_write(port, device_address, [word_address, value], timeout)
         print(f"I2C_write in port {port}, status: {err}")
         print(f"write data: 0x{value:02X}")
-        time.sleep(0.05) ## delay [s]
+        time.sleep(0.05)  ## delay [sec]
 
         '''
         Read data via I2C
@@ -111,13 +110,13 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+    finally:
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
 
 if __name__ == '__main__':
     main()

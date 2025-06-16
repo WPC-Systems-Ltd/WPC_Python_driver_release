@@ -12,33 +12,39 @@ See README.md file to get detailed usage of this example.
 
 Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
+## WPC
+from wpcsys import pywpc
 
 ## Python
 import asyncio
 import threading
 import time
-## WPC
+import sys
+sys.path.insert(0, 'src/')
 
-from wpcsys import pywpc
 
 async def getRTC(handle, delay=1):
     data = await handle.Sys_getRTC_async()
     print("RTC Time:" + str(data))
-    await asyncio.sleep(delay)  ## delay [s]
+    await asyncio.sleep(delay)   ## delay [sec]
+
 
 async def printString(handle, delay=1):
     print("WPC Systems Ltd")
-    await asyncio.sleep(delay)  ## delay [s]
+    await asyncio.sleep(delay)   ## delay [sec]
+
 
 def RTC_thread(handle, delay):
     while True:
         asyncio.run(getRTC(handle, delay))
-        time.sleep(1) ## delay [s]
+        time.sleep(1)  ## delay [sec]
+
 
 def Print_thread(handle, delay):
     while True:
         asyncio.run(printString(handle, delay))
-        time.sleep(1) ## delay [s]
+        time.sleep(1)  ## delay [sec]
+
 
 async def main():
     ## Get Python driver version
@@ -49,7 +55,7 @@ async def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.5.38") ## Depend on your device
+        dev.connect("192.168.5.38")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -60,27 +66,26 @@ async def main():
     try:
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
-        _threadPrint = threading.Thread(target = Print_thread, args = [dev, 1])
+        _threadPrint = threading.Thread(target=Print_thread, args=[dev, 1])
         _threadPrint.start()
 
-        _threadRTC = threading.Thread(target = RTC_thread, args = [dev, 1])
+        _threadRTC = threading.Thread(target=RTC_thread, args=[dev, 1])
         _threadRTC.start()
     except Exception as err:
         pywpc.printGenericError(err)
 
     ## This part will execute immediately because the sync thread is running in parallel.
+
     '''
     # Disconnect device
     dev.disconnect()
 
-    # Release device handle
+    ## Release device handle
     dev.close()
     '''
 
-    return
 
 def main_for_spyder(*args):
     if asyncio.get_event_loop().is_running():
@@ -88,7 +93,8 @@ def main_for_spyder(*args):
     else:
         return asyncio.run(main(*args))
 
+
 if __name__ == '__main__':
-    asyncio.run(main()) ## Use terminal
-    # await main() ## Use Jupyter or IPython(>=7.0)
-    # main_for_spyder() ## Use Spyder
+    asyncio.run(main())  ## Use terminal
+    # await main()  ## Use Jupyter or IPython(>=7.0)
+    # main_for_spyder()  ## Use Spyder

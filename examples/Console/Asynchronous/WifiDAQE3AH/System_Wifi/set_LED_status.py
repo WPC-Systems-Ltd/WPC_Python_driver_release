@@ -13,12 +13,14 @@ See README.md file to get detailed usage of this example.
 Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
 
+## WPC
+from wpcsys import pywpc
+
 ## Python
 import asyncio
+import sys
+sys.path.insert(0, 'src/')
 
-## WPC
-
-from wpcsys import pywpc
 
 async def main():
     ## Get Python driver version
@@ -29,7 +31,7 @@ async def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.5.38") ## Depend on your device
+        dev.connect("192.168.5.38")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -42,8 +44,7 @@ async def main():
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         for i in range(3):
             ## Reset LED status
@@ -53,7 +54,7 @@ async def main():
             ## Set green LED status
             err = await dev.Wifi_setGreenLED_async(value)
             print(f"Wifi_setGreenLED_async, status: {err}")
-            await asyncio.sleep(1) ## delay [s]
+            await asyncio.sleep(1)  ## delay [sec]
 
             ## Reset LED status
             err = await dev.Wifi_resetLED_async()
@@ -62,7 +63,7 @@ async def main():
             ## Set blue LED status
             err = await dev.Wifi_setBlueLED_async(value)
             print(f"Wifi_setBlueLED_async, status: {err}")
-            await asyncio.sleep(1) ## delay [s]
+            await asyncio.sleep(1)  ## delay [sec]
 
             ## Reset LED status
             err = await dev.Wifi_resetLED_async()
@@ -71,19 +72,19 @@ async def main():
             ## Set red LED status
             err = await dev.Wifi_setRedLED_async(value)
             print(f"Wifi_setRedLED_async, status: {err}")
-            await asyncio.sleep(1) ## delay [s]
+            await asyncio.sleep(1)  ## delay [sec]
 
             print("")
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect network device
-    dev.disconnect()
+    finally:
+        ## Disconnect network device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
 
 def main_for_spyder(*args):
     if asyncio.get_event_loop().is_running():
@@ -91,7 +92,8 @@ def main_for_spyder(*args):
     else:
         return asyncio.run(main(*args))
 
+
 if __name__ == '__main__':
-    asyncio.run(main()) ## Use terminal
-    # await main() ## Use Jupyter or IPython(>=7.0)
-    # main_for_spyder() ## Use Spyder
+    asyncio.run(main())  ## Use terminal
+    # await main()  ## Use Jupyter or IPython(>=7.0)
+    # main_for_spyder()  ## Use Spyder

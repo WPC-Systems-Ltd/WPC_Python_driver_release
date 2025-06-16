@@ -15,12 +15,12 @@ See README.md file to get detailed usage of this example.
 Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
 
+## WPC
+from wpcsys import pywpc
+
 ## Python
 import time
 
-## WPC
-
-from wpcsys import pywpc
 
 def main():
     ## Get Python driver version
@@ -35,7 +35,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("COM42", baudrate) ## Depend on your device
+        dev.connect("COM42", baudrate)  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -43,6 +43,14 @@ def main():
         return
 
     try:
+        ## Get firmware model & version
+        firmware_version = dev.Drone_getFirmwareVersion(timeout)
+        print(f"Firmware version: {firmware_version}")
+
+        ## Get serial number
+        serial_number = dev.Drone_getSerialNumber(timeout)
+        print(f"Serial number: {serial_number}")
+
         ## Read task control mode
         control_mode = dev.Drone_readTaskControlMode(timeout)
         if control_mode == 0:
@@ -69,16 +77,16 @@ def main():
                 print("Not in the takeoff procedure")
 
         ## Wait a while
-        time.sleep(3) ## delay [s]
+        time.sleep(3)  ## delay [sec]
 
         ## Read landing status
         landing_status = 0
         while landing_status != 3:
             landing_status = dev.Drone_readStatus(timeout)[3]
             if landing_status != 3:
-                print(f"Waiting....")
+                print("Waiting....")
             else:
-                print(f"Done!")
+                print("Done!")
 
         ## Read drone take-off status
         activate_status = dev.Drone_readTakeOffStatus(timeout)
@@ -92,6 +100,7 @@ def main():
 
         ## Release device handle
         dev.close()
+
 
 if __name__ == '__main__':
     main()

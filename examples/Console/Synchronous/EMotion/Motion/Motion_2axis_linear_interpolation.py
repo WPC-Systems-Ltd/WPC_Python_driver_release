@@ -11,12 +11,9 @@ See README.md file to get detailed usage of this example.
 Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
 
-## Python
-import time
-
 ## WPC
-
 from wpcsys import pywpc
+
 
 def main():
     ## Get Python driver version
@@ -27,7 +24,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.1.110") ## Depend on your device
+        dev.connect("192.168.1.110")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -36,9 +33,9 @@ def main():
 
     try:
         ## Parameters setting
-        port = 0 ## Depend on your device
+        port = 0  ## Depend on your device
         stop_decel = 0
-        timeout = 3 ## second
+        timeout = 3  ## [sec]
 
         ## Linear interpolation parameters
         axis1 = 0
@@ -48,8 +45,7 @@ def main():
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Motion open
         err = dev.Motion_open(port, timeout)
@@ -64,7 +60,7 @@ def main():
         print(f"Motion_loadCfgFile, status: {err}")
 
         ## Motion configure
-        err = dev.Motion_cfg2AxisLinearInterpo(port, axis1, dest_posi1, axis2, dest_posi2, speed=2000, accel=100000, decel=100000, timeout)
+        err = dev.Motion_cfg2AxisLinearInterpo(port, axis1, dest_posi1, axis2, dest_posi2, speed=2000, accel=100000, decel=100000, timeout=timeout)
         print(f"Motion_cfg2AxisLinearInterpo in axis{axis1} and {axis2}, status: {err}")
 
         ## Motion start
@@ -92,13 +88,13 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+    finally:
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
 
 if __name__ == '__main__':
     main()

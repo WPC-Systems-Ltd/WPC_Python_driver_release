@@ -15,6 +15,8 @@ Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 
 ## Python
 import asyncio
+import sys
+sys.path.insert(0, 'src/')
 import numpy as np
 import stl.mesh as mesh
 import mpl_toolkits.mplot3d as mplot3d
@@ -27,9 +29,7 @@ from matplotlib import rcParams
 from matplotlib.transforms import Affine2D
 
 ## WPC
-
 from wpcsys import pywpc
-
 
 ################################################################################
 ## Configuration
@@ -283,7 +283,7 @@ async def main():
 
     ## Connect to device
     try:
-      dev.connect("192.168.5.38") ## Depend on your device
+      dev.connect("192.168.5.38")  ## Depend on your device
     except Exception as err:
       pywpc.printGenericError(err)
       ## Release device handle
@@ -292,7 +292,7 @@ async def main():
 
     try:
       ## Parameters setting
-      port = 0 ## Depend on your device
+      port = 0  ## Depend on your device
       mode = 0 ## 0: Orientation, 1: Acceleration, 2: Orientation + Acceleration
 
       ## Get firmware model & version
@@ -345,7 +345,9 @@ def main_for_spyder(*args):
         return asyncio.create_task(main(*args)).result()
     else:
         return asyncio.run(main(*args))
+
+
 if __name__ == '__main__':
-    asyncio.run(main()) ## Use terminal
-    # await main() ## Use Jupyter or IPython(>=7.0)
-    # main_for_spyder() ## Use Spyder
+    asyncio.run(main())  ## Use terminal
+    # await main()  ## Use Jupyter or IPython(>=7.0)
+    # main_for_spyder()  ## Use Spyder

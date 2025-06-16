@@ -17,12 +17,11 @@ See README.md file to get detailed usage of this example.
 Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
 
+## WPC
+from wpcsys import pywpc
+
 ## Python
 import time
-
-## WPC
-
-from wpcsys import pywpc
 
 
 def main():
@@ -34,7 +33,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.1.110") ## Depend on your device
+        dev.connect("192.168.1.110")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -43,14 +42,13 @@ def main():
 
     try:
         ## Parameters setting
-        port = 0 ## Depend on your device
+        port = 0  ## Depend on your device
         pinindex = [1, 3, 5, 7]
-        timeout = 3 ## second
+        timeout = 3  ## [sec]
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Open pins with digital output
         err = dev.DO_openPins(port, pinindex, timeout)
@@ -62,7 +60,7 @@ def main():
             print(state)
 
             ## Wait for 0.5 second to see led status
-            time.sleep(0.5) ## delay [s]
+            time.sleep(0.5)  ## delay [sec]
 
         ## Close pins with digital output
         err = dev.DO_closePins(port, pinindex, timeout)
@@ -70,13 +68,13 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+    finally:
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
 
 if __name__ == '__main__':
     main()

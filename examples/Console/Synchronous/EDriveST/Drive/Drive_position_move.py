@@ -11,12 +11,9 @@ See README.md file to get detailed usage of this example.
 Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
 
-## Python
-import time
-
 ## WPC
-
 from wpcsys import pywpc
+
 
 def main():
     ## Get Python driver version
@@ -27,7 +24,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.1.110") ## Depend on your device
+        dev.connect("192.168.1.110")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -36,21 +33,20 @@ def main():
 
     try:
         ## Parameters setting
-        port = 0 ## Depend on your device
+        port = 0  ## Depend on your device
         position = 50000
         speed = 50000
         acceleration = 10000
         deceleration = 10000
-        mode = 1 ## 0: absolute, 1: relative.
+        mode = 1  ## 0: absolute, 1: relative.
         active_high = 1
         en_forward = 1
         en_reverse = 1
-        timeout = 3 ## second
+        timeout = 3  ## [sec]
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Motion open
         err = dev.Motion_open(port, timeout)
@@ -73,9 +69,9 @@ def main():
         print(f"Motion_start, status: {err}")
 
         status = 1
-        while status != 0 :
+        while status != 0:
             status = dev.Motion_getProcessState(port, timeout)
-            if(status == 0):
+            if status == 0:
                 print(f"Motion_getProcessState: {status}")
     except Exception as err:
         pywpc.printGenericError(err)
@@ -94,11 +90,12 @@ def main():
         err = dev.Motion_close(port, timeout)
         print(f"Motion_close, status: {err}")
 
-    ## Disconnect device
-    dev.disconnect()
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
+
 
 if __name__ == '__main__':
     main()

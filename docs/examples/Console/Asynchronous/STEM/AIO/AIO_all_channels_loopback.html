@@ -190,40 +190,40 @@
 <span class="linenos"> 34</span><span class="sd">Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.</span>
 <span class="linenos"> 35</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos"> 36</span>
-<span class="linenos"> 37</span><span class="c1">## Python</span>
-<span class="linenos"> 38</span><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="linenos"> 37</span><span class="c1">## WPC</span>
+<span class="linenos"> 38</span><span class="kn">from</span> <span class="nn">wpcsys</span> <span class="kn">import</span> <span class="n">pywpc</span>
 <span class="linenos"> 39</span>
-<span class="linenos"> 40</span><span class="c1">## WPC</span>
-<span class="linenos"> 41</span>
-<span class="linenos"> 42</span><span class="kn">from</span> <span class="nn">wpcsys</span> <span class="kn">import</span> <span class="n">pywpc</span>
-<span class="linenos"> 43</span>
+<span class="linenos"> 40</span><span class="c1">## Python</span>
+<span class="linenos"> 41</span><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="linenos"> 42</span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="linenos"> 43</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;src/&#39;</span><span class="p">)</span>
 <span class="linenos"> 44</span>
-<span class="linenos"> 45</span><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-<span class="linenos"> 46</span>    <span class="c1">## Get Python driver version</span>
-<span class="linenos"> 47</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_FULL_NAME</span><span class="si">}</span><span class="s1"> - Version </span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="linenos"> 48</span>
-<span class="linenos"> 49</span>    <span class="c1">## Create device handle</span>
-<span class="linenos"> 50</span>    <span class="n">dev</span> <span class="o">=</span> <span class="n">pywpc</span><span class="o">.</span><span class="n">STEM</span><span class="p">()</span>
-<span class="linenos"> 51</span>
-<span class="linenos"> 52</span>    <span class="c1">## Connect to device</span>
-<span class="linenos"> 53</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos"> 54</span>        <span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;192.168.1.110&quot;</span><span class="p">)</span> <span class="c1">## Depend on your device</span>
-<span class="linenos"> 55</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos"> 56</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="linenos"> 57</span>        <span class="c1">## Release device handle</span>
-<span class="linenos"> 58</span>        <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="linenos"> 59</span>        <span class="k">return</span>
-<span class="linenos"> 60</span>
-<span class="linenos"> 61</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos"> 62</span>        <span class="c1">## Parameters setting</span>
-<span class="linenos"> 63</span>        <span class="n">slot</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">## Connect AIO module to slot</span>
-<span class="linenos"> 64</span>        <span class="n">ao_value_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">]</span>
-<span class="linenos"> 65</span>        <span class="n">chip_select</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="linenos"> 66</span>
-<span class="linenos"> 67</span>        <span class="c1">## Get firmware model &amp; version</span>
-<span class="linenos"> 68</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo_async</span><span class="p">()</span>
-<span class="linenos"> 69</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="linenos"> 70</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="linenos"> 45</span>
+<span class="linenos"> 46</span><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos"> 47</span>    <span class="c1">## Get Python driver version</span>
+<span class="linenos"> 48</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_FULL_NAME</span><span class="si">}</span><span class="s1"> - Version </span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="linenos"> 49</span>
+<span class="linenos"> 50</span>    <span class="c1">## Create device handle</span>
+<span class="linenos"> 51</span>    <span class="n">dev</span> <span class="o">=</span> <span class="n">pywpc</span><span class="o">.</span><span class="n">STEM</span><span class="p">()</span>
+<span class="linenos"> 52</span>
+<span class="linenos"> 53</span>    <span class="c1">## Connect to device</span>
+<span class="linenos"> 54</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos"> 55</span>        <span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;192.168.1.110&quot;</span><span class="p">)</span>  <span class="c1">## Depend on your device</span>
+<span class="linenos"> 56</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos"> 57</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos"> 58</span>        <span class="c1">## Release device handle</span>
+<span class="linenos"> 59</span>        <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos"> 60</span>        <span class="k">return</span>
+<span class="linenos"> 61</span>
+<span class="linenos"> 62</span>    <span class="k">try</span><span class="p">:</span>
+<span class="linenos"> 63</span>        <span class="c1">## Parameters setting</span>
+<span class="linenos"> 64</span>        <span class="n">slot</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1">## Connect AIO module to slot</span>
+<span class="linenos"> 65</span>        <span class="n">ao_value_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">]</span>
+<span class="linenos"> 66</span>        <span class="n">chip_select</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos"> 67</span>
+<span class="linenos"> 68</span>        <span class="c1">## Get firmware model &amp; version</span>
+<span class="linenos"> 69</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo_async</span><span class="p">()</span>
+<span class="linenos"> 70</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model name: </span><span class="si">{</span><span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, Firmware version: </span><span class="si">{</span><span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span>
 <span class="linenos"> 71</span>
 <span class="linenos"> 72</span>        <span class="c1">## Get slot mode</span>
 <span class="linenos"> 73</span>        <span class="n">slot_mode</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getMode_async</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
@@ -272,23 +272,25 @@
 <span class="linenos">116</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos">117</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="linenos">118</span>
-<span class="linenos">119</span>    <span class="c1">## Disconnect device</span>
-<span class="linenos">120</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
-<span class="linenos">121</span>
-<span class="linenos">122</span>    <span class="c1">## Release device handle</span>
-<span class="linenos">123</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="linenos">124</span>
-<span class="linenos">125</span>    <span class="k">return</span>
+<span class="linenos">119</span>    <span class="k">finally</span><span class="p">:</span>
+<span class="linenos">120</span>        <span class="c1">## Disconnect device</span>
+<span class="linenos">121</span>        <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+<span class="linenos">122</span>
+<span class="linenos">123</span>        <span class="c1">## Release device handle</span>
+<span class="linenos">124</span>        <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos">125</span>
 <span class="linenos">126</span>
 <span class="linenos">127</span><span class="k">def</span> <span class="nf">main_for_spyder</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
 <span class="linenos">128</span>    <span class="k">if</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">is_running</span><span class="p">():</span>
 <span class="linenos">129</span>        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
 <span class="linenos">130</span>    <span class="k">else</span><span class="p">:</span>
 <span class="linenos">131</span>        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span>
-<span class="linenos">132</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">133</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span> <span class="c1">## Use terminal</span>
-<span class="linenos">134</span>    <span class="c1"># await main() ## Use Jupyter or IPython(&gt;=7.0)</span>
-<span class="linenos">135</span>    <span class="c1"># main_for_spyder() ## Use Spyder</span>
+<span class="linenos">132</span>
+<span class="linenos">133</span>
+<span class="linenos">134</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">135</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>  <span class="c1">## Use terminal</span>
+<span class="linenos">136</span>    <span class="c1"># await main()  ## Use Jupyter or IPython(&gt;=7.0)</span>
+<span class="linenos">137</span>    <span class="c1"># main_for_spyder()  ## Use Spyder</span>
 </pre></div>
 </div>
 </section>

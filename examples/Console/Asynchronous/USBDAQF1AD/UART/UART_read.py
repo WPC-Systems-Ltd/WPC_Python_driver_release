@@ -17,12 +17,14 @@ See README.md file to get detailed usage of this example.
 Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
 
+## WPC
+from wpcsys import pywpc
+
 ## Python
 import asyncio
+import sys
+sys.path.insert(0, 'src/')
 
-## WPC
-
-from wpcsys import pywpc
 
 async def main():
     ## Get Python driver version
@@ -33,7 +35,7 @@ async def main():
 
     ## Connect to device
     try:
-        dev.connect("default") ## Depend on your device
+        dev.connect("default")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -42,18 +44,17 @@ async def main():
 
     try:
         ## Parameters setting
-        port = 2 ## Depend on your device
+        port = 2  ## Depend on your device
         baudrate = 9600
         data_bit_mode = 0  ## 0 : 8-bit data, 1 : 9-bit data.
-        parity_mode = 0    ## 0 : None, 2 : Even parity, 3 : Odd parity.
+        parity_mode = 0  ## 0 : None, 2 : Even parity, 3 : Odd parity.
         stop_bit_mode = 0  ## 0 : 1 bit, 1 : 0.5 bits, 2 : 2 bits, 3 : 1.5 bits
         read_bytes = 20
-        delay = 0.005 ## second
+        delay = 0.005  ## [sec]
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Open UART
         err = await dev.UART_open_async(port)
@@ -79,7 +80,7 @@ async def main():
         print("Wait for 10 seconds to receive data from other devices")
 
         ## Wait
-        await asyncio.sleep(10) ## delay [s]
+        await asyncio.sleep(10)  ## delay [sec]
 
         ## Set UART port and read 20 bytes
         data = await dev.UART_read_async(port, read_bytes, delay=delay)
@@ -91,13 +92,13 @@ async def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+    finally:
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
 
 def main_for_spyder(*args):
     if asyncio.get_event_loop().is_running():
@@ -105,7 +106,8 @@ def main_for_spyder(*args):
     else:
         return asyncio.run(main(*args))
 
+
 if __name__ == '__main__':
-    asyncio.run(main()) ## Use terminal
-    # await main() ## Use Jupyter or IPython(>=7.0)
-    # main_for_spyder() ## Use Spyder
+    asyncio.run(main())  ## Use terminal
+    # await main()  ## Use Jupyter or IPython(>=7.0)
+    # main_for_spyder()  ## Use Spyder

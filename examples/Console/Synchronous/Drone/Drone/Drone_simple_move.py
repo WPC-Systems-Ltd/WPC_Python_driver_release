@@ -15,12 +15,9 @@ See README.md file to get detailed usage of this example.
 Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
 
-## Python
-import time
-
 ## WPC
-
 from wpcsys import pywpc
+
 
 def main():
     ## Get Python driver version
@@ -30,15 +27,15 @@ def main():
     baudrate = 921600
     timeout = 3
     flight_mode = 1
-    x_move = 0.5 ## [m]
-    velocity = 1 ## [m/s]
+    x_move = 0.5  ## [m]
+    velocity = 1  ## [m/s]
 
     ## Create device handle
     dev = pywpc.Drone()
 
     ## Connect to device
     try:
-        dev.connect("COM42", baudrate) ## Depend on your device
+        dev.connect("COM42", baudrate)  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -46,6 +43,14 @@ def main():
         return
 
     try:
+        ## Get firmware model & version
+        firmware_version = dev.Drone_getFirmwareVersion(timeout)
+        print(f"Firmware version: {firmware_version}")
+
+        ## Get serial number
+        serial_number = dev.Drone_getSerialNumber(timeout)
+        print(f"Serial number: {serial_number}")
+
         ## Read task control mode
         control_mode = dev.Drone_readTaskControlMode(timeout)
         if control_mode == 0:
@@ -53,7 +58,6 @@ def main():
             return
         else:
             print("It is on mission computer mode.")
-
 
         ## Read drone flight mode
         drone_flight_mode = dev.Drone_readFlightMode(timeout)
@@ -71,7 +75,6 @@ def main():
         ## Activate drone
         err = dev.Drone_activate(timeout)
         print(f"Drone_activate, status: {err}")
-
 
         ## Read drone activate status
         activate_status = dev.Drone_readActivateStatus(timeout)
@@ -102,15 +105,14 @@ def main():
         err = dev.Drone_moveVehicleRelX(x_move, velocity, timeout)
         print(f"Drone_moveVehicleRelX, status: {err}")
 
-
         ## Read inposition
         x_inposition = 0
         while x_inposition == 0:
             x_inposition = dev.Drone_readInposition(timeout)[3]
             if x_inposition == 0:
-                print(f"Waiting....")
+                print("Waiting....")
             else:
-                print(f"Done!")
+                print("Done!")
 
         ## Start drone landing
         err = dev.Drone_startLanding(timeout)
@@ -121,9 +123,9 @@ def main():
         while landing_status != 3:
             landing_status = dev.Drone_readStatus(timeout)[3]
             if landing_status != 3:
-                print(f"Waiting....")
+                print("Waiting....")
             else:
-                print(f"Done!")
+                print("Done!")
 
         ## Disactivate drone
         err = dev.Drone_disactivate(timeout)
@@ -137,6 +139,7 @@ def main():
 
         ## Release device handle
         dev.close()
+
 
 if __name__ == '__main__':
     main()

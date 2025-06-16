@@ -11,12 +11,12 @@ See README.md file to get detailed usage of this example.
 Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
 
+## WPC
+from wpcsys import pywpc
+
 ## Python
 import time
 
-## WPC
-
-from wpcsys import pywpc
 
 def main():
     ## Get Python driver version
@@ -27,7 +27,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.1.110") ## Depend on your device
+        dev.connect("192.168.1.110")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -36,12 +36,12 @@ def main():
 
     try:
         ## Parameters setting
-        port = 0 ## Depend on your device
+        port = 0  ## Depend on your device
         axis = 0
         two_pulse_mode = 1
         velocity_mode = 2
         stop_decel = 0
-        timeout = 3 ## second
+        timeout = 3  ## [sec]
 
         ## Axis and encoder parameters
         axis_dir_cw = 0
@@ -97,7 +97,7 @@ def main():
         print(f"Motion_startSingleAxisMove in axis{axis}, status: {err}")
 
         ## Wait for seconds for moving
-        time.sleep(3) ## delay [s]
+        time.sleep(3)  ## delay [sec]
 
         ## Motion override velocity
         new_velo = 5000
@@ -105,7 +105,7 @@ def main():
         print(f"Motion_overrideAxisVelocity in axis{axis}, status: {err}")
 
         ## Wait for seconds for moving
-        time.sleep(3) ## delay [s]
+        time.sleep(3)  ## delay [sec]
 
         ## Motion override velocity
         new_velo = -3000
@@ -113,7 +113,7 @@ def main():
         print(f"Motion_overrideAxisVelocity in axis{axis}, status: {err}")
 
         ## Wait for seconds for moving
-        time.sleep(3) ## delay [s]
+        time.sleep(3)  ## delay [sec]
 
         ## Motion stop
         err = dev.Motion_stop(port, axis, stop_decel, timeout)
@@ -129,13 +129,13 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+    finally:
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
 
 if __name__ == '__main__':
     main()

@@ -18,11 +18,7 @@ See README.md file to get detailed usage of this example.
 Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
 
-## Python
-import time
-
 ## WPC
-
 from wpcsys import pywpc
 
 
@@ -35,7 +31,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("default") ## Depend on your device
+        dev.connect("default")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -44,8 +40,8 @@ def main():
 
     try:
         ## Parameters setting
-        timeout = 3 ## second
-        DO_port = 2  ## Depend on your device
+        timeout = 3  ## [sec]
+        DO_port = 2   ## Depend on your device
         DI_port = 1
         DO_pins = [0, 1, 2, 3]
         DI_pins = [0, 1, 2, 3]
@@ -53,8 +49,7 @@ def main():
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Open pins with digital output
         err = dev.DO_openPins(DO_port, DO_pins, timeout)
@@ -82,13 +77,13 @@ def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+    finally:
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
 
 if __name__ == '__main__':
     main()

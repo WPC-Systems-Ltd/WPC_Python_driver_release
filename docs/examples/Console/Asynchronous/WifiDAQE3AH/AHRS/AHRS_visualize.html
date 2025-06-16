@@ -166,21 +166,21 @@
 <span class="linenos"> 15</span>
 <span class="linenos"> 16</span><span class="c1">## Python</span>
 <span class="linenos"> 17</span><span class="kn">import</span> <span class="nn">asyncio</span>
-<span class="linenos"> 18</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 19</span><span class="kn">import</span> <span class="nn">stl.mesh</span> <span class="k">as</span> <span class="nn">mesh</span>
-<span class="linenos"> 20</span><span class="kn">import</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="k">as</span> <span class="nn">mplot3d</span>
-<span class="linenos"> 21</span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
-<span class="linenos"> 22</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="linenos"> 23</span><span class="kn">import</span> <span class="nn">matplotlib.gridspec</span> <span class="k">as</span> <span class="nn">gridspec</span>
-<span class="linenos"> 24</span><span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="nn">mpimg</span>
-<span class="linenos"> 25</span><span class="kn">import</span> <span class="nn">matplotlib.font_manager</span> <span class="k">as</span> <span class="nn">font_manager</span>
-<span class="linenos"> 26</span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">rcParams</span>
-<span class="linenos"> 27</span><span class="kn">from</span> <span class="nn">matplotlib.transforms</span> <span class="kn">import</span> <span class="n">Affine2D</span>
-<span class="linenos"> 28</span>
-<span class="linenos"> 29</span><span class="c1">## WPC</span>
+<span class="linenos"> 18</span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="linenos"> 19</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;src/&#39;</span><span class="p">)</span>
+<span class="linenos"> 20</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos"> 21</span><span class="kn">import</span> <span class="nn">stl.mesh</span> <span class="k">as</span> <span class="nn">mesh</span>
+<span class="linenos"> 22</span><span class="kn">import</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="k">as</span> <span class="nn">mplot3d</span>
+<span class="linenos"> 23</span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="linenos"> 24</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="linenos"> 25</span><span class="kn">import</span> <span class="nn">matplotlib.gridspec</span> <span class="k">as</span> <span class="nn">gridspec</span>
+<span class="linenos"> 26</span><span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="nn">mpimg</span>
+<span class="linenos"> 27</span><span class="kn">import</span> <span class="nn">matplotlib.font_manager</span> <span class="k">as</span> <span class="nn">font_manager</span>
+<span class="linenos"> 28</span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">rcParams</span>
+<span class="linenos"> 29</span><span class="kn">from</span> <span class="nn">matplotlib.transforms</span> <span class="kn">import</span> <span class="n">Affine2D</span>
 <span class="linenos"> 30</span>
-<span class="linenos"> 31</span><span class="kn">from</span> <span class="nn">wpcsys</span> <span class="kn">import</span> <span class="n">pywpc</span>
-<span class="linenos"> 32</span>
+<span class="linenos"> 31</span><span class="c1">## WPC</span>
+<span class="linenos"> 32</span><span class="kn">from</span> <span class="nn">wpcsys</span> <span class="kn">import</span> <span class="n">pywpc</span>
 <span class="linenos"> 33</span>
 <span class="linenos"> 34</span><span class="c1">################################################################################</span>
 <span class="linenos"> 35</span><span class="c1">## Configuration</span>
@@ -434,7 +434,7 @@
 <span class="linenos">283</span>
 <span class="linenos">284</span>    <span class="c1">## Connect to device</span>
 <span class="linenos">285</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos">286</span>      <span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;192.168.5.38&quot;</span><span class="p">)</span> <span class="c1">## Depend on your device</span>
+<span class="linenos">286</span>      <span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;192.168.5.38&quot;</span><span class="p">)</span>  <span class="c1">## Depend on your device</span>
 <span class="linenos">287</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos">288</span>      <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="linenos">289</span>      <span class="c1">## Release device handle</span>
@@ -443,7 +443,7 @@
 <span class="linenos">292</span>
 <span class="linenos">293</span>    <span class="k">try</span><span class="p">:</span>
 <span class="linenos">294</span>      <span class="c1">## Parameters setting</span>
-<span class="linenos">295</span>      <span class="n">port</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">## Depend on your device</span>
+<span class="linenos">295</span>      <span class="n">port</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">## Depend on your device</span>
 <span class="linenos">296</span>      <span class="n">mode</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">## 0: Orientation, 1: Acceleration, 2: Orientation + Acceleration</span>
 <span class="linenos">297</span>
 <span class="linenos">298</span>      <span class="c1">## Get firmware model &amp; version</span>
@@ -496,10 +496,12 @@
 <span class="linenos">345</span>        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
 <span class="linenos">346</span>    <span class="k">else</span><span class="p">:</span>
 <span class="linenos">347</span>        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span>
-<span class="linenos">348</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">349</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span> <span class="c1">## Use terminal</span>
-<span class="linenos">350</span>    <span class="c1"># await main() ## Use Jupyter or IPython(&gt;=7.0)</span>
-<span class="linenos">351</span>    <span class="c1"># main_for_spyder() ## Use Spyder</span>
+<span class="linenos">348</span>
+<span class="linenos">349</span>
+<span class="linenos">350</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">351</span>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>  <span class="c1">## Use terminal</span>
+<span class="linenos">352</span>    <span class="c1"># await main()  ## Use Jupyter or IPython(&gt;=7.0)</span>
+<span class="linenos">353</span>    <span class="c1"># main_for_spyder()  ## Use Spyder</span>
 </pre></div>
 </div>
 </section>

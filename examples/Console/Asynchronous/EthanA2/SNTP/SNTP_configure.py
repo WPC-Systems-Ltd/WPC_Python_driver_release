@@ -14,13 +14,14 @@ See README.md file to get detailed usage of this example.
 Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 '''
 
+## WPC
+from wpcsys import pywpc
+
 ## Python
 import asyncio
+import sys
+sys.path.insert(0, 'src/')
 
-## WPC
-
-from wpcsys import pywpc
-import time
 
 async def main():
     ## Get Python driver version
@@ -31,7 +32,7 @@ async def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.1.110") ## Depend on your device
+        dev.connect("192.168.1.110")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -40,13 +41,12 @@ async def main():
 
     try:
         ## Parameters setting
-        ip_addr = "255.255.255.255" ## Automatic search
-        period = 5 ## second
+        ip_addr = "255.255.255.255"  ## Automatic search
+        period = 5  ## [sec]
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Set SNTP server IP
         err = await dev.SNTP_setServerIP_async(ip_addr)
@@ -62,19 +62,22 @@ async def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+    finally:
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
+
 def main_for_spyder(*args):
     if asyncio.get_event_loop().is_running():
         return asyncio.create_task(main(*args)).result()
     else:
         return asyncio.run(main(*args))
+
+
 if __name__ == '__main__':
-    asyncio.run(main()) ## Use terminal
-    # await main() ## Use Jupyter or IPython(>=7.0)
-    # main_for_spyder() ## Use Spyder
+    asyncio.run(main())  ## Use terminal
+    # await main()  ## Use Jupyter or IPython(>=7.0)
+    # main_for_spyder()  ## Use Spyder

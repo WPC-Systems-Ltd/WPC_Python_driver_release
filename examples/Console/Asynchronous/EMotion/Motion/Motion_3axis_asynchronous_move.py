@@ -16,7 +16,6 @@ import threading
 import time
 import asyncio
 ## WPC
-
 from wpcsys import pywpc
 
 
@@ -26,8 +25,9 @@ async def getAxisStatus(handle, port, axis, delay=0.005):
         print(f"Move completed axis {axis}...")
 
     ## Wait for seconds
-    await asyncio.sleep(delay)  ## delay [s]
+    await asyncio.sleep(delay)   ## delay [sec]
     return move_status
+
 
 def Axis1_thread(handle, port, axis, delay=0.005):
     move_status = 0
@@ -35,7 +35,8 @@ def Axis1_thread(handle, port, axis, delay=0.005):
         move_status = asyncio.run(getAxisStatus(handle, port, axis, delay))
 
         ## Wait for seconds
-        time.sleep(delay) ## delay [s]
+        time.sleep(delay)  ## delay [sec]
+
 
 def Axis2_thread(handle, port, axis, delay=0.005):
     move_status = 0
@@ -43,7 +44,8 @@ def Axis2_thread(handle, port, axis, delay=0.005):
         move_status = asyncio.run(getAxisStatus(handle, port, axis, delay))
 
         ## Wait for seconds
-        time.sleep(delay) ## delay [s]
+        time.sleep(delay)  ## delay [sec]
+
 
 def Axis3_thread(handle, port, axis, delay=0.005):
     move_status = 0
@@ -51,7 +53,8 @@ def Axis3_thread(handle, port, axis, delay=0.005):
         move_status = asyncio.run(getAxisStatus(handle, port, axis, delay))
 
         ## Wait for seconds
-        time.sleep(delay) ## delay [s]
+        time.sleep(delay)  ## delay [sec]
+
 
 async def main():
     ## Get Python driver version
@@ -62,7 +65,7 @@ async def main():
 
     ## Connect to device
     try:
-        dev.connect("192.168.1.110") ## Depend on your device
+        dev.connect("192.168.1.110")  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -71,7 +74,7 @@ async def main():
 
     try:
         ## Parameters setting
-        port = 0 ## Depend on your device
+        port = 0  ## Depend on your device
         axis1 = 0
         axis2 = 1
         axis3 = 2
@@ -91,13 +94,12 @@ async def main():
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
-        print("Model name: " + driver_info[0])
-        print("Firmware version: " + driver_info[-1])
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
 
         ## Define Axis1 ~ Axis3 thread
-        thread_1 = threading.Thread(target = Axis1_thread, args = [dev, port, axis1, 0.005])
-        thread_2 = threading.Thread(target = Axis2_thread, args = [dev, port, axis2, 0.005])
-        thread_3 = threading.Thread(target = Axis3_thread, args = [dev, port, axis3, 0.005])
+        thread_1 = threading.Thread(target=Axis1_thread, args=[dev, port, axis1, 0.005])
+        thread_2 = threading.Thread(target=Axis2_thread, args=[dev, port, axis2, 0.005])
+        thread_3 = threading.Thread(target=Axis3_thread, args=[dev, port, axis3, 0.005])
 
         ## Thread start
         thread_1.start()
@@ -206,13 +208,13 @@ async def main():
     except Exception as err:
         pywpc.printGenericError(err)
 
-    ## Disconnect device
-    dev.disconnect()
+    finally:
+        ## Disconnect device
+        dev.disconnect()
 
-    ## Release device handle
-    dev.close()
+        ## Release device handle
+        dev.close()
 
-    return
 
 def main_for_spyder(*args):
     if asyncio.get_event_loop().is_running():
@@ -220,7 +222,8 @@ def main_for_spyder(*args):
     else:
         return asyncio.run(main(*args))
 
+
 if __name__ == '__main__':
-    asyncio.run(main()) ## Use terminal
-    # await main() ## Use Jupyter or IPython(>=7.0)
-    # main_for_spyder() ## Use Spyder
+    asyncio.run(main())  ## Use terminal
+    # await main()  ## Use Jupyter or IPython(>=7.0)
+    # main_for_spyder()  ## Use Spyder

@@ -26,9 +26,7 @@ from matplotlib import rcParams
 from matplotlib.transforms import Affine2D
 
 ## WPC
-
 from wpcsys import pywpc
-
 
 ################################################################################
 ## Configuration
@@ -282,7 +280,7 @@ def main():
 
     ## Connect to device
     try:
-      dev.connect("192.168.5.38") ## Depend on your device
+      dev.connect("192.168.5.38")  ## Depend on your device
     except Exception as err:
       pywpc.printGenericError(err)
       ## Release device handle
@@ -291,9 +289,9 @@ def main():
 
     try:
       ## Parameters setting
-      port = 0 ## Depend on your device
+      port = 0  ## Depend on your device
       mode = 0 ## 0: Orientation, 1: Acceleration, 2: Orientation + Acceleration
-      timeout = 3 ## second
+      timeout = 3  ## [sec]
 
       ## Get firmware model & version
       driver_info = dev.Sys_getDriverInfo(timeout)

@@ -170,12 +170,12 @@
 <span class="linenos">13</span><span class="sd">Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.</span>
 <span class="linenos">14</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos">15</span>
-<span class="linenos">16</span><span class="c1">## Python</span>
-<span class="linenos">17</span><span class="kn">import</span> <span class="nn">time</span>
+<span class="linenos">16</span><span class="c1">## WPC</span>
+<span class="linenos">17</span><span class="kn">from</span> <span class="nn">wpcsys</span> <span class="kn">import</span> <span class="n">pywpc</span>
 <span class="linenos">18</span>
-<span class="linenos">19</span><span class="c1">## WPC</span>
-<span class="linenos">20</span>
-<span class="linenos">21</span><span class="kn">from</span> <span class="nn">wpcsys</span> <span class="kn">import</span> <span class="n">pywpc</span>
+<span class="linenos">19</span><span class="c1">## Python</span>
+<span class="linenos">20</span><span class="kn">import</span> <span class="nn">time</span>
+<span class="linenos">21</span>
 <span class="linenos">22</span>
 <span class="linenos">23</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
 <span class="linenos">24</span>    <span class="c1">## Get Python driver version</span>
@@ -186,7 +186,7 @@
 <span class="linenos">29</span>
 <span class="linenos">30</span>    <span class="c1">## Connect to device</span>
 <span class="linenos">31</span>    <span class="k">try</span><span class="p">:</span>
-<span class="linenos">32</span>        <span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;192.168.1.110&quot;</span><span class="p">)</span> <span class="c1">## Depend on your device</span>
+<span class="linenos">32</span>        <span class="n">dev</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;192.168.1.110&quot;</span><span class="p">)</span>  <span class="c1">## Depend on your device</span>
 <span class="linenos">33</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="linenos">34</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
 <span class="linenos">35</span>        <span class="c1">## Release device handle</span>
@@ -195,36 +195,35 @@
 <span class="linenos">38</span>
 <span class="linenos">39</span>    <span class="k">try</span><span class="p">:</span>
 <span class="linenos">40</span>        <span class="c1">## Parameters setting</span>
-<span class="linenos">41</span>        <span class="n">delay</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">## second</span>
-<span class="linenos">42</span>        <span class="n">timeout</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1">## second</span>
+<span class="linenos">41</span>        <span class="n">delay</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1">## [sec]</span>
+<span class="linenos">42</span>        <span class="n">timeout</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1">## [sec]</span>
 <span class="linenos">43</span>
 <span class="linenos">44</span>        <span class="c1">## Get firmware model &amp; version</span>
 <span class="linenos">45</span>        <span class="n">driver_info</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_getDriverInfo</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">46</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model name: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="linenos">47</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firmware version: &quot;</span> <span class="o">+</span> <span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="linenos">48</span>
-<span class="linenos">49</span>        <span class="c1">## Set RTC</span>
-<span class="linenos">50</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_setRTC</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="linenos">51</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Set RTC to 2023-05-08, 15:08:07 , status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">52</span>
-<span class="linenos">53</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-<span class="linenos">54</span>            <span class="c1">## Get RTC</span>
-<span class="linenos">55</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Get RTC: </span><span class="si">{</span><span class="n">dev</span><span class="o">.</span><span class="n">Sys_getRTC</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">56</span>            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span> <span class="c1">## delay [s]</span>
-<span class="linenos">57</span>
-<span class="linenos">58</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="linenos">59</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="linenos">60</span>
-<span class="linenos">61</span>    <span class="c1">## Disconnect network device</span>
-<span class="linenos">62</span>    <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+<span class="linenos">46</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model name: </span><span class="si">{</span><span class="n">driver_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, Firmware version: </span><span class="si">{</span><span class="n">driver_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span>
+<span class="linenos">47</span>
+<span class="linenos">48</span>        <span class="c1">## Set RTC</span>
+<span class="linenos">49</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Sys_setRTC</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="linenos">50</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Set RTC to 2023-05-08, 15:08:07 , status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">51</span>
+<span class="linenos">52</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+<span class="linenos">53</span>            <span class="c1">## Get RTC</span>
+<span class="linenos">54</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Get RTC: </span><span class="si">{</span><span class="n">dev</span><span class="o">.</span><span class="n">Sys_getRTC</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">55</span>            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span>  <span class="c1">## delay [sec]</span>
+<span class="linenos">56</span>
+<span class="linenos">57</span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="linenos">58</span>        <span class="n">pywpc</span><span class="o">.</span><span class="n">printGenericError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="linenos">59</span>
+<span class="linenos">60</span>    <span class="k">finally</span><span class="p">:</span>
+<span class="linenos">61</span>        <span class="c1">## Disconnect network device</span>
+<span class="linenos">62</span>        <span class="n">dev</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
 <span class="linenos">63</span>
-<span class="linenos">64</span>    <span class="c1">## Release device handle</span>
-<span class="linenos">65</span>    <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="linenos">64</span>        <span class="c1">## Release device handle</span>
+<span class="linenos">65</span>        <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="linenos">66</span>
-<span class="linenos">67</span>    <span class="k">return</span>
-<span class="linenos">68</span>
-<span class="linenos">69</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="linenos">70</span>    <span class="n">main</span><span class="p">()</span>
+<span class="linenos">67</span>
+<span class="linenos">68</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">69</span>    <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>
