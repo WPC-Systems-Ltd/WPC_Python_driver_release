@@ -10,7 +10,8 @@ v3.1.7 Date: 2025/06/16, Developer: Chunglee_people
 - API: Drone_getFirmwareVersion, Drone_getSerialNumber
  
 ### Changed
-- All the example code will follow PEP8 rule 
+- All the example code will follow PEP8 rule
+- Drone's UART read time
  
 v3.1.2 Date: 2024/08/01, Developer: Chunglee_people
 ---------------------------------------------------
