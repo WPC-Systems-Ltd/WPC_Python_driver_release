@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; WPC Python driver 3.1.7 documentation</title>
+  <title>Index &mdash; WPC Python driver 3.1.9 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="_static/custom_sphinx.css?v=20c2511c" />
@@ -16,7 +16,7 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=169b9561"></script>
+        <script src="_static/documentation_options.js?v=5af9b2ba"></script>
         <script src="_static/doctools.js?v=888ff710"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -37,7 +37,7 @@
               <img src="_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.1.7
+                3.1.9
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -2280,13 +2280,31 @@
 </li>
       <li><a href="products/Drone.html#pywpc.Drone">Drone (class in pywpc)</a>
 </li>
+      <li><a href="products/Drone.html#pywpc.Drone.Drone_abortLanding">Drone_abortLanding() (pywpc.Drone method)</a>
+</li>
+      <li><a href="products/Drone.html#pywpc.Drone.Drone_abortTakeOff">Drone_abortTakeOff() (pywpc.Drone method)</a>
+</li>
       <li><a href="products/Drone.html#pywpc.Drone.Drone_activate">Drone_activate() (pywpc.Drone method)</a>
 </li>
-      <li><a href="products/Drone.html#pywpc.Drone.Drone_disactivate">Drone_disactivate() (pywpc.Drone method)</a>
+      <li><a href="products/Drone.html#pywpc.Drone.Drone_deactivate">Drone_deactivate() (pywpc.Drone method)</a>
+</li>
+      <li><a href="products/Drone.html#pywpc.Drone.Drone_getAccelerationWithNED">Drone_getAccelerationWithNED() (pywpc.Drone method)</a>
+</li>
+      <li><a href="products/Drone.html#pywpc.Drone.Drone_getActiveStatus">Drone_getActiveStatus() (pywpc.Drone method)</a>
 </li>
       <li><a href="products/Drone.html#pywpc.Drone.Drone_getFirmwareVersion">Drone_getFirmwareVersion() (pywpc.Drone method)</a>
 </li>
+      <li><a href="products/Drone.html#pywpc.Drone.Drone_getFlightMode">Drone_getFlightMode() (pywpc.Drone method)</a>
+</li>
+      <li><a href="products/Drone.html#pywpc.Drone.Drone_getLandingStatus">Drone_getLandingStatus() (pywpc.Drone method)</a>
+</li>
+      <li><a href="products/Drone.html#pywpc.Drone.Drone_getPositionWithNED">Drone_getPositionWithNED() (pywpc.Drone method)</a>
+</li>
       <li><a href="products/Drone.html#pywpc.Drone.Drone_getSerialNumber">Drone_getSerialNumber() (pywpc.Drone method)</a>
+</li>
+      <li><a href="products/Drone.html#pywpc.Drone.Drone_getTakeOffStatus">Drone_getTakeOffStatus() (pywpc.Drone method)</a>
+</li>
+      <li><a href="products/Drone.html#pywpc.Drone.Drone_getVelocityWithNED">Drone_getVelocityWithNED() (pywpc.Drone method)</a>
 </li>
       <li><a href="products/Drone.html#pywpc.Drone.Drone_moveNedAbsX">Drone_moveNedAbsX() (pywpc.Drone method)</a>
 </li>
@@ -2318,19 +2336,9 @@
 </li>
       <li><a href="products/Drone.html#pywpc.Drone.Drone_moveVehicleRelY">Drone_moveVehicleRelY() (pywpc.Drone method)</a>
 </li>
-      <li><a href="products/Drone.html#pywpc.Drone.Drone_readAbsPosition">Drone_readAbsPosition() (pywpc.Drone method)</a>
-</li>
-      <li><a href="products/Drone.html#pywpc.Drone.Drone_readActivateStatus">Drone_readActivateStatus() (pywpc.Drone method)</a>
-</li>
       <li><a href="products/Drone.html#pywpc.Drone.Drone_readBattery">Drone_readBattery() (pywpc.Drone method)</a>
 </li>
-      <li><a href="products/Drone.html#pywpc.Drone.Drone_readFlightMode">Drone_readFlightMode() (pywpc.Drone method)</a>
-</li>
       <li><a href="products/Drone.html#pywpc.Drone.Drone_readInposition">Drone_readInposition() (pywpc.Drone method)</a>
-</li>
-      <li><a href="products/Drone.html#pywpc.Drone.Drone_readStatus">Drone_readStatus() (pywpc.Drone method)</a>
-</li>
-      <li><a href="products/Drone.html#pywpc.Drone.Drone_readTakeOffStatus">Drone_readTakeOffStatus() (pywpc.Drone method)</a>
 </li>
       <li><a href="products/Drone.html#pywpc.Drone.Drone_readTaskControlMode">Drone_readTaskControlMode() (pywpc.Drone method)</a>
 </li>
@@ -2338,21 +2346,17 @@
 </li>
       <li><a href="products/Drone.html#pywpc.Drone.Drone_readTrajectoryStatus">Drone_readTrajectoryStatus() (pywpc.Drone method)</a>
 </li>
-      <li><a href="products/Drone.html#pywpc.Drone.Drone_readVelocity">Drone_readVelocity() (pywpc.Drone method)</a>
+      <li><a href="products/Drone.html#pywpc.Drone.Drone_setAltitudeSensorMode">Drone_setAltitudeSensorMode() (pywpc.Drone method)</a>
+</li>
+      <li><a href="products/Drone.html#pywpc.Drone.Drone_setAttiudeMode">Drone_setAttiudeMode() (pywpc.Drone method)</a>
+</li>
+      <li><a href="products/Drone.html#pywpc.Drone.Drone_setPositionMode">Drone_setPositionMode() (pywpc.Drone method)</a>
 </li>
       <li><a href="products/Drone.html#pywpc.Drone.Drone_startLanding">Drone_startLanding() (pywpc.Drone method)</a>
 </li>
       <li><a href="products/Drone.html#pywpc.Drone.Drone_startTakeOff">Drone_startTakeOff() (pywpc.Drone method)</a>
 </li>
-      <li><a href="products/Drone.html#pywpc.Drone.Drone_stop">Drone_stop() (pywpc.Drone method)</a>
-</li>
-      <li><a href="products/Drone.html#pywpc.Drone.Drone_stopLanding">Drone_stopLanding() (pywpc.Drone method)</a>
-</li>
-      <li><a href="products/Drone.html#pywpc.Drone.Drone_stopTakeOff">Drone_stopTakeOff() (pywpc.Drone method)</a>
-</li>
-      <li><a href="products/Drone.html#pywpc.Drone.Drone_writeFlightMode">Drone_writeFlightMode() (pywpc.Drone method)</a>
-</li>
-      <li><a href="products/Drone.html#pywpc.Drone.Drone_writeVelocity">Drone_writeVelocity() (pywpc.Drone method)</a>
+      <li><a href="products/Drone.html#pywpc.Drone.Drone_stopMovement">Drone_stopMovement() (pywpc.Drone method)</a>
 </li>
   </ul></td>
 </tr></table>

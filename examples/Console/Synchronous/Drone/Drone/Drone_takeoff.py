@@ -35,7 +35,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("COM42", baudrate)  ## Depend on your device
+        dev.connect("COM5", baudrate)  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -51,50 +51,56 @@ def main():
         serial_number = dev.Drone_getSerialNumber(timeout)
         print(f"Serial number: {serial_number}")
 
+        ## Set drone flight mode to position mode
+        err = dev.Drone_setPositionMode(timeout)
+        print(f"Drone_setPositionMode, status: {err}")
+
         ## Read task control mode
         control_mode = dev.Drone_readTaskControlMode(timeout)
         if control_mode == 0:
-            print("Please turn to mission computer mode.")
+            print("Please switch the remote controller to mission computer mode.")
+            print("Terminate example code. Goodbye!")
             return
-        else:
-            print("It is on mission computer mode.")
 
-        ## Read drone take-off status
-        activate_status = dev.Drone_readTakeOffStatus(timeout)
-        print(f"Drone_readTakeOffStatus: {activate_status}")
+        ## Activate drone
+        err = dev.Drone_activate(timeout)
+        print(f"Drone_activate, status: {err}")
 
         ## Start drone take-off
         err = dev.Drone_startTakeOff(timeout)
         print(f"Drone_startTakeOff, status: {err}")
 
         ## Read drone take-off status
-        activate_status = 1
-        while activate_status:
-            activate_status = dev.Drone_readTakeOffStatus(timeout)
-            if activate_status == 1:
-                print("Running")
-            else:
-                print("Not in the takeoff procedure")
+        takeoff_status = 0
+        print("Taking off...")
+        while takeoff_status == 0:
+            takeoff_status = dev.Drone_getTakeOffStatus(timeout)
+            if takeoff_status == 1:
+                print("Completed the takeoff procedure")
 
         ## Wait a while
-        time.sleep(3)  ## delay [sec]
+        time.sleep(5)  ## delay [sec]
 
-        ## Read landing status
-        landing_status = 0
-        while landing_status != 3:
-            landing_status = dev.Drone_readStatus(timeout)[3]
-            if landing_status != 3:
-                print("Waiting....")
-            else:
-                print("Done!")
-
-        ## Read drone take-off status
-        activate_status = dev.Drone_readTakeOffStatus(timeout)
-        print(f"Drone_readTakeOffStatus: {activate_status}")
     except Exception as err:
         pywpc.printGenericError(err)
 
     finally:
+        ## Start landing
+        err = dev.Drone_startLanding(timeout)
+        print(f"Drone_startLanding, status: {err}")
+
+        ## Read landing status
+        landing_status = 0
+        print("Landing....")
+        while landing_status == 0:
+            landing_status = dev.Drone_getLandingStatus(timeout)
+            if landing_status == 1:
+                print("Landing successful!")
+
+        ## Disactivate drone
+        err = dev.Drone_deactivate(timeout)
+        print(f"Drone_deactivate, status: {err}")
+
         ## Disconnect device
         dev.disconnect()
 

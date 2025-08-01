@@ -1,5 +1,5 @@
 '''
-Drone - Drone_active.py with synchronous mode.
+Drone - Drone_simple_xy_move.py with synchronous mode.
 
 - Ensure the drones center of gravity is properly balanced.
 - Verify that all mounted payloads are securely fastened.
@@ -18,6 +18,9 @@ Copyright (c) 2022-2025 WPC Systems Ltd. All rights reserved.
 ## WPC
 from wpcsys import pywpc
 
+## Python
+import time
+
 
 def main():
     ## Get Python driver version
@@ -26,8 +29,8 @@ def main():
     ## Parameters setting
     baudrate = 921600
     timeout = 3
-    flight_mode = 1
-    x_move = 0.5  ## [m]
+    x_move = 0.3  ## [m]
+    y_move = 0.3  ## [m]
     velocity = 1  ## [m/s]
 
     ## Create device handle
@@ -35,7 +38,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("COM42", baudrate)  ## Depend on your device
+        dev.connect("COM5", baudrate)  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -54,92 +57,79 @@ def main():
         ## Read task control mode
         control_mode = dev.Drone_readTaskControlMode(timeout)
         if control_mode == 0:
-            print("Please turn to mission computer mode.")
+            print("Please switch the remote controller to mission computer mode.")
+            print("Terminate example code. Goodbye!")
             return
-        else:
-            print("It is on mission computer mode.")
 
-        ## Read drone flight mode
-        drone_flight_mode = dev.Drone_readFlightMode(timeout)
-        if drone_flight_mode == 0:
-            print("Please turn to position mode.")
-
-            ## Write drone flight mode to position mode
-            err = dev.Drone_writeFlightMode(flight_mode, timeout)
-            print(f"Drone_writeFlightMode, status: {err}")
-
-            return
-        else:
-            print("It is on position mode.")
+        ## Set drone flight mode to position mode
+        err = dev.Drone_setPositionMode(timeout)
+        print(f"Drone_setPositionMode, status: {err}")
 
         ## Activate drone
         err = dev.Drone_activate(timeout)
         print(f"Drone_activate, status: {err}")
-
-        ## Read drone activate status
-        activate_status = dev.Drone_readActivateStatus(timeout)
-        if activate_status == 0:
-            print("Please activate the drone.")
-
-            ## Activate drone
-            err = dev.Drone_activate(timeout)
-            print(f"Drone_activate, status: {err}")
-            return
-        else:
-            print("Activated.")
 
         ## Start drone take-off
         err = dev.Drone_startTakeOff(timeout)
         print(f"Drone_startTakeOff, status: {err}")
 
         ## Read drone take-off status
-        activate_status = 1
-        while activate_status:
-            activate_status = dev.Drone_readTakeOffStatus(timeout)
-            if activate_status == 1:
-                print("Running")
-            else:
-                print("Not in the takeoff procedure")
+        takeoff_status = 0
+        print("Taking off...")
+        while takeoff_status == 0:
+            takeoff_status = dev.Drone_getTakeOffStatus(timeout)
+            if takeoff_status == 1:
+                print("Completed the takeoff procedure")
+
+        ## Wait
+        print("Wait a while")
+        time.sleep(5)  ## delay [sec]
 
         ## X move with vehicle frame
-        err = dev.Drone_moveVehicleRelX(x_move, velocity, timeout)
-        print(f"Drone_moveVehicleRelX, status: {err}")
+        err = dev.Drone_moveVehicleRelXY(x_move, y_move, velocity, timeout)
+        print(f"Drone_moveVehicleRelXY, status: {err}")
 
         ## Read inposition
-        x_inposition = 0
-        while x_inposition == 0:
-            x_inposition = dev.Drone_readInposition(timeout)[3]
-            if x_inposition == 0:
-                print("Waiting....")
+        inposition = 0
+        while inposition == 0:
+            posi_list = dev.Drone_readInposition(timeout)
+            x_ready = posi_list[3]
+            y_ready = posi_list[4]
+            inposition = int(bool(x_ready) and bool(y_ready))
+            if inposition == 0:
+                pass
             else:
-                print("Done!")
+                print("Reached XY!")
 
-        ## Start drone landing
+    except Exception as err:
+        pywpc.printGenericError(err)
+
+    finally:
+        ## Wait
+        print("Wait a while")
+        time.sleep(5)  ## delay [sec]
+
+        ## Start landing
         err = dev.Drone_startLanding(timeout)
         print(f"Drone_startLanding, status: {err}")
 
         ## Read landing status
         landing_status = 0
-        while landing_status != 3:
-            landing_status = dev.Drone_readStatus(timeout)[3]
-            if landing_status != 3:
-                print("Waiting....")
-            else:
-                print("Done!")
+        print("Landing....")
+        while landing_status == 0:
+            landing_status = dev.Drone_getLandingStatus(timeout)
+            if landing_status == 1:
+                print("Landing successful!")
 
         ## Disactivate drone
-        err = dev.Drone_disactivate(timeout)
-        print(f"Drone_disactivate, status: {err}")
-    except Exception as err:
-        pywpc.printGenericError(err)
+        err = dev.Drone_deactivate(timeout)
+        print(f"Drone_deactivate, status: {err}")
 
-    finally:
         ## Disconnect device
         dev.disconnect()
 
         ## Release device handle
         dev.close()
-
 
 if __name__ == '__main__':
     main()

@@ -32,7 +32,7 @@ def main():
 
     ## Connect to device
     try:
-        dev.connect("COM42", baudrate)  ## Depend on your device
+        dev.connect("COM5", baudrate)  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -51,30 +51,25 @@ def main():
         ## Read task control mode
         control_mode = dev.Drone_readTaskControlMode(timeout)
         if control_mode == 0:
-            print("Please turn to mission computer mode.")
+            print("Please switch the remote controller to mission computer mode.")
+            print("Terminate example code. Goodbye!")
             return
-        else:
-            print("It is on mission computer mode.")
-
-        ## Read drone activate status
-        activate_status = dev.Drone_readActivateStatus(timeout)
-        print(f"Drone_readActivateStatus: {activate_status}")
 
         ## Activate drone
         err = dev.Drone_activate(timeout)
         print(f"Drone_activate, status: {err}")
 
         ## Read drone activate status
-        activate_status = dev.Drone_readActivateStatus(timeout)
-        print(f"Drone_readActivateStatus: {activate_status}")
+        activate_status = dev.Drone_getActiveStatus(timeout)
+        print(f"Drone_getActiveStatus: {activate_status}")
 
         ## Disactivate drone
-        err = dev.Drone_disactivate(timeout)
-        print(f"Drone_disactivate, status: {err}")
+        err = dev.Drone_deactivate(timeout)
+        print(f"Drone_deactivate, status: {err}")
 
         ## Read drone activate status
-        activate_status = dev.Drone_readActivateStatus(timeout)
-        print(f"Drone_readActivateStatus: {activate_status}")
+        activate_status = dev.Drone_getActiveStatus(timeout)
+        print(f"Drone_getActiveStatus: {activate_status}")
     except Exception as err:
         pywpc.printGenericError(err)
 

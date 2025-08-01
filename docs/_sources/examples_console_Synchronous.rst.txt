@@ -24,7 +24,19 @@ Drone
 
    examples/Console/Synchronous/Drone/Drone/Drone_takeoff.rst
 
-   examples/Console/Synchronous/Drone/Drone/Drone_simple_move.rst
+   examples/Console/Synchronous/Drone/Drone/Drone_simple_x_move.rst
+
+   examples/Console/Synchronous/Drone/Drone/Drone_simple_y_move.rst
+
+   examples/Console/Synchronous/Drone/Drone/Drone_simple_z_move.rst
+
+   examples/Console/Synchronous/Drone/Drone/Drone_simple_xy_move.rst
+
+   examples/Console/Synchronous/Drone/Drone/Drone_simple_rotate_roll.rst
+
+   examples/Console/Synchronous/Drone/Drone/Drone_simple_rotate_pitch.rst
+
+   examples/Console/Synchronous/Drone/Drone/Drone_simple_rotate_yaw.rst
 
 
 STEM

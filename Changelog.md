@@ -1,32 +1,6 @@
 WPC Python driver release changelog
 ===================================
 
-v3.1.7.3 Date: 2025/06/16, Developer: Chunglee_people
----------------------------------------------------
-### Added
-- Check pinout and product file name
-
-v3.1.7.2 Date: 2025/06/16, Developer: Chunglee_people
----------------------------------------------------
-### Removed
-- Remove reference folder
-
-v3.1.7.1 Date: 2025/06/16, Developer: Chunglee_people
----------------------------------------------------
-### Added
-- Add reference folder
-
-v3.1.7 Date: 2025/06/16, Developer: Chunglee_people
----------------------------------------------------
-### Added 
-- Add `Supported Platforms` in README 
-- Add -8012, -9400, -9401, -9402 error code 
-- API: Drone_getFirmwareVersion, Drone_getSerialNumber
- 
-### Changed
-- All the example code will follow PEP8 rule
-- Drone's UART read time
- 
 v3.1.2 Date: 2024/08/01, Developer: Chunglee_people
 ---------------------------------------------------
 ### Added
