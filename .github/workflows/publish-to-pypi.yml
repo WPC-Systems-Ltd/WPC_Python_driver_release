@@ -35,9 +35,6 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
-    # - name: Get version
-    #   run: echo "VERSION=$(python -c 'import wpcsys; print(wpcsys.__version__)')" >> $GITHUB_ENV
-
     - name: Install build and twine tools
       run: |
         python -m pip install --upgrade pip
@@ -51,7 +48,7 @@ jobs:
     - name: Upload wheel artifact
       uses: actions/upload-artifact@v4
       with:
-        name: wpcsys-3.2.0-cp${{ matrix.py_tag }}-win_amd64
+        name: wheel-${{ matrix.py_tag }}
         path: dist/*.whl
 
   publish:
@@ -60,7 +57,9 @@ jobs:
     steps:
     - uses: actions/download-artifact@v4
       with:
+        pattern: wheel-*
         path: dist
+        merge-multiple: true   # 將所有 wheel 檔案放在 dist 目錄
 
     - name: Install Twine
       run: pip install twine
@@ -69,7 +68,7 @@ jobs:
     - name: Upload to TestPyPI
       if: github.event_name == 'push' && github.ref == 'refs/heads/pypi'
       run: |
-        twine upload --repository testpypi dist/*
+        twine upload --repository testpypi dist/*.whl
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
@@ -78,7 +77,7 @@ jobs:
     - name: Upload to PyPI
       if: startsWith(github.ref, 'refs/tags/v')
       run: |
-        twine upload dist/*
+        twine upload dist/*.whl
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
