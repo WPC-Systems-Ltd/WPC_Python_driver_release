@@ -54,7 +54,7 @@ sut.setup(
     ],
     distclass=BinaryDistribution,
     license="MIT",
-    license_files=["LICENSE"],
+    license_files=[],
     keywords='WPC, DAQ, Motion card, Motion driver, USB, Ethernet, Wifi',
 
     include_package_data=True,
