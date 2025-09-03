@@ -25,14 +25,14 @@ def main():
 
     ## Parameters setting
     baudrate = 921600
-    timeout = 3
+    timeout = 3  ## [sec]
 
     ## Create device handle
     dev = pywpc.Drone()
 
     ## Connect to device
     try:
-        dev.connect("COM42", baudrate)  ## Depend on your device
+        dev.connect("COM5", baudrate)  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -51,10 +51,9 @@ def main():
         ## Read task control mode
         control_mode = dev.Drone_readTaskControlMode(timeout)
         if control_mode == 0:
-            print("Please turn to mission computer mode.")
+            print("Please switch the remote controller to mission computer mode.")
+            print("Terminate example code. Goodbye!")
             return
-        else:
-            print("It is on mission computer mode.")
 
         ## Read battery status
         batt_list = dev.Drone_readBattery(timeout)

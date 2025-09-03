@@ -44,7 +44,7 @@ async def main():
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
-        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]}")
 
         ## Set device alias
         err = await dev.Sys_setDeviceAlias_async(alias_name)

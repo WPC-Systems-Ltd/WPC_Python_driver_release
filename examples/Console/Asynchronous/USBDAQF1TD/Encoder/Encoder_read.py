@@ -47,7 +47,7 @@ async def main():
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
-        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]}")
 
         ## Open encoder
         err = await dev.Encoder_open_async(channel)

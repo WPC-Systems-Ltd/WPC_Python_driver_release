@@ -319,14 +319,26 @@ Products Feature
       .. image:: images/Products/product-WIFIDAQE3AH.jpg
          :width: 100%
          :alt: product-WIFIDAQE3AH.jpg
-
+   * -
+      **WifiDAQE3AO**
+         - AO: 8ch simultaneous & 16-bit single-ended
+         - Output range: +/-10V
+         - Built-in 9DoF IMU with posture estimation
+         - Web-based configurator
+         - 802.11 b/g/n WiFi
+         - 2.4 GHz to 2.5 GHz
+         - Support Python, C# and LabVIEW
+     -
+      .. image:: images/Products/product-WIFIDAQE3AH.jpg
+         :width: 100%
+         :alt: product-WIFIDAQE3AH.jpg
    * -
       **WifiDAQE3AOD**
          - AI: 8ch simultaneous & 16-bit single-ended
          - Max. sampling rate: 10kHz
          - Input range: +/-10V
          - AO: 8ch simultaneous & 16-bit single-ended
-         - Output range: 0-5V
+         - Output range: +/-10V
          - DO: 8ch NPN, opto-isolated 24V
          - DI: 8ch NPN, opto-isolated 24V
          - Web-based configurator

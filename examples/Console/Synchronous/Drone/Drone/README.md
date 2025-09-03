@@ -52,7 +52,7 @@ Here we use Drone as an example.
 - Make sure the **USB drive has sufficient storage** to record the flight data.
 - Insert the **USB drive into the flight control computer**.
 
-> 💡 **If the USB drive is not inserted, the drone system will not function.**
+> 💡 **If the USB drive is not inserted, the drone could not fly.**
 
 ### Connect the Battery Power
 
