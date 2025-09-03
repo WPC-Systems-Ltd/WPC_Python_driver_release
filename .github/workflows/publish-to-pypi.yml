@@ -13,6 +13,7 @@ jobs:
     runs-on: windows-2022
     strategy:
       matrix:
+        os: [ubuntu-latest, windows-2022]
         python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
         include:
           - python-version: '3.8'
@@ -25,6 +26,8 @@ jobs:
             py_tag: '311'
           - python-version: '3.12'
             py_tag: '312'
+
+    runs-on: ${{ matrix.os }}
 
     steps:
     - name: Checkout repository
