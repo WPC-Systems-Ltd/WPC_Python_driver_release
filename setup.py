@@ -51,7 +51,7 @@ sut.setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
     distclass=BinaryDistribution,
-    license_files=["LICENSE"],   # 👈 新增這一行，避免自動生成 license-file
+    license_files=["LICENSE"],
     keywords='WPC, DAQ, Motion card, Motion driver, USB, Ethernet, Wifi',
 
     include_package_data=True,
