@@ -1,6 +1,12 @@
 WPC Python driver release changelog
 ===================================
 
+v3.2.0 Date: 2025/09/02, Developer: Chunglee_people
+---------------------------------------------------
+### Added
+- New product release: Drone, WifiDAQAO
+- Add `Supported Platforms` in README
+
 v3.1.2 Date: 2024/08/01, Developer: Chunglee_people
 ---------------------------------------------------
 ### Added

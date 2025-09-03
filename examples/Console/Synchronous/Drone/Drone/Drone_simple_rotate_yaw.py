@@ -28,8 +28,7 @@ def main():
 
     ## Parameters setting
     baudrate = 921600
-    timeout = 3
-    flight_mode = 0  ## 1: position, 0: attitude
+    timeout = 3  ## [sec]
     rotate_angle = 10  ## [degree]
     velocity = 1  ## [degree/s]
 

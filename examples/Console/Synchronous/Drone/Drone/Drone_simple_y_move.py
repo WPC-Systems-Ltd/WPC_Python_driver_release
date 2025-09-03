@@ -28,7 +28,7 @@ def main():
 
     ## Parameters setting
     baudrate = 921600
-    timeout = 3
+    timeout = 3  ## [sec]
     y_move = 0.3  ## [m]
     velocity = 1  ## [m/s]
 

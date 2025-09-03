@@ -1022,3 +1022,42 @@ Wifi-DAQ-E3-AOD
 
    examples/Console/Synchronous/WifiDAQE3AOD/System_Wifi/get_serial_number.rst
 
+
+Wifi-DAQ-E3-AO
+--------------
+
+.. toctree::
+   :maxdepth: 4
+
+   examples/Console/Synchronous/WifiDAQE3AO/AHRS/AHRS_getAcceleration.rst
+
+   examples/Console/Synchronous/WifiDAQE3AO/AHRS/AHRS_getEstimation.rst
+
+   examples/Console/Synchronous/WifiDAQE3AO/AHRS/AHRS_getAngularVelocity.rst
+
+   examples/Console/Synchronous/WifiDAQE3AO/AHRS/AHRS_getOrientation.rst
+
+   examples/Console/Synchronous/WifiDAQE3AO/AHRS/AHRS_visualize.rst
+
+   examples/Console/Synchronous/WifiDAQE3AO/AO/AO_write_all_channels.rst
+
+   examples/Console/Synchronous/WifiDAQE3AO/AO/AO_write_one_channel.rst
+
+   examples/Console/Synchronous/WifiDAQE3AO/AO/AO_waveform_gen.rst
+
+   examples/Console/Synchronous/WifiDAQE3AO/SD/SD_read.rst
+
+   examples/Console/Synchronous/WifiDAQE3AO/SD/SD_write.rst
+
+   examples/Console/Synchronous/WifiDAQE3AO/System_Wifi/get_network_info.rst
+
+   examples/Console/Synchronous/WifiDAQE3AO/System_Wifi/get_Wifi_DAQ_status.rst
+
+   examples/Console/Synchronous/WifiDAQE3AO/System_Wifi/hello_world.rst
+
+   examples/Console/Synchronous/WifiDAQE3AO/System_Wifi/set_and_get_RTC.rst
+
+   examples/Console/Synchronous/WifiDAQE3AO/System_Wifi/set_LED_status.rst
+
+   examples/Console/Synchronous/WifiDAQE3AO/System_Wifi/get_serial_number.rst
+

@@ -28,7 +28,7 @@ def main():
 
     ## Parameters setting
     baudrate = 921600
-    timeout = 3
+    timeout = 3  ## [sec]
 
     ## Create device handle
     dev = pywpc.Drone()
