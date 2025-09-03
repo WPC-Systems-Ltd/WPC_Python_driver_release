@@ -27,7 +27,8 @@ jobs:
             py_tag: '312'
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -37,14 +38,15 @@ jobs:
     # - name: Get version
     #   run: echo "VERSION=$(python -c 'import wpcsys; print(wpcsys.__version__)')" >> $GITHUB_ENV
 
-    - name: Install build tools
+    - name: Install build and twine tools
       run: |
         python -m pip install --upgrade pip
         pip install wheel setuptools
+        pip install build twine
 
-    - name: Build wheel
+    - name: Build package
       run: |
-        python setup.py bdist_wheel
+        python -m build --wheel --outdir dist
 
     - name: Upload wheel artifact
       uses: actions/upload-artifact@v4
