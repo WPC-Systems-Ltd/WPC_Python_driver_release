@@ -1,0 +1,6 @@
+Drone simple rotate pitch
+=========================
+
+.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/Drone/Drone/Drone_simple_rotate_pitch.py
+   :language: python
+   :linenos:

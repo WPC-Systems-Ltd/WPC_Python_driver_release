@@ -45,7 +45,7 @@ def main():
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]}")
 
         ## Open AHRS and update rate is 333 HZ
         err = dev.AHRS_open(port, timeout)

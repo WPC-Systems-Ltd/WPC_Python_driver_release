@@ -19,6 +19,7 @@ Wifi devices
    products/WifiDAQE3AH
    products/WifiDAQF4A
    products/WifiDAQE3AOD
+   products/WifiDAQE3AO
 
 Ethernet devices
 ----------------

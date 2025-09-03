@@ -1,0 +1,19 @@
+Wifi-DAQ-E3-AO
+==============
+
+
+Device pinout 
+-------------
+
+.. image:: ../images/Pinouts/pinout-WifiDAQE3AO.JPG
+   :width: 90%
+   :alt: WifiDAQE3AO
+
+
+API function description 
+------------------------
+
+.. autoclass:: pywpc.WifiDAQE3AO
+   :members:
+   :undoc-members:
+   :inherited-members:

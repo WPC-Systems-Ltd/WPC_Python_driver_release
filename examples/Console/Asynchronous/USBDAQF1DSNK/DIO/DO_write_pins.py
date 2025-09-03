@@ -50,7 +50,7 @@ async def main():
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
-        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]}")
 
         ## Open pins with digital output
         err = await dev.DO_openPins_async(port, pin_index)

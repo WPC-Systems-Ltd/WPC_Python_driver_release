@@ -41,7 +41,7 @@ async def main():
     try:
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
-        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]}")
 
         ## Set RTC
         err = await dev.Sys_setRTC_async(2023, 5, 8, 15, 8, 7)

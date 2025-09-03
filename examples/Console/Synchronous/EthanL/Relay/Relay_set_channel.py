@@ -44,7 +44,7 @@ def main():
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]}")
 
         ## Relay open
         err = dev.Relay_open(port, timeout)

@@ -46,7 +46,7 @@ async def main():
 
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
-        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]}")
 
         ## Set SNTP server IP
         err = await dev.SNTP_setServerIP_async(ip_addr)

@@ -108,7 +108,7 @@ Example output of `HANDLE_LIST`:
    ['DeviceFinder', 'Drone', 'EthanA', 'EthanA2', 'EthanD', 'EthanEXD', 'EthanI', 'EthanIA',
     'EthanL', 'EthanO', 'EthanP', 'EthanT', 'USBDAQF1D', 'USBDAQF1DSNK', 'USBDAQF1AD',
     'USBDAQF1AOD', 'USBDAQF1TD', 'USBDAQF1RD', 'USBDAQF1CD', 'WifiDAQE3A', 'WifiDAQE3AH',
-    'WifiDAQF4A', 'WifiDAQE3AOD', 'STEM', 'EMotion', 'EDriveST']
+    'WifiDAQF4A', 'WifiDAQE3AOD', 'WifiDAQE3AO', 'STEM', 'EMotion', 'EDriveST']
 
 Resources
 ---------

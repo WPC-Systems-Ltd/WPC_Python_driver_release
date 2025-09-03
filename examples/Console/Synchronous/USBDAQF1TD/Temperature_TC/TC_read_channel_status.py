@@ -46,7 +46,7 @@ def main():
 
         ## Get firmware model & version
         driver_info = dev.Sys_getDriverInfo(timeout)
-        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]}")
 
         ## Open thermo
         err = dev.Thermal_open(port, timeout)

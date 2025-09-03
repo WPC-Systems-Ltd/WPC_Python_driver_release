@@ -56,7 +56,7 @@ async def main():
     try:
         ## Get firmware model & version
         driver_info = await dev.Sys_getDriverInfo_async()
-        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]} ")
+        print(f"Model name: {driver_info[0]}, Firmware version: {driver_info[-1]}")
 
         _threadRTC = threading.Thread(target=RTC_thread, args=[dev, 1])
         _threadRTC.start()
