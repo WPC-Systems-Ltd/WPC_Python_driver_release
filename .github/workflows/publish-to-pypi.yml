@@ -4,6 +4,8 @@ on:
   push:
     tags:
       - 'v*'   # 只有打 tag 才會發佈到正式 PyPI
+    branches:
+      - 'pypi'
   workflow_dispatch:   # 手動觸發測試用
 
 jobs:
