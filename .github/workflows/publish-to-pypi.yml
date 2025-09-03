@@ -77,7 +77,7 @@ jobs:
     - name: Upload to TestPyPI
       if: github.event_name == 'push' && github.ref == 'refs/heads/pypi'
       run: |
-        twine upload --repository testpypi dist/*.whl
+        twine upload --repository testpypi dist/*.whl --verbose
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
@@ -86,7 +86,7 @@ jobs:
     - name: Upload to PyPI
       if: startsWith(github.ref, 'refs/tags/v')
       run: |
-        twine upload dist/*.whl
+        twine upload dist/*.whl --verbose
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
