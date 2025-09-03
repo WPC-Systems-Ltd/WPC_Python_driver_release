@@ -65,7 +65,7 @@ jobs:
 
     # 測試環境 (TestPyPI)
     - name: Upload to TestPyPI
-      if: github.event_name == 'workflow_dispatch'
+      if: github.event_name == 'push' && github.ref == 'refs/heads/pypi'
       run: |
         twine upload --repository testpypi dist/*
       env:
