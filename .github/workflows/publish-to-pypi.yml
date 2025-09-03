@@ -14,6 +14,17 @@ jobs:
     strategy:
       matrix:
         python-version: ['3.8.16', '3.9.18', '3.10.13', '3.11.9', '3.12.3']
+        include:
+          - python-version: '3.8.16'
+            py_tag: '38'
+          - python-version: '3.9.18'
+            py_tag: '39'
+          - python-version: '3.10.13'
+            py_tag: '310'
+          - python-version: '3.11.9'
+            py_tag: '311'
+          - python-version: '3.12.3'
+            py_tag: '312'
 
     steps:
     - uses: actions/checkout@v4
@@ -39,7 +50,7 @@ jobs:
     - name: Upload wheel artifact
       uses: actions/upload-artifact@v4
       with:
-        name: wpcsys-${{ env.VERSION }}-cp${{ matrix.python-version[0] }}${{ matrix.python-version[2:] }}-win_amd64
+      name: wpcsys-${{ env.VERSION }}-cp${{ matrix.py_tag }}-win_amd64
         path: dist/*.whl
 
   publish:
