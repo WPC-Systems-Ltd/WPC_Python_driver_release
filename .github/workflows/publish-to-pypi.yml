@@ -42,6 +42,7 @@ jobs:
 
     - name: Clean dist folder
       run: rm -rf dist
+      shell: bash
 
     - name: Build package
       run: |
