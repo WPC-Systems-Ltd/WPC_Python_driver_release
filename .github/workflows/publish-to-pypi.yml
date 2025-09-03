@@ -1,13 +1,17 @@
-name: Publish package to PyPI
+name: Build and Publish Package
 
 on:
   push:
     tags:
-      - 'v*'   # 只有打 tag 才會發佈，例如 v1.0.0
+      - 'v*'   # 只有打 tag 才會發佈到正式 PyPI
+  workflow_dispatch:   # 手動觸發測試用
 
 jobs:
-  publish:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        python-version: [3.8, 3.9, 3.10, 3.11, 3.12]
 
     steps:
     - uses: actions/checkout@v3
@@ -15,14 +19,47 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.x'
+        python-version: ${{ matrix.python-version }}
 
-    - name: Install Twine
+    - name: Install build tools
       run: |
         python -m pip install --upgrade pip
-        pip install twine
+        pip install wheel setuptools
 
-    - name: Publish to PyPI
+    - name: Build wheel
+      run: |
+        python setup.py bdist_wheel
+
+    - name: Upload wheel artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: wheels
+        path: dist/*.whl
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/download-artifact@v3
+      with:
+        name: wheels
+        path: dist
+
+    - name: Install Twine
+      run: pip install twine
+
+    # 測試環境 (TestPyPI)
+    - name: Upload to TestPyPI
+      if: github.event_name == 'workflow_dispatch'
+      run: |
+        twine upload --repository testpypi dist/*
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
+
+    # 正式環境 (PyPI)
+    - name: Upload to PyPI
+      if: startsWith(github.ref, 'refs/tags/v')
       run: |
         twine upload dist/*
       env:
