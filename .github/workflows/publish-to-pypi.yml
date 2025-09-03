@@ -10,10 +10,10 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: windows-2022
     strategy:
       matrix:
-        python-version: ['3.8.16', '3.9.18', '3.10.13', '3.11.9', '3.12.3']
+        python-version: [3.8, 3.9, 3.10, 3.11, 3.12]
 
     steps:
     - uses: actions/checkout@v4
