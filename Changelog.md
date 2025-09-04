@@ -1,6 +1,18 @@
 WPC Python driver release changelog
 ===================================
 
+v3.2.0.1 Date: 2025/09/04, Developer: Chunglee_people
+---------------------------------------------------
+### Added
+- Add `pyserial` package in install_requires
+
+### Fixed
+- Licence's copyright
+- Licence's file in setup.py
+
+### Removed
+- usb_test.py
+
 v3.2.0 Date: 2025/09/03, Developer: Chunglee_people
 ---------------------------------------------------
 ### Added
