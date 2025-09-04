@@ -5,7 +5,6 @@
 ##  All rights reserved.
 
 ## Python
-from setuptools import setup, Extension
 import sys
 import setuptools as sut
 
@@ -18,15 +17,10 @@ with open("wpcsys/version.py") as f:
     line = f.read().strip()
     version = line.replace("version = ", "").replace('"', '')
 
-# --- 定義 C extension 模組 ---
-# 假設你的 .so 放在 wpcsys/pywpc.cpython-XXX-XXX.so
-# 直接指定 module 名稱對應包名即可
-ext_modules = [
-    Extension(
-        'wpcsys.pywpc',  # 模組名稱
-        sources=[],      # 已編譯好的 .so，sources 留空
-    ),
-]
+class BinaryDistribution(sut.dist.Distribution):
+    """Distribution which always forces a binary package with platform name"""
+    def has_ext_modules(x):
+        return True
 
 with open("README.rst", "r", encoding="utf-8") as fh:
     long_description = fh.read()
@@ -37,11 +31,9 @@ sut.setup(
     description='WPC Python driver APIs, the easiest way to Control & Data Acquisition (DAQ)',
     long_description=long_description,
     long_description_content_type='text/x-rst',
-
     author="Chunglee people, Chieh-An Lin",
     author_email="wu@wpc.com.tw",
     url="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release",
-
     packages=['wpcsys'],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
@@ -58,10 +50,10 @@ sut.setup(
         "Topic :: Documentation :: Sphinx",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
-    distclass=sut.dist.Distribution,
+    distclass=BinaryDistribution,
     license="MIT",
     license_files=["LICENSE"],
-    keywords='WPC, DAQ, Motion card, Motion driver, USB, Ethernet, Wifi',
+    keywords='WPC, Drone, DAQ, Motion card, Motion driver, USB, Ethernet, Wifi',
 
     include_package_data=True,
     install_requires=['pyusb>=1.2.1', 'numpy>=1.23.0',
@@ -70,7 +62,4 @@ sut.setup(
                       'PyQt5-sip>=12.10.1', 'wpcEXEbuild>=0.0.1',
                       'pyserial>=3.5'],
     python_requires='>=3.8',
-
-    # 將 C extension 模組加進 setup
-    ext_modules=ext_modules,
 )
