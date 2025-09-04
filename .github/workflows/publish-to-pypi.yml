@@ -32,18 +32,18 @@ jobs:
         python -m pip install "setuptools<72.2.0"
         pip install --upgrade cibuildwheel==2.15.0 twine
 
-    # 刪除 dist/build/so/pyd → cross-platform safe
+    - name: Clean dist folder
+      run: rm -rf dist
+      shell: bash
+
     - name: Clean previous build artifacts
       run: |
         python -c "import shutil, os, glob; [shutil.rmtree(p, ignore_errors=True) for p in ('build','dist')]; \
         [os.remove(f) for f in glob.glob('wpcsys/*.so')+glob.glob('wpcsys/*.pyd')]"
 
     - name: Build wheels
-      run: cibuildwheel --output-dir dist
-      env:
-        CIBW_BUILD: "cp${{ matrix.python-version//./ }}-*"
-        CIBW_SKIP: "pp* *musllinux*"
-        CIBW_ARCHS: auto
+      run: |
+        cibuildwheel --output-dir dist
 
     - name: Check wheel metadata
       run: twine check dist/*
