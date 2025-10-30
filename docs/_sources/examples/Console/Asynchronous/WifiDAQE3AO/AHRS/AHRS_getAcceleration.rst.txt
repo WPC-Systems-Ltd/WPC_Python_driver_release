@@ -1,6 +1,6 @@
 AHRS getAcceleration
 ====================
 
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Asynchronous/WifiDAQE3AO/AHRS/AHRS_getAcceleration.py
+.. literalinclude:: ../../../../../../../../../github/WPC_Python_driver_release/examples/Console/Asynchronous/WifiDAQE3AO/AHRS/AHRS_getAcceleration.py
    :language: python
    :linenos:

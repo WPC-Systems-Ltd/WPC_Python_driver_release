@@ -1,6 +1,6 @@
 Drone simple z move
 ===================
 
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/Drone/Drone/Drone_simple_z_move.py
+.. literalinclude:: ../../../../../../../../../github/WPC_Python_driver_release/examples/Console/Synchronous/Drone/Drone/Drone_simple_z_move.py
    :language: python
    :linenos:

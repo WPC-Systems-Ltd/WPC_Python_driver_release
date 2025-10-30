@@ -1,6 +1,6 @@
 Drive position blending
 =======================
 
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/EDriveST/Drive/Drive_position_blending.py
+.. literalinclude:: ../../../../../../../../../github/WPC_Python_driver_release/examples/Console/Synchronous/EDriveST/Drive/Drive_position_blending.py
    :language: python
    :linenos:
