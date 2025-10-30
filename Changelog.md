@@ -1,6 +1,12 @@
 WPC Python driver release changelog
 ===================================
 
+v3.2.3 Date: 2025/10/30 Developer: Chunglee_people
+---------------------------------------------------
+### Fixed
+- Fixed the issue where .rst file could not be found.
+- Fixed a bug in Drone_setPositionMode.
+
 v3.2.2 Date: 2025/10/30 Developer: Chunglee_people
 ---------------------------------------------------
 ### Fixed
