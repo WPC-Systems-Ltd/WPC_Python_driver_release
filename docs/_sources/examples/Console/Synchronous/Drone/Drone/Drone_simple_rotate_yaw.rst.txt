@@ -1,6 +1,6 @@
 Drone simple rotate yaw
 =======================
 
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/Drone/Drone/Drone_simple_rotate_yaw.py
+.. literalinclude:: ../../../../../../../../../github/WPC_Python_driver_release/examples/Console/Synchronous/Drone/Drone/Drone_simple_rotate_yaw.py
    :language: python
    :linenos:

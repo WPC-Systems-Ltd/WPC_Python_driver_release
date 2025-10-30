@@ -8,6 +8,6 @@ TC test panel
 
 |
 
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/GUI/Synchronous/Temperature_TC/TC_gui.py
+.. literalinclude:: ../../../../../../../../../github/WPC_Python_driver_release/examples/GUI/Synchronous/Temperature_TC/TC_gui.py
    :language: python
    :linenos:

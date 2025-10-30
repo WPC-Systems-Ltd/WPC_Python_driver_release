@@ -8,6 +8,6 @@ AO test panel
 
 |
 
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/GUI/Synchronous/AO/AO_gui.py
+.. literalinclude:: ../../../../../../../../../github/WPC_Python_driver_release/examples/GUI/Synchronous/AO/AO_gui.py
    :language: python
    :linenos:

@@ -1,6 +1,6 @@
 DPOT write by channel
 =====================
 
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/EthanP/DPOT/DPOT_writeByChannel.py
+.. literalinclude:: ../../../../../../../../../github/WPC_Python_driver_release/examples/Console/Synchronous/EthanP/DPOT/DPOT_writeByChannel.py
    :language: python
    :linenos:

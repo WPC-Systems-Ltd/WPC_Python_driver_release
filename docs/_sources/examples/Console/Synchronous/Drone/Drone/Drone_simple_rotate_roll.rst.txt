@@ -1,6 +1,6 @@
 Drone simple rotate roll
 ========================
 
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/Drone/Drone/Drone_simple_rotate_roll.py
+.. literalinclude:: ../../../../../../../../../github/WPC_Python_driver_release/examples/Console/Synchronous/Drone/Drone/Drone_simple_rotate_roll.py
    :language: python
    :linenos:

@@ -1,6 +1,6 @@
 Drone simple xy move
 ====================
 
-.. literalinclude:: ../../../../../../../../WPC_Python_driver_release/examples/Console/Synchronous/Drone/Drone/Drone_simple_xy_move.py
+.. literalinclude:: ../../../../../../../../../github/WPC_Python_driver_release/examples/Console/Synchronous/Drone/Drone/Drone_simple_xy_move.py
    :language: python
    :linenos:
