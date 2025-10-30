@@ -1,6 +1,11 @@
 WPC Python driver release changelog
 ===================================
 
+v3.2.2 Date: 2025/10/20 Developer: Chunglee_people
+---------------------------------------------------
+### Fixed
+- Fix drone example code, especially for Drone_getFlightMode
+
 v3.2.0.1 Date: 2025/09/04, Developer: Chunglee_people
 ---------------------------------------------------
 ### Added

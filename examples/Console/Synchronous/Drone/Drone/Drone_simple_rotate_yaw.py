@@ -38,6 +38,7 @@ def main():
     ## Connect to device
     try:
         dev.connect("COM5", baudrate)  ## Depend on your device
+        # dev.connect("/dev/ttyTHS1", baudrate)  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
@@ -63,6 +64,10 @@ def main():
         ## Set drone flight mode to attitude mode
         err = dev.Drone_setAttiudeMode(timeout)
         print(f"Drone_setAttiudeMode, status: {err}")
+
+        ## Get drone flight mode
+        flight_mode = Drone_getFlightMode(timeout)
+        print(f"Drone_getFlightMode, flight_mode: {flight_mode}")
 
         ## Activate drone
         err = dev.Drone_activate(timeout)

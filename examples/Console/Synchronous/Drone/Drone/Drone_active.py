@@ -33,6 +33,7 @@ def main():
     ## Connect to device
     try:
         dev.connect("COM5", baudrate)  ## Depend on your device
+        # dev.connect("/dev/ttyTHS1", baudrate)  ## Depend on your device
     except Exception as err:
         pywpc.printGenericError(err)
         ## Release device handle
