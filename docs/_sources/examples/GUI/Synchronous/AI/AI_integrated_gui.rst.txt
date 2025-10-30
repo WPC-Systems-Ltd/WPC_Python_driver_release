@@ -8,6 +8,6 @@ AI test panel
 
 |
 
-.. literalinclude:: ../../../../../../../WPC_Python_driver_release/examples/GUI/Synchronous/AI/AI_integrated_gui.py
+.. literalinclude:: ../../../../../../../../../github/WPC_Python_driver_release/examples/GUI/Synchronous/AI/AI_integrated_gui.py
    :language: python
    :linenos:
