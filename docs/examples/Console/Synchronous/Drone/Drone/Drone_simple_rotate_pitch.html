@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Drone simple rotate pitch &mdash; WPC Python driver 3.2.3 documentation</title>
+  <title>Drone simple rotate pitch &mdash; WPC Python driver 3.2.4 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
@@ -35,7 +35,7 @@
             <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.2.3
+                3.2.4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -200,7 +200,7 @@
 <span class="linenos"> 66</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drone_setAttiudeMode, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 67</span>
 <span class="linenos"> 68</span>        <span class="c1">## Get drone flight mode</span>
-<span class="linenos"> 69</span>        <span class="n">flight_mode</span> <span class="o">=</span> <span class="n">Drone_getFlightMode</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 69</span>        <span class="n">flight_mode</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Drone_getFlightMode</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
 <span class="linenos"> 70</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drone_getFlightMode, flight_mode: </span><span class="si">{</span><span class="n">flight_mode</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 71</span>
 <span class="linenos"> 72</span>        <span class="c1">## Activate drone</span>

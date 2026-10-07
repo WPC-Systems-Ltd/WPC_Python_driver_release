@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wifi-DAQ-E3-AH &mdash; WPC Python driver 3.2.3 documentation</title>
+  <title>Wifi-DAQ-E3-AH &mdash; WPC Python driver 3.2.4 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -35,7 +35,7 @@
             <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.2.3
+                3.2.4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -174,29 +174,6 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.WifiDAQE3AH.AHRS_getAcceleration">
-<span class="sig-name descname"><span class="pre">AHRS_getAcceleration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3AH.AHRS_getAcceleration" title="Permalink to this definition"></a></dt>
-<dd><p>Get AHRS’s 3 axis acceleration.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
-See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
-</dd>
-<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify the time (sec) to wait before reporting a timeout error. The default is 3 s.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>acceleration</strong><span class="classifier">list</span></dt><dd><p>The list of 3 axis acceleration.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3AH.AHRS_getAcceleration_async">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AHRS_getAcceleration_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3AH.AHRS_getAcceleration_async" title="Permalink to this definition"></a></dt>
 <dd><p>Get AHRS’s 3 axis acceleration with async mode.</p>
@@ -218,9 +195,9 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pywpc.WifiDAQE3AH.AHRS_getAngularVelocity">
-<span class="sig-name descname"><span class="pre">AHRS_getAngularVelocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3AH.AHRS_getAngularVelocity" title="Permalink to this definition"></a></dt>
-<dd><p>Get AHRS’s 3 axis angular velocity.</p>
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3AH.AHRS_getAcceleration_rad">
+<span class="sig-name descname"><span class="pre">AHRS_getAcceleration_rad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3AH.AHRS_getAcceleration_rad" title="Permalink to this definition"></a></dt>
+<dd><p>Get AHRS’s 3 axis acceleration.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -233,7 +210,7 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>angular velocity</strong><span class="classifier">list</span></dt><dd><p>The list of 3 axis angular velocity.</p>
+<dt><strong>acceleration</strong><span class="classifier">list</span></dt><dd><p>The list of 3 float values: [x, y, z] acceleration in rad/s^2.</p>
 </dd>
 </dl>
 </dd>
@@ -255,6 +232,29 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>angular velocity</strong><span class="classifier">list</span></dt><dd><p>The list of 3 axis angular velocity.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3AH.AHRS_getAngularVelocity_rad">
+<span class="sig-name descname"><span class="pre">AHRS_getAngularVelocity_rad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3AH.AHRS_getAngularVelocity_rad" title="Permalink to this definition"></a></dt>
+<dd><p>Get AHRS’s 3 axis angular velocity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify the time (sec) to wait before reporting a timeout error. The default is 3 s.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>angular velocity</strong><span class="classifier">list</span></dt><dd><p>The list of 3 float values: [x, y, z] angular velocity in rad/s.</p>
 </dd>
 </dl>
 </dd>
@@ -324,7 +324,7 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="pywpc.WifiDAQE3AH.AHRS_getOrientation">
 <span class="sig-name descname"><span class="pre">AHRS_getOrientation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3AH.AHRS_getOrientation" title="Permalink to this definition"></a></dt>
-<dd><p>Get AHRS’s 3 axis orientation.</p>
+<dd><p>Get 3-axis orientation (Roll, Pitch, Yaw) from the AHRS. Retrieves the current estimated orientation angles from the Attitude and Heading Reference System (AHRS) and returns them in degrees.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -337,7 +337,12 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>orientation</strong><span class="classifier">list</span></dt><dd><p>The list of 3 axis orientation.</p>
+<dt><strong>orientation</strong><span class="classifier">list</span></dt><dd><ul class="simple">
+<li><p>list of 3 float values: [roll, pitch, yaw] in degrees.</p></li>
+<li><p>roll: [-180° to +180°]</p></li>
+<li><p>pitch: [-90° to +90°]</p></li>
+<li><p>yaw: [-180° to +180°]</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
@@ -359,6 +364,34 @@ See <a class="reference internal" href="../ref_port.html#port-table"><span class
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>orientation</strong><span class="classifier">list</span></dt><dd><p>The list of 3 axis orientation.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.WifiDAQE3AH.AHRS_getOrientation_rad">
+<span class="sig-name descname"><span class="pre">AHRS_getOrientation_rad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.WifiDAQE3AH.AHRS_getOrientation_rad" title="Permalink to this definition"></a></dt>
+<dd><p>Get 3-axis orientation (Roll, Pitch, Yaw) from the AHRS system in radians. Retrieves the current estimated orientation angles from the Attitude and Heading Reference System (AHRS) and returns them in degrees.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>Port number.
+See <a class="reference internal" href="../ref_port.html#port-table"><span class="std std-ref">here</span></a> for available ports of different WPC devices.</p>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify the time (sec) to wait before reporting a timeout error. The default is 3 s.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>orientation</strong><span class="classifier">list</span></dt><dd><ul class="simple">
+<li><p>list of 3 float values: [roll, pitch, yaw] in degrees.</p></li>
+<li><p>roll: [-pi to pi rad]</p></li>
+<li><p>pitch: [-pi/2 to pi/2 rad]</p></li>
+<li><p>yaw: [-pi to pi rad]</p></li>
+</ul>
 </dd>
 </dl>
 </dd>

@@ -66,7 +66,7 @@ def main():
         print(f"Drone_setPositionMode, status: {err}")
 
         ## Get drone flight mode
-        flight_mode = Drone_getFlightMode(timeout)
+        flight_mode = dev.Drone_getFlightMode(timeout)
         print(f"Drone_getFlightMode, flight_mode: {flight_mode}")
 
         ## Activate drone
