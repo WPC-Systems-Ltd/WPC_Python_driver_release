@@ -79,11 +79,11 @@ This package provides prebuilt binaries (.so / .pyd) for:
 +----------------+-----------------------+----------------+-----------------------------+
 | Python Version | Platform              | File Format    | Supported WPC Products      |
 +================+=======================+================+=============================+
-| 3.8 ~ 3.12     | x86_64 Linux          | ``.so``        | All WPC products supported  |
+| 3.9 ~ 3.12     | x86_64 Linux          | ``.so``        | All WPC products supported  |
 +----------------+-----------------------+----------------+-----------------------------+
-| 3.8 ~ 3.12     | Windows (win_amd64)   | ``.pyd``       | All WPC products supported  |
+| 3.9 ~ 3.12     | Windows (win_amd64)   | ``.pyd``       | All WPC products supported  |
 +----------------+-----------------------+----------------+-----------------------------+
-| 3.8 ~ 3.12     | aarch64 Linux         | ``.so``        | **Drone products only**     |
+| 3.9 ~ 3.12     | aarch64 Linux         | ``.so``        | **Drone products only**     |
 +----------------+-----------------------+----------------+-----------------------------+
 
 **⚠️ Warning:** `aarch64-linux-gnu` builds support **only WPC drone products**.\

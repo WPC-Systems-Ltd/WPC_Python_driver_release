@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AHRS visualize &mdash; WPC Python driver 3.2.4 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
-    <link rel="shortcut icon" href="../../../../../_static/WPC-trademark.jpg"/>
   <!--[if lt IE 9]>
     <script src="../../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
-        <script src="../../../../../_static/jquery.js"></script>
-        <script src="../../../../../_static/underscore.js"></script>
-        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../../../../_static/doctools.js"></script>
-        <script src="../../../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../../../_static/documentation_options.js?v=b31cc1e0"></script>
+        <script src="../../../../../_static/doctools.js?v=9bcbadda"></script>
+        <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -32,7 +28,6 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
             <a href="../../../../../index.html" class="icon icon-home"> WPC Python driver
-            <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
                 3.2.4
@@ -140,7 +135,7 @@
            <div itemprop="articleBody">
              
   <section id="ahrs-visualize">
-<h1>AHRS visualize<a class="headerlink" href="#ahrs-visualize" title="Permalink to this heading"></a></h1>
+<h1>AHRS visualize<a class="headerlink" href="#ahrs-visualize" title="Link to this heading"></a></h1>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos">  2</span><span class="sd">AHRS - AHRS_visualize.py with synchronous mode.</span>
 <span class="linenos">  3</span>
@@ -157,19 +152,19 @@
 <span class="linenos"> 14</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos"> 15</span>
 <span class="linenos"> 16</span><span class="c1">## Python</span>
-<span class="linenos"> 17</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="linenos"> 18</span><span class="kn">import</span> <span class="nn">stl.mesh</span> <span class="k">as</span> <span class="nn">mesh</span>
-<span class="linenos"> 19</span><span class="kn">import</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="k">as</span> <span class="nn">mplot3d</span>
-<span class="linenos"> 20</span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
-<span class="linenos"> 21</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="linenos"> 22</span><span class="kn">import</span> <span class="nn">matplotlib.gridspec</span> <span class="k">as</span> <span class="nn">gridspec</span>
-<span class="linenos"> 23</span><span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="nn">mpimg</span>
-<span class="linenos"> 24</span><span class="kn">import</span> <span class="nn">matplotlib.font_manager</span> <span class="k">as</span> <span class="nn">font_manager</span>
-<span class="linenos"> 25</span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">rcParams</span>
-<span class="linenos"> 26</span><span class="kn">from</span> <span class="nn">matplotlib.transforms</span> <span class="kn">import</span> <span class="n">Affine2D</span>
+<span class="linenos"> 17</span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="linenos"> 18</span><span class="kn">import</span><span class="w"> </span><span class="nn">stl.mesh</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mesh</span>
+<span class="linenos"> 19</span><span class="kn">import</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mplot3d</span>
+<span class="linenos"> 20</span><span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+<span class="linenos"> 21</span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="linenos"> 22</span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.gridspec</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gridspec</span>
+<span class="linenos"> 23</span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.image</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpimg</span>
+<span class="linenos"> 24</span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.font_manager</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">font_manager</span>
+<span class="linenos"> 25</span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">rcParams</span>
+<span class="linenos"> 26</span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.transforms</span><span class="w"> </span><span class="kn">import</span> <span class="n">Affine2D</span>
 <span class="linenos"> 27</span>
 <span class="linenos"> 28</span><span class="c1">## WPC</span>
-<span class="linenos"> 29</span><span class="kn">from</span> <span class="nn">wpcsys</span> <span class="kn">import</span> <span class="n">pywpc</span>
+<span class="linenos"> 29</span><span class="kn">from</span><span class="w"> </span><span class="nn">wpcsys</span><span class="w"> </span><span class="kn">import</span> <span class="n">pywpc</span>
 <span class="linenos"> 30</span>
 <span class="linenos"> 31</span><span class="c1">################################################################################</span>
 <span class="linenos"> 32</span><span class="c1">## Configuration</span>
@@ -243,7 +238,7 @@
 <span class="linenos">100</span><span class="c1">################################################################################</span>
 <span class="linenos">101</span><span class="c1">## Functions - utilities</span>
 <span class="linenos">102</span>
-<span class="linenos">103</span><span class="k">def</span> <span class="nf">WPC_initializeFigure</span><span class="p">(</span><span class="n">nb_rows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nb_col</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">share_x</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">share_y</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">option</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">):</span>
+<span class="linenos">103</span><span class="k">def</span><span class="w"> </span><span class="nf">WPC_initializeFigure</span><span class="p">(</span><span class="n">nb_rows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nb_col</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">share_x</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">share_y</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">option</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">):</span>
 <span class="linenos">104</span>  <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <span class="linenos">105</span>  <span class="n">fig</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
 <span class="linenos">106</span>  <span class="n">gs</span> <span class="o">=</span> <span class="n">gridspec</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">width_ratios</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">height_ratios</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
@@ -297,7 +292,7 @@
 <span class="linenos">154</span>  <span class="n">fig</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="linenos">155</span>  <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">ax_arr</span><span class="p">,</span> <span class="n">ax_mat</span>
 <span class="linenos">156</span>
-<span class="linenos">157</span><span class="k">def</span> <span class="nf">WPC_initialize_plane</span><span class="p">(</span><span class="n">angle_type</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">):</span>
+<span class="linenos">157</span><span class="k">def</span><span class="w"> </span><span class="nf">WPC_initialize_plane</span><span class="p">(</span><span class="n">angle_type</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">):</span>
 <span class="linenos">158</span>  <span class="c1">## Load image</span>
 <span class="linenos">159</span>  <span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
 <span class="linenos">160</span>  <span class="n">d_plane</span> <span class="o">=</span> <span class="n">PLANE_DICT</span><span class="p">[</span><span class="n">angle_type</span><span class="p">]</span>
@@ -318,14 +313,14 @@
 <span class="linenos">175</span>  <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">cc</span><span class="p">)</span>
 <span class="linenos">176</span>  <span class="k">return</span>  <span class="n">im</span>
 <span class="linenos">177</span>
-<span class="linenos">178</span><span class="k">def</span> <span class="nf">WPC_showFigure</span><span class="p">(</span><span class="n">fig</span><span class="p">):</span>
+<span class="linenos">178</span><span class="k">def</span><span class="w"> </span><span class="nf">WPC_showFigure</span><span class="p">(</span><span class="n">fig</span><span class="p">):</span>
 <span class="linenos">179</span>  <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">get_size_inches</span><span class="p">()</span>
 <span class="linenos">180</span>  <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">forward</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="linenos">181</span>  <span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span> <span class="c1">## Turn on interactive mode</span>
 <span class="linenos">182</span>  <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="linenos">183</span>  <span class="k">return</span>
 <span class="linenos">184</span>
-<span class="linenos">185</span><span class="k">def</span> <span class="nf">WPC_getRotMat</span><span class="p">(</span><span class="n">roll</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">yaw</span><span class="p">,</span> <span class="n">use_deg</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="linenos">185</span><span class="k">def</span><span class="w"> </span><span class="nf">WPC_getRotMat</span><span class="p">(</span><span class="n">roll</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">yaw</span><span class="p">,</span> <span class="n">use_deg</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="linenos">186</span>  <span class="k">if</span> <span class="n">use_deg</span><span class="p">:</span>
 <span class="linenos">187</span>    <span class="n">roll</span> <span class="o">*=</span> <span class="n">DEGREE_TO_RADIAN</span>
 <span class="linenos">188</span>    <span class="n">pitch</span> <span class="o">*=</span> <span class="n">DEGREE_TO_RADIAN</span>
@@ -336,7 +331,7 @@
 <span class="linenos">193</span>  <span class="n">rot_mat</span> <span class="o">=</span> <span class="n">rot_mat_x</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">rot_mat_y</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">rot_mat_z</span><span class="p">)</span> <span class="c1">## Dot product from the back RxRyRz</span>
 <span class="linenos">194</span>  <span class="k">return</span> <span class="n">rot_mat</span>
 <span class="linenos">195</span>
-<span class="linenos">196</span><span class="k">def</span> <span class="nf">WPC_showEmpty</span><span class="p">(</span><span class="n">tag</span><span class="o">=</span><span class="n">DEFAULT_MODEL</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="linenos">196</span><span class="k">def</span><span class="w"> </span><span class="nf">WPC_showEmpty</span><span class="p">(</span><span class="n">tag</span><span class="o">=</span><span class="n">DEFAULT_MODEL</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
 <span class="linenos">197</span>  <span class="n">fig</span><span class="p">,</span> <span class="n">ax_dict</span> <span class="o">=</span> <span class="n">WPC_initializeFigure</span><span class="p">(</span><span class="n">option</span><span class="o">=</span><span class="s1">&#39;3D&#39;</span><span class="p">)</span>
 <span class="linenos">198</span>  <span class="n">im_yaw</span> <span class="o">=</span> <span class="n">WPC_initialize_plane</span><span class="p">(</span><span class="s1">&#39;yaw&#39;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;plane_yaw&#39;</span><span class="p">))</span>
 <span class="linenos">199</span>  <span class="n">im_pitch</span> <span class="o">=</span> <span class="n">WPC_initialize_plane</span><span class="p">(</span><span class="s1">&#39;pitch&#39;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;plane_pitch&#39;</span><span class="p">))</span>
@@ -373,7 +368,7 @@
 <span class="linenos">230</span>  <span class="n">WPC_showFigure</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
 <span class="linenos">231</span>  <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax_dict</span><span class="p">,</span> <span class="n">im_dict</span><span class="p">,</span> <span class="n">data_orig</span><span class="p">,</span> <span class="n">poly</span>
 <span class="linenos">232</span>
-<span class="linenos">233</span><span class="k">def</span> <span class="nf">WPC_draw3DModel</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">data_orig</span><span class="p">,</span> <span class="n">poly</span><span class="p">,</span> <span class="n">roll</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">yaw</span><span class="p">):</span>
+<span class="linenos">233</span><span class="k">def</span><span class="w"> </span><span class="nf">WPC_draw3DModel</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">data_orig</span><span class="p">,</span> <span class="n">poly</span><span class="p">,</span> <span class="n">roll</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">yaw</span><span class="p">):</span>
 <span class="linenos">234</span>  <span class="c1">## Rotate</span>
 <span class="linenos">235</span>  <span class="n">rot_mat</span> <span class="o">=</span> <span class="n">WPC_getRotMat</span><span class="p">(</span><span class="n">roll</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">yaw</span><span class="p">,</span> <span class="n">use_deg</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="linenos">236</span>  <span class="n">data</span> <span class="o">=</span> <span class="n">data_orig</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">rot_mat</span><span class="p">)</span>
@@ -382,7 +377,7 @@
 <span class="linenos">239</span>  <span class="n">poly</span><span class="o">.</span><span class="n">set_verts</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="linenos">240</span>  <span class="k">return</span>
 <span class="linenos">241</span>
-<span class="linenos">242</span><span class="k">def</span> <span class="nf">WPC_plot_plane</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">angle_type</span><span class="p">,</span> <span class="n">im</span><span class="p">,</span> <span class="n">center</span><span class="p">):</span>
+<span class="linenos">242</span><span class="k">def</span><span class="w"> </span><span class="nf">WPC_plot_plane</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">angle_type</span><span class="p">,</span> <span class="n">im</span><span class="p">,</span> <span class="n">center</span><span class="p">):</span>
 <span class="linenos">243</span>  <span class="c1">## Display image</span>
 <span class="linenos">244</span>  <span class="n">im</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
 <span class="linenos">245</span>
@@ -397,7 +392,7 @@
 <span class="linenos">254</span>  <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
 <span class="linenos">255</span>  <span class="k">return</span>
 <span class="linenos">256</span>
-<span class="linenos">257</span><span class="k">def</span> <span class="nf">WPC_text_button</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">Roll</span><span class="p">,</span> <span class="n">Pitch</span><span class="p">,</span> <span class="n">Yaw</span><span class="p">,</span> <span class="n">ax_value_roll</span><span class="p">,</span> <span class="n">ax_value_pitch</span><span class="p">,</span> <span class="n">ax_value_yaw</span><span class="p">):</span>
+<span class="linenos">257</span><span class="k">def</span><span class="w"> </span><span class="nf">WPC_text_button</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">Roll</span><span class="p">,</span> <span class="n">Pitch</span><span class="p">,</span> <span class="n">Yaw</span><span class="p">,</span> <span class="n">ax_value_roll</span><span class="p">,</span> <span class="n">ax_value_pitch</span><span class="p">,</span> <span class="n">ax_value_yaw</span><span class="p">):</span>
 <span class="linenos">258</span>  <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="p">[</span><span class="n">ax_value_roll</span><span class="p">,</span> <span class="n">ax_value_pitch</span><span class="p">,</span> <span class="n">ax_value_yaw</span><span class="p">]:</span>
 <span class="linenos">259</span>    <span class="n">ax</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 <span class="linenos">260</span>    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
@@ -411,7 +406,7 @@
 <span class="linenos">268</span>    <span class="n">ax_value_yaw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39; Yaw:</span><span class="se">\n</span><span class="si">{</span><span class="n">yaw</span><span class="si">}</span><span class="s1"> deg&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">BMH_PURPLE</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
 <span class="linenos">269</span>  <span class="k">return</span>
 <span class="linenos">270</span>
-<span class="linenos">271</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos">271</span><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
 <span class="linenos">272</span>    <span class="c1">## Get Python driver version</span>
 <span class="linenos">273</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_FULL_NAME</span><span class="si">}</span><span class="s1"> - Version </span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="linenos">274</span>

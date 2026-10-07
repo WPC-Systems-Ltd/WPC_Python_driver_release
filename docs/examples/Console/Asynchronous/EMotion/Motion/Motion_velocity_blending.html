@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Motion velocity blending &mdash; WPC Python driver 3.2.4 documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/custom_sphinx.css" type="text/css" />
-    <link rel="shortcut icon" href="../../../../../_static/WPC-trademark.jpg"/>
   <!--[if lt IE 9]>
     <script src="../../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
-        <script src="../../../../../_static/jquery.js"></script>
-        <script src="../../../../../_static/underscore.js"></script>
-        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../../../../_static/doctools.js"></script>
-        <script src="../../../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../../../_static/documentation_options.js?v=b31cc1e0"></script>
+        <script src="../../../../../_static/doctools.js?v=9bcbadda"></script>
+        <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -32,7 +28,6 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
             <a href="../../../../../index.html" class="icon icon-home"> WPC Python driver
-            <img src="../../../../../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
                 3.2.4
@@ -154,7 +149,7 @@
            <div itemprop="articleBody">
              
   <section id="motion-velocity-blending">
-<h1>Motion velocity blending<a class="headerlink" href="#motion-velocity-blending" title="Permalink to this heading"></a></h1>
+<h1>Motion velocity blending<a class="headerlink" href="#motion-velocity-blending" title="Link to this heading"></a></h1>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos">  2</span><span class="sd">Motion - Motion_velocity_blending.py with asynchronous mode.</span>
 <span class="linenos">  3</span>
@@ -169,15 +164,15 @@
 <span class="linenos"> 12</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos"> 13</span>
 <span class="linenos"> 14</span><span class="c1">## WPC</span>
-<span class="linenos"> 15</span><span class="kn">from</span> <span class="nn">wpcsys</span> <span class="kn">import</span> <span class="n">pywpc</span>
+<span class="linenos"> 15</span><span class="kn">from</span><span class="w"> </span><span class="nn">wpcsys</span><span class="w"> </span><span class="kn">import</span> <span class="n">pywpc</span>
 <span class="linenos"> 16</span>
 <span class="linenos"> 17</span><span class="c1">## Python</span>
-<span class="linenos"> 18</span><span class="kn">import</span> <span class="nn">asyncio</span>
-<span class="linenos"> 19</span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="linenos"> 18</span><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="linenos"> 19</span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 <span class="linenos"> 20</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;src/&#39;</span><span class="p">)</span>
 <span class="linenos"> 21</span>
 <span class="linenos"> 22</span>
-<span class="linenos"> 23</span><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos"> 23</span><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
 <span class="linenos"> 24</span>    <span class="c1">## Get Python driver version</span>
 <span class="linenos"> 25</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">PKG_FULL_NAME</span><span class="si">}</span><span class="s1"> - Version </span><span class="si">{</span><span class="n">pywpc</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="linenos"> 26</span>
@@ -219,7 +214,7 @@
 <span class="linenos"> 62</span>        <span class="n">err</span> <span class="o">=</span> <span class="k">await</span> <span class="n">dev</span><span class="o">.</span><span class="n">Motion_open_async</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
 <span class="linenos"> 63</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;open_async in port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 64</span>
-<span class="linenos"> 65</span>        <span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos"> 65</span><span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="linenos"> 66</span><span class="sd">        ## Motion open configuration file</span>
 <span class="linenos"> 67</span><span class="sd">        err = await dev.Motion_openCfgFile_async(&#39;C:/Users/user/Desktop/3AxisStage_2P.ini&#39;)</span>
 <span class="linenos"> 68</span><span class="sd">        print(f&quot;openCfgFile_async, status: {err}&quot;)</span>
@@ -291,7 +286,7 @@
 <span class="linenos">134</span>        <span class="n">dev</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="linenos">135</span>
 <span class="linenos">136</span>
-<span class="linenos">137</span><span class="k">def</span> <span class="nf">main_for_spyder</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="linenos">137</span><span class="k">def</span><span class="w"> </span><span class="nf">main_for_spyder</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
 <span class="linenos">138</span>    <span class="k">if</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">is_running</span><span class="p">():</span>
 <span class="linenos">139</span>        <span class="k">return</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
 <span class="linenos">140</span>    <span class="k">else</span><span class="p">:</span>
