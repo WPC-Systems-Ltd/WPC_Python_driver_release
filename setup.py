@@ -1,7 +1,7 @@
 ##  setup.py
 ##  - Build wheel file & make distribution
 ##
-##  Copyright (c) 2022 WPC Systems Ltd.
+##  Copyright (c) 2022-2026 WPC Systems Ltd.
 ##  All rights reserved.
 
 ## Python
@@ -49,16 +49,26 @@ sut.setup(
         "Topic :: Documentation :: Sphinx",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
-    distclass=BinaryDistribution,
+    # distclass=BinaryDistribution,
     license="MIT",
     license_files=["LICENSE"],
     keywords='WPC, Drone, DAQ, Motion card, Motion driver, USB, Ethernet, Wifi',
 
     include_package_data=True,
-    install_requires=['pyusb>=1.2.1', 'numpy>=1.23.0',
-                      'qasync>=0.23.0', 'matplotlib>=3.5.2',
-                      'PyQt5>=5.15.4', 'PyQt5-Qt5>=5.15.2',
-                      'PyQt5-sip>=12.10.1', 'wpcEXEbuild>=0.0.1',
-                      'pyserial>=3.5'],
+    install_requires=[
+        'pyusb>=1.2.1',
+        'numpy>=1.23.0',
+        'wpcEXEbuild>=0.0.1',
+        'pyserial>=3.5'
+    ],
+    extras_require={
+        'gui': [
+            'qasync>=0.23.0',
+            'matplotlib>=3.5.2',
+            'PyQt5>=5.15.4',
+            'PyQt5-Qt5>=5.15.2',
+            'PyQt5-sip>=12.10.1'
+        ]
+    },
     python_requires='>=3.9',
 )

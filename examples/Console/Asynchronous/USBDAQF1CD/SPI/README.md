@@ -26,7 +26,7 @@ pip install wpcsys
 
 ## Dependencies
 
-- Python 3.8 or higher (up to 3.12)
+- Python 3.9 or higher (up to 3.12)
 - wpcsys package
 - numpy (for data processing)
 - matplotlib (for data visualization, optional)
