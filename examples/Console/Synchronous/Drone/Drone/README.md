@@ -29,7 +29,6 @@ pip install wpcsys
 - Python 3.9 or higher (up to 3.12)
 - wpcsys package
 - numpy (for data processing)
-- matplotlib (for data visualization, optional)
 
 ## Hardware Requirements
 
@@ -41,61 +40,39 @@ Here we use Drone as an example.
 
 <img src="https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/blob/main/Reference/Pinouts/pinout-Drone.JPG" alt="drawing" width="600"/>
 
-## Operating Procedure
+### Nvidia Jetson Nano via USB to TTL
 
-### Pre-Flight Checklist
+#### 1. Hardware Connection
+Use a USB-to-TTL serial adapter to connect the Jetson Nano to the Drone.
+Please cross-connect the RX and TX pins:
+- USB-TTL **TX**  ➜  Drone **RX**
+- USB-TTL **RX**  ➜  Drone **TX**
+- USB-TTL **GND** ➜  Drone **GND**
+*(Warning: Do not connect the VCC/5V/3.3V pin unless you intend to power the board via USB.)*
 
-- Ensure the drone's **center of gravity** is properly balanced.
-- Verify that all **mounted payloads are securely fastened**.
-- Confirm that **all screws on the drone are tightened**.
-- Check that the **drone battery is fully charged** (approximately **12.5V**).
-- Make sure the **USB drive has sufficient storage** to record the flight data.
-- Insert the **USB drive into the flight control computer**.
+#### 2. Find the Serial Port
+Plug the USB-to-TTL adapter into the Jetson Nano, then open a terminal and check the system logs to find the assigned port name:
+```bash
+dmesg | grep tty
+```
+You should see a message indicating the adapter was attached to a port like `ttyUSB0` or `ttyUSB1`.
 
-> 💡 **If the USB drive is not inserted, the drone could not fly.**
+Verify the device exists:
+```bash
+ls -l /dev/ttyUSB*
+```
 
-### Connect the Battery Power
+#### 3. Set Port Permissions
+By default, standard users do not have permission to read/write serial ports on Linux.
+You can grant temporary read/write access to the port (replace `ttyUSB0` with your actual port):
+```bash
+sudo chmod 666 /dev/ttyUSB0
+```
+*(For a permanent solution, add your user to the dialout group: `sudo usermod -a -G dialout $USER`, then reboot).*
 
-- After connecting the drone battery, the motors will emit a **short "beep" every second**.
+#### 4. Run the Code
+Update the port string in your Python script to match the port you found (e.g., `"/dev/ttyUSB0"`), and then execute the script.
 
-### Unlock the Drone
-
-- On the **emergency power switch**, press **"On"** to supply power.
-- Then turn on the **flight control computer**.
-
-> 💡 **If the flight control system is not powered on, the drone system will not function.**
-
-### Wait for Flight Control Initialization
-
-- Wait approximately **2 minutes** for the flight control system to start.
-- You will hear a **long "beep"** from the motors indicating it's ready.
-
-### Operate the Drone via Remote or Mission Computer
-
-- For detailed control instructions, please refer to the [**user guide**](https://wpc.super.site/3kg-class-uav-platform-user-guide) or [**video**](https://www.youtube.com/watch?v=MCejJsEQymk).
-
-### End of Operation & Landing
-
-- If the battery level is low, **disconnect the drone battery and replace it** as needed.
-
-## Troubleshooting
-
-Common issues and their solutions:
-
-1. Connection Error
-   - Solution: Check IP address or serial number
-   - Solution: Verify device connections
-   - Solution: Check power supply
-
-2. Control Issues
-   - Solution: Verify drone configuration
-   - Solution: Check sensor settings
-   - Solution: Monitor flight status
-
-3. Synchronous Operation Issues
-   - Solution: Check for blocking operations
-   - Solution: Verify proper error handling
-   - Solution: Ensure proper resource cleanup
 
 For technical support, please register a new [issue](https://github.com/WPC-Systems-Ltd/WPC_Python_driver_release/issues) on GitHub.
 

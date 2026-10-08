@@ -196,8 +196,8 @@
 <span class="linenos"> 62</span>            <span class="k">return</span>
 <span class="linenos"> 63</span>
 <span class="linenos"> 64</span>        <span class="c1">## Set drone flight mode to attitude mode</span>
-<span class="linenos"> 65</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Drone_setAttiudeMode</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
-<span class="linenos"> 66</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drone_setAttiudeMode, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos"> 65</span>        <span class="n">err</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Drone_setAttitudeMode</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="linenos"> 66</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drone_setAttitudeMode, status: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos"> 67</span>
 <span class="linenos"> 68</span>        <span class="c1">## Get drone flight mode</span>
 <span class="linenos"> 69</span>        <span class="n">flight_mode</span> <span class="o">=</span> <span class="n">dev</span><span class="o">.</span><span class="n">Drone_getFlightMode</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>

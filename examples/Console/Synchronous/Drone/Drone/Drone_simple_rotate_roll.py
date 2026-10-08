@@ -62,8 +62,8 @@ def main():
             return
 
         ## Set drone flight mode to attitude mode
-        err = dev.Drone_setAttiudeMode(timeout)
-        print(f"Drone_setAttiudeMode, status: {err}")
+        err = dev.Drone_setAttitudeMode(timeout)
+        print(f"Drone_setAttitudeMode, status: {err}")
 
         ## Get drone flight mode
         flight_mode = dev.Drone_getFlightMode(timeout)

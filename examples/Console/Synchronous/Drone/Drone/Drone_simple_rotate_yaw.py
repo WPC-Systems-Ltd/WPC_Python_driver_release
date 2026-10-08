@@ -30,7 +30,7 @@ def main():
     baudrate = 921600
     timeout = 3  ## [sec]
     rotate_angle = 10  ## [degree]
-    velocity = 1  ## [degree/s]
+    velocity = 3  ## [degree/s]
 
     ## Create device handle
     dev = pywpc.Drone()
@@ -61,9 +61,9 @@ def main():
             print("Terminate example code. Goodbye!")
             return
 
-        ## Set drone flight mode to attitude mode
-        err = dev.Drone_setAttiudeMode(timeout)
-        print(f"Drone_setAttiudeMode, status: {err}")
+        ## Set drone flight mode to position mode
+        err = dev.Drone_setPositionMode(timeout)
+        print(f"Drone_setPositionMode, status: {err}")
 
         ## Get drone flight mode
         flight_mode = dev.Drone_getFlightMode(timeout)
