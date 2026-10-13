@@ -1,6 +1,30 @@
 WPC Python driver release changelog
 ===================================
 
+v3.2.6 Date: 2026/10/13 Developer: Chunglee_people
+---------------------------------------------------
+### Added
+- API: Added `AHRS_getAngularVelocity_rad` and `AHRS_getOrientation_rad` in `WifiDAQE3AH` and `WifiDAQE3AO`.
+- Added `extras_require` with `gui` option in `setup.py` for optional GUI dependencies (`qasync`, `matplotlib`, `PyQt5`).
+- Added Nvidia Jetson Nano connection and serial port setup guide in Drone README.
+
+### Changed
+- Python support: Updated supported Python version to 3.9 ~ 3.12 (dropped Python 3.8 support).
+- Moved GUI dependencies out of default `install_requires` in `setup.py` for a lighter core package installation.
+- Updated all example README files to require Python 3.9 or higher.
+- Updated prebuilt binaries (`pywpc`) for Python 3.9, 3.10, 3.11, and 3.12 across Windows (win_amd64), Linux (x86_64), and Linux (aarch64).
+- Updated documentation to version 3.2.6.
+
+### Fixed
+- Fixed API typo: renamed `Drone_setAttiudeMode` to `Drone_setAttitudeMode`.
+- Fixed Drone example scripts:
+  - Fixed missing `dev.` object prefix when invoking `Drone_getFlightMode` across Drone example scripts.
+  - Fixed `Drone_setAttiudeMode` typo in `Drone_simple_rotate_pitch.py` and `Drone_simple_rotate_roll.py`.
+  - Fixed flight mode call to `dev.Drone_setPositionMode` in `Drone_simple_rotate_yaw.py`.
+
+### Removed
+- Dropped Python 3.8 support and removed Python 3.8 prebuilt binaries (`pywpc.cp38-win_amd64.pyd`, `pywpc.cpython-38-aarch64-linux-gnu.so`, `pywpc.cpython-38-x86_64-linux-gnu.so`).
+
 v3.2.3 Date: 2025/10/30 Developer: Chunglee_people
 ---------------------------------------------------
 ### Fixed
