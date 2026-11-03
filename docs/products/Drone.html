@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Drone &mdash; WPC Python driver 3.2.6 documentation</title>
+  <title>Drone &mdash; WPC Python driver 3.2.7.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom_sphinx.css" type="text/css" />
@@ -35,7 +35,7 @@
             <img src="../_static/WPC-logo.PNG" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.2.6
+                3.2.7.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -418,6 +418,246 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <li><p>X, Y, Z: (m/s)</p></li>
 <li><p>roll, pitch, yaw: (degree/s)</p></li>
 </ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.Drone.Drone_moveLocalAbsXY">
+<span class="sig-name descname"><span class="pre">Drone_moveLocalAbsXY</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity_xy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.Drone.Drone_moveLocalAbsXY" title="Permalink to this definition"></a></dt>
+<dd><p>Move absolute xy position and velocity in ned frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position_x</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>position_y</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>velocity_xy</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m/s</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">float</span></dt><dd><p>Specify the time (sec) to wait before reporting a timeout error. The default is 3 s.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.Drone.Drone_moveLocalAbsYaw">
+<span class="sig-name descname"><span class="pre">Drone_moveLocalAbsYaw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.Drone.Drone_moveLocalAbsYaw" title="Permalink to this definition"></a></dt>
+<dd><p>Move absolute yaw angular position and velocity in Ned frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>degree</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>velocity</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>degree/s</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">float</span></dt><dd><p>Specify the time (sec) to wait before reporting a timeout error. The default is 3 s.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.Drone.Drone_moveLocalAbsZ">
+<span class="sig-name descname"><span class="pre">Drone_moveLocalAbsZ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.Drone.Drone_moveLocalAbsZ" title="Permalink to this definition"></a></dt>
+<dd><p>Move absolute z position and velocity in ned frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>velocity</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m/s</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">float</span></dt><dd><p>Specify the time (sec) to wait before reporting a timeout error. The default is 3 s.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.Drone.Drone_moveLocalRelX">
+<span class="sig-name descname"><span class="pre">Drone_moveLocalRelX</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.Drone.Drone_moveLocalRelX" title="Permalink to this definition"></a></dt>
+<dd><p>Move relative x position and velocity in local frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>velocity</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m/s</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">float</span></dt><dd><p>Specify the time (sec) to wait before reporting a timeout error. The default is 3 s.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.Drone.Drone_moveLocalRelXY">
+<span class="sig-name descname"><span class="pre">Drone_moveLocalRelXY</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity_xy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.Drone.Drone_moveLocalRelXY" title="Permalink to this definition"></a></dt>
+<dd><p>Move relative xy position and velocity in ned frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position_x</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>position_y</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>velocity_xy</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m/s</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">float</span></dt><dd><p>Specify the time (sec) to wait before reporting a timeout error. The default is 3 s.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.Drone.Drone_moveLocalRelY">
+<span class="sig-name descname"><span class="pre">Drone_moveLocalRelY</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.Drone.Drone_moveLocalRelY" title="Permalink to this definition"></a></dt>
+<dd><p>Move relative y position and velocity in local frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>velocity</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m/s</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">float</span></dt><dd><p>Specify the time (sec) to wait before reporting a timeout error. The default is 3 s.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.Drone.Drone_moveLocalRelYaw">
+<span class="sig-name descname"><span class="pre">Drone_moveLocalRelYaw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.Drone.Drone_moveLocalRelYaw" title="Permalink to this definition"></a></dt>
+<dd><p>Move relative yaw angular position and velocity in local frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>degree</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>velocity</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>degree/s</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">float</span></dt><dd><p>Specify the time (sec) to wait before reporting a timeout error. The default is 3 s.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.Drone.Drone_moveLocalRelZ">
+<span class="sig-name descname"><span class="pre">Drone_moveLocalRelZ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.Drone.Drone_moveLocalRelZ" title="Permalink to this definition"></a></dt>
+<dd><p>Move relative z position and velocity in ned frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>velocity</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m/s</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">float</span></dt><dd><p>Specify the time (sec) to wait before reporting a timeout error. The default is 3 s.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
 </dd>
 </dl>
 </dd>
@@ -872,6 +1112,64 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.Drone.Drone_moveVehicleRelYaw">
+<span class="sig-name descname"><span class="pre">Drone_moveVehicleRelYaw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.Drone.Drone_moveVehicleRelYaw" title="Permalink to this definition"></a></dt>
+<dd><p>Move absolute yaw angular position and velocity in vehicle frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>velocity</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m/s</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">float</span></dt><dd><p>Specify the time (sec) to wait before reporting a timeout error. The default is 3 s.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.Drone.Drone_moveVehicleRelZ">
+<span class="sig-name descname"><span class="pre">Drone_moveVehicleRelZ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.Drone.Drone_moveVehicleRelZ" title="Permalink to this definition"></a></dt>
+<dd><p>Move relative z position and velocity in vehicle frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>velocity</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m/s</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">float</span></dt><dd><p>Specify the time (sec) to wait before reporting a timeout error. The default is 3 s.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.Drone.Drone_readBattery">
 <span class="sig-name descname"><span class="pre">Drone_readBattery</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.Drone.Drone_readBattery" title="Permalink to this definition"></a></dt>
 <dd><p>Read the drone’s battery status, including voltage (V), current (A), and capacity (%).</p>
@@ -912,6 +1210,28 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <li><p>0: Not in position</p></li>
 <li><p>1: In position</p></li>
 <li><p>Format: [roll, pitch, yaw, X, Y, Z]</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.Drone.Drone_readLocalFrameOriginInNED">
+<span class="sig-name descname"><span class="pre">Drone_readLocalFrameOriginInNED</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.Drone.Drone_readLocalFrameOriginInNED" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify the time (sec) to wait before reporting a timeout error. The default is 3 s.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>state</strong><span class="classifier">list</span></dt><dd><ul class="simple">
+<li><p>A list containing battery information in the following order:</p></li>
+<li><p>[X position (m), Y position (m), Z position (m), yaw (rad)]</p></li>
 </ul>
 </dd>
 </dl>
@@ -1035,6 +1355,42 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pywpc.Drone.Drone_setPositionInLocalFrame">
+<span class="sig-name descname"><span class="pre">Drone_setPositionInLocalFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yaw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.Drone.Drone_setPositionInLocalFrame" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position_x</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>position_y</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>position_z</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>yaw</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>rad</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">float</span></dt><dd><p>Specify the time (sec) to wait before reporting a timeout error. The default is 3 s.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pywpc.Drone.Drone_setPositionMode">
 <span class="sig-name descname"><span class="pre">Drone_setPositionMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.Drone.Drone_setPositionMode" title="Permalink to this definition"></a></dt>
 <dd><p>Set the drone to position mode.</p>
@@ -1112,6 +1468,42 @@ See <a class="reference internal" href="../ref_error.html#error-code"><span clas
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>timeout</strong><span class="classifier">int</span></dt><dd><p>Specify the time (sec) to wait before reporting a timeout error. The default is 3 s.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>status</strong><span class="classifier">int</span></dt><dd><p>Return 0 if executed successfully; return error code otherwise.
+See <a class="reference internal" href="../ref_error.html#error-code"><span class="std std-ref">here</span></a> for corresponding error messages.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pywpc.Drone.Drone_writeLocalFrameOriginInNED">
+<span class="sig-name descname"><span class="pre">Drone_writeLocalFrameOriginInNED</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yaw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pywpc.Drone.Drone_writeLocalFrameOriginInNED" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>position_x</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>position_y</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>position_z</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>m</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>yaw</strong><span class="classifier">float</span></dt><dd><ul class="simple">
+<li><p>Unit will be <cite>rad</cite>.</p></li>
+</ul>
+</dd>
+<dt><strong>timeout</strong><span class="classifier">float</span></dt><dd><p>Specify the time (sec) to wait before reporting a timeout error. The default is 3 s.</p>
 </dd>
 </dl>
 </dd>
