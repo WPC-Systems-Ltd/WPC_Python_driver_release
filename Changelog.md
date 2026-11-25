@@ -1,6 +1,13 @@
 WPC Python driver release changelog
 ===================================
 
+v3.2.8 Date: 2026/11/25 Developer: Chunglee_people
+---------------------------------------------------
+### Added
+- Drone: Added Local Frame flight control APIs, including absolute/relative movement (X, Y, Z, Yaw), local position setting, and NED origin configuration.
+- Drone: Added Vehicle Frame relative movement APIs for altitude (Z) and yaw rotation.
+
+
 v3.2.6 Date: 2026/10/13 Developer: Chunglee_people
 ---------------------------------------------------
 ### Added
