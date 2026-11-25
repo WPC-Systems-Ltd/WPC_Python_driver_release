@@ -7,9 +7,6 @@ v3.2.8 Date: 2026/11/25 Developer: Chunglee_people
 - Drone: Added Local Frame flight control APIs, including absolute/relative movement (X, Y, Z, Yaw), local position setting, and NED origin configuration.
 - Drone: Added Vehicle Frame relative movement APIs for altitude (Z) and yaw rotation.
 
-### Changed
-- Updated driver packages for Windows and Linux (x86_64, aarch64) supporting Python 3.9 – 3.12.
-- Updated API documentation to version 3.2.8.
 
 v3.2.6 Date: 2026/10/13 Developer: Chunglee_people
 ---------------------------------------------------
