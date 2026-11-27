@@ -1,2 +1,4 @@
 recursive-include wpcsys *.pyd
+recursive-include wpcsys *.so
 recursive-include wpcsys *.dll
+
